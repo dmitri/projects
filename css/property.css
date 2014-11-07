@@ -1,0 +1,5424 @@
+/* Anonymous login */
+
+button {
+    -webkit-appearance: none;
+}
+
+.page-container {
+    width: 1245px;
+    margin: 0 auto;
+}
+
+#guest-access-bar {
+	margin-bottom: -15px;
+}
+
+#page-content {
+	position: relative;
+	margin: 44px auto 95px;
+	color: #777;
+	z-index: 1;
+	width: 1245px;
+}
+
+#com-left {
+	float: left;
+	_display: inline;
+	width: 820px;
+	background-color: #ededed;
+    margin-top: 30px;
+}
+
+
+#com-right,
+#com-right-wrapper {
+	width: 400px;
+}
+
+#com-right {
+    float: right;
+    _display: inline;
+    margin-top: 30px;
+}
+
+#com-right .fixed {
+	position: fixed;
+	_position: static;
+	top: 0;
+	z-index: 30;
+}
+
+#com-right .jetsetter-verified,
+#com-right .jetsetter-approved {
+    padding: 25px;
+    padding-left: 35px;
+    background-color: #FFF;
+    font-size: 15px;
+}
+
+#com-right .jetsetter-verified .icon,
+#com-right .jetsetter-approved .icon {
+    width: 85px;
+    height: 85px;
+    display: inline-block;
+    background-image: url('http://cdnx.jetcdn.com/static/images/pdp2/badges.png');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+#com-right .jetsetter-approved .icon {
+    background-position: -85px 0;
+}
+
+#com-right .jetsetter-verified .info,
+#com-right .jetsetter-approved .info {
+    margin: 10px 0 0 20px;
+    min-height: 80px;
+    width: 225px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#com-right .jetsetter-verified h4,
+#com-right .jetsetter-approved h4 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.rnd_10 {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#page-content h2 {
+	margin-bottom: 15px;
+	font-size: 26px;
+	color: black;
+}
+
+#product-details .box-shadow{
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+
+/* Product detail header */
+#content-header {
+	position: relative;
+	_zoom: 1;
+    font-family: 'Tenor Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#content-header .sale-info {
+	padding: 25px 28px 20px;
+	background: #FFF;
+	color: #000;
+	position: relative;
+	z-index: 10;
+}
+
+#content-header .name {
+	font-size: 30px;
+	line-height: 1;
+	max-width: 740px;
+	*width: 740px;
+}
+
+#content-header .sub-info{
+	margin-top: 18px;
+	position: relative;
+	z-index: 20;
+}
+
+#content-header .time-left {
+	display: inline;
+	font: 15px georgia,serif;
+}
+#content-header .location {
+	color: #777;
+	font: 15px georgia,serif;
+	float: left;
+	line-height: 20px;
+}
+
+#content-header .share{
+	float: right;
+
+}
+
+#content-header div.no-loc .separator{
+	visibility: hidden;
+}
+
+#content-header .separator{
+	visibility: hidden;
+}
+
+#content-header .share {
+	position: absolute;
+	left: 480px;
+	top: 20px;
+}
+#content-header .share a {
+	display: block;
+	font-size: 12px;
+	line-height: 20px;
+	color: #999;
+	white-space: nowrap;
+	*zoom: 1;
+}
+#content-header .share a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+#content-header .share .text {
+	vertical-align: middle;
+}
+#content-header .share .icon {
+	*display: inline-block;
+	margin-right: 3px;
+	padding-left: 20px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/product-sprites.png?v11) no-repeat;
+	vertical-align: middle;
+}
+#content-header .share .email .icon {
+	background-position: 0 -148px;
+}
+
+.public #content-header .share{
+	display: none;
+}
+
+#content-header .header-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    overflow: hidden;
+    clear: both;
+}
+
+/* Flash */
+.flash #content-header .flash-ribbon {
+    background-image: url(http://cdnx.jetcdn.com/static/images/pdp2/ribbons.png?v3);
+    background-repeat: no-repeat;
+    z-index: 11;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: absolute;
+    width: 120px;
+    height: 118px;
+    top: 113px;
+    left: 0;
+}
+
+.flash #content-header .time-left {
+    display: none;
+}
+
+.flash #content-header .share {
+    left: 455px;
+}
+
+.flash-ribbon-0,
+.flash-ribbon-1 {
+    background-position: -1080px 0;
+}
+
+.flash-ribbon-2 {
+    background-position: -960px 0;
+}
+
+.flash-ribbon-3 {
+    background-position: -840px 0;
+}
+
+.flash-ribbon-4 {
+    background-position: -720px 0;
+}
+
+.flash-ribbon-5 {
+    background-position: -600px 0;
+}
+
+.flash-ribbon-6 {
+    background-position: -480px 0;
+}
+
+.flash-ribbon-7 {
+    background-position: -360px 0;
+}
+
+.flash-ribbon-8 {
+    background-position: -240px 0;
+}
+
+.flash-ribbon-9 {
+    background-position: -120px 0;
+}
+
+.flash-ribbon-10 {
+    background-position: 0 0;
+}
+
+/* Add to favs */
+.anonymous #favs {
+	/* Hide favs for anonymous browse */
+	display: none;
+}
+
+/* Product information */
+#info {
+	padding: 30px;
+	font-size: 13px;
+	line-height: 1.5;
+	background: #FFF;
+	position: relative;
+	z-index: 1;
+}
+#info h3 {
+	margin-bottom: 8px;
+	font-size: 22px;
+	color: black;
+}
+#info .bulleted li {
+	line-height: 1.4;
+}
+
+#info ul.bulleted li{
+	background: none;
+	list-style: disc outside none;
+	padding-left: 0;
+	margin-left: 23px;
+    font-size: 14px;
+}
+
+#info .col-wrapper {
+	*zoom: 1;
+}
+#info .col-wrapper:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#info .col-wrapper p {
+	margin-bottom: 1em;
+}
+#info .col-wrapper a {
+	font-weight: bold;
+}
+
+/* Google Map */
+.location {
+	position: relative;
+}
+.location .google-map {
+	width: 760px;
+	height: 360px;
+	margin-top: 25px;
+}
+.location-info .see-full {
+	position: absolute;
+	top: -30px;
+	right: 0;
+	padding: 0 1em;
+	background-color: #F78C0D;
+	color: #eee;
+	font-weight: bold;
+	line-height: 30px;
+}
+.location-info {
+	position: relative;
+	background-color: #000;
+	padding: 15px 20px;
+	color: #999;
+	line-height: 1.3;
+}
+.location-info .name {
+	font-weight: bold;
+	color: #eee;
+}
+
+#mini-map {
+	margin-top: 20px;
+}
+#mini-map .map {
+	display: block;
+}
+#mini-map .location-info {
+	padding: 10px 15px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/* Tabs */
+.info-tabs {
+	/*margin-bottom: 30px;*/
+	background: #EDEDED;
+	position: relative;
+	z-index: 0;
+}
+
+.info-tabs li {
+	float: left;
+	_display: inline;
+	text-align: center;
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.info-tabs li a {
+	display: block;
+	width: 163px;
+	height: 54px;
+	line-height: 54px;
+	background: black;
+	font-size: 13px;
+	color: white;
+	outline: none;
+	text-align: center;
+	border-right: 1px solid #FFF;
+}
+
+.info-tabs li.selected a {
+	background: #FFF;
+	color: #000;
+	font-weight: bold;
+}
+
+.info-tabs li a:hover {
+	text-decoration: none;
+}
+
+.info-tabs #reviews-tab{
+	border-right: 0;
+}
+
+.info-tabs li:last-child a{
+	border-right: 0px;
+}
+
+
+#product-details .copy-pullquote-inline {
+	display: block;
+	float: right;
+	padding: 15px;
+}
+
+.copy-inline-caption {	
+	font-size: 11px;
+}
+
+#product-details img.copy-image-inline {
+	clear: both;
+	margin-bottom: 10px;
+}
+
+/* Tabbed sections */
+#info .section {
+	*zoom: 1;
+	display: none;
+}
+
+#info .selected-section {
+	display: block;
+}
+
+/* Shared modules on all tabs */
+.what-to-do {
+	padding: 20px 40px 20px 15px;
+}
+
+.what-to-do ul {
+	margin-top: 7px;
+}
+
+.what-to-do ul li {
+	margin-bottom: 10px;
+	background-position: 0 3px;
+}
+
+
+#share {
+	border-top: 1px solid #ededed;
+	height: 145px;
+	background: #FFF;
+}
+
+#share ul{
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+#share ul li{
+	height: 46px;
+	width: 46px;
+	display: inline-block;
+	margin-right: 21px;
+	background-image: url(http://cdnx.jetcdn.com/static/images/property/share-circles.png?v2);
+	background-repeat: no-repeat;
+	margin-top: 49px;
+}
+
+.ie7 #share ul li{
+	display: block;
+	float: left;
+}
+
+#share ul li:last-child{
+	margin-right: 0;
+}
+
+.ie7 #share ul li.email{
+	margin-left: 260px;
+}
+
+#share ul li.email{ background-position: 0 0; }
+#share ul li.facebook{ background-position: -133px 0; }
+#share ul li.twitter{ background-position: -67px 0; }
+
+#share ul li a{
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+/*#share ul li {
+	float: left;
+	_display: inline;
+	margin-left: 16px;
+}
+
+#share ul li.first {
+	margin-left: 0;
+}
+
+#share ul li a {
+	display: block;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 18px;
+	color: #777;
+}
+#share ul li a:hover {
+	text-decoration: underline;
+}
+
+#share ul li .icon {
+	float: left;
+	_display: inline;
+	margin-right: 8px;
+	width: 19px;
+	height: 18px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/product-sprites.png?v11) no-repeat;
+}
+#share ul li.email .icon {
+	width: 20px;
+	height: 15px;
+	background-position: -30px 2px;
+}
+#share ul li.facebook .icon {
+	background-position: -60px 0;
+}
+#share ul li.twitter .icon {
+	background-position: -90px 0;
+}
+*/
+
+/* Overview tab */
+#overview {
+	position: relative;
+}
+
+#overview #about-your-stay {
+	/*position: relative;*/
+	padding-bottom: 12px;
+	clear: left;
+}
+#overview .header {
+	width: 275px;
+	margin-bottom: 20px;
+}
+#overview .header h2 {
+	margin-bottom: 2px;
+}
+#overview .curator {
+    display: block;
+    font-size: 15px;
+    font-style: normal;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#overview .curator a,
+#overview .curator a:link,
+#overview .curator a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+#overview .curator a:hover{
+    color: #F78C0D;
+    cursor: pointer;
+}
+
+#overview .shaded{
+    border: 1px solid #E2E2E2;
+}
+
+.public #highlights{
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+}
+
+#highlights #what-we-love,
+#highlights #what-to-know,
+#highlights #why-to-go,
+#highlights #why-to-stay {
+	width: 328px;
+	float: left;
+	_display: inline;
+	padding: 25px;
+}
+
+#highlights #what-we-love,
+#highlights #why-to-go {
+	border-right: 1px solid #e2e2e2;
+}
+
+#highlights #what-to-know,
+#highlights #why-to-stay {
+	margin-left: -1px;
+}
+
+#highlights #what-to-know{
+	padding-right: 21px;
+    border-left: 1px solid #E2E2E2;
+}
+
+#highlights #why-to-go {
+	border-top: 1px solid #e2e2e2;
+	clear: both;
+}
+
+#highlights #why-to-stay{
+	border-top: 1px solid #e2e2e2;
+	clear: both;
+	display: block;
+	padding-bottom: 20px;
+	width: 710px;
+	border-left: 0;
+}
+
+#highlights #why-to-go,
+#highlights #why-to-stay{
+	padding-bottom: 25px;
+}
+
+#highlights #why-to-go ul {
+	margin-top: 8px;
+}
+
+#highlights #why-to-go ul li {
+	display: inline;
+	margin-right: 10px;
+	line-height: 37px;
+}
+
+/* Review */
+#review h2 {
+	margin-bottom: 15px;
+}
+
+#review h3 {
+	margin-bottom: 15px;
+	font-size: 15px;
+	font-family: Georgia;
+	color: #7E807A;
+}
+
+/* Details tab */
+#details h2 {
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #ededed;
+}
+
+#details .col-wrapper {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ededed;
+}
+
+/* Gallery */
+#screen-gallery {
+	position:relative;
+	_zoom: 1;
+    height: 490px;
+    overflow: hidden;
+}
+#screen-gallery .full-view ul {
+	position:relative;
+	width:1245px;
+	height:490px;
+    overflow: hidden;
+}
+
+
+#screen-gallery .full-view li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+#screen-gallery .full-view div.caption-bar {
+    background: #000;
+    width: 100%;
+    color: #eee;
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    text-shadow: 0 -1px 0 #555;
+}
+
+#screen-gallery .full-view img {
+    display: block;
+}
+
+#screen-gallery .full-view p {
+    margin-left: 15px;
+}
+
+#screen-gallery .full-area{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    left: 10%;
+    top: 0;
+    cursor: pointer;
+    /* this is because IE refuses to create a true div with no background for some reason */
+    background: url(http://cdnx.jetcdn.com/static/images/layout/blank.gif) 0 0 repeat;
+}
+
+#screen-gallery li[data-type="pano"] img{
+    margin: -32px 0 0 -32px;
+}
+
+#screen-gallery .cta-360{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 69px;
+    height: 95px;
+    margin: -47px 0 0 -34px;
+    background: url(http://cdnx.jetcdn.com/static/images/pano/explore.png) 0 0 no-repeat;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#screen-gallery .cta-360:hover{
+    opacity: 1;
+}
+
+#thumbs-container {
+    position: relative;
+    height: 50px;
+    background-color: transparent;
+    top: -70px;
+    margin-bottom: -70px;
+    padding: 10px 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+#thumbs-container .thumbs {
+    position: relative;
+    height: 50px;
+    clear: both;
+    margin: 0 auto;
+}
+
+#thumbs-container .thumbs ul li[data-type="img"]:last-child img{
+    width: 88px;
+}
+
+#thumbs-container .thumbs ul{
+    height: 100%;
+    width: 760px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#thumbs-container .thumbs li {
+	float: left;
+	_display: inline;
+	position:relative;
+	cursor: pointer;
+	width: 86px;
+	height: 50px;
+	overflow: hidden;
+    margin: 0 5px;
+}
+
+#thumbs-container .thumbs img {
+	display: block;
+}
+
+#thumbs-container .thumbs .mask{
+	height: 50px;
+	width: 88px;
+	background: #000;
+    background: rgba(0,0,0, 0.5);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	position: absolute;
+	top: 0;
+	left: -1px;
+}
+
+#thumbs-container .thumbs li.selected .mask{
+	background: transparent;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	height: 45px;
+	border-bottom: 5px solid #f78c0d;
+    top: auto;
+    bottom: 0;
+}
+
+#thumbs-container .nav {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    float: left;
+}
+
+#thumbs-container .nav .icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 63px;
+    background: url(http://cdnx.jetcdn.com/static/images/layout/gallery-sprites.png?v4) no-repeat 0 -40px;
+    display: inline-block;
+}
+
+#thumbs-container .nav:hover .icon {
+    opacity: 1;
+}
+
+#thumbs-container .next .icon {
+    left: -25px;
+    background-position: -20px -40px;
+}
+
+/* All comments */
+#all-comments {
+
+}
+
+#all-comments div.action {
+	float:right;
+	font-size:13px;
+	padding-top:10px;
+}
+
+#all-comments h2 {
+	float:left;
+	_display: inline;
+	margin-bottom: 30px;
+}
+
+#all-comments ul {
+	*zoom: 1;
+	clear: both;
+}
+
+#all-comments .comment {
+	*zoom: 1;
+	padding: 0 30px 0 0;
+	margin-bottom: 32px;
+}
+
+#all-comments img {
+	float: left;
+	_display: inline;
+	margin-right: 25px;
+}
+
+#all-comments blockquote {
+	*zoom: 1;
+	overflow: hidden;
+	color: #515151;
+	font: 13px/1.5 georgia,serif;
+}
+
+#all-comments blockquote p {
+	margin-bottom: 0.6em;
+}
+
+#all-comments cite {
+	display: block;
+	margin-left: 76px;
+	font-size: 13px;
+	font-style: normal;
+	*clear: both;
+}
+
+#all-comments cite span.name {
+	color:#999;
+	text-transform: capitalize;
+}
+
+#all-comments cite span.time {
+	color:#bbb;
+}
+
+#all-comments .reply {
+	position: relative;
+	padding: 25px;
+	background-color: #F5F5F5;
+}
+
+#all-comments .reply blockquote {
+	color: #777;
+}
+
+
+#all-comments .reply div.reply-indicator {
+	position: absolute;
+	left: 25px;
+	top: -9px;
+	width: 11px;
+	height: 9px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/product-sprites.png?v11) no-repeat -120px 0;
+}
+
+#all-comments div.no-comments {
+	clear:both;
+	font-family:georgia,serif;
+	padding-bottom:15px;
+}
+
+
+/* Submit comment form */
+#post-comment {
+	clear: both;
+	margin-bottom: 30px;
+	padding: 15px;
+}
+
+#post-comment textarea {
+	width: 722px; /* 520 - 3*2 - 1*2 */
+	max-width: 722px;
+	height: 100px;
+	border: 1px solid;
+	border-color: #d9d9d9 #f6f6f6 #f6f6f6 #d9d9d9;
+	padding: 3px;
+	margin-bottom: 15px;
+}
+
+#post-comment p {
+	font-size: 13px;
+	margin-bottom: 15px;
+}
+
+#post-comment .actions {
+	float: right;
+	_display: inline;
+}
+
+#post-comment .actions button {
+	width: 90px;
+	height: 35px;
+	font-size: 14px;
+}
+
+#post-comment .actions label {
+	font-size:12px;
+	margin-right:10px;
+	*position: relative;
+	*top: -10px;
+}
+
+#post-comment .actions label a {
+	color:#999999;
+	text-decoration:underline;
+}
+
+
+
+/* Message after posting a comment */
+#comment-submitted {
+	clear: both;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+#comment-submitted h3 {
+	font-family:georgia,serif;
+	font-size:20px;
+	padding-bottom:30px;
+}
+
+#comment-submitted p {
+	font-size:12px;
+}
+
+
+#review-type-tabs {
+    border-bottom: solid 1px #ededed;
+    padding: 0 40px;
+    margin-top: 0 !important;
+    margin-bottom: 25px;
+}
+
+#review-type-tabs li {
+    position: relative;
+    cursor: pointer;
+    bottom: -1px;
+    display: inline-block;
+    padding: 8px 5px;
+    text-align: center;
+    width: 320px;
+    border: solid 1px #ededed;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#f0f0f0));
+    background-image: -webkit-linear-gradient(top, #fefefe, #f0f0f0);
+    background-image:    -moz-linear-gradient(top, #fefefe, #f0f0f0);
+    background-image:     -ms-linear-gradient(top, #fefefe, #f0f0f0);
+}
+
+#review-type-tabs li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+}
+
+#review-type-tabs li.selected {
+    background-image: none;
+    background-color: #fff;
+    margin-bottom: -1px;
+    border-bottom: solid 1px #fff;
+}
+
+/* Policy modal */
+#policy-modal .content {
+	width: 500px;
+	padding: 20px;
+}
+
+#policy-modal p {
+	font-size: 12px;
+	margin: 8px 0;
+	line-height: 1.3;
+}
+
+#policy-modal cite {
+	display: block;
+	margin-top: 25px;
+}
+
+#policy-modal ul {
+	padding: 10px;
+	list-style-type: disc;
+	font-size: 12px;
+	line-height: 1.3;
+}
+
+#policy-modal li {
+	margin-bottom: 7px;
+}
+
+#policy-modal li.last {
+	margin-bottom: 0;
+}
+
+
+
+/* Product selector dropdown */
+#product-booking {
+	*zoom: 1;
+	position: relative;
+	background-color: #fff;
+}
+
+#product-selector {
+	*zoom: 1;
+	position: relative;
+	z-index: 2;
+}
+
+#product-selector .selected-product {
+	line-height: 49px;
+	padding: 0 10px;
+	background-color: #FFF;
+	color: #000;
+	cursor: pointer;
+}
+#product-selector .selected-product .select-room {
+	text-align: left;
+	font-size: 16px;
+
+}
+#product-selector .selected-product h4 {
+	*zoom: 1;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/site-sprites.png?454d84212) no-repeat 251px 22px;
+	font-size: 16px;
+}
+
+#product-selector .products {
+	position: absolute;
+	top: 49px;
+	*overflow: hidden;
+}
+#product-selector ul {
+	width: 282px;
+	padding-bottom:8px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/ds_t_bttm.png) repeat-x bottom;
+}
+#product-selector ul li {
+	*zoom: 1;
+	position: relative;
+	background-color: #F8F9F7;
+	border-top: 1px solid #CCC;
+}
+#product-selector ul li.first {
+	border-top:none;
+}
+#product-selector ul li input {
+	position: absolute;
+	top: 14px;
+	left: 8px;
+	*width: 16px;
+	*height: 16px;
+}
+#product-selector ul li label {
+	*zoom: 1;
+	display: block;
+	padding: 12px 5px 12px 30px;
+}
+#product-selector ul li a {
+	color:#777;
+}
+#product-selector ul li label span {
+	*cursor: default;
+}
+#product-selector ul li .product-price {
+	position: relative;
+	padding:2px 6px;
+	color:#F78C0D;
+	font-size: 10px;
+	white-space: nowrap;
+	top: -3px;
+}
+#product-selector ul li .product-price strong {
+	font-size: 14px;
+}
+#product-selector ul li .product-name {
+	width: 150px;
+	font-weight: bold;
+	line-height: 16px;
+	color: #333;
+}
+#product-selector ul li .blurb {
+	*zoom: 1;
+	display: block;
+	clear: both;
+	padding: 2px 5px 0 0;
+	font-size: 13px;
+}
+#product-selector ul li.selected {
+	background-color:#F78C0D;
+}
+#product-selector ul li.selected span {
+	color:#FFF;
+}
+#product-selector ul li.selected .product-price {
+	color:#FFF;
+}
+#product-selector .tip {
+	*zoom: 1;
+	position: relative;
+	top: -8px;
+	margin: 0 10px;
+}
+#product-selector .tip .arrow {
+	border-top: 0;
+	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
+	border-bottom: 8px solid #FD9A19;
+	_border-right-color: pink;
+	_border-left-color: pink;
+	_border-top-color: pink;
+	_filter: chroma(color=pink);
+	width: 0;
+	height: 0;
+	margin: 0 auto;
+}
+#product-selector .tip .message {
+	_margin-top: -8px;
+	background-color: #FD9A19;
+	padding: 7px 5px;
+	font: bold italic 11px georgia,serif;
+	color: #fff;
+	text-align: center;
+}
+
+
+/* Per-night product price */
+#product-pricing {
+	background-color: #FFF;
+	height: 61px;
+	color: #999;
+	font-size: 14px;
+	overflow: hidden;
+	border-bottom: 1px solid #ECECEA;
+    position: relative;
+}
+
+#product-pricing .our-price {
+	float: left;
+	_display: inline;
+	color: #000;
+    position: absolute;
+    left: 22px;
+    bottom: 10px;
+}
+
+#product-pricing .our-price .price {
+	font-size: 28px;
+}
+
+#product-pricing .compare {
+	text-align: right;
+}
+
+#product-pricing .other-price {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 10px;
+	color: #999
+}
+
+.package #product-pricing .other-price{
+	margin-top: 23px;
+	font-size: 14px;
+}
+
+#product-pricing .other-price del {
+	display: block;
+	font-size: 12px;
+}
+
+.package #product-pricing .other-price del{
+	display: inline;
+}
+
+
+#product-pricing .exclusive {
+	font-size: 11px;
+	color: #999;
+    width: 55px;
+    position: absolute;
+    right: 22px;
+    bottom: 10px;
+    top: 20px;
+}
+
+#product-pricing .title{
+	display: none;
+	line-height: 48px;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 12px;
+}
+
+#product-pricing.hide-price .our-price, #product-pricing.hide-price .other-price{
+	display: none;
+}
+
+#product-pricing.hide-price .title{
+	display: block;
+}
+
+#product-pricing .sub-text {
+    font-size: 10px;
+    color: #9b9b9b;
+}
+
+/* Trip builder */
+#calendar-overlay {
+	position:absolute;
+	top:0;
+	width:282px;
+	height:100%;
+	z-index:1;
+	background-color:#FFF;
+	opacity:0.7;
+	filter:alpha(opacity=70)
+}
+
+#calendar-overlay .loading {
+	width: 10em;
+	margin: 200px auto 0;
+	padding:18px 0 18px 35px;
+	color:#FFF;
+	background: #000 url(http://cdnx.jetcdn.com/static/images/layout/spinner-black.gif) no-repeat 10px 17px;
+}
+
+
+#trip-builder {
+	position: relative;
+	*zoom: 1;
+}
+
+#trip-builder .segment {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 6px 10px;
+	*zoom: 1;
+}
+#trip-builder .segment:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+#trip-builder .legend {
+	font-size: 12px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+}
+
+#trip-builder .legend li {
+	float: left;
+	_display: inline;
+	width: 86px;
+}
+
+#trip-builder .legend .icon {
+	float: left;
+	_display: inline;
+	height: 12px;
+	width: 12px;
+	margin: 1px 5px 0 0;
+	*font-size: 0;
+}
+
+
+#trip-builder .num-of-nights {
+	float: left;
+	_display: inline;
+	font-size: 10px;
+}
+#trip-builder .num-of-nights .num {
+	font-size: 28px;
+	color: #333;
+}
+
+
+
+#trip-builder .actions {
+	position: relative;
+	padding-top: 8px;
+	padding-bottom: 9px;
+}
+
+#trip-builder #subtotal {
+	_width: 110px;
+}
+
+#trip-builder #subtotal .label {
+	*zoom: 1;
+	font-size: 15px;
+	font-weight: bold;
+	color: #333;
+	vertical-align: 2px;
+	margin-right: 5px;
+}
+
+#trip-builder #subtotal .value {
+	font-size:21px;
+}
+
+
+#trip-builder .rooms {
+	float: right;
+	_display: inline;
+}
+
+
+#trip-builder .actions .hold {
+	float: left;
+}
+#trip-builder .actions .hold #hold-btn {
+	background: #ECEDE8;
+	width: 63px;
+	height: 36px;
+	margin-top: 5px;
+	font-size: 15px;
+	color: #7F807B;
+	font-weight: normal;
+}
+#trip-builder .actions .hold .hold-info {
+	display: block;
+	line-height: 10px;
+	font-size: 10px;
+	cursor: default;
+}
+
+#trip-builder .actions .standby-info {
+	cursor: default;
+	float: left;
+	_display: inline;
+	font-size: 11px;
+	margin-top: 11px;
+}
+
+#trip-builder .actions button.book {
+	float: right;
+	_display: inline;
+	width: 140px;
+}
+
+
+#trip-builder #quantity-list {
+	width: 120px; /* 140 - 10*2 */
+	border: none;
+	background: #000 url(http://cdnx.jetcdn.com/static/images/layout/gradient-sprites.png) repeat-x 0 -170px;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+#trip-builder #quantity-list div {
+	padding: 0;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/upcoming-arrow.png) no-repeat right center;
+	font-weight: bold;
+	line-height: 20px;
+	color: #333;
+}
+
+#trip-builder #quantity-list ul {
+	width: 138px; /* 140 - 2*1 */
+	border: 1px solid #e2e2e2;
+	left: 0;
+	top: 0;
+}
+
+#trip-builder #quantity-list ul li {
+	border: none;
+}
+
+#trip-builder #quantity-list ul li a {
+	padding: 10px;
+}
+
+
+#actions-tooltip .tooltip-content {
+	width: 150px;
+	line-height: 1.5;
+}
+
+
+
+/* Package Calendar */
+#packageCalendar p.intro {
+	text-align: center;
+	font: italic 13px/26px georgia,serif;
+}
+
+#packageCalendar .packages {
+	margin: 0 auto;
+	padding-top: 15px;
+	background: #F8F9F7;
+}
+
+#packageCalendar .packages li {
+	position: relative;
+	padding: 14px 20px;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0 3px 0 rgba(211, 211, 211, .75);
+	box-shadow: 0 3px 0 rgba(211, 211, 211, .75);
+	background-color: #F78C0D;
+	color: white;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+#packageCalendar .packages li.selected {
+	-webkit-box-shadow: 0 3px 0 rgba(211, 211, 211, .75);
+	box-shadow: 0 3px 0 rgba(211, 211, 211, .75);
+	background-color: #000;
+}
+
+#packageCalendar .packages li.waitlist {
+	background-color: #797979;
+	-webkit-box-shadow: 0 3px 0 rgba(211,211,211,.75);
+	box-shadow: 0 3px 0 rgba(211,211,211,.75);
+}
+
+#packageCalendar .packages li.waitlist-selected {
+	-webkit-box-shadow: 0 3px 0 rgba(211, 211, 211, .75);
+	box-shadow: 0 3px 0 rgba(211, 211, 211, .75);
+	background-color: #000;
+}
+
+#packageCalendar .packages li dl {
+	float: left;
+}
+
+#packageCalendar .packages li dl.checkin {
+	margin-right: 25px;	
+}
+
+#packageCalendar .packages li dt,
+#packageCalendar .packages li dd {
+	color: #fff;
+}
+
+#packageCalendar .packages li dt {
+	margin-right: 20px;
+}
+
+#packageCalendar .packages li dd {
+	color: #D7D8D6;
+}
+
+#packageCalendar .legend {
+	padding-left: 55px;
+}
+
+#packageCalendar .legend .available {
+	margin-right: 10px;
+}
+
+#packageCalendar .legend .available .icon {
+	background-image: -webkit-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: -moz-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: -o-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: -ms-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-color: #F78C0D;
+}
+
+#packageCalendar .legend .waitlist .icon {
+	background-color: #797979;
+	background-image: -webkit-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: -moz-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: -o-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: -ms-linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+	background-image: linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(255,255,255,.12) 100%);
+}
+
+
+#packageCalendar .package-info {
+	height: 26px;
+	padding: 20px 30px;
+}
+
+#packageCalendar .package-info #subtotal {
+	float: right;
+	_display: inline;
+	width: 144px;
+	margin-top: 2px;
+}
+
+#packageCalendar .package-info .num-of-nights {
+	margin-top: -5px;
+}
+
+
+/* User Discount Section */
+
+#user-discount{
+	height: 80px;
+	background: #FFF;
+	display: none;
+	position: relative;
+}
+
+#user-discount.showing{
+	margin-top: 23px;
+}
+
+#user-discount .box{
+	float: left;
+	width: 140px;
+	border-right: 1px solid #ededed;
+	height: 100%;
+}
+
+#user-discount .percent {
+    overflow: hidden;
+}
+
+#user-discount .price{
+	border-right: 0;
+    overflow: hidden;
+}
+
+#user-discount h5 {
+	text-align: center;
+	font-size: 13px;
+	color: black;
+	margin-top: 16px;
+}
+
+#user-discount .amount{
+	font-size: 27px;
+	color: #F78C0D;
+	text-align: center;
+	margin-top: 4px;
+}
+
+#user-discount .arrow{
+	border-top: 0;
+	border-right: 12px solid transparent;
+	border-left: 12px solid transparent;
+	border-bottom: 12px solid #FFF;
+	_border-right-color: pink;
+	_border-left-color: pink;
+	_border-top-color: pink;
+	_filter: chroma(color=pink);
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: -12px;
+	left: 38px;
+}
+
+/* Phone number below the right rail */
+#contact-number {
+    position: absolute;
+    right: 0;
+    padding: 13px 0;
+    color: #999;
+    font-size: 13px;
+    top: -44px;
+    text-align: right;
+    margin-bottom: -44px;
+}
+#contact-number .copy {
+	margin-right: 10px;
+}
+
+#contact-number .tel{
+	color: #000;
+	font-size: 15px;
+	margin-top: 5px;
+}
+
+
+/* Share modal */
+#share-modal .content {
+	width: 870px;
+	background: #dfdfdf url(http://cdnx.jetcdn.com/static/images/registration/bg.png) repeat-x 0 0;
+}
+
+#share-modal a.close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	*z-index: 1;
+}
+
+#share-modal h2 {
+	margin-bottom: 0;
+}
+
+#share-modal .banner h2 {
+	color: #666;
+}
+
+#share-modal .property {
+	/* The width is set dynamically in JS */
+	margin: 0 auto;
+	padding: 35px 0;
+}
+
+#share-modal .property img {
+	margin-right: 40px;
+}
+
+#share-modal .property h2 {
+	float: none;
+	max-width: 500px;
+	margin: 25px 0 5px;
+	*margin-bottom: 2px;
+	font-size: 27px;
+}
+
+#share-modal .property h4,
+#share-modal .property p {
+	font-family: georgia,serif;
+	line-height: 1.5;
+}
+
+#share-modal .property h4 {
+	color: #999;
+	*clear: left;
+}
+
+#share-modal form {
+	position: relative;
+	margin: 0 auto;
+	width: 770px;
+	border-top: 1px solid #ccc;
+	padding: 30px 0;
+	clear: both;
+}
+
+#share-modal label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #777;
+}
+
+#share-modal label span {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#share-modal p.error {
+	margin-bottom: 1em;
+}
+
+#share-modal .email-wrapper {
+	margin: 10px 0;
+}
+
+#share-modal input.text, #share-modal textarea {
+	border: 1px solid #ccc;
+	font-size: 13px;
+	color: #777;
+}
+
+#share-modal input.text {
+	width: 350px;
+	padding: 6px 5px;
+}
+
+#share-modal textarea {
+	width: 360px;
+	max-width: 360px;
+	margin: 10px 0;
+	padding: 5px;
+	height: 102px;
+}
+
+#share-modal p.details {
+	width: 385px;
+	clear: left;
+	padding-top: 30px;
+	font-size: 12px;
+	color: #999;
+}
+
+#share-modal .action {
+	font-size: 12px;
+}
+
+#share-modal .button-wrapper {
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+}
+
+#share-modal button.submit {
+	width: 180px;
+	background-color: #FF8100;
+	background: -webkit-linear-gradient(#FF8F00, #FF8100);
+	background: -moz-linear-gradient(#FF8F00, #FF8100);
+	background: -o-linear-gradient(#FF8F00, #FF8100);
+	background: -ms-linear-gradient(#FF8F00, #FF8100);
+	background: linear-gradient(#FF8F00, #FF8100);
+}
+
+
+/* Flash */
+.retail #content-header .flash-ribbon {
+    display:none;
+}
+
+
+
+
+/* New calendar stuff begins here */
+#trip-builder-2 {
+	position: relative;
+	background-color: #fff;
+	cursor: default;
+	*zoom: 1;
+}
+
+#trip-builder-2.loading input {
+    background-image: url('http://cdnx.jetcdn.com/static/images/registration/ajax-loader.gif');
+}
+
+#trip-builder-2 .hd {
+	position: relative;
+	padding: 18px 12px 18px 42px;
+	border-bottom: 1px solid #e5e5e5;
+	background-color: #fff;
+	color: #999;
+	font-size: 13px;
+	line-height: 1.2;
+	z-index: 2;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	*zoom: 1;
+}
+
+#trip-builder-2 .hd.promo-show{
+	background: #4b4a4d;
+	color: #FFF;
+}
+
+#trip-builder-2 .hd-open {
+	color: #4b4a4d;
+	border-bottom: 1px solid #fff;
+	_border-bottom: 1px solid #e5e5e5;
+}
+
+#trip-builder-2 .hd-open.promo-show{
+	border-bottom: 1px solid #4b4a4d;
+}
+
+#trip-builder-2 .is-ready {
+	color: #515151;
+	cursor: pointer;
+}
+
+#trip-builder-2 .hd .text {
+	width: 207px;
+}
+
+#trip-builder-2 .hd .arrow-icon {
+	position: absolute;
+	right: 15px;
+	top: 23px;
+	width: 11px;
+	height: 10px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/calendar-sprites.png?v3) no-repeat 0 0;
+}
+
+#trip-builder-2 .hd.promo-show .arrow-icon{
+	display: none;
+}
+
+#trip-builder-2 .hd-open .arrow-icon {
+	height: 11px;
+	top:22px;
+	background-position: -50px 0;
+}
+
+#trip-builder-2 .hd .type-icon {
+	position: absolute;
+	left: 15px;
+	top: 16px;
+	width: 17px;
+	height: 19px;
+	background: url(http://cdnx.jetcdn.com/static/images/property/product-cal.png) 0 0 no-repeat;
+}
+
+
+#trip-builder-2 .hd-open .bottom-arrow {
+	position: absolute;
+	left: 0;
+	bottom: -8px;
+	width: 100%;
+	height: 8px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/calendar-sprites.png?v3) repeat-x 0 -350px;
+	z-index: 1;
+	_display: none;
+}
+
+#trip-builder-2 .hd-open .bottom-arrow .arrow {
+	background: url(http://cdnx.jetcdn.com/static/images/layout/calendar-sprites.png?v3) no-repeat center -400px;
+	height: 8px;
+}
+
+#trip-builder-2 .hd-open.promo-show .bottom-arrow{
+	background: url(http://cdnx.jetcdn.com/static/images/layout/calendar-sprites.png?v3) repeat-x 0 -349px;
+}
+
+#trip-builder-2 .hd-open.promo-show .bottom-arrow .arrow{
+	background: url(http://cdnx.jetcdn.com/static/images/property/grey-nub.png) no-repeat 135px 0;
+}
+
+#trip-builder-2 .overlay,
+#trip-builder-2 .pricing-overlay,
+#trip-builder-2 .click-shield {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+}
+
+#trip-builder-2 .overlay {
+	background-color: #ededed;
+}
+
+#trip-builder-2 .pricing-overlay .spinner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 120px;
+	margin: -18px 0 0 -81px;
+	padding-left: 42px;
+	line-height: 35px;
+	background: #000 url(http://cdnx.jetcdn.com/static/images/layout/spinner-black.gif) no-repeat 15px 9px;
+	color: #fff;
+	font-size: 12px;
+	opacity: 0.7;
+	z-index: 4;
+}
+
+
+#trip-builder-2 .cta {
+	line-height: 40px;
+	color: #515151;
+	font-size: 12px;
+	font-family: georgia,serif;
+	font-style: italic;
+	text-align: center;
+}
+
+
+#trip-builder-2 #product-pricing {
+	color: #eee;
+}
+
+#trip-builder-2 #product-types .rate-plans input {
+    display: block;
+    position: absolute;
+    clip: rect(0,0,0,0);
+    clip: rect(0 0 0 0);
+}
+
+#trip-builder-2 #product-types .rate-plans input + label {
+    padding-left: 20px;
+    background-image: url("http://cdnx.jetcdn.com/static/images/property/radio.png");
+    background-repeat: no-repeat;
+}
+
+#trip-builder-2 #product-types .rate-plans input.checked + label {
+    background-position: 0 -35px;
+}
+
+#trip-builder-2 #product-types .rate-plans label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+#trip-builder-2 #product-types .rate-plans label .price {
+    top: 0;
+    right: 0;
+    font-size: 11px;
+}
+
+#trip-builder-2 #product-types {
+	position: relative;
+	_zoom: 1;
+}
+
+#trip-builder-2 #product-types li {
+	position: relative;
+	cursor: pointer;
+    border-bottom: solid 1px #f6f6f4;
+	*zoom: 1;
+	*display: inline;
+	*width: 252px;
+}
+#trip-builder-2 #product-types li .room-type-info {
+    padding: 10px 15px;
+}
+#trip-builder-2 #product-types li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#trip-builder-2 #product-types .thumb {
+	display: none;
+}
+
+#trip-builder-2 #product-types .info {
+	overflow: hidden;
+	font-size: 12px;
+	*zoom: 1;
+}
+
+#trip-builder-2 #product-types input {
+	display: none;
+}
+
+#trip-builder-2 #product-types .name {
+	width: 150px;
+	margin-bottom: 2px;
+	font-weight: bold;
+	color: #515151;
+	*font-size: 12px;
+}
+
+#trip-builder-2 #product-types .description {
+	line-height: 1.3;
+	color: #999;
+	padding-left: 1px;
+}
+
+#trip-builder-2 #product-types .price {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-weight: bold;
+}
+
+#trip-builder-2 #product-types .sold-out .name,
+#trip-builder-2 #product-types .sold-out .description,
+#trip-builder-2 #product-types .sold-out .price {
+	color: #aaa;
+}
+
+#trip-builder-2 #product-types .sold-out .price {
+	background-color:#444;
+	text-transform: uppercase;
+	border-radius: 4px;
+	font-weight:normal;
+	font-size: 10px;
+	padding:3px 6px;
+	color: #FFF;
+}
+#trip-builder-2 #product-types .selected.sold-out .price {
+	background-color: #ECEDE8;
+	color: #444;
+}
+
+#trip-builder-2 #product-types .hover {
+	background-color: #f5f6f3;
+}
+
+#trip-builder-2 #product-types .selected {
+	background-color: #505050;
+	color: #fff;
+}
+#trip-builder-2 #product-types .selected .name {
+	color: #fff;
+}
+
+#trip-builder-2 #product-types .additional {
+    display: none;
+}
+
+#trip-builder-2 #product-types .show-more {
+    padding: 15px;
+}
+
+#trip-builder-2 #product-types .rate-plans .divider {
+    visibility: hidden;
+    /*display: none;*/
+    width: 0px;
+    height: 0px;
+    margin: 0 auto 0 auto;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 10px 15px 0 15px;
+    border-color: #505050 transparent transparent transparent;
+}
+
+#trip-builder-2 #product-types .rate-plans {
+    background-color: #ecede8;
+    font-size: 12px;
+    color: #797979;
+    max-height: 0;
+    transition: max-height 1s;
+    overflow: hidden;
+}
+
+#trip-builder-2 #product-types .rate-plan-item {
+    margin: 8px 0;
+}
+
+#trip-builder-2 #product-types .rate-plan-item .rate-plan-name {
+    width: 160px;
+}
+
+#trip-builder-2 #product-types .rate-plans .items {
+    padding: 0 15px 10px 15px;
+}
+
+#trip-builder-2 #product-types .selected .rate-plans {
+    max-height: 160px;
+    transition: max-height 1s;
+}
+
+#trip-builder-2 #product-types .selected .rate-plans .divider {
+    display: block;
+    visibility: visible;
+}
+
+#trip-builder-2 #product-types .unavailable {
+	display: none;
+}
+
+
+#trip-builder-2 .promo-show .tooltip {
+	margin-top: 0;
+	padding-right: 10px;
+}
+
+#trip-builder-2 .promo-show .tooltip-content {
+	width: 350px;
+	padding: 15px;
+	text-align: left;
+}
+#trip-builder-2 .promo-show .tooltip-content:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#trip-builder-2 .promo-show .tooltip .name {
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #eee;
+	padding: 5px 20px;
+}
+
+#trip-builder-2 .promo-show .tooltip .type-icon {
+	width: 18px;
+	height: 20px;
+	margin-right: 14px;
+	background: url(http://cdnx.jetcdn.com/static/images/property/dollar.png) 0 0 no-repeat;
+}
+
+#trip-builder-2 .promo-show .description {
+	line-height: 1.3;
+	color: #999;
+}
+
+#trip-builder-2 .promo-show .tooltip .arrow {
+	background-position: -39px -248px;
+	width: 10px;
+	height: 19px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -10px;
+}
+
+#trip-builder-2 .promo-show .tooltip .info div {
+	color:#F78C0D;
+	margin-top:12px;
+}
+
+
+#trip-builder-2 #product-types .tooltip {
+	margin-top: 0;
+	padding-right: 10px;
+}
+
+#trip-builder-2 #product-types .tooltip-content {
+	width: 350px;
+	padding: 15px;
+	text-align: left;
+}
+#trip-builder-2 #product-types .tooltip-content:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+#trip-builder-2 #product-types .tooltip .thumb {
+	float: left;
+	display: inline;
+	margin-right: 15px;
+}
+
+#trip-builder-2 #product-types .tooltip .name {
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #eee;
+}
+
+#trip-builder-2 #product-types .tooltip .arrow {
+	background-position: -39px -248px;
+	width: 10px;
+	height: 19px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -10px;
+}
+
+#trip-builder-2 #product-types .tooltip .info div {
+	color:#F78C0D;
+	margin-top:12px;
+}
+
+#trip-builder-2 #occupancy {
+	position: relative;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#trip-builder-2 #occupancy li.option {
+	position: relative;
+	float: left;
+	_display: inline;
+	width: 140px;
+	margin: 10px 0;
+	padding: 5px 0;
+}
+
+#trip-builder-2 #occupancy .rooms {
+	border-right: 1px solid #e5e5e5;
+}
+
+#trip-builder-2 #occupancy .select-proxy {
+	display: block;
+	width: 34px;
+	margin: 5px auto 0;
+    cursor: pointer;
+    background: none;
+}
+
+#trip-builder-2 #occupancy .select-proxy-open {
+    background-color: none;
+}
+
+#trip-builder-2 #occupancy .select-proxy .selected {
+	_zoom: 1;
+    background: #ECEDE8;
+    color: #444;
+    text-align: center;
+    line-height: 34px;
+    height: 34px;
+    width: 34px;
+    border-radius: 17px;
+	padding: 0;
+}
+#trip-builder-2 #occupancy .select-proxy .selected:hover {
+	background: #505050;
+	color: #fff;
+}
+
+#trip-builder-2 #occupancy .select-proxy .options {
+    top: 0px;
+    border-radius: 17px;
+    background-color: none;
+    color: inherit;
+    text-align: center;
+    color: #444;
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+ 
+#trip-builder-2 #occupancy .select-proxy .option {
+    background-color: #fff;
+    display: block;
+    border-bottom: none;
+    border-top: 2px solid #eee;
+    padding: 7px 7px;
+}
+#trip-builder-2 #occupancy .select-proxy .option.hover {
+    color: inherit;
+    background-color: #ECEDE8;
+}
+#trip-builder-2 #occupancy .select-proxy .option.selected-option {
+    background-color: #505050;
+    color: #fff;
+}
+#trip-builder-2 #occupancy .select-proxy .option:first-child {
+    border-radius: 17px 17px 0 0;
+    border-top: none;
+    padding-top: 10px;
+}
+#trip-builder-2 #occupancy .select-proxy .option:last-child {
+    border-radius: 0 0 17px 17px;
+}
+
+#trip-builder-2 #occupancy h6 {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	color: #515151;
+}
+
+
+
+#order {
+	height: 46px;
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#order #subtotal {
+	float: left;
+	_display: inline;
+}
+
+#order #subtotal h4 {
+	font-size: 13px;
+	color: #000;
+}
+
+#order #subtotal .value {
+	display: block;
+	font-size: 26px;
+}
+
+
+#order button::-moz-focus-inner {
+	border: none;
+}
+
+#order .book {
+	float: right;
+	_display: inline;
+}
+
+.product #order .book{
+	margin-top: 7px;
+}
+
+#trip-builder .cta-button{
+	height: 36px;
+	background-color: #FF8100;
+	background: -webkit-linear-gradient(#FF8F00, #FF8100);
+	background: -moz-linear-gradient(#FF8F00, #FF8100);
+	background: -o-linear-gradient(#FF8F00, #FF8100);
+	background: -ms-linear-gradient(#FF8F00, #FF8100);
+	background: linear-gradient(#FF8F00, #FF8100);
+	color: #FFF;
+	cursor: pointer;
+	text-align: center;
+	font-size: 17px;
+	font-weight: normal;
+	margin-top: 5px;
+}
+
+#order .book button {
+	width: 86px;
+}
+
+#order #standby button {
+	width: 140px;
+}
+
+#order form {
+	float: right;
+	_display: inline;
+	_position: relative;
+	_z-index: -1;
+}
+
+#order form #standby,
+#order form #hold,
+#order form.standby .book-button {
+	display: none;
+}
+
+#order form.standby #standby,
+#order form.hold #hold {
+	display: block;
+}
+
+#order form #standby {
+	text-align: center;
+}
+
+
+#order #hold {
+	position: relative;
+	float: right;
+	_display: inline;
+	margin-right: 8px;
+	text-align: center;
+}
+
+#order #hold button {
+	background: #ECEDE8;
+	width: 63px;
+	height: 36px;
+	margin-top: 7px;
+	font-size: 17px;
+	color: #7F807B;
+	font-weight: normal;
+}
+#order #hold button:active {
+	background: #5b5b5b !important;
+}
+#order #hold button.disabled {
+	border: 1px solid #888;
+}
+
+.order-tooltip .tooltip-content {
+	width: 150px;
+	text-align: left;
+	line-height: 1.5;
+}
+
+/* Vouchers stuff */
+#voucher-selector {
+	background-color: #fff;
+}
+
+#voucher-selector .intro {
+	border-bottom: 1px solid #E1E1E1;
+	padding: 10px;
+	font: italic 13px/26px georgia,serif;
+	text-align: center;
+}
+
+#voucher-selector #order form {
+	_position: static;
+}
+
+#voucher-selector #order .book-button {
+	width: 140px;
+}
+
+#vouchers {
+	*position: relative;
+}
+
+#vouchers li.last {
+	margin-bottom: 0;
+}
+
+#vouchers li.hover {
+}
+
+#vouchers li.selected {
+	cursor: default;
+	*z-index: 1;
+}
+
+#vouchers .sold-out-copy {
+	margin: -12px -12px 12px;
+	padding: 2px 12px 4px;
+	background-color: #e5e5e5;
+	font-size: 11px;
+	font-weight: bold;
+	color: #999;
+	text-align: center;
+}
+
+#vouchers .hover .sold-out-copy {
+	background-color: #ccc;
+	color: #fff;
+}
+
+#vouchers .selected .sold-out-copy {
+	background-color: #F78C0D;
+	color: #fff;
+}
+
+#vouchers .sold-out-selected .sold-out-copy {
+	background-color: #000;
+	color: #fff;
+}
+
+#vouchers .sold-out-text{
+	display: none;
+	background: #000;
+	color: #FFF !important;
+	font-size: 14px;
+}
+
+#vouchers .voucher {
+	position: relative;
+	background: #FFF;
+	padding: 0 12px;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	*zoom: 1;
+	*z-index: -1;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+
+#vouchers .voucher header{
+	overflow: hidden;
+
+}
+
+#vouchers .voucher .name {
+	color: black;
+	margin-top: 20px;
+	font-size: 18px;
+}
+
+#vouchers .voucher .price {
+	float: left;
+	_display: inline;
+	font-size: 26px;
+	margin-bottom: 20px;
+	margin-top: 6px;
+}
+#vouchers .voucher .actual-value {
+	float: right;
+	_display: inline;
+	margin: 14px 0 10px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #999;
+}
+
+#vouchers .voucher .collapsible {
+	clear: both;
+	overflow: hidden;
+	background: #F8F9F7;
+	margin-left: -12px;
+	padding-left: 12px;
+	padding-right: 12px;
+	width: 100%;
+}
+
+#vouchers .description {
+	padding: 12px 0;
+	font-size: 12px;
+	line-height: 1.3;
+	color: #515151;
+}
+
+#vouchers .quantity {
+	padding: 10px 0;
+}
+
+#vouchers .quantity h6 {
+	float: left;
+	_display: inline;
+	margin-top: 5px;
+	*margin-top: 3px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333;
+}
+
+#vouchers .limit{
+	margin-left: -12px;
+	padding-right: 12px;
+	padding-left: 12px;
+	width: 100%;
+	border-top: 1px solid #E5E5E5;
+}
+
+#vouchers select {
+	display: none;
+}
+
+#vouchers .select-proxy {
+	float: left;
+	_display: inline;
+	margin-left: 10px;
+}
+
+#vouchers .notch {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 13px;
+}
+
+#vouchers .selected .notch,
+#vouchers .sold-out-selected .notch,
+#vouchers .hover .notch {
+	display: block;
+}
+
+#vouchers .notch .top,
+#vouchers .notch .bottom {
+	border: 3px solid;
+	_width: 0;
+	_font-size: 0;
+	_line-height: 0;
+	_filter: chroma(color=pink);
+}
+
+#vouchers .notch .top {
+	border-right-color: transparent;
+	border-top-color: transparent;
+	_border-right-color: pink;
+	_border-top-color: pink;
+}
+
+#vouchers .notch .bottom {
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	_border-right-color: pink;
+	_border-bottom-color: pink;
+}
+
+#vouchers .sold-out .notch {
+	top: 31px;
+}
+
+#vouchers .sold-out .quantity {
+	display:none;
+}
+
+#vouchers .hover .notch .top {
+	border-left-color: #ccc;
+	border-bottom-color: #ccc;
+}
+
+#vouchers .hover .notch .bottom {
+	border-left-color: #ccc;
+	border-top-color: #ccc;
+}
+
+#vouchers .selected .notch .top {
+	border-left-color: #F78C0D;
+	border-bottom-color: #F78C0D;
+}
+
+#vouchers .selected .notch .bottom {
+	border-left-color: #F78C0D;
+	border-top-color: #F78C0D;
+}
+
+#vouchers .sold-out-selected .notch .top {
+	border-left-color: #000;
+	border-bottom-color: #000;
+}
+
+#vouchers .sold-out-selected .notch .bottom {
+	border-left-color: #000;
+	border-top-color: #000;
+}
+
+/* Video Consult Modal */
+
+#video-consult-modal .canvas, #video-consult-modal .content{
+	height: 630px;
+	width: 600px;
+}
+
+#video-consult-modal .close{
+	display: none;
+}
+
+#video-consult-modal .close-btn{
+	height: 28px;
+	width: 28px;
+	background: #000;
+	color: #FFF;
+	-webkit-border-radius: 14px;
+	display: block;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	text-align: center;
+	line-height: 24px;
+	font-size: 26px;
+	text-decoration: none;
+}
+
+#video-consult-modal iframe{
+	border: 0;
+}
+
+/* ptp stuff */
+#ptp {
+	background-color: #fff;
+}
+
+#ptp #ptp-info {
+	padding: 20px 30px 25px 30px;
+	border-bottom: 1px solid #E1E1E1;
+}
+
+#ptp #title {
+	display: block;
+	font-size: 18px;
+	font-weight: 200;
+	color: #303030;
+}
+
+#ptp #description {
+	margin-top: 20px;
+	font-size: 14px;
+	color: #5E5E5E;
+	font-weight: 200;
+	line-height: 20px;
+}
+
+#ptp #action {
+	padding: 10px;
+	border-bottom: 1px solid #E5E5E5;
+	text-align: center;
+}
+
+#ptp #action button {
+	width: 160px;
+}
+
+#ptp #action #start-your-journey-video{
+	width: 190px;
+}
+
+#ptp-modal #ptpm1 {
+	width: 520px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/paper.png) no-repeat;
+}
+
+#ptp-modal #ptpm2 {
+	width:  520px;
+	height: 94px;
+}
+
+#ptp-modal #ptpm2 #ptpm2a {
+	width: 380px;
+	height: 34px;
+	display: inline-block;
+	float: left;
+	padding: 30px;
+	text-align: center;
+}
+
+#ptp-modal #ptpm2 #ptpm2a span {
+	font-size: 30px;
+	color: #303030;
+	margin-left: 50px;
+	font-weight: 200;
+}
+
+#ptp-modal #ptpm2 #close {
+	width: 80px;
+	height: 94px;
+	display: inline-block;
+	float: right;
+	cursor: pointer;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/close-button.png) no-repeat center;
+}
+
+#ptp-modal #ptpm3 {
+	width: 460px;
+	height: 400px;
+	background-color: #FFF;
+	border-top: 1px solid #DBDBDB;
+	border-bottom: 1px solid #DBDBDB;
+	padding: 27px 30px 12px 30px;
+}
+
+#ptp-modal #ptpm3 #ptpm3a {
+	width: 156px;
+	display: inline-block;
+	float: left;
+}
+
+#ptp-modal #ptpm3 #ptpm3a span {
+	font-weight: 500;
+	font-size: 14px;
+	color: #656565;
+	display: block;
+	width: 156px;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 10px;
+}
+
+#ptp-modal #ptpm3 #ptpm3b {
+	width: 304px;
+	display: inline-block;
+	float: right;
+}
+
+#ptp-modal #ptpm3 #ptpm3b input {
+	display: block;
+	border: 1px solid #DCDCDC;
+	width: 282px;
+	height: 38px;
+	margin-bottom: 10px;
+	font-size: 24px;
+	padding: 0 10px;
+	color: #656565;
+}
+
+#ptp-modal .error {
+	border: 1px solid #FF0000 !important;
+}
+
+#ptp-modal #ptpm3 #ptpm3b textarea {
+	display: block;
+	border: 1px solid #DCDCDC;
+	width: 292px;
+	height: 68px;
+	font-size: 18px;
+	color: #656565;
+	padding: 5px;
+	margin-bottom: 15px;
+}
+
+#ptp-modal #ptpm4 {
+	background: url(http://cdnx.jetcdn.com/static/images/layout/paper-bottom.png) no-repeat;
+	width: 456px;
+	height: 42px;
+	padding: 21px 32px 21px 32px;
+}
+
+#ptp-modal #ptpm4 #submit {
+	background: url(http://cdnx.jetcdn.com/static/images/layout/contact-us-button.png) no-repeat;
+	width: 205px;
+	height: 24px;
+	display: inline-block;
+	float: right;
+	cursor: pointer;
+	padding: 9px 15px;
+	margin-bottom: 15px;
+}
+
+#ptp-modal #ptpm4 #submit span {
+	font-size: 20px;
+	color: #FFF;
+	text-shadow: 0 -1px 0 #AAA;
+}
+
+#ptp-modal #ptp-tcc {
+	width: 302px;
+	height: 48px;
+	display: inline-block;
+	border: 1px solid #FFF;
+}
+
+#ptp-modal #ptp-tcc-box {
+	width: 20px;
+	height: 48px;
+	display: block;
+	float: left;
+}
+
+#ptp-modal #tcc-box {
+	border: 0 !important;
+	width: 16px !important;
+}
+
+#ptp-modal #ptp-tcc-copy {
+	width: 272px;
+	height: 48px;
+	display: block;
+	float: right;
+	padding-left: 10px;
+	font-size: 11px;
+	line-height: 17px;
+	color: #CCC;
+}
+
+#ptp-modal #ptp-ty {
+	width: 400px;
+	height: 52px;
+	background-color: #FFF;
+	padding: 65px 60px;
+	border-top: 1px solid #DBDBDB;
+}
+
+#ptp-modal #ptp-ty p {
+	font-size: 18px;
+	color: #909090;
+	font-weight: 200;
+	line-height: 23px;
+}
+
+.anonymous #trip-builder-2 #product-pricing,
+.anonymous #trip-builder-2 .price-tooltip,
+.anonymous #trip-builder-2 #product-types .price,
+.anonymous #trip-builder-2 .price-tooltip,
+.anonymous #order #subtotal,
+.anonymous #vouchers .voucher .price,
+.anonymous #vouchers .voucher .actual-value {
+	display: none !important;
+}
+
+.anonymous #vouchers .voucher .name {
+	margin-bottom: 10px;
+}
+
+
+/* Next/Previous sales */
+#sale-pagination {
+	margin: -15px 0 15px;
+}
+#sale-pagination a {
+	display: block;
+	color: #999;
+	font-size: 12px;
+	line-height: 1.1;
+	*zoom: 1;
+	_position: relative;
+}
+#sale-pagination a:hover {
+	color: #333;
+	text-decoration: none;
+}
+#sale-pagination .icon {
+	width: 28px;
+	height: 28px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/pdp-pagination-sprites.png) no-repeat;
+}
+#sale-pagination .label {
+	display: block;
+	font-weight: bold;
+}
+#sale-pagination .name {
+	display: block;
+	font-style: italic;
+	font-family: georgia,serif;
+}
+#sale-pagination .prev .icon {
+	float: left;
+	_display: inline;
+	margin-right: 10px;
+	background-position: 0 0;
+}
+#sale-pagination .next .icon {
+	float: right;
+	display: inline;
+	margin-left: 10px;
+	background-position: -50px 0;
+}
+#sale-pagination .prev a:hover .icon {
+	background-position: 0 -50px;
+}
+#sale-pagination .next a:hover .icon {
+	background-position: -50px -50px;
+}
+
+#sale-pagination .prev {
+	float: left;
+	_display: inline;
+	width: 450px;
+}
+
+#sale-pagination .next {
+	float: right;
+	_display: inline;
+	width: 450px;
+	text-align: right;
+}
+
+
+
+
+#similar-properties {
+	position: relative;
+	margin-top: 30px;
+	font-size: 12px;
+	*z-index: -1;
+}
+#similar-properties h3 {
+	padding-bottom: 10px;
+	font-weight: normal;
+	font-size: 18px;
+	color: #333;
+}
+#similar-properties a {
+	font-weight: bold;
+}
+#similar-properties ul {
+	border-bottom: 1px solid #cbcbcb;
+}
+#similar-properties li {
+	padding: 15px 0;
+	border-top: 1px solid #cbcbcb;
+}
+#similar-properties .thumb {
+	float: left;
+	_display: inline;
+	margin-right: 15px;
+}
+#similar-properties .info {
+	overflow: hidden;
+	_zoom: 1;
+}
+#similar-properties .name {
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#similar-properties .cta {
+	display: -moz-inline-box;
+	display: inline-block;
+	margin-top: 0.8em;
+}
+#similar-properties .more {
+	position: absolute;
+	top: .4em;
+	right: 0;
+}
+
+#fb-widget {
+	margin-top: 20px;
+}
+
+/* FB Photo Like Placement */
+
+.fb-photo-like{
+    display: block;
+    visibility: visible;
+	top: 13px;
+	right: 13px;
+}
+
+.fb-photo-like p{
+	padding: 0 !important;
+}
+
+
+/* Villa specific-stuff */
+#weather table {
+	float: left;
+	_display: inline;
+	border-collapse: collapse;
+	font-size: 12px;
+	font-weight: bold;
+}
+#weather th,
+#weather td {
+	border: 1px solid #d2d2d2;
+	text-align: center;
+	vertical-align: middle;
+}
+#weather th {
+	background-color: #f6f6f6;
+	line-height: 30px;
+}
+
+#weather .current .description,
+#weather .outlook .bars td {
+	height: 85px;
+	padding-top: 12px;
+	vertical-align: top;
+}
+#weather .current .value,
+#weather .outlook .values td {
+	height: 45px;
+}
+
+
+#weather .current {
+	width: 105px;
+}
+#weather .current tbody {
+	color: #333;
+}
+#weather .current .icon {
+	width: 50px;
+	height: 35px;
+	margin: 0 auto 5px;
+	background: #999;
+}
+#weather .current .value {
+	font: italic 24px georgia,serif;
+}
+
+#weather .outlook {
+	width: 436px;
+	margin-left: 10px;
+}
+#weather .outlook .bar {
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 60px;
+}
+#weather .outlook .bar .value {
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+#weather .outlook .hot {
+	background-color: #F78C0D;
+}
+#weather .outlook .cold {
+	background-color: #38e;
+}
+#weather .outlook .values td {
+	height: 45px;
+	line-height: 1.3
+}
+#weather .outlook .avg-temp {
+	color: #333;
+}
+
+
+.villa #editorial-review p.first {
+	margin-bottom: 0;
+}
+.villa #editorial-review .action {
+	margin-top: 1em;
+}
+
+.villa #overview #about-the-area {
+	margin-bottom: 0;
+}
+.villa #overview a.about-the-area {
+	margin-bottom: 30px;
+}
+
+.villa #area .col-wrapper {
+	padding-top: 20px;
+	border-top: 1px solid #EDEDED;
+}
+.villa #area #about-the-area {
+	padding: 0 0 1em;
+	border-top: 0;
+	border-bottom: 1px solid #EDEDED;
+}
+
+
+#review-items {
+	border-bottom: 1px solid #EDEDED;
+	padding-bottom: 20px;
+}
+#review-items .review-item {
+	border-top: 1px solid #EDEDED;
+	margin-top: 20px;
+	padding-top: 5px;
+}
+#review-items img {
+	float: left;
+	_display: inline;
+	margin-right: 20px;
+}
+#review-items .description {
+	overflow: hidden;
+	_zoom: 1;
+}
+#review-items ul {
+	list-style-type: disc;
+	padding-left: 1.2em;
+}
+#review-items ul li {
+	margin-bottom: .5em;
+	font-size: 12px;
+}
+.villa #details h2 {
+	border-bottom: 0;
+	margin-bottom: .5em;
+	padding-bottom: 0;
+}
+
+.villa #details-intro {
+	position: relative;
+}
+.villa #details-intro .rental-agreement {
+	position: absolute;
+	right: 0;
+	top: 1em;
+	font-size: 12px;
+}
+.villa #details-intro .rental-agreement a:hover {
+	text-decoration: none;
+}
+.villa #details-intro .rental-agreement a:hover .text {
+	text-decoration: underline;
+}
+.villa #details-intro .rental-agreement .icon {
+	display: inline-block;
+	height: 16px;
+	width: 13px;
+	margin: 0 3px -3px 0;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/product-sprites.png?v11) no-repeat -150px 0;
+}
+
+.villa #product-types,
+.villa #occupancy .rooms,
+.villa #occupancy h6 {
+	display: none;
+}
+
+.villa #trip-builder-2 #occupancy li.guests {
+	float: none;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 0 25px;
+	border-top: 0;
+	text-align: center;
+}
+
+.villa #trip-builder-2 #occupancy label {
+	margin-right: 5px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.villa #trip-builder-2 #occupancy .select-proxy {
+	display: inline-block;
+	text-align: left;
+}
+
+.villa #location a.see-full {
+	display:none;	
+}
+
+#occupancy-details {
+	margin-top: 20px;
+	text-align: center;
+	background-color: #fff;
+	color: #333;
+}
+#occupancy-details .room li {
+	float: left;
+	_display: inline;
+	border-right: 1px solid #dcdcdc;
+	border-bottom: 1px solid #dcdcdc;
+	width: 140px;
+	line-height: 46px;
+	font-size: 12px;
+}
+#occupancy-details .room  li.last {
+	width: 141px;
+	border-right: 0;
+}
+#occupancy-details .room .value {
+	font-size: 24px;
+}
+
+#occupancy-details .room li.na .value {
+	font-size: 18px;
+}
+
+#occupancy-details .amenities {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+#occupancy-details .per-row-6 {
+	width: 15em;
+}
+#occupancy-details .per-row-5 {
+	width: 13em;
+}
+#occupancy-details .per-row-4 {
+	width: 11em;
+}
+
+#occupancy-details .amenities span {
+	display: inline-block;
+	margin-bottom: 5px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/amenities-sprites.png?v2) no-repeat 0 0;
+	width: 30px;
+	height: 30px;
+	text-indent: -999em;
+	overflow: hidden;
+}
+#occupancy-details .amenities .all-inclusive {
+	background-position: ;
+}
+#occupancy-details .amenities .pool {
+	background-position: -270px 0;
+}
+#occupancy-details .amenities .pet-friendly {
+	background-position: -120px 0;
+}
+#occupancy-details .amenities .parking-on-site {
+	background-position: ;
+}
+#occupancy-details .amenities .kids-club {
+	background-position: ;
+}
+#occupancy-details .amenities .handicap-accessible {
+	background-position: ;
+}
+#occupancy-details .amenities .bar {
+	background-position: -300px 0;
+}
+#occupancy-details .amenities .babysitting {
+	background-position: ;
+}
+#occupancy-details .amenities .golf-course {
+	background-position: ;
+}
+#occupancy-details .amenities .eco-friendly {
+	background-position: ;
+}
+#occupancy-details .amenities .casino {
+	background-position: ;
+}
+#occupancy-details .amenities .restaurant {
+	background-position: ;
+}
+
+/* Villa 500 banner */
+
+.villa #homes-pdp-banner{
+	width: 100%;
+	height: 74px;
+	background: url(http://cdnx.jetcdn.com/static/images/marketing/homes-pdp-banner.png) 0 0 no-repeat;
+	margin: -27px 0 18px 0;
+	display: none;
+}
+
+
+/* Pinterest Banner */
+#pinterest-banner {
+	margin-bottom: 30px;
+	width: 920px;
+	height: 62px;
+	background:url(http://cdnx.jetcdn.com/static/images/marketing/pinterest/pinterest-banner-bg.png) no-repeat;
+	display: none;
+}
+
+#pinterest-see-how-button {
+	width: 642px;
+	height: 100%;
+	float: left;
+}
+
+#pinterest-actions-container {
+	width: 278px;
+	height: 100%;
+	float: left;
+}
+
+#pinterest-pin-it-container {
+	margin-left: 24px;
+	margin-top: 20px;
+	float: left;
+}
+
+#pinterest-follow-container {
+	margin-left: 20px;
+	margin-top: 17px;
+	float: left;
+}
+
+
+/* Public Facing PDP Changes */
+
+.public #info .section {
+	display: block;
+}
+
+.public #review{
+	position: relative;
+}
+
+.public #what-to-do, .public #reviews{
+	position: relative;
+	max-height: 460px;
+	_height: 460px;
+	overflow: hidden;
+}
+
+.public #editorial-review{
+	position: relative;
+}
+
+.public .fader-wrap{
+	display: block;
+}
+
+.fader-wrap{
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 195px;
+}
+
+.fader-wrap .fade{
+	height: 72px;
+	background: url(http://cdnx.jetcdn.com/static/images/property/fader-grey.png) top center repeat;
+	_background: #f5f5f5;
+}
+
+.fader-wrap .fader{
+	width: 100%;
+	height: 123px;
+	background: #f5f5f5;
+	overflow: hidden;
+}
+
+.fader-wrap .fader .cta-button{
+	line-height: 35px;
+	height: 35px;
+	width: 220px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	vertical-align: top;
+	margin: 0 auto;
+}
+
+.fader-wrap .fader p{
+	color: #878787;
+	text-align: center;
+	margin: 0px 0 19px 0;
+}
+
+.public #what-to-do{
+	max-height: 170px;
+	_height: 170px;
+}
+
+#what-to-do .fader-wrap{
+	height: 133px;
+}
+
+#what-to-do .fader-wrap .fader{
+	height: 61px;
+}
+
+#what-to-do .fader p{
+	line-height: 45px;
+}
+
+#reviews .fader-wrap{
+	height: 247px;
+}
+
+#review .fader-wrap .fade, #reviews .fader-wrap .fade, #editorial-review .fader-wrap .fade{
+	height: 126px;
+	background: url(http://cdnx.jetcdn.com/static/images/property/fader-white.png) top center repeat;
+	_background: #FFF;
+}
+
+#review .fader-wrap .fade{
+	height: 91px;
+}
+
+#review .fader, #reviews .fader, #editorial-review .fader{
+	background: #FFF;
+}
+
+.public .reviews{
+	display: none;
+}
+
+#product-details #product-pricing.sem {
+	height: 72px;
+}
+
+#product-pricing .our-price .non-disc{
+	color: #999999;
+	margin-top: 6px;
+}
+
+#product-pricing .our-price .non-disc .price.upd{
+	color: #999999;
+	font-size: 12px;
+}
+
+#product-details.sem #subtotal .non-disc {
+	color: #999999;
+	font-size: 12px;
+	margin-top: 9px;
+}
+
+#product-details.sem #subtotal .non-disc .price {
+	color: #999999;
+	display: inline;
+	font-size: 14px;
+}
+
+/* Splash Invite */
+
+#splash-invite {
+	background-color: #fff;
+	margin-top: 20px;
+	font-size: 12px;
+	_zoom: 1;
+}
+
+#splash-invite .bd{
+	padding: 23px;
+}
+
+#splash-invite .icon{
+	background: url(http://cdnx.jetcdn.com/static/images/property/invite.jpg) 0 0 no-repeat;
+	width: 107px;
+	height: 103px;
+	margin: 0 auto 20px;
+}
+
+#splash-invite .bd h3{
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+}
+
+#splash-invite p {
+	margin: 15px 0;
+	line-height: 1.3;
+	color: #777;
+	font-size: 15px;
+	text-align: center;
+}
+
+#splash-invite .email{
+	font-size: 12px;
+	height: 14px;
+	line-height: 16px;
+	background: #ECEDE9;
+	border: 0;
+	padding-left: 20px !important;
+	width: 216px;
+	padding: 11px 0;
+	border-top: 1px solid #C9CAC6;
+	border-left: 1px solid #C9CAC6;
+	outline: none;
+	margin-bottom: 11px;
+}
+
+#splash-invite .hd{
+	border-top: 1px solid #E5E5E5;
+	padding: 23px;
+}
+
+#splash-invite .add-more {
+	width: 100%;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	border-color: #E5E5E5;
+	background: #FDFDFD;
+	background-color: #FDFDFD;
+	background: -webkit-linear-gradient(#FDFDFD, #F6F6F6);
+	background: -moz-linear-gradient(#FDFDFD, #F6F6F6);
+	background: -o-linear-gradient(#FDFDFD, #F6F6F6);
+	background: -ms-linear-gradient(#FDFDFD, #F6F6F6);
+	background: linear-gradient(#FDFDFD, #F6F6F6);
+	color: #000;
+	font-size: 14px;
+	text-shadow: none;
+}
+
+#splash-invite .add-more:active {
+	background: #F6F6F6;
+	background-color: #F6F6F6 !important;
+	background: -webkit-linear-gradient(#F6F6F6, #FDFDFD) !important;
+	background: -moz-linear-gradient(#F6F6F6, #FDFDFD) !important;
+	background: -o-linear-gradient(#F6F6F6, #FDFDFD) !important;
+	background: -ms-linear-gradient(#F6F6F6, #FDFDFD) !important;
+	background: linear-gradient(#F6F6F6, #FDFDFD) !important;
+}
+
+#splash-invite .button-wrapper button{
+	background: #FF8100;
+	background-color: #FF8100;
+	background: -webkit-linear-gradient(#FF8F00, #FF8100);
+	background: -moz-linear-gradient(#FF8F00, #FF8100);
+	background: -o-linear-gradient(#FF8F00, #FF8100);
+	background: -ms-linear-gradient(#FF8F00, #FF8100);
+	background: linear-gradient(#FF8F00, #FF8100);
+	width: 100%;
+}
+
+#splash-invite .sent-view .manage{
+	text-align: center;
+	margin-top: 15px;
+	display: block;
+}
+
+/*#splash-invite .cta-button {
+	height: 35px;
+	border: 1px solid #D87114;
+	background: #FF892B url(http://cdnx.jetcdn.com/static/images/layout/gradient-sprites.png?v2) repeat-x 0 0;
+	font-size: 16px;
+	font-weight: normal;
+}*/
+
+#splash-invite input, #splash-invite textarea {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #333;
+}
+
+/* End -- Splash Invite */
+
+/* Virgin Flight Modal */
+
+#virgin-modal .content{
+	width: 500px;
+	height: 455px;
+	margin: 0 auto;
+}
+
+#virgin-modal .canvas{
+	width: 500px;
+	height: 100%;
+	overflow: hidden;
+}
+
+#virgin-modal a.close{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+#virgin-modal h1{
+	text-align: center;
+	color: #000;
+	margin: 20px 0;
+}
+
+#virgin-modal .select-wrap{
+	padding: 7px 0;
+	width: 100%;
+	background: whitesmoke;
+	text-align: center;
+}
+
+#virgin-modal .select-wrap select{
+	display: inline-block;
+}
+
+#property-countdown{
+	position: absolute;
+	z-index: 200;
+	height: 97px;
+	width: 198px;
+	top: 0;
+	right: 0;
+}
+
+#property-countdown .clock{
+	height: 18px;
+	width: 117px;
+	background: url(http://cdnx.jetcdn.com/static/images/property/rolling-banner.png) 0 0 no-repeat;
+	display: block;
+	margin: 12px auto 0;
+}
+
+#property-countdown .countdown-wrap{
+	display: block;
+	width: 310px;
+	height: 38px;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-o-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	position: absolute;
+	top: 24px;
+	left: -56px;
+}
+
+#property-countdown .countdown-wrap-ie{
+	zoom: 0.6;
+	width: 600px;
+	top: 60px;
+	left: 10px;
+	*top: 35px;
+	*left: 5px;
+}
+
+.sliding-countdown-unit-digit{
+	margin: 5px 7px;
+}
+
+.sliding-countdown-seperator{
+	left: 94px;
+}
+
+#content-header.countdown .name{
+	max-width: 405px;
+}
+
+#no-inventory {
+	width: 995px;
+	height: 84px;
+	background-color: #FFF;
+	margin: 30px auto 0 auto;
+	box-shadow: 0px 2px 4px #CCC;
+}
+
+#no-inventory-img {
+	width: 104px;
+	height: 84px;
+	display: inline-block;
+	background: url(http://cdnx.jetcdn.com/static/images/property/calendar.png) center no-repeat;
+	float: left;
+}
+
+#no-inventory-message {
+	width: 820px;
+	height: 84px;
+	display: inline-block;
+	float: right;
+	font-size: 22px;
+	color: #565656;
+	line-height: 84px;
+	font-weight: 200;
+}
+
+
+/* PDP Version 2 Specific Styles */
+
+.pdp-v2 .short-intro{
+	overflow: hidden;
+}
+
+.pdp-v2 .short-intro .large { 
+	font-size: 22px; 
+	color: #999; 
+	line-height: 28px; 
+	letter-spacing: 0px; 
+	margin-bottom: 24px; 
+} 
+
+.pdp-v2 .short-intro .curator{
+	font-size: 15px !important;
+	color: #000;
+	font-style: normal;
+	margin-bottom: 30px;
+	display: block;
+}
+
+.pdp-v2 #review-items{
+	border-bottom-color: #FFF;
+}
+
+.pdp-v2 #review-items .review-item { 
+	border-top-color: white; 
+	width: 98%; 
+	padding-left: 0%; 
+	margin-top: 0; 
+} 
+
+.pdp-v2 #review-items .review-item.first{
+	padding-top: 0;
+}
+
+.pdp-v2 #review-items .review-item h2 {
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+
+
+#product-options .hd { display: none; }
+#product-options .hd.promo-show {
+    display: block;
+}
+
+#calendar { display: block; }
+
+#product-pricing {
+    height: 70px;
+    position: relative;
+}
+
+#calendar .monthly-calendar {
+    position: absolute;
+}
+#calendar {
+    text-align: center;
+    padding-bottom: 20px;
+}
+#calendar input {
+    font-size: 14px;
+    background: #fff url('http://cdnx.jetcdn.com/static/images/property/grey-calendar.png') no-repeat 212px;
+    padding: 12px;
+    font-size: 14px;
+    color: #6e6f6f;
+    width: 211px;
+    cursor: pointer;
+    border: solid 1px #ccc;
+}
+
+#calendar .checkin-field,
+#calendar .checkout-field {
+    position: relative;
+}
+
+#calendar .checkin-calendar-input {
+    margin-top: 17px;
+}
+#calendar .checkout-calendar-input {
+    margin-top: 10px;
+}
+#calendar .show-prices-button-container {
+    position: relative;
+}
+#calendar .show-prices-button-container .tooltip {
+    width: 150px;
+}
+
+#calendar .popup-calendar.test-default {
+    width: 250px;
+    left: 22px;
+    padding: 0 16px 16px;
+    font-family: "Tenor Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+    border: solid 1px #ccc;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#calendar .popup-calendar.test-default  .controls{
+    font-size: 13px;
+}
+
+#calendar .popup-calendar.test-default  .legend {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+#calendar .popup-calendar.test-default  .controls a{
+    line-height: 34px;
+}
+
+#calendar .popup-calendar.test-default  .controls .current-month{
+    line-height: 34px;
+}
+
+#calendar .popup-calendar.test-default  td{
+    width: 34px;
+    height: 26px;
+}
+
+#calendar .reset-cal {
+    display: none;
+}
+
+.breadcrumbs {
+    position: relative;
+    top: -26px;
+    font-size: 11px;
+    line-height: 11px;
+    height: 11px;
+    margin-bottom: -11px;
+}
+
+.breadcrumbs a {
+    color: #6c6c6c;
+    text-decoration: none;
+}
+
+.breadcrumbs .current {
+    color: #000;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+#cross-sell .content {
+    width: 1245px;
+}
+
+#cross-sell li {
+    margin-left: 71px;
+}
+
+/* override global styles to increase width */
+
+#footer {
+    width: auto;
+    min-width: 1245px; /* for ipad */
+}
+
+#cross-sell {
+    width: auto;
+    min-width: 1245px; /* for ipad */
+}
+
+header#main, header#main .header-wrap {
+    min-width: 1245px;
+}
+
+.ad-module {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+#content-header .get-rates {
+    display: none;
+}
+
+/* ab20381 sprint 2: hide dateless rate summary */
+.ab20381_B #content-header .dateless .savings {
+    display: none;
+}
+
+.ab20381_B #content-header .dateless .get-rates {
+    display: inline;
+}
+
+.ab20381_B #content-header .dateless .book-now {
+    display: none;
+}
+
+.ab20381_B #content-header .book.button {
+    width: auto;
+    padding: 0 20px;
+}
+.keywords ul li{
+    list-style-type: none;
+    float: left;
+    height: 37px;
+    width: 37px;
+    background-image: url(http://cdnx.jetcdn.com/static/images/property/amenities-icon-sprite.png?v=1);
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+.keywords ul li.free-wifi{ background-position: 0px 0px; }
+.keywords ul li.gym{ background-position: -74px 0px; }
+.keywords ul li.restaurant{ background-position: 0 -37px; }
+.keywords ul li.bar{ background-position: -74px -37px; }
+.keywords ul li.pool{ background-position: -148px -37px; }
+.keywords ul li.room-service{ background-position: -37px 0; }
+.keywords ul li.pet-friendly{ background-position: -185px 0; }
+.keywords ul li.spa{ background-position: -148px 0; }
+.keywords ul li.adults-only{ background-position: -37px -37px; }
+.keywords ul li.all-inclusive,
+.keywords ul li.all-inclusive-resorts{ background-position: -111px -37px; }
+.keywords ul li.parking-on-site{ background-position: -185px -37px; }
+.keywords ul li.handicap-accessible{ background-position: 0 -74px; }
+.keywords ul li.golf,
+.keywords ul li.golf-course,
+.keywords ul li.golf-getaway{ background-position: -148px -74px; }
+.keywords ul li.casino{ background-position: -74px -74px; }
+.keywords ul li.eco-friendly,
+.keywords ul li.eco-friendly-retreats{ background-position: -37px -74px; }
+.keywords ul li.babysitting{ background-position: -111px -74px; }
+.keywords ul li.kids-club{ background-position: -185px -74px; }
+
+.keywords.small ul li {
+    background-image: url(http://cdnx.jetcdn.com/static/images/property/amenities-icon-sprite-small.png?v=1);
+}
+#gallery-modal .content {
+	position: relative;
+	width: 1200px;
+	padding: 40px 10px 20px;
+	background-color: #000;
+	color: #eee;
+}
+#gallery-modal .gallery {
+	position: relative;
+	margin-bottom: 20px;
+	_zoom: 1;
+}
+#gallery-modal .images {
+	height: 600px;
+	z-index: 1;
+}
+#gallery-modal .images li {
+	position: absolute;
+}
+#gallery-modal .images img {
+	display: block;
+}
+#gallery-modal .images .caption {
+	width: 400px;
+	margin: 25px auto 0;
+	background-color: #000; /* For better transitions */
+	font-size: 13px;
+}
+
+#gallery-modal .nav {
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+	width: 120px;
+	height: 63px;
+	margin-top: -31px;
+	_height: 600px;
+	cursor: pointer;
+	background-image: url(http://cdnx.jetcdn.com/static/images/layout/blank.gif)\9;
+}
+#gallery-modal .previous,
+#gallery-modal .previous a {
+	left: 0;
+}
+#gallery-modal .next,
+#gallery-modal .next a {
+	right: 0;
+}
+#gallery-modal .nav a {
+	position: absolute;
+	top: 50%;
+	margin-top: -31px;
+	line-height: 31px;
+	vertical-align: middle;
+	color: #eee;
+	font-size: 14px;
+	text-shadow: 0 1px 0 #000;
+	background-color: rgba(0,0,0,.8);
+	background-color: #000\9;
+	padding: 15px;
+	opacity: 0.8;
+}
+#gallery-modal .nav:hover a {
+	opacity: 1;
+}
+#gallery-modal .nav a:hover {
+	text-decoration: none;
+}
+#gallery-modal .nav .icon {
+	display: inline-block;
+	width: 17px;
+	height: 31px;
+	background: url(http://cdnx.jetcdn.com/static/images/layout/gallery-sprites.png?v4) no-repeat;
+	vertical-align: middle;
+}
+#gallery-modal .previous .icon {
+	background-position: 0 -50px;
+	margin-right: 10px;
+}
+#gallery-modal .next .icon {
+	background-position: -50px -50px;
+	margin-left: 10px;
+}
+
+#gallery-modal .gallery-dots {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	z-index: 1;
+}
+
+#gallery-modal .meta {
+	float: left;
+	_display: inline;
+	width: 390px;
+}
+#gallery-modal .meta .title {
+	font-size: 24px;
+}
+#gallery-modal .byline {
+	margin-top: .3em;
+	font: 14px georgia,serif;
+	color: #777;
+}
+#gallery-modal .pin-it {
+	position: absolute;
+	right: 0;
+	top: 625px;
+}
+
+#gallery-modal .close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	white-space: nowrap;
+}
+
+
+#gallery-modal ul.share-center {
+    position: absolute;
+    margin: 0;
+    left: auto;
+    top: auto;
+    right: 10px;
+    bottom: 20px;
+    background-color: #222;
+    opacity: 1;
+}
+
+/* Snique Welcome Modal */
+#snique-welcome-modal .content {
+	width: 850px;
+	padding: 0;
+}
+
+#snique-welcome-modal a.close {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	z-index: 1;
+}
+
+/* Slides */
+#snique-slides {
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+#snique-slides .slides {
+	height: 360px;
+}
+
+#snique-slides .slide-header {
+	height: 140px;
+	background: #ECEDE9;
+	border-bottom: 1px solid #DEDFDB;
+}
+
+#snique-slides .slide-header h2 {
+	text-align: center;
+	width: 100%;
+	color: #000;
+	font-size: 40px;
+	margin-top: 50px;
+}
+
+#snique-slides .slide {
+	height: 280px;
+	padding: 40px 0;
+	font-size: 17px;
+	color: #8f8f8f;
+}
+
+#snique-slides .slide {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#snique-slides .slide b {
+	color: #000;
+}
+
+#snique-slides .slide .credit-explanation {
+	border: 1px solid #f78c36;
+	padding: 10px;
+	width: 50%;
+	margin: 40px auto;
+	color: #444;
+}
+
+#snique-slides .slide .credit-explanation .snique-credit {
+	font-size: 60px;
+	color: #f78c36;
+	margin: 10px 0 5px 0;
+}
+
+#snique-slides .slide .credit-explanation .info {
+	font-size: 0.75em;
+	color: #aaa;
+}
+
+#snique-slides .slide .credit-explanation .info .total-credit {
+	color: #f78c36;
+}
+
+#snique-slides .slide .slide-image {
+	margin: auto;
+}
+
+#snique-slides .slide-footer {
+	padding: 15px 30px;
+	height: 60px;
+	background: #ECEDE9;
+	border-top: 1px solid #DEDFDB;
+}
+
+#snique-slides .slide-footer .next-button {
+	float: right;
+	margin-bottom: 5px;
+	padding: 0 40px 0 20px;
+	height: 40px;
+	width: 150px;
+	text-align: center;
+	line-height: 40px;
+	border: 0;
+	font-size: 16px;
+	color: white;
+	background: #FF8200 url(http://cdnx.jetcdn.com/static/images/layout/arrow-triangular-right.png) no-repeat 190px 5px;
+	cursor: pointer;
+}
+
+#snique-slides .slide-footer .no-thanks {
+	float: right;
+	font-size: 0.75em;
+	color: #f78c36;
+	cursor: pointer;
+}
+
+/* Snique Welcome Modal */
+#ta-landing-modal .content {
+  width: 838px;
+  padding: 0;
+}
+
+#ta-landing-modal a.close {
+  display: none;
+}
+
+#ta-landing-modal .slide-1 {
+  background-image: url('http://cdnx.jetcdn.com/static/images/ta-landing-modal/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#ta-landing-modal .slide-1 p {
+  line-height: 28px;
+  font-size: 18px;
+  color: #FFF;
+  margin-bottom: 25px;
+  font-family: 'Tenor Sans', Helvetica Neue Light, Helvetica, Arial, sans-serif !important;
+}
+
+#ta-landing-modal .slide-1 button {
+  width: 150px;
+  font-size: 14px;
+}
+
+/* Slides */
+#ta-landing-modal-slides {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+#ta-landing-modal-slides .slides {
+  height: 325px;
+}
+
+#ta-landing-modal-slides .slide-header {
+  height: 120px;
+}
+
+#ta-landing-modal-slides .slide-header h2 {
+  text-align: center;
+  width: 100%;
+  color: #000;
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+#ta-landing-modal-slides .slide {
+  height: 289px;
+  padding-top: 40px;
+  font-size: 17px;
+  color: #8f8f8f;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#ta-landing-modal-slides .slide-footer {
+  padding: 30px;
+  /* height: 60px; */
+  background: #ECEDE9;
+  border-top: 1px solid #DEDFDB;
+}
+
+#ta-landing-modal-slides .slide-footer .jetsetter-logo {
+  height: 25px;
+  background-image: url('http://cdnx.jetcdn.com/static/images/registration/jetsetterLogo.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+#ta-landing-modal-slides .slide-footer .trip {
+  text-align: right;
+  font-size: 12px;
+}
+.room-selector.no-inventory {
+    display: none;
+}
+
+.room-selector {
+    border-bottom: solid 1px #e2e2e2;
+    margin: 43px 0 50px 0;
+}
+
+.room-selector h2 {
+    margin-bottom: 0px;
+    font-size: 24px;
+}
+
+.room-selector .enter-dates-txt {
+    color: #787878;
+    font-size: 18px;
+    max-height: 40px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+.room-selector.rates-available { border-bottom-color: transparent; }
+.room-selector.has-searched .enter-dates-txt { max-height: 0; }
+
+
+.room-selector .search-form {
+    margin-top: 5px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.room-selector .search-form .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.room-selector .search-form .input-wrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.room-selector .search-form.loading .checkin-calendar-input,
+.room-selector .search-form.loading .checkout-calendar-input {
+    background-image: url('http://cdnx.jetcdn.com/static/images/registration/ajax-loader.gif');
+}
+
+
+.room-selector .search-form .checkin-calendar-input,
+.room-selector .search-form .checkout-calendar-input {
+    font-size: 14px;
+    background: #fff url('http://cdnx.jetcdn.com/static/images/property/grey-calendar.png') no-repeat 90%;
+    padding: 9px 40px 9px 9px;
+    font-size: 14px;
+    color: #6e6f6f;
+    width: 120px;
+    cursor: pointer;
+    border: solid 1px #ccc;
+}
+
+#room-selector .search-form .calendar-date.focus,
+#room-selector .search-form .calendar-date:focus {
+    border-color: #f5b76e;
+}
+
+
+/* style applied when the area is first focused into view via the book button */
+#room-selector.focused .checkin-calendar-input {
+    border-color: #f5b76e;
+}
+
+.room-selector .search-form .cta-button {
+    width: 143px;
+    vertical-align: top;
+    float: right;
+}
+
+.room-selector .search-form .cta-button.disabled {
+    background-color: #ebebeb !important;
+    background-image: none !important;
+    border: none !important;
+    color: #000 !important; /* overrides important from default css. important is bad, kids */
+}
+
+/**
+popup calendar styles
+**/
+
+.popup-calendar.test-default {
+    width: 250px;
+    left: 0;
+    padding: 0 16px 16px;
+    font-family: "Tenor Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+    border: solid 1px #ccc;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.popup-calendar.test-default  .controls{
+    font-size: 13px;
+}
+
+.popup-calendar.test-default  .legend {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.popup-calendar.test-default  .controls a{
+    line-height: 34px;
+}
+
+.popup-calendar.test-default  .controls .current-month{
+    line-height: 34px;
+}
+
+.popup-calendar.test-default  td{
+    width: 34px;
+    height: 26px;
+}
+
+.popup-calendar.test-default  .reset-cal {
+    display: none;
+}
+
+.popup-calendar.test-default  .legend {
+    font-size: 12px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.popup-calendar.test-default   .legend li {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    *line-height: 1;
+    line-height: normal;
+    margin: 0;
+}
+
+.popup-calendar.test-default   .legend .icon {
+    float: left;
+    _display: inline;
+    margin: 1px 5px 0 0;
+    *margin-top: 0;
+    *font-size: 0;
+    *line-height: 0;
+}
+
+.popup-calendar.test-default   .legend .standby {
+    margin-left: 20px;
+}
+
+.popup-calendar.test-default   .legend .available .icon {
+    border: 6px solid;
+    border-color: #f78c0c #fab35b #fab35b #f78c0c;
+}
+
+.popup-calendar.test-default   .legend .standby .icon {
+    height: 12px;
+    width: 12px;
+    background-color: #939393;
+}
+
+.room-selector .select-proxy {
+    background-image: none;
+    background-color: #fff;
+    width: 100px;
+}
+
+.room-selector .select-proxy .selected {
+    line-height: 34px;
+    background-position: 95% -288px;
+    color: #6e6f6f;
+    font-size: 14px;
+}
+
+#content-header .pricing {
+    height: 53px;
+    padding: 30px;
+}
+
+#content-header .pricing .savings{
+    color: #999;
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+#content-header .pricing .savings .best-rate {
+    display: inline;
+}
+
+#content-header .pricing .savings .best-rate .amount{
+    color: #F78C0D;
+    font-size: 34px;
+}
+
+#content-header .pricing .savings .market-rate {
+    text-decoration: line-through;
+    display: inline;
+}
+
+#content-header .pricing .savings .from {
+    display: inline;
+}
+
+#content-header .pricing .savings .sub-text {
+    font-size: 10px;
+    line-height: 2em;
+}
+
+#content-header .header-block .button {
+    color: #FFF;
+    cursor: pointer;
+    background-color: #F88C0E;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: top;
+}
+
+#content-header .pricing .book {
+    width: 150px;
+    height: 53px;
+    line-height: 53px;
+    display: inline-block;
+}
+
+#content-header .pricing .no-inventory-messaging {
+    display: none;
+}
+
+#content-header .pricing.no-inventory .no-inventory-messaging { display: block; }
+#content-header .pricing.no-inventory .pricing-display { display: none; }
+
+#content-header .no-inventory-messaging .title {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+#book-with-us {
+    padding: 30px 30px 15px 30px;
+    margin-top: 30px;
+}
+
+#book-with-us ul {
+    padding-left: 25px;
+}
+
+#book-with-us li {
+    font-size: 18px;
+    /* this is chk.gif in images/pdp2 */
+    list-style-image: url(data:image/gif;base64,R0lGODlhDgAPANUAAAAAAP///zMzMTIyMEdHRW1ta7u7uf7+/v39/fv7+/r6+vn5+ff39/Ly8vHx8ezs7Orq6ubm5uDg4NnZ2dbW1tHR0cfHx8XFxby8vLGxsbCwsKenp6ampp+fn5qampGRkZCQkIyMjIuLi4qKioaGhnt7e3FxcW1tbWVlZWFhYV9fX11dXVVVVU5OTk1NTUNDQ0BAQD4+Pjo6Ojc3NzY2NjQ0NDMzMzIyMv///wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADgALAAAAAAOAA8AAAZvwIBwKDwEEKhOgsgMcG6DVHMYidlum6nQdLutEE2jYWCrTbQNgkDwGWJERJLN1mIIQ3ONsFK72S5GASN+MhQJLDc1JUQKKlcuIGUwD0wQL3NXNhlTFjSZKGBGgUYeVzMSYQEHBwUCHlqBDicLTEZBADs=);
+    background: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    color: #999;
+}
+#content-header .signup {
+    width: 375px;
+    height: 63px;
+    background-color: #6E6E6E;
+    padding: 25px;
+    font-size: 14px;
+}
+
+#content-header .signup form {
+    position: relative;
+}
+
+#content-header .signup p {
+    color: #fff;
+    line-height: 19px;
+    margin-bottom: 9px;
+}
+
+#content-header .signup input[type="text"] {
+    height: 23px;
+    display: inline-block;
+    width: 213px;
+    float: left;
+    margin-right: 25px;
+    border: 1px solid #AAA;
+    font-size: 13px;
+    padding: 5px;
+}
+
+#content-header .signup input[type="submit"] {
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    color: #FFF;
+    background-image: none;
+    border: none;
+    font-size: 16px;
+    -webkit-appearance: none; /* override default ios style */
+}
+
+#room-selector .signup {
+    background-color: #6e6e6e;
+    color: #FFF;
+    padding: 15px;
+}
+
+#room-selector .signup form {
+    position: relative;
+}
+
+#room-selector .signup .header {
+    width: auto;
+}
+
+#room-selector .signup input[type="text"] {
+    display: inline-block;
+    width: 213px;
+    height: 23px;
+    margin-right: 25px;
+    border: 1px solid #AAA;
+    font-size: 13px;
+    padding: 5px;
+}
+
+#room-selector .signup input[type="submit"] {
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    color: #FFF;
+    background-image: none;
+    border: none;
+    font-size: 16px;
+    -webkit-appearance: none;
+}
+
+/* Jetsetter verified and Reviews */
+#badges {
+    color: #000;
+    padding: 25px 30px 0px 30px;
+    background-color: #FFF;
+    text-align: center;
+}
+
+#badges .badge {
+    display: inline-block;
+    text-align: center;
+    width: 139px;
+    padding-bottom: 8px;
+}
+
+#badges.has-trip-reviews .reviews {
+    width: 175px;
+}
+
+#badges .badge .info p {
+    color: #808080;
+    font-size: 15px;
+}
+
+#badges .badge .info a {
+    font-size: 13px;
+}
+
+#badges .reviews .percentage {
+    margin-top: 23px;
+    font-size: 45px;
+}
+
+#badges .trip-rating p {
+    margin-top: 15px;
+}
+
+#badges .liney {
+    margin-top: 25px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: solid 1px #d3d3d3;
+}
+
+#badges .icon {
+    float: left;
+    _display: inline;
+    margin-right: 12px;
+    width: 60px;
+    height: 60px;
+    background: url(http://cdnx.jetcdn.com/static/images/layout/product-sprites.png?v11) no-repeat;
+    margin-top: 5px;
+}
+
+#badges .instant-booking .icon {
+    background-position: -50px -125px;
+}
+
+#badges .instant-booking .icon:hover {
+    background-position: -125px -125px;
+}
+
+#badges .reviews span.icon {
+    background-position: -100px -50px;
+    cursor: default;
+}
+
+#badges.has-trip-reviews .reviews {
+    padding-right: 20px;
+    border-right: 1px solid #D3D3D3;
+}
+
+#badges.has-trip-reviews .reviews {
+    border-right-color: #d3d3d3;
+}
+
+#badges .reviews .percentage{
+    font-size: 40px;
+    line-height: 1em;
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-weight: 200;
+}
+
+#badges .reviews .percentage {
+    color: #333;
+}
+
+#badges .reviews .info {
+    margin-top: 7px;
+}
+
+#badges .badge .info p {
+    font-size: 13px;
+}
+#badges .badge .info a {
+    font-size: 11px;
+}
+
+#badges .no-reviews .info {
+    padding-top: 11px;
+}
+
+#badges .cancellation .icon {
+    background-position: -386px -50px;
+}
+
+#badges .trip-rating .ta-rating {
+    margin: 2px 0;
+}
+
+
+/* Reviews */
+#reviews {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#reviews .review {
+    *zoom: 1;
+    margin-bottom: 35px;
+}
+#reviews .review:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#reviews h2 {
+    margin-bottom: 5px;
+}
+#reviews h2 .num-of-reviews {
+    color: #f78c0d;
+}
+
+#reviews p.intro {
+    font: 13px georgia,serif;
+    color: #777;
+}
+
+#reviews ul {
+    margin-top: 30px;
+}
+
+#reviews img {
+    float: left;
+    _display: inline;
+    margin-right: 25px;
+}
+
+#reviews .review-content {
+    position: relative;
+    float: left;
+    _display: inline;
+    width: 635px;
+    padding: 20px 25px 25px;
+    background-color: #f5f5f5;
+}
+
+#reviews .review-content .notch {
+    position: absolute;
+    left: -16px;
+    top: 13px;
+    width: 16px;
+    height: 27px;
+    background: url(http://cdnx.jetcdn.com/static/images/layout/product-sprites.png?v11) no-repeat -250px 0;
+}
+
+#reviews cite {
+    display: block;
+    margin-top: 20px;
+    font-style: normal;
+}
+#reviews cite .name {
+    color: #999;
+}
+#reviews cite .time {
+    color: #bbb;
+}
+
+#reviews .review-section {
+    margin-bottom: 25px;
+}
+#reviews .last {
+    margin-bottom: 0;
+}
+
+#reviews .was-helpful {
+    clear: both;
+    padding-top: 1em;
+    text-align: right;
+}
+
+#tripadvisor-reviews .trip-rating-icon {
+    margin-bottom: 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#tripadvisor-reviews .reviews-meta {
+    color: #aaaaaa;
+    margin-bottom: 35px;
+}
+
+#tripadvisor-reviews .reviews-meta .how-good {
+    color: #000;
+    font-weight: bold;
+}
+
+#tripadvisor-reviews .read-all-reviews {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.ta-review {
+    padding: 20px;
+}
+
+.ta-review .review-title {
+    font-size: 18px;
+    color: #000;
+}
+
+.ta-review .review-publish-date {
+    color: #575757;
+}
+
+.ta-review .review-text {
+    margin-top: 15px;
+}
+
+.ta-review.odd {
+    background-color: #f5f5f5;
+}
+
+/* View more comments/reviews with the caret thing */
+.view-more {
+    padding-bottom: 30px;
+}
+
+.view-more a {
+    padding-right: 12px;
+    *zoom: 1;
+    font-size: 13px;
+    line-height: 12px;
+}
+
+
+/* this file should be 1:1 of the pdpv2 version of this file */
+
+/**
+ * show/hide rules
+ */
+
+.room-selector .rates-loading-message { display: none; }
+.room-selector .rates-unavailable-message { max-height: 0; }
+/*.room-selector .room-rates-table { display: none; }*/
+
+.rates-loading .rates-loading-message { display: block; }
+.rates-unavailable .rates-unavailable-message { max-height: 45px; }
+/*.room-selector.rates-available .room-rates-table { display: block; }*/
+
+.room-selector .rates-unavailable-message {
+    overflow: hidden;
+    padding-top: 20px;
+    color: #f5b76e;
+    transition: max-height 0.5s;
+}
+
+.room-selector.rates-unavailable {
+    padding-bottom: 20px;
+}
+
+.ab20381_B .room-selector .rates-unavailable-message {
+    max-height: 0;
+}
+
+.ab20381_B .room-selector.rates-unavailable.meta-unavailable .rates-unavailable-message {
+    max-height: 45px;
+}
+
+.ab20381_B .room-selector.rates-unavailable .meta-vendor-rates {
+    border-top: 0;
+}
+
+.ab20381_B .room-list .meta-total,
+.ab20381_B .room-list .headings {
+    display: none;
+}
+
+.ab20381_B .meta-cta,
+.ab20381_B .meta-cta .inner {
+    width: 120px;
+}
+
+#product-details.ab20381_B .meta-cta,
+#product-details.ab20381_B .meta-cta .inner {
+    width: 140px;
+}
+
+.room-selector .market {
+    text-decoration: line-through;
+}
+
+.room-selector .rates-loading-message {
+    text-align: center;
+    padding: 20px 0 50px 0;
+    font-size: 25px;
+    color: #ababab;
+    background-image: url('http://cdnx.jetcdn.com/static/images/layout/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center 70px;
+}
+
+.table-container {
+    padding-top: 35px;
+}
+
+/****/
+.room-rates-table {
+}
+
+.room-list tr.see-more,
+.room-list tr.see-all {
+    text-align: right;
+}
+
+.room-list .room-type .title,
+.room-list .room-rates-table .title {
+    color: #000;
+    font-size: 15px;
+    line-height: initial;
+}
+
+.room-list .rate-plan-desc {
+    color: #f5b76e;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding-top: 2px;
+}
+
+.room-list .room-type .description,
+.room-list .room-rates-table .description {
+    font-size: 13px;
+    color: #999;
+    padding-top: 6px;
+}
+
+.room-list .room-rates-table td {
+    vertical-align: top;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: solid 1px #ececec;
+}
+
+.room-list th {
+    border-bottom: solid 1px #ececec;
+}
+
+.room-list .room-rates-table .headings th {
+    color: #999;
+    font-size: 13px;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.room-list .room-rates-table .room-image img {
+    margin-top: 5px;
+}
+
+.room-list .room-rates-table .headings {
+    border-bottom: solid 1px #ececec;
+}
+
+.room-list .room-rates-table td.room-avg-price,
+.room-list .room-rates-table td.room-total-price {
+    color: #999;
+    padding-top: 20px;
+}
+
+.room-list .room-rates-table .amt {
+    color: #f78c0d;
+    font-size: 20px;
+}
+
+.room-list .room-rates-table .market {
+    text-decoration: line-through;
+}
+
+.room-list .room-rates-table .cta-container button {
+    width: 100%;
+}
+
+.room-list .room-rates-table .low-availability {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.room-list .room-rates-table button.hold {
+    background: none;
+    color: #999;
+    border: none;
+    font-weight: 200;
+}
+
+.room-list .room-rates-table button.hold .arr {
+    color: #f5b76e;
+    font-size: 25px;
+    font-family: sans;
+}
+
+/* cell widths */
+.room-list .room-rates-table .room-image .inner { width: 165px; }
+.room-list .room-rates-table .room-desc .inner { width: 205px; padding-right: 20px; }
+.room-list .room-rates-table .room-avg-price .inner { width: 145px; }
+.room-list .room-rates-table .room-total-price .inner { width: 94px; }
+.room-list .room-rates-table .cta-container .inner { width: 130px; }
+
+.room-list .rates-container {
+    padding: 20px;
+}
+/* should be 1:1 to the pdp2 version of this file */
+#room-list-modal .content {
+    padding: 20px 30px 20px 30px;
+}
+
+#room-list-modal .room-selector {
+    border-bottom: none;
+    margin: 0;
+}
+
+#room-list-modal .choose-a-room {
+    font-size: 2em;
+}
+.meta-table {
+    width: 100%;
+}
+
+.meta-table th {
+    text-align: left;
+}
+
+.meta-table .meta-site .inner { width: 300px; }
+.meta-table .meta-rate .inner { width: 190px; }
+.meta-table .meta-total .inner { width: 140px; }
+.meta-table .meta-cta .inner { width: 100px; }
+
+.meta-table.meta-jetsetter-rate {
+
+}
+
+.meta-table.meta-vendor-rates .value {
+    color: #333;
+}
+
+.meta-table.meta-jetsetter-rate .meta-rate .value {
+    color: #f5b76e;
+    font-size: 1.8em;
+}
+
+.meta-table.meta-jetsetter-rate .meta-total .value {
+    color: #f5b76e;
+    font-size: 2.1em;
+}
+
+.meta-table .per-night {
+    color: #848484;
+}
+
+.meta-jetsetter-rate td.meta-site {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.meta-jetsetter-rate th {
+    padding-bottom: 5px;
+}
+
+.meta-jetsetter-rate .meta-site img {
+    vertical-align: middle;
+}
+
+.meta-table .partner-rate .meta-total .value,
+.meta-table .partner-rate .meta-total .asterisk {
+    font-size: 1.7em;
+}
+
+.meta-table .partner-rate .meta-rate .value,
+.meta-table .partner-rate .meta-rate .asterisk {
+    font-size: 1.5em;
+}
+
+.meta-table .asterisk {
+    color: #bbb;
+}
+
+.meta-table.meta-jetsetter-rate .asterisk {
+    font-size: 2em;
+}
+
+.meta-table .meta-site {
+    font-size: 1.2em;
+    padding-left: 10px;
+}
+
+.meta-table tr.meta-rate-row:hover td {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.meta-vendor-rates,
+.meta-vendor-rates .see-all td .inner,
+.meta-vendor-rates .disclaimer-row td .inner {
+    border-top: solid 1px #efefef;
+}
+
+.meta-vendor-rates .see-all .inner {
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.meta-vendor-rates .disclaimer-row .inner {
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.meta-vendor-rates {
+    padding-top: 15px;
+}
+
+.meta-vendor-rates.remaining {
+    padding-top: 0;
+}
+
+.meta-vendor-rates.remaining {
+    border-top: none;
+}
+
+.meta-vendor-rates td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.meta-vendor-rates button {
+    background-color: #f8f8f8;
+    border: solid 1px #f5b76e;
+    padding: 6px;
+    width: 100%;
+    font-size: 14px;
+    color: #f5b76e;
+}
+
+.meta-table .cta-button {
+    width: 100%;
+}
+
+.meta-table .disclaimer-td {
+    text-align: left;
+    color: #bababa;
+    padding-left: 10px;
+    font-size: 0.9em;
+}
+
+.meta-table span.disclaimer {
+    cursor: help;
+}
+
+/* loading messages */
+.room-selector .meta-loading-message { display: none; } /* hide unless the meta-loading class exists */
+.room-selector.meta-loading .meta-loading-message { display: block; }
+
+/* this style is more or less the same as the default rate loading */
+.room-selector .meta-loading-message {
+    text-align: center;
+    padding: 40px 0 50px 0;
+    font-size: 25px;
+    color: #ababab;
+    background-image: url('http://cdnx.jetcdn.com/static/images/layout/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center 90px;
+}
+
+.meta-disclaimer-tooltip {
+    max-width: 150px;
+}
+
+.order-tooltip {
+    z-index: 9001;
+}
+#window-shade-search {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 0;
+    background-color: #fbfbfb;
+    z-index: 1001;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+#window-shade-search .js-logo {
+    float: left;
+    padding: 18px 25px 0 0;
+}
+
+#window-shade-search .shade-inner {
+    margin: 0 auto;
+    width: 995px;
+}
+
+/* move popup calendars so that they fit within the page width */
+#window-shade-search .checkin-wrap .popup-calendar-white {
+    left: -140px; /* move calendar over so that it doesn't exceed the width of the page */
+}
+
+#window-shade-search .checkin-wrap .popup-calendar-white.arrow-up:after,
+#window-shade-search .checkin-wrap .popup-calendar-white.arrow-up:before {
+    left: 228px;
+}
+
+#window-shade-search .checkout-wrap .popup-calendar-white {
+    left: -250px; /* move calendar over so that it doesn't exceed the width of the page */
+}
+
+#window-shade-search .checkout-wrap .popup-calendar-white.arrow-up:after,
+#window-shade-search .checkout-wrap .popup-calendar-white.arrow-up:before {
+    left: 340px;
+}
+#window-shade-search .shade-inner {
+    width: 1240px;
+}
+
+.top-olta{
+    width: 100%;
+    position: relative;
+    z-index: 11;
+}
+
+.top-olta .input-wrap{
+    float: left;
+    background: #FFF;
+    position: relative;
+}
+
+.top-olta .input-wrap input {
+    height: 20px;
+    padding: 12px 0;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    width: 534px;
+    height: 27px;
+    background: none;
+    line-height: 27px;
+}
+
+.top-olta .input-wrap .term{
+    padding-left: 28px;
+    padding-right: 82px;
+    background: url(http://cdnx.jetcdn.com/static/images/search/search-glass.png) 348px 15px no-repeat;
+}
+
+.top-olta .autocomplete-dropdown{
+    width: 399px;
+}
+
+.top-olta .dates-wrap{
+    margin-left: 25px;
+    float: left;
+}
+
+.top-olta .dates-wrap .input-wrap{
+    border-right: 1px solid #E5E5E4;
+    width: 187px;
+}
+
+.top-olta .dates-wrap label {
+    font-size: 18px;
+    float: left;
+    color: #828282;
+    height: 22px;
+    margin-top: 15px;
+    background: url(http://cdnx.jetcdn.com/static/images/search/cal-icon.png) 21px 0 no-repeat;
+    padding-left: 48px;
+    margin-right: 8px;
+}
+
+.top-olta .dates-wrap input {
+    font-size: 18px;
+    width: 110px;
+    padding-right: 20px;
+}
+
+.top-olta .dates-wrap .popup-calendar.test-default {
+    left: 0;
+}
+
+.top-olta .submit {
+    height: 51px;
+    width: 157px;
+    float: right;
+    background: none;
+    border: 0;
+    font-size: 18px;
+    color: white;
+    background-color: #FF8200;
+}
+
+.top-olta .submit.disabled {
+    background-color: #d1d1d1;
+}
+
+#window-shade-search .top-olta .input-wrap .term {
+    background: none;
+    padding-right: 0;
+    padding-left: 15px;
+}
+
+#window-shade-search .top-olta {
+    border-bottom: 0;
+    height: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#window-shade-search .top-olta .input-wrap {
+    border: solid 1px #dedede;
+}
+
+#window-shade-search .top-olta .dates-wrap .input-wrap {
+    width: 165px;
+}
+
+#window-shade-search .top-olta .dates-wrap .input-wrap input {
+    width: 108px;
+    padding-right: 0;
+}
+
+#window-shade-search .top-olta .checkin-wrap {
+    border-right: 0;
+}
+
+#window-shade-search .top-olta input::-webkit-input-placeholder,
+#window-shade-search .top-olta input:-moz-placeholder,
+#window-shade-search .top-olta input::-moz-placeholder,
+#window-shade-search .top-olta input:-ms-input-placholder {
+    color: #c7c2c8;
+}
+
+#window-shade-search .top-olta .dates-wrap label {
+    margin-right: 3px;
+}
+
+#window-shade-search .top-olta .submit {
+    width: 130px;
+    height: 53px;
+}
+/* New Share Center */
+#screen-gallery.hover .share-center {
+    /*ul.share-center.hover {*/
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+ul.share-center{
+    position: relative;
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.7);
+    /*width: 190px;*/
+    height: 38px;
+    top: -118px;
+    margin-bottom: -42px;
+    left: 0;
+    padding: 5px;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    z-index: 100;
+    display: inline-block;
+}
+
+ul.share-center li{
+    list-style-type: none;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    float: left;
+    margin: 5px;
+    overflow: hidden;
+    background-image: url('/static/images/layout/Socialicons.png');
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE3NiAyOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTc2IDI4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyBpZD0iTGF5ZXJfMiI+PHJlY3QgZmlsbD0iIzU0N0JCQyIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4Ii8+PHJlY3QgeD0iMzciIGZpbGw9IiNFOTU2NTUiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIvPjxyZWN0IHg9Ijc0IiBmaWxsPSIjNzhDQkVGIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiLz48cmVjdCB4PSIxMTEiIGZpbGw9IiNERDRCMzkiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIvPjxyZWN0IHg9IjE0OCIgZmlsbD0iIzJEMkMyQyIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4Ii8+PC9nPjxnIGlkPSJMYXllcl8xX2NvcHkiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xMC4xMjUsMTEuMjc5aDEuNjYxVjkuNjY1YzAtMC43MTIsMC4wMTgtMS44MSwwLjUzNS0yLjQ5YzAuNTQ1LTAuNzIxLDEuMjkzLTEuMjEsMi41NzktMS4yMWMyLjA5NiwwLDIuOTc4LDAuMjk5LDIuOTc4LDAuMjk5bC0wLjQxNSwyLjQ2MmMwLDAtMC42OTItMC4yLTEuMzM4LTAuMmMtMC42NDYsMC0xLjIyNSwwLjIzMi0xLjIyNSwwLjg3N3YxLjg3OGgyLjY0OWwtMC4xODUsMi40MDRIMTQuOXY4LjM1M2gtMy4xMTR2LTguMzUzaC0xLjY2MVYxMS4yNzl6Ii8+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTUwLjk5Niw1LjU1MWMtNC42NDUsMC04LjQxMSwzLjc2Ni04LjQxMSw4LjQxMmMwLDMuNDQ0LDIuMDcxLDYuNDA0LDUuMDM2LDcuNzA1Yy0wLjAyNC0wLjU4Ni0wLjAwNC0xLjI5MiwwLjE0Ni0xLjkzMmMwLjE2Mi0wLjY4MiwxLjA4Mi00LjU4MywxLjA4Mi00LjU4M3MtMC4yNjktMC41MzgtMC4yNjktMS4zMzFjMC0xLjI0NywwLjcyMy0yLjE3OCwxLjYyMi0yLjE3OGMwLjc2NSwwLDEuMTM1LDAuNTc1LDEuMTM1LDEuMjYzYzAsMC43NjktMC40OTEsMS45MTktMC43NDMsMi45ODVjLTAuMjExLDAuODkzLDAuNDQ3LDEuNjIsMS4zMjcsMS42MmMxLjU5NCwwLDIuNjY3LTIuMDQ2LDIuNjY3LTQuNDcyYzAtMS44NDMtMS4yNDItMy4yMjMtMy40OTktMy4yMjNjLTIuNTUxLDAtNC4xNDEsMS45MDMtNC4xNDEsNC4wMjhjMCwwLjczMywwLjIxNiwxLjI1MSwwLjU1NCwxLjY1MWMwLjE1NiwwLjE4NCwwLjE3NywwLjI1OCwwLjEyMSwwLjQ2OWMtMC4wNCwwLjE1My0wLjEzMywwLjUyNy0wLjE3MSwwLjY3NGMtMC4wNTYsMC4yMTMtMC4yMjgsMC4yOS0wLjQyMSwwLjIxMWMtMS4xNzYtMC40OC0xLjcyMy0xLjc2Ny0xLjcyMy0zLjIxNGMwLTIuMzksMi4wMTQtNS4yNTUsNi4wMTEtNS4yNTVjMy4yMTIsMCw1LjMyNSwyLjMyNSw1LjMyNSw0LjgxOWMwLDMuMy0xLjgzNCw1Ljc2NS00LjUzOSw1Ljc2NWMtMC45MDcsMC0xLjc2Mi0wLjQ5MS0yLjA1NC0xLjA0OGMwLDAtMC40ODksMS45MzgtMC41OTIsMi4zMTJjLTAuMTc4LDAuNjQ4LTAuNTI3LDEuMjk2LTAuODQ3LDEuODAxYzAuNzU2LDAuMjI0LDEuNTU1LDAuMzQ2LDIuMzg0LDAuMzQ2YzQuNjQ1LDAsOC40MS0zLjc2Nyw4LjQxLTguNDEzQzU5LjQwNyw5LjMxNyw1NS42NDEsNS41NTEsNTAuOTk2LDUuNTUxIi8+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTk2LjI4NSw5LjUwNmMtMC42MDksMC4yNzEtMS4yNjUsMC40NTMtMS45NTIsMC41MzZjMC43MDItMC40MjEsMS4yNDEtMS4wODcsMS40OTQtMS44OGMtMC42NTcsMC4zODktMS4zODQsMC42NzEtMi4xNTksMC44MjNjLTAuNjE5LTAuNjYtMS41MDMtMS4wNzMtMi40ODEtMS4wNzNjLTEuODc2LDAtMy4zOTgsMS41MjMtMy4zOTgsMy40YzAsMC4yNjcsMC4wMjksMC41MjUsMC4wODcsMC43NzRjLTIuODI1LTAuMTQyLTUuMzI5LTEuNDk0LTcuMDA3LTMuNTUzYy0wLjI5MiwwLjUwNC0wLjQ2LDEuMDg4LTAuNDYsMS43MTFjMCwxLjE3OCwwLjYsMi4yMTksMS41MTMsMi44MjljLTAuNTU3LTAuMDE3LTEuMDgyLTAuMTcxLTEuNTQxLTAuNDI1djAuMDQyYzAsMS42NDgsMS4xNzEsMy4wMjIsMi43MjgsMy4zMzRjLTAuMjg1LDAuMDgtMC41ODUsMC4xMi0wLjg5NiwwLjEyYy0wLjIxOSwwLTAuNDMzLTAuMDItMC42MzktMC4wNmMwLjQzMiwxLjM1LDEuNjg3LDIuMzMzLDMuMTc1LDIuMzZjLTEuMTYzLDAuOTEyLTIuNjI5LDEuNDU1LTQuMjIyLDEuNDU1Yy0wLjI3NCwwLTAuNTQ2LTAuMDE1LTAuODExLTAuMDQ3YzEuNTA0LDAuOTY0LDMuMjkxLDEuNTI3LDUuMjExLDEuNTI3YzYuMjU0LDAsOS42NzItNS4xOCw5LjY3Mi05LjY3NGMwLTAuMTQ3LTAuMDAzLTAuMjk0LTAuMDA5LTAuNDRDOTUuMjUzLDEwLjc4Niw5NS44MywxMC4xODgsOTYuMjg1LDkuNTA2Ii8+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTExNy41NDQsMTAuNjgyYzAsMS4zOSwwLjQ2NCwyLjM5MywxLjM3OSwyLjk4M2MwLjc0OSwwLjQ4MywxLjYxOSwwLjU1NSwyLjA3MSwwLjU1NWMwLjExLDAsMC4xOTgtMC4wMDQsMC4yNTktMC4wMDhjMCwwLTAuMTQ0LDAuOTMzLDAuNTQ5LDEuODU4bC0wLjAzMSwwYy0xLjE5OSwwLTUuMTEyLDAuMjUxLTUuMTEyLDMuNDY3YzAsMy4yNzMsMy41OTMsMy40MzksNC4zMTQsMy40MzljMC4wNTYsMCwwLjA4OS0wLjAwMSwwLjA4OS0wLjAwMWMwLjAwOCwwLDAuMDYsMC4wMDIsMC4xNDcsMC4wMDJjMC40NjMsMCwxLjY1OS0wLjA1OCwyLjc2OS0wLjU5OGMxLjQ0LTAuNjk5LDIuMTcxLTEuOTE1LDIuMTcxLTMuNjE1YzAtMS42NDItMS4xMTMtMi42Mi0xLjkyNi0zLjMzNGMtMC40OTYtMC40MzUtMC45MjUtMC44MTEtMC45MjUtMS4xNzdjMC0wLjM3MiwwLjMxMy0wLjY1MiwwLjcwOS0xLjAwN2MwLjY0MS0wLjU3MywxLjI0NS0xLjM4OSwxLjI0NS0yLjkzMmMwLTEuMzU2LTAuMTc2LTIuMjY2LTEuMjU5LTIuODQ0YzAuMTEzLTAuMDU4LDAuNTEyLTAuMSwwLjcxLTAuMTI3YzAuNTg3LTAuMDgsMS40NDYtMC4xNzEsMS40NDYtMC42NTFWNi41OThoLTQuMjc5QzEyMS44MjgsNi41OTksMTE3LjU0NCw2Ljc1OCwxMTcuNTQ0LDEwLjY4MnogTTEyNC40NTIsMTkuMDY4YzAuMDgyLDEuMzA5LTEuMDM4LDIuMjc0LTIuNzE4LDIuMzk3Yy0xLjcwNywwLjEyNS0zLjExMy0wLjY0NC0zLjE5NS0xLjk1MWMtMC4wNC0wLjYyOCwwLjIzNy0xLjI0NCwwLjc3Ny0xLjczNGMwLjU0OC0wLjQ5NywxLjMwMS0wLjgwMywyLjEyLTAuODYzYzAuMDk3LTAuMDA2LDAuMTkzLTAuMDEsMC4yODgtMC4wMUMxMjMuMzA0LDE2LjkwNywxMjQuMzc0LDE3LjgzNSwxMjQuNDUyLDE5LjA2OHogTTEyMy4zMzQsOS43ODZjMC40MiwxLjQ3Ni0wLjIxNCwzLjAyLTEuMjI0LDMuMzA1Yy0wLjExNiwwLjAzMy0wLjIzNiwwLjA0OS0wLjM1OCwwLjA0OWMtMC45MjUsMC0xLjg0Mi0wLjkzNi0yLjE4Mi0yLjIyNmMtMC4xOS0wLjcyNS0wLjE3NC0xLjM1OCwwLjA0My0xLjk2N2MwLjIxNC0wLjU5OSwwLjU5OC0xLjAwNCwxLjA4Mi0xLjE0YzAuMTE2LTAuMDMzLDAuMjM3LTAuMDUsMC4zNTgtMC4wNUMxMjIuMTcxLDcuNzU5LDEyMi44ODksOC4yMjIsMTIzLjMzNCw5Ljc4NnogTTEzMC41NDQsMTMuMDAyVjEwLjIxaC0xLjc2OHYyLjc5MWgtMi43OTF2MS43NjhoMi43OTF2Mi43OTFoMS43NjhWMTQuNzdoMi43OTF2LTEuNzY4SDEzMC41NDR6Ii8+PGc+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE2Ni4yMjIsNy41NThjLTEuODk2LDAtMy41MjMsMS41MDUtNC4yMjIsMy4wNjljLTAuNjk5LTEuNTY1LTIuMzI1LTMuMDY5LTQuMjIxLTMuMDY5Yy0yLjUzMywwLTQuNTg2LDEuOTU3LTQuNTg2LDQuMzcxYzAsMC42NzYsMC4yNDcsMS41MjYsMC40ODksMi4xMTVjMS4zNjksMy4zMzcsOC4zMTgsNy43NzksOC4zMTgsNy43NzlzNy4wMjYtNC42MTgsOC4zMzgtNy43NTZjMC4yNTMtMC42MDMsMC40NjktMS40NDQsMC40NjktMi4xMzhDMTcwLjgwOCw5LjUxNSwxNjguNzU0LDcuNTU4LDE2Ni4yMjIsNy41NTh6Ii8+PC9nPjwvZz48L3N2Zz4=');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.ie ul.share-center li{
+    background-image: url('/static/images/layout/Socialicons.png');
+}
+
+ul.share-center li .wrap {
+    opacity: 0;
+}
+
+.ie8 ul.share-center li .wrap {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+/* pinterest, gplus and fb don't work in ie8 so we hide them. */
+.ie8 ul.share-center li.pin,
+.ie8 ul.share-center li.gplus,
+.ie8 ul.share-center li.fb {
+    display: none;
+}
+
+ul.share-center li.fb{
+    background-position: 0 0;
+}
+
+ul.share-center .facebook-connect {
+    width: 28px;
+    height: 28px;
+}
+
+ul.share-center li.pin {
+    background-position: -37px 0;
+}
+
+ul.share-center li.twitter {
+    background-position: -74px 0;
+}
+
+ul.share-center li.favs{
+    background-position: -149px 0;
+}
+
+ul.share-center li.gplus {
+    background-position: -111px 0;
+}
+
+ul.share-center li.fb .wrap .fb_iframe_widget iframe,
+ul.share-center li.pin .wrap a,
+ul.share-center li.twitter .wrap iframe,
+ul.share-center li.gplus .wrap iframe{
+    transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    transform-origin: top left;
+    -ms-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+}
+
+ul.share-center li.favs .wrap a {
+    width: 30px;
+    height: 30px;
+    display: block;
+}

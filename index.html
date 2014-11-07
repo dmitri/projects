@@ -7,7 +7,10 @@
     <title>PDP Page</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Jet -->
+    <link href="css/jet_core.css" rel="stylesheet">
+    <link href="css/jet_property.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,7 +20,110 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <header id="main">
+        <div class="header-wrap">
+            <div class="page-container clearfix">
+                <a class="logo" href="/index.html"><h1>Jetsetter</h1></a>
+                <p class="tagline tenor">The world’s greatest vacations. Members-only prices.</p>
+
+                <div class="search" style="">
+                    <form action="/search">
+                        <div class="input-wrap input-wrap-destination">
+                            <input type="text" class="destination" name="q" placeholder="Type a Destination or Hotel" autocomplete="off"><ul class="autocomplete-dropdown autocomplete-dark" style="display: none;"></ul>
+                            <input type="submit" class="submit" value="">
+                        </div>
+                    <input type="hidden" name="source" value="TopNav-nofollow"><input type="hidden" name="type" value="Organic"></form>
+                </div>
+                <br clear="all">
+                <nav class="clearfix">
+                    <div>
+                        <ul class="tenor">
+                            <li><a href="http://www.jetsetter.com/search?nm=navigation">Book a Trip</a></li>
+                            <li><a href="http://www.jetsetter.com/calendar?nm=navigation">Today's Deals</a></li>
+                            <li><a href="http://www.jetsetter.com/destinations?nm=navigation">Top Destinations</a></li>
+                            <li><a href="http://www.jetsetter.com/group?nm=navigation">Editors' Picks</a></li>
+                            <li><a href="http://www.jetsetter.com/magazine?nm=navigation">Magazine</a></li>
+                        </ul>
+                        <div class="nub-rail"><div class="nub"></div></div>
+                    </div>
+                    <div class="auth-menu tenor">
+                        <a href="http://gilt.com?globalnav_referrer=jetsetter" id="auth-menu-gilt-logo"></a>
+                        <a id="auth-menu-login" class="auth-pop-login">Login</a>
+                        <a id="auth-menu-become" class="auth-pop-public">Register</a>
+
+                        <a id="auth-menu-account">
+                            <span class="my-account">My Account</span>
+                        </a>
+                    </div>
+
+                    <div id="credit-menu-item" class="tenor">
+                        <span class="credit" style="display: block;"><span class="credit-title">Credit</span> <span class="credit-amount">$525</span></span>
+                    </div>
+                </nav>
+
+                <div id="account-menu">
+                    <div class="nub"></div>
+                    <div class="wrap tenor">
+                        <h2>
+                            <span class="my-account">My Account</span>
+                            <span class="credit"><span class="credit-title">Credit</span> <span class="credit-amount">$525</span></span>
+                        </h2>
+                        <ul>
+                            <li class="fb"><a></a></li>
+                            <li class="reservations secure"><a href="https://www.jetsetter.com/account" data-access="secure">Reservations</a></li>
+                            <li class="favorite secure"><a href="http://www.jetsetter.com/account/favorites" data-access="insecure">Favorites</a></li>
+                            <li class="settings"><a href="https://www.jetsetter.com/account/contactinfo" data-access="secure">Settings</a></li>
+                            <li><a href="http://www.jetsetter.com/contact-jetsetter" data-access="public">Help</a></li>
+                            <li class="logout"><a class="logout-url" href="http://www.jetsetter.com/auth/logout">Logout</a></li>
+                            <li id="sign-in-global" class="login"><a>Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+<div id="footer" class="unselectable tenor">
+  <div id="footer-inner" class="page-container">
+    <a class="pngfix logo" href="/?nm=footerlogo" title="Back to the Jetsetter Home Page">Jetsetter</a>
+
+    <div class="main-links clearfix">
+      <ul class="stacked-nav" id="column1">
+      <li><a href="/about">About</a></li>
+      <li><a href="http://passport.jetsetter.com/" rel="external" target="_blank">Blog</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/careers" rel="nofollow">Careers</a></li>
+      </ul>
+      <ul class="stacked-nav" id="column2">
+      <li><a href="/contact-jetsetter">Contact Us</a></li>
+      <li class="tos"><a href="/terms-of-service">Terms of Service</a></li>
+      <li class="privacy"><a href="/privacy">Privacy Policy</a></li>
+      <li class="security"><a href="/security-policy">Security</a></li>
+      <li class="webterms"><a href="/websiteterms">Website Terms of Use</a></li>
+      </ul>
+      <ul class="stacked-nav" id="column3">
+      <li><a href="/calendar#upcoming-sales">Upcoming Sales</a></li>
+      <li><a href="/advice">Personal Travel Planning</a></li>
+      <li><a data-access="public" href="/gift-card">Gift Cards</a></li>
+      </ul>
+      <ul class="stacked-nav stacked-nav-last">
+      <li class="mobile"><a href="/iphone"><span></span>Mobile</a></li>
+      <li class="twitter"><a href="http://www.twitter.com/jetsetterdotcom" rel="nofollow"><span></span>Twitter</a></li>
+      <li class="facebook"><a href="http://www.facebook.com/Jetsetter" rel="nofollow"><span></span>Facebook</a></li>
+      <li class="phone"><span></span>877-JSET-USA/877-573-8872</li>
+      </ul>
+    </div>
+    <ul class="minimal-footer">
+      <li><a href="/contact-jetsetter">Contact Us</a></li>
+      <li class="tos"><a href="/terms-of-service">Terms of Service</a></li>
+      <li class="privacy"><a href="/privacy">Privacy Policy</a></li>
+      <li class="security"><a href="/security-policy">Security</a></li>
+    </ul>
+    <cite class="copyright">&copy; 2009 – 2014 Jetsetter™ All rights reserved. 
+      <a href="/sitemap">Sitemap</a>. <a href="http://nytm.org/made/" rel="nofollow">Baked with love in <abbr title="We ♥ NY">NYC</abbr></a>.
+    </cite>
+  </div>
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
