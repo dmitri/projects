@@ -19708,6 +19708,7 @@ window.onerror = function(msg, file, line) {
     new ErrorService().logError('message: ' + msg +'; file: '+ file+'; line: ' + line);
 };
 
+
 window.Jetsetter = Object.merge(window.Jetsetter || {}, {
 
 	PUB_EXP_HEX: '10001',
@@ -19747,6 +19748,7 @@ window.Jetsetter = Object.merge(window.Jetsetter || {}, {
 			return 1;
 		}
 	}()),
+
 
 	ENV: (function () {
 		switch(location.hostname){
@@ -19811,6 +19813,7 @@ window.Jetsetter = Object.merge(window.Jetsetter || {}, {
 		}
 	}()),
 
+
 	GA_ACCOUNT_ID: (function () {
 		if (location.hostname.contains('.co.uk') || location.hostname.contains('ukwww')) {
 			return 'UA-12185313-3';
@@ -19818,6 +19821,7 @@ window.Jetsetter = Object.merge(window.Jetsetter || {}, {
 			return 'UA-12185313-2';
 		}
 	}()),
+
 
 	API_KEY: (function () {
 		if (location.hostname.contains('asw')) {
