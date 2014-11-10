@@ -41,7 +41,7 @@ a, a:link, a:visited {
 .container-fluid {
   padding-right: 0;
   padding-left: 0;
-  min-width: 768px !important;
+  min-width: 738px !important;
 }
 
 .container-fluid {
@@ -248,7 +248,7 @@ header .navbar-right {
   margin-top: -130px;
 }
 
-#content-header .grouping {
+.grouping {
   background: #502473;
   color: #FFF;
   display: inline-block;
@@ -286,12 +286,7 @@ header .navbar-right {
 
 /* amenities ********************************/
 #amenities {
-  border: 1px solid #d3d3d3;
-  border-width: 1px 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+
 }
 
 #amenities.keywords ul {
@@ -453,6 +448,10 @@ background-position: 0 -295px;
 
 /* detail tabs ******************************/
 
+#info-tabs {
+  margin-bottom: 30px;
+}
+
 #info-tabs .nav-tabs>li >a {
   background: #222;
   border-radius: 0;
@@ -560,14 +559,23 @@ text-transform: uppercase;
 
 #jet-badges .jet-badge .info p {
   color: #808080;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 #jet-badges .jet-badge {
   display: inline-block;
   text-align: center;
-  width: 139px;
+  width: auto;
   padding-bottom: 8px;
+}
+
+#jet-badges #members-recommend {
+  border-right: 1px solid #CCC;
+  padding-right: 20px;
+  margin-right: 20px;
 }
 
 #jet-badges .jet-badge .info a {
@@ -668,6 +676,10 @@ font-size: 11px;
   padding-left: 0;
   margin-bottom: 20px;
   color: #999;
+}
+
+#love-and-know {
+  margin-top: 40px;
 }
 
 ul.bulleted {
@@ -843,4 +855,34 @@ ul.bulleted li {
 #footer .minimal-footer li{
 	float: left;
 	margin-right: 5px;
+}
+
+/* responsive media query settings for break points ***************/
+@media (max-width: 1170px) {
+  #info-tabs .nav-tabs>li >a {
+  background: #222;
+  border-radius: 0;
+  color: #FFF;
+  margin-right: 1px;
+  padding: 25px 31px;
+  text-transform: uppercase;
+  }
+}
+
+@media (max-width: 979px) {
+  #content-header .sale-info .name {
+  font-size: 28.5px;
+  }
+  
+  #jet-badges #members-recommend {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  
+  header#main nav ul.tenor li {
+  height: 100%;
+  line-height: 15px;
+  padding: 0 15px;
+  }
 }
