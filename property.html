@@ -28,12 +28,12 @@ The three-story atrium lobby shows off with manly, herringbone granite floors, b
     <meta content="40.743937"  name="place:location:latitude"  />
     <meta content="-73.98398199999997"  name="place:location:longitude"  />
 
-    <link rel="shortcut icon" href="http://cdnx.jetcdn.com/static/jetsetter.ico">
+    <link rel="shortcut icon" href="//cdnx.jetcdn.com/static/jetsetter.ico">
 
     <!-- CSS Files -->
-    
-    <link href="http://www.jetsetter.com/hotels/new-york-city/new-york/521/gansevoort-park-avenue" rel="canonical" />
-    <link href="http://cdnx.jetcdn.com/static/images/product/properties/521/src-61039-1392764055.jpg" rel="image_src" />
+    <link href="//www.jetsetter.com/hotels/new-york-city/new-york/521/gansevoort-park-avenue" rel="canonical" />
+    <link href="//cdnx.jetcdn.com/static/images/product/properties/521/src-61039-1392764055.jpg" rel="image_src" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/property_proto.css">
 
@@ -44,39 +44,123 @@ The three-story atrium lobby shows off with manly, herringbone granite floors, b
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <!-- Masthead -->
-    <header class="navbar navbar-static-top" id="main" role="banner">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="property.html" class="navbar-brand"><img src="http://cdnx.jetcdn.com/static/images/layout/header/logo.png?v3" /></a>
-          <div class="search">
-              <form action="/search">
-                  <div class="input-wrap input-wrap-destination">
-                      <input type="text" class="destination" name="q" placeholder="Destination or Hotel" autocomplete="off">
-                      <ul class="autocomplete-dropdown autocomplete-dark" style="display: none;"></ul>
-                      <input type="submit" class="submit" value="">
+  <body id="product-details" class="retail hotel white">
+    <div id="grace-wrap">
+      <!-- Masthead -->
+      <header class="navbar navbar-static-top" id="main" role="banner">
+        <!-- includes/header.html -->
+      </header>
+      <!-- carousel -->
+      <section id="carousel" class="container-fluid">
+        <!-- includes/carousel.html -->
+      </section>
+      <section id="details">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- main content column left -->
+            <div id="com-left" class="col-lg-8 col-md-8 col-sm-8">
+              <div id="content-header" class="sale">
+                <div class="sale-info">
+                  <div class="grouping">Royal</div>
+                  <h1 class="name tenor" itemprop="name">Gansevoort Park Avenue</h1>
+                  <h5 class="location">New York City, New York</h5>
+                </div>
+              </div>
+              <div class="row" style="margin-top: 40px;">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <h3 class="tenor">What We Love</h3>
+                  <ul class="bulleted">
+                    <li>New York City’s only indoor-outdoor heated rooftop pool</li>
+                    <li>Salon by celeb stylist Rodney Cutler</li>
+                    <li>Exhale Gym's cultish core fusion classes</li>
+                    <li>Complimentary WiFi</li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <h3 class="tenor">What To Know</h3>
+                  <ul class="bulleted">
+                    <li>Valet parking is available for an additional $60 per night with no in-and-out privileges</li>
+                    <li>Pets are permitted for an extra fee of $100</li>
+                    <li>In-room preloaded iPods are available upon request</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div id="amenities" class="col-lg-12 col-med-12 col-sm-12 keywords"></div>
+              </div>
+              <div class="row">
+                <div id="room-search" class="col-lg-12 col-med-12 col-sm-12">
+                  <h3 class="tenor">Room Availability</h3>
+                  <div class="search-form"><!-- includes/search-form.html --></div>
+                  <div class="room-selector-placeholder"><!-- includes/room-list.html --></div>
+                </div>
+              </div>
+              <div class="row">
+                <div id="info-tabs" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><!-- includes/info-tabs.html --></div>
+              </div>
+            </div>
+            <!-- sidebar right -->
+            <div id="com-right" class="col-lg-4 col-md-4 col-sm-4">
+              <div id="jet-exclusive-notice">
+                <i class="fa fa-clock-o fa-rotate-90"></i> <span>Jetsetter Exclusive:</span> 5 days left
+              </div>
+              <div id="jet-price">
+                From <s>$450</s> <span>$375</span> /night
+              </div>
+              <div class="button check-availability">
+                Check Availability
+              </div>
+              <div id="jet-badges" class="has-member-reviews has-trip-reviews svg">
+                  <div class="reviews jet-badge " itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                    <meta itemprop="bestRating" content="100">
+                    <meta itemprop="worstRating" content="1">
+                    <span class="percentage tenor">90%</span>
+                    <div class="info">
+                        <p>Members Recommend</p>
+                    </div>
                   </div>
-              <input type="hidden" name="source" value="TopNav-nofollow"><input type="hidden" name="type" value="Organic"></form>
+                  <div class="trip-rating jet-badge tenor">
+                      <a class="trip-owl-icon no-scroll" href="#reviews"></a>
+                      <div class="ta-rating">
+                        <span class="ta-rating-full"></span>
+                        <span class="ta-rating-full"></span>
+                        <span class="ta-rating-full"></span>
+                        <span class="ta-rating-full"></span>
+                        <span class="ta-rating-half"></span> 
+                      </div>
+                      <div class="info">
+                          <p>4.5 Very Good</p>
+                          <div class="description">
+                              <a class="no-scroll" href="#reviews">1,212 Reviews</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="liney"></div>
+              </div>
+              <div class="jetsetter-verified jet-badge box-shadow clearfix">
+                  <div class="icon"></div>
+                  <div class="info">
+                      <h4 class="tenor">Jetsetter Verified</h4>
+                      <p>Our editors have been here <br> and it has met our standards</p>
+                  </div>
+              </div>
+              <div class="row">
+                <div id="book-with-us" class="col-lg-12 col-md-12 col-sm-12">
+                  <h3 class="tenor">Why book with us?</h3>
+                  <ul class="bulleted">
+                    <li>Exclusive prices</li>
+                    <li>Hand-picked hotels and adventures</li>
+                    <li class="vcard">World-class member services team:<span class="tel">877-JSET-USA</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <nav role="navigation">
-          <ul class="nav navbar-nav tenor">
-            <li><a href="#">Book a Trip</a></li>
-            <li><a href="#">Today's Deals</a></li>
-            <li><a href="#">Top Destinations</a></li>
-            <li><a href="#">Editors' Picks</a></li>
-            <li><a href="#">Magazine</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right tenor auth-menu">
-            <li><a id="auth-menu-account"><span class="my-account">My Account</span></a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <section id="carousel" class="container">
-      
-    </section>
+      </section>
+      <div id="footer" class="unselectable container-fluid tenor"><!-- includes/footer.html --></div>
+    </div><!-- grace wrap -->
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
