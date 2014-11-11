@@ -50,63 +50,74 @@ The three-story atrium lobby shows off with manly, herringbone granite floors, b
       <header class="navbar navbar-static-top" id="main" role="banner">
         <!-- includes/header.html -->
       </header>
+      <!-- crumb -->
+      <section id="crumb" class="container-fluid">
+        <!-- includes/block-crumb.html -->
+      </section>
       <!-- carousel -->
       <section id="carousel" class="container-fluid">
         <!-- includes/carousel.html -->
       </section>
-      <section id="details">
-        <div class="container-fluid">
+      <section id="details" class="container-fluid">
           <div class="row">
-            <!-- main content column left -->
-            <div id="com-left" class="col-lg-8 col-md-6 col-sm-6">
-              <div id="content-header" class="sale">
-                <div class="sale-info">
-                  <div class="grouping">Royal</div>
-                  <h1 class="name tenor" itemprop="name">Gansevoort Park Avenue</h1>
-                  <h5 class="location">New York City, New York</h5>
-                </div>
-              </div>
-              <div id="love-and-know" class="row"><!-- includes/love-and-know.html --></div>
-              <div class="row">
-                <div id="amenities" class="col-lg-12 col-med-12 col-sm-12 keywords"></div>
-              </div>
-              <div class="row">
-                <div id="room-search" class="col-lg-12 col-med-12 col-sm-12">
-                  <div class="search-form"><!-- includes/search-form.html --></div>
-                  <div class="room-selector-placeholder"><!-- includes/room-list.html --></div>
-                </div>
-              </div>
+          <!-- main content column left -->
+          <div id="com-left" class="col-lg-8 col-md-6 col-sm-6">
+            <div id="property-header" class="sale">
+              <!-- includes/block-property-header.html -->
             </div>
-            <!-- sidebar right -->
-            <div id="com-right" class="col-lg-4 col-md-6 col-sm-6">
-              <div id="jet-exclusive-notice">
-                <i class="fa fa-clock-o fa-rotate-90"></i> <span>Jetsetter Exclusive:</span> 5 days left
-              </div>
-              <div id="jet-price">
-                From <s>$450</s> <span>$375</span> /night
-              </div>
-              <div class="button check-availability">
-                Check Availability
-              </div>
-              <div id="coltype-reviews-ratings"><!-- includes/coltype-reviews-ratings.html --></div>
-              <div class="row">
-                <div id="book-with-us" class="col-lg-12 col-md-12 col-sm-12">
-                  <h3 class="tenor">Why book with us?</h3>
-                  <ul class="bulleted">
-                    <li>Exclusive prices</li>
-                    <li>Hand-picked hotels and adventures</li>
-                    <li class="vcard">World-class member services team:<span class="tel">877-JSET-USA</span></li>
-                  </ul>
+            <div id="love-and-know" class="row">
+              <!-- includes/block-love-and-know.html -->
+            </div>
+            <div id="amenities" class="row">
+              <!-- includes/block-amenities.html -->
+            </div>
+            <div class="row">
+              <div id="room-search" class="col-lg-12 col-med-12 col-sm-12">
+                <div id="content-search-form" class="search-form">
+                  <!-- includes/block-content-search-form.html -->
+                </div>
+                <div id="room-list" class="room-selector-placeholder">
+                  <!-- includes/block-room-list.html -->
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div id="info-tabs" class="col-lg-8 col-md-8 col-sm-12 col-xs-12"><!-- includes/info-tabs.html --></div>
+          <!-- sidebar right -->
+          <div id="com-right" class="col-lg-4 col-md-6 col-sm-6">
+            <div id="jet-exclusive-notice">
+              <i class="fa fa-clock-o fa-rotate-90"></i> <span>Jetsetter Exclusive:</span> 5 days left
+            </div>
+            <div id="jet-price">
+              From <s>$450</s> <span>$375</span> /night
+            </div>
+            <div id="calendar-trigger">
+              <img src="images/calendar-trigger.png">
+            </div>
+            <div class="button check-availability">
+              Check Availability
+            </div>
+            <div id="collection-reviews-ratings">
+              <!-- includes/block-collection-reviews-ratings.html -->
+            </div>
+            <div id="book-with-us" class="row">
+              <!-- includes/block-book-with-us.html -->
+            </div>
+            <div id="ad-unit">
+              <div class="ad-unit-inner">
+                <img src="images/ad-unit.png">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="info-tabs" class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            <!-- includes/info-tabs.html -->
           </div>
         </div>
       </section>
-      <div id="footer" class="unselectable container-fluid tenor"><!-- includes/footer.html --></div>
+      <div id="footer" class="unselectable container-fluid tenor">
+        <!-- includes/footer.html -->
+      </div>
     </div><!-- grace wrap -->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

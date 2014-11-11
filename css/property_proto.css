@@ -37,15 +37,39 @@ a, a:link, a:visited {
   margin: 0 auto;
 }
 
+/* bootstrap container modifications to accommodate for the 1300px */
 .container,
 .container-fluid {
   padding-right: 0;
   padding-left: 0;
-  min-width: 738px !important;
+  min-width: 768px !important;
 }
 
 .container-fluid {
   max-width: 1170px;
+}
+
+#crumb.container-fluid,
+#carousel.container-fluid,
+#footer.container-fluid,
+#cross-sell.container-fluid {
+  max-width: 1270px;
+}
+
+#crumb.container-fluid,
+#carousel.container-fluid,
+#cross-sell.container-fluid,
+#footer.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#crumb.container-fluid .row,
+#carousel.container-fluid .row,
+#cross-sell.container-fluid .row,
+#footer.container-fluid .row {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 @media (max-width: 1200px) {
@@ -53,19 +77,9 @@ a, a:link, a:visited {
     padding-right: 15px;
     padding-left: 15px;
   }
-  #carousel.container-fluid,
-  #cross-sell.container-fluid,
-  #footer.container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 
-#carousel.container-fluid,
-#footer.container-fluid,
-#cross-sell.container-fluid {
-  max-width: 1300px;
-}
+/* styles *******************************************/
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -108,7 +122,7 @@ header#main .navbar-brand {
   height: auto;
 }
 
-/* search *******************/
+/* search */
 
 header#main .search {
   float: right;
@@ -188,18 +202,15 @@ header .navbar-right {
  margin-right: 0;
 }
 
+/* crumb ****************************************/
+#crumb {
+  background: #f8f8f8;
+  color: #999;
+  font-size: 11px;
+  padding: 5px 0;
+}
+
 /* carousel  section ****************************/
-
-@media (min-width: 1300px) {
-  #carousel.container {
-    width: 1300px;
-  }
-}
-
-#carousel.container {
-  padding-right: 0;
-  padding-left: 0;
-}
 
 .carousel-caption {
   bottom: auto;
@@ -261,18 +272,18 @@ header .navbar-right {
   text-transform: uppercase;
 }
 
-#content-header .sale-info {
+#property-header .sale-info {
   color: #FFF;
   text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
 
-#content-header .sale-info .name {
+#property-header .sale-info .name {
   font-size: 36.5px;
   font-weight: normal;
   margin: 0 0 7px 0;
 }
 
-#content-header .sale-info h5 {
+#property-header .sale-info h5 {
   color: #fafafa;
   font-size: 16px;
   font-weight: 300;
@@ -285,16 +296,13 @@ header .navbar-right {
 }
 
 /* amenities ********************************/
-#amenities {
 
-}
-
-#amenities.keywords ul {
+#amenities .keywords ul {
   margin: 0;
   padding: 0;
 }
 
-#amenities.keywords ul li {
+#amenities .keywords ul li {
   list-style-type: none;
   float: left;
   height: 37px;
@@ -305,31 +313,31 @@ header .navbar-right {
   padding-left: 45px;
 }
 
-#amenities.keywords ul li.room-service {
+#amenities .keywords ul li.room-service {
   background-position: 0 -111px;
 }
-#amenities.keywords ul li.free-wifi {
+#amenities .keywords ul li.free-wifi {
 background-position: 0 0;
 }
-#amenities.keywords ul li.gym {
+#amenities .keywords ul li.gym {
 background-position: 0 -258px;
 }
-#amenities.keywords ul li.spa {
+#amenities .keywords ul li.spa {
 background-position: 0 -477px;
 }
-#amenities.keywords ul li.restaurant {
+#amenities .keywords ul li.restaurant {
 background-position: 0 -37px;
 }
-#amenities.keywords ul li.pool {
+#amenities .keywords ul li.pool {
 background-position: 0 -514px;
 }
-#amenities.keywords ul li.pet-friendly {
+#amenities .keywords ul li.pet-friendly {
 background-position: 0 -222px;
 }
-#amenities.keywords ul li.handicap-accessible {
+#amenities .keywords ul li.handicap-accessible {
 background-position: 0 -74px;
 }
-#amenities.keywords ul li.bar {
+#amenities .keywords ul li.bar {
 background-position: 0 -295px;
 }
 
@@ -457,7 +465,7 @@ background-position: 0 -295px;
   border-radius: 0;
  color: #FFF;
  margin-right: 1px;
- padding: 25px 45px;
+ padding: 25px;
  text-transform: uppercase;
 }
 #info-tabs .nav-tabs>li.active>a, 
@@ -705,57 +713,70 @@ ul.bulleted li {
   vertical-align: top;
 }
 
+#calendar-trigger {
+  border: 1px solid #e8e8e8;
+  border-width: 0 1px;
+}
+
 .rates-loading-message {
   display: none;
+}
+
+/* ad unit ************************/
+#ad-unit {
+  background: #f8f8f8;
+}
+.ad-unit-inner {
+  padding: 30px;
 }
 
 
 /* footer **************************************/
 #footer {
-	background: #131216;
-	color: #7E7E7E;
-	font-size: 12px;
-	clear: both;
-	*overflow: hidden;
-	padding-bottom: 20px;
+  background: #131216;
+  color: #7E7E7E;
+  font-size: 12px;
+  clear: both;
+  *overflow: hidden;
+  padding-bottom: 20px;
     text-align: center;
 }
 
 #footer a {
-	color: #ecede9;
+  color: #ecede9;
 }
 
 #footer a:hover {
-	color:#f78c0c;
-	text-decoration:none;
+  color:#f78c0c;
+  text-decoration:none;
 }
 
 #footer-inner {
-	/*width: 918px;*/
-	margin: 0 auto;
+  /*width: 918px;*/
+  margin: 0 auto;
 
-	position: relative;
-    display: inline-block;
-    text-align: left;
+  position: relative;
+  display: inline-block;
+  text-align: left;
 }
 
 #footer .logo{
-	background: url(http://cdnx.jetcdn.com/static/images/layout/header-logo.png) no-repeat;
-	_background-image: url(http://cdnx.jetcdn.com/static/images/layout/header-logo.gif);
-	display: block;
-	text-indent: -9999px;
-	overflow: hidden;
-	width: 201px;
-	height: 24px;
-	margin: 40px 0;
+  background: url(http://cdnx.jetcdn.com/static/images/layout/header-logo.png) no-repeat;
+  _background-image: url(http://cdnx.jetcdn.com/static/images/layout/header-logo.gif);
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 201px;
+  height: 24px;
+  margin: 40px 0;
 }
 
 #footer ul li, #footer ul li a{
-	font-weight: 500;
-	font-size: 14px;
-	color: #ecede9;
-	display: block;
-	line-height: 30px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ecede9;
+  display: block;
+  line-height: 30px;
 }
 
 #footer ul li a:hover{
@@ -775,86 +796,86 @@ ul.bulleted li {
 }
 
 #footer .stacked-nav-last{
-	margin-right: 0;
+  margin-right: 0;
 }
 
 #footer .stacked-nav-last .header{
-	color: #FFF;
-	border: 0;
-	margin: 0;
-	padding: 0;
+  color: #FFF;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #footer .stacked-nav-last span{
-	display: block;
-	height: 22px;
-	width: 22px;
-	background: url(http://cdnx.jetcdn.com/static/images/layout/new-footer-spr.png?v3) 0 0 no-repeat;
-	margin-right: 5px;
-	float: left;
-	margin-top: 2px;
+  display: block;
+  height: 22px;
+  width: 22px;
+  background: url(http://cdnx.jetcdn.com/static/images/layout/new-footer-spr.png?v3) 0 0 no-repeat;
+  margin-right: 5px;
+  float: left;
+  margin-top: 2px;
 }
 
 #footer .stacked-nav-last .mobile span{
-	background-position: 0 0;
+  background-position: 0 0;
 }
 
 #footer .stacked-nav-last .twitter span{
-	background-position: 0 -24px;
+  background-position: 0 -24px;
 }
 
 #footer .stacked-nav-last .facebook span{
-	background-position: 0 -49px;
+  background-position: 0 -49px;
 }
 
 #footer .stacked-nav-last .phone span{
-	background-position: 0px -72px;
+  background-position: 0px -72px;
 }
 
 #footer .stacked-nav-last .phone{
-	font-size: 13px;
+  font-size: 13px;
 }
 
 #footer .stacked-nav li{
-	height: 24px;
-	line-height: 24px;
-	margin-bottom: 3px;
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 3px;
 }
 
 
 #footer .expanded-links ul{
-	display: none;
-	border-bottom: 1px solid #333;
-	margin: 0;
-	padding: 0;
+  display: none;
+  border-bottom: 1px solid #333;
+  margin: 0;
+  padding: 0;
 }
 
 #footer .expanded-links li{
-	float: left;
-	margin-right: 20px;
-	line-height: 30px;
-	height: 30px;
-	font-weight: 200;
-	white-space: nowrap;
+  float: left;
+  margin-right: 20px;
+  line-height: 30px;
+  height: 30px;
+  font-weight: 200;
+  white-space: nowrap;
 }
 
 #footer .copyright{
-	display: block;
-	color: #ecede9;
-	font-style: normal;
-	margin-top: 26px;
-	font-size: 14px;
+  display: block;
+  color: #ecede9;
+  font-style: normal;
+  margin-top: 26px;
+  font-size: 14px;
 }
 
 #footer .minimal-footer{
-	float: left;
-	margin-top: 20px;
-	display: none;
+  float: left;
+  margin-top: 20px;
+  display: none;
 }
 
 #footer .minimal-footer li{
-	float: left;
-	margin-right: 5px;
+  float: left;
+  margin-right: 5px;
 }
 
 /* responsive media query settings for break points ***************/
@@ -870,7 +891,7 @@ ul.bulleted li {
 }
 
 @media (max-width: 979px) {
-  #content-header .sale-info .name {
+  #property-header .sale-info .name {
   font-size: 28.5px;
   }
   
