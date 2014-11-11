@@ -210,6 +210,11 @@ header .navbar-right {
   padding: 5px 0;
 }
 
+#crumb a {
+  color: #999;
+  text-decoration: none;
+}
+
 /* carousel  section ****************************/
 
 .carousel-caption {
@@ -716,6 +721,7 @@ ul.bulleted li {
 #calendar-trigger {
   border: 1px solid #e8e8e8;
   border-width: 0 1px;
+  cursor: pointer;
 }
 
 .rates-loading-message {
