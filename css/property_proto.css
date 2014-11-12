@@ -226,6 +226,11 @@ header .navbar-right {
 
 /* carousel  section ****************************/
 
+#screen-gallery {
+  max-height: 590px;
+  overflow: hidden;
+}
+
 .carousel-caption {
   bottom: auto;
   top: 20px;
