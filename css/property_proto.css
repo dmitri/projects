@@ -46,6 +46,11 @@ a, a:link, a:visited {
   margin: 0 auto;
 }
 
+body.gutter #grace-wrap {
+  max-width: 1330px;
+  padding: 0 15px;
+}
+
 /* bootstrap container modifications to accommodate for the 1300px */
 .container,
 .container-fluid {
@@ -102,7 +107,6 @@ body.white {
 body.white #grace-wrap {
   background: #fff;
   display: none;
-  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -249,6 +253,14 @@ header .navbar-right {
   float: left;
   padding-top: 7px; 
   line-height: 120%;
+}
+
+body.gutter #caption {
+  padding-left: 15px;
+}
+
+body.gutter #social {
+  padding-right: 15px;
 }
 
 #social {
