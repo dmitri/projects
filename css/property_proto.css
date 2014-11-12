@@ -30,10 +30,19 @@ a, a:link, a:visited {
   text-transform: uppercase;
 }
 
+#mobile-notification {
+  display: none; margin: 100px auto; width: 100%;
+}
+
+#mobile-notification img {
+  margin: 0 auto;
+}
+
 #grace-wrap {
   background: #fff;
   display: none;
   max-width: 1300px;
+  min-width: 738px;
   margin: 0 auto;
 }
 
@@ -42,18 +51,16 @@ a, a:link, a:visited {
 .container-fluid {
   padding-right: 0;
   padding-left: 0;
-  min-width: 768px !important;
+  min-width: 738px !important;
 }
 
 .container-fluid {
   max-width: 1170px;
 }
 
-#crumb.container-fluid,
-#carousel.container-fluid,
-#footer.container-fluid,
-#cross-sell.container-fluid {
-  max-width: 1270px;
+.container-xl,
+.container-fluid.container-xl {
+  max-width: 100%;
 }
 
 #crumb.container-fluid,
@@ -86,8 +93,6 @@ body {
   font-size: 14px;
   color: #515151;
   background-color: #131216;
-  min-width: 750px;
-  _width: expression((documentElement.clientWidth <750px) ? "750px" : "100%" );
 }
 
 body.white {
@@ -204,14 +209,14 @@ header .navbar-right {
 
 /* crumb ****************************************/
 #crumb {
-  background: #f8f8f8;
+  background: #ededed;
   color: #999;
   font-size: 11px;
-  padding: 5px 0;
+  padding: 8px 0;
 }
 
 #crumb a {
-  color: #999;
+  color: #888;
   text-decoration: none;
 }
 
@@ -220,6 +225,42 @@ header .navbar-right {
 .carousel-caption {
   bottom: auto;
   top: 20px;
+}
+
+#caption-social {
+  background: rgba(0,0,0,.4);
+  color: #FFF;
+  
+  font-size: 14px;
+  padding: 10px 0;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1;
+  
+  opacity: 0;
+     transition: opacity .25s ease-in-out;
+     -moz-transition: opacity .25s ease-in-out;
+     -webkit-transition: opacity .25s ease-in-out;
+  
+}
+
+#caption {
+  float: left;
+  padding-top: 7px; 
+  line-height: 120%;
+}
+
+#social {
+  font-size: 21px;
+  float: right;
+  text-align: right;
+}
+
+#social i {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 20px;
 }
 
 .carousel-indicators {
@@ -257,6 +298,10 @@ header .navbar-right {
 
 .carousel-control.left .fa {
   left: 10%;
+}
+
+#screen-gallery:hover #caption-social {
+  opacity: 1;
 }
 
 /* com-left details *************************************/
@@ -349,6 +394,25 @@ background-position: 0 -295px;
 #room-search h3,
 #amenities h3 {
   margin-top: 0;
+}
+
+#room-search {
+  transition:all .5s ease-in-out; 
+      -o-transition:all .5s ease-in-out; 
+      -moz-transition:all .5s ease-in-out; 
+      -webkit-transition:all .5s ease-in-out;
+}
+
+#room-search h3 {
+  display: inline-block;
+  padding-top: 15px;
+  margin-right: 20px;
+}
+
+#room-search img {
+  display: inline-block;
+  margin-top: 0;
+  margin-left: -3px;
 }
 
 .room-list tr.see-more,
@@ -449,20 +513,44 @@ background-position: 0 -295px;
 }
 
 /* cell widths */
-.room-list .room-rates-table .room-image .inner { width: 165px; }
+.room-list .room-rates-table .room-image { width: 165px; }
 .room-list .room-rates-table .room-desc .inner { width: 205px; padding-right: 20px; }
 .room-list .room-rates-table .room-avg-price .inner { width: 145px; }
 .room-list .room-rates-table .room-total-price .inner { width: 94px; }
-.room-list .room-rates-table .cta-container .inner { width: 130px; }
+.room-list .room-rates-table .cta-container .inner { width: auto; max-width: 200px;}
 
 .room-list .rates-container {
     padding: 20px;
+}
+
+.room-list .room-total-price,
+.room-list .cta-book {
+  display: none;
 }
 
 /* detail tabs ******************************/
 
 #info-tabs {
   margin-bottom: 30px;
+}
+
+#info-tabs .location-info {
+position: relative;
+background-color: #000;
+padding: 15px 20px 1px 20px;
+color: #999;
+line-height: 1.3;
+}
+
+#info-tabs .location-info .see-full {
+position: absolute;
+top: -30px;
+right: 0;
+padding: 0 1em;
+background-color: #f78c0d;
+color: #eee;
+font-weight: bold;
+line-height: 30px;
 }
 
 #info-tabs .nav-tabs>li >a {
@@ -510,8 +598,11 @@ text-transform: uppercase;
 }
 
 
-
 /* right sidebar ****************************/
+
+#collection-reviews-ratings {
+  margin-bottom: 30px;
+}
 
 #jet-exclusive-notice {
   background: rgba(29,29,29,1);
@@ -675,11 +766,15 @@ font-size: 11px;
 }
 
 #com-right .jetsetter-verified .info, #com-right .jetsetter-approved .info {
-  margin: 10px 0 0 20px;
+  margin: 5px 0 0 20px;
   min-height: 80px;
-  width: 195px;
+  width: 193px;
   display: inline-block;
   vertical-align: middle;
+}
+
+#book-with-us {
+  margin-bottom: 30px;
 }
 
 #book-with-us li {
@@ -703,8 +798,8 @@ ul.bulleted {
 ul.bulleted li {
   font-size: 15.5px;
   font-weight: 200;
-  line-height: 120%;
-  margin: 0 0 8px 23px;
+  line-height: 130%;
+  margin: 0 0 12px 23px;
 }
 
 .button.check-availability {
@@ -722,18 +817,72 @@ ul.bulleted li {
   border: 1px solid #e8e8e8;
   border-width: 0 1px;
   cursor: pointer;
+  text-align: center;
+}
+
+#calendar-trigger img {
+  margin: 0 auto;
 }
 
 .rates-loading-message {
   display: none;
 }
 
+#com-left {
+  margin-top: -115px;
+}
+
 /* ad unit ************************/
 #ad-unit {
-  background: #f8f8f8;
+  margin-bottom: 30px;
 }
 .ad-unit-inner {
+  background: #f8f8f8;
   padding: 30px;
+  text-align: center;
+}
+
+.ad-unit-inner img {
+  margin: 0 auto;
+}
+
+/* cross-sell **********************************/
+#cross-sell {
+  background: #ededed;
+  padding: 20px 0 30px 0;
+}
+
+#cross-sell h4 {
+  font-size: 14px;
+  margin: 12px 0 0 0;
+  padding: 0;
+}
+
+#cross-sell  .cross-location-price {
+  color: #999;
+  font-size: 11px;
+}
+
+#cross-sell .cross-price {
+  margin-top: -15px;
+}
+
+#cross-sell .cross-price span {
+  color: #222;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+/* window shade ********************************/
+#window-shade {
+  background: #333;
+  display: none;
+  position: fixed;
+  top:0; left: 0;  
+  padding: 5px 0;
+  text-align: center; 
+  width: 100%; 
+  z-index: 2000;
 }
 
 
@@ -791,6 +940,8 @@ ul.bulleted li {
 
 #footer .foot-col {
   border-top: 1px solid #333;
+  padding: 5px 0 0 5px;
+  
 }
 
 #footer .foot-col.first {
@@ -887,12 +1038,7 @@ ul.bulleted li {
 /* responsive media query settings for break points ***************/
 @media (max-width: 1170px) {
   #info-tabs .nav-tabs>li >a {
-  background: #222;
-  border-radius: 0;
-  color: #FFF;
-  margin-right: 1px;
-  padding: 25px 31px;
-  text-transform: uppercase;
+  padding: 25px 23px;
   }
 }
 
@@ -911,5 +1057,9 @@ ul.bulleted li {
   height: 100%;
   line-height: 15px;
   padding: 0 15px;
+  }
+  
+  #info-tabs .nav-tabs>li >a {
+  padding: 25px 20px;
   }
 }
