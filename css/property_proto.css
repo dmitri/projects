@@ -359,7 +359,7 @@ body.gutter #social {
 
 /* monthly calendar *************************/
 .monthly-calendar {
-  display: none;
+  display: block;
 }
 
 /* amenities ********************************/
@@ -422,7 +422,6 @@ background-position: 0 -295px;
 
 #room-search h3 {
   display: inline-block;
-  padding-top: 15px;
   margin-right: 20px;
 }
 
@@ -577,6 +576,7 @@ line-height: 30px;
  margin-right: 1px;
  padding: 25px;
  text-transform: uppercase;
+ white-space: nowrap;
 }
 #info-tabs .nav-tabs>li.active>a, 
 #info-tabs .nav-tabs>li.active>a:hover, 
@@ -774,10 +774,7 @@ font-size: 11px;
 }
 
 #com-right .jetsetter-verified .icon, #com-right .jetsetter-approved .icon {
-  width: 85px;
-  height: 85px;
   display: inline-block;
-  background-image: url('http://cdnx.jetcdn.com/static/images/pdp2/badges.png');
   background-repeat: no-repeat;
   vertical-align: middle;
 }
@@ -785,12 +782,17 @@ font-size: 11px;
 #com-right .jetsetter-verified .info, #com-right .jetsetter-approved .info {
   margin: 5px 0 0 20px;
   min-height: 80px;
-  width: 193px;
+  width: 60%;
   display: inline-block;
   vertical-align: middle;
 }
 
+#com-right .jetsetter-verified .info, #com-right .jetsetter-approved .info p {
+  font-size: 14px;
+}
+/* book-with-us *********/
 #book-with-us {
+  margin-top: 3px;
   margin-bottom: 30px;
 }
 
@@ -802,6 +804,23 @@ font-size: 11px;
   margin-bottom: 20px;
   color: #999;
 }
+
+#book-with-us-row {
+  border-top: 1px solid #ebebeb;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+#book-with-us-row li {
+  float: left;
+  font-size: 14px;
+  list-style-image: url('data:image/gif;base64,R0lGODlhDgAPANUAAAAAAP///zMzMTIyMEdHRW1ta7u7uf7+/v39/fv7+/r6+vn5+ff39/Ly8vHx8ezs7Orq6ubm5uDg4NnZ2dbW1tHR0cfHx8XFxby8vLGxsbCwsKenp6ampp+fn5qampGRkZCQkIyMjIuLi4qKioaGhnt7e3FxcW1tbWVlZWFhYV9fX11dXVVVVU5OTk1NTUNDQ0BAQD4+Pjo6Ojc3NzY2NjQ0NDMzMzIyMv///wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADgALAAAAAAOAA8AAAZvwIBwKDwEEKhOgsgMcG6DVHMYidlum6nQdLutEE2jYWCrTbQNgkDwGWJERJLN1mIIQ3ONsFK72S5GASN+MhQJLDc1JUQKKlcuIGUwD0wQL3NXNhlTFjSZKGBGgUYeVzMSYQEHBwUCHlqBDicLTEZBADs=');
+  background: none;
+  padding-left: 0;
+  color: #999;
+}
+
+/* book-with-us ********/
 
 #love-and-know {
   margin-top: 40px;
@@ -866,7 +885,11 @@ ul.bulleted li {
 /* cross-sell **********************************/
 #cross-sell {
   background: #ededed;
-  padding: 20px 0 30px 0;
+  padding: 20px 0 0 0;
+}
+
+#cross-sell .cross-sell-item {
+  margin-bottom: 30px;
 }
 
 #cross-sell h4 {
@@ -904,6 +927,257 @@ ul.bulleted li {
   box-shadow: 0 0 5px #666;
 }
 
+/* Detail Pane *********************************/
+
+#detail-pane h3 {
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+#detail-pane > h3.first {
+  border: none;
+  padding-top: 20px;
+}
+
+#detail-pane ul{
+  margin: 10px 0 0 0;
+  padding: 0 0 0 20px;
+}
+
+#detail-pane ul li {
+  color: #999;
+  line-height: 150%;
+  margin-bottom: 10px;
+}
+
+/* Ask the Editor ******************************/
+#all-comments div.action {
+  float: right;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+#all-comments ul {
+clear: both;
+margin: 0;
+padding: 0;
+}
+
+#all-comments ul li {
+  list-style: none;
+}
+
+#all-comments .comment {
+padding: 0 30px 0 0;
+margin-bottom: 32px;
+}
+
+#all-comments img {
+float: left;
+_display: inline;
+margin-right: 25px;
+}
+
+#all-comments blockquote {
+  border: none;
+overflow: hidden;
+color: #515151;
+font: 14px;
+padding: 0;
+}
+
+#all-comments blockquote p {
+margin-bottom: .6em;
+}
+
+#all-comments cite span.name {
+color: #999;
+text-transform: capitalize;
+}
+
+#all-comments cite span.time {
+color: #bbb;
+}
+
+#all-comments .reply blockquote {
+color: #777;
+}
+
+#all-comments cite {
+display: block;
+margin-left: 76px;
+font-size: 13px;
+font-style: normal;
+}
+
+#all-comments .reply {
+position: relative;
+padding: 25px;
+background-color: #ffffff;
+}
+
+#post-comment {
+background: #FFF;
+clear: both;
+margin-bottom: 30px;
+padding: 15px;
+}
+
+#post-comment p {
+font-size: 13px;
+margin-bottom: 15px;
+}
+
+#post-comment textarea {
+width: 100%;
+height: 100px;
+border: 1px solid;
+border-color: #d9d9d9 #f6f6f6 #f6f6f6 #d9d9d9;
+padding: 3px;
+margin-bottom: 15px;
+}
+
+
+/* Reviews *************************************/
+
+.dropdown.reviews-dropdown .dropdown-menu {
+  background: #fff;
+  border: none;
+  margin-right: 1px;
+  padding: 20px;
+}
+
+.dropdown.reviews-dropdown .dropdown-menu li a .trip-owl-icon {
+  width: 32px;
+}
+
+#reviews .content-section h2 {
+  margin-top: 10px;
+}
+#reviews p.intro {
+  margin-bottom: 50px;
+}
+
+#reviews ul {
+  margin: 0;
+  padding: 0;
+}
+
+#reviews ul li {
+  list-style: none;
+}
+
+#reviews .review {
+  margin-bottom: 35px;
+}
+
+#reviews img {
+float: left;
+_display: inline;
+margin-right: 25px;
+}
+
+#reviews .review-content {
+position: relative;
+float: right;
+_display: inline;
+width: 88%;
+padding: 20px 25px 25px;
+background-color: #ffffff;
+}
+
+#reviews .review-content blockquote {
+border: none;
+padding: 0;
+}
+
+#reviews .review-section h3 {
+  margin-top: 0;
+}
+
+#reviews .review-section p {
+  margin-bottom: 30px;
+}
+
+#reviews .review-content .notch {
+position: absolute;
+left: -16px;
+top: 13px;
+width: 16px;
+height: 27px;
+background: url(../images/product-sprites.png?v11) no-repeat -250px 0;
+}
+
+#reviews .was-helpful {
+clear: both;
+display: block;
+padding-top: 1em;
+text-align: right;
+}
+
+#reviews cite {
+display: block;
+margin-top: 20px;
+font-style: normal;
+}
+
+#reviews cite .name {
+color: #999;
+}
+
+#reviews cite .time {
+color: #bbb;
+}
+
+/* TripAdvisor Reviews *********/
+#tripadvisor-reviews .reviews-meta {
+color: #aaa;
+margin-bottom: 35px;
+}
+
+#tripadvisor-reviews .reviews-meta .how-good {
+color: #000;
+font-weight: bold;
+}
+
+.ta-review .review-title {
+font-size: 18px;
+color: #000;
+}
+
+#tripadvisor-reviews .trip-rating-icon {
+margin-bottom: 3px;
+display: inline-block;
+vertical-align: middle;
+}
+
+.ta-review {
+  color: #999;
+padding: 20px;
+}
+
+.ta-review.odd {
+background-color: #ffffff;
+}
+
+.ta-review .review-publish-date {
+color: #575757;
+}
+
+.ta-review .review-text {
+margin-top: 15px;
+}
+
+.ta-review .review-publish-date {
+color: #575757;
+}
+
+#tripadvisor-reviews .read-all-reviews {
+display: inline-block;
+margin-top: 25px;
+}
 
 /* footer **************************************/
 #footer {
@@ -1080,5 +1354,9 @@ ul.bulleted li {
   
   #info-tabs .nav-tabs>li >a {
   padding: 25px 20px;
+  }
+  
+  #social i {
+    margin-left: 10px;
   }
 }

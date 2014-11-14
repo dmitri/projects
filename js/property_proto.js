@@ -10,7 +10,8 @@ $( document ).ready(function() {
   $( "#collection-reviews-ratings" ).load( "includes/block-collection-reviews-ratings.html" );
   $( "#book-with-us" ).load( "includes/block-book-with-us.html" );
   $( "#amenities" ).load( "includes/block-amenities.html" );
-  $( "#search-form" ).load( "includes/block-content-search-form.html" );
+  $( "#content-search-form" ).load( "includes/block-content-search-form.html" );
+  $( "#calendar-container").load("includes/fragment-calendar-widget.html");
   $( "#room-list" ).load( "includes/block-room-list.html" );
   $( "#info-tabs" ).load( "includes/info-tabs.html" );
   $( "#cross-sell" ).load( "includes/block-cross-sell.html" );

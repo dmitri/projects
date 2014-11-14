@@ -1,0 +1,972 @@
+/* Generic monthly calendar with inventory states */
+.monthly-calendar {
+	margin: 0 auto;
+	color: #999;
+	cursor: default;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.monthly-calendar .controls {
+	position: relative;
+	font-size: 12px;
+	font-weight: bold;
+	*zoom: 1;
+}
+
+.monthly-calendar .controls .current-month {
+	display: block;
+	text-align: center;
+	color: #333;
+	line-height: 28px;
+}
+
+.monthly-calendar .controls a {
+	position: absolute;
+	top: 0;
+	line-height: 28px;
+}
+.monthly-calendar .controls a:hover {
+	text-decoration: none;
+}
+
+.monthly-calendar .controls .prev-month {
+	left: 0;
+}
+
+.monthly-calendar .controls .next-month {
+	right: 0;
+	text-align: right;
+}
+
+.monthly-calendar .controls .loading-icon {
+    background-image: url('http://cdnx.jetcdn.com/static/images/registration/ajax-loader.gif');
+    width: 16px; height: 16px;
+    position: absolute;
+    top: 10px;
+}
+
+.monthly-calendar table {
+	border-collapse: separate;
+	border-spacing: 2px;
+	text-align: center;
+	margin: 0 auto;
+	border-top: 1px solid #ddd;
+}
+
+.monthly-calendar th {
+	font-size: 10px;
+	padding: 6px 0 3px;
+	color: #999;
+	text-align: center;
+}
+
+.monthly-calendar td {
+	width: 34px;
+	height: 26px;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #f0f0f0;
+}
+
+.monthly-calendar td.not-in-month {
+	background-color: #fff;
+}
+
+.open-inventory .monthly-calendar td.not-in-month {
+    background-color: #f0f0f0;
+}
+
+.monthly-calendar td.available {
+	background-color: #f78c0c;
+	color: #fff;
+	cursor: pointer;
+}
+
+.open-inventory .monthly-calendar td.available {
+    background-color: #fff;
+    color: #999;
+}
+
+.monthly-calendar td.min-stay{
+	background: #000;
+	color: #FFF;
+}
+
+.monthly-calendar td.not-in-month.available {
+	background-color: #fab35b;
+}
+
+.open-inventory .monthly-calendar td.not-in-month.available {
+    background-color: #fff;
+    color: #999;
+}
+
+.monthly-calendar td.standby {
+	background-color: #939393;
+	color: #fff;
+	cursor: pointer;
+}
+
+.open-inventory .monthly-calendar td.selected,
+.monthly-calendar td.selected {
+	background:#000;
+	color: #FFF;
+}
+
+.monthly-calendar td.hover {
+	background-color: #444 !important;
+	color: #fff !important;
+}
+
+/* Calendar that pops up from selecting text fields */
+input.calendar-date {
+	background: #fff url(http://cdnx.jetcdn.com/static/images/layout/site-sprites.png?454d84212) no-repeat; /* Adjust position on more specific selectors */
+	cursor: pointer;
+}
+
+
+.popup-calendar {
+  display: block;
+  position: absolute;
+    left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 187px;
+  padding: 0 12px 12px;
+  z-index: 999;
+  -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.popup-calendar.two-pane {
+    width: 575px;
+    left: 25px;
+}
+
+.popup-calendar.two-pane .first-calendar { float: left; }
+.popup-calendar.two-pane .next-calendar { float: right; }
+
+.popup-calendar td {
+	width: 24px;
+	height: 22px;
+}
+
+.popup-calendar td.selected .indicator {
+	line-height: 18px;
+}
+
+.popup-calendar .reset-cal{
+	margin: 5px 0 0 3px;
+}
+
+.popup-calendar .reset-cal a{
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* New Popup Cal Styles - Black */
+
+.popup-calendar-black{
+	border: 0;
+	border-top: 5px solid #F58D08;
+	background: #232323;
+	width: 250px;
+	padding: 0 16px 16px;
+}
+
+.popup-calendar-black .controls{
+	font-size: 13px;
+}
+
+.popup-calendar-black .controls a{
+	line-height: 34px;
+}
+
+.popup-calendar-black .controls .current-month{
+	line-height: 34px;
+	color: #FFF;
+}
+
+.popup-calendar-black td{
+	width: 34px;
+	height: 26px;
+}
+
+.popup-calendar-black table{
+	border-color: #484848;
+}
+
+.popup-calendar-black .arrow{
+	position: absolute;
+	top: -15px;
+	left: 15px;
+	background: url(http://cdnx.jetcdn.com/static/images/newsplash/olta-arrow.png) 0 0 no-repeat;
+	height: 10px;
+	width: 20px;
+}
+
+.popup-calendar-black td.selected .indicator{
+	line-height: 22px;
+	border-color: #FFF;
+}
+
+
+.popup-calendar-above .arrow{
+	top: auto;
+	bottom: -15px;
+	background: url(http://cdnx.jetcdn.com/static/images/newsplash/olta-arrow-bottom.png) 0 0 no-repeat;
+	_bottom: -21px;
+
+}
+
+.popup-calendar-glass
+
+/* Custom Glass Calendar */
+.popup-calendar-glass{
+	border: 0;
+}
+
+.popup-calendar-glass .arrow{
+	border-top: 0;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid #000;
+	border-bottom: 10px solid rgba(0,0,0,0.9);
+	_border-right-color: pink;
+	_border-left-color: pink;
+	_border-top-color: pink;
+	_filter: chroma(color=pink);
+    width: 0;
+    height: 0;
+	left: 12px;
+	top: -10px;
+	background: none;
+}
+
+.popup-calendar-black.popup-calendar-glass{
+	padding: 36px;
+	background: #000;
+	background: rgba(0, 0, 0, 0.9);
+	border-top: 0;
+}
+
+.popup-calendar-black.popup-calendar-glass .controls {
+	border-top: 1px solid #484848;
+}
+
+.popup-calendar-glass .current-month {
+	font-family: 'Tenor Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	color: #FFF;
+	font-size: 16px;
+}
+
+.popup-calendar-glass .next-month {
+	font-size: 0;
+	text-indent: -9999px;
+	display: block;
+	width: 34px;
+	height: 34px;
+	background: url(http://cdnx.jetcdn.com/static/images/splash3/olta-month-arrow-next.png) 50% 50% no-repeat;
+}
+
+.popup-calendar-glass .prev-month {
+	font-size: 0;
+	text-indent: -9999px;
+	display: block;
+	width: 34px;
+	height: 34px;
+	background: url(http://cdnx.jetcdn.com/static/images/splash3/olta-month-arrow-prev.png) 50% 50% no-repeat;
+}
+
+.popup-calendar-glass td.not-in-month {
+	background: #000;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.popup-calendar-glass td.not-in-month.available.selected {
+    color: #000;
+    background-color: #FFF;
+}
+
+.popup-calendar-glass td {
+	background: #000;
+	color: #747474;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.popup-calendar-glass td.available {
+	background: #6A6A6A;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.popup-calendar-glass td.selected {
+	background: #FFF;
+    color: #000;
+}
+
+.popup-calendar-glass td.selected .indicator{
+	color: #000;
+}
+
+.popup-calendar-glass td.not-in-month.available {
+	background-color: #000;
+}
+
+.popup-calendar-glass td.hover {
+	background-color: #F78C0C !important;
+}
+
+.price-tooltip .tooltip-content .price {
+    font-size: 12px;
+}
+
+.price-tooltip .min-stay {
+    width: 80px;
+}
+
+/* for two-pane calendar */
+.popup-calendar-white .first-calendar {
+    border-right: solid 1px #e8e8e8;
+    padding-right: 14px;
+    margin-top: 10px;
+}
+
+.popup-calendar-white .next-calendar {
+    margin-top: 10px;
+}
+
+/** popup calendar white **/
+.popup-calendar-white th {
+    font-size: 13px;
+    color: #666;
+    font-weight: normal;
+}
+
+.popup-calendar-white {
+    background: #FFF;
+    width: 250px;
+    padding: 0 16px 16px;
+    border: 1px solid #ccc;
+    font-family: "Tenor Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+.popup-calendar-white td.selected,
+.popup-calendar-white td.hover {
+    background-color: #f68920 !important;
+}
+
+.popup-calendar-white.inventory-enabled td.selected,
+.popup-calendar-white.inventory-enabled td.hover {
+    background-color: #000 !important;
+}
+
+/*
+ * these styles add border and arrow to the calendar container
+ * http://cssarrowplease.com/
+ */
+.popup-calendar-white.arrow-up {
+    margin-top: 10px;
+}
+
+.popup-calendar-white.arrow-up:after, .popup-calendar-white.arrow-up:before {
+    bottom: 100%;
+    /*left: 50%;*/
+    left: 100px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.popup-calendar-white.arrow-up:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.popup-calendar-white.arrow-up:before {
+    border-color: rgba(208, 208, 208, 0);
+    border-bottom-color: #ccc;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+.popup-calendar-white.arrow-left:after, .popup-calendar-white.arrow-left:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.popup-calendar-white.arrow-left:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 10px;
+    margin-top: -10px;
+}
+.popup-calendar-white.arrow-left:before {
+    border-color: rgba(208, 208, 208, 0);
+    border-right-color: #ccc;
+    border-width: 11px;
+    margin-top: -11px;
+}
+
+/** end arrow **/
+
+.popup-calendar-white .action {
+    color: #595959;
+}
+
+.popup-calendar-white table {
+    border-collapse: collapse;
+}
+
+.popup-calendar-white .controls{
+    font-size: 13px;
+}
+
+.popup-calendar-white .controls a{
+    line-height: 34px;
+}
+
+.popup-calendar-white .controls .next-month {
+    width: 20px;
+    height: 20px;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-position: -12px -32px;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.popup-calendar-white .controls .prev-month {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-position: 0px -32px;
+    background-repeat: no-repeat;
+}
+
+.popup-calendar-white .controls .next-month span,
+.popup-calendar-white .controls .prev-month span {
+    display: none;
+}
+
+.popup-calendar-white .controls .current-month{
+    line-height: 34px;
+    color: #000;
+}
+
+.popup-calendar-white td {
+    width: 36px;
+    height: 32px;
+    background: transparent;
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    font-weight: normal;
+    /*border-right: solid 1px #fff;*/
+    border-bottom: solid 1px #fff;
+}
+
+.popup-calendar-white td .inner {
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+}
+
+.popup-calendar-white td .line {
+    height: 32px;
+    width: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-right: solid 1px #fff;
+    z-index: 2;
+}
+
+.popup-calendar-white .arrow{
+    display: none;
+}
+
+.popup-calendar-white td.selected .indicator{
+    line-height: 22px;
+    border-color: #FFF;
+}
+
+.popup-calendar-white td.available {
+    background: transparent;
+    color: #ff8001;
+}
+
+.popup-calendar-white td.not-in-month {
+    color: #dfdfdf;
+    background: transparent;
+}
+
+.popup-calendar-white td.selected-range {
+    background-color: #ffc188;
+    /*border-right-color: #555;*/
+    color: #FFF;
+}
+
+.popup-calendar-white td.selected-range .line {
+    border-right-color: #ffc188;
+}
+
+.popup-calendar-white td.selected-range-start {
+    border-right-color: #ffc188;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: 0px -57px;
+}
+
+.popup-calendar-white td.selected-range-end {
+    border-left-color: #ffc188;
+    /*border-right-color: #fff;*/
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: -55px -57px;
+}
+
+.popup-calendar-white td.selected-range-end .line {
+    border-right-color: #fff;
+}
+
+/* this rule needs to be toward the bottom to take effect over all of the other rules */
+.popup-calendar-white td.selected {
+    background-color: #000;
+    color: #FFF;
+}
+
+/* non inventory enabled style */
+.popup-calendar-white td.not-in-month.available {
+    background: transparent;
+}
+
+.popup-calendar-white.inventory-enabled td.available {
+    background-color: #f68920;
+    color: #FFF;
+}
+
+.popup-calendar-white.inventory-enabled td.standby {
+    background-color: #a8a8a8;
+    color: #FFF;
+}
+
+.popup-calendar-white.inventory-enabled td {
+    background-color: #f1f1f1;
+    color: #d3d3d3;
+}
+
+.popup-calendar-white.inventory-enabled td.not-in-month {
+    background: transparent;
+}
+
+.popup-calendar-white td.available.not-in-month,
+.popup-calendar-white.inventory-enabled td.available.not-in-month,
+.popup-calendar-white.inventory-enabled td.standby.not-in-month {
+    background: transparent !important;
+    color: #d1d1d1 !important;
+    border-color: #fff !important;
+}
+
+.popup-calendar-white td.available.not-in-month .line,
+.popup-calendar-white.inventory-enabled td.available.not-in-month .line,
+.popup-calendar-white.inventory-enabled td.standby.not-in-month .line {
+    border-color: #fff !important;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range {
+    background-color: #555;
+    /*border-right-color: #555;*/
+    color: #FFF;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range .line {
+    border-right-color: #555;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range-start {
+    border-right-color: #555;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: -3px 0;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range-end {
+    border-left-color: #555;
+    /*border-right-color: #fff;*/
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: -52px 0;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range-end .line {
+    border-right-color: #fff;
+}
+
+/* this rule needs to be toward the bottom to take effect over all of the other rules */
+.popup-calendar-white.inventory-enabled td.selected {
+    background-color: #000;
+    color: #FFF;
+}
+
+.popup-calendar-white .legend {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    border-top: solid 1px #eee;
+    text-align: right;
+}
+
+.popup-calendar-white .legend li {
+    display: inline-block;
+}
+
+.popup-calendar-white .legend .available .icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #f68920;
+}
+
+.popup-calendar-white .legend .standby .icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #a8a8a8;
+    margin-left: 15px;
+}
+
+/* for two-pane calendar */
+.popup-calendar-white .first-calendar {
+    border-right: solid 1px #e8e8e8;
+    padding-right: 14px;
+    margin-top: 10px;
+}
+
+.popup-calendar-white .next-calendar {
+    margin-top: 10px;
+}
+
+/** popup calendar white **/
+.popup-calendar-white th {
+    font-size: 13px;
+    color: #666;
+    font-weight: normal;
+}
+
+.popup-calendar-white {
+    background: #FFF;
+    width: 250px;
+    padding: 0 16px 16px;
+    border: 1px solid #ccc;
+    font-family: "Tenor Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+.popup-calendar-white td.selected,
+.popup-calendar-white td.hover {
+    background-color: #f68920 !important;
+}
+
+.popup-calendar-white.inventory-enabled td.selected,
+.popup-calendar-white.inventory-enabled td.hover {
+    background-color: #000 !important;
+}
+
+/*
+ * these styles add border and arrow to the calendar container
+ * http://cssarrowplease.com/
+ */
+.popup-calendar-white.arrow-up {
+    margin-top: 10px;
+}
+
+.popup-calendar-white.arrow-up:after, .popup-calendar-white.arrow-up:before {
+    bottom: 100%;
+    /*left: 50%;*/
+    left: 100px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.popup-calendar-white.arrow-up:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.popup-calendar-white.arrow-up:before {
+    border-color: rgba(208, 208, 208, 0);
+    border-bottom-color: #ccc;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+.popup-calendar-white.arrow-left:after, .popup-calendar-white.arrow-left:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.popup-calendar-white.arrow-left:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 10px;
+    margin-top: -10px;
+}
+.popup-calendar-white.arrow-left:before {
+    border-color: rgba(208, 208, 208, 0);
+    border-right-color: #ccc;
+    border-width: 11px;
+    margin-top: -11px;
+}
+
+/** end arrow **/
+
+.popup-calendar-white .action {
+    color: #595959;
+}
+
+.popup-calendar-white table {
+    border-collapse: collapse;
+}
+
+.popup-calendar-white .controls{
+    font-size: 13px;
+}
+
+.popup-calendar-white .controls a{
+    line-height: 34px;
+}
+
+.popup-calendar-white .controls .next-month {
+    width: 20px;
+    height: 20px;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-position: -12px -32px;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.popup-calendar-white .controls .prev-month {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-position: 0px -32px;
+    background-repeat: no-repeat;
+}
+
+.popup-calendar-white .controls .next-month span,
+.popup-calendar-white .controls .prev-month span {
+    display: none;
+}
+
+.popup-calendar-white .controls .current-month{
+    line-height: 34px;
+    color: #000;
+}
+
+.popup-calendar-white td {
+    width: 36px;
+    height: 32px;
+    background: transparent;
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    font-weight: normal;
+    /*border-right: solid 1px #fff;*/
+    border-bottom: solid 1px #fff;
+}
+
+.popup-calendar-white td .inner {
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+}
+
+.popup-calendar-white td .line {
+    height: 32px;
+    width: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-right: solid 1px #fff;
+    z-index: 2;
+}
+
+.popup-calendar-white .arrow{
+    display: none;
+}
+
+.popup-calendar-white td.selected .indicator{
+    line-height: 22px;
+    border-color: #FFF;
+}
+
+.popup-calendar-white td.available {
+    background: transparent;
+    color: #ff8001;
+}
+
+.popup-calendar-white td.not-in-month {
+    color: #dfdfdf;
+    background: transparent;
+}
+
+.popup-calendar-white td.selected-range {
+    background-color: #ffc188;
+    /*border-right-color: #555;*/
+    color: #FFF;
+}
+
+.popup-calendar-white td.selected-range .line {
+    border-right-color: #ffc188;
+}
+
+.popup-calendar-white td.selected-range-start {
+    border-right-color: #ffc188;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: 0px -57px;
+}
+
+.popup-calendar-white td.selected-range-end {
+    border-left-color: #ffc188;
+    /*border-right-color: #fff;*/
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: -55px -57px;
+}
+
+.popup-calendar-white td.selected-range-end .line {
+    border-right-color: #fff;
+}
+
+/* this rule needs to be toward the bottom to take effect over all of the other rules */
+.popup-calendar-white td.selected {
+    background-color: #000;
+    color: #FFF;
+}
+
+/* non inventory enabled style */
+.popup-calendar-white td.not-in-month.available {
+    background: transparent;
+}
+
+.popup-calendar-white.inventory-enabled td.available {
+    background-color: #f68920;
+    color: #FFF;
+}
+
+.popup-calendar-white.inventory-enabled td.standby {
+    background-color: #a8a8a8;
+    color: #FFF;
+}
+
+.popup-calendar-white.inventory-enabled td {
+    background-color: #f1f1f1;
+    color: #d3d3d3;
+}
+
+.popup-calendar-white.inventory-enabled td.not-in-month {
+    background: transparent;
+}
+
+.popup-calendar-white td.available.not-in-month,
+.popup-calendar-white.inventory-enabled td.available.not-in-month,
+.popup-calendar-white.inventory-enabled td.standby.not-in-month {
+    background: transparent !important;
+    color: #d1d1d1 !important;
+    border-color: #fff !important;
+}
+
+.popup-calendar-white td.available.not-in-month .line,
+.popup-calendar-white.inventory-enabled td.available.not-in-month .line,
+.popup-calendar-white.inventory-enabled td.standby.not-in-month .line {
+    border-color: #fff !important;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range {
+    background-color: #555;
+    /*border-right-color: #555;*/
+    color: #FFF;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range .line {
+    border-right-color: #555;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range-start {
+    border-right-color: #555;
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: -3px 0;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range-end {
+    border-left-color: #555;
+    /*border-right-color: #fff;*/
+    background-image: url('http://cdnx.jetcdn.com/static/images/calendar/bookends.gif?v=1');
+    background-repeat: no-repeat;
+    background-position: -52px 0;
+}
+
+.popup-calendar-white.inventory-enabled td.selected-range-end .line {
+    border-right-color: #fff;
+}
+
+/* this rule needs to be toward the bottom to take effect over all of the other rules */
+.popup-calendar-white.inventory-enabled td.selected {
+    background-color: #000;
+    color: #FFF;
+}
+
+.popup-calendar-white .legend {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    border-top: solid 1px #eee;
+    text-align: right;
+}
+
+.popup-calendar-white .legend li {
+    display: inline-block;
+}
+
+.popup-calendar-white .legend .available .icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #f68920;
+}
+
+.popup-calendar-white .legend .standby .icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #a8a8a8;
+    margin-left: 15px;
