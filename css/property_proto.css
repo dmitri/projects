@@ -601,13 +601,14 @@ text-transform: uppercase;
   padding: 25px;
   text-transform: uppercase;
   white-space: nowrap;
+  padding: 20px;
 }
 
 #info-tabs #reviews .nav-tabs>li >a:hover {
-  border: 1px solid #f6f6f6;
-  text-decoration: underline;
+  background: #ececec;
+  border: 1px solid #ececec;
+  text-decoration: none;
 }
-
 
 #info-tabs #reviews .nav-tabs>li.active>a, 
 #info-tabs #reviews .nav-tabs>li.active>a:hover, 

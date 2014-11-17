@@ -13,7 +13,8 @@ $( document ).ready(function() {
   $( "#content-search-form" ).load( "includes/block-content-search-form.html" );
   $( "#calendar-container").load("includes/fragment-calendar-widget.html");
   $( "#room-list" ).load( "includes/block-room-list.html" );
-  $( "#info-tabs" ).load( "includes/info-tabs2.html" );
+  $( "#info-tabs" ).load( "includes/info-tabs.html" );
+  $( "#info-tabs.nested" ).load( "includes/info-tabs2.html" );
   $( "#cross-sell" ).load( "includes/block-cross-sell.html" );
   $( "#footer" ).load( "includes/footer.html" );
   
