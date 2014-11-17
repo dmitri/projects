@@ -585,11 +585,43 @@ color: #555;
 cursor: default;
 background-color: #f6f6f6;
 border-left: none;
-border-right: 1px solid #fff;
+border-right: 1px solid #f6f6f6;
 border-top: 1px solid #f6f6f6;
-
 border-bottom-color: transparent;
 text-transform: uppercase;
+}
+
+/* nested tabs within tabs */
+#info-tabs #reviews .nav-tabs>li >a {
+  background: none;
+  border-bottom: 1px solid #f6f6f6;
+  border-radius: 0;
+  color: #222;
+  margin-right: 1px;
+  padding: 25px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#info-tabs #reviews .nav-tabs>li >a:hover {
+  border: 1px solid #f6f6f6;
+  text-decoration: underline;
+}
+
+
+#info-tabs #reviews .nav-tabs>li.active>a, 
+#info-tabs #reviews .nav-tabs>li.active>a:hover, 
+#info-tabs #reviews .nav-tabs>li.active>a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #ddd;
+  border-left: none;
+  border-bottom: none;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom-color: transparent;
+  text-transform: uppercase;
 }
 
 #info-tabs .tab-pane {
@@ -1177,6 +1209,11 @@ color: #575757;
 #tripadvisor-reviews .read-all-reviews {
 display: inline-block;
 margin-top: 25px;
+}
+
+#reviews .tab-content.nested-tabs .tab-pane {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* footer **************************************/
