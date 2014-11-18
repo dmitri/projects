@@ -46,6 +46,8 @@ a, a:link, a:visited {
   margin: 0 auto;
 }
 
+
+
 body.gutter #grace-wrap {
   max-width: 1330px;
   padding: 0 15px;
@@ -82,6 +84,11 @@ body.gutter #grace-wrap {
 #footer.container-fluid .row {
   margin-right: 0;
   margin-left: 0;
+}
+
+#carousel.container-fluid #details.container-fluid .row {
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 @media (max-width: 1200px) {
@@ -174,28 +181,30 @@ header#main nav {
   position: relative;
 }
 
-header#main nav ul.tenor li:first-child {
+header#main nav ul li:first-child {
   padding-left: 0 !important;
 }
 
-header#main nav ul.tenor li:last-child {
+header#main nav ul li:last-child {
   padding-right: 0;
 }
 
-header#main nav ul.tenor li {
+header#main nav ul li {
   height: 100%;
   line-height: 15px;
-  padding: 0 25px;
+  padding: 0 24px;
 }
 
-header#main ul.tenor li a {
+header#main ul li a {
   color: #252525;
   font-size: 14px;
+  font-weight: 200;
   padding: 0;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
-header#main ul.tenor li a:hover {
+header#main ul li a:hover {
   background: none;
   color: #f78c0d;
 }
@@ -216,7 +225,7 @@ header .navbar-right {
   background: #ededed;
   color: #999;
   font-size: 11px;
-  padding: 8px 0;
+  padding: 7px 0;
 }
 
 #crumb a {
@@ -224,10 +233,24 @@ header .navbar-right {
   text-decoration: none;
 }
 
+#crumb #crumb-link {
+  padding-top: 3px;
+}
+
+#crumb #contact {
+  font-size: 13px;
+}
+
+#crumb #contact span {
+  color: #000;
+  font-weight: bold;
+}
+
 /* carousel  section ****************************/
 
 #screen-gallery {
-  max-height: 590px;
+  min-height: 240px;
+  max-height: 650px;
   overflow: hidden;
 }
 
@@ -284,11 +307,11 @@ body.gutter #social {
   display: none;
 }
 
-.carousel-gradient {
+#property-details-container {
   display: block;
   position: absolute;
   bottom: 0;
-  height: 120px;
+  height: auto;
   width: 100%;
   background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.65)));
@@ -297,6 +320,12 @@ body.gutter #social {
   background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+}
+
+#property-details-container.fixed {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
 }
 
 .carousel-control.left .fa,
@@ -321,10 +350,7 @@ body.gutter #social {
   opacity: 1;
 }
 
-/* com-left details *************************************/
-#details {
-  margin-top: -130px;
-}
+/* property details *************************************/
 
 .grouping {
   background: #502473;
@@ -856,7 +882,7 @@ font-size: 11px;
 /* book-with-us ********/
 
 #love-and-know {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 ul.bulleted {
@@ -897,9 +923,7 @@ ul.bulleted li {
   display: none;
 }
 
-#com-left {
-  margin-top: -115px;
-}
+
 
 /* ad unit ************************/
 #ad-unit {
@@ -1367,6 +1391,13 @@ margin-top: 25px;
 }
 
 /* responsive media query settings for break points ***************/
+
+@media (min-width: 1300px) {
+  #property-details-container.fixed {
+    width: 1300px;
+  }
+}
+
 @media (max-width: 1170px) {
   #info-tabs .nav-tabs>li >a {
   padding: 25px 23px;
@@ -1384,10 +1415,10 @@ margin-top: 25px;
     margin-right: 0;
   }
   
-  header#main nav ul.tenor li {
+  header#main nav ul li {
   height: 100%;
   line-height: 15px;
-  padding: 0 15px;
+  padding: 0 12px;
   }
   
   #info-tabs .nav-tabs>li >a {
