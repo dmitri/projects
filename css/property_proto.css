@@ -680,6 +680,24 @@ text-transform: uppercase;
   margin-bottom: 30px;
 }
 
+#jetsetter-collection-type h4 {
+  margin-top: -2px;
+}
+
+#jetsetter-collection-type {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+#jetsetter-collection-type a i {
+  color: #999;
+}
+
+#jetsetter-collection-type p {
+  margin-bottom: 0;
+}
+
 #jet-exclusive-notice {
   background: rgba(29,29,29,1);
   color: #FFF;
@@ -707,8 +725,8 @@ text-transform: uppercase;
   display: block;
   font-size: 20px;
   font-weight: 200;
-  padding: 16px;
-  height: 82px;
+  padding: 14px;
+  height: 87px;
   text-align: center;
 }
 
@@ -733,7 +751,7 @@ text-transform: uppercase;
   line-height: 1em;
   display: block;
   text-align: center;
-  margin-top: 16px;
+  margin-top: 5px;
   font-weight: 200;
 }
 
@@ -743,19 +761,17 @@ text-transform: uppercase;
   font-weight: 400;
   margin-top: 20px;
   margin-bottom: 0;
+  white-space: nowrap;
 }
 
-#jet-badges .jet-badge {
-  display: inline-block;
-  text-align: center;
-  width: auto;
-  padding-bottom: 8px;
+#members-recommend {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-#jet-badges #members-recommend {
-  border-right: 1px solid #CCC;
-  padding-right: 20px;
-  margin-right: 20px;
+#jetsetter-verified {
+  padding-bottom: 20px;
 }
 
 #jet-badges .jet-badge .info a {
@@ -763,21 +779,21 @@ font-size: 11px;
 }
 
 .trip-owl-icon {
-    display: inline-block;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 100%;
-    width: 40px;
-    height: 25px;
-    line-height: 25px;
-    text-indent: -9999em;
-    vertical-align: middle;
+  display: inline-block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100%;
+  width: 40px;
+  height: 25px;
+  line-height: 25px;
+  text-indent: -9999em;
+  vertical-align: middle;
 }
 
 .no-svg .trip-owl-icon {
-    background-image: url('http://cdnx.jetcdn.com/static/images/layout/pdp-owl-eyes.png');
-    -ms-behavior: url('http://cdnx.jetcdn.com/static/images/backgroundsize.min.htc');
+  background-image: url('http://cdnx.jetcdn.com/static/images/layout/pdp-owl-eyes.png');
+  -ms-behavior: url('http://cdnx.jetcdn.com/static/images/backgroundsize.min.htc');
 }
 
 .svg .trip-owl-icon {
@@ -881,9 +897,7 @@ font-size: 11px;
 
 /* book-with-us ********/
 
-#love-and-know {
-  margin-top: 20px;
-}
+
 
 ul.bulleted {
   margin: 0;

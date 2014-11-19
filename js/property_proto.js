@@ -66,9 +66,9 @@ checkWidthAndHeight = function() {
 }
 
 propertyFooterPositionToggle = function() {
-  var galleryBottom = $("#screen-gallery").position().top + $("#screen-gallery").height()
+  var $galleryHeight = $("#screen-gallery").position().top + $("#screen-gallery").height()
   if(!isScrolledIntoView("#gallery-bottom")) {
-    if($(window).scrollTop() <= galleryBottom) {
+    if($(window).scrollTop() <= $galleryHeight) {
       $("#property-details-container").addClass('fixed');
     } else {
       $("#property-details-container").removeClass('fixed');
