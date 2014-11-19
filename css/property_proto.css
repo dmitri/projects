@@ -1442,4 +1442,11 @@ margin-top: 25px;
   #social i {
     margin-left: 10px;
   }
+  
+  .ta-rating-full,
+  .ta-rating-void,
+  .ta-rating-half {
+      width: 16px;
+      height: 16px;
+  }
 }
