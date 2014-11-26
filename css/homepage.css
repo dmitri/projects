@@ -1,0 +1,190 @@
+/* Styles for the homepage */
+#grace-wrap {
+  background: #fff;
+  display: none;
+  max-width: 100%;
+  min-width: 738px;
+  margin: 0 auto;
+}
+
+.container-full-width {
+  width: 100%;
+}
+
+#cross-sell {
+  background: none;
+}
+
+.stripe {
+  background: #ededed;
+  padding: 60px 0;
+}
+
+#cross-sell .stripe {
+  padding: 60px 0 20px 0;
+}
+
+.header-spaced h2 {
+  display: block;
+  text-align: center;
+  padding: 80px 0 20px 0;
+}
+
+#collections .full-height {
+  padding-right: 0;
+  width: 53%;
+}
+
+#collections .half-height {
+  width: 47%;
+}
+
+#collections .half-height-top {
+  margin-bottom: 2.76%;
+}
+
+.carousel-control {
+  z-index: 2;
+}
+
+#search-hero .carousel-inner img,
+#magazine .carousel-inner img {
+  width: 100%;
+}
+
+#search-hero .carousel-inner .carousel-caption,
+#magazine .carousel-inner .carousel-caption {
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.65)));
+   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+   background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+   background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+}
+
+#magazine .carousel-inner .carousel-caption {
+  right: 0;
+  left: 0;
+  bottom: 0;
+  font-size: 40.5px;
+  padding: 80px 0 60px 0;
+}
+
+#search-hero #search-container {
+  background: rgba(0,0,0, 0.5);
+  padding: 20px 0;
+  position: absolute;
+  top: left;
+  width: 100%;
+  z-index: 100;
+}
+
+#search-hero #search-container .control-container {
+  
+}
+
+#search-hero #search-container .control-container-inner {
+  background: rgba(255,255,255, 0.4);
+  color: #FFF;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+#search-hero .carousel-inner .carousel-caption {
+  text-align: left;
+}
+
+#search-hero .carousel-inner .carousel-caption h1 {
+  font-weight: 200;
+  margin-top: 15px;
+}
+
+#search-hero .carousel-inner .carousel-caption h4 {
+  font-weight: 100;
+}
+
+#search-hero .carousel-inner .carousel-caption .timing {
+  font-size: 17px;
+}
+
+.carousel-control.left .fa, 
+.carousel-control.right .fa {
+  color: rgba(255,255,255, 1);
+  font-size: 127px;
+  font-weight: 50;
+  position: absolute;
+  text-shadow: 0 1px 2px rgba(0,0,0,.9);
+  bottom: 22px;
+  top: auto;
+}
+
+/* upcoming ***************************/
+#splash .lists article header h1 {
+  font-size: 20px;
+}
+#splash .lists .list {
+  border-top: 1px solid #dad8d7;
+}
+
+#splash .lists .list {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#splash .lists li {
+  list-style-type: none;
+  height: 37px;
+  width: 100%;
+  border-bottom: 1px solid #dad8d7;
+}
+
+#splash .lists li a {
+  display: block;
+  font-size: 15px;
+  color: #000;
+  line-height: 37px;
+  text-decoration: none;
+}
+
+#splash .lists li a:hover {
+  color: #f78c0d;
+}
+
+#splash .lists .upcoming li span.icon {
+  padding-right: 11px;
+  background: url(http://cdnx.jetcdn.com/static/images/splash3/splash-sprite.png?v4) -244px -259px no-repeat;
+  height: 37px;
+  width: 30px;
+  display: block;
+  float: left;
+}
+
+#splash .lists .upcoming li p {
+
+}
+
+#splash .lists li p span {
+font-size: 16px;
+font-family: Georgia;
+color: #7c7e78;
+}
+
+
+/* responsive media query settings for break points ***************/
+
+@media (min-width: 1300px) {
+
+}
+
+@media (max-width: 1170px) {
+
+}
+
+@media (max-width: 979px) {
+  
+}

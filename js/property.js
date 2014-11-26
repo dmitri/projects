@@ -3,18 +3,18 @@
 $( document ).ready(function() {
   // load the includes
   $( "header#main" ).load( "includes/header.html" );
-  $( "#crumb" ).load( "includes/block-crumb.html" );
-  $( "#carousel" ).load( "includes/screen-gallery.html" );
-  $( "#love-and-know" ).load( "includes/block-love-and-know.html" );
-  $( "#collection-reviews-ratings" ).load( "includes/block-collection-reviews-ratings.html" );
-  $( "#book-with-us" ).load( "includes/block-book-with-us.html" );
-  $( "#amenities" ).load( "includes/block-amenities.html" );
-  $( "#content-search-form" ).load( "includes/block-content-search-form.html" );
+  $( "#crumb" ).load( "includes/property/block-crumb.html" );
+  $( "#carousel" ).load( "includes/property/screen-gallery.html" );
+  $( "#love-and-know" ).load( "includes/property/block-love-and-know.html" );
+  $( "#collection-reviews-ratings" ).load( "includes/property/block-collection-reviews-ratings.html" );
+  $( "#book-with-us" ).load( "includes/property/block-book-with-us.html" );
+  $( "#amenities" ).load( "includes/property/block-amenities.html" );
+  $( "#content-search-form" ).load( "includes/property/block-content-search-form.html" );
   $( "#calendar-container").load("includes/fragment-calendar-widget.html");
-  $( "#room-list" ).load( "includes/block-room-list.html" );
-  $( "#info-tabs" ).load( "includes/info-tabs.html" );
-  $( "#info-tabs.nested" ).load( "includes/info-tabs2.html" );
-  $( "#cross-sell" ).load( "includes/block-cross-sell.html" );
+  $( "#room-list" ).load( "includes/property/block-room-list.html" );
+  $( "#info-tabs" ).load( "includes/property/info-tabs.html" );
+  $( "#info-tabs.nested" ).load( "includes/property/info-tabs2.html" );
+  $( "#cross-sell" ).load( "includes/property/block-cross-sell.html" );
   $( "#footer" ).load( "includes/footer.html" );
   
   
