@@ -43,6 +43,8 @@
   margin-bottom: 2.76%;
 }
 
+/* Hero Carousel ***********************/
+
 .carousel-control {
   z-index: 2;
 }
@@ -67,6 +69,40 @@
    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
 }
 
+#search-hero .cta-button {
+  height: 52px;
+  letter-spacing: 1px;
+  line-height:41px;
+}
+
+#search-hero .fa-search {
+  color: #FFF;
+  display: inline-block;
+  font-size: 30px;
+  margin: 0 15px 0 0;
+}
+
+#search-hero p.search-label {
+  border-right: 1px solid #fff;
+  font-size: 22px;
+  display: inline-block;
+  padding:0 15px 0 0;
+  margin:0 10px 0 0;
+}
+
+#search-hero input[type="text"] {
+  background: none;
+  border: none;
+  color: #FFF;
+  display: inline-block;
+  font-weight: 100;
+  width: 35%;
+}
+
+#search-hero input#search-input {
+  
+}
+
 #magazine .carousel-inner .carousel-caption {
   right: 0;
   left: 0;
@@ -85,13 +121,17 @@
 }
 
 #search-hero #search-container .control-container {
-  
+  padding-left: 0;
+}
+
+#search-hero #search-container .control-container.first {
+  padding-left: 15px; 
 }
 
 #search-hero #search-container .control-container-inner {
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255,255,255, 0.3);
   color: #FFF;
-  font-size: 18px;
+  font-size: 22px;
   padding: 10px 15px;
 }
 

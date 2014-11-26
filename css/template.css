@@ -24,10 +24,20 @@ a, a:link, a:visited {
   color: #FFF;
   height: 35px;
   border: none;
-  background: #ff8100;
+  background: rgba(255,129,0, 1);
   font-size: 16px;
   font-weight: normal;
   text-transform: uppercase;
+  width: 100%;
+  -ms-border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.cta-button:hover {
+  background: rgba(255,129,0, 1);
+  color: #FFF;
 }
 
 #mobile-notification {
