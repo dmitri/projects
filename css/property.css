@@ -3,6 +3,12 @@
 #grace-wrap {
   background: #fff;
   display: none;
+  max-width: 100%;
+  min-width: 738px;
+  margin: 0 auto;
+}
+
+#container-wrapper {
   max-width: 1300px;
   min-width: 738px;
   margin: 0 auto;
