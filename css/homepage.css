@@ -70,7 +70,7 @@
 }
 
 #search-hero .cta-button {
-  height: 52px;
+  height: 50px;
   letter-spacing: 1px;
   line-height:41px;
 }
@@ -92,15 +92,16 @@
 
 #search-hero input[type="text"] {
   background: none;
+  cursor: pointer;
   border: none;
   color: #FFF;
   display: inline-block;
   font-weight: 100;
-  width: 35%;
-}
-
-#search-hero input#search-input {
-  
+  padding: 5px;
+  width: auto;
+  -bracket-:hack[;
+      font-weight: 200; /* saf only */
+  ];
 }
 
 #magazine .carousel-inner .carousel-caption {
@@ -112,7 +113,7 @@
 }
 
 #search-hero #search-container {
-  background: rgba(0,0,0, 0.5);
+  background: rgba(0,0,0, 0.6);
   padding: 20px 0;
   position: absolute;
   top: left;
@@ -120,8 +121,37 @@
   z-index: 100;
 }
 
+#search-hero #search-container.affix {
+  background: rgba(0,0,0, 0.8);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
 #search-hero #search-container .control-container {
+  float: left;
   padding-left: 0;
+}
+
+#search-hero #search-container .control-container {
+  position: relative; 
+}
+
+#search-hero #search-container .control-container img {
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  z-index: 10;
+}
+
+#search-hero #search-container .date-range.control-container {
+  width: 47.55%;
+}
+
+#search-hero #search-container .date-range.control-container .date-range-control {
+  padding-left: 40px;
+  width: 100%;
 }
 
 #search-hero #search-container .control-container.first {
@@ -131,8 +161,13 @@
 #search-hero #search-container .control-container-inner {
   background: rgba(255,255,255, 0.3);
   color: #FFF;
-  font-size: 22px;
-  padding: 10px 15px;
+  font-size: 20px;
+  height: 50px;
+  padding: 7px 15px;
+}
+
+#search-hero #search-container #date-range-container .control-container-inner {
+  background: rgba(255,255,255, 0.3) url(/images/1px-divider.png?v=3) repeat-y 49% center;
 }
 
 #search-hero .carousel-inner .carousel-caption {
@@ -214,7 +249,6 @@ font-family: Georgia;
 color: #7c7e78;
 }
 
-
 /* responsive media query settings for break points ***************/
 
 @media (min-width: 1300px) {
@@ -226,5 +260,7 @@ color: #7c7e78;
 }
 
 @media (max-width: 979px) {
-  
+  #search-hero #search-container .control-container-inner {
+    padding: 7px; 
+  }
 }

@@ -1,30 +1,36 @@
-<div id="gallery-hero" class="carousel slide" data-ride="carousel">
-  <div id="search-container">
-    <div class="container-fluid">
-      <div class="row">
-        <form>
-          <div class="col-lg-5 col-md-5 col-sm-6 control-container first">
-            <div class="control-container-inner">
-              <i class="fa fa-search"></i> 
-              <p class="search-label hidden-md hidden-sm">Where to next?</p>
-              <input id="search-input" type="text" value="Maui, Hawaii">
+<div id="search-container" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+  <div class="container-fluid">
+    <div class="row">
+      <form>
+        <div class="col-lg-6 col-md-6 col-sm-5 control-container first">
+          <div class="control-container-inner">
+            <i class="fa fa-search"></i> 
+            <p class="search-label hidden-md hidden-sm">Where to next?</p>
+            <input id="search-input" class="css-type" type="text" value="Maui, Hawaii">
+          </div>
+        </div>
+        <div id="date-range-container" class="col-lg-4 col-md-4 col-sm-5 control-container">
+          <div class="control-container-inner clearfix">
+            <div class="date-range control-container">
+              <img src="images/icon-calendar.png" />
+              <input id="check-in" type="text" placeholder="Check in" value="12/14/15" class="date-range-control" />
+            </div>
+            <div class="date-range control-container pull-right">
+              <img src="images/icon-calendar.png" />
+              <input id="check-out" type="text" placeholder="Check Out" value="Check Out" class="date-range-control" />
             </div>
           </div>
-          <div class="col-lg-5 col-md-5 col-sm-4 control-container">
-            <div class="control-container-inner">
-              <input id="check-in" type="text" placeholder="Check in" />
-              <input id="check-out" type="text" placeholder="Check Out" />
-            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 control-container">
+          <div class="cta-button btn text-center">
+            Search
           </div>
-          <div class="col-lg-2 col-md-2 col-sm-2 control-container">
-            <div class="cta-button btn text-center">
-              Search
-            </div>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
+</div>
+<div id="gallery-hero" class="carousel slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">

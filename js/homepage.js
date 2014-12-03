@@ -3,7 +3,17 @@
 $( document ).ready(function() {
   // load the includes
   $( "header#main" ).load( "includes/header.html" );
-  $( "#search-hero" ).load( "includes/homepage/block-search-hero.html" );
+  $( "#search-hero" ).load( "includes/homepage/block-search-hero.html", function() {
+    $('#search-container').affix({
+      offset: {
+        top: 110,
+        bottom: function () {
+          return (this.bottom = $('#insta-feed').outerHeight(true))
+        }
+      }
+    })
+  } );
+  $( "#top-sales" ).load( "includes/homepage/block-top-sales.html" );
   $( "#collections" ).load( "includes/homepage/block-collections.html" );
   $( "#magazine" ).load( "includes/homepage/block-magazine.html" );
   $( "#cross-sell" ).load( "includes/homepage/block-cross-sell.html" );
