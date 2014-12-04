@@ -40,10 +40,15 @@
 }
 
 #collections .half-height-top {
-  margin-bottom: 2.76%;
+  margin-bottom: 3.3345%;
 }
 
-/* Hero Carousel ***********************/
+#collections .half-height-top,
+#collections .half-height-bottom {
+  float: right;
+}
+
+/* Hero Carousels ***********************/
 
 .carousel-control {
   z-index: 2;
@@ -70,7 +75,7 @@
 }
 
 #search-hero .cta-button {
-  height: 50px;
+  height: 48px;
   letter-spacing: 1px;
   line-height:41px;
 }
@@ -79,14 +84,14 @@
   color: #FFF;
   display: inline-block;
   font-size: 30px;
-  margin: 0 15px 0 0;
+  margin: 0 10px 0 5px;
 }
 
 #search-hero p.search-label {
   border-right: 1px solid #fff;
   font-size: 22px;
   display: inline-block;
-  padding:0 15px 0 0;
+  padding:0 20px 0 0;
   margin:0 10px 0 0;
 }
 
@@ -97,11 +102,19 @@
   color: #FFF;
   display: inline-block;
   font-weight: 100;
-  padding: 5px;
+  padding: 4px 10px;
   width: auto;
   -bracket-:hack[;
       font-weight: 200; /* saf only */
   ];
+}
+
+#search-hero input:hover {
+  background: rgba(255,255,255, 0.3);
+}
+
+#search-hero input:focus { 
+  background: rgba(0,0,0, 0.3); 
 }
 
 #magazine .carousel-inner .carousel-caption {
@@ -113,7 +126,7 @@
 }
 
 #search-hero #search-container {
-  background: rgba(0,0,0, 0.6);
+  background: rgba(0,0,0, 0.9);
   padding: 20px 0;
   position: absolute;
   top: left;
@@ -148,6 +161,9 @@
 #search-hero #search-container .date-range.control-container {
   width: 47.55%;
 }
+#search-hero #search-container .date-range.control-container.check-out {
+  width: 48.55%;
+}
 
 #search-hero #search-container .date-range.control-container .date-range-control {
   padding-left: 40px;
@@ -162,8 +178,24 @@
   background: rgba(255,255,255, 0.3);
   color: #FFF;
   font-size: 20px;
-  height: 50px;
-  padding: 7px 15px;
+  height: 48px;
+  padding: 7px;
+  white-space:nowrap;
+}
+
+#search-hero #search-container .control-container-inner .search-label-container {
+ float: left;
+ width: 41%;
+}
+
+#search-hero #search-container .control-container-inner .search-field-container {
+ float: left;
+ width: 59%;
+}
+
+#search-hero #search-container .control-container-inner .search-field-container input[type="text"] {
+  display: block;
+  width: 100%;
 }
 
 #search-hero #search-container #date-range-container .control-container-inner {
@@ -198,7 +230,116 @@
   top: auto;
 }
 
-/* upcoming ***************************/
+/* Sales Tiles ************************/
+
+#sales-tiles-tabs {
+  margin: 60px 0 35px 0;
+}
+
+#sales-tiles-tabs.nav-tabs.nav-justified>li>a {
+  border: none;
+  border-radius: 0;
+  color: #222;
+  font-size: 16px;
+  display: inline-block;
+  padding: 0;
+  text-transform: uppercase;
+  white-space:nowrap;
+}
+
+#sales-tiles-tabs.nav-tabs.nav-justified>li>a:hover,
+#sales-tiles-tabs.nav-tabs>li.active>a:hover {
+  background: none;
+  color: #f78c0d;
+  border-bottom: 2px solid #f78c0d;
+}
+
+#sales-tiles-tabs.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus {
+  border-bottom: 2px solid #222;
+}
+
+#sales-tiles .sale-tile {
+  position: relative;
+}
+
+#sales-tiles .sale-tile a img {
+  opacity: .9;
+}
+
+#sales-tiles .sale-tile a:hover img {
+  opacity: 1;
+}
+
+#sales-tiles .sale-tile-detail {
+  color: #FFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.65)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  z-index: 100;
+}
+
+#sales-tiles .sale-tile-detail .sale-tile-detail-inner {
+  padding: 50px 20px 20px 20px;
+}
+
+#sales-tiles .sale-tile-detail .sale-tile-detail-inner .grouping {
+  font-size: 12px;
+  -bracket-:hack[;
+      font-weight: 200; /* saf only */
+  ];
+}
+
+#sales-tiles .sale-tile-detail .sale-tile-detail-inner h1 {
+  font-size: 22px;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+#sales-tiles .sale-tile-detail .sale-tile-detail-inner h2 {
+  font-size: 13px;
+  font-weight: 200;
+  line-height: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+#sales-tiles .sale-tile-detail .sale-tile-detail-inner p {
+  margin: 0;
+}
+
+.row.no-gutters.toggle-row {
+  padding: 0;
+}
+
+a.see-more-toggle {
+  background: rgba(0,0,0, 0.6);
+  color: #FFF;
+  float: right;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: -2px;
+  margin-right: -2px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+a.see-more-togggle-up {
+  display: none;
+}
+
+.extra-row {
+  display: none;
+}
+
+/* Upcoming ***************************/
 #splash .lists article header h1 {
   font-size: 20px;
 }
@@ -239,14 +380,17 @@
   float: left;
 }
 
-#splash .lists .upcoming li p {
-
-}
-
 #splash .lists li p span {
 font-size: 16px;
 font-family: Georgia;
 color: #7c7e78;
+}
+
+#splash #cross-sell .cross-sell-item .grouping {
+  bottom: 55px;
+  -bracket-:hack[;
+      font-weight: 200; /* saf only */
+  ];
 }
 
 /* responsive media query settings for break points ***************/
@@ -255,12 +399,42 @@ color: #7c7e78;
 
 }
 
-@media (max-width: 1170px) {
-
+@media (max-width: 1200px) {
+  #search-hero #search-container .control-container-inner .search-label-container {
+    width: auto;
+  }
+  
+  #search-hero #search-container .control-container-inner .search-field-container {
+    width: 51%;
+  }
 }
 
-@media (max-width: 979px) {
+@media (max-width: 1170px) {
+  #search-hero #search-container .control-container-inner .search-field-container {
+    width: 49.5%;
+  }
+}
+
+@media (max-width: 1002px) {
+  #search-hero #search-container .control-container-inner .search-field-container {
+    width: 48%;
+  }
+}
+
+@media (max-width: 990px) {
   #search-hero #search-container .control-container-inner {
     padding: 7px; 
+  }
+  
+  #search-hero #search-container .control-container-inner .search-label-container {
+    width: auto;
+  }
+  
+  #search-hero #search-container .control-container-inner .search-field-container {
+    width: 83%;
+  }
+  #sales-tiles-tabs.nav-tabs.nav-justified>li>a {
+    font-size: 15px;
+    text-transform: none;
   }
 }

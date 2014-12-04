@@ -20,6 +20,8 @@ a, a:link, a:visited {
   cursor: pointer;
 }
 
+input:focus { outline: none; }
+
 .cta-button {
   color: #FFF;
   height: 35px;
@@ -96,6 +98,16 @@ body.gutter #grace-wrap {
     padding-right: 15px;
     padding-left: 15px;
   }
+}
+
+/* no-gutters class rules for full width, no gutters */
+.row.no-gutters {
+   margin-right: 2px;
+   margin-left: 2px;
+}
+.row.no-gutters [class^="col-"],
+.row.no-gutters [class*=" col-"]{
+   padding: 2px;
 }
 
 /* styles *******************************************/
@@ -198,7 +210,7 @@ header#main nav ul li {
 header#main ul li a {
   color: #252525;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 400;
   padding: 0;
   text-decoration: none;
   text-transform: uppercase;
@@ -211,9 +223,14 @@ header#main ul li a:hover {
 
 header#main nav .auth-menu #auth-menu-account {
 display: block;
-padding-right: 30px;
-padding-left: 10px;
-background: url(http://cdnx.jetcdn.com/static/images/layout/grid-account-nav.png) no-repeat right top;
+}
+
+header#main nav .auth-menu #credit {
+  color: #f78c0d;
+}
+
+header#main nav .auth-menu > li:last-child {
+  border-left: 1px solid #ecede9;
 }
 
 header .navbar-right {
@@ -252,7 +269,6 @@ header .navbar-right {
 /* property details *************************************/
 
 .grouping {
-  background: #502473;
   color: #FFF;
   display: inline-block;
   font-size: 18px;
@@ -262,6 +278,18 @@ header .navbar-right {
   padding: 4px 10px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.grouping.royal {
+  background: rgb(79, 39, 112);
+}
+
+.grouping.posh {
+  background: rgb(0, 0, 0);
+}
+
+.grouping.brilliant {
+  background: rgb(1, 83, 141);
 }
 
 /* monthly calendar *************************/
@@ -278,22 +306,30 @@ header .navbar-right {
 
 #cross-sell .cross-sell-item {
   margin-bottom: 30px;
+  position: relative;
+}
+
+#cross-sell .cross-sell-item .grouping {
+  position: absolute;
+  font-size: 12px;
+  bottom: 45px;
+  left: 25px;
 }
 
 #cross-sell h4 {
   color: #222;
-  font-size: 14px;
-  margin: 12px 0 0 0;
+  font-size: 18px;
+  margin: 12px 0 2px 0;
   padding: 0;
 }
 
 #cross-sell  .cross-location-price {
   color: #999;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 #cross-sell .cross-price {
-  margin-top: -15px;
+  margin-top: -29px;
 }
 
 #cross-sell .cross-price span {
@@ -448,12 +484,25 @@ header .navbar-right {
   margin-right: 5px;
 }
 
+#footer #footer-social {
+  padding-top: 30px;
+}
+
+#footer #footer-social a {
+  color: rgb(92, 92, 92);
+  font-size: 18px;
+}
+
 /* responsive media query settings for break points ***************/
 
 @media (max-width: 979px) {
   header#main nav ul li {
-  height: 100%;
-  line-height: 15px;
-  padding: 0 12px;
+    height: 100%;
+    line-height: 15px;
+    padding: 0 12px;
+  }
+  
+  header#main ul li a {
+    font-size: 13.5px;
   }
 }

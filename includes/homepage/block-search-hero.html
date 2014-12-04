@@ -4,18 +4,22 @@
       <form>
         <div class="col-lg-6 col-md-6 col-sm-5 control-container first">
           <div class="control-container-inner">
-            <i class="fa fa-search"></i> 
-            <p class="search-label hidden-md hidden-sm">Where to next?</p>
-            <input id="search-input" class="css-type" type="text" value="Maui, Hawaii">
+            <div class="search-label-container">
+              <i class="fa fa-search"></i> 
+              <p class="search-label hidden-sm">Where to next?</p>
+            </div>
+            <div class="search-field-container">
+              <input id="search-input" class="" type="text" value="Maui, Hawaii">
+            </div>
           </div>
         </div>
         <div id="date-range-container" class="col-lg-4 col-md-4 col-sm-5 control-container">
           <div class="control-container-inner clearfix">
-            <div class="date-range control-container">
+            <div class="date-range check-in control-container">
               <img src="images/icon-calendar.png" />
               <input id="check-in" type="text" placeholder="Check in" value="12/14/15" class="date-range-control" />
             </div>
-            <div class="date-range control-container pull-right">
+            <div class="date-range check-out control-container pull-right">
               <img src="images/icon-calendar.png" />
               <input id="check-out" type="text" placeholder="Check Out" value="Check Out" class="date-range-control" />
             </div>

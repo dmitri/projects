@@ -4,6 +4,7 @@ $( document ).ready(function() {
   // load the includes
   $( "header#main" ).load( "includes/header.html" );
   $( "#search-hero" ).load( "includes/homepage/block-search-hero.html", function() {
+    //$(".carousel").carousel('cycle')
     $('#search-container').affix({
       offset: {
         top: 110,
