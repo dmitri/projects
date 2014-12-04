@@ -355,16 +355,15 @@ a.see-more-togggle-up {
 
 #splash .lists li {
   list-style-type: none;
-  height: 37px;
   width: 100%;
-  border-bottom: 1px solid #dad8d7;
 }
 
 #splash .lists li a {
+  border-bottom: 1px solid #dad8d7;
   display: block;
   font-size: 15px;
   color: #000;
-  line-height: 37px;
+  padding: 10px 0;
   text-decoration: none;
 }
 
@@ -374,11 +373,16 @@ a.see-more-togggle-up {
 
 #splash .lists .upcoming li span.icon {
   padding-right: 11px;
-  background: url(http://cdnx.jetcdn.com/static/images/splash3/splash-sprite.png?v4) -244px -259px no-repeat;
-  height: 37px;
+  background: url(http://cdnx.jetcdn.com/static/images/splash3/splash-sprite.png?v4) -244px -267px no-repeat;
+  height: 22px;
   width: 30px;
   display: block;
   float: left;
+}
+
+#splash .lists li p {
+  float: left;
+  margin: 0;
 }
 
 #splash .lists li p span {
@@ -438,4 +442,15 @@ color: #7c7e78;
     font-size: 15px;
     text-transform: none;
   }
+  
+  #splash .lists li p {
+    width:85%;
+    font-size: 14px;
+  }
+  
+  #splash .lists li p span {
+    font-size: 14px;
+  }
+  }
+  
 }
