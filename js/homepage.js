@@ -24,7 +24,7 @@ $( document ).ready(function() {
   $( "#footer" ).load( "includes/footer.html" );
   
   setTimeout(function() {
-    $("#grace-wrap").fadeIn('fast', function() {
+    $("#grace-wrap, .fade-in").fadeIn('fast', function() {
       checkWidthAndHeight();
     });
   }, 500);
@@ -42,13 +42,13 @@ checkWidthAndHeight = function() {
     
     // first make sure we're within the scope of the project
     if (windowsize < 753) {
-        $("#grace-wrap").fadeOut('fast', function() {
+        $("#grace-wrap, .fade-in").fadeOut('fast', function() {
           $("#mobile-notification").fadeIn('fast');
         });
         
     } else {
         $("#mobile-notification").fadeOut('fast', function() {
-          $("#grace-wrap").fadeIn('fast');
+          $("#grace-wrap, .fade-in").fadeIn('fast');
         });
     }
 

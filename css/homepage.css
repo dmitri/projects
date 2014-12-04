@@ -7,6 +7,10 @@
   margin: 0 auto;
 }
 
+.fade-in {
+  display: none;
+}
+
 .container-full-width {
   position: relative;
   width: 100%;
@@ -142,8 +146,6 @@
   left: 0;
   z-index: 1000;
 }
-
-
 
 #search-hero #search-container .control-container {
   float: left;
