@@ -8,6 +8,7 @@
 }
 
 .container-full-width {
+  position: relative;
   width: 100%;
 }
 
@@ -138,8 +139,11 @@
   background: rgba(0,0,0, 0.8);
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
 }
+
+
 
 #search-hero #search-container .control-container {
   float: left;

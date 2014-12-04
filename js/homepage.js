@@ -15,6 +15,7 @@ $( document ).ready(function() {
     })
   } );
   $( "#top-sales" ).load( "includes/homepage/block-top-sales.html" );
+  $( "#top-sales-triple" ).load( "includes/homepage/block-top-sales-triple.html" );
   $( "#collections" ).load( "includes/homepage/block-collections.html" );
   $( "#magazine" ).load( "includes/homepage/block-magazine.html" );
   $( "#cross-sell" ).load( "includes/homepage/block-cross-sell.html" );
