@@ -7,8 +7,45 @@
   margin: 0 auto;
 }
 
-.container-fluid {
+.fixed .container-fluid {
   max-width: 1300px;
+}
+
+.fixed .container-fluid.no-pad {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.fixed .container-fluid.no-pad .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.fixed .container-fluid.no-pad .row [class^="col-"],
+.fixed .row.no-gutters [class*=" col-"]{
+   padding: 0;
+}
+
+/* no-gutters class rules for full width, no gutters */
+.container-fluid.no-pad .row.tiles {
+   margin-right: 0;
+   margin-left: 0;
+}
+.container-fluid.no-pad .row.tiles [class^="col-"],
+.container-fluid.no-pad .row.tiles [class*=" col-"]{
+   padding: 2px;
+}
+
+
+/* for index 1 where full bleed top sales occur */
+.full-bleed .row.tiles {
+   margin-right: 2px;
+   margin-left: 2px;
+}
+
+.full-bleed .row.tiles [class^="col-"],
+.full-bleed .row.tiles [class*=" col-"]{
+  padding: 2px;
 }
 
 .fade-in {

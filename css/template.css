@@ -100,16 +100,6 @@ body.gutter #grace-wrap {
   }
 }
 
-/* no-gutters class rules for full width, no gutters */
-.row.no-gutters {
-   margin-right: 2px;
-   margin-left: 2px;
-}
-.row.no-gutters [class^="col-"],
-.row.no-gutters [class*=" col-"]{
-   padding: 2px;
-}
-
 /* styles *******************************************/
 
 body {

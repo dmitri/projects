@@ -18,6 +18,7 @@ $( document ).ready(function() {
   $( "#top-sales-triple" ).load( "includes/homepage/block-top-sales-triple.html" );
   $( "#collections" ).load( "includes/homepage/block-collections.html" );
   $( "#magazine" ).load( "includes/homepage/block-magazine.html" );
+  $( "#magazine.full" ).load( "includes/homepage/block-magazine-full-bleed.html" );
   $( "#cross-sell" ).load( "includes/homepage/block-cross-sell.html" );
   $( "#insta-feed" ).load( "includes/homepage/block-insta-feed.html" );
   $( "#upcoming" ).load( "includes/homepage/block-upcoming.html" );
