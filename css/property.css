@@ -122,22 +122,20 @@ body.gutter #social {
   width: 100%;
 }
 
-.carousel-control.left .fa,
-.carousel-control.right .fa {
-  color: rgba(255,255,255, .7);
-  font-size: 90px;
-  font-weight: 100;
+.carousel-control.left img, 
+.carousel-control.right img {
   position: absolute;
   text-shadow: 0 1px 2px rgba(0,0,0,.9);
-  top: 38%;
+  bottom: 45%;
+  top: auto;
 }
 
-.carousel-control.right .fa {
-  right: 10%;
+.carousel-control.left img {
+  left: 15px;
 }
 
-.carousel-control.left .fa {
-  left: 10%;
+.carousel-control.right img {
+  right: 15px;
 }
 
 #screen-gallery:hover #caption-social {
