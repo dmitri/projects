@@ -1047,17 +1047,13 @@ margin-top: 25px;
 
 /* responsive media query settings for break points ***************/
 
-@media (min-width: 1330px) {
-  header#main .container, header#main .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-    overflow: hidden;
-  }
-}
-
 @media (min-width: 1300px) {
   #property-details-container.fixed {
     width: 1300px;
+  }
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 

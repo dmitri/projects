@@ -14,7 +14,11 @@
   min-width: 738px !important;
 }
 
-.fixed .container-fluid {
+.fixed .container-fluid { /* index.html - max width of 1170 inside of full bleed */
+  max-width: 1170px;
+}
+
+.wide-fixed .container-fluid { /* index2.html - max width of 1300 inside of full bleed */
   max-width: 1300px;
 }
 
@@ -240,12 +244,12 @@
 
 #search-hero #search-container .control-container-inner .search-label-container {
  float: left;
- width: 38%;
+ width: 40.53556%;
 }
 
 #search-hero #search-container .control-container-inner .search-field-container {
  float: left;
- width: 62%;
+ width: 59%;
 }
 
 #search-hero #search-container .control-container-inner .search-field-container input[type="text"] {
@@ -274,33 +278,25 @@
   font-size: 17px;
 }
 
-#search-hero .carousel-control.left img, 
-#search-hero .carousel-control.right img {
+.carousel-control.left img, 
+.carousel-control.right img {
   position: absolute;
   text-shadow: 0 1px 2px rgba(0,0,0,.9);
   bottom: 43%;
   top: auto;
 }
 
-#search-hero .carousel-control.left img {
+.carousel-control.left img {
   left: 15px;
 }
 
-#search-hero .carousel-control.right img {
+ .carousel-control.right img {
   right: 15px;
 }
 
-#magazine .carousel-control.left img, 
-#magazine .carousel-control.right img {
-  position: absolute;
-  bottom: 50px;
-  top: auto;
+a.carousel-control:hover {
+  background: none;
 }
-
-#magazine .carousel-control.left img {
-  left: 55px;
-}
-
 
 /* Sales Tiles ************************/
 
