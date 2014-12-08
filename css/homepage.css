@@ -21,6 +21,7 @@
 .fixed .container-fluid.no-pad {
   padding-right: 0;
   padding-left: 0;
+  overflow: hidden;
 }
 
 .fixed .container-fluid.no-pad .row {
@@ -35,8 +36,8 @@
 
 /* no-gutters class rules for full width, no gutters */
 .container-fluid.no-pad .row.tiles {
-   margin-right: 0;
-   margin-left: 0;
+   margin-right: -2px;
+   margin-left: -2px;
 }
 .container-fluid.no-pad .row.tiles [class^="col-"],
 .container-fluid.no-pad .row.tiles [class*=" col-"]{
@@ -304,7 +305,7 @@
 /* Sales Tiles ************************/
 
 #sales-tiles-tabs {
-  margin: 60px 0 35px 0;
+  margin: 55px 0 45px 0;
 }
 
 #sales-tiles-tabs.nav-tabs.nav-justified>li>a {
