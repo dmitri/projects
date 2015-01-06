@@ -1,0 +1,169 @@
+/* 
+  Berklee Music Network Welcome Page Styles
+*/
+
+ /* Primary Styles
+    Author: Caitlin Bailey, Steve Zimmerman
+ */
+
+.fl { float: left; }
+.fr { float: right; }
+
+body {
+	background: #0e0e0e;
+}
+
+header { 
+	background: transparent url(../images/bg_crowd.png) no-repeat bottom center;
+	margin: 0 auto;
+	padding: 0 0 75px 0;
+	width: 1000px;
+}
+
+
+
+header h2 {
+	color: #E5B625;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+	font-size: 65px;
+	font-weight: normal;
+	letter-spacing: -2px;
+	margin: 25px 0 10px 0;
+	text-align: center;
+	width: 100%;
+}
+
+header p {
+	color: #CCC;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+	font-size: 20px;
+	line-height: 30px;
+	margin: 10px auto 60px auto;
+	padding: 0 0 0 20px;
+	width: 550px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+.info_container {
+	margin: 0 auto;
+	width: 400px;
+}
+
+.info_container.last {
+	margin-left: 40px;
+}
+
+
+#marketing_main {
+	background: #111;
+	margin: 0 auto;
+	padding: 35px 0 25px 0;
+}
+
+#marketing_main ul {
+	float: left;
+	margin-left: 6em;
+	width: 410px;
+}
+
+#marketing_main ul li {
+	/*border-left: 10px solid #E5B625;*/
+	color: #777;
+	font-size: 22px;
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 0;
+}
+
+#marketing_main ul li h4 {
+	color: #E5B625;
+	border-bottom: 4px dotted #888;
+	font: 26px "Lucida Grande",Lucida,helvetica,Arial,verdana,sans-serif;
+	font-size: 26px;
+	
+}
+
+#marketing_main ul li h5 {
+	color: #E6E6Ec;
+	border-bottom: 1px solid #444;
+	font: "Lucida Grande",Lucida,helvetica,Arial,verdana,sans-serif;
+	font-weight: normal;
+	padding: 0 0 3px 0;
+	margin: 0 0 7px 0;
+}
+
+
+#marketing_main ul li p {
+	color: #888;
+	font-size: 16px;
+	
+}
+
+#partners_main {
+	background: #000;
+	text-align: center;
+	padding: 40px 0;
+}
+
+#partners_main p {
+	color: #999;
+	font: 14px/1.75em "Lucida Grande",Lucida,helvetica,Arial,verdana,sans-serif;
+	font-size: 25px;
+}
+
+#partners_main p span {
+	color: #FFF;
+}
+
+#partners_main p.details {
+	font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Media queries for responsive design
+ * These follow after primary styles so they will successfully override. 
+ */
+
+@media all and (orientation:portrait) { 
+  /* Style adjustments for portrait mode goes here */
+  
+}
+
+@media all and (orientation:landscape) { 
+  /* Style adjustments for landscape mode goes here */
+  
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+  
+  
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+     j.mp/textsizeadjust 
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+/* 
+ * print styles
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+ */
+@media print {
+
+}
+

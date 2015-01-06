@@ -58,6 +58,8 @@ body.gutter #grace-wrap {
 /* bootstrap container modifications to accommodate for the 1300px */
 .container,
 .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
   min-width: 738px !important;
 }
 
