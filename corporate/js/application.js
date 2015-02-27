@@ -21,7 +21,21 @@ $( document ).ready(function() {
 
   $( "body" ).on( "click", ".nav-toggle", function( event ) {
     event.preventDefault();
-    $( 'body' ).toggleClass( "show-nav" );
+    $('#main-nav').fadeIn('fast');
+    $('.nav-toggle').addClass('on');
+    $('.nav-toggle i').removeClass('fa-bars').addClass('fa-times');
+   
   });
-
+  
+  $(document).click(function(event) {
+    $navToggle = $('.nav-toggle');
+    $nav = $('#main-nav');
+    if(!$(event.target).closest($navToggle).length) {
+       if($nav.is(":visible")) {
+           $nav.fadeOut(100);
+           $navToggle.removeClass('on');
+           $navToggle.find('i').removeClass('fa-times').addClass('fa-bars');
+       }
+    }
+  });
 });
