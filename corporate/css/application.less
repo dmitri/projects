@@ -22,26 +22,45 @@
 
 .rotate(@degrees) {
 
-/* Safari */
--webkit-transform: rotate(@degrees);
+  /* Safari */
+  -webkit-transform: rotate(@degrees);
 
-/* Firefox */
--moz-transform: rotate(@degrees);
+  /* Firefox */
+  -moz-transform: rotate(@degrees);
 
-/* IE */
--ms-transform: rotate(@degrees);
+  /* IE */
+  -ms-transform: rotate(@degrees);
 
-/* Opera */
--o-transform: rotate(@degrees);
+  /* Opera */
+  -o-transform: rotate(@degrees);
 
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 }
 
-/*** HERO AREA SETUP ****/
+.title-font(@size, @color) {
+  color: @color;
+  font-family: @title-font;
+  font-size: @size;
+  text-transform: uppercase;
+}
 
-.action-button {
+.body-font(@size, @color, @weight) {
+  color: @color;
+  font-family: @body-font;
+  font-size: @size;
+  font-weight: @weight;
+  line-height: 160%;
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.btn-action {
   background: @brand-color;
   color: @white;
   display: inline-block;
@@ -63,6 +82,17 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     margin-left: 0;
   }
 }
+
+.btn-action-small {
+  .btn-action;
+  color: @white !important;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 15px;
+}
+
+/*** HERO AREA SETUP ****/
 
 .hero-set(@background, @height, @title-size) {
   background: url("../images/@{background}") no-repeat top center;
@@ -110,7 +140,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     padding-top: 40px;
     
     a {
-      .action-button;
+      .btn-action;
     }
   }
 }
@@ -150,7 +180,6 @@ a:hover {
 body {
   background: @body-color;
   font-family: @body-font;
-  display: none;
   padding-top: 108px;
 }
 
@@ -213,7 +242,7 @@ header#main {
   }
   
   .nav-toggle.on {
-    background: @brand-color;
+    background: #999;
     
     i {
       .rotate(90deg)
@@ -222,69 +251,97 @@ header#main {
     span.open { display: none; }
     span.close-menu { display: block; }
   }
-}
-
-#main-nav {
-  position: absolute;
-  top: 108px;
-  left: 0;
-  right: 0;
-  background: @brand-color;
-  text-align: center;
-  display: none;
-  height: auto;
-  width: 100%;
-  text-align: center;
   
-  z-index: 0;
-  
-  ul {
-    display: block;
-    left: 0%;
-    margin: 0;
-    padding: 0;
+  .dropdown-menu {
+    background: @brand-color;
+    .border-radius(0);
+    border: none;
+    height: auto;
+    position:fixed;
+    top: 106px;
     width: 100%;
-    top: 2.5%;
-    
-    li {
-      list-style: none;
-    }
+    z-index: 10;
     
     li a {
+      color: @white;
       font-family: @body-font;
-      color: #f1f1f2;
-      display:block;
-      font-size: 80px;
-      font-weight: 200;
-      letter-spacing: 0.8px;
-      line-height: 120px;
+      font-size: 70px;
+      font-weight: 300;
+      padding-top: 6px;
+      padding-bottom: 6px;
       text-align: center;
-      -webkit-transition:all ease-in-out .50s;
-        -moz-transition:all ease-in-out .50s;
-        -o-transition: all ease-in-out .50s;
-        transition: all ease-in-out .50s;
       
       &:hover {
-        background: lighten(@brand-color, 10%);
+        background: lighten(@brand-color, 15%);
       }
     }
   }
 }
 
-.show-nav #main-nav {
-  display: block;
-  z-index: 1;
-}
-.hide-nav #main-nav {
-  display: none;
-  height: auto;
-  width: 100%;
-  z-index: 0;
-}
-
 .home {
   .hero {
     .hero-set("img-home-hero.jpg", 700px, 71px);
+  }
+  
+  .slot-job {
+    padding: 0;
+
+    header {
+      background: @white;
+      display: block;
+      padding: 50px 0 30px 50px;
+      text-align: left;
+      position: relative;
+      z-index: 100;
+
+      h1 {
+        border-bottom: 1px solid @brand-color;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        .title-font(50px, rgb(92, 102, 112));
+      }
+
+      p {
+        .body-font(26px, #777, 300);
+        margin: 0;
+        width: 60%;
+      }
+      
+      a.btn-action-small {
+       position: absolute;
+       bottom: 0;
+       right: 0;
+       z-index: 10;
+      }
+    }
+    
+    img {
+      margin-top: -100px;
+    }
+  }
+  
+  .slot-tiles {
+    .header-tile {
+      padding-left: 5%;
+      
+      h1 {
+        color: #888;
+        display: block;
+        font-size: 63px;
+        font-weight: 200;
+        margin-top: 35%;
+        margin-bottom: 30px;
+        text-align: left;
+        span{ display: block; }
+      }
+      
+      a {
+        display: block;
+        font-size: 22px;
+        font-weight: 200;
+        text-align: left;
+      }
+    }
   }
 }
 

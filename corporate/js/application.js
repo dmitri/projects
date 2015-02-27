@@ -3,39 +3,32 @@
 $( document ).ready(function() {
   // load the includes
   $( "header#main" ).load( "includes/header.html" );
-  $( "#search-hero" ).load( "includes/homepage/block-search-hero.html", function() {
-    $('#search-container').affix({
-      offset: {
-        top: 110,
-        bottom: function () {
-          return (this.bottom = $('#insta-feed').outerHeight(true))
-        }
-      }
-    })
-  } );
   $( "#footer" ).load( "includes/footer.html" );
   
+  // fade the page in gracefully, then set up the events
   setTimeout(function() {
-    $("body").fadeIn('fast', function() {});
+    $("body").fadeIn('fast', function() { setEvents(); });
   }, 500);
 
-  $( "body" ).on( "click", ".nav-toggle", function( event ) {
-    event.preventDefault();
-    $('#main-nav').fadeIn('fast');
-    $('.nav-toggle').addClass('on');
-    $('.nav-toggle i').removeClass('fa-bars').addClass('fa-times');
-   
-  });
+
+  setEvents = function() {
   
-  $(document).click(function(event) {
-    $navToggle = $('.nav-toggle');
-    $nav = $('#main-nav');
-    if(!$(event.target).closest($navToggle).length) {
-       if($nav.is(":visible")) {
-           $nav.fadeOut(100);
-           $navToggle.removeClass('on');
-           $navToggle.find('i').removeClass('fa-times').addClass('fa-bars');
-       }
-    }
-  });
+    // set up the main nav dropdown behavior #############/
+    // open
+    $('#mainnav-drop').on('show.bs.dropdown', function () {
+      toggleNavTrigger();
+    });
+    // close 
+    $('#mainnav-drop').on('hide.bs.dropdown', function () {
+      toggleNavTrigger();
+    });
+  
+  }
+
 });
+
+
+toggleNavTrigger = function() {
+  $('.nav-toggle').toggleClass('on');
+  $('.nav-toggle i').toggleClass('fa-bars').toggleClass('fa-times');
+}
