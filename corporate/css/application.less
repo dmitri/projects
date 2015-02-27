@@ -16,7 +16,7 @@
 @title-font: 'TradeGothicLTStdBdCn20', sans-serif;
 @body-font: 'Source Sans Pro', sans-serif;
 @white: rgb(255,255,255);
-@body-color: @white;
+@body-color: #f2f2f2;
 
 /* component mixin setup *********************************************************/
 
@@ -153,7 +153,6 @@ a:visited {
     -moz-transition: all 500ms ease .05s;
     -o-transition: all 500ms ease .05s;
     transition: all 500ms ease .05s;
-  
 }
 
 a:hover {
@@ -166,9 +165,14 @@ a:hover {
   overflow: hidden;
 }
 
-.container-fluid.container-inner {
-  width: 80%;
+body.fixed .container-fluid {
   max-width: 1300px;
+}
+
+.container-inner {
+  margin: 0 auto;
+  width: 80%;
+
 }
 
 /* no gutter columns */
@@ -184,13 +188,17 @@ body {
 }
 
 header#main {
-  background: rgb(255,255,255);
+  background: none;
   height: 108px;
   
   -webkit-transition:all ease-in-out .50s;
     -moz-transition:all ease-in-out .50s;
     -o-transition: all ease-in-out .50s;
     transition: all ease-in-out .50s;
+  
+  .container-fluid {
+    background: @white;
+  }
   
   .brand {
     display: inline-block;
@@ -211,8 +219,6 @@ header#main {
     width: 130px;
     text-align: center;
     text-decoration: none;
-    
-    
     
     i { 
       display: block;
@@ -278,12 +284,20 @@ header#main {
   }
 }
 
+body.fixed .dropdown-menu {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
 .home {
   .hero {
     .hero-set("img-home-hero.jpg", 700px, 71px);
   }
   
   .slot-job {
+    background: @white;
     padding: 0;
 
     header {
@@ -321,6 +335,7 @@ header#main {
   }
   
   .slot-tiles {
+    background: @white;
     .header-tile {
       padding-left: 5%;
       
@@ -329,7 +344,7 @@ header#main {
         display: block;
         font-size: 63px;
         font-weight: 200;
-        margin-top: 35%;
+        margin-top: 20%;
         margin-bottom: 30px;
         text-align: left;
         span{ display: block; }
@@ -345,6 +360,34 @@ header#main {
   }
 }
 
+#footer {
+  background: @white;
+  padding: 50px 0;
+  
+  a {
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 20px;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  
+  .social a {
+    color: #888;
+  }
+  
+  .brands a {
+    font-size: 16px;
+    margin-left: 2%;
+    text-transform: uppercase;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
 
 /* Media Queries for Responsive ******************************************************/
 
