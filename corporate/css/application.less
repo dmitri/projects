@@ -1,5 +1,5 @@
 /* Typography setup **************************************************************/
-/* Trade Gothic */
+/* Trade Gothic BdCn20 */
 @font-face {
     font-family: 'TradeGothicLTStdBdCn20';
     src: url('fonts/TradeGothicLTStdBdCn20.eot');
@@ -16,151 +16,17 @@
 @title-font: 'TradeGothicLTStdBdCn20', sans-serif;
 @body-font: 'Source Sans Pro', sans-serif;
 @white: rgb(255,255,255);
-@body-color: #f2f2f2;
+@body-color: #e2e2e2;
+@body-color-inner: #f0f0f1;
 
-/* component mixin setup *********************************************************/
-
-.rotate(@degrees) {
-
-  /* Safari */
-  -webkit-transform: rotate(@degrees);
-
-  /* Firefox */
-  -moz-transform: rotate(@degrees);
-
-  /* IE */
-  -ms-transform: rotate(@degrees);
-
-  /* Opera */
-  -o-transform: rotate(@degrees);
-
-  /* Internet Explorer */
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-
-}
-
-.title-font(@size, @color) {
-  color: @color;
-  font-family: @title-font;
-  font-size: @size;
-  text-transform: uppercase;
-}
-
-.body-font(@size, @color, @weight) {
-  color: @color;
+/* Template elements ***********************************************************************/
+body {
+  background: @body-color;
   font-family: @body-font;
-  font-size: @size;
-  font-weight: @weight;
-  line-height: 160%;
+  padding-top: 108px;
 }
 
-.border-radius(@radius) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
-}
-
-.btn-action {
-  background: @brand-color;
-  color: @white;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 200;
-  letter-spacing: 4px;
-  line-height: 20px;
-  padding: 25px;
-  margin-left: 30px;
-  text-transform: uppercase;
-  
-  
-  &:hover {
-    background: lighten(@brand-color,20% );
-    text-decoration: none;
-  }
-  
-  &:first-child {
-    margin-left: 0;
-  }
-}
-
-.btn-action-small {
-  .btn-action;
-  color: @white !important;
-  font-size: 16px;
-  letter-spacing: 2px;
-  margin: 0;
-  padding: 15px;
-}
-
-/*** HERO AREA SETUP ****/
-
-.hero-set(@background, @height, @title-size) {
-  background: url("../images/@{background}") no-repeat top center;
-  background-size: cover;
-  position: relative;
-  min-height: @height;
-  
-  .container-inner {
-    left: 0;
-    right: 0;
-    top: 30%;
-    position: absolute;
-    text-align: center;
-    z-index: 10px;
-  }
-  
-  h1 {
-    color: #FFF;
-    display: block;
-    font-family: @title-font;
-    font-size: @title-size;
-    letter-spacing: 4px;
-    margin: 0 0 40px 0;
-    text-transform: uppercase;
-    width: 100%;
-  }
-  
-  p {
-    color: @white;
-    display: block;
-    font-family: @body-font;
-    font-weight: 200;
-    font-size: 28px;
-    line-height: 32px;
-    margin: 0 auto;
-    
-    span {
-      display: block;
-    }
-  }
-  
-  footer {
-    border-top: 1px solid @white;
-    margin: 40px auto 0 auto;
-    padding-top: 40px;
-    
-    a {
-      .btn-action;
-    }
-  }
-}
-
-a, 
-a:visited {
-  color: @brand-color;
-  
-  -webkit-transition: all 500ms ease .05;
-    -moz-transition: all 500ms ease .05s;
-    -o-transition: all 500ms ease .05s;
-    transition: all 500ms ease .05s;
-}
-
-a:hover {
-  color: darken(@brand-color, 10%);
-}
-
-/* template setup */
-
+/* grid container setup */
 .container-fluid {
   overflow: hidden;
 }
@@ -175,16 +41,25 @@ body.fixed .container-fluid {
 
 }
 
-/* no gutter columns */
+/* no gutter columns (apply to "row" in a container-fluid) */
 .no-gutter > [class*='col-'] {
     padding-right:0;
     padding-left:0;
 }
 
-body {
-  background: @body-color;
-  font-family: @body-font;
-  padding-top: 108px;
+/* core link styles */
+a, 
+a:visited {
+  color: @brand-color;
+  
+  -webkit-transition: all 500ms ease .05;
+    -moz-transition: all 500ms ease .05s;
+    -o-transition: all 500ms ease .05s;
+    transition: all 500ms ease .05s;
+}
+
+a:hover {
+  color: darken(@brand-color, 10%);
 }
 
 header#main {
@@ -291,9 +166,39 @@ body.fixed .dropdown-menu {
   max-width: 1300px;
 }
 
+#footer {
+  background: @white;
+  padding: 50px 0;
+  
+  a {
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 20px;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  
+  .social a {
+    color: #888;
+  }
+  
+  .brands a {
+    font-size: 16px;
+    margin-left: 2%;
+    text-transform: uppercase;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+/* individual page styles *********************************************************/
 .home {
   .hero {
-    .hero-set("img-home-hero.jpg", 700px, 71px);
+    .hero-set("img-hero-home.jpg", 700px, 30%, 71px);
   }
   
   .slot-job {
@@ -360,32 +265,215 @@ body.fixed .dropdown-menu {
   }
 }
 
-#footer {
+.advertisers {
+  .hero {
+    .hero-set("img-hero-advertisers.jpg", 300px, 50%, 83px);
+  }
+}
+
+.careers {
+  .hero {
+    .hero-set("img-hero-careers.jpg", 600px, 50%, 83px);
+  }
+  
+  .slot-title-and-text {
+    background: @white; 
+    .container-inner {
+      background: inherit;
+      padding: 50px 0;
+    
+      p { width: 80%; margin: 0 auto; }
+    }
+  }
+}
+
+.press {
+  .hero {
+    .hero-set("img-hero-press.jpg", 600px, 50%, 104px);
+  }
+}
+
+.company {
+  .hero {
+    .hero-set("img-hero-company.jpg", 700px, 50%, 71px);
+  }
+}
+
+.publishers {
+  .hero {
+    .hero-set("img-hero-publishers.jpg", 300px, 50%, 71px);
+  }
+}
+
+/* Components and mixins *************************************************************/
+
+.rotate(@degrees) {
+
+  /* Safari */
+  -webkit-transform: rotate(@degrees);
+
+  /* Firefox */
+  -moz-transform: rotate(@degrees);
+
+  /* IE */
+  -ms-transform: rotate(@degrees);
+
+  /* Opera */
+  -o-transform: rotate(@degrees);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
+.title-font(@size, @color) {
+  color: @color;
+  font-family: @title-font;
+  font-size: @size;
+  text-transform: uppercase;
+}
+
+.body-font(@size, @color, @weight) {
+  color: @color;
+  font-family: @body-font;
+  font-size: @size;
+  font-weight: @weight;
+  line-height: 160%;
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.btn-action {
+  background: @brand-color;
+  color: @white;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  line-height: 20px;
+  padding: 25px;
+  margin-left: 30px;
+  text-transform: uppercase;
+  
+  
+  &:hover {
+    background: lighten(@brand-color,20% );
+    text-decoration: none;
+  }
+  
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.btn-action-small {
+  .btn-action;
+  color: @white !important;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 15px;
+}
+
+.title-sticker {
   background: @white;
+  color: #666;
+  font-family: @title-font;
+  font-size: 48px;
+  display: inline-block;
+  line-height: 100%;
+  margin: 0 auto 40px auto;
+  padding: 30px 30px 20px 30px;
+  text-transform: uppercase;
+}
+
+/*** HERO AREA SETUP ****/
+
+.hero-set(@background, @height, @top, @title-size) {
+  background: url("../images/@{background}") no-repeat bottom center;
+  background-size: cover;
+  position: relative;
+  min-height: @height;
+  
+  .container-inner {
+    left: 0;
+    right: 0;
+    top: @top;
+    position: absolute;
+    text-align: center;
+    z-index: 10px;
+  }
+  
+  h1 {
+    color: #FFF;
+    display: block;
+    font-family: @title-font;
+    font-size: @title-size;
+    letter-spacing: 4px;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  
+  p {
+    color: @white;
+    display: block;
+    font-family: @body-font;
+    font-weight: 200;
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0 auto;
+    
+    span {
+      display: block;
+    }
+  }
+  
+  footer {
+    border-top: 1px solid @white;
+    margin: 40px auto 0 auto;
+    padding-top: 40px;
+    
+    a {
+      .btn-action;
+    }
+  }
+}
+
+.slot-title-and-text {
+  background: @body-color-inner;
+  text-align: center;
   padding: 50px 0;
   
-  a {
-    display: inline-block;
-    font-size: 30px;
-    margin-left: 20px;
-    
-    &:first-child {
-      margin-left: 0;
-    }
+  .container-inner {
+  
+    position: relative;
+    z-index: 10;
   }
   
-  .social a {
-    color: #888;
+  h1 {
+    .title-sticker;
   }
   
-  .brands a {
-    font-size: 16px;
-    margin-left: 2%;
-    text-transform: uppercase;
+  p {
+    font-family: @body-font;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 200;
     
-    &:first-child {
-      margin-left: 0;
+    span {
+      display: block;
     }
+  }
+}
+
+.slot-title-and-text.offset-top {
+  .container-inner {
+    margin-top: -100px;
   }
 }
 
