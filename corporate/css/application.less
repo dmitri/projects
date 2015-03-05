@@ -26,6 +26,11 @@ body {
   padding-top: 108px;
 }
 
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
+}
+
 /* grid container setup */
 .container-fluid {
   overflow: hidden;
@@ -137,9 +142,11 @@ header#main {
     background: @brand-color;
     .border-radius(0);
     border: none;
-    height: auto;
+    height: 100%;
+    overflow-y: scroll;
     position:fixed;
     top: 106px;
+    left: 0;
     width: 100%;
     z-index: 10;
     
@@ -273,7 +280,7 @@ body.fixed .dropdown-menu {
 
 .careers {
   .hero {
-    .hero-set("img-hero-careers.jpg", 600px, 50%, 83px);
+    .hero-set("img-hero-careers.jpg", 600px, 40%, 83px);
   }
   
   .slot-title-and-text {
@@ -301,7 +308,7 @@ body.fixed .dropdown-menu {
 
 .publishers {
   .hero {
-    .hero-set("img-hero-publishers.jpg", 300px, 50%, 71px);
+    .hero-set("img-hero-publishers.jpg", 300px, 50%, 57px);
   }
 }
 

@@ -31,4 +31,5 @@ $( document ).ready(function() {
 toggleNavTrigger = function() {
   $('.nav-toggle').toggleClass('on');
   $('.nav-toggle i').toggleClass('fa-bars').toggleClass('fa-times');
+  $('html, body').toggleClass('no-scroll');
 }
