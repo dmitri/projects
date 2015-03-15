@@ -22,6 +22,9 @@ $( document ).ready(function() {
     $('#mainnav-drop').on('hide.bs.dropdown', function () {
       toggleNavTrigger();
     });
+
+    $("img").unveil();
+
   
   }
 
