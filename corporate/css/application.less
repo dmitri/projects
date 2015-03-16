@@ -48,8 +48,8 @@ body.fixed .container-fluid {
 
 /* no gutter columns (apply to "row" in a container-fluid) */
 .no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
+  padding-right:0;
+  padding-left:0;
 }
 
 /* core link styles */
@@ -354,21 +354,26 @@ body.fixed .dropdown-menu {
   .hero {
     .hero-set("img-hero-advertisers.jpg", 300px, 50%, 83px);
   }
+  
+  .slot-adv {
+    padding: 75px; 
+    
+    .details {
+      margin-top: 60px;
+      img.logo { margin: 0 0 40px 0; width: 50%; }
+      p { font-size: 22px; line-height: 160%; margin-bottom: 40px; }
+      a { .btn-action-small; .right-arrow;  }
+    }
+    
+    &.stripe-even {
+      .stripe-even;
+    }
+  }
 }
 
 .careers {
   .hero {
     .hero-set("img-hero-careers.jpg", 600px, 40%, 83px);
-  }
-  
-  .slot-title-and-text {
-    background: @white; 
-    .container-inner {
-      background: inherit;
-      padding: 50px 0;
-    
-      p { width: 80%; margin: 0 auto; }
-    }
   }
 }
 
@@ -444,7 +449,6 @@ body.fixed .dropdown-menu {
   margin-left: 30px;
   text-transform: uppercase;
   
-  
   &:hover {
     background: lighten(@brand-color,20% );
     text-decoration: none;
@@ -455,14 +459,6 @@ body.fixed .dropdown-menu {
   }
 }
 
-/* makes the right arrow */
-.right-arrow {
-  &:after {
-    content: "\2192";
-    margin-left: 7px;
-  }
-}
-
 .btn-action-small {
   .btn-action;
   color: @white !important;
@@ -470,6 +466,14 @@ body.fixed .dropdown-menu {
   letter-spacing: 2px;
   margin: 0;
   padding: 15px;
+}
+
+/* adds the right arrow to links / buttons */
+.right-arrow {
+  &:after {
+    content: "\2192";
+    margin-left: 7px;
+  }
 }
 
 .title-sticker {
@@ -549,9 +553,16 @@ body.fixed .dropdown-menu {
   padding: 50px 0;
   
   .container-inner {
-  
+    background: inherit;
+    padding: 50px 0;
     position: relative;
     z-index: 10;
+    
+    p {
+      .body-font(38px, #5c6670, 300);
+      margin: 0 auto;
+      width: 80%;  
+      }
   }
   
   h1 {
@@ -568,12 +579,24 @@ body.fixed .dropdown-menu {
       display: block;
     }
   }
+  
+  &.stripe-even {
+    .stripe-even;
+  }
 }
 
 .slot-title-and-text.offset-top {
   .container-inner {
     margin-top: -100px;
   }
+}
+
+.stripe-even {
+  background: @white;
+}
+
+.stripe-odd {
+  background: #f0f0f0;
 }
 
 /* Media Queries for Responsive ******************************************************/
