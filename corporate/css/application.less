@@ -15,6 +15,7 @@
 @brand-color: rgb(0, 172, 236);
 @title-font: 'TradeGothicLTStdBdCn20', sans-serif;
 @body-font: 'Source Sans Pro', sans-serif;
+@body-text-color: #5c6670;
 @white: rgb(255,255,255);
 @body-color: #e2e2e2;
 @body-color-inner: #f0f0f1;
@@ -37,16 +38,21 @@ body.no-scroll {
 }
 
 body.fixed .container-fluid {
-  max-width: 1300px;
+  max-width: 80%;
 }
 
 .container-inner {
   margin: 0 auto;
-  width: 80%;
+  max-width: 1300px;
 
 }
 
 /* no gutter columns (apply to "row" in a container-fluid) */
+.no-gutter {
+  margin-right: 0;
+  margin-left: 0;
+  overflow: hidden;
+}
 .no-gutter > [class*='col-'] {
   padding-right:0;
   padding-left:0;
@@ -68,18 +74,14 @@ a:hover {
 }
 
 header#main {
-  background: none;
+  background: @white;
   height: 108px;
   
   -webkit-transition:all ease-in-out .50s;
     -moz-transition:all ease-in-out .50s;
     -o-transition: all ease-in-out .50s;
     transition: all ease-in-out .50s;
-  
-  .container-fluid {
-    background: @white;
-  }
-  
+
   .brand {
     display: inline-block;
     float: right;
@@ -113,8 +115,7 @@ header#main {
     span {
       color: @white;
       display: block;
-      font-family: @body-font;
-      font-size: 13px;
+      .body-font(13px, @white, 300);
       letter-spacing: 2px;
       margin-top: 10px;
       text-transform: uppercase;
@@ -402,26 +403,84 @@ body.fixed .dropdown-menu {
       margin-top: 20px;
     
       h1 {
-        .body-font(40px, #5c6670, 300);
+        .body-font(40px, @body-text-color, 300);
         line-height: 120%;
         margin-bottom: 20px;
       }
       p {
-        .body-font(20px, #5c6670, 300);
+        .body-font(20px, @body-text-color, 300);
       }
       
     }
     
     footer {
       margin-top: 150px;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 300;
+      
+      div {
+        margin-top: 15px;
+        i { 
+          float: left; 
+          font-size: 40px; 
+      
+          &.revenue { color: rgb(191, 234, 248); }
+          &.users { color: rgb(143, 220, 243);}
+        }
+      
+        span { float: left;  margin: 7px 0 0 15px; }
+      }
+    }
+  }
+
+  .slot-different {
+    .container-inner {
+      max-width: 835px;
+    }
+    ul { 
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: left;
+    
+      li {
+        .body-font(22px, @body-text-color, 300)
+      }
     }
   }
   
   .slot-templates {
     background: @white;
     padding: 50px 0;
+
+    header {
+      margin-bottom: 30px;
+      text-align: center;
+
+      h1 { 
+        .body-font(40px, @body-text-color, 300); 
+      }
+      p {
+        .body-font(22px, @body-text-color, 300);
+        max-width: 835px;
+        margin: 0 auto;
+      }
+    }
+    
+    .template {
+      padding: 0 0 40px 0;
+      text-align: center;
+      
+      h2 { 
+        .body-font(28px, @body-text-color, 300);
+        margin-bottom: 20px; 
+      }
+      
+      img {
+        margin: 0 auto;
+        width: 70%;
+      }
+    }
+    
   }
 }
 
@@ -512,6 +571,7 @@ body.fixed .dropdown-menu {
   font-family: @title-font;
   font-size: 48px;
   display: inline-block;
+  letter-spacing: 2.5px;
   line-height: 100%;
   margin: 0 auto 40px auto;
   padding: 30px 30px 20px 30px;
