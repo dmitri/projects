@@ -33,9 +33,7 @@ body.no-scroll {
 }
 
 /* grid container setup */
-.container-fluid {
-  overflow: hidden;
-}
+
 
 body.fixed .container-fluid {
   max-width: 80%;
@@ -177,7 +175,8 @@ body.fixed .dropdown-menu {
 
 #footer {
   background: @white;
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   
   a {
     display: inline-block;
@@ -397,7 +396,8 @@ body.fixed .dropdown-menu {
   
   .slot-pie {
     background: @white;
-    padding: 60px 0 150px 0;
+    padding-top: 60px;
+    padding-bottom: 150px;
     
     header {
       margin-top: 20px;
@@ -422,13 +422,15 @@ body.fixed .dropdown-menu {
         margin-top: 15px;
         i { 
           float: left; 
-          font-size: 40px; 
+          font-size: 50px; 
       
           &.revenue { color: rgb(191, 234, 248); }
           &.users { color: rgb(143, 220, 243);}
         }
       
-        span { float: left;  margin: 7px 0 0 15px; }
+        span { float: left;  margin: 10px 0 0 15px; }
+        
+        &.footnote { font-size: 14px; }
       }
     }
   }
@@ -443,14 +445,15 @@ body.fixed .dropdown-menu {
       text-align: left;
     
       li {
-        .body-font(22px, @body-text-color, 300)
+        .body-font(22px, @body-text-color, 300);
       }
     }
   }
   
   .slot-templates {
     background: @white;
-    padding: 50px 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     header {
       margin-bottom: 30px;
@@ -640,7 +643,8 @@ body.fixed .dropdown-menu {
 .slot-title-and-text {
   background: @body-color-inner;
   text-align: center;
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   
   .container-inner {
     background: inherit;
