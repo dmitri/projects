@@ -34,7 +34,6 @@ body.no-scroll {
 
 /* grid container setup */
 
-
 body.fixed .container-fluid {
   max-width: 80%;
 }
@@ -747,6 +746,41 @@ body.fixed .dropdown-menu {
 
 .stripe-odd {
   background: #f0f0f0;
+}
+
+/* Tabbed Widgets ********************************************************************/
+
+.logo-tabs {
+	margin-top: 30px;
+}
+
+.nav.nav-tabs.nav-justified.logo-tabs > li > {
+	&#tab-jet a { padding-bottom: 14px; }
+	&#tab-one a { padding: 10px 0 5px 0; }
+	
+	a {
+		border-radius: 0;
+		border: none;
+		
+		&:hover {
+			background: none;
+		}
+		
+		img {
+			max-width: 100%;
+		
+			&#tab-logo-one { max-width: 40%; }
+		
+			&#tab-logo-bb,
+			&#tab-logo-jet { max-width: 80%; }
+			
+			&#tab-logo-oyster { max-width: 70%; }
+			
+			&#tab-logo-tingo { max-width: 55%; }
+		
+		}
+	}
+	
 }
 
 /* Media Queries for Responsive ******************************************************/
