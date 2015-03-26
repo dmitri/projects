@@ -468,7 +468,7 @@ body.fixed .dropdown-menu {
   }
 	
 	.hero-leaders {
-		.hero-set("img-hero-company-leaders.jpg", 400px, 60%, 71px);
+		.hero-set("img-hero-company-leaders.jpg", 400px, 70%, 71px);
 	}
 }
 
@@ -898,6 +898,13 @@ body.fixed .dropdown-menu {
 }
 
 @media (max-width: 550px) {
+	
+	.home {
+	  .hero {
+	    .hero-set("img-home-hero-mobile.jpg", 500px, 20%, 48px);
+		}
+	}
+	
   header#main {
     .brand{
       float: right;
@@ -906,16 +913,12 @@ body.fixed .dropdown-menu {
     }
   }
   
-  #hero {
-    background: transparent url(../images/img-home-hero-mobile.jpg) no-repeat top center;
-    background-size: auto auto;
-    height: 691px;
-    
-    img { display: none; }
-  }
-  
   #main-nav ul li a {
     font-size: 42px;
     line-height: 70px;
-  } 
+  }
+	
+	header#main .dropdown-menu li a {
+		font-size: 30px;
+	}
 }
