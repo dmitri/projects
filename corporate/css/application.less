@@ -60,10 +60,10 @@ a,
 a:visited {
   color: @brand-color;
   
-  -webkit-transition: all 500ms ease .05;
-    -moz-transition: all 500ms ease .05s;
-    -o-transition: all 500ms ease .05s;
-    transition: all 500ms ease .05s;
+  -webkit-transition: background 500ms ease .05;
+    -moz-transition: background 500ms ease .05s;
+    -o-transition: background 500ms ease .05s;
+    transition: background 500ms ease .05s;
 }
 
 a:hover {
@@ -73,11 +73,37 @@ a:hover {
 header#main {
   background: @white;
   height: 108px;
+	
+	
+	&.shadow {
+		box-shadow: 0 1px 3px #b0b0b0;
+	}
+	
+	&.shrink {
+		height: 75px;
+		
+		.nav-toggle {
+			height: 75px;
+			width: 97px;
+			
+			i { margin-top: 12px; }
+			span { margin-top: 5px; }
+		}
+		
+		.brand {
+			margin-top: 22px;
+			width: 175px;
+		}
+		
+		.dropdown-menu {
+			top: 73px;
+		}
+	}
   
-  -webkit-transition:all ease-in-out .50s;
-    -moz-transition:all ease-in-out .50s;
-    -o-transition: all ease-in-out .50s;
-    transition: all ease-in-out .50s;
+  -webkit-transition:all ease-in-out .20s;
+    -moz-transition:all ease-in-out .20s;
+    -o-transition: all ease-in-out .20s;
+    transition: all ease-in-out .20s;
 
   .brand {
     display: inline-block;
@@ -86,6 +112,11 @@ header#main {
     margin: 35px 130px 0 0;
     padding: 0;
     width: 219px;
+		
+	  -webkit-transition:all ease-in-out .20s;
+	    -moz-transition:all ease-in-out .20s;
+	    -o-transition: all ease-in-out .20s;
+	    transition: all ease-in-out .20s;
   }
   
   .nav-toggle {
@@ -98,15 +129,20 @@ header#main {
     width: 130px;
     text-align: center;
     text-decoration: none;
+		
+	  -webkit-transition:all ease-in-out .20s;
+	    -moz-transition:all ease-in-out .20s;
+	    -o-transition: all ease-in-out .20s;
+	    transition: all ease-in-out .20s;
     
     i { 
       display: block;
       font-weight: 300;
       margin-top: 30px;
-      -webkit-transition:all ease .30s;
-        -moz-transition:all ease .30s;
-        -o-transition: all ease .30s;
-        transition: all ease .30s;
+      -webkit-transition:all ease .20s;
+        -moz-transition:all ease .20s;
+        -o-transition: all ease .20s;
+        transition: all ease .20s;
     }
     
     span {
@@ -428,8 +464,12 @@ body.fixed .dropdown-menu {
 
 .company {
   .hero {
-    .hero-set("img-hero-company.jpg", 700px, 50%, 71px);
+    .hero-set("img-hero-company.jpg", 600px, 45%, 71px);
   }
+	
+	.hero-leaders {
+		.hero-set("img-hero-company-leaders.jpg", 400px, 60%, 71px);
+	}
 }
 
 .publishers {
@@ -633,9 +673,11 @@ body.fixed .dropdown-menu {
   min-height: @height;
   
   .container-inner {
-    left: 0;
-    right: 0;
+    left: 0px;
+    right: 0px;
     top: @top;
+		padding-left: 20px;
+		padding-right: 20px;
     position: absolute;
     text-align: center;
     z-index: 10px;
@@ -785,12 +827,82 @@ body.fixed .dropdown-menu {
 
 /* Media Queries for Responsive ******************************************************/
 
+@media (max-width: 1100px) {
+	
+	.company {
+	  .hero {
+	    .hero-set("img-hero-company.jpg",500px, 30%, 58px);
+			
+		  -webkit-transition:all ease-in-out .20s;
+		    -moz-transition:all ease-in-out .20s;
+		    -o-transition: all ease-in-out .20s;
+		    transition: all ease-in-out .20s;
+			
+			p {
+				font-size: 24px;
+				span { display: inline; }
+			}
+	  }
+
+	}
+
+	
+	.slot-title-and-text {
+		.container-inner {
+			p {
+				font-size: 24px;
+				span { display: inline; }
+			}
+		}
+	}
+}
+
+@media (max-width: 979px) {
+	body { padding-top: 75px; }
+	
+	header#main {
+			height: 75px;
+		
+			.nav-toggle {
+				height: 75px;
+				width: 97px;
+			
+				i { margin-top: 12px; }
+				span { margin-top: 5px; }
+			}
+		
+			.brand {
+				margin-top: 22px;
+				width: 175px;
+			}
+		
+			.dropdown-menu {
+				top: 73px;
+			}
+	}
+	
+	.company .hero {
+		p {
+			font-size: 20px;
+		}
+	}
+	
+	.slot-title-and-text {
+		.container-inner {
+			p {
+				font-size: 20px;
+				span {display: inline; }
+			}
+		}
+	}
+}
+
 @media (max-width: 550px) {
   header#main {
     .brand{
       float: right;
-      margin-right: 10px;
-      width: 50%;
+			margin-right: 20px;
+      width:175px;
     }
   }
   
