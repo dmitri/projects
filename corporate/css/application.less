@@ -32,6 +32,12 @@ body.no-scroll {
   overflow: hidden;
 }
 
+a:focus,
+*:focus {
+	border: none;
+  outline: 0;
+}
+
 /* grid container setup */
 
 body.fixed .container-fluid {
@@ -68,6 +74,7 @@ a:visited {
 
 a:hover {
   color: darken(@brand-color, 10%);
+	text-decoration: none;
 }
 
 header#main {
@@ -474,6 +481,45 @@ body.fixed .dropdown-menu {
 	.hero-leaders {
 		.hero-set("img-hero-company-leaders.jpg", 400px, 70%, 71px);
 	}
+	
+	
+	.slot-company-stats {
+		.container-inner {
+			max-width: 83%;
+		}
+	}
+	.company-stats {
+		padding: 30px 0 50px 0;
+		
+		.intro {
+			.logo { width: 70%; margin-bottom: 20px; }
+			p { .body-font(20px, @body-text-color, 300); }
+			a { display: block; margin-top: 30px; text-transform: uppercase; }
+		}
+		
+		.stats {
+			.stat-container {
+				margin-bottom: 30px;
+				
+				.img-stat { width:90px; }
+				
+				h3 { 
+					.title-font(70px, @body-text-color);
+					letter-spacing: 3.5px;
+					margin: 5px 0 0 20px;
+					span {
+						display: block;
+						letter-spacing: 1.5px;
+						margin-top: -12px;
+						text-transform: none;
+						.body-font(17.04px, @body-text-color, 300)
+					}
+				
+				}
+			}
+			
+		}
+	}
 }
 
 .publishers {
@@ -797,23 +843,48 @@ body.fixed .dropdown-menu {
 /* Tabbed Widgets ********************************************************************/
 
 .logo-tabs {
-	margin-top: 30px;
+	margin: 30px auto 50px auto;
 }
 
 .nav.nav-tabs.nav-justified.logo-tabs > li > {
-	&#tab-jet a { padding-bottom: 14px; }
+	background: url("../images/1px-line.png") repeat-x 0 74px;
+
+	
+	&.active { 
+		border-bottom: 5px solid @brand-color; 
+		margin-top: 1px; 
+		
+		&:after {
+			color: @brand-color;
+			bottom: -30px;
+			content: "\2193";
+			font-size: 25px;
+			font-weight: normal;
+			right: 0;
+			left: 0;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+		}
+	}
+	
+	&#tab-jet a { height: 60px; }
+	&#tab-one a { height: 72px; }
+	&#tab-oyster a { height: 66px; }
 	&#tab-one a { padding: 10px 0 5px 0; }
 	
 	a {
 		border-radius: 0;
 		border: none;
+		height: 62px;
+		padding-bottom: 20px;
 		
 		&:hover {
 			background: none;
 		}
 		
 		img {
-			max-width: 100%;
+			width: 100%;
 		
 			&#tab-logo-one { max-width: 40%; }
 		
