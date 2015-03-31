@@ -27,27 +27,43 @@ $( document ).ready(function() {
     });
 		
 		// set up the advertiser page affix
-		$("#logo-scroll-nav").on('affixed-top.bs.affix', function() {
-			$('body').removeClass('affixed-nav');
-			$('#tab-afw').addClass('active');
-		});
+		if($("#logo-scroll-nav").length > 0 ) {
+			$scrollNav = $("#logo-scroll-nav");
+			
+			// Set the new offset
+			$('body').data()['bs.scrollspy'].options.offset = 120;
+			
+			// force scrollspy to recalculate the offsets to your targets
+			$('body').data()['bs.scrollspy'].process();
+			
+			// Refresh the scrollspy
+			$('body').scrollspy('refresh');
+			
+			$scrollNav.on('affixed-top.bs.affix', function() {
+				$('body').removeClass('affixed-nav');
+				$('#tab-afw').addClass('active');
+			});
 		
-		$("#logo-scroll-nav").on('affix.bs.affix', function() {
-			$('body').addClass('affixed-nav')
-		});
+			$scrollNav.on('affix.bs.affix', function() {
+				$('body').addClass('affixed-nav')
+			});
+			
+			
 		
 	
-    jQuery('#logo-scroll-nav .logo-tabs a[href^="#"]').on('click', function(e) {
-        // prevent default anchor click behavior
-        e.preventDefault();
+	    $('#logo-scroll-nav .logo-tabs a[href^="#"]').on('click', function(e) {
+	        // prevent default anchor click behavior
+	        e.preventDefault();
 
-        // animate
-        jQuery('html, body').animate({scrollTop: jQuery(this.hash).offset().top - 110}, 300, function() {
-            // when done, add hash to url
-            // (default click behaviour)
-            window.location.hash = this.hash;
-        });
-    });
+	        // animate
+	        $('html, body').animate({scrollTop: $(this.hash).offset().top - 110}, 300, function() {
+	            // when done, add hash to url
+	            // (default click behaviour)
+	            window.location.hash = this.hash;
+	        });
+	    });
+		}
+		
 		  
 		
 		// lazy load the images for better performance
