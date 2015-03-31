@@ -4,6 +4,9 @@ $( document ).ready(function() {
   // load the includes
   $( "header#main" ).load( "includes/header.html" );
   $( "#footer" ).load( "includes/footer.html" );
+	if($(".logo-tabs").length > 0) {
+		$( ".logo-tabs" ).load( "includes/include_logo_tabs.html" );
+	}
   
   // fade the page in gracefully, then set up the events
   setTimeout(function() {
@@ -22,6 +25,30 @@ $( document ).ready(function() {
     $('#mainnav-drop').on('hide.bs.dropdown', function () {
       toggleNavTrigger();
     });
+		
+		// set up the advertiser page affix
+		$("#logo-scroll-nav").on('affixed-top.bs.affix', function() {
+			$('body').removeClass('affixed-nav');
+			$('#tab-afw').addClass('active');
+		});
+		
+		$("#logo-scroll-nav").on('affix.bs.affix', function() {
+			$('body').addClass('affixed-nav')
+		});
+		
+	
+    jQuery('#logo-scroll-nav .logo-tabs a[href^="#"]').on('click', function(e) {
+        // prevent default anchor click behavior
+        e.preventDefault();
+
+        // animate
+        jQuery('html, body').animate({scrollTop: jQuery(this.hash).offset().top - 110}, 300, function() {
+            // when done, add hash to url
+            // (default click behaviour)
+            window.location.hash = this.hash;
+        });
+    });
+		  
 		
 		// lazy load the images for better performance
     $("img").unveil();

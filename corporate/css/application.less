@@ -397,9 +397,38 @@ body.fixed .dropdown-menu {
 }
 
 .advertisers {
+	
+	&.affixed-nav {
+		padding-top: 210px;
+		
+		#logo-scroll-nav {
+			box-shadow: 0 0 5px #ccc;
+			
+			.nav.nav-tabs.nav-justified.logo-tabs {
+				position: relative;
+				margin-bottom: -3px;
+			
+				li {
+					background: none;
+				}
+			}
+		}
+	}
+	
   .hero {
     .hero-set("img-hero-advertisers.jpg", 300px, 50%, 83px);
   }
+	
+	.affix {
+		top: 75px;
+		width: 100%;
+		z-index: 1000;
+		
+		.logo-tabs {
+			padding: 20px 0 0 0;
+			width: 100;
+		}
+	}
   
   .slot-adv {
     padding: 75px; 
@@ -413,6 +442,10 @@ body.fixed .dropdown-menu {
     
     &.stripe-even {
       .stripe-even;
+			
+			&.affix {
+				background: none;
+			}
     }
   }
 }
@@ -479,11 +512,30 @@ body.fixed .dropdown-menu {
   }
 	
 	.hero-leaders {
-		.hero-set("img-hero-company-leaders.jpg", 400px, 70%, 71px);
+		.hero-set("img-hero-company-leaders.jpg", 500px, 0, 71px);
+		
+		background-position: center top;
+		
+	  .container-inner {
+	    padding-bottom: 60px; 
+    
+	    h1 {
+	      .title-sticker;
+	    }
+		}
 	}
 	
+	.hero-smarter-way {
+		.hero-set("img-hero-company-smarterway.jpg", 600px, 0, 0);
+		
+		.container-inner {
+			h1 { .title-sticker; }
+		}
+	}
 	
 	.slot-company-stats {
+		padding-bottom: 100px; 
+		
 		.container-inner {
 			max-width: 83%;
 		}
@@ -712,6 +764,7 @@ body.fixed .dropdown-menu {
   margin: 0 auto 40px auto;
   padding: 30px 30px 20px 30px;
   text-transform: uppercase;
+	width: auto;
 }
 
 /*** HERO AREA SETUP ****/
@@ -791,7 +844,11 @@ body.fixed .dropdown-menu {
       .body-font(28px, #5c6670, 300);
       margin: 0 auto;
       width: 80%;  
-      }
+    }
+		
+		&.no-bg {
+			background: none;
+		}
   }
   
   h1 {
@@ -832,6 +889,12 @@ body.fixed .dropdown-menu {
   }
 }
 
+.slot-double-title {
+	.container-top {
+		
+	}
+}
+
 .stripe-even {
   background: @white;
 }
@@ -843,7 +906,7 @@ body.fixed .dropdown-menu {
 /* Tabbed Widgets ********************************************************************/
 
 .logo-tabs {
-	margin: 30px auto 50px auto;
+	padding: 30px 0 50px 0;
 }
 
 .nav.nav-tabs.nav-justified.logo-tabs > li > {
@@ -868,6 +931,7 @@ body.fixed .dropdown-menu {
 		}
 	}
 	
+	&#tab-afw a { height: 65px; }
 	&#tab-jet a { height: 60px; }
 	&#tab-one a { height: 72px; }
 	&#tab-oyster a { height: 66px; }
@@ -879,7 +943,9 @@ body.fixed .dropdown-menu {
 		height: 62px;
 		padding-bottom: 20px;
 		
-		&:hover {
+		&:hover, 
+		&:active, 
+		&:focus {
 			background: none;
 		}
 		
