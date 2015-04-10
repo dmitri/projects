@@ -34,8 +34,32 @@ body.no-scroll {
 
 a:focus,
 *:focus {
-	border: none;
+  border: none;
   outline: 0;
+}
+
+/* loading progress bar */
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: @brand-color;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
 }
 
 /* grid container setup */
@@ -74,43 +98,44 @@ a:visited {
 
 a:hover {
   color: darken(@brand-color, 10%);
-	text-decoration: none;
+  text-decoration: none;
 }
 
 header#main {
   background: @white;
   height: 108px;
-	
-	
-	&.shadow {
-		box-shadow: 0 1px 3px #b0b0b0;
-	}
-	
-	&.shrink {
-		height: 75px;
-		
-		.nav-toggle {
-			height: 75px;
-			width: 97px;
-			
-			i { margin-top: 12px; }
-			span { margin-top: 5px; }
-		}
-		
-		.brand {
-			margin-top: 22px;
-			width: 175px;
-		}
-		
-		.dropdown-menu {
-			top: 73px;
-		}
-	}
+
+
+  &.shadow {
+    box-shadow: 0 1px 3px #b0b0b0;
+  }
+
+  &.shrink {
+    background: rgba(255,255,255, 0.95);
+    height: 75px;
+
+    .nav-toggle {
+      height: 75px;
+      width: 97px;
+
+      i { margin-top: 12px; }
+      span { margin-top: 5px; }
+    }
+
+    .brand {
+      margin-top: 22px;
+      width: 175px;
+    }
+
+    .dropdown-menu {
+      top: 73px;
+    }
+  }
   
   -webkit-transition:all ease-in-out .20s;
-    -moz-transition:all ease-in-out .20s;
-    -o-transition: all ease-in-out .20s;
-    transition: all ease-in-out .20s;
+  -moz-transition:all ease-in-out .20s;
+  -o-transition: all ease-in-out .20s;
+  transition: all ease-in-out .20s;
 
   .brand {
     display: inline-block;
@@ -119,13 +144,13 @@ header#main {
     margin: 35px 130px 0 0;
     padding: 0;
     width: 219px;
-		
-	  -webkit-transition:all ease-in-out .20s;
-	    -moz-transition:all ease-in-out .20s;
-	    -o-transition: all ease-in-out .20s;
-	    transition: all ease-in-out .20s;
+
+    -webkit-transition:all ease-in-out .20s;
+    -moz-transition:all ease-in-out .20s;
+    -o-transition: all ease-in-out .20s;
+    transition: all ease-in-out .20s;
   }
-  
+
   .nav-toggle {
     background: @brand-color;
     color: @white;
@@ -136,11 +161,11 @@ header#main {
     width: 130px;
     text-align: center;
     text-decoration: none;
-		
-	  -webkit-transition:all ease-in-out .20s;
-	    -moz-transition:all ease-in-out .20s;
-	    -o-transition: all ease-in-out .20s;
-	    transition: all ease-in-out .20s;
+
+    -webkit-transition:all ease-in-out .20s;
+    -moz-transition:all ease-in-out .20s;
+    -o-transition: all ease-in-out .20s;
+    transition: all ease-in-out .20s;
     
     i { 
       display: block;
@@ -206,10 +231,10 @@ header#main {
       }
     }
   }
-	
-	.dropdown-backdrop {
-	   position: static;
-	}
+
+  .dropdown-backdrop {
+    position: static;
+  }
 }
 
 body.fixed .dropdown-menu {
@@ -397,38 +422,38 @@ body.fixed .dropdown-menu {
 }
 
 .advertisers {
-	
-	&.affixed-nav {
-		padding-top: 210px;
-		
-		#logo-scroll-nav {
-			box-shadow: 0 0 5px #ccc;
-			
-			.nav.nav-tabs.nav-justified.logo-tabs {
-				position: relative;
-				margin-bottom: -3px;
-			
-				li {
-					background: none;
-				}
-			}
-		}
-	}
-	
+
+  &.affixed-nav {
+    padding-top: 210px;
+
+    #logo-scroll-nav {
+      box-shadow: 0 0 5px #ccc;
+
+      .nav.nav-tabs.nav-justified.logo-tabs {
+        position: relative;
+        margin-bottom: -3px;
+
+        li {
+          background: none;
+        }
+      }
+    }
+  }
+
   .hero {
     .hero-set("img-hero-advertisers.jpg", 300px, 50%, 83px);
   }
-	
-	.affix {
-		top: 75px;
-		width: 100%;
-		z-index: 1000;
-		
-		.logo-tabs {
-			padding: 20px 0 0 0;
-			width: 100;
-		}
-	}
+
+  .affix {
+    top: 75px;
+    width: 100%;
+    z-index: 1000;
+
+    .logo-tabs {
+      padding: 20px 0 0 0;
+      width: 100;
+    }
+  }
   
   .slot-adv {
     padding: 75px; 
@@ -442,10 +467,10 @@ body.fixed .dropdown-menu {
     
     &.stripe-even {
       .stripe-even;
-			
-			&.affix {
-				background: none;
-			}
+
+      &.affix {
+        background: none;
+      }
     }
   }
 }
@@ -507,71 +532,118 @@ body.fixed .dropdown-menu {
 }
 
 .company {
+  background: @white;
+  
   .hero {
     .hero-set("img-hero-company.jpg", 600px, 45%, 71px);
   }
-	
-	.hero-leaders {
-		.hero-set("img-hero-company-leaders.jpg", 500px, 0, 71px);
-		
-		background-position: center top;
-		
-	  .container-inner {
-	    padding-bottom: 60px; 
+
+  .hero-leaders {
+    .hero-set("img-hero-company-leaders.jpg", 500px, 0, 71px);
+
+    background-position: center top;
+
+    .container-inner {
+      padding-bottom: 60px; 
+
+      h1 {
+        .title-sticker;
+      }
+    }
+  }
+
+  .hero-smarter-way {
+    .hero-set("img-hero-company-smarterway.jpg", 600px, 0, 0);
+
+    .container-inner {
+      h1 { .title-sticker; }
+    }
+  }
+
+  .slot-company-stats {
+    padding-bottom: 100px; 
+
+    .container-inner {
+      max-width: 83%;
+    }
+  }
+  .company-stats {
+    padding: 30px 0 50px 0;
+
+    .intro {
+      .logo { width: 70%; margin-bottom: 20px; }
+      p { .body-font(20px, @body-text-color, 300); }
+      a { display: block; margin-top: 30px; text-transform: uppercase; }
+    }
     
-	    h1 {
-	      .title-sticker;
-	    }
-		}
-	}
-	
-	.hero-smarter-way {
-		.hero-set("img-hero-company-smarterway.jpg", 600px, 0, 0);
-		
-		.container-inner {
-			h1 { .title-sticker; }
-		}
-	}
-	
-	.slot-company-stats {
-		padding-bottom: 100px; 
-		
-		.container-inner {
-			max-width: 83%;
-		}
-	}
-	.company-stats {
-		padding: 30px 0 50px 0;
-		
-		.intro {
-			.logo { width: 70%; margin-bottom: 20px; }
-			p { .body-font(20px, @body-text-color, 300); }
-			a { display: block; margin-top: 30px; text-transform: uppercase; }
-		}
-		
-		.stats {
-			.stat-container {
-				margin-bottom: 30px;
-				
-				.img-stat { width:90px; }
-				
-				h3 { 
-					.title-font(70px, @body-text-color);
-					letter-spacing: 3.5px;
-					margin: 5px 0 0 20px;
-					span {
-						display: block;
-						letter-spacing: 1.5px;
-						margin-top: -12px;
-						text-transform: none;
-						.body-font(17.04px, @body-text-color, 300)
-					}
-				
-				}
-			}
-			
-		}
-	}
+    #one .intro .logo { width: 40%; margin-top: -35px; }
+    #oyster .intro .logo { width: 60%; margin-top: -10px; }
+    #tingo .intro .logo { width: 50%; margin-top: -10px; }
+
+    .stats {
+      .stat-container {
+        margin-bottom: 30px;
+
+        .img-stat { width:90px; }
+
+        h3 { 
+          .title-font(70px, @body-text-color);
+          letter-spacing: 3.5px;
+          margin: 5px 0 0 20px;
+          span {
+            display: block;
+            letter-spacing: 1.5px;
+            margin-top: -12px;
+            text-transform: none;
+            .body-font(17.04px, @body-text-color, 300);
+          }
+        }
+      }
+    }
+  }
+  
+  .slot-smarter-way {
+    margin-top: -155px;
+    
+    .container-inner { width: 80%; max-width: 1000px; }
+    
+    .smarter-way-panels {
+      padding: 50px 0 100px 0;
+      
+      .tab-pane {
+        p {
+          .body-font(40px, @body-text-color, 300);
+          line-height: 120%;
+        }
+      }
+    }
+    
+  }
+  
+  .slot-leaders.slot-title-and-text {
+    background: none;
+    margin-top: -170px;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    
+    .container-inner {
+      padding-top: 0;
+      padding-bottom: 0;
+      
+      h1 { 
+        background: none;
+        .title-font(71px, @white);
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .slot-news {
+    .container-inner {
+      width: 78%;
+    }
+  }
 }
 
 .publishers {
@@ -668,7 +740,49 @@ body.fixed .dropdown-menu {
         width: 70%;
       }
     }
+  }
+}
+
+.news-item {
+  list-style-type: none;
+  text-align: left;
+  margin: 60px 0 0 0;
+  padding: 0;
+  
+  li {
+    margin-bottom: 30px;
     
+    img {
+      float: left;
+      width: 31px;
+    }
+    
+    .news-item-details {
+      .body-font(14px, @body-text-color, 300);
+      margin-left: 45px;
+      
+      h2 {
+        color: @brand-color;
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin: 0 0 3px 0;
+        text-transform: uppercase; 
+      }
+      
+      .type { 
+        margin-bottom: 3px;
+        
+        &:before {
+          content: "[";
+          padding-right: 2px;
+        }
+        &:after {
+          content: "]";
+          padding-left: 2px;
+        }
+      }
+      
+    }
   }
 }
 
@@ -725,7 +839,7 @@ body.fixed .dropdown-menu {
   padding: 25px;
   margin-left: 30px;
   text-transform: uppercase;
-  
+
   &:hover {
     background: lighten(@brand-color,20% );
     text-decoration: none;
@@ -774,18 +888,18 @@ body.fixed .dropdown-menu {
   background-size: cover;
   position: relative;
   min-height: @height;
-  
+
   .container-inner {
     left: 0px;
     right: 0px;
     top: @top;
-		padding-left: 20px;
-		padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: absolute;
     text-align: center;
     z-index: 10px;
   }
-  
+
   h1 {
     color: #FFF;
     display: block;
@@ -796,7 +910,7 @@ body.fixed .dropdown-menu {
     text-transform: uppercase;
     width: 100%;
   }
-  
+
   p {
     color: @white;
     display: block;
@@ -805,21 +919,21 @@ body.fixed .dropdown-menu {
     font-size: 28px;
     line-height: 32px;
     margin: 0 auto;
-    
+
     span {
       display: block;
     }
   }
-  
+
   footer {
     border-top: 1px solid @white;
     margin: 40px auto 0 auto;
     padding-top: 40px;
-    
+
     a {
       .btn-action;
     }
-    
+
     &.right-arrow {
       a {
         .right-arrow
@@ -833,7 +947,7 @@ body.fixed .dropdown-menu {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
-  
+
   .container-inner {
     background: inherit;
     padding: 50px 0 0 0;
@@ -845,16 +959,16 @@ body.fixed .dropdown-menu {
       margin: 0 auto;
       width: 80%;  
     }
-		
-		&.no-bg {
-			background: none;
-		}
+
+    &.no-bg {
+      background: none;
+    }
   }
-  
+
   h1 {
     .title-sticker;
   }
-  
+
   p {
     font-family: @body-font;
     margin-bottom: 30px;
@@ -865,7 +979,7 @@ body.fixed .dropdown-menu {
       display: block;
     }
   }
-  
+
   &.stripe-even {
     .stripe-even;
   }
@@ -889,12 +1003,6 @@ body.fixed .dropdown-menu {
   }
 }
 
-.slot-double-title {
-	.container-top {
-		
-	}
-}
-
 .stripe-even {
   background: @white;
 }
@@ -905,151 +1013,210 @@ body.fixed .dropdown-menu {
 
 /* Tabbed Widgets ********************************************************************/
 
+/* company page logo tabs */
+
 .logo-tabs {
 	padding: 30px 0 50px 0;
 }
 
 .nav.nav-tabs.nav-justified.logo-tabs > li > {
-	background: url("../images/1px-line.png") repeat-x 0 74px;
+  background: url("../images/1px-line.png") repeat-x 0 74px;
 
-	
-	&.active { 
-		border-bottom: 5px solid @brand-color; 
-		margin-top: 1px; 
-		
-		&:after {
-			color: @brand-color;
-			bottom: -30px;
-			content: "\2193";
-			font-size: 25px;
-			font-weight: normal;
-			right: 0;
-			left: 0;
-			position: absolute;
-			text-align: center;
-			width: 100%;
-		}
-	}
-	
-	&#tab-afw a { height: 65px; }
-	&#tab-jet a { height: 60px; }
-	&#tab-one a { height: 72px; }
-	&#tab-oyster a { height: 66px; }
-	&#tab-one a { padding: 10px 0 5px 0; }
-	
-	a {
-		border-radius: 0;
-		border: none;
-		height: 62px;
-		padding-bottom: 20px;
-		
-		&:hover, 
-		&:active, 
-		&:focus {
-			background: none;
-		}
-		
-		img {
-			width: 100%;
-		
-			&#tab-logo-one { max-width: 40%; }
-		
-			&#tab-logo-bb,
-			&#tab-logo-jet { max-width: 80%; }
-			
-			&#tab-logo-oyster { max-width: 70%; }
-			
-			&#tab-logo-tingo { max-width: 55%; }
-		
-		}
-	}
-	
+
+  &.active { 
+    border-bottom: 5px solid @brand-color; 
+    margin-top: 1px; 
+
+    &:after {
+      color: @brand-color;
+      bottom: -30px;
+      content: "\2193";
+      font-size: 25px;
+      font-weight: normal;
+      right: 0;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &#tab-afw a { height: 65px; }
+  &#tab-jet a { height: 60px; }
+  &#tab-one a { height: 72px; }
+  &#tab-oyster a { height: 66px; }
+  &#tab-one a { padding: 10px 0 5px 0; }
+
+  a {
+    border-radius: 0;
+    border: none;
+    height: 62px;
+    padding-bottom: 20px;
+
+    &:hover, 
+    &:active, 
+    &:focus {
+      background: none;
+    }
+
+    img {
+      width: 100%;
+
+      &#tab-logo-one { max-width: 40%; }
+
+      &#tab-logo-bb,
+      &#tab-logo-jet { max-width: 80%; }
+
+      &#tab-logo-oyster { max-width: 70%; }
+
+      &#tab-logo-tingo { max-width: 55%; }
+
+    }
+  }
+}
+
+/* company page smarter way tabs */
+
+.nav.nav-tabs.nav-justified.smarter-way-tabs > li > {
+  
+  &.active a { 
+    border-bottom: 5px solid rgb(92, 102, 112);
+    margin-top: 1px; 
+
+    &:after {
+      color: rgb(92, 102, 112);
+      bottom: -42px;
+      content: "\2193";
+      font-size: 40px;
+      font-weight: normal;
+      right: 0;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+  }
+  
+  &:nth-child(2) a {
+    background: lighten(@brand-color, 10%);
+  }
+  
+  &:nth-child(3) a {
+    background: lighten(@brand-color, 20%);
+  }
+  
+  &:nth-child(4) a {
+    background: lighten(@brand-color, 30%);
+  }
+  
+  &:nth-child(5) a {
+    background: lighten(@brand-color, 40%);
+  }
+  
+  a {
+    background: @brand-color;
+    border: none;
+    border-bottom: 5px solid @brand-color;
+    border-radius: 0;
+    .title-font(35px, @white);
+    color: @white;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 100%;
+    padding: 50px 25px 80px 25px;
+    text-align: left;
+    text-transform: uppercase;
+    
+    span {
+      display: block;
+    }
+  }
+  
 }
 
 /* Media Queries for Responsive ******************************************************/
 
 @media (max-width: 1100px) {
-	
-	.company {
-	  .hero {
-	    .hero-set("img-hero-company.jpg",500px, 30%, 58px);
-			
-		  -webkit-transition:all ease-in-out .20s;
-		    -moz-transition:all ease-in-out .20s;
-		    -o-transition: all ease-in-out .20s;
-		    transition: all ease-in-out .20s;
-			
-			p {
-				font-size: 24px;
-				span { display: inline; }
-			}
-	  }
 
-	}
+  .company {
+    .hero {
+      .hero-set("img-hero-company.jpg",500px, 30%, 58px);
 
-	
-	.slot-title-and-text {
-		.container-inner {
-			p {
-				font-size: 24px;
-				span { display: inline; }
-			}
-		}
-	}
+      -webkit-transition:all ease-in-out .20s;
+      -moz-transition:all ease-in-out .20s;
+      -o-transition: all ease-in-out .20s;
+      transition: all ease-in-out .20s;
+
+      p {
+        font-size: 24px;
+        span { display: inline; }
+      }
+    }
+
+  }
+
+  .slot-title-and-text {
+    .container-inner {
+      p {
+        font-size: 24px;
+        span { display: inline; }
+      }
+    }
+  }
 }
 
 @media (max-width: 979px) {
-	body { padding-top: 75px; }
-	
-	header#main {
-			height: 75px;
-		
-			.nav-toggle {
-				height: 75px;
-				width: 97px;
-			
-				i { margin-top: 15px; }
-				span { margin-top: 2px; }
-			}
-		
-			.brand {
-				margin-top: 22px;
-				width: 175px;
-			}
-		
-			.dropdown-menu {
-				top: 73px;
-			}
-	}
-	
-	.company .hero {
-		p {
-			font-size: 20px;
-		}
-	}
-	
-	.slot-title-and-text {
-		.container-inner {
-			p {
-				font-size: 20px;
-				span {display: inline; }
-			}
-		}
-	}
+  body { padding-top: 75px; }
+
+  header#main {
+    height: 75px;
+
+    .nav-toggle {
+      height: 75px;
+      width: 97px;
+
+      i { margin-top: 15px; }
+      span { margin-top: 2px; }
+    }
+
+    .brand {
+      margin-top: 22px;
+      width: 175px;
+    }
+
+    .dropdown-menu {
+      top: 73px;
+    }
+  }
+
+  .company .hero {
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .slot-title-and-text {
+    .container-inner {
+      p {
+        font-size: 20px;
+        span {display: inline; }
+      }
+    }
+  }
 }
 
 @media (max-width: 550px) {
-	
-	.home, .company, .careers, .advertisers, .publishers, .press {
-	  .hero {
-	    .hero-set("img-home-hero-mobile.jpg", 500px, 20%, 48px);
-		}
-	}
-	
+
+  .home, .company, .careers, .advertisers, .publishers, .press {
+    .hero {
+      .hero-set("img-home-hero-mobile.jpg", 500px, 20%, 48px);
+    }
+  }
+
   header#main {
     .brand{
       float: right;
-			margin-right: 20px;
+      margin-right: 20px;
       width:175px;
     }
   }

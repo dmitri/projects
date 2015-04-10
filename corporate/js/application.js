@@ -4,9 +4,10 @@ $( document ).ready(function() {
   // load the includes
   $( "header#main" ).load( "includes/header.html" );
   $( "#footer" ).load( "includes/footer.html" );
-	if($(".logo-tabs").length > 0) {
-		$( ".logo-tabs" ).load( "includes/include_logo_tabs.html" );
-	}
+  if($(".logo-tabs").length > 0) {
+    $( ".logo-tabs" ).load( "includes/include_logo_tabs.html" );
+    $( ".logo-tabs-panels" ).load( "includes/include_logo_tabs_panels.html" );
+  }
   
   // fade the page in gracefully, then set up the events
   setTimeout(function() {
@@ -26,7 +27,7 @@ $( document ).ready(function() {
       toggleNavTrigger();
     });
 		
-		// set up the advertiser page affix
+		// set up the advertiser page fixed scroll nav
 		if($("#logo-scroll-nav").length > 0 ) {
 			$scrollNav = $("#logo-scroll-nav");
 			
@@ -61,8 +62,6 @@ $( document ).ready(function() {
 	        });
 	    });
 		}
-		
-		  
 		
 		// lazy load the images for better performance
     $("img").unveil();

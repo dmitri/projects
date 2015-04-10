@@ -15,6 +15,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet/less" type="text/css" href="css/application.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/filmstrip.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +40,7 @@
           </p>
         </header>
       </section>
-      
+
       <section class="slot-title-and-text offset-title">
         <div class="container-inner">
           <h1>Our Brands</h1>
@@ -49,68 +50,234 @@
           </p>
         </div>
       </section>
-	  
-			<section class="slot-hover-click slot-company-stats stripe-even container-fluid">
-				<div class="container-inner">
-					<div role="tabpanel">
 
-					  <!-- Nav tabs -->
-					  <ul class="nav nav-tabs nav-justified logo-tabs" role="tablist">
-					    <!-- include_logo_tabs.html loaded in application.js -->
-					  </ul>
+      <section class="slot-hover-click slot-company-stats stripe-even container-fluid">
+        <div class="container-inner">
+          <div role="tabpanel">
 
-					  <!-- Tab panes -->
-					  <div class="tab-content company-stats">
-					    <div role="tabpanel" class="tab-pane fade in active" id="afw">
-					    	<div class="row">
-									<div class="intro col-lg-4 col-med-4 col-sm-4 col-xs-12">
-										<img src="images/img-adv-afw-logo.png" data-src="images/img-adv-afw-logo.png" class="img-responsive logo" />
-										<p>
-											Airfarewatchdog is the most inclusive source of up-to-date airline deals that have been
-											carefully researched and verified by a team of dedicated airline experts.
-										</p>
-										<a href="careers.html" class="right-arrow">Careers</a>
-									</div>
-									<div class="stats col-lg-6 col-lg-offset-2 col-med-6 col-md-offset-2 col-sm-5 col-xs-12">
-										<div class="stat-container clearfix">
-											<img src="images/img-bluecircle-visitors.png" 
-														data-src="images/img-bluecircle-visitors.png" 
-														class="img-responsive center-block pull-left img-stat" />
-														<h3 class="stat pull-left">390,000 <span>Unique visitors per month<sup>*</sup></span></h3>
-										</div>
-										<div class="stat-container clearfix">
-											<img src="images/img-bluecircle-subscriptions.png" 
-														data-src="images/img-bluecircle-subscriptions.png" 
-														class="img-responsive center-block pull-left img-stat" />
-														<h3 class="stat pull-left">3M+ <span>Email subscriptions</span></h3>
-										</div>
-									</div>
-								</div>
-					    </div>
-					    <div role="tabpanel" class="tab-pane fade" id="bb">BookingBuddy</div>
-					    <div role="tabpanel" class="tab-pane fade" id="jet">Jetsetter</div>
-							<div role="tabpanel" class="tab-pane fade" id="one">Onetime</div>
-							<div role="tabpanel" class="tab-pane fade" id="oyster">Oyster</div>
-							<div role="tabpanel" class="tab-pane fade" id="st">SmarterTravel</div>
-					    <div role="tabpanel" class="tab-pane fade" id="tingo">Tingo</div>
-					  </div>
+            <!-- tabs -->
+            <ul class="nav nav-tabs nav-justified logo-tabs" role="tablist">
+              <!-- include_logo_tabs.html loaded in application.js -->
+            </ul>
 
-					</div>
-				</div>
-			</section>
-	
+            <!-- Tab panes -->
+            <div class="tab-content logo-tabs-panels company-stats">
+              <!-- include_logo_tabs_panels.html loaded in application.js -->
+            </div>  
+          </div>
+        </div>
+      </section>
+
       <section class="hero-leaders slot-title-and-text offset-title container-fluid">
         <div class="container-inner no-bg">
           <h1>Leadership Team</h1>
-          <p>
-            
-          </p>
         </div>
       </section>
-			
+      
+      <section class="slot-leaders slot-title-and-text container-fluid stripe-even">
+        <div class="container-inner">
+          <h1>We're Industry Leaders</h1>
+          <div id="filmstrip" class="filmstrip slide">
+              <div class="filmstrip-thumbs">
+                  <a class="thumb selector" href="#filmstrip" data-filmstrip="selector">
+                      <img src="http://lorempixel.com/640/480/cats/1">
+                      <div class="pointer"></div>
+                  </a>
+                  <a class="thumb" href="#filmstrip" data-filmstrip="selector">
+                      <img src="http://lorempixel.com/640/480/cats/2">
+                  </a>
+                  <a class="thumb" href="#filmstrip" data-filmstrip="selector">
+                      <img src="http://lorempixel.com/640/480/cats/3">
+                  </a>
+                  <a class="thumb" href="#filmstrip" data-filmstrip="selector">
+                      <img src="http://lorempixel.com/640/480/cats/4">
+                  </a>
+                  <a class="thumb" href="#filmstrip" data-filmstrip="selector">
+                      <img src="http://lorempixel.com/640/480/cats/5">
+                  </a>
+                  <a class="thumb" href="#filmstrip" data-filmstrip="selector">
+                      <img src="http://lorempixel.com/640/480/cats/6">
+                  </a>
+              </div>
+              <div class="filmstrip-top">
+                  <div class="filmstrip-inner">
+                      <div class="item active">
+                          <div class="leader-name">David Krauter</div>
+                          <div clas="leader-title">General Manager</div>
+                          <div class="header">Best Business Advice</div>
+                          <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                          <div class="header">Top of the Travel Bucket List</div>
+                          <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                      </div>
+                      <div class="item">
+                        <div class="leader-name">Alicia Mayo</div>
+                        <div clas="leader-title">General Manager</div>
+                        <div class="header">Best Business Advice</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                        <div class="header">Top of the Travel Bucket List</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                      </div>
+                      <div class="item">
+                        <div class="leader-name">Salem Novak</div>
+                        <div clas="leader-title">General Manager</div>
+                        <div class="header">Best Business Advice</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                        <div class="header">Top of the Travel Bucket List</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                      </div>
+                      <div class="item">
+                        <div class="leader-name">Patricia Marney</div>
+                        <div clas="leader-title">General Manager</div>
+                        <div class="header">Best Business Advice</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                        <div class="header">Top of the Travel Bucket List</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                      </div>
+                      <div class="item">
+                        <div class="leader-name">David Krauter</div>
+                        <div clas="leader-title">General Manager</div>
+                        <div class="header">Best Business Advice</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                        <div class="header">Top of the Travel Bucket List</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                      </div>
+                      <div class="item">
+                        <div class="leader-name">David Krauter</div>
+                        <div clas="leader-title">General Manager</div>
+                        <div class="header">Best Business Advice</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                        <div class="header">Top of the Travel Bucket List</div>
+                        <div class="value">[ Best Business Advice here from David Krauter ]</div>
+                      </div>
+                  </div>
+                  <a class="left filmstrip-control" href="#filmstrip" data-filmstrip="prev">&lsaquo;</a>
+                  <a class="right filmstrip-control" href="#filmstrip" data-filmstrip="next">&rsaquo;</a>
+              </div>
+            </div>
+        </div>
+      </section>
+
       <section id="hero-smarter-way" class="hero-smarter-way slot-title-and-text offset-title container-fluid">
         <div class="container-inner no-bg">
-					<h1>The Smarter Way</h1>
+          <h1>The Smarter Way</h1>
+        </div>
+      </section>
+      
+      <section class="stripe-even slot-smarter-way container-fluid">
+        <div class="container-inner">
+          <div role="tabpanel">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-justified smarter-way-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#empower" aria-controls="empower" role="tab" data-toggle="tab">Empower <span>People</span></a>
+              </li>
+              <li role="presentation">
+                <a href="#embrace" aria-controls="embrace" role="tab" data-toggle="tab">Embrace <span>Data</span></a>
+              </li>
+              <li role="presentation">
+                <a href="#think" aria-controls="think" role="tab" data-toggle="tab">Think <span>Different</span></a>
+              </li>
+              <li role="presentation">
+                <a href="#choose" aria-controls="choose" role="tab" data-toggle="tab">Choose <span>Speed</span></a>
+              </li>
+              <li role="presentation">
+                <a href="#overcome" aria-controls="overcome" role="tab" data-toggle="tab">Overcome <span>Obstacles</span></a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content smarter-way-panels">
+              <div role="tabpanel" class="tab-pane fade in active" id="empower">
+                <p>
+                  We believe talent should not only be recognized, it should be
+                  cultivated. And that the best type of growth is that from within.
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="embrace">
+                <p>[ Embrace Data text here. ]</p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="think">
+                <p>[ Think Different text here. ]</p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="choose">
+                <p>[ Choose Speed text here. ]</p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="overcome">
+                <p>[ Overcome Obstacles text here. ]</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="slot-news" class="slot-news slot-title-and-text offset-title container-fluid">
+        <div class="container-inner no-bg">
+            <h1>We're In the News</h1>
+            <div class="row">
+              <ul class="news-item clearfix">
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="#" class="clearfix">
+                    <img src="images/icon-news.png" data-src="images/icon-news.png" />
+                    <div class="news-item-details">
+                      <h2>TripAdvisor Completes Its Acquisition of Viator</h2>
+                      <div class="type">Video</div>
+                      <div class="source">The Boston Globe</div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="#" class="clearfix">
+                    <img src="images/icon-news.png" data-src="images/icon-news.png" />
+                    <div class="news-item-details">
+                      <h2>TripAdvisor Completes Its Acquisition of Viator</h2>
+                      <div class="type">Video</div>
+                      <div class="source">The Boston Globe</div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="#" class="clearfix">
+                    <img src="images/icon-news.png" data-src="images/icon-news.png" />
+                    <div class="news-item-details">
+                      <h2>TripAdvisor Completes Its Acquisition of Viator</h2>
+                      <div class="type">Video</div>
+                      <div class="source">The Boston Globe</div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="#" class="clearfix">
+                    <img src="images/icon-news.png" data-src="images/icon-news.png" />
+                    <div class="news-item-details">
+                      <h2>TripAdvisor Completes Its Acquisition of Viator</h2>
+                      <div class="type">Video</div>
+                      <div class="source">The Boston Globe</div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="#" class="clearfix">
+                    <img src="images/icon-news.png" data-src="images/icon-news.png" />
+                    <div class="news-item-details">
+                      <h2>TripAdvisor Completes Its Acquisition of Viator</h2>
+                      <div class="type">Video</div>
+                      <div class="source">The Boston Globe</div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="#" class="clearfix">
+                    <img src="images/icon-news.png" data-src="images/icon-news.png" />
+                    <div class="news-item-details">
+                      <h2>TripAdvisor Completes Its Acquisition of Viator</h2>
+                      <div class="type">Video</div>
+                      <div class="source">The Boston Globe</div>
+                    </div>
+                  </a>
+                </li>
+            </div>
         </div>
       </section>
 
@@ -125,6 +292,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/application.js"></script>
+    <script src="js/pace.js"></script>
+    <script src="js/jquery.filmstrip.js"></script>
     <script src="js/jquery.unveil.js"></script>
   </body>
 </html>
