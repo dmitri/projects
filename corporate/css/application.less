@@ -523,6 +523,31 @@ body.fixed .dropdown-menu {
       }
     }
   }
+  
+  .slot-benefits-header.slot-title-and-text {
+    padding-bottom: 30px;
+
+     h1 {
+      margin-bottom: 0;
+    }
+  }
+  
+  .slot-benefits {
+    padding-bottom: 80px;
+
+    .container-inner {
+      width: 78%;
+      
+      .benefits-tabs-panels {
+        h1 {
+          .body-font(40px, @body-text-color, 300);
+        }
+        p{
+          .body-font(24px, @body-text-color, 300);
+        }
+      }
+    }
+  }
 }
 
 .press {
@@ -1132,6 +1157,82 @@ body.fixed .dropdown-menu {
     }
   }
   
+}
+
+/* Careers page benefits tabs */
+
+.benefits-tabs {
+	padding: 0 0 25px 0;
+}
+
+.nav.nav-tabs.nav-justified.benefits-tabs > li > {
+  background: url("../images/1px-line.png") repeat-x 0 87px;
+
+
+  &.active { 
+    border-bottom: 5px solid @brand-color; 
+    margin-top: 1px; 
+
+    &:after {
+      color: @brand-color;
+      bottom: -30px;
+      content: "\2193";
+      font-size: 25px;
+      font-weight: normal;
+      right: 0;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+    
+    > a {
+      background: none;
+    }
+  }
+
+  /*
+  &#tab-afw a { height: 65px; }
+  &#tab-jet a { height: 60px; }
+  &#tab-one a { height: 72px; }
+  &#tab-oyster a { height: 66px; }
+  &#tab-one a { padding: 10px 0 5px 0; }
+  */
+
+  a {
+    border-radius: 0;
+    border: none;
+    height: 85px;
+    padding-bottom: 0;
+
+    &:hover, 
+    &:active, 
+    &:focus {
+      background: none;
+    }
+
+    img {
+      width: 100%;
+      max-width: 45%;
+      
+
+      &#tab-icon-doctor { max-width: 35%; }
+      
+      &#tab-icon-bank { max-width: 46%; margin-top: -7px; }
+
+      &#tab-icon-exercise { max-width: 70%; margin-top: 6px; }
+      
+      &#tab-icon-money { max-width: 50%; }
+      
+      &#tab-icon-food { max-width: 43%; margin-top: -5px; }
+
+      &#tab-icon-book { max-width: 43%; margin-top: 2px; }
+      
+      &#tab-icon-scale { max-width: 50%; margin-top: -1px; }
+
+
+    }
+  }
 }
 
 /* Media Queries for Responsive ******************************************************/
