@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="secondary-tech">
-  <nav id="masthead" class="navbar navbar-default navbar-inverse">
+  <nav id="masthead" class="navbar navbar-default navbar-inverse navbar-fixed-top">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dyna-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -29,7 +29,7 @@
         <li><a href="#">Solutions <span class="nav-caret-down"></span></a></li>
         <li><a href="#">Why Dynatrace? <span class="nav-caret-down"></span></a></li>
       </ul>
-      <ul id="util-nav" class="nav navbar-nav navbar-right">
+      <ul class="util-nav nav navbar-nav navbar-right">
         <li><a href="#">Resources</a></li>
         <li class="divider"><a href="#">|</a></li>
         <li><a href="#">Languages <span class="small-nav-caret-down"></span></a></li>
@@ -97,8 +97,8 @@
     </div>
   </nav>
   
-  <nav id="secondary-nav" class="navbar navbar-default">
-    <div class="container">
+  <nav id="secondary-nav-container" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
       <div class="navbar-header">
         <a id="secondary-nav-brand" href="/"></a>
       </div>
@@ -106,40 +106,33 @@
       <ul id="secondary-nav" class="nav navbar-nav">
         <li id="product-brand">appmon</li>
         <li><a href="#">Capabilities <span class="nav-caret-down"></span></a></li>
-        <li>
-          <a href="#" class="tertiary-tech-toggle" style="text-decoration: underline;">Technologies <span class="nav-caret-down"></span></a>
+        <li class="dropdown">
+          <a href="#" class="tertiary-tech-toggle dropdown-toggle" data-toggle="dropdown">
+            Technologies <span class="nav-caret-down"></span>
+          </a>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="technology.html">Java</a></li>
+              <li><a href="#">PHP</a></li>
+              <li><a href="#">.NET</a></li>
+              <li><a href="#">Node.js</a></li>
+              <li><a href="#">Chef</a></li>
+              <li><a href="#">Puppet</a></li>
+              <li><a href="#">AWS</a></li>
+              <li><a href="#">Azure</a></li>
+              <li><a href="#">CloudFoundry</a></li>
+              <li class="pull-right"><a href="#">View All &nbsp; <i class="fa fa-chevron-right"></i></a></li>
+            </ul>
+          </div>
         </li>
         <li><a href="#">How to Buy</a></li>
       </ul>
-      <ul id="util-nav" class="nav navbar-nav navbar-right">
+      <ul class="util-nav nav navbar-nav navbar-right">
         <li><a href="#" class="cta">Free Trial!</a></li>
       </ul>
     </div>
   </nav>
-  
-  <nav id="tertiary-nav-container" class="navbar navbar-default" style="display: block;">
-    <div class="container">
-      <div class="navbar-header">
-        <a id="tertiary-nav-header" href="/"></a>
-      </div>
 
-      <ul id="tertiary-nav" class="nav navbar-nav" style="margin-left: 0;">
-        <li class="active"><a href="technology.html">Java</a></li>
-        <li><a href="#">PHP</a></li>
-        <li><a href="#">.NET</a></li>
-        <li><a href="#">Node.js</a></li>
-        <li><a href="#">Chef</a></li>
-        <li><a href="#">Puppet</a></li>
-        <li><a href="#">AWS</a></li>
-        <li><a href="#">Azure</a></li>
-        <li><a href="#">CloudFoundry</a></li>
-      </ul>
-      <ul id="util-nav" class="nav navbar-nav navbar-right">
-        <li><a href="#" class="cta">View All ></a></li>
-      </ul>
-    </div>
-  </nav>
-  
   <div id="hero" class="tech java">
     <div class="container">
       <div class="row">

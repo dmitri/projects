@@ -7,7 +7,11 @@
 
 body {
   background: white;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  padding-top: 65px; }
+
+body.secondary-tech {
+  padding-top: 130px; }
 
 a, a:visited {
   color: #00a6fa; }
@@ -21,6 +25,7 @@ nav#masthead {
   border-radius: 0px;
   height: 65px;
   margin-bottom: 0;
+  width: 100%;
   z-index: 100; }
   nav#masthead .navbar-header {
     border-right: 1px solid #666;
@@ -44,23 +49,23 @@ nav#masthead {
       text-transform: uppercase;
       padding-left: 22.5px;
       padding-right: 36.5px; }
-  nav#masthead #util-nav.navbar-nav.navbar-right {
+  nav#masthead .util-nav.navbar-nav.navbar-right {
     margin-right: 0; }
-    nav#masthead #util-nav.navbar-nav.navbar-right li > a {
+    nav#masthead .util-nav.navbar-nav.navbar-right li > a {
       font-size: 11px;
       font-weight: 300;
       padding-left: 10px;
       padding-right: 10px; }
-    nav#masthead #util-nav.navbar-nav.navbar-right li.divider > a {
+    nav#masthead .util-nav.navbar-nav.navbar-right li.divider > a {
       cursor: default;
       padding-left: 0px;
       padding-right: 0px; }
-    nav#masthead #util-nav.navbar-nav.navbar-right li#search {
+    nav#masthead .util-nav.navbar-nav.navbar-right li#search {
       margin-left: 70px; }
-      nav#masthead #util-nav.navbar-nav.navbar-right li#search > a {
+      nav#masthead .util-nav.navbar-nav.navbar-right li#search > a {
         background: #353738;
         padding: 20px 25px 18px 25px; }
-      nav#masthead #util-nav.navbar-nav.navbar-right li#search img {
+      nav#masthead .util-nav.navbar-nav.navbar-right li#search img {
         height: 27px;
         width: 27px; }
 
@@ -161,7 +166,7 @@ nav#masthead {
     #hero.tech h1 strong {
       font-weight: 400; }
 
-#secondary-nav {
+#secondary-nav-container {
   background: white;
   border: none;
   border-bottom: 1px solid #d6d6d6;
@@ -171,8 +176,13 @@ nav#masthead {
   border-radius: 0px;
   height: 65px;
   margin-bottom: 0;
+  width: 100%;
   z-index: 101; }
-  #secondary-nav #product-brand {
+  #secondary-nav-container.affix {
+    top: 65px; }
+  #secondary-nav-container .container-fluid {
+    max-width: 1180px; }
+  #secondary-nav-container #product-brand {
     border-right: 1px solid #d6d6d6;
     color: #666;
     font-family: "Titillium Web", sans-serif;
@@ -184,10 +194,45 @@ nav#masthead {
     margin-right: 23px;
     padding-right: 42px;
     padding-bottom: 6px; }
-  #secondary-nav li > a {
+  #secondary-nav-container li > a {
     font-size: 14px;
     padding: 22px 35px 22px 22px; }
-  #secondary-nav a.cta {
+  #secondary-nav-container .util-nav.navbar-nav.navbar-right {
+    margin-right: 0; }
+  #secondary-nav-container #secondary-nav li.dropdown.open {
+    position: static; }
+    #secondary-nav-container #secondary-nav li.dropdown.open .dropdown-menu {
+      background: #f8f8f8;
+      border-bottom: 1px solid #d8d8d8;
+      box-shadow: none;
+      display: table;
+      min-width: auto;
+      margin: 0;
+      padding: 0;
+      left: 0;
+      right: 0;
+      margin-right: auto;
+      margin-left: auto;
+      top: 64px;
+      width: 100%; }
+      #secondary-nav-container #secondary-nav li.dropdown.open .dropdown-menu ul {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1180px;
+        padding: 0;
+        width: 100%; }
+      #secondary-nav-container #secondary-nav li.dropdown.open .dropdown-menu li {
+        display: inline-block;
+        list-style-type: none; }
+        #secondary-nav-container #secondary-nav li.dropdown.open .dropdown-menu li a {
+          color: #999;
+          display: block;
+          font-size: 12px;
+          padding: 20px 20px;
+          text-align: center;
+          text-decoration: none; }
+  #secondary-nav-container a.cta {
     background: #28c277;
     color: white;
     padding: 10px 25px;
@@ -196,26 +241,26 @@ nav#masthead {
     -ms-border-radius: 4px;
     border-radius: 4px;
     margin-top: 10px; }
-  #secondary-nav .nav-caret-down:before {
+  #secondary-nav-container .nav-caret-down:before {
     border-top: 5px solid #090101;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent; }
-  #secondary-nav .nav-caret-down:after {
+  #secondary-nav-container .nav-caret-down:after {
     border-top: 4px solid #fdf7f7;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; }
-  #secondary-nav .nav-caret-up:before {
+  #secondary-nav-container .nav-caret-up:before {
     border-bottom: 5px solid #090101;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent; }
-  #secondary-nav .nav-caret-up:after {
+  #secondary-nav-container .nav-caret-up:after {
     border-bottom: 4px solid #fdf7f7;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; }
 
 #tertiary-nav-container {
   border: none;
-  border-bottom: 1px solid #d6d6d6;
+  border-bottom: none;
   display: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -223,11 +268,19 @@ nav#masthead {
   border-radius: 0px;
   margin-bottom: 0;
   width: 100%;
-  z-index: 102; }
+  z-index: 103; }
+  #tertiary-nav-container .container-fluid {
+    max-width: 1180px; }
   #tertiary-nav-container #tertiary-nav {
     margin-left: -15px; }
   #tertiary-nav-container li > a {
     font-size: 12px; }
+  #tertiary-nav-container li.active > a {
+    background: none;
+    color: #28c277;
+    border-bottom: 3px solid #28c277; }
+  #tertiary-nav-container .util-nav .cta {
+    text-transform: uppercase; }
 
 .slot h1 {
   font-weight: 300;
@@ -249,10 +302,12 @@ nav#masthead {
 #slot-2 {
   background: url(../images/screen-shots.png) no-repeat center right;
   background-size: 45%;
-  padding: 145px 0; }
+  padding: 165px 0; }
   #slot-2.tech {
     background: none;
     padding: 30px 0; }
+  #slot-2.add-pad {
+    margin-top: 65px; }
 
 .nav-caret-down {
   position: relative;
