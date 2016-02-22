@@ -190,9 +190,20 @@ nav#masthead {
     margin-top: 10px; }
 
 #tertiary-nav-container {
+  border: none;
+  border-bottom: 1px solid #d6d6d6;
+  display: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  margin-bottom: 0;
+  width: 100%;
   z-index: 102; }
   #tertiary-nav-container #tertiary-nav {
     margin-left: -15px; }
+  #tertiary-nav-container li > a {
+    font-size: 12px; }
 
 #slot-2 {
   background: url(../images/screen-shots.png) no-repeat center right;

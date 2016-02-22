@@ -8,9 +8,17 @@ $(window).load(function(){
 
 $( document ).ready(function() {
   $( ".secondary-nav-toggle" ).on( "click", function(e) {
-    e.preventDeault();
-
+    e.preventDefault();
+     $('html,body').animate({ scrollTop: 0 }, 'slow');
     $drawer_nav = $('#nav-drawer');
     $drawer_nav.slideToggle();
   });
+  
+  $( ".tertiary-tech-toggle" ).on( "click", function(e) {
+    e.preventDefault();
+
+    $drawer_nav = $('#tertiary-nav-container');
+    $drawer_nav.slideToggle('slow');
+  });
+
 });
