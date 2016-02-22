@@ -9,7 +9,7 @@ $(window).load(function(){
 $( document ).ready(function() {
   $( ".secondary-nav-toggle" ).on( "click", function(e) {
     e.preventDefault();
-     $('html,body').animate({ scrollTop: 0 }, 'slow');
+    $('html,body').animate({ scrollTop: 0 }, 'slow');
     $drawer_nav = $('#nav-drawer');
     $drawer_nav.slideToggle();
   });
