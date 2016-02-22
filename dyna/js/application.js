@@ -1,12 +1,22 @@
 $( document ).ready(function() {
 
-  $('#secondary-nav-container').affix({
+  $('.home #secondary-nav-container').affix({
     offset: {
-      top: $('#secondary-nav').offset().top-65,
+      top: $('#secondary-nav').offset().top,
       bottom: function () {
       }
     }
   });
+  
+  $('.secondary-tech #secondary-nav-container').affix({
+    offset: {
+      top: $('#secondary-nav').offset().top,
+      bottom: function () {
+      }
+    }
+  });
+  
+
 
   $( ".secondary-nav-toggle" ).on( "click", function(e) {
     e.preventDefault();
@@ -18,12 +28,22 @@ $( document ).ready(function() {
     $drawer_nav.slideToggle();
   });
   
-  $("#secondary-nav-container").on('affix.bs.affix', function(){
+  // add and remove the padding when the nav affixes
+  
+  $(".home #secondary-nav-container").on('affix.bs.affix', function(){
     $('#slot-2').addClass('add-pad');
   });
   
-  $("#secondary-nav-container").on('affix-top.bs.affix', function(){
+  $(".home #secondary-nav-container").on('affix-top.bs.affix', function(){
     $('#slot-2').removeClass('add-pad');
+  });
+  
+  $(".secondary-tech #secondary-nav-container").on('affix.bs.affix', function(){
+    $('#hero').addClass('add-pad');
+  });
+  
+  $(".secondary-tech #secondary-nav-container").on('affix-top.bs.affix', function(){
+    $('#hero').removeClass('add-pad');
   });
   
   

@@ -11,7 +11,9 @@ body {
   padding-top: 65px; }
 
 body.secondary-tech {
-  padding-top: 130px; }
+  padding-top: 65px; }
+  body.secondary-tech #secondary-nav-container {
+    top: 0px; }
 
 a, a:visited {
   color: #00a6fa; }
@@ -179,7 +181,7 @@ nav#masthead {
   width: 100%;
   z-index: 101; }
   #secondary-nav-container.affix {
-    top: 65px; }
+    top: 0px; }
   #secondary-nav-container .container-fluid {
     max-width: 1180px; }
   #secondary-nav-container #product-brand {
@@ -240,7 +242,7 @@ nav#masthead {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     border-radius: 4px;
-    margin-top: 10px; }
+    margin-top: 12px; }
   #secondary-nav-container .nav-caret-down:before {
     border-top: 5px solid #090101;
     border-left: 5px solid transparent;
@@ -257,30 +259,6 @@ nav#masthead {
     border-bottom: 4px solid #fdf7f7;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; }
-
-#tertiary-nav-container {
-  border: none;
-  border-bottom: none;
-  display: none;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -ms-border-radius: 0px;
-  border-radius: 0px;
-  margin-bottom: 0;
-  width: 100%;
-  z-index: 103; }
-  #tertiary-nav-container .container-fluid {
-    max-width: 1180px; }
-  #tertiary-nav-container #tertiary-nav {
-    margin-left: -15px; }
-  #tertiary-nav-container li > a {
-    font-size: 12px; }
-  #tertiary-nav-container li.active > a {
-    background: none;
-    color: #28c277;
-    border-bottom: 3px solid #28c277; }
-  #tertiary-nav-container .util-nav .cta {
-    text-transform: uppercase; }
 
 .slot h1 {
   font-weight: 300;
@@ -306,8 +284,9 @@ nav#masthead {
   #slot-2.tech {
     background: none;
     padding: 30px 0; }
-  #slot-2.add-pad {
-    margin-top: 65px; }
+
+.add-pad {
+  margin-top: 65px; }
 
 .nav-caret-down {
   position: relative;
