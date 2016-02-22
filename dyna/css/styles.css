@@ -122,7 +122,7 @@ nav#masthead {
   background: url(../images/hero-appmon.jpg) no-repeat center center;
   background-size: cover;
   text-align: center;
-  padding: 180px 0; }
+  padding: 160px 0; }
   #hero h1, #hero h3 {
     color: white; }
   #hero h1 {
@@ -152,6 +152,14 @@ nav#masthead {
       -moz-border-radius: 6px;
       -ms-border-radius: 6px;
       border-radius: 6px; }
+  #hero.tech.java {
+    background: #28c277 url(../images/tech-hero-java.png) no-repeat bottom left;
+    background-size: 100%;
+    padding: 50px 0 100px 0; }
+  #hero.tech h1 {
+    font-weight: 300; }
+    #hero.tech h1 strong {
+      font-weight: 400; }
 
 #secondary-nav {
   background: white;
@@ -173,8 +181,8 @@ nav#masthead {
     letter-spacing: -1.5px;
     line-height: 1;
     margin-top: 15px;
-    margin-right: 25px;
-    padding-right: 45px;
+    margin-right: 23px;
+    padding-right: 42px;
     padding-bottom: 6px; }
   #secondary-nav li > a {
     font-size: 14px;
@@ -221,25 +229,30 @@ nav#masthead {
   #tertiary-nav-container li > a {
     font-size: 12px; }
 
+.slot h1 {
+  font-weight: 300;
+  line-height: 1.5;
+  margin-top: 20px; }
+  .slot h1 strong {
+    font-weight: 500; }
+
+.slot p {
+  color: #3b424e;
+  border-top: 2px dotted #ccc;
+  margin-top: 50px;
+  padding-top: 50px;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2; }
+
 #slot-2 {
   background: url(../images/screen-shots.png) no-repeat center right;
-  background-size: 670px;
+  background-size: 45%;
   padding: 145px 0; }
-  #slot-2 h1 {
-    font-weight: 300;
-    line-height: 1.5;
-    margin-top: 20px; }
-    #slot-2 h1 strong {
-      font-weight: 500; }
-  #slot-2 p {
-    color: #3b424e;
-    border-top: 2px dotted #ccc;
-    margin-top: 50px;
-    padding-top: 50px;
-    font-family: "Titillium Web", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 2; }
+  #slot-2.tech {
+    background: none;
+    padding: 30px 0; }
 
 .nav-caret-down {
   position: relative;
