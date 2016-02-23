@@ -21,8 +21,11 @@ $( document ).ready(function() {
   $( ".secondary-nav-toggle" ).on( "click", function(e) {
     e.preventDefault();
     $('html,body').animate({ scrollTop: 0 }, 'slow');
+    
+    // get drawer toggle 
+    $drawer_toggle_arrow = $('.drawer-indicator');
 
-    toggle_caret(this);
+    toggle_caret($drawer_toggle_arrow);
     
     $drawer_nav = $('#nav-drawer');
     $drawer_nav.slideToggle();
@@ -32,18 +35,22 @@ $( document ).ready(function() {
   
   $(".home #secondary-nav-container").on('affix.bs.affix', function(){
     $('#slot-2').addClass('add-pad');
+    $('#secondary-nav-brand img').addClass('sticky-logo');
   });
   
   $(".home #secondary-nav-container").on('affix-top.bs.affix', function(){
     $('#slot-2').removeClass('add-pad');
+    $('#secondary-nav-brand img').removeClass('sticky-logo');
   });
   
   $(".secondary-tech #secondary-nav-container").on('affix.bs.affix', function(){
     $('#hero').addClass('add-pad');
+    $('#secondary-nav-brand img').addClass('sticky-logo');
   });
   
   $(".secondary-tech #secondary-nav-container").on('affix-top.bs.affix', function(){
     $('#hero').removeClass('add-pad');
+    $('#secondary-nav-brand img').removeClass('sticky-logo');
   });
   
   
@@ -63,6 +70,6 @@ $( document ).ready(function() {
 });
 
 toggle_caret = function(el) {
-  $caret = $(el).find('span');
+  $caret = el;
   $caret.toggleClass('nav-caret-down').toggleClass('nav-caret-up');
 }
