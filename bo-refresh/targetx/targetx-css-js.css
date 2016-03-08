@@ -1,0 +1,487 @@
+body {
+  font-size: 120%;
+  line-height: 1.4;
+}
+
+*:focus {
+  outline: none;
+}
+
+.targetx-header-user {
+  border-left: 1px solid #ecece6;
+  color: #555;
+}
+
+.targetx-dashboard-hero-info {
+  display: none;
+}
+
+.targetx-dashboard-hero .targetx-dashboard-hero-university {
+  margin-top: 37px;
+  margin-left: -17px;
+}
+
+.targetx-dashboard-hero .targetx-dashboard-hero-icon-container .targetx-dashboard-hero-icon {
+  background:url("https://s3.amazonaws.com/berkleeonline-assets-east/targetx-online-app/bo-logo-100.jpg") no-repeat center;
+}
+
+.targetx-dashboard-hero .targetx-dashboard-hero-icon-container {
+  background: none;
+}
+
+.targetx-dashboard-hero .targetx-dashboard-hero-university-name {
+  color: #FFF;
+}
+
+.targetx-dashboard-hero-university-name-inner {
+  background: none;
+  box-shadow: none;
+}
+
+.targetx-dashboard-hero-university-name:first-child .targetx-dashboard-hero-university-name-inner:last-child {
+  display: none;
+}
+
+.targetx-button, 
+.targetx-button-secondary,
+.targetx-button-header {
+  background: rgb(216, 17, 24);
+  color: rgba(255,255,255, 1);
+  box-shadow: 0 2px 0 rgb(176,13,19);
+  text-decoration: none;
+}
+
+.targetx-button:hover,
+.targetx-button-secondary:hover,
+.targetx-button-header:hover,
+.targetx-button:focus,
+.targetx-button-secondary:focus,
+.targetx-button-header:focus,
+.targetx-button:active,
+.targetx-button-secondary:active,
+.targetx-button-header:active {
+  background: rgb(176,13,19);
+  color: rgba(255,255,255, 1);
+  box-shadow: 0 2px 0 rgb(176,13,19);
+  text-decoration: none;
+}
+
+.targetx-header-print {
+  color: #444;
+}
+
+.targetx-plaintext {
+  margin-top: -48px !important;
+  margin-bottom: 50px !important;
+  text-align: left !important;
+}
+
+.targetx-application-form-info {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.messageCell {
+  margin-bottom: 20px;
+}
+
+.targetx-select-box-icon {
+  right: 10px;
+}
+
+.targetx-select-box-icon:after {
+  color: #666;
+  font-size:1.25rem;
+}
+
+.targetx-application-hamburger-nav .hamburger-menu-bar {
+  background-color: rgba(255,255,255,1);
+}
+
+.targetx-header-back::after {
+  color: #666;
+}
+
+.targetx-header-back:hover:after, 
+.targetx-header-back:active:after, 
+.targetx-header-back:visited:after {
+  color: #222;
+}
+
+/* required symbol */
+
+.targetx-input-label.targetx-required:before {
+  font-family: "targetx-icons";
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\27A5";
+  position: absolute;
+  font-size: 5px;
+  left: -10px;
+  top: -4px;
+  vertical-align: middle;
+  color: #585e69;
+}
+
+.targetx-input-label.targetx-required:before {
+  font-size: 25px;
+  left: -31px;
+  color: rgb(216, 17, 24);
+}
+
+.targetx-input-label.targetx-required.completed:before {
+  content: "\2714";
+  font-size: 25px;
+  left: -31px;
+  color: green;
+}
+
+.targetx-section-header .targetx-required:before {
+  font-family: "targetx-icons";
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\27A5";
+  position: absolute;
+  font-size: 21px;
+  left: -27px;
+  top: -5px;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  vertical-align: middle;
+  color: #585e69;
+  color: rgb(216, 17, 24);
+}
+
+.targetx-header-university-icon {
+  background: url(//assets.online.berklee.edu/bo-logo-100.png) no-repeat center;
+  transition: all 0.3s ease;
+}
+
+.targetx-input-label .targetx-input-placeholder, .targetx-input-label .targetx-picklist-placeholder, .targetx-input-label .targetx-input-text, .targetx-input-label .targetx-input-textarea, .targetx-input-label .targetx-select-box {
+  font-weight: 500;
+}
+
+.targetx-section-pre .targetx-section-header .targetx-section-header-text,
+.targetx-section-active .targetx-section-header .targetx-section-header-text,
+.targetx-section-post .targetx-section-header .targetx-section-header-text {
+  display: block;
+  float: none;
+  font-weight: 500;
+  margin-top: 39px;
+  position: static;
+  text-indent: 0;
+  transition: all 0.3s ease;
+  text-align: center;
+  top: auto;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.targetx-section-pre .targetx-section-header .targetx-section-header-text {
+  color: #999;
+}
+
+.targetx-section-active .targetx-section-header .targetx-section-header-text {
+  color: #111;
+  text-indent: 0;
+}
+
+.targetx-section-post .targetx-section-header .targetx-section-header-text {
+  color: #111;
+  text-indent: 100px;
+}
+
+#p1_Application_Contact0 .targetx-section-pre .targetx-section-header .targetx-section-header-text {
+  color: #111;
+}
+
+.TX_communitiesHome table.detailList div a {
+  width: 100%;
+}
+
+.TX_communitiesHome table.detailList td.dataCol:first-child div:first-child a {
+  margin-top: 0;
+}
+
+.BO_siteLogin .targetx-application-form-slides li:first-child,
+.BO_forgotPassword .targetx-application-form-slides li:first-child,
+.BO_formDesignUpdate .targetx-application-form-slides li:first-child {
+  margin-top: -120px;
+}
+
+.BO_siteLogin .targetx-dashboard .targetx-dashboard-hero,
+.BO_forgotPassword .targetx-dashboard .targetx-dashboard-hero,
+.BO_formDesignUpdate .targetx-dashboard .targetx-dashboard-hero {
+  height: 350px;
+}
+
+.BO_siteLogin .targetx-application-form-slide label span,
+.BO_forgotPassword .targetx-application-form-slide label span,
+.BO_formDesignUpdate .targetx-application-form-slide label span{
+  color: #666;
+  font-weight: 400;
+}
+
+.message {
+  margin-bottom: 20px !important;
+}
+
+.targetx-welcome-info {
+  background: #FFF;
+  margin-top: -100px;
+  padding: 0 60px;
+  position: relative;
+}
+
+.targetx-application-percentage-date {
+  color: #777;
+  font-weight: 500;
+}
+
+.targetx-application-percentage-date span {
+  color: #555;
+  font-weight: 900;
+}
+
+.targetx-welcome-title {
+  font-weight: 400;
+}
+
+.BO_TargetX_App_OnlineAppHome .targetx-dashboard-widgets {
+  border-top: 1px solid #CCC;
+  margin-top: 0;
+}
+
+.BO_TargetX_App_OnlineAppHome .targetx-dashboard-widget-header {
+  padding: 24px 0;
+}
+
+
+
+@media (max-width: 900px) {
+  .targetx-dashboard-hero {
+      height: 200px;
+  }
+  .targetx-header-university-icon {
+    background: url("//assets.online.berklee.edu/bo-logo-28.png") no-repeat center;
+  }
+}
+
+@media (min-width: 900px) {
+  .BO_TargetX_App_OnlineAppHome .targetx-application-percentage {
+    width: 100px;
+    height: 100px;
+
+  }
+  .BO_TargetX_App_OnlineAppHome .targetx-application-percentage canvas {
+    width:100px;
+  }
+
+  .BO_TargetX_App_OnlineAppHome .targetx-application-percentage-complete {
+    font-size: 9px;
+    font-size: .9rem;
+  }
+
+  .BO_TargetX_App_OnlineAppHome .targetx-application-percentage-number {
+    font-size: 36px;
+    font-size: 3.6rem;
+    line-height: 30px;
+    line-height: 3rem;
+  }
+
+  .BO_TargetX_App_OnlineAppHome .targetx-application-percentage-number sup {
+    font-size: 1.5rem;
+    top: 20px;
+  }
+
+    .BO_TargetX_App_OnlineAppHome .targetx-application-percentage-info {
+      top: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .targetx-section-pre .targetx-section-header .targetx-section-header-text, 
+  .targetx-section-active .targetx-section-header .targetx-section-header-text, 
+  .targetx-section-post .targetx-section-header .targetx-section-header-text {
+    display: block;
+    float: left;
+    font-weight: 500;
+    margin-top: 0;
+    position: absolute;
+    text-indent: 40px;
+    transition: all 0.3s ease;
+    text-align: left;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .targetx-dashboard-hero {
+      background-position-y: 0;
+  }
+}
+
+@media (max-width: 880px) {
+  .targetx-input-label.targetx-required:before,
+  .targetx-input-label.targetx-required.completed:before {
+    font-size: 20px;
+    left: -21px;
+    top: -3px;
+  }
+  
+  .targetx-input-label.targetx-required.completed:before {
+    top: -1px;
+  }
+}
+
+</style>
+
+<script>
+$( document ).ready(function() {
+  
+  // this is on a timer to be sure the page loads enough for
+  
+  setTimeout(function(){
+    // set line1 of the streetaddress widget field to have the class we need
+    $('input[ng-model="street.line1"]').addClass('ng-valid-required');
+    
+    // target the required fields that have value
+    $(':input.targetx-has-value.ng-valid-required').each(function() {
+      set_status_symbol(this);
+    });
+    // set the button text to be Save & Continue
+    set_save_button_text();
+    
+  }, 1500);
+
+  $(document).on('change','.targetx-select-box, input[type="text"], input[type="phone"], input[type="email"]',function(){
+    if($(this).hasClass('ng-dirty')) {
+      set_status_symbol(this);
+    }
+    if($(this).hasClass('ng-invalid-required') || $(this).val() == "") {
+      if($(this).parents('label').hasClass('targetx-required')) {
+        $(this).parents('label').removeClass('completed');
+      };
+    }
+  });
+  
+  // the dash is managed but needs a body class
+  if(($('.targetx-application-percentage-container').length > 0) && ($('.targetx-dashboard-hero').length > 0)) $("body").addClass("BO_TargetX_App_OnlineAppHome");
+
+  // hide the dashboard hero
+  if ( $('body').hasClass('BO_TargetX_App_OnlineAppHome')) { 
+    $('.targetx-dashboard-hero').hide() 
+  }; 
+  
+  // on the payment screen deliver the correct text
+  if($('div[ng-show="!paid"]').length > 0) {
+    
+    // add the style class to the opc button
+    $('form').css('textAlign', 'right');
+    $('.tgtx_payButtons.tgtx_opcButton').addClass('targetx-button');
+    
+    // get the appID
+    if(getUrlVars()["pid"] != undefined) {
+      var $appID = getUrlVars()["aid"]
+    } else {
+      var $appID = "Call an Academic Advisor to get your application ID."
+    }
+    
+    // create the strings of text to be appended to the DOM
+    // pay online
+    var $payOnlineText = "";
+    $payOnlineText += "<div id='txt-pay-online' class='payment-hint' style='display: none; margin: 30px 0;'><i class='fa fa-info-circle'></i> <p>";
+    $payOnlineText += "Online payments can be made using a Credit or Debit card. Upon ";
+    $payOnlineText += "successful submission of your payment, you will be redirected back "; 
+    $payOnlineText += "to your Application so that you can complete the submission process.</p></div>";
+    
+    // pay by mail
+    $payMailText = ""
+    $payMailText += "<div id='txt-pay-mail' class='payment-hint' style='display: none; margin: 30px 0;'>"
+    $payMailText += "<u>Student Name</u> Your Name<br/>";
+    $payMailText += "<u>Application ID</u> " + $appID + "</p>";
+    $payMailText += "<br/>";
+    $payMailText += "<p>Please note that you will not be able to submit your application until your payment has been received. An email notification will be sent confirming the receipt of payment, after which you will be able to submit your application.</p>";
+    $payMailText += "<br/>";
+    $payMailText += "<strong>Checks</strong>";
+    $payMailText += "<p>Berklee Online accepts cashier checks, money orders, personal checks, and traveler\'s checks. All checks must be drawn against a United States bank or an international bank with a U.S. affiliate. Only payments in U.S. dollars will be accepted. All checks must be made out to Berklee College of Music.</p>";
+    $payMailText += "<p>Please be sure to mail your payment(s) to the address below to ensure that we receive it.</p>";
+    $payMailText += "<p>Berklee Online<br/>";
+    $payMailText += "1140 Boylston Street<br/>";
+    $payMailText += "MS-855 BM<br/>";
+    $payMailText += "Boston, MA 02215<br/>";
+    $payMailText += "Attn: Finance Department</p>";
+    $payMailText += "<p>Please include your applicant ID along with your payment.</p>";
+    $payMailText += "<br/>";
+    $payMailText += "<strong>PayPal</strong>";
+    $payMailText += "<p>Please submit a request via email to <a href='mailto:finance@berkleemusic.com'>finance@berkleemusic.com</a>. Please include your applicant ID within your request to pay your application fee.</p>";
+    $payMailText += "<br/>";
+    $payMailText += "<strong>Wire Transfers</strong>";
+    $payMailText += "<p><u>Domestic Wire Transfers</u></p>";
+    $payMailText += "<p>The following information will be required by your bank in order to process the transfer.</p>";
+    $payMailText += "<p><em><u>Beneficiary Name</u></em> Berklee College of Music<br/>";
+    $payMailText += "<em><u>Beneficiary Account#</u>:</em> 00533-37159<br/>";
+    $payMailText += "<em><u>ABA#</u></em> 0260-0959-3</p>";
+    $payMailText += "<br/>";
+    $payMailText += "<p>Bank of America<br/>";
+    $payMailText += "100 Federal Street<br/>";
+    $payMailText += "Boston, Massachusetts 02110</p>";
+    $payMailText += "<p>Please reference Berklee Online, your name, and applicant ID within the reference details. Once the transfer process has begun please fax the transfer confirmation to <a href='tel:617-747-2149'>617-747-2149</a> Attn: Finance Department or email it to <a href='mailto:finance@berkleemusic.com'>finance@berkleemusic.com</a>. This will help ensure that your payment is posted properly.</p>";
+    $payMailText += "<br/>";
+    $payMailText += "<p><strong>Please note:</strong> Some banks charge a fee for sending and/or receiving a wire. Please check with your bank to see if you will be charged a fee. Please be aware that in addition to any fees your bank may charge, the intermediary bank receiving the funds in the United States may also deduct a fee from your wire. Please confirm the amount received by Berklee Online to know if any fees have been deducted and if any additional payment is due.</p>";
+    $payMailText += "<p><u>International Wire Transfers</u></p>";
+    $payMailText += "<p>Berklee Online has partnered with Peer Transfer to receive International Wire Transfer Payments. Please visit <a href='//onlineberklee.peertransfer.com' target='_blank'>onlineberklee.peertransfer.com</a> to make your application fee payment. Please provide your applicant ID (shown above) as your reference number. This will help ensure that your payment is posted properly.</p>";
+    $payMailText += "<p>For any questions, please contact at phone <a href='tel:1-617-747-2146'>1-866-BERKLEE</a> ext. 4 (+1-617-747-2146 if you're outside the US).</p>";
+    $payMailText += "";
+    $payMailText += "</div>";
+    
+    // append to the DOM
+    $($payOnlineText).insertBefore('.targetx-card-buttons').first();
+    $($payMailText).insertBefore('.targetx-card-buttons').first();
+    
+    $(document).on('change','#select-box',function(){
+      $('.payment-hint').hide();
+      if($("#select-box option:selected").val() == "online") {
+        $('#txt-pay-online').fadeIn();
+      } else {
+        $('#txt-pay-mail').fadeIn();
+      }
+    });
+  }
+});
+
+set_status_symbol = function(el) {
+  if($(el).val() != "") {
+    if($(el).parents('label').hasClass('targetx-required')) {
+      $(el).parents('label').addClass('completed');
+    };
+  }
+}
+
+set_save_button_text = function() {
+  $('.targetx-card-buttons .targetx-button').each(function() {
+    if($(this).text() == "Continue") $(this).text("Save & Continue");
+  });
+}
+
+getUrlVars = function()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+</script>
+
+<style>
