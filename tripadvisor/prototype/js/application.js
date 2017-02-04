@@ -1,8 +1,41 @@
 // Init App
 var myApp = new Framework7({
-    modalTitle: 'Framework7',
+    modalTitle: 'TripAdvisor',
+    // It is a webapp, so enable hash navigation:
+    pushState: true,
+    pushStateSeparator: '#page/',
+    pushStateNoAnimation: true,
     // Enable Material theme
     material: true,
+    //Tell Framework7 to compile templates on app init
+    precompileTemplates: true,
+    template7Pages: true,
+    
+    template7Data: {
+        // Plain data object
+        'page:ta-list': {
+            'hotels': [
+                {
+                    name:'Boston Hotel Buckminster',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...'
+                },
+                {
+                    name:'CSS',
+                    description: 'Style sheet language used for describing the look and formatting of a document written in a markup language...'
+                },
+            ],
+            'backend': [
+                {
+                    name: 'PHP',
+                    description: 'Server-side scripting language designed for web development but also used as a general-purpose programming language...'
+                },
+                {
+                    name: 'Ruby',
+                    description: 'Dynamic, reflective, object-oriented, general-purpose programming language...'
+                }
+            ]
+        }
+    }
 });
 
 // Expose Internal DOM library

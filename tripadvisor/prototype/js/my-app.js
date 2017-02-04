@@ -1,5 +1,59 @@
 // Initialize your app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    // Default title for modals
+    modalTitle: 'My App',
+ 
+    // If it is webapp, we can enable hash navigation:
+    pushState: true,
+ 
+    // Hide and show indicator during ajax requests
+    onAjaxStart: function (xhr) {
+        myApp.showIndicator();
+    },
+    onAjaxComplete: function (xhr) {
+        myApp.hideIndicator();
+    },
+    
+    //Tell Framework7 to compile templates on app init
+    precompileTemplates: true,
+    
+    template7Pages: true,
+    
+//Specify templates/pages data
+    template7Data: {
+        // Plain data object
+        'page:ta-list.html': {
+            'frontend': [
+                {
+                    name:'JavaScript',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...'
+                },
+                {
+                    name:'CSS',
+                    description: 'Style sheet language used for describing the look and formatting of a document written in a markup language...'
+                },
+            ],
+            'backend': [
+                {
+                    name: 'PHP',
+                    description: 'Server-side scripting language designed for web development but also used as a general-purpose programming language...'
+                },
+                {
+                    name: 'Ruby',
+                    description: 'Dynamic, reflective, object-oriented, general-purpose programming language...'
+                }
+            ]
+        }
+    }
+});  
+
+// Render person template to HTML, its template is already compiled and accessible as Template7.templates.personTemplate
+var hotelData = Template7.templates.taList({
+    name: 'John Doe',
+    age: 33,
+    position: 'Developer',
+    company: 'Apple'
+});
 
 // Export selectors engine
 var $$ = Dom7;
@@ -17,6 +71,8 @@ myApp.onPageInit('about', function (page) {
         createContentPage();
     });
 });
+
+
 
 // Generate dynamic page
 var dynamicPageIndex = 0;

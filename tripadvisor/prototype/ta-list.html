@@ -1,0 +1,96 @@
+
+<div data-page="ta-list" class="page">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left"><a href="index.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center"></div>
+      <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="content-block">
+      <div class="row">
+        <div class="col-20">sidebar</div>
+        <div class="col-80">
+          <div class="row">
+            <div class="col-100 tablet-50">
+              <div class="list-block">
+                <ul>
+                  <!-- Iterate through frontend languages -->
+                  {{#each this.hotels}}
+                  <li>
+                    <!-- As a context name for this link we pass context path from template7Data root -->
+                    <a href="language-details.html" class="item-link item-content" data-context-name="ta-list.hotels.{{@index}}">
+                        <div class="item-inner">
+                          <div class="item-title">{{this.name}}</div>
+                          <div class="rating">
+                              <span class="ui_bubble_rating bubble_45" alt="3.5 of 5 bubbles"></span>
+                            <span class="more review_count">
+                              <a href="#">1,473 Reviews</a>
+                            </span>
+                          </div>
+                        </div>
+                    </a>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+              
+              
+              <div class="card ks-card-header-pic">
+                <div data-pagination=".swiper-pagination" data-zoom="true" data-next-button=".swiper-button-next" data-prev-button=".swiper-button-prev" class="swiper-container swiper-init ks-demo-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container">
+                        <img src="http://lorempixel.com/800/800/nature/1" class="lazy lazy-fadeIn"/>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container"><img src="http://lorempixel.com/800/800/nature/2"/></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container"><img src="http://lorempixel.com/800/800/nature/3"/></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container"><img src="http://lorempixel.com/800/800/nature/4"/></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container"><img src="http://lorempixel.com/800/800/nature/5"/></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container"><img src="http://lorempixel.com/800/800/nature/6"/></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container"><img src="http://lorempixel.com/800/800/nature/7"/></div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-zoom-container"><img src="http://lorempixel.com/800/800/nature/8"/></div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <div class="card-content"> 
+                  <div class="card-content-inner"> 
+                    <p class="color-gray">Posted on January 21, 2015</p>
+                    <p>
+                      Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies 
+                      efficitur vitae non felis. Phasellus quis nibh hendrerit...
+                    </p>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <a href="#" class="link">Like</a><a href="#" class="link">Read more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-100 tablet-50">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
