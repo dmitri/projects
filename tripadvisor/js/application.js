@@ -16,24 +16,53 @@ var myApp = new Framework7({
         'page:ta-list': {
             'hotels': [
                 {
+                    shortName: 'hotel-buckminster',
                     name:'Boston Hotel Buckminster',
-                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...'
-                },
-                {
-                    name:'CSS',
-                    description: 'Style sheet language used for describing the look and formatting of a document written in a markup language...'
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    reviewCount: '1,376',
+                    ranking: '#20',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$265',
+                    strikePrice: '$329',
+                    'recentReviews' : [
+                      {
+                        title: 'Unbeatable location!',
+                        date: '2 days ago',
+                      },
+                      {
+                        title: 'A baseball lover\'s clubhouse!',
+                        date: '3 days ago',
+                      },
+                    ],
+                    affiliate1: 'travelocity',
+                    affiliatePrice1: '$265',
+                    affiliate2: 'booking.com',
+                    affiliatePrice2: '$265',
+                    affiliate3: 'getaroom',
+                    affiliatePrice3: '$285',
+                    affiliate4: 'agoda',
+                    affiliatePrice4: '$295',
+                    'images': [
+                      {
+                        name: 'monkey',
+                      },
+                      {
+                        name: 'monkey',
+                      },
+                      {
+                        name: 'monkey',
+                      },
+                      {
+                        name: 'monkey',
+                      },
+                      {
+                        name: 'monkey',
+                      },
+                    ],
                 },
             ],
-            'backend': [
-                {
-                    name: 'PHP',
-                    description: 'Server-side scripting language designed for web development but also used as a general-purpose programming language...'
-                },
-                {
-                    name: 'Ruby',
-                    description: 'Dynamic, reflective, object-oriented, general-purpose programming language...'
-                }
-            ]
         }
     }
 });

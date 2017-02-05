@@ -28,5 +28,9 @@
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #FFFFFF;
+  background: #FFF;
+}
+
+.list-block .item-link .item-inner {
+  background: none;
 }
