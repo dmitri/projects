@@ -20,6 +20,7 @@ var myApp = new Framework7({
                     name:'Boston Hotel Buckminster',
                     description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
                     rating: '35',
+                    ratingMeaning: 'Very Good',
                     reviewCount: '1,376',
                     ranking: '65',
                     video: 'no',
@@ -82,14 +83,14 @@ var myApp = new Framework7({
                     name:'Taj Hotel',
                     description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
                     rating: '45',
+                    ratingMeaning: 'Excellent',
                     reviewCount: '2,398',
                     ranking: '28',
                     video: 'yes',
                     green: 'yes',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
-                    bestPrice: '$265',
-                    strikePrice: '$329',
+                    bestPrice: '$295',
                     'recentReviews' : [
                       {
                         title: 'Incomparable service in an elegant hotel!',
@@ -141,6 +142,1251 @@ var myApp = new Framework7({
                       },
                       {
                         name: 'taj',
+                      },
+                    ],
+                },
+                // Godfrey
+                {
+                    shortName: 'godfrey',
+                    name:'The Godfrey Hotel Boston',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '1,995',
+                    ranking: '14',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$195',
+                    'recentReviews' : [
+                      {
+                        title: 'Wonderful.',
+                        date: 'Yesterday',
+                      },
+                      {
+                        title: 'Great location at a great price',
+                        date: 'Yesterday',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Downtown',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                    ],
+                },
+                // Marriott
+                {
+                    shortName: 'custom-house',
+                    name:'Marriott Vacation Club at Custom House',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '758',
+                    ranking: '1',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$229',
+                    'recentReviews' : [
+                      {
+                        title: 'Awesome hotel and location',
+                        date: '4 days ago',
+                      },
+                      {
+                        title: 'As good as the reviews I read.',
+                        date: '8 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Downtown'
+                      },
+                      {
+                        tag: 'Resort hotel'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                    ],
+                },
+                {
+                    shortName: 'hotel-buckminster',
+                    name:'Boston Hotel Buckminster',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '1,376',
+                    ranking: '65',
+                    video: 'no',
+                    green: 'no',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$265',
+                    strikePrice: '$329',
+                    'recentReviews' : [
+                      {
+                        title: 'Unbeatable location!',
+                        date: '2 days ago',
+                      },
+                      {
+                        title: 'A baseball lover\'s clubhouse!',
+                        date: '3 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Fenway / Kenmore',
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$285',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$295',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                    ],
+                },
+                // Taj
+                {
+                    shortName: 'taj',
+                    name:'Taj Hotel',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '2,398',
+                    ranking: '28',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$295',
+                    'recentReviews' : [
+                      {
+                        title: 'Incomparable service in an elegant hotel!',
+                        date: '3 days ago',
+                      },
+                      {
+                        title: 'This is a very good hotel',
+                        date: '6 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Back Bay'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                    ],
+                },
+                // Godfrey
+                {
+                    shortName: 'godfrey',
+                    name:'The Godfrey Hotel Boston',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '1,995',
+                    ranking: '14',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$195',
+                    'recentReviews' : [
+                      {
+                        title: 'Wonderful.',
+                        date: 'Yesterday',
+                      },
+                      {
+                        title: 'Great location at a great price',
+                        date: 'Yesterday',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Downtown',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                    ],
+                },
+                // Marriott
+                {
+                    shortName: 'custom-house',
+                    name:'Marriott Vacation Club at Custom House',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '758',
+                    ranking: '1',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$229',
+                    'recentReviews' : [
+                      {
+                        title: 'Awesome hotel and location',
+                        date: '4 days ago',
+                      },
+                      {
+                        title: 'As good as the reviews I read.',
+                        date: '8 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Downtown'
+                      },
+                      {
+                        tag: 'Resort hotel'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                    ],
+                },
+                {
+                    shortName: 'hotel-buckminster',
+                    name:'Boston Hotel Buckminster',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '1,376',
+                    ranking: '65',
+                    video: 'no',
+                    green: 'no',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$265',
+                    strikePrice: '$329',
+                    'recentReviews' : [
+                      {
+                        title: 'Unbeatable location!',
+                        date: '2 days ago',
+                      },
+                      {
+                        title: 'A baseball lover\'s clubhouse!',
+                        date: '3 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Fenway / Kenmore',
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$285',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$295',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                    ],
+                },
+                // Taj
+                {
+                    shortName: 'taj',
+                    name:'Taj Hotel',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '2,398',
+                    ranking: '28',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$295',
+                    'recentReviews' : [
+                      {
+                        title: 'Incomparable service in an elegant hotel!',
+                        date: '3 days ago',
+                      },
+                      {
+                        title: 'This is a very good hotel',
+                        date: '6 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Back Bay'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                    ],
+                },
+                // Godfrey
+                {
+                    shortName: 'godfrey',
+                    name:'The Godfrey Hotel Boston',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '1,995',
+                    ranking: '14',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$195',
+                    'recentReviews' : [
+                      {
+                        title: 'Wonderful.',
+                        date: 'Yesterday',
+                      },
+                      {
+                        title: 'Great location at a great price',
+                        date: 'Yesterday',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Downtown',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                    ],
+                },
+                // Marriott
+                {
+                    shortName: 'custom-house',
+                    name:'Marriott Vacation Club at Custom House',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '758',
+                    ranking: '1',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$229',
+                    'recentReviews' : [
+                      {
+                        title: 'Awesome hotel and location',
+                        date: '4 days ago',
+                      },
+                      {
+                        title: 'As good as the reviews I read.',
+                        date: '8 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Downtown'
+                      },
+                      {
+                        tag: 'Resort hotel'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                    ],
+                },
+                {
+                    shortName: 'hotel-buckminster',
+                    name:'Boston Hotel Buckminster',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '1,376',
+                    ranking: '65',
+                    video: 'no',
+                    green: 'no',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$265',
+                    strikePrice: '$329',
+                    'recentReviews' : [
+                      {
+                        title: 'Unbeatable location!',
+                        date: '2 days ago',
+                      },
+                      {
+                        title: 'A baseball lover\'s clubhouse!',
+                        date: '3 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Fenway / Kenmore',
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$285',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$295',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                    ],
+                },
+                // Taj
+                {
+                    shortName: 'taj',
+                    name:'Taj Hotel',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '2,398',
+                    ranking: '28',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$295',
+                    'recentReviews' : [
+                      {
+                        title: 'Incomparable service in an elegant hotel!',
+                        date: '3 days ago',
+                      },
+                      {
+                        title: 'This is a very good hotel',
+                        date: '6 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Back Bay'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                    ],
+                },
+                // Godfrey
+                {
+                    shortName: 'godfrey',
+                    name:'The Godfrey Hotel Boston',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '1,995',
+                    ranking: '14',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$195',
+                    'recentReviews' : [
+                      {
+                        title: 'Wonderful.',
+                        date: 'Yesterday',
+                      },
+                      {
+                        title: 'Great location at a great price',
+                        date: 'Yesterday',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Downtown',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                    ],
+                },
+                // Marriott
+                {
+                    shortName: 'custom-house',
+                    name:'Marriott Vacation Club at Custom House',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '758',
+                    ranking: '1',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$229',
+                    'recentReviews' : [
+                      {
+                        title: 'Awesome hotel and location',
+                        date: '4 days ago',
+                      },
+                      {
+                        title: 'As good as the reviews I read.',
+                        date: '8 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Downtown'
+                      },
+                      {
+                        tag: 'Resort hotel'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                    ],
+                },
+                {
+                    shortName: 'hotel-buckminster',
+                    name:'Boston Hotel Buckminster',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '1,376',
+                    ranking: '65',
+                    video: 'no',
+                    green: 'no',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$265',
+                    strikePrice: '$329',
+                    'recentReviews' : [
+                      {
+                        title: 'Unbeatable location!',
+                        date: '2 days ago',
+                      },
+                      {
+                        title: 'A baseball lover\'s clubhouse!',
+                        date: '3 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Fenway / Kenmore',
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$285',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$295',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                      {
+                        name: 'hotel-buckminster',
+                      },
+                    ],
+                },
+                // Taj
+                {
+                    shortName: 'taj',
+                    name:'Taj Hotel',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '2,398',
+                    ranking: '28',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$295',
+                    'recentReviews' : [
+                      {
+                        title: 'Incomparable service in an elegant hotel!',
+                        date: '3 days ago',
+                      },
+                      {
+                        title: 'This is a very good hotel',
+                        date: '6 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Back Bay'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                    ],
+                },
+                // Godfrey
+                {
+                    shortName: 'godfrey',
+                    name:'The Godfrey Hotel Boston',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    ratingMeaning: 'Excellent',
+                    reviewCount: '1,995',
+                    ranking: '14',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$195',
+                    'recentReviews' : [
+                      {
+                        title: 'Wonderful.',
+                        date: 'Yesterday',
+                      },
+                      {
+                        title: 'Great location at a great price',
+                        date: 'Yesterday',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Downtown',
+                      },
+                      {
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                      {
+                        name: 'godfrey',
+                      },
+                    ],
+                },
+                // Marriott
+                {
+                    shortName: 'custom-house',
+                    name:'Marriott Vacation Club at Custom House',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '35',
+                    ratingMeaning: 'Very Good',
+                    reviewCount: '758',
+                    ranking: '1',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'Booking.com',
+                    bestPriceURL: '',
+                    bestPrice: '$229',
+                    'recentReviews' : [
+                      {
+                        title: 'Awesome hotel and location',
+                        date: '4 days ago',
+                      },
+                      {
+                        title: 'As good as the reviews I read.',
+                        date: '8 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
+                      },
+                      {
+                        tag: 'Downtown'
+                      },
+                      {
+                        tag: 'Resort hotel'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
+                      },
+                      {
+                        name: 'custom-house',
                       },
                     ],
                 },

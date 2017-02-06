@@ -6,16 +6,20 @@
         <a href="index.html" class="back link icon-only"><img class="svg-taLogo" src="https://static.tacdn.com/img2/branding/trip_logo.svg" width="197" height="35" alt="Reviews of Hotels, Flights and Vacation Rentals"></a>
       </div>
       <div class="center"></div>
-      <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+      <div class="right">
+        <a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a>
+      </div>
     </div>
   </div>
+  
   <div class="page-content">
     <div class="content-block">
       <div class="row">
-        <div class="col-100 tablet-60" style="position:relative;">
-          <div class="row">
+        <div class="col-100 tablet-70">
+          
+            <div class="row">
             {{#each this.hotels}}
-              <div class="col-100 tablet-50">
+              <div class="col-100 tablet-50 phone-100">
                   <div class="card ks-card-header-pic">
                     <div data-pagination=".swiper-pagination" 
                           data-zoom="true" 
@@ -38,11 +42,22 @@
                     </div>
                     <div class="card-content"> 
                       <div class="card-content-inner">
-                        <h3>{{this.name}}</h3>
+                        <div class="name-and-price clearfix">
+                          <h3>{{this.name}}</h3>
+                          <div class="price-container">
+                            <div class="price">{{this.bestPrice}}</div>
+                            {{#if this.strikePrice}}
+                              <div class="strike-price">{{this.strikePrice}}</div>
+                            {{/if}}
+                            
+                          </div>
+                        </div>
                         <div class="rating">
                             <span class="ui_bubble_rating bubble_{{this.rating}}"></span>
+                            <span class="ratingMeaning">{{this.ratingMeaning}}</span>
+                            <span class="md-hide">based on</span>
                             <span class="more review_count">
-                              {{this.reviewCount}} Reviews
+                              <a href="#">{{this.reviewCount}} Reviews</a>
                             </span>
                         </div>
                         <div class="ranking">#{{this.ranking}} of 85 hotels in Boston</div>
@@ -63,15 +78,19 @@
                       </div>
                     </div>
                     <div class="card-footer">
-                      <a href="#" class="link">Like</a><a href="#" class="link">Read more</a>
+                      <a href="#">agoda<br/>$389</a>
+                      <a href="#" class="xs-hide">travelocity<br/>$379</a>
+                      <a href="#">view 6 deals</a>
+                      <a href="#" class="link deal-button">View Deal</a>
                     </div>
                   </div>
                 </div>
               </li>
             {{/each}}
+            
           </div>
         </div>
-        <div class="col-100 tablet-40">sidebar</div>
+        <div class="col-100 tablet-30 sm-hide">sidebar</div>
       </div>
     </div>
   </div>
