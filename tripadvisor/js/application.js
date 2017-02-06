@@ -21,7 +21,9 @@ var myApp = new Framework7({
                     description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
                     rating: '35',
                     reviewCount: '1,376',
-                    ranking: '#20',
+                    ranking: '65',
+                    video: 'no',
+                    green: 'no',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$265',
@@ -36,29 +38,109 @@ var myApp = new Framework7({
                         date: '3 days ago',
                       },
                     ],
-                    affiliate1: 'travelocity',
-                    affiliatePrice1: '$265',
-                    affiliate2: 'booking.com',
-                    affiliatePrice2: '$265',
-                    affiliate3: 'getaroom',
-                    affiliatePrice3: '$285',
-                    affiliate4: 'agoda',
-                    affiliatePrice4: '$295',
+                    'tags' : [
+                      {
+                        tag: 'Fenway / Kenmore',
+                      },
+                      {
+                        tag: 'Mid-range'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$265',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$285',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$295',
+                      },
+                    ],
                     'images': [
                       {
-                        name: 'monkey',
+                        name: 'hotel-buckminster',
                       },
                       {
-                        name: 'monkey',
+                        name: 'hotel-buckminster',
                       },
                       {
-                        name: 'monkey',
+                        name: 'hotel-buckminster',
+                      },
+                    ],
+                },
+                // Taj
+                {
+                    shortName: 'taj',
+                    name:'Taj Hotel',
+                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                    rating: '45',
+                    reviewCount: '2,398',
+                    ranking: '28',
+                    video: 'yes',
+                    green: 'yes',
+                    bestPriceAffiliate: 'orbitz',
+                    bestPriceURL: '',
+                    bestPrice: '$265',
+                    strikePrice: '$329',
+                    'recentReviews' : [
+                      {
+                        title: 'Incomparable service in an elegant hotel!',
+                        date: '3 days ago',
                       },
                       {
-                        name: 'monkey',
+                        title: 'This is a very good hotel',
+                        date: '6 days ago',
+                      },
+                    ],
+                    'tags' : [
+                      {
+                        tag: 'Luxury',
                       },
                       {
-                        name: 'monkey',
+                        tag: 'Green'
+                      },
+                      {
+                        tag: 'Back Bay'
+                      },
+                      {
+                        tag: 'Pets Allowed'
+                      },
+                    ],
+                    'affiliates' : [
+                      {
+                        affiliate: 'travelocity',
+                        affiliatePrice: '$205',
+                      },
+                      {
+                        affiliate: 'booking.com',
+                        affiliatePrice: '$295',
+                      },
+                      {
+                        affiliate: 'getaroom',
+                        affiliatePrice: '$335',
+                      },
+                      {
+                        affiliate: 'agoda',
+                        affiliatePrice: '$325',
+                      },
+                    ],
+                    'images': [
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
+                      },
+                      {
+                        name: 'taj',
                       },
                     ],
                 },
