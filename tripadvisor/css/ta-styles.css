@@ -185,6 +185,7 @@ body {
 
 .ui_icon.checkmark-boxed:before {
   color: #589442;
+  font-size: 15px;
 }
 
 .swiper-pagination-bullet-active {
