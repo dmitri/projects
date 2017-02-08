@@ -15,68 +15,6 @@ var myApp = new Framework7({
         // Plain data object
         'page:ta-list': {
             'hotels': [
-                {
-                    shortName: 'hotel-buckminster',
-                    name:'Boston Hotel Buckminster',
-                    description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
-                    rating: '35',
-                    ratingMeaning: 'Very Good',
-                    reviewCount: '1,376',
-                    ranking: '65',
-                    video: 'no',
-                    green: 'no',
-                    bestPriceAffiliate: 'orbitz',
-                    bestPriceURL: '',
-                    bestPrice: '$265',
-                    strikePrice: '$329',
-                    'recentReviews' : [
-                      {
-                        title: 'Unbeatable location!',
-                        date: '2 days ago',
-                      },
-                      {
-                        title: 'A baseball lover\'s clubhouse!',
-                        date: '3 days ago',
-                      },
-                    ],
-                    'tags' : [
-                      {
-                        tag: 'Fenway / Kenmore',
-                      },
-                      {
-                        tag: 'Mid-range'
-                      },
-                    ],
-                    'affiliates' : [
-                      {
-                        affiliate: 'travelocity',
-                        affiliatePrice: '$265',
-                      },
-                      {
-                        affiliate: 'booking.com',
-                        affiliatePrice: '$265',
-                      },
-                      {
-                        affiliate: 'getaroom',
-                        affiliatePrice: '$285',
-                      },
-                      {
-                        affiliate: 'agoda',
-                        affiliatePrice: '$295',
-                      },
-                    ],
-                    'images': [
-                      {
-                        name: 'hotel-buckminster',
-                      },
-                      {
-                        name: 'hotel-buckminster',
-                      },
-                      {
-                        name: 'hotel-buckminster',
-                      },
-                    ],
-                },
                 // Taj
                 {
                     shortName: 'taj',
@@ -88,6 +26,7 @@ var myApp = new Framework7({
                     ranking: '28',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '4',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$295',
@@ -145,6 +84,7 @@ var myApp = new Framework7({
                       },
                     ],
                 },
+                
                 // Godfrey
                 {
                     shortName: 'godfrey',
@@ -156,6 +96,7 @@ var myApp = new Framework7({
                     ranking: '14',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '6',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$195',
@@ -230,6 +171,7 @@ var myApp = new Framework7({
                     ranking: '1',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '10',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$229',
@@ -300,6 +242,7 @@ var myApp = new Framework7({
                     ranking: '65',
                     video: 'no',
                     green: 'no',
+                    affiliateCount: '10',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$265',
@@ -363,6 +306,7 @@ var myApp = new Framework7({
                     ranking: '28',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '12',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$295',
@@ -431,6 +375,7 @@ var myApp = new Framework7({
                     ranking: '14',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '12',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$195',
@@ -505,6 +450,7 @@ var myApp = new Framework7({
                     ranking: '1',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '10',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$229',
@@ -575,6 +521,7 @@ var myApp = new Framework7({
                     ranking: '65',
                     video: 'no',
                     green: 'no',
+                    affiliateCount: '8',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$265',
@@ -638,6 +585,7 @@ var myApp = new Framework7({
                     ranking: '28',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '10',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$295',
@@ -706,6 +654,7 @@ var myApp = new Framework7({
                     ranking: '14',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '15',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$195',
@@ -780,6 +729,7 @@ var myApp = new Framework7({
                     ranking: '1',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '4',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$229',
@@ -850,6 +800,7 @@ var myApp = new Framework7({
                     ranking: '65',
                     video: 'no',
                     green: 'no',
+                    affiliateCount: '6',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$265',
@@ -913,6 +864,7 @@ var myApp = new Framework7({
                     ranking: '28',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '11',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$295',
@@ -981,6 +933,7 @@ var myApp = new Framework7({
                     ranking: '14',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '7',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$195',
@@ -1055,6 +1008,7 @@ var myApp = new Framework7({
                     ranking: '1',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '8',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$229',
@@ -1125,6 +1079,8 @@ var myApp = new Framework7({
                     ranking: '65',
                     video: 'no',
                     green: 'no',
+                    affiliateCount: '6',
+                    affiliateCount: '4',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$265',
@@ -1188,6 +1144,7 @@ var myApp = new Framework7({
                     ranking: '28',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '14',
                     bestPriceAffiliate: 'orbitz',
                     bestPriceURL: '',
                     bestPrice: '$295',
@@ -1256,6 +1213,7 @@ var myApp = new Framework7({
                     ranking: '14',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '4',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$195',
@@ -1330,6 +1288,7 @@ var myApp = new Framework7({
                     ranking: '1',
                     video: 'yes',
                     green: 'yes',
+                    affiliateCount: '7',
                     bestPriceAffiliate: 'Booking.com',
                     bestPriceURL: '',
                     bestPrice: '$229',
@@ -1766,6 +1725,11 @@ myApp.onPageInit('infinite-scroll', function (page) {
         });
     });
 });
+
+
+footer_tab_reviews = function(index) {
+  $('#tab-container-'+index).slideToggle();
+}
 
 /* ===== Notifications Page ===== */
 myApp.onPageInit('notifications', function (page) {

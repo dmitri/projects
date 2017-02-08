@@ -16,13 +16,31 @@ body {
   clear: both;
 }
 
+#search-overlay {
+  background: rgba(255,255,255, 0.95);
+  box-sizing: border-box;
+  margin-left: -15px;
+  padding: 15px 0 15px 15px;
+  position: fixed; 
+  top: 56px; 
+  border-bottom: 1px solid #DDD;
+  z-index: 20;
+}
+
 .page-content {
-  max-width: 1400px;
   margin: 0 auto;
+}
+
+.card a {
+  color: rgba(0,0,0,0.75);
 }
 
 .navbar, .toolbar, .subnavbar {
   background: #589442;
+}
+
+.card-content-inner.short {
+  min-height: 145px;
 }
 
 .view-main .navbar {
@@ -40,13 +58,53 @@ body {
   min-height: 150px;
 }
 
+.best-affiliate {
+  color: rgba(0,0,0,0.65);
+  margin: 7px 0;
+}
+
+.rating.overlay {
+  background: rgba(255,255,255, 0.85);
+  color: rgba(0,0,0,0.85);
+  font-size: 18px;
+  font-weight: normal;
+  bottom: 0;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px 10px;
+  position: absolute; 
+  right: 0;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+}
+
+.rating.overlay .ratingMeaning {
+  font-weight: 300;
+}
+
 .card-content h3 {
   color: rgba(0,0,0,0.78);
   font-size: 20px;
 }
 
+.card-content h3 .location {
+  color: rgba(0,0,0,0.67);
+  display: block;
+  font-size: 14px;
+}
+
+.card-content h3 .location i {
+  font-size: 14px;
+}
+
+.card-footer i {
+  float: right;
+}
+
 .name-and-price h3{
   float: left;
+  font-weight: 400;
   line-height: 120%;
   max-width: 250px;
 }
@@ -55,12 +113,13 @@ body {
   position: absolute;
   right: 20px;
   top: 11px;
+  text-align: center;
   z-index:10;
 }
 
 .price-container .strike-price,
 .price-container.price {
-  text-align: right;
+  text-align: center;
 }
 
 .price-container .strike-price {
@@ -94,7 +153,6 @@ body {
   font-style: italic;
 }
 
-
 /* list page property blocks */
 .swiper-wrapper,
 .swiper-zoom-container,
@@ -125,6 +183,10 @@ body {
   opacity: 0.3;
 }
 
+.ui_icon.checkmark-boxed:before {
+  color: #589442;
+}
+
 .swiper-pagination-bullet-active {
   opacity: 1;
   background: #FFF;
@@ -135,10 +197,59 @@ body {
 }
 
 a.link.deal-button {
+  color: #2196f3;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 2px;
+  line-height: 36px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: none;
+  padding: 0 10px;
+  margin: 0;
+  height: 36px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 64px;
+  padding: 0 8px;
+  position: relative;
+  overflow: hidden;
+  outline: 0;
+  border: none;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-user-select: none;
+  user-select: none;
   border-color: #fc0 #e4a000 #e4a000 #fc0;
   background-color: #fc0;
   box-shadow: 1px 1px 0 0 rgba(0,0,0,0.15);
   color: #000;
+}
+
+@media (min-width: 1400px) {
+  .page-content {
+    max-width: 1400px;
+  }
+  
+  .content-block {
+    padding: 0;
+  }
+  
+  #search-overlay {
+    margin-left: 0;
+    padding: 15px 0;
+    width: 977px;
+  }
 }
 
 @media (max-width: 1300px) {
@@ -149,16 +260,51 @@ a.link.deal-button {
 
 @media (max-width: 768px) {
   .name-and-price h3{
-    max-width: 251px;
+    max-width: 245px;
   }
   
   .sm-hide {
-    display: none;
+    display: none !important;
+  }
+  
+  .card-content-inner.short {
+    min-height: 120px;
+  }
+  
+  .rating.overlay {
+    border-radius: 0;
+    padding: 4px 10px;
+    width: 100%;
+    font-size: 15.5px;
   }
 }
 
 @media (max-width: 475px) {
   .xs-hide {
-    display: none;
+    display: none !important;
+  }
+  
+  .rating.overlay {
+    text-align: left;
+    padding-left: 15px;
+  }
+  
+  .price-container .strike-price {
+    position: absolute;
+    top: 4px;
+    text-align: left;
+  }
+  
+  .price-container .price {
+    font-size: 19px;
+  }
+  
+  .price-container {
+    top: -29px;
+    text-align: right;
+  }
+  
+  .card-content-inner.short {
+    min-height: 55px;
   }
 }

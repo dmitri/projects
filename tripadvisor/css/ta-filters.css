@@ -5226,6 +5226,11 @@ DIV.ppr_rup.ppr_priv_hotels_rd_left_map_sponsored .mapSponsoredMapPlacement {
     max-height: 120px;
 }
 
+.hsx_hd_v4 DIV.ppr_rup.ppr_priv_hotels_rd_left_map_sponsored .mapSponsoredMapPlacement {
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
 DIV.ppr_rup.ppr_priv_hotels_rd_left_map_sponsored .mapSponsoredMapPlacement img {
     max-width: 100%;
     height: auto;
@@ -5252,18 +5257,19 @@ DIV.ppr_rup.ppr_priv_hotels_rd_left_map_sponsored .mapSponsoredMapPlacement .exp
 
 DIV.ppr_rup.ppr_priv_hotels_rd_left_map_sponsored .mapSponsoredMapPlacement .expandMapWrapper .expandMap {
     display: inline-block;
-    padding: 0 12px;
+    padding: 0 10px;
     border-radius: 3px;
     border: 2px solid #fff;
     background-color: rgba(255, 255, 255, 0.6);
-    line-height: 32px;
-    font-size: 14px;
+    line-height: 30px;
+    font-size: 13px;
     font-weight: bold;
     color: #069;
+    min-width: 60px;
 }
 
 DIV.ppr_rup.ppr_priv_hotels_rd_left_map_sponsored .mapSponsoredMapPlacement .expandMapWrapper .expandMap .text {
-    line-height: 2.5em;
+    line-height: 2.0em;
     color: #069;
     font-weight: bold;
 }
@@ -6645,7 +6651,7 @@ DIV.prw_rup.prw_datepickers_desktop_horizontal_hsx_hd .picker-inner .picker-labe
 }
 
 DIV.ppr_rup.ppr_priv_hsx_hd_datepicker_left .datepicker_box {
-    margin: 0 20px 0 0;
+    margin: 0;
     padding: 0 0 18px;
     background: #fff;
     border-bottom: 1px solid #e5e5e5;
@@ -6810,6 +6816,7 @@ DIV.ppr_rup.ppr_priv_hsx_hd_datepicker_left #STATIC_DATE_PICKER_BAR .metaProgres
     height: auto;
     padding: 0;
     background: none;
+    font-size: 19px;
 }
 
 DIV.ppr_rup.ppr_priv_hsx_hd_datepicker_left #STATIC_DATE_PICKER_BAR .metaProgressBarLabel {
@@ -7180,7 +7187,7 @@ DIV.ppr_rup.ppr_priv_hsx_hd_filters .checkbox_wrap {
     position: absolute;
     top: 0;
     left: 0;
-    right: 832px;
+    right: 0;
     background-color: #fff;
 }
 
@@ -7190,12 +7197,11 @@ DIV.ppr_rup.ppr_priv_hsx_hd_filters .checkbox_wrap:before {
     top: 12px;
     bottom: 12px;
     right: 0;
-    border-right: 1px solid #e5e5e5;
 }
 
 DIV.ppr_rup.ppr_priv_hsx_hd_filters .JFY_hotel_filter_wrap,
 DIV.ppr_rup.ppr_priv_hsx_hd_filters .p13n_checkbox_tag_cloud {
-    margin: 0 20px 0 0;
+    margin: 0 0;
     padding: 0 0 12px;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -7991,7 +7997,7 @@ DIV.ppr_rup.ppr_priv_hsx_hd_filters .map {
     z-index: 1;
     top: 0;
     left: 0;
-    right: 832px;
+    right: 0;
     height: 160px;
     cursor: pointer;
     margin-bottom: 12px;
@@ -8289,6 +8295,10 @@ DIV.ppr_rup.ppr_priv_hsx_hd_header #p13n_welcome_message {
     margin: 0;
     padding: 0;
     color: #333;
+}
+
+.hsx_hd_v4 DIV.ppr_rup.ppr_priv_hsx_hd_header #p13n_welcome_message #HEADING {
+    padding: 20px 0 0 0;
 }
 
 DIV.ppr_rup.ppr_priv_hsx_hd_header #p13n_welcome_message #HEADING {

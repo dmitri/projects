@@ -1,0 +1,121 @@
+
+<div data-page="ta-list" class="page">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+        <a href="index.html" class="back link icon-only"><img class="svg-taLogo" src="https://static.tacdn.com/img2/branding/trip_logo.svg" width="197" height="35" alt="Reviews of Hotels, Flights and Vacation Rentals"></a>
+      </div>
+      <div class="center"></div>
+      <div class="right">
+        <a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="page-content">
+    <div class="content-block">
+      <div class="row">
+        <div class="col-100 tablet-70">
+          <div class="row">
+            <div id="search-overlay" class="col-100 tablet-70">
+              search filters and map
+            </div>
+          </div>
+          <div class="row" style="margin-top: 40px;">
+            {{#each this.hotels}}
+              <div class="col-100 card">
+                <div class="row">
+                  <div class="col-100 tablet-40">
+                    <div class="ks-card-header-pic">
+                      <div data-pagination=".swiper-pagination" 
+                            data-zoom="true" 
+                            data-loop="true" 
+                            data-next-button=".swiper-button-next" 
+                            data-prev-button=".swiper-button-prev" 
+                            class="swiper-container swiper-init">
+                        <div class="swiper-wrapper">
+                          {{#each this.images}}
+                            <div class="swiper-slide">
+                              <div class="swiper-zoom-container">
+                                <img src="img/properties/{{this.name}}-{{@index}}.jpg" 
+                                      class="lazy lazy-fadeIn" />
+                              </div>
+                            </div>
+                          {{/each}}
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                          <!--<div class="swiper-pagination"></div>-->
+                        <div class="rating overlay">
+                          <span class="ui_bubble_rating bubble_{{this.rating}}"></span>
+                          <span class="ratingMeaning">{{this.ratingMeaning}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-100 tablet-60">
+                    <div class="card-content"> 
+                    <div class="card-content-inner short">
+                      <div class="name-and-price stacked clearfix">
+                        <h3>
+                          {{this.name}}
+                          <span class="location">
+                            <a href="#">
+                              <i class="material-icons">location_on</i>.25m from Back Bay
+                            </a>
+                          </span>
+                          <span class="ui_icon checkmark-boxed xs-hide" 
+                                  style="display: block; font-size: 12px; line-height: 14px; margin-top: 5px;">
+                            <span class="inline-tags">
+                              {{#each this.tags}}
+                                <a href="#">{{this.tag}}</a>{{#unless @last}},{{/unless}}
+                              {{/each}}
+                            </span>
+                          </span>
+                        </h3>
+                        
+                        <div class="price-container">
+                          {{#if this.strikePrice}}
+                            <div class="strike-price">{{this.strikePrice}}</div>
+                          {{/if}}
+                          <div class="price">{{this.bestPrice}}</div>
+                          <div class="best-affiliate">{{this.bestPriceAffiliate}}</div>
+                          <a href="#" class="link deal-button">View Deal</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab-link-container-{{@index}}" class="card-footer">
+                    <a href="#tabs-{{@index}}-tab1" class="tab-link"
+                        onclick='footer_tab_reviews("{{@index}}");'>
+                        {{this.reviewCount}} Reviews <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                    <a href="#tabs-{{@index}}-tab2" class="tab-link"
+                        onclick='footer_tab_deals("{{@index}}");'>
+                        View all {{this.affiliateCount}} deals<span class="xs-hide">: {{this.bestPrice}} - $500</span>
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                  </div>
+                </div>
+                <div id="tab-container-{{@index}}" style="display: none;">
+                  <div id="tabs-{{@index}}-tab1">
+                    <div class="list-block">
+                      List of reviews
+                    </div>
+                  </div>
+                  <div id="tabs-{{@index}}-tab1">
+                    <div class="list-block">
+                      List of deals
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+          </div>
+        </div>
+        <div class="col-100 tablet-30 sm-hide">sidebar</div>
+      </div>
+    </div>
+  </div>
+</div>
