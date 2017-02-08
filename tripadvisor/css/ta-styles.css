@@ -17,7 +17,7 @@ body {
 }
 
 #search-overlay {
-  background: rgba(255,255,255, 0.95);
+  background: rgba(255,255,255, 1);
   box-sizing: border-box;
   margin-left: -15px;
   padding: 15px 0 15px 15px;
@@ -236,9 +236,9 @@ a.link.deal-button {
   color: #000;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1300px) {
   .page-content {
-    max-width: 1400px;
+    max-width: 1300px;
   }
   
   .content-block {
@@ -246,9 +246,9 @@ a.link.deal-button {
   }
   
   #search-overlay {
-    margin-left: 0;
-    padding: 15px 0;
-    width: 977px;
+    margin-left: -2px;
+    padding: 15px 0 0 2px;
+    
   }
 }
 

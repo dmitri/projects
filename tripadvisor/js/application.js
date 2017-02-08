@@ -1726,10 +1726,19 @@ myApp.onPageInit('infinite-scroll', function (page) {
     });
 });
 
+var containerOpen = false;
 
 footer_tab_reviews = function(index) {
-  // open the container
-  $('#tab-container-'+index).slideToggle();
+  // check the container
+  check_container(index);
+}
+
+check_container = function(index) {
+  if($('#tab-container-'+index).attr('data-container-'+index+'-state') == 'closed'){
+    $('#tab-container-'+index).slideDown();
+  } else {
+    return;
+  }
 }
 
 
