@@ -1728,8 +1728,11 @@ myApp.onPageInit('infinite-scroll', function (page) {
 
 
 footer_tab_reviews = function(index) {
+  // open the container
   $('#tab-container-'+index).slideToggle();
 }
+
+
 
 /* ===== Notifications Page ===== */
 myApp.onPageInit('notifications', function (page) {
