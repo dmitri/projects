@@ -63,9 +63,20 @@ body {
   margin: 7px 0;
 }
 
+.rating.inline {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 4px 0;
+}
+
+.rating.inline .ratingMeaning {
+  font-weight: 500;
+}
+
 .rating.overlay {
   background: rgba(255,255,255, 0.85);
   color: rgba(0,0,0,0.85);
+  display: none;
   font-size: 18px;
   font-weight: normal;
   bottom: 0;
@@ -237,19 +248,29 @@ a.link.deal-button {
   color: #000;
 }
 
+.picker-inner {
+  display: block;
+}
+
 @media (min-width: 1300px) {
   .page-content {
     max-width: 1300px;
-  }
-  
-  .content-block {
-    padding: 0;
   }
   
   #search-overlay {
     margin-left: -2px;
     padding: 15px 0 0 2px;
     
+  }
+}
+
+@media (max-width: 1120px) {
+  #sidebar-filters {
+    display: none;
+  }
+  
+  .tablet-75.snap {
+    width: calc((100% - 16px*0) / 1);
   }
 }
 
@@ -260,6 +281,12 @@ a.link.deal-button {
 }
 
 @media (max-width: 768px) {
+  
+  .rating.overlay {
+    display: block;
+  }
+  
+  
   .name-and-price h3{
     max-width: 245px;
   }
@@ -281,13 +308,22 @@ a.link.deal-button {
 }
 
 @media (max-width: 475px) {
+  .name-and-price h3 {
+    float: none;
+    max-width: 100%;
+  }
+  
+  .item-after {
+    
+  }
+  
   .xs-hide {
     display: none !important;
   }
   
   .rating.overlay {
     text-align: left;
-    padding-left: 15px;
+    padding-left: 10px;
   }
   
   .price-container .strike-price {
@@ -296,16 +332,41 @@ a.link.deal-button {
     text-align: left;
   }
   
+  .price-container {
+    position: static;
+    text-align: right;
+  }
+  
   .price-container .price {
     font-size: 19px;
   }
   
-  .price-container {
-    top: -29px;
-    text-align: right;
+  .price-container .price {
+    font-size: 19px;
+    position: absolute;
+    top: -30px;
+    z-index: 11;
+    right: 10px;
   }
   
   .card-content-inner.short {
     min-height: 55px;
+  }
+  
+  .card-content-inner {
+    padding: 11px;
+  }
+  
+  a.link.deal-button {
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  a.link.deal-button span {
+    margin-top: -19px;
+  }
+  
+  .price-container .strike-price {
+    display: none;
   }
 }
