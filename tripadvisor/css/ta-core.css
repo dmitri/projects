@@ -9,6 +9,124 @@
     url('../fonts/TripAdvisor.svg?v011.000') format('svg');
 }
 
+.tabsBar {
+  background: #589442;
+  border-bottom: 0;
+  height: 33px;
+  margin-left: -8px;
+  width: auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tabsBar .tabs>li {
+  display: block;
+  float: left;
+  height: auto;
+  margin: 1px 0 0;
+  position: relative;
+}
+
+.search_button .inner {
+    margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.tabsBar .tabs .tabLink {
+  display: block;
+  color: #FFF;
+  font-size: 11.5px;
+  float: left;
+  font-weight: normal;
+  height: 12px;
+  box-sizing: border-box;
+  line-height: 12px;
+  padding: 12px 10px 1px;
+  position: relative;
+  z-index: 3;
+}
+
+.search_button {
+    width: auto;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #2c2c2c;
+    border-radius: 0 4px 4px 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background: #525252;
+    background: -moz-linear-gradient(top, #525252 0%, #2c2c2c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #525252), color-stop(100%, #2c2c2c));
+    background: -webkit-linear-gradient(top, #525252 0%, #2c2c2c 100%);
+    background: -o-linear-gradient(top, #525252 0%, #2c2c2c 100%);
+    background: -ms-linear-gradient(top, #525252 0%, #2c2c2c 100%);
+    background: linear-gradient(to bottom, #525252 0%, #2c2c2c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#525252', endColorstr='#2c2c2c', GradientType=0);
+    margin-left: -2px;
+    padding: 0 18px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.27);
+}
+
+DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .sort_bar {
+    height: 48px;
+    line-height: 42px;
+    margin-top: -10px;
+    font-size: 14px;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .sort_bar .ui_tab_bar {
+  display: flex;
+}
+
+DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .sort_bar .ui_tab_bar li {
+  flex: 1 1 100%;
+}
+
+DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .header {
+    padding: 4px 16px 0 0 !important;
+    font-weight: bold;
+    cursor: default;
+    flex: 1 1 50% !important;
+}
+
+DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .ui_tab_bar .ui_tab.selected {
+    font-weight: bold;
+    box-shadow: inset 0 -4px 0 0 #589442;
+    color: #589442;
+    cursor: default;
+}
+
+DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .header, DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .ui_tab_bar .ui_tab {
+    padding: 0 16px 6px;
+    float: left;
+    cursor: pointer;
+}
+
+DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .ui_icon.question-circle-fill {
+    color: #c2c1bd;
+    font-size: 16px;
+}
+
+.ui_icon.question-circle-fill:before {
+    content: "\2955";
+}
+
+.hidden {
+    display: none;
+}
+
 .ui_modal.no_padding {
     padding: 0;
 }
@@ -15963,15 +16081,6 @@ body.long_prices .metaPriceInfo {
     border-right-color: transparent;
     border-bottom-color: transparent;
     border-left-color: inherit;
-}
-
-.ui_tab_bar {
-    height: 54px;
-    background: #fff;
-    border: 1px solid #e9e8e2;
-    box-shadow: inset 0 -4px 0 0 #f4f3f0;
-    overflow: hidden;
-    font-size: 14px;
 }
 
 .ui_tab_bar.clear {

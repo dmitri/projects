@@ -1,5 +1,6 @@
 // Init App
 var myApp = new Framework7({
+    
     modalTitle: 'TripAdvisor',
     // It is a webapp, so enable hash navigation:
     pushState: true,
@@ -1357,6 +1358,8 @@ var myApp = new Framework7({
 // Expose Internal DOM library
 var $$ = Dom7;
 
+//var leftView = myApp.addView('.view-left', {});
+
 // Add main view
 var mainView = myApp.addView('.view-main', {
 });
@@ -1514,6 +1517,21 @@ myApp.onPageInit('swipe-delete modals media-lists', function (page) {
     });
 
 });
+
+var containerOpen = false;
+
+footer_tab_reviews = function(index) {
+  // check the container
+  check_container(index);
+}
+
+check_container = function(index) {
+  if($$('#tab-container-'+index).attr('data-container-'+index+'-state') == 'closed'){
+    $$('#tab-container-'+index).show().animate({'height': 300});
+  } else {
+    return;
+  }
+}
 
 /* ===== Messages Page ===== */
 myApp.onPageInit('messages', function (page) {
@@ -1725,23 +1743,6 @@ myApp.onPageInit('infinite-scroll', function (page) {
         });
     });
 });
-
-var containerOpen = false;
-
-footer_tab_reviews = function(index) {
-  // check the container
-  check_container(index);
-}
-
-check_container = function(index) {
-  if($('#tab-container-'+index).attr('data-container-'+index+'-state') == 'closed'){
-    $('#tab-container-'+index).slideDown();
-  } else {
-    return;
-  }
-}
-
-
 
 /* ===== Notifications Page ===== */
 myApp.onPageInit('notifications', function (page) {
