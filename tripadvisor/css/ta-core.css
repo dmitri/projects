@@ -98,7 +98,7 @@ DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .header {
     padding: 4px 16px 0 0 !important;
     font-weight: bold;
     cursor: default;
-    flex: 1 1 50% !important;
+    flex: 1 1 60% !important;
 }
 
 DIV.ppr_rup.ppr_priv_hsx_hd_sort_bar .ui_tab_bar .ui_tab.selected {
