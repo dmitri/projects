@@ -1,5 +1,5 @@
 
-<div data-page="ta-list" class="page short">
+<div data-page="ta-list" class="page short list">
   <div class="navbar">
     <div class="navbar-inner">
       <div class="left">
@@ -16,52 +16,52 @@
       <div class="container" style="padding-top: 0;">
         <div class="content-block" style="margin: 0;">
           <div class="row">
-            <div class="col-100 tabsBarContainer">
+            <div id="main-search" class="col-100 tabsBarContainer">
               <div class="tabsBar sm-hide">
-              <ul class="tabs" onclick="">
+              <ul class="tabs">
               <li class="tabItem dropDown jsNavMenu">
-              <a href="/Tourism-g60745-Boston_Massachusetts-Vacations.html" class="tabLink arwLink geoLink" onclick="ta.util.cookie.setPIDCookie(4964); ta.setEvtCookie('TopNav', 'click', 'Tourism', 0, this.href)">
+              <a href="#" class="tabLink arwLink geoLink">
               <span class="geoName" data-title="Boston">Boston</span><span class="ui_icon single-chevron-down"></span>
               </a>
               </li>
               <li class="tabItem dropDown jsNavMenu hvrIE6">
-              <a class="tabLink arwLink" onclick="ta.util.cookie.setPIDCookie(4965); ta.setEvtCookie('TopNav', 'click', 'Hotels', 0, this.href);" onmousedown="requireCallLast('masthead/header', 'addClearParam', this);" href="/Hotels-g60745-Boston_Massachusetts-Hotels.html"><span class="arrow_text" data-title="Hotels">Hotels</span><span class="ui_icon single-chevron-down"></span></a>
+              <a class="tabLink arwLink" href="#"><span class="arrow_text" data-title="Hotels">Hotels</span><span class="ui_icon single-chevron-down"></span></a>
               </li>
-              <li class="tabItem  hvrIE6"><a onclick="ta.setEvtCookie('TopNav', 'click', 'Flights', 0, this.href);" href="/Flights-g60745-Boston_Massachusetts-Cheap_Discount_Airfares.html" class="tabLink  pid4966" data-title="Flights">
+              <li class="tabItem  hvrIE6"><a href="#" class="tabLink">
               Flights
               </a>
               </li>
-              <li class="tabItem  hvrIE6"><a onclick="ta.setEvtCookie('TopNav', 'click', 'VacationRentals', 0, this.href)" href="/VacationRentals-g60745-Reviews-Boston_Massachusetts-Vacation_Rentals.html" class="tabLink  pid2795" data-title="Vacation Rentals">
+              <li class="tabItem hvrIE6"><a href="#" class="tabLink  pid2795" >
               Vacation Rentals
               </a>
               </li>
-              <li class="tabItem  hvrIE6"><a href="/Restaurants-g60745-Boston_Massachusetts.html" class="tabLink  pid4967" data-title="Restaurants">
+              <li class="tabItem hvrIE6"><a href="/Restaurants-g60745-Boston_Massachusetts.html" class="tabLink">
               Restaurants
               </a>
               </li>
-              <li class="tabItem  hvrIE6"><a onclick="ta.setEvtCookie('TopNav', 'click', 'ThingsToDo', 0, this.href)" href="/Attractions-g60745-Activities-Boston_Massachusetts.html" class="tabLink  pid4969" data-title="Things to Do">
+              <li class="tabItem  hvrIE6"><a href="#" class="tabLink">
               Things to Do
               </a>
               </li>
-              <li class="tabItem  hvrIE6"><a onclick="ta.setEvtCookie('TopNav', 'click', 'Forum', 0, this.href)" href="/ShowForum-g60745-i48-Boston_Massachusetts.html" class="tabLink  pid35927" data-title="Forum">
+              <li class="tabItem  hvrIE6"><a href="#" class="tabLink" data-title="Forum">
               Forum
               </a>
               </li>
-              <li class="tabItem  hvrIE6"><a onclick="ta.setEvtCookie('TopNav', 'click', 'TravelersChoice', 0, this.href)" href="/TravelersChoice" class="tabLink  pid5087" data-title="Best of 2017">
+              <li class="tabItem  hvrIE6"><a href="#" class="tabLink" data-title="Best of 2017">
               Best of 2017
               </a>
               </li>
               <li class="tabItem dropDown jsNavMenu hvrIE6 ">
-              <span class="tabLink arwLink" onclick="     "><span class="arrow_text" data-title="More">More</span><span class="ui_icon single-chevron-down"></span></span>
+              <span class="tabLink arwLink"><span class="arrow_text" data-title="More">More</span><span class="ui_icon single-chevron-down"></span></span>
               </li>
               </ul> 
               </div>
               <input type="text" class="input-1 sm-hide" />
               <input type="text" class="input-2" />
-              <button id="SEARCH_BUTTON" class="search_button " type="submit" name="sub-search">
+              <button id="SEARCH_BUTTON" class="search_button" type="submit" name="sub-search">
                 <div id="SEARCH_BUTTON_CONTENT">
                   <label class="staticSearchLabel ui_icon search"></label>
-                  <div class="inner ">Search</div>
+                  <div class="inner xs-hide">Search</div>
                 </div>
               <span class="loadingBubbles hidden" id="LOADING_BUBBLE_CONTAINER" data-text="Search"><span></span><span></span><span></span><span></span><span></span></span>
               </button>
@@ -75,8 +75,8 @@
       <div class="container">
         <div class="row">
           <div class="col-100">
-            <div class="content-block h1">
-              <h1 style="font-size: 35px; color: rgba(0,0,0,0.77); font-weight: 600;">Boston Hotels</h1>
+            <div class="content-block page-header-block">
+              <h1>Boston Hotels</h1>
             </div>
           </div>
         </div>
@@ -1523,8 +1523,8 @@
                   <div class="sort_bar">
                       <ul class="ui_tab_bar">
                           <li class="header">Sort by:</li>
-                          <li class="ui_tab selected" data-currentsort="popularity" onclick="ta.plc_hsx_hd_sort_bar_0_handlers.handleSortClick(event, this, 'popularity');">Traveler Ranked <span class="ui_icon question-circle-fill" data-tooltip="" data-position="below" data-maxwidth="200" data-element=".tooltip" onmouseover="uiOverlay(event, this); ta.trackEventOnPage('p13n_tooltip_hover', 'ranking', '');"><div class="tooltip hidden">Highest rated hotels on TripAdvisor, based on traveler reviews.</div></span></li>
-                          <li class="ui_tab " data-currentsort="recommended" onclick="ta.plc_hsx_hd_sort_bar_0_handlers.handleSortClick(event, this, 'recommended');">Best Value + Top Rated <span class="ui_icon question-circle-fill" data-tooltip="" data-position="below" data-maxwidth="200" data-element=".tooltip" onmouseover="uiOverlay(event, this); ta.trackEventOnPage('p13n_tooltip_hover', 'recommended', '');"><div class="tooltip hidden">Most popular hotels as reviewed by TripAdvisor users, factoring in your browsing history</div></span></li>
+                          <li class="ui_tab selected" data-currentsort="popularity" onclick="ta.plc_hsx_hd_sort_bar_0_handlers.handleSortClick(event, this, 'popularity');">Traveler Ranked</li>
+                          <li class="ui_tab " data-currentsort="recommended" onclick="ta.plc_hsx_hd_sort_bar_0_handlers.handleSortClick(event, this, 'recommended');">Best Value + Top Rated</li>
                           <li class="ui_tab " data-currentsort="priceLow" onclick="ta.plc_hsx_hd_sort_bar_0_handlers.handleSortClick(event, this, 'priceLow');">Lowest Price </li>
                           <li class="ui_tab " data-currentsort="friend" onclick="ta.plc_hsx_hd_sort_bar_0_handlers.handleSortClick(event, this, 'friends');">Friends first </li>
                           <li class="ui_tab " data-currentsort="distLow" onclick="ta.plc_hsx_hd_sort_bar_0_handlers.handleSortClick(event, this, 'distLow');">Distance <span class="ui_icon question-circle-fill" data-tooltip="" data-position="below" data-maxwidth="140" data-element=".tooltip" onmouseover="uiOverlay(event, this); ta.trackEventOnPage('p13n_tooltip_hover', 'distLow', '');"><div class="tooltip hidden">See hotels located closest to the center first </div></span></li>
@@ -1536,7 +1536,7 @@
               </div>
             </div>
             <div class="row" style="margin-top: 20px;">
-              {{#each this.hotels}}
+              {{#each hotels}}
                 <div class="col-100 card">
                   <div class="row">
                     <div class="col-100 tablet-40">
@@ -1579,8 +1579,9 @@
                             </div>
                             <span class="location">
                               <a href="#" style>
-                                <i class="material-icons" style="color: #589442;">location_on</i> 
-                                <strong>0.1 miles</strong> from Boston Center
+                                <span class="ui_icon map-pin">
+                                  <strong>0.1 miles</strong> from Boston Center
+                                </span>
                               </a>
                             </span>
                             <span class="ui_icon checkmark-boxed xs-hide" 
@@ -1601,7 +1602,7 @@
                               {{this.bestPrice}}
                               <span class="best-affiliate">{{this.bestPriceAffiliate}}</span>
                             </div>
-                            <a href="#" class="link deal-button">
+                            <a href="ta-property.html" class="link deal-button">
                                 View Deal
                             </a>
                           </div>
@@ -1621,8 +1622,8 @@
                     </div>
                   </div>
                   <div id="tab-container-{{@index}}" style="display: none; border-top: 1px solid #DDD;" data-container-{{@index}}-state = "closed">
-                    <div id="tabs-{{@index}}-tab1">
-                      <div class="list-block media-list" style="height: 200px; overflow-y: auto;">
+                    <div id="tabs-{{@index}}-tab1" class="tab">
+                      <div class="list-block media-list" style="height: 150px; overflow-y: auto;">
                         <ul>
                           <li>
                             <a href="#" class="item-link item-content" style="text-decoration: none;">

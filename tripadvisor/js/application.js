@@ -1351,7 +1351,7 @@ var myApp = new Framework7({
                     ],
                 },
             ],
-        }
+        },
     }
 });
 
@@ -1386,6 +1386,28 @@ $$(document).on('ajaxComplete', function (e) {
 });
 
 // Callbacks for specific pages when it initialized
+/* Property page callbacks! */
+myApp.onPageInit('ta-property', function (page) {
+    $("#gallery").unitegallery({
+      gallery_theme: "grid",
+      thumb_width: 117.2,
+      thumb_height: 75,
+      thumb_show_loader: true,
+      thumb_loader_type: "dark",
+      gridpanel_vertical_scroll: false,
+      thumb_fixed_size: false,
+      theme_hide_panel_under_width: 768,
+      theme_panel_position: "right",
+      slider_enable_play_button: false,
+      slider_enable_zoom_panel: false,
+      slider_fullscreen_button_align_hor: "right",
+      slider_control_zoom: false,
+      slider_loader_type: 3,
+      slider_loader_color: "black",
+    });
+
+});
+
 /* ===== Modals Page events  ===== */
 myApp.onPageInit('modals', function (page) {
     $$('.demo-alert').on('click', function () {
@@ -1527,7 +1549,7 @@ footer_tab_reviews = function(index) {
 
 check_container = function(index) {
   if($$('#tab-container-'+index).attr('data-container-'+index+'-state') == 'closed'){
-    $$('#tab-container-'+index).show().animate({'height': 300});
+    $$('#tab-container-'+index).show().animate({'height': 200});
   } else {
     return;
   }

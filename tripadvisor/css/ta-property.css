@@ -1,0 +1,67 @@
+/* PROPERTY PAGE STYLES ***************************************************/
+
+#gallery-container {
+  position: relative;
+}
+
+#gallery {
+  width: 100% !important;
+  max-width: 1500px !important;
+  max-height: 500px !important;
+  margin: 0 auto;
+}
+
+.content-block-first {
+  margin-top: 0;
+}
+
+#hotel-header h1 {
+  color: rgba(0,0,0,0.87); 
+  font-size: 35px;
+}
+
+#hotel-header .rating {
+  font-size: 18px;
+}
+
+#hotel-header .ratingMeaning {
+  color: rgba(0,0,0,0.87);
+}
+
+.ug-thumbs-grid {
+  top: 11.5px !important;
+}
+
+.ug-gallery-wrapper .ug-grid-panel {
+  z-index: 3 !important;
+}
+
+.ug-textpanel {
+  display: none !important;
+}
+
+.page-content.property-body {
+  padding-top: 30px;
+}
+
+.ta-prop-details {
+  font-size: 15px;
+}
+
+a.ta-prop-back {
+  background: rgba(0,0,0, 0.52);
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: rgba(255,255,255, 1);
+  font-size: 12px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 5px 10px;
+  text-decoration: none;
+  z-index: 3;
+}
+
+.ui_icon:before {
+  color: #589442;
+}

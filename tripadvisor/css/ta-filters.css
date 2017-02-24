@@ -6979,7 +6979,7 @@ DIV.ppr_rup.ppr_priv_hsx_hd_datepicker_left #STATIC_DATE_PICKER_BAR .prw_ibex_ro
 }
 
 DIV.ppr_rup.ppr_priv_hsx_hd_datepicker_left #STATIC_DATE_PICKER_BAR .prw_ibex_rooms_guests_picker .unified-picker .picker-inner {
-    padding: 0 28px 0 16px;
+    padding: 0 26px 0 16px;
     box-shadow: none;
     border: 1px solid;
     border-color: #e6e6e6 #ccc #ccc #e6e6e6;
