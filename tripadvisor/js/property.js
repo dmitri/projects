@@ -39,5 +39,11 @@ $(function() {
   })
   .on("sticky_kit:unstick", function(e) {
   })
+  // stops the map from scrolling when the user is scrolling down the page
+  $('.map-container')
+    .click(function(){
+      $(this).find('iframe').addClass('clicked')})
+    .mouseleave(function(){
+      $(this).find('iframe').removeClass('clicked')});
   
 });

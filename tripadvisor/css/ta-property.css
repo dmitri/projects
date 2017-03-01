@@ -203,6 +203,40 @@ a.ta-prop-back {
   bottom: -2px;
 }
 
-.ta-property-section {
-  height: 400px;
+.ta-property-section-content {
+  height: auto;
+}
+
+.ta-property-section-content {
+  border-bottom: 1px solid #DDD;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ta-property-section-content h2 {
+  font-family: Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.map-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 48%;
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe{
+  position: absolute;
+  width: 100% !important;
+  height: 450px !important;
+  top: 0;
+  left: 0;
+  display: block;
+  pointer-events: none;
+}
+.map-container iframe.clicked{
+  pointer-events: auto;
 }
