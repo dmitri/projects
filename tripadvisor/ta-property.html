@@ -1,132 +1,236 @@
-<div data-page="ta-property" class="page">
-  <div class="navbar">
-    <div class="navbar-inner">
-      <div class="left">
-        <a href="index.html" class="back link icon-only"><img class="svg-taLogo" src="https://static.tacdn.com/img2/branding/trip_logo.svg" width="197" height="35" alt="Reviews of Hotels, Flights and Vacation Rentals"></a>
-      </div>
-      <div class="right">
-        <a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a>
-      </div>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
+    <title>TripAdvisor: Read Reviews, Compare Prices & Book</title>
+    <link rel="icon" id="favicon" href="https://static.tacdn.com/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" sizes="any" href="https://static.tacdn.com/img2/icons/ta_square.svg" color="#589442">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/ta-core.css">
+    <link rel="stylesheet" href="css/ta-filters.css">
+    <link rel='stylesheet' href='lib/unitegallery/css/unite-gallery.css' type='text/css' />
+    <link rel="stylesheet" href="css/ta-styles.css">
+    <link rel="stylesheet" href="css/ta-property.css">
 
-  <div class="page-content hide-bars-on-scroll">
-    <div id="gallery-container">
-      <a href="#" class="back ta-prop-back">&larr; Back to Boston Hotels</a>
-      <div id="gallery" style="display:none;">
-        <img alt="Image 1 Title" src="img/properties/nine-zero-0.jpg"
-        data-image="img/properties/nine-zero-0.jpg"
-        data-description="">
-      
-        <img alt="Image 2 Title" src="img/properties/nine-zero-1.jpg"
-        data-image="img/properties/nine-zero-1.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 3 Title" src="img/properties/nine-zero-2.jpg"
-        data-image="img/properties/nine-zero-2.jpg"
-        data-description="Nine Zero">
-
-        <img alt="Image 4 Title" src="img/properties/nine-zero-3.jpg"
-        data-image="img/properties/nine-zero-3.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 5 Title" src="img/properties/nine-zero-4.jpg"
-        data-image="img/properties/nine-zero-4.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 6 Title" src="img/properties/nine-zero-5.jpg"
-        data-image="img/properties/nine-zero-5.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 7 Title" src="img/properties/nine-zero-6.jpg"
-        data-image="img/properties/nine-zero-6.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 8 Title" src="img/properties/nine-zero-7.jpg"
-        data-image="img/properties/nine-zero-7.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 8 Title" src="img/properties/nine-zero-8.jpg"
-        data-image="img/properties/nine-zero-8.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 9 Title" src="img/properties/nine-zero-9.jpg"
-        data-image="img/properties/nine-zero-9.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 10 Title" src="img/properties/nine-zero-10.jpg"
-        data-image="img/properties/nine-zero-10.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 11 Title" src="img/properties/nine-zero-11.jpg"
-        data-image="img/properties/nine-zero-11.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 12 Title" src="img/properties/nine-zero-12.jpg"
-        data-image="img/properties/nine-zero-12.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 13 Title" src="img/properties/nine-zero-13.jpg"
-        data-image="img/properties/nine-zero-13.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 14 Title" src="img/properties/nine-zero-14.jpg"
-        data-image="img/properties/nine-zero-14.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 15 Title" src="img/properties/nine-zero-15.jpg"
-        data-image="img/properties/nine-zero-15.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 16 Title" src="img/properties/nine-zero-16.jpg"
-        data-image="img/properties/nine-zero-16.jpg"
-        data-description="Nine Zero">
-      
-        <img alt="Image 17 Title" src="img/properties/nine-zero-17.jpg"
-        data-image="img/properties/nine-zero-17.jpg"
-        data-description="Nine Zero">
-      </div>
-    </div>
-    <div class="page-content property-body">
-      <div class="container">
+  </head>
+  <body>
+    <div class="navbar" style="background: #FFF;">
+      <div class="navbar-inner container-fluid">
         <div class="row">
-          <div class="col-100 tablet-80">
-            <div class="content-block content-block-first">
-              <div id="hotel-header">
-                <h1>
-                  Kimpton Nine Zero Hotel
-                </h1>
-                <div class="rating inline">
-                  <span class="ui_bubble_rating bubble_45"></span>
-                  <span class="ratingMeaning">Excellent</span>
-                </div>
-                <div class="location ta-prop-details">
-                  <span class="ui_icon map-pin">
-                    90 Tremont St., Boston, MA 02108 (Formerly Nine Zero Hotel - a Kimpton Hotel)
-                  </span>
-                </div>
-                <div class="phone ta-prop-details">
-                  <div class="ui_icon phone">
-                    (617) 772-5800
+          <div class="col">
+            <a href="index.html" class="back link icon-only"><img class="svg-taLogo" src="https://static.tacdn.com/img2/branding/trip_logo.svg" width="197" height="35" alt="Reviews of Hotels, Flights and Vacation Rentals"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="grace-fade">
+      <div id="gallery-container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <a href="/#page/ta-list.html" class="back ta-prop-back">&larr; Back to Boston Hotels</a>
+            </div>
+          </div>
+        </div>
+        <div id="gallery" style="display:none;">
+          <img alt="Image 1 Title" src="img/properties/nine-zero-0.jpg"
+          data-image="img/properties/nine-zero-0.jpg"
+          data-description="">
+
+          <img alt="Image 2 Title" src="img/properties/nine-zero-1.jpg"
+          data-image="img/properties/nine-zero-1.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 3 Title" src="img/properties/nine-zero-2.jpg"
+          data-image="img/properties/nine-zero-2.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 4 Title" src="img/properties/nine-zero-3.jpg"
+          data-image="img/properties/nine-zero-3.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 5 Title" src="img/properties/nine-zero-4.jpg"
+          data-image="img/properties/nine-zero-4.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 6 Title" src="img/properties/nine-zero-5.jpg"
+          data-image="img/properties/nine-zero-5.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 7 Title" src="img/properties/nine-zero-6.jpg"
+          data-image="img/properties/nine-zero-6.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 8 Title" src="img/properties/nine-zero-7.jpg"
+          data-image="img/properties/nine-zero-7.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 8 Title" src="img/properties/nine-zero-8.jpg"
+          data-image="img/properties/nine-zero-8.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 9 Title" src="img/properties/nine-zero-9.jpg"
+          data-image="img/properties/nine-zero-9.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 10 Title" src="img/properties/nine-zero-10.jpg"
+          data-image="img/properties/nine-zero-10.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 11 Title" src="img/properties/nine-zero-11.jpg"
+          data-image="img/properties/nine-zero-11.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 12 Title" src="img/properties/nine-zero-12.jpg"
+          data-image="img/properties/nine-zero-12.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 13 Title" src="img/properties/nine-zero-13.jpg"
+          data-image="img/properties/nine-zero-13.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 14 Title" src="img/properties/nine-zero-14.jpg"
+          data-image="img/properties/nine-zero-14.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 15 Title" src="img/properties/nine-zero-15.jpg"
+          data-image="img/properties/nine-zero-15.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 16 Title" src="img/properties/nine-zero-16.jpg"
+          data-image="img/properties/nine-zero-16.jpg"
+          data-description="Nine Zero">
+
+          <img alt="Image 17 Title" src="img/properties/nine-zero-17.jpg"
+          data-image="img/properties/nine-zero-17.jpg"
+          data-description="Nine Zero">
+        </div>
+      </div>
+      <div class="sticky-parent">
+        <div class="hotel-header-container sticky-header">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <div id="hotel-header">
+                  <h1>Kimpton Nine Zero Hotel</h1>
+                  <div class="rating inline">
+                    <span class="ui_bubble_rating bubble_45"></span>
+                    <span class="ratingMeaning">Very Good</span>
                   </div>
+                  <div class="location ta-prop-details">
+                    <span class="ui_icon map-pin">
+                      90 Tremont St., Boston, MA 02108
+                    </span>
+                    <span class="inline-divider">/</span>
+                    <span class="ui_icon phone">
+                      (617) 772-5800
+                    </span>
+                  </div>
+                </div>
+                <ul class="ta-property-subnav">
+                  <li><a data-scroll-nav="0" class="active">Rooms &amp; Rates</a></li>
+                  <li><a data-scroll-nav="1">Reviews</a></li>
+                  <li><a data-scroll-nav="2">Location</a></li>
+                  <li><a data-scroll-nav="3">Amenities</a></li>
+                  <li><a data-scroll-nav="4">Q&amp;A</a></li>
+                  <li><a data-scroll-nav="5">Tips</a></li>
+                </ul>
+              </div>
+              <div class="price-sidebar col-3">
+                <div class="property-price-block">
+                  <span class="main-affiliate">Expedia.com</span>
+                  <span class="main-affiliate-price">$171 <span class="night-label">/ night<sup>*</sup></span></span>
+                  <a href="ta-property.html" class="link deal-button">View Deal</a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-100 tablet-20">
-            <div class="content-block content-block-first">
-              <div class="property-price-block">
-                <span class="main-affiliate">Expedia</span>
-                <span class="main-affiliate-price">$171</span>
+            <!-- <div class="row">
+              <div class="col-9">
+                <ul class="ta-property-subnav">
+                  <li><a data-scroll-nav="0" class="active">Rooms &amp; Rates</a></li>
+                  <li><a data-scroll-nav="1">Reviews</a></li>
+                  <li><a data-scroll-nav="2">Location</a></li>
+                  <li><a data-scroll-nav="3">Amenities</a></li>
+                  <li><a data-scroll-nav="4">Q&amp;A</a></li>
+                  <li><a data-scroll-nav="5">Tips</a></li>
+                </ul>
               </div>
-                
-              <a href="ta-property.html" class="link deal-button">
-                  View Deal
-              </a>
+            </div> -->
+          </div>
+        </div>
+        <div class="content-container">
+          <div class="container-fluid">
+            <div data-scroll-index="0" class="row ta-property-section">
+              <div class="col">
+                Rooms &amp; rates
+              </div>
+              <div class="col-2">
+                sidebar
+              </div>
+            </div>
+            <div data-scroll-index="1" class="row ta-property-section">
+              <div class="col">
+                Reviews
+              </div>
+              <div class="col-2">
+                sidebar
+              </div>
+            </div>
+            <div data-scroll-index="2" class="row ta-property-section">
+              <div class="col">
+                Location
+              </div>
+              <div class="col-2">
+                sidebar
+              </div>
+            </div>
+            <div data-scroll-index="3" class="row ta-property-section">
+              <div class="col">
+                Amenities
+              </div>
+              <div class="col-2">
+                sidebar
+              </div>
+            </div>
+            <div data-scroll-index="4" class="row ta-property-section">
+              <div class="col">
+                Q&amp;A
+              </div>
+              <div class="col-2">
+                sidebar
+              </div>
+            </div>
+            <div data-scroll-index="5" class="row ta-property-section">
+              <div class="col">
+                Tips
+              </div>
+              <div class="col-2">
+                sidebar
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="lib/unitegallery/js/unitegallery.min.js"></script> 
+    <script type="text/javascript" src="lib/unitegallery/js/ug-theme-grid.js"></script>
+    <script type="text/javascript" src="lib/scrollit.min.js"></script>
+    <script type="text/javascript" src="lib/stickykit.min.js"></script>
+    <script type="text/javascript" src="js/property.js"></script>
+  </body>
+</html>

@@ -286,55 +286,17 @@ a.link.deal-button {
   border: none; padding: 13px; font-size: 16px; box-shadow: inset 0 0 #CCC; border-radius: 0; width: 40%; margin-left: -2px;
 }
 
+.page-header-block {
+  padding-left: 0;
+}
+
 .page-header-block h1 {
-  font-size: 35px; color: rgba(0,0,0,0.77); font-weight: 600;
+  font-size: 35px; 
+  color: rgba(0,0,0,0.77); 
+  font-weight: 600;
 }
 
-/* PROPERTY PAGE STYLES ***************************************************/
 
-#gallery-container {
-  position: relative;
-}
-
-#gallery {
-  width: 100% !important;
-  max-width: 1500px !important;
-  max-height: 500px !important;
-  margin: 0 auto;
-}
-
-.content-block-first {
-  margin-top: 0;
-}
-
-#hotel-header h1 {
-  color: rgba(0,0,0,0.87); 
-  font-size: 35px;
-}
-
-#hotel-header .rating {
-  font-size: 18px;
-}
-
-#hotel-header .ratingMeaning {
-  color: rgba(0,0,0,0.87);
-}
-
-.ug-thumbs-grid {
-  top: 11.5px !important;
-}
-
-.ug-gallery-wrapper .ug-grid-panel {
-  z-index: 3 !important;
-}
-
-.ug-textpanel {
-  display: none !important;
-}
-
-.page-content.property-body {
-  padding-top: 30px;
-}
 
 @media (min-width: 1132px) {
   .page-content.list,

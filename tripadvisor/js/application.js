@@ -1388,6 +1388,7 @@ $$(document).on('ajaxComplete', function (e) {
 // Callbacks for specific pages when it initialized
 /* Property page callbacks! */
 myApp.onPageInit('ta-property', function (page) {
+  // photo gallery init
     $("#gallery").unitegallery({
       gallery_theme: "grid",
       thumb_width: 117.2,
@@ -1405,6 +1406,27 @@ myApp.onPageInit('ta-property', function (page) {
       slider_loader_type: 3,
       slider_loader_color: "black",
     });
+  // scroll tracker init
+    $.scrollIt({
+      upKey: 38,             // key code to navigate to the next section
+      downKey: 40,           // key code to navigate to the previous section
+      easing: 'linear',      // the easing function for animation
+      scrollTime: 600,       // how long (in ms) the animation takes
+      activeClass: 'active', // class given to the active nav element
+      onPageChange: null,    // function(pageIndex) that is called when page is changed
+      topOffset: 400           // offset (in px) for fixed top navigation
+    });
+    
+    // set the sticky headers and behavior when 
+    // stuck and unstuck of the secondary
+    return $(".sticky-header").stick_in_parent({
+      parent: ".sticky-parent"
+    }).on("sticky_kit:stick", function(e) {
+      if($('#secondary-nav-container').hasClass('is_stuck')) {
+      }
+    })
+    .on("sticky_kit:unstick", function(e) {
+    })
 
 });
 
