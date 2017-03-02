@@ -19,6 +19,8 @@ $(function() {
     slider_loader_color: "black",
   });
   
+  $( "#histogram-container" ).load( "includes/histogram.html" );
+  
 // scroll tracker init
   $.scrollIt({
     upKey: 38,             // key code to navigate to the next section
