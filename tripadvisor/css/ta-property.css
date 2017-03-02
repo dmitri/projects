@@ -4,7 +4,7 @@ body {
 }
 
 .container-fluid {
-  width: 97%;
+  width: 99%;
   max-width: 1342px;
 }
 
@@ -176,12 +176,12 @@ a.ta-prop-back {
   transition: ease all 0.4s;
 }
 
-.hotel-header-container.is_stuck .price-sidebar {
+.hotel-header-container .price-sidebar {
   background: #FFF;
   border: 1px solid #DDD;
   border-width: 0 1px;
   padding: 30px 20px 0 20px;
-  margin-top: -35px;
+  margin-top: -20px;
   position: absolute;
   right: 0;
   height: 1000px;
@@ -218,6 +218,19 @@ a.ta-prop-back {
   font-size: 19px;
   font-weight: 400;
   margin-bottom: 30px;
+  /*
+  border-top: 3px solid #555;
+  display: inline-block;
+  padding-top: 9px;
+  position: relative;
+  top: -22px;
+  */
+}
+
+.ta-property-section-content h2:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .map-container {
@@ -239,4 +252,17 @@ a.ta-prop-back {
 }
 .map-container iframe.clicked{
   pointer-events: auto;
+}
+
+
+
+#map_container{
+  position: relative;
+}
+#map{
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 22.25%;
+    padding-top: 30px;
+    position: relative;
 }

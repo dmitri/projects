@@ -30,20 +30,25 @@ $(function() {
     topOffset: -225           // offset (in px) for fixed top navigation
   });
   
-  // set the sticky headers and behavior when 
-  // stuck and unstuck of the secondary
-  return $(".sticky-header").stick_in_parent({
-    parent: ".sticky-parent"
-  }).on("sticky_kit:stick", function(e) {
-
-  })
-  .on("sticky_kit:unstick", function(e) {
-  })
   // stops the map from scrolling when the user is scrolling down the page
   $('.map-container')
     .click(function(){
       $(this).find('iframe').addClass('clicked')})
     .mouseleave(function(){
       $(this).find('iframe').removeClass('clicked')});
+
+
+  
+  // set the sticky headers and behavior when 
+  // stuck and unstuck of the secondary
+  return $(".sticky-header").stick_in_parent({
+    parent: ".sticky-parent"
+  }).on("sticky_kit:stick", function(e) {
+    $(".content-container").addClass('adjust-top');
+  })
+  .on("sticky_kit:unstick", function(e) {
+    $(".content-container").removeClass('adjust-top');
+  })
+
   
 });
