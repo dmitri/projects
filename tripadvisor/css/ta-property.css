@@ -25,12 +25,11 @@ body {
 
 .hotel-header-container {
   background: rgba(255,255,255,1);
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #888;
   padding: 20px 0 0 0;
   margin-bottom: 30px;
   z-index: 100;
 }
-
 
 
 #side-nav {
@@ -86,6 +85,7 @@ a.ta-prop-back {
   z-index: 3;
 }
 
+.ta-green,
 .ui_icon:before {
   color: #589442;
 }
@@ -102,7 +102,8 @@ a.ta-prop-back {
   text-align: center;
 }
 
-.main-affiliate-price {
+.main-affiliate-price,
+.ta-price {
   color: rgba(0,0,0,.85);
   display: inline-block;
   font-size: 32px;
@@ -110,7 +111,8 @@ a.ta-prop-back {
   white-space: nowrap;
 }
 
-.main-affiliate-price .night-label {
+.main-affiliate-price .night-label,
+.ta-price .night-label {
   color: rgba(0,0,0,.65);
   font-size: 14px;
 }
@@ -160,7 +162,7 @@ a.ta-prop-back {
 
 .hotel-header-container.is_stuck {
   background: #FFF;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #888;
   box-shadow: 0 0 3px #CCC;
   position: fixed !important;
   top: 0 !important;
@@ -179,7 +181,7 @@ a.ta-prop-back {
 
 .hotel-header-container .price-sidebar {
   background: #FFF;
-  border: 1px solid #DDD;
+  border: 1px solid #888;
   border-width: 0 1px;
   padding: 30px 20px 0 20px;
   margin-top: -20px;
@@ -209,10 +211,11 @@ a.ta-prop-back {
 }
 
 .ta-property-section-content {
-  border-bottom: 1px solid #DDD;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  border-bottom: 1px solid #888;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
+
 
 .ta-property-section-content h2 {
   font-family: Helvetica, sans-serif;
@@ -226,6 +229,10 @@ a.ta-prop-back {
   position: relative;
   top: -22px;
   */
+}
+
+.maxOccupancy img {
+  max-height: 20px;
 }
 
 .ta-property-section-content h2:after {
@@ -347,7 +354,7 @@ a.ta-prop-back {
   font-size: 13px;
   display: inline-block;
   text-align: center;
-  padding: 20px;
+  padding: 13px;
 }
 
 .neighborhood-card .actions a:first-child {
@@ -359,9 +366,31 @@ a.ta-prop-back {
   padding-left: 25px;
 }
 
+.rr-img {
+  max-height: 125px;
+  overflow: hidden;
+}
+
+.rr-row h3 {
+  font-weight: normal;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: .5px;
+  margin-top: 7px;
+}
+
+.rr-row .ta-price {
+  font-size: 25px;
+}
+
+
+
 @media (max-width: 768px) {
   .neighborhood-card {
     display: none; 
+  }
+  
+  .hotel-header-container .price-sidebar {
+    display: none;
   }
   
 }

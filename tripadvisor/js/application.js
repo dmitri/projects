@@ -16,6 +16,81 @@ var myApp = new Framework7({
         // Plain data object
         'page:ta-list': {
             'hotels': [
+              // Nine Zero
+              {
+                  shortName: 'nine-zero',
+                  name:'Kimpton Nine Zero Hotel',
+                  description: 'Dynamic computer programming language[5]. It is most commonly used as part of web browsers, whose implementations allow...',
+                  rating: '45',
+                  ratingMeaning: 'Excellent',
+                  reviewCount: '2,492',
+                  ranking: '17',
+                  video: 'yes',
+                  green: 'yes',
+                  affiliateCount: '4',
+                  bestPriceAffiliate: 'hotels.com',
+                  bestPriceURL: '',
+                  bestPrice: '$328',
+                  'recentReviews' : [
+                    {
+                      title: 'Incomparable service in an elegant hotel!',
+                      date: '3 days ago',
+                    },
+                    {
+                      title: 'This is a very good hotel',
+                      date: '6 days ago',
+                    },
+                  ],
+                  'tags' : [
+                    {
+                      tag: 'Luxury',
+                    },
+                    {
+                      tag: 'Green'
+                    },
+                    {
+                      tag: 'Dowtown'
+                    },
+                    {
+                      tag: 'Pets Allowed'
+                    },
+                  ],
+                  'affiliates' : [
+                    {
+                      affiliate: 'travelocity',
+                      affiliatePrice: '$385',
+                    },
+                    {
+                      affiliate: 'booking.com',
+                      affiliatePrice: '$386',
+                    },
+                    {
+                      affiliate: 'getaroom',
+                      affiliatePrice: '$395',
+                    },
+                    {
+                      affiliate: 'agoda',
+                      affiliatePrice: '$415',
+                    },
+                  ],
+                  'images': [
+                    {
+                      name: 'godfrey',
+                    },
+                    {
+                      name: 'godfrey',
+                    },
+                    {
+                      name: 'godfrey',
+                    },
+                    {
+                      name: 'godfrey',
+                    },
+                    {
+                      name: 'godfrey',
+                    },
+                  ],
+              },
                 // Taj
                 {
                     shortName: 'taj',

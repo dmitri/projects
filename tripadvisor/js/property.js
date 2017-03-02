@@ -20,6 +20,7 @@ $(function() {
   });
   
   $( "#histogram-container" ).load( "includes/histogram.html" );
+  $( "#rr-list" ).load( "includes/rooms-and-rates.html" );
   
 // scroll tracker init
   $.scrollIt({
