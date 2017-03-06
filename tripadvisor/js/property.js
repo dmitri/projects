@@ -16,6 +16,8 @@ $(function() {
     slider_fullscreen_button_align_hor: "right",
     slider_control_zoom: false,
     slider_loader_type: 3,
+    grid_num_cols: 2,
+    gridpanel_padding_border_bottom: 60,
     slider_loader_color: "black",
   });
   

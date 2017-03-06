@@ -1,0 +1,70 @@
+/* alternate styles to the property page */
+
+body {
+  background: #F2F2F2;
+  position-y: 300px;
+}
+
+.hotel-header-container .price-sidebar {
+  background: #FFF;
+  border: none;
+  border-width: 0 1px;
+  padding: 30px 20px 0 20px;
+  margin-top: -100px;
+  position: absolute;
+  right: 0;
+  height: 1000px;
+  z-index: 100;
+  box-shadow: 0 0 6px #DDD;
+}
+
+.hotel-header-container {
+  background: none;
+  border: none;
+  padding: 20px 0 0 0;
+  margin-bottom: 30px;
+  z-index: 100;
+  margin-top: 0;
+  z-index: 1;
+}
+
+#hotel-header {
+  box-sizing: border-box;
+  background: #FFF;
+  padding: 30px;
+  margin-top: -65px;
+  position: relative;
+  z-index: 10;
+  background: #FFF;
+}
+
+.ta-property-section-content {
+  border: none;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #FFF;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.ta-property-subnav {
+  margin: 15px 0 0 30px;
+}
+
+.grid-arrow {
+  top: 360px !important;
+}
+
+.hotel-header-container.is_stuck #hotel-header {
+  margin-top: 0;
+  padding: 0;
+}
+
+.hotel-header-container.is_stuck .ta-property-subnav li {
+  padding-bottom: 0;
+}
+
+.hotel-header-container.is_stuck .price-sidebar {
+  margin-top: -20px;
+}

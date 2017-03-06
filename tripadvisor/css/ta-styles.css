@@ -276,6 +276,10 @@ a.link.deal-button {
   color: #000;
 }
 
+a.link.deal-button:hover {
+    background: #ffb300;
+}
+
 .picker-inner {
   display: block;
 }
@@ -296,7 +300,9 @@ a.link.deal-button {
   font-weight: 600;
 }
 
-
+.ta-property-section-content {
+  position: relative;
+}
 
 @media (min-width: 1132px) {
   .page-content.list,
