@@ -50,9 +50,11 @@ $(function() {
     parent: ".sticky-parent"
   }).on("sticky_kit:stick", function(e) {
     $(".content-container").addClass('adjust-top');
+    $("#header-thumb").show();
   })
   .on("sticky_kit:unstick", function(e) {
     $(".content-container").removeClass('adjust-top');
+    $("#header-thumb").hide();
   })
 
   

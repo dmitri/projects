@@ -3,6 +3,8 @@
 body {
   background: #F2F2F2;
   position-y: 300px;
+  background: linear-gradient(to bottom, white 0%,white 420px,#FFFFFF 420px,#F2f2f2 420px,#f2f2f2 100%); /* W3C */
+
 }
 
 .hotel-header-container .price-sidebar {
