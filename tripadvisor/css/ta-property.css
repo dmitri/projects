@@ -225,8 +225,9 @@ a.ta-prop-back {
 
 .ta-property-section-content h2 {
   font-family: Helvetica, sans-serif;
-  font-size: 19px;
-  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: .5px;
+  font-weight: 300;
   margin-bottom: 30px;
   /*
   border-top: 3px solid #555;
@@ -235,6 +236,55 @@ a.ta-prop-back {
   position: relative;
   top: -22px;
   */
+}
+
+.amenity-icon svg {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+.amenities ul li {
+  white-space: nowrap;
+  margin-bottom: 1.7em;
+  color: #7c7c7c;
+  font-size: 1.05em;
+  font-weight: 300;
+}
+
+.ta-rating-summary .rating {
+  font-size: 3em;
+}
+
+.ta-rating-summary .context {
+  margin-left: .5em;
+}
+
+.ta-rating-summary .ta-owleyes {
+  vertical-align: middle;
+  display: inline-block;
+  width: 30px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.ta-rating-summary .ta-bubbles {
+    white-space: nowrap;
+}
+
+.ta-property-amenities h4 {
+  margin-bottom: 7px;
+}
+
+.ta-property-amenities p { 
+  margin-bottom: 30px;
+}
+
+.amenities-callout {
+  background: #f2f2f2;
+  box-sizing: border-box; 
+  box-shadow: 0 0 3px #DDD; 
+  padding: 30px;
 }
 
 .property a.link.deal-button {
@@ -320,7 +370,6 @@ a.ta-prop-back {
 .ta-prop-header .action a {
   background: #F2f2f2;
   border-bottom: 3px solid #CCC;
-  height: 30px;
   font-size: 14px;
   border-radius: 2px;
   color: #555;

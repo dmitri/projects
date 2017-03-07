@@ -8540,7 +8540,6 @@ DIV.ppr_rup.ppr_priv_prodp13n_hr_sur_review_filter_controls #filterControls .col
 }
 
 DIV.ppr_rup.ppr_priv_prodp13n_hr_sur_review_filter_controls #filterControls.with_histogram .col-hist.rating {
-  padding-left: 0;
   margin-top: 0;
   flex: 1.75;
 }
@@ -8550,7 +8549,8 @@ DIV.ppr_rup.ppr_priv_prodp13n_hr_sur_review_filter_controls #filterControls.with
 }
 
 DIV.ppr_rup.ppr_priv_prodp13n_hr_sur_review_filter_controls #filterControls.with_histogram .col-hist.season {
-
+  border: none;
+  flex: .75;
 }
 
 DIV.ppr_rup.ppr_priv_prodp13n_hr_sur_review_filter_controls #filterControls.with_histogram .col-hist.language {

@@ -10,7 +10,7 @@
     <title>TripAdvisor: Read Reviews, Compare Prices & Book</title>
     <link rel="icon" id="favicon" href="https://static.tacdn.com/favicon.ico" type="image/x-icon">
     <link rel="mask-icon" sizes="any" href="https://static.tacdn.com/img2/icons/ta_square.svg" color="#589442">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-4.0.0-alpha-6.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/material-icons.css">
@@ -28,13 +28,14 @@
       <div class="navbar-inner container-fluid">
         <div class="row">
           <div class="col">
-            <a href="index.html" class="back link icon-only"><img class="svg-taLogo" src="https://static.tacdn.com/img2/branding/trip_logo.svg" width="197" height="35" alt="Reviews of Hotels, Flights and Vacation Rentals"></a>
+            <a href="index.html" class="back link icon-only"><img class="svg-taLogo" src="img/trip_logo.svg" width="197" height="35" alt="Reviews of Hotels, Flights and Vacation Rentals"></a>
           </div>
         </div>
       </div>
     </div>
     
     <div id="grace-fade">
+      <a name="top"></a>
       <div id="gallery-container">
         <div class="container-fluid">
           <div class="row">
@@ -128,8 +129,10 @@
               <div class="col">
                 <div id="hotel-header">
                   <div id="header-thumb" style="float: left; position: relative; max-height: 72px; margin-right: 15px; display: none;">
-                    <img src="img/properties/nine-zero-0.jpg" style="max-height: 67px;">
-                    <div style="position: absolute; bottom: -1px; background: rgba(0,0,0,0.87); color: #FFF; text-align: center; left: 0; right: 0; width: 100%;"><a href="#" style="color: #FFF;">Photos</a></div>
+                    <a href="#top" style="color: #FFF; cursor: pointer;">
+                      <img src="img/properties/nine-zero-6.jpg" style="max-height: 67px;">
+                      <div style="position: absolute; bottom: 0px; background: rgba(255,255,255,0.87); color: #222; text-align: center; left: 0; right: 0; width: 100%;font-size: 12px; letter-spacing: .5px;">Photos</div>
+                    </a>
                   </div>
                   <h1>Kimpton Nine Zero Hotel</h1>
                   <div class="rating inline">
@@ -147,12 +150,11 @@
                   </div>
                 </div>
                 <ul class="ta-property-subnav">
-                  <li><a data-scroll-nav="0" class="active">Rooms &amp; Rates</a></li>
-                  <li><a data-scroll-nav="1">Reviews (2,488)</a></li>
-                  <li><a data-scroll-nav="2">Location</a></li>
-                  <li><a data-scroll-nav="3">Amenities</a></li>
-                  <li><a data-scroll-nav="4">Q&amp;A (25) </a></li>
-                  <li><a data-scroll-nav="5">Tips</a></li>
+                  <li><a data-scroll-nav="1" class="active">Rooms &amp; Rates</a></li>
+                  <li><a data-scroll-nav="2">Reviews</a></li>
+                  <li><a data-scroll-nav="3">Location</a></li>
+                  <li><a data-scroll-nav="4">Amenities</a></li>
+                  <li><a data-scroll-nav="5">Q&amp;A and Room Tips</a></li>
                 </ul>
               </div>
               <div class="price-sidebar col-3">
@@ -188,8 +190,8 @@
         </div>
         <div class="content-container" style="margin-top: -20px;">
           <div class="container-fluid">
-            <div data-scroll-index="0" class="row ta-property-section">
-              <div class="col-9">
+            <div data-scroll-index="1" class="row ta-property-section">
+              <div class="col-12 col-md-9">
                 <div class="ta-property-section-content">
                   <h2>Rooms &amp; Rates</h2>
                   <div id="rr-list" class="rr-list">
@@ -198,22 +200,27 @@
                 </div>
               </div>
             </div>
-            <div data-scroll-index="1" class="row ta-property-section">
-              <div class="col-9">
-                <div class="ta-property-section-content">
+            <div data-scroll-index="2" class="row ta-property-section">
+              <div class="col-12 col-md-9">
+                <div class="ta-prop-reviews ta-property-section-content">
                   <div class="ta-prop-header">
-                    <h2>Reviews <input type="text" value="Search Reviews" style="padding: 5px; border-radius: 2px; display: inline-block; margin-left: 20px; border: 1px solid #CCC;" /></h2>
+                    <h2>Reviews </h2>
                     <div class="action">
+                      <input type="text" value="Search Reviews" style="padding: 5px; border-radius: 2px; display: inline-block; margin-left: 20px; border: 1px solid #CCC;" />
                       <a href="#">Write a Review</a>
                       <a href="#">Add Photo</a>
                     </div>
                   </div>
                   <div id="histogram-container"><!-- partial loaded via js --></div>
+                  <div id="review-pane" style="display: none; height: 700px; text-align: center; box-sizing: border-box; padding-top: 100px; border-top: 1px solid #DDD;">
+                    <h1>Reviews and pagination will open here</h1>
+                    
+                  </div>
                 </div>
               </div>
             </div>
-            <div data-scroll-index="2" class="row ta-property-section">
-              <div class="col-9">
+            <div data-scroll-index="3" class="row ta-property-section">
+              <div class="col-12 col-md-9">
                 <div class="ta-property-section-content">
                   <h2>Location - Staying in Downtown</h2>
                   <div class="map-container">
@@ -243,56 +250,101 @@
                 </div>
               </div>
             </div>
-            <div data-scroll-index="3" class="row ta-property-section">
-              <div class="col-9">
-                <div class="ta-property-section-content">
-                  <h2>Amenities</h2>
-                  
-                  <h4>Official Description (provided by the hotel)</h4>
-                  <p>The elegant Kimpton Nine Zero Hotel in downtown Boston is consistently named one of the world's best hotels by Conde Nast Traveler, and was recently voted Boston Magazine's Boston's Best Boutique Hotel. Nine Zero Hotel features impeccable service, sophisticated 4-star style, the new Highball Lounge and the perfect launch pad for exploring this historic city. The central location means easy access to Beacon Hill, Boston Common, Faneuil Hall and the Museum of Fine Arts, Boston.</p>
-                  <br/>
-                  <h4>Additional Information about Kimpton Nine Zero Hotel</h4>
-                  <ul>
-                    <li>Address: 90 Tremont St., Boston, MA 02108</li>
-                    <li>(Formerly Nine Zero Hotel - a Kimpton Hotel)</li>
-                    <li>Location: United States > Massachusetts > Boston > Downtown</li>
-                    <li>Price Range: $194 - $547 (Based on Average Rates for a Standard Room)</li>
-                    <li>Hotel Class:4 star — Kimpton Nine Zero Hotel 4*</li>
-                    <li>Number of rooms: 190</li>
-                  </ul>
-                  <br/>
-                  <h4>Reservation Options</h4>
-                  <p>TripAdvisor is proud to partner with Sabre Hospitality Solutions, Booking.com, Travelocity, Cheap Tickets and Jetsetter so you can book your Kimpton Nine Zero Hotel reservations with confidence. We help millions of travelers each month to find the perfect hotel for both vacation and business trips, always with the best discounts and special offers.</p>
-                  <br/>
-                  <h4>Also Known As</h4>
-                  <ul>
-                    <li>9 Zero Hotel - a Kimpton Hotel</li>
-                    <li>Nine Zero Hotel Kimpton</li>
-                  </ul>
-                  <br/>
-                  <h4>Hotel Style</h4>
-                  <ul>
-                    <li>#5 Spa Hotel in Boston
-                    <li>#6 Romantic Hotel in Boston
-                    <li>#10 Business Hotel in Boston
-                    <li>#11 Luxury Hotel in Boston
-                    <li>#12 Green Hotel in Boston
-                    <li>#13 Family Hotel in Boston
-                  </ul>
-                </div>
-              </div>
-            </div>
             <div data-scroll-index="4" class="row ta-property-section">
-              <div class="col-9">
-                <div class="ta-property-section-content">
-                  <h2>Q&amp;A</h2>
+              <div class="col-12 col-md-9">
+                <div class="ta-property-amenities ta-property-section-content">
+                  <h2>Amenities</h2>
+                  <div class="row justify-content-between">
+                    <div class="col-12 col-md-6">
+                      <h4>Official Description (provided by the hotel)</h4>
+                      <p>
+                        The elegant Kimpton Nine Zero Hotel in downtown Boston is consistently 
+                        named one of the world's best hotels by Conde Nast Traveler, and was recently 
+                        voted Boston Magazine's Boston's Best Boutique Hotel. Nine Zero Hotel features 
+                        impeccable service, sophisticated 4-star style, the new Highball Lounge and the 
+                        perfect launch pad for exploring this historic city. The central location means 
+                        easy access to Beacon Hill, Boston Common, Faneuil Hall and the Museum of Fine Arts, Boston.
+                      </p>
+                      <h4>Additional Information about Kimpton Nine Zero Hotel</h4>
+                      <ul>
+                        <li>Address: 90 Tremont St., Boston, MA 02108</li>
+                        <li>(Formerly Nine Zero Hotel - a Kimpton Hotel)</li>
+                        <li>Location: United States > Massachusetts > Boston > Downtown</li>
+                        <li>Price Range: $194 - $547 (Based on Average Rates for a Standard Room)</li>
+                        <li>Hotel Class: 4 star — Kimpton Nine Zero Hotel 4*</li>
+                        <li>Number of rooms: 190</li>
+                      </ul>
+                      <br/>
+                      <h4>Reservation Options</h4>
+                      <p>
+                        TripAdvisor is proud to partner with Sabre Hospitality Solutions, Booking.com, 
+                        Travelocity, Cheap Tickets and Jetsetter so you can book your Kimpton Nine Zero 
+                        Hotel reservations with confidence. We help millions of travelers each month to 
+                        find the perfect hotel for both vacation and business trips, always with the best 
+                        discounts and special offers.
+                      </p>
+                    </div>
+                    <div class="col-12 col-md-5">
+                      <div class="amenities-callout">
+                        <h4>Also Known As</h4>
+                        <ul>
+                          <li>9 Zero Hotel - a Kimpton Hotel</li>
+                          <li>Nine Zero Hotel Kimpton</li>
+                        </ul>
+                        <hr/>
+                        <h4>Room Types</h4>
+                        <ul>
+                          <li>Suites</li>
+                          <li>Non-Smoking Rooms</li>
+                        </ul>
+                        <hr/>
+                        <h4>Hotel Style</h4>
+                        <ul>
+                          <li>#5 Spa Hotel in Boston
+                          <li>#6 Romantic Hotel in Boston
+                          <li>#10 Business Hotel in Boston
+                          <li>#11 Luxury Hotel in Boston
+                          <li>#12 Green Hotel in Boston
+                          <li>#13 Family Hotel in Boston
+                        </ul>
+                        <hr/>
+                        <div id="amenities-icons-container" class="amenities">
+                          <!-- amenities-icons partial -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div data-scroll-index="5" class="row ta-property-section">
-              <div class="col-9">
+              <div class="col-12 col-md-9">
                 <div class="ta-property-section-content">
-                  <h2>Tips</h2>
+                  <h2>Q&amp;A and Room Tips</h2>
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#qa" role="tab">Questions &amp; Answers (25)</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#tips" role="tab">Room Tips (625)</a>
+                    </li>
+
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="qa" role="tabpanel">
+                      <div style="box-sizing: border-box; padding: 30px;">
+                        <h4>Q&amp;A</h4>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="tips" role="tabpanel">
+                      <div style="box-sizing: border-box; padding: 30px;">
+                        <h4>Tips</h4>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -301,12 +353,9 @@
       </div>
     </div>
 
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="lib/tether.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-4.0.0.alpha-6.js"></script>
     <script type="text/javascript" src="lib/unitegallery/js/unitegallery.min.js"></script> 
     <script type="text/javascript" src="lib/unitegallery/js/ug-theme-grid.js"></script>
     <script type="text/javascript" src="lib/scrollit.min.js"></script>

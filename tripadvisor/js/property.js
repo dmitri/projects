@@ -23,6 +23,7 @@ $(function() {
   
   $( "#histogram-container" ).load( "includes/histogram.html" );
   $( "#rr-list" ).load( "includes/rooms-and-rates.html" );
+  $( "#amenities-icons-container" ).load("includes/amenities-icons.html");
   
 // scroll tracker init
   $.scrollIt({
@@ -32,7 +33,7 @@ $(function() {
     scrollTime: 600,       // how long (in ms) the animation takes
     activeClass: 'active', // class given to the active nav element
     onPageChange: null,    // function(pageIndex) that is called when page is changed
-    topOffset: -225           // offset (in px) for fixed top navigation
+    topOffset: -175           // offset (in px) for fixed top navigation
   });
   
   // stops the map from scrolling when the user is scrolling down the page
@@ -41,8 +42,6 @@ $(function() {
       $(this).find('iframe').addClass('clicked')})
     .mouseleave(function(){
       $(this).find('iframe').removeClass('clicked')});
-
-
   
   // set the sticky headers and behavior when 
   // stuck and unstuck of the secondary
