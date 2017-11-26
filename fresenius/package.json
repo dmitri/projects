@@ -1,0 +1,15 @@
+{
+  "name": "fresenius",
+  "version": "1.0.0",
+  "description": "IT Source Proto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "szimmerman",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1"
+  }
+}
