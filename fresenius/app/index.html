@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>IT Source Demo</title>
+    <title>IT Asset Library Demo</title>
 
     <!-- Add other meta tags. -->
     <!-- mobile enhancements -->
@@ -14,6 +14,9 @@
     <meta name="apple-mobile-web-app-title" content="IT Source Demo" />
     <meta name="mobile-web-app-capable" content="yes">
     <!-- End mobile enhancements -->
+    
+    <!-- Bstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!-- Include Font -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700">
@@ -23,76 +26,186 @@
     <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     
     <!-- Design block stylesheets -->
-    <link rel="stylesheet" href="css/design-blocks.min.css" />
+    <link rel="stylesheet" href="css/froala_blocks.css" />
+    
+    <!-- Fresenius custom styles -->
+    <link rel="stylesheet" href="css/application.css" />
 
-    <!-- Include required CSS files. -->
-    <link rel="stylesheet" href="css/froala.css" />
-    <link rel="stylesheet" href="css/backgrounds.css" />
-    <link rel="stylesheet" href="css/contents/content-2.min.css" />
-    <link rel="stylesheet" href="css/headers/header-1.min.css" />
-    <link rel="stylesheet" href="css/footers/footer-2.min.css" />
 
-    <!-- Include colors CSS files. -->
-    <link rel="stylesheet" href="css/colors/white.css" />
-    <link rel="stylesheet" href="css/colors/black.css" />
-    <link rel="stylesheet" href="css/colors/white-smoke.css" />
   </head>
 
   <body>
     <!-- Header -->
-    <header class="header-1 collapse-navbar menu-bg-white menu-txt-black header-over header-fixed txt-white">
-      <nav class="navbar" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="container">
-          <a href="/" class="brand pull-left" title="Home"><h1>IT Asset Library</h1></a>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-md no-gutters">
+          <div class="col-3 text-left">
+            <a href="/">
+              <h3>IT Assets Library</h3>
+            </a>
+          </div>
 
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-text">Menu</span>
-            <span class="icon-wrap">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar icon-last"></span>
-            </span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse-2" aria-controls="navbarNav7" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="navbar-collapse">
-            <ul class="nav navbar-nav pull-right text-light">
-              <li><a class="header-link" href="#" title="Home">Home</a></li>
-              <li><a class="header-link" href="#people" title="People">People</a></li>
-              <li><a class="header-link" href="#processes" title="Processes">Processes</a></li>
-              <li><a class="header-link" href="#assets" title="Buy Now">Assets</a></li>
-              <li><a class="header-link popout text-light" href="#contact" title="Contact"><i class="fa fa-envelope"></i> Contact</a></li>
+          <div class="collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-6" id="navbarNav7">
+            <ul class="navbar-nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link" href="#">People</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Processes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Assets</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="collapse navbar-collapse navbar-collapse-2">
+            <ul class="navbar-nav ml-auto justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
             </ul>
 
-            <button class="dismiss-navbar">&times;</button>
+            <a class="btn btn-empty ml-md-3" href="#">Login</a>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
     <!-- Header ends -->
-    <!-- Include content 2, variation 1 design blocks HTML code. -->
-    <section class="content-2 screen-height txt-white hi-white-smoke bg-black overlay-30 parallax-bg bgi-10 c-fade-out">
+    <section class="fdb-block bg-dark" style="background-image: url(./imgs/bg_1.svg)">
       <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <div class="effects-left">
-              <h1 class="text-light text-xlarge">Website Design.</h1>
-              <h3 class="text-light">
-                The most simple and yet powerful way to design websites. Froala Design Framework is the perfect design tool if you want to impress your users.</h3>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 text-center">
+            <h2>Search IT Assets</h2>
+            <div class="input-group mt-4 mb-4">
+              <input type="text" class="form-control" placeholder="Find by people, processes, or assets">
+              <span class="input-group-btn">
+                <button class="btn" type="button">Search</button>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
+    <!-- 3 types lead in -->
+    <section class="fdb-block fdb-block-data">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12 col-md-8 m-auto col-lg-4">
+            
+              <div class="fdb-box fdb-touch">
+                <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
+                <h2>People</h2>
+                <script type="text/template" id="people-template">
+                <ul>
+                  {{#each items}}
+                   <li class="item-content">
+                     <div class="item-inner">
+                       <div class="item-title">{{IT_OWNER}}</div>
+                     </div>
+                   </li>
+                  {{/each}}
+                </script>
+              </div>
+          </div>
+
+          <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+            <div class="fdb-box fdb-touch">
+              <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
+              <h2>Processes</h2>
+              <p>Separated they live in Bookmarksgrove right at the coast.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+            <div class="fdb-box fdb-touch">
+              <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
+              <h2>Assets</h2>
+              <p>A small river named Duden flows by their place and supplies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- footer -->
+    <footer class="fdb-block footer-small bg-dark">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-8">
+            <ul class="nav justify-content-center justify-content-md-start">
+              <li class="nav-item">
+                <a class="nav-link" href="#">People</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Processes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Assets</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
+            &copy; 2017 Fresenius. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Include jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
     <!-- Include Froala Design Framework javascript -->
     <script type="text/javascript" src="js/fdk.min.js"></script>
+    
+    <!-- Path to Template7 lib -->
+    <script src="js/template7.min.js"></script>
+    
+    <!-- JSON with demo data-->
+    <script src="../data/library-sample.js"></script>
+    
+    <!-- Include Fresenius JS -->
+    <script type="text/javascript" src="js/application.js"></script>
+    <script>
+        // Helper to format dates
+        Template7.registerHelper('formatDate', function (date) {
+            var months = ('January February March April May June July August September October November December').split(' ');
+            var _date = new Date(date);
+            var month = months[_date.getMonth()];
+            var day = _date.getDate();
+            var year = _date.getFullYear();
+            var h = _date.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = _date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            return month + ' ' + day + ', ' + year + ' ' + h + ':' + m;
+        });
+
+        // Template
+        var template = document.getElementById('people-template').innerHTML;
+        
+        var libraryData = {
+            IT_OWNER: 'John',
+            IT_OWNER: 'Dafney'
+        };
+        
+        // compile it with Template7
+        var compiledTemplate = Template7.compile(template);
+        var html = compiledTemplate(libraryData);
+
+        // Insert rendered template
+        document.getElementById('fdb-block-data').innerHTML = html;
+    </script>
   </body>
 </html>
