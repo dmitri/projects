@@ -97,21 +97,21 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-12 col-md-8 m-auto col-lg-4">
-            
-              <div class="fdb-box fdb-touch">
-                <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
-                <h2>People</h2>
-                <script type="text/template" id="people-template">
+            <div class="fdb-box fdb-touch">
+              <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
+              <h2>People</h2>
+              <script type="text/template7" id="people-template">
                 <ul>
-                  {{#each items}}
+                  {{#each assets}}
                    <li class="item-content">
                      <div class="item-inner">
-                       <div class="item-title">{{IT_OWNER}}</div>
+                       <div class="item-title">{{Company_Name}}</div>
                      </div>
                    </li>
                   {{/each}}
-                </script>
-              </div>
+                </ul>
+              </script>
+            </div>
           </div>
 
           <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
@@ -157,6 +157,10 @@
         </div>
       </div>
     </footer>
+    
+    <script id="template" type="text/template7">
+        <p>Hello, my name is {{firstName}} {{lastName}}</p>
+    </script>
 
     <!-- Include jQuery -->
     <script
@@ -173,39 +177,18 @@
     <script src="js/template7.min.js"></script>
     
     <!-- JSON with demo data-->
-    <script src="../data/library-sample.js"></script>
+    <script src="../data/assets.json"></script>
     
     <!-- Include Fresenius JS -->
     <script type="text/javascript" src="js/application.js"></script>
     <script>
-        // Helper to format dates
-        Template7.registerHelper('formatDate', function (date) {
-            var months = ('January February March April May June July August September October November December').split(' ');
-            var _date = new Date(date);
-            var month = months[_date.getMonth()];
-            var day = _date.getDate();
-            var year = _date.getFullYear();
-            var h = _date.getHours();
-            h = h < 10 ? '0' + h : h;
-            var m = _date.getMinutes();
-            m = m < 10 ? '0' + m : m;
-            return month + ' ' + day + ', ' + year + ' ' + h + ':' + m;
-        });
-
-        // Template
-        var template = document.getElementById('people-template').innerHTML;
-        
-        var libraryData = {
-            IT_OWNER: 'John',
-            IT_OWNER: 'Dafney'
-        };
-        
-        // compile it with Template7
-        var compiledTemplate = Template7.compile(template);
-        var html = compiledTemplate(libraryData);
-
-        // Insert rendered template
-        document.getElementById('fdb-block-data').innerHTML = html;
+      var template = document.getElementById('people-template').innerHTML;
+ 
+      // compile it with Template7
+      var compiledTemplate = Template7.compile(template);
+ 
+      // Now we may render our compiled template by passing required context
+      var html = compiledTemplate(libraryData);
     </script>
   </body>
 </html>
