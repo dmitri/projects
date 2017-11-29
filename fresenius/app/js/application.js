@@ -77,6 +77,12 @@ getAssetsList = function(asset) {
               {"<>":"div", "class":"card-body", "html": [
                 {"<>":"h2","class":"card-title", "html":"${App_Name}"},
                 {"<>":"p","html":"${App_Description}"},
+                {"<>":"strong","html":"Business Owner"},
+                {"<>":"p","html":"${Business_Owner}"},
+                {"<>":"strong","html":"IT Owner"},
+                {"<>":"p","html":"${IT_OWNER}"},
+                {"<>":"strong","html":"IT Sponsor"},
+                {"<>":"p","html":"${IT_SPONSOR}"},
               ]},
           ]},
       ]

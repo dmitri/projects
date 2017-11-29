@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     
     <!-- Fresenius custom styles -->
-    <link rel="stylesheet" href="css/application.css?v=3" />
+    <link rel="stylesheet" href="css/application.css?v=4" />
 
 
   </head>
@@ -101,7 +101,7 @@
       <div class="container-fluid">
         <div class="row main-toggler">
           <div class="col-4 text-center"><h2><a href="#" class="active" onclick="toggleView('people'); $(this).addClass('active'); return false;">People</a></h2></div>
-          <div class="col-4 text-center"><h2><a href="#" onclick="toggleView('assets'); $(this).addClass('active'); return false;">Assets</a></h2></div>
+          <div class="col-4 text-center"><h2><a href="#" onclick="toggleView('assets'); $(this).addClass('active');init_fastlive_filter(); return false;">Assets</a></h2></div>
           <div class="col-4 text-center"><h2><a href="#" onclick="toggleView('processes'); $(this).addClass('active'); return false;">Processes</a></h2></div>
         </div>
         <div class="row">
@@ -224,6 +224,6 @@
     <script src="data/assets.js"></script>
     
     <!-- Include Fresenius JS -->
-    <script type="text/javascript" src="js/application.js?v=3"></script>
+    <script type="text/javascript" src="js/application.js?v=4"></script>
   </body>
 </html>
