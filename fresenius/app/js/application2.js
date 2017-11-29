@@ -11,6 +11,8 @@ $(function(){
   // set up the live filter
   init_fastlive_filter();
   init_fastlive_filter_assets();
+  
+  init_fastlive_search();
 });
 
 // get the list of people by their role
@@ -47,7 +49,7 @@ getPeopleList = function(ownerType, container) {
   };
 
   $("#"+container+"-list").json2html({},transforms.list);
-  $("#business li:nth-child(1)").click();
+
 };
 
 // get the list of people by their role
@@ -63,9 +65,12 @@ getAssetsList = function(asset) {
       }},
   
       "items":{"<>":"li","html":function(obj,index){
-                  return( obj[asset]);
-              },"onclick":function(e){
-          $('.filter-list li').removeClass('active');
+              return( obj[asset]);
+          },"onclick":function(e){
+          $('.primary-pod:nth-child(2), .primary-pod:nth-child(3)').addClass('invisible');
+          $('.asset-pod').addClass('col-sm-12 focused');
+          $('.asset-left').removeClass('col-12').addClass('col-3');
+          $('.asset-filter-list li').removeClass('active');
           $(this).addClass('active');
         
           var getSelectedOwnerData = _.where(data, {[asset]: e.obj[asset]});
@@ -90,9 +95,14 @@ getAssetsList = function(asset) {
   };
 
   $("#asset-list").json2html({},transforms.list);
-  $("#assets li:nth-child(1)").click();
-
 };
+
+closeAssetsDetail = function() {
+  $('.primary-pod:nth-child(2), .primary-pod:nth-child(3)').removeClass('invisible');
+  $('.asset-pod').removeClass('col-sm-12 focused');
+  $('.asset-left').removeClass('col-3').addClass('col-12');
+  $('.asset-filter-list li').removeClass('active');
+}
 
 /* Fast filter functions *************************************************/
 
@@ -111,6 +121,18 @@ init_fastlive_filter_assets = function() {
   });
 };
 
+init_fastlive_search = function() {
+  var numDisplayedAssets = $(".num-displayed");
+  $("#search_input").fastLiveFilter(".search-results", {
+    callback: function(total) { numDisplayedAssets.html(addCommas(total-1));}
+  });
+};
+
+closeSearch = function() {
+  $('body').removeClass('scroll-lock search-active');
+  $('#search_input').val("");
+} 
+
 function addCommas(num) {
   num = String(num);
   var rgx = /(\d+)(\d{3})/;
@@ -126,8 +148,4 @@ toggleView = function(pane) {
   $('.primary-block').hide();
   $('#'+pane).show();
   init_fastlive_filter();
-}
-
-closeSearch = function() {
-  
 }

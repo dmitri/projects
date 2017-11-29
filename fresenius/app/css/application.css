@@ -3,7 +3,7 @@ header {
 }
 
 .primary-block .nav.nav-tabs {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .fdk .card h4 {
@@ -54,11 +54,13 @@ header {
   font-size: 1.6rem;
 }
 
+.asset-filter-list ul,
 .filter-list  ul {
   padding-left: 0;
   margin-left: 0;
 }
 
+.asset-filter-list li,
 .filter-list li {
   cursor: pointer;
   font-size: 1.1rem;
@@ -67,10 +69,12 @@ header {
   list-style-type: none;
 }
 
+.asset-filter-list li:hover,
 .filter-list li:hover {
   background: #eff1f3;
 }
 
+.asset-filter-list li.active, 
 .filter-list li.active {
   background: #528bff;
   color: #FFF;

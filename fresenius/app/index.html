@@ -14,6 +14,7 @@
     <meta name="apple-mobile-web-app-title" content="IT Source Demo" />
     <meta name="mobile-web-app-capable" content="yes">
     <!-- End mobile enhancements -->
+    <link rel="shortcut icon" href="https://www.freseniuskidneycare.com/assets/favicons/favicon.ico?v=2" />
     
 
 
@@ -97,11 +98,11 @@
     </section>
     
     <!-- content -->
-    <section class="fdb-block main-document">
+    <section class="fdb-block main-document animated fadeIn">
       <div class="container-fluid">
         <div class="row main-toggler">
           <div class="col-4 text-center"><h2><a href="#" class="active" onclick="toggleView('people'); $(this).addClass('active'); return false;">People</a></h2></div>
-          <div class="col-4 text-center"><h2><a href="#" onclick="toggleView('assets'); $(this).addClass('active');init_fastlive_filter(); return false;">Assets</a></h2></div>
+          <div class="col-4 text-center"><h2><a href="#" onclick="toggleView('assets'); $(this).addClass('active'); return false;">Assets</a></h2></div>
           <div class="col-4 text-center"><h2><a href="#" onclick="toggleView('processes'); $(this).addClass('active'); return false;">Processes</a></h2></div>
         </div>
         <div class="row">
@@ -126,7 +127,7 @@
               </ul>
               <div class="row">
                 <div  class="col-4">
-                  <input type="text" id="filter_list_input" placeholder="Filter Name" style="width: 100%; padding: 10px; font-size: 1rem;">
+                  <input type="text" id="filter_list_input" placeholder="Filter Owner" style="width: 100%; padding: 10px; font-size: 1rem;">
                   <hr/>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="business" role="tabpanel" aria-labelledby="business-owner">
@@ -149,9 +150,9 @@
             <div class="fdb-box fdb-touch">
               <div class="row">
                 <div  class="col-4">
-                  <input type="text" id="filter_list_input" placeholder="Filter Name" style="width: 100%; padding: 10px; font-size: 1rem;">
+                  <input type="text" id="asset_filter_list_input" placeholder="Filter Asset" style="width: 100%; padding: 10px; font-size: 1rem;">
                   <hr/>
-                  <div id="asset-list" class="filter-list"></div>
+                  <div id="asset-list" class="asset-filter-list"></div>
                 </div>
                 <div id="asset-details" class="col-8 list-details"></div>
               </div>
