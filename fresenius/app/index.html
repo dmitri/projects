@@ -15,8 +15,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <!-- End mobile enhancements -->
     
-    <!-- Bstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
 
     <!-- Include Font -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700">
@@ -25,8 +24,13 @@
     <!-- Content 2, variation 1 design block does not use Font Awesome Icons. However if you wish to add such icons you should also add this line. -->
     <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     
+    <link rel="stylesheet" href="css/animate.min.css">
+    
     <!-- Design block stylesheets -->
     <link rel="stylesheet" href="css/froala_blocks.css" />
+    
+    <!-- Bstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     
     <!-- Fresenius custom styles -->
     <link rel="stylesheet" href="css/application.css" />
@@ -37,7 +41,7 @@
   <body>
     <!-- Header -->
     <header>
-      <div class="container">
+      <div class="container-fluid">
         <nav class="navbar navbar-expand-md no-gutters">
           <div class="col-3 text-left">
             <a href="/">
@@ -76,7 +80,7 @@
       </div>
     </header>
     <!-- Header ends -->
-    <section class="fdb-block bg-dark" style="background-image: url(./imgs/bg_1.svg)">
+    <section class="fdb-block bg-dark" style="background-image: url(./imgs/bg_1.svg); padding-bottom: 200px;">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6 text-center">
@@ -93,46 +97,75 @@
     </section>
     
     <!-- 3 types lead in -->
-    <section class="fdb-block fdb-block-data">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12 col-md-8 m-auto col-lg-4">
-            <div class="fdb-box fdb-touch">
-              <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
+    <section class="fdb-block main-document">
+      <div class="container-fluid">
+        <div class="row">
+          <div id="people" class="col-12 col-md-8 m-auto col-lg-12 primary-block">
+            <div class="fdb-box fdb-touch" style="border-top: none; box-shadow: none;">
               <h2>People</h2>
-              <script type="text/template7" id="people-template">
-                <ul>
-                  {{#each assets}}
-                   <li class="item-content">
-                     <div class="item-inner">
-                       <div class="item-title">{{Company_Name}}</div>
-                     </div>
-                   </li>
-                  {{/each}}
-                </ul>
-              </script>
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="business-owners-tab" 
+                      data-toggle="tab" href="#business" 
+                      role="tab" 
+                      aria-controls="business-owner" 
+                      aria-selected="false">
+                      Business Owners
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="it-owners-tab" data-toggle="tab" href="#it-owners" role="tab" aria-controls="it-owner" aria-selected="false">IT Owners</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="it-sponsors-tab" data-toggle="tab" href="#it-sponsors" role="tab" aria-controls="it-sponsor" aria-selected="false">IT Sponsors</a>
+                </li>
+              </ul>
+              <div class="row">
+                <div  class="col-4">
+                  <input type="text" id="filter_list_input" placeholder="Filter Name" style="width: 100%; padding: 10px; font-size: 1rem;">
+                  <hr/>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="business" role="tabpanel" aria-labelledby="business-owner">
+                      <div id="business-owner-list" class="filter-list"></div>
+                    </div>
+                    <div class="tab-pane fade" id="it-owners" role="tabpanel" aria-labelledby="it-owner">
+                      <div id="it-owner-list" class="filter-list"></div>
+                    </div>
+                    <div class="tab-pane fade" id="it-sponsors" role="tabpanel" aria-labelledby="it-sponsor">
+                      <div id="it-sponsor-list" class="filter-list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="list-details" class="col-8"></div>
+              </div>
             </div>
           </div>
-
-          <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
-            <div class="fdb-box fdb-touch">
-              <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
-              <h2>Processes</h2>
-              <p>Separated they live in Bookmarksgrove right at the coast.</p>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-8 m-auto col-lg-4 pt-5 pt-lg-0">
+          
+          <div class="col-12 col-md-8 m-auto col-lg-12 pt-5 pt-lg-0">
             <div class="fdb-box fdb-touch">
               <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
               <h2>Assets</h2>
-              <p>A small river named Duden flows by their place and supplies.</p>
+              <p>Coming Next</p>
             </div>
           </div>
+
+          <div class="col-12 col-md-8 m-auto col-lg-12 pt-5 pt-lg-0">
+            <div class="fdb-box fdb-touch">
+              <img alt="image" class="fdb-icon" src="./imgs/img_round.svg">
+              <h2>Processes</h2>
+              <p>Coming Next.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
     
+    <div id="example-jquery-app-output" class="row">
+        <div class="col-sm list"></div>
+        <div class="col-sm details"></div>
+    </div>
+
     <!-- footer -->
     <footer class="fdb-block footer-small bg-dark">
       <div class="container">
@@ -157,11 +190,6 @@
         </div>
       </div>
     </footer>
-    
-    <script id="template" type="text/template7">
-        <p>Hello, my name is {{firstName}} {{lastName}}</p>
-    </script>
-
     <!-- Include jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -173,22 +201,20 @@
     <!-- Include Froala Design Framework javascript -->
     <script type="text/javascript" src="js/fdk.min.js"></script>
     
+    <!-- Include Froala Design Framework javascript -->
+    <script type="text/javascript" src="js/fast-filter.js"></script>
+    
+    <!-- the ever handy underscore.js -->
+     <script src="js/underscore.min.js"></script>
+    
     <!-- Path to Template7 lib -->
-    <script src="js/template7.min.js"></script>
+    <script src="js/json2html.js"></script>
+    <script src="js/jquery.json2html.js"></script>
     
     <!-- JSON with demo data-->
-    <script src="../data/assets.json"></script>
+    <script src="data/assets.js"></script>
     
     <!-- Include Fresenius JS -->
     <script type="text/javascript" src="js/application.js"></script>
-    <script>
-      var template = document.getElementById('people-template').innerHTML;
- 
-      // compile it with Template7
-      var compiledTemplate = Template7.compile(template);
- 
-      // Now we may render our compiled template by passing required context
-      var html = compiledTemplate(libraryData);
-    </script>
   </body>
 </html>
