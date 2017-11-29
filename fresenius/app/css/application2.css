@@ -149,6 +149,10 @@ header .search-container input[type=search]:focus {
   background-size: cover;
 }
 
+.version-three .mini-hero:before {
+  background-image: url(../imgs/mini-hero.jpg);
+}
+
 .primary-pod {
   background: #FFF;
   height: 600px;
