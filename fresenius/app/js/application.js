@@ -1,10 +1,12 @@
-// Set up the UI
+// Init up the UI
 
 $(function(){
   // Get the three owner lists
   getPeopleList('Business_Owner', 'business-owner');
   getPeopleList('IT_OWNER', 'it-owner');
   getPeopleList('IT_SPONSOR', 'it-sponsor');
+  
+  getAssetsList('App_Name');
   
   // set up the live filter
   init_fastlive_filter();
@@ -44,6 +46,45 @@ getPeopleList = function(ownerType, container) {
   };
 
   $("#"+container+"-list").json2html({},transforms.list);
+  $("#business li:nth-child(1)").click();
+};
+
+// get the list of people by their role
+getAssetsList = function(asset) {
+  var transforms = {
+      "list":{"<>":"ul","html":function(){
+      
+        var getType = _.chain(data)
+          .uniq(function(dataitem) { return dataitem[asset]; })
+          .sortBy(function(dataitem){ return dataitem[asset]; })
+          .value();
+          return($.json2html(getType,transforms.items));   
+      }},
+  
+      "items":{"<>":"li","html":function(obj,index){
+                  return( obj[asset]);
+              },"onclick":function(e){
+          $('.filter-list li').removeClass('active');
+          $(this).addClass('active');
+        
+          var getSelectedOwnerData = _.where(data, {[asset]: e.obj[asset]});
+
+          $("#asset-details").empty().json2html(getSelectedOwnerData,transforms.details);
+      }},
+  
+      "details":[
+          {"<>":"div","class":"card animated fadeInUp","html":[
+              {"<>":"div", "class":"card-body", "html": [
+                {"<>":"h2","class":"card-title", "html":"${App_Name}"},
+                {"<>":"p","html":"${App_Description}"},
+              ]},
+          ]},
+      ]
+  };
+
+  $("#asset-list").json2html({},transforms.list);
+  $("#assets li:nth-child(1)").click();
+
 };
 
 /* Fast filter functions *************************************************/
@@ -64,3 +105,10 @@ function addCommas(num) {
   }
   return num;
 };
+
+/* main tab toggler */
+toggleView = function(pane) {
+  $('.main-toggler a').removeClass('active');
+  $('.primary-block').hide();
+  $('#'+pane).show();
+}

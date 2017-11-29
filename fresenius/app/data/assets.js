@@ -1712,6 +1712,15 @@ var data = [{
 		"Company_Name": "RTG",
 		"Company_long_name": "Renal Therapies Group",
 		"App_Name": "IBM Emptoris",
+		"App_Description": "Provides barcode scanning for the RF guns used in the Distribution Centers",
+		"Business_Owner": "Alan Turfe",
+		"IT_SPONSOR": "Jean Fulchino",
+		"IT_OWNER": "Jean Fulchino"
+	},
+	{
+		"Company_Name": "RTG",
+		"Company_long_name": "Renal Therapies Group",
+		"App_Name": "ITS",
 		"App_Description": "It is Contract Lifecycle Management system will be used by all vendor facing groups under Fresenius Medical Care North America",
 		"Business_Owner": "Alan Turfe",
 		"IT_SPONSOR": "Jean Fulchino",
