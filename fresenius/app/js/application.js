@@ -2,11 +2,10 @@
 
 $(function(){
   // Get the three owner lists
-  getPeopleList('Business_Owner', 'business-owner');
-  getPeopleList('IT_OWNER', 'it-owner');
-  getPeopleList('IT_SPONSOR', 'it-sponsor');
+  getPeopleList('Business Owners', 'business-owner');
+  getPeopleList('IT Owners', 'it-owner');
   
-  getAssetsList('App_Name');
+  getAssetsList('Application Name');
   
   // set up the live filter
   init_fastlive_filter();
@@ -39,8 +38,8 @@ getPeopleList = function(ownerType, container) {
       "details":[
           {"<>":"div","class":"card animated fadeInUp","html":[
               {"<>":"div", "class":"card-body", "html": [
-                {"<>":"h2","class":"card-title", "html":"${App_Name}"},
-                {"<>":"p","html":"${App_Description}"},
+                {"<>":"h2","class":"card-title", "html":"${Application Name}"},
+                {"<>":"p","html":"${Description}"},
               ]},
           ]},
       ]
@@ -76,14 +75,12 @@ getAssetsList = function(asset) {
       "details":[
           {"<>":"div","class":"card animated fadeInUp","html":[
               {"<>":"div", "class":"card-body", "html": [
-                {"<>":"h2","class":"card-title", "html":"${App_Name}"},
-                {"<>":"p","html":"${App_Description}"},
+                {"<>":"h2","class":"card-title", "html":"${Application Name}"},
+                {"<>":"p","html":"${Description}"},
                 {"<>":"strong","html":"Business Owner"},
-                {"<>":"p","html":"${Business_Owner}"},
+                {"<>":"p","html":"${Business Owners}"},
                 {"<>":"strong","html":"IT Owner"},
-                {"<>":"p","html":"${IT_OWNER}"},
-                {"<>":"strong","html":"IT Sponsor"},
-                {"<>":"p","html":"${IT_SPONSOR}"},
+                {"<>":"p","html":"${IT Owners}"},
               ]},
           ]},
       ]
