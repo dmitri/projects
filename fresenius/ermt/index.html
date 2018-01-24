@@ -1,0 +1,288 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="https://www.freseniuskidneycare.com/assets/favicons/favicon.ico?v=2" />
+        <link rel="stylesheet" href="css/bootstrap-4.0.min.css">
+        
+        <link rel="stylesheet" href="css/application.css">
+        <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script defer src="js/fontawesome/fontawesome-all.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <img src="img/mock-header.jpg" style="width: 100%; min-width: 950px;" class="img-responsive"/>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>
+          <i class="fa fa-wrench"></i>
+          Admin Dashboard
+        </h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Request Form: Headline and Content</h3>
+          <br/>
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Headline</label>
+              <input type="text" class="form-control count_me1" id="headline" maxlength="120" aria-describedby="headlineHelp">
+              <small id="headlineHelp" class="form-text text-muted">Required - 120 characters max</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Body Content</label>
+              <textarea class="form-control count_me2" id="bodyContent" rows="5" maxlength="600"></textarea>
+              <small id="bodyContentHelp" class="form-text text-muted">Required - 600 characters max</small>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-outline-primary">Cancel</button>
+              <button type="submit" class="btn btn-primary btn-save">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+<br/><br/>
+<hr/>
+<br/><br/>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-between">
+            <h3>p-QT Queues</h3>
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#new">
+              + New
+            </button>
+          </div>
+          <br/>
+          <table class="table table-hover queues-table">
+            <thead>
+              <tr>
+                <th scope="col">p-QT Queues</th>
+                <th scope="col" style="width: 375px;">Sub-Queues</th>
+                <th scope="col" class="text-center">Status</th>
+                <th scope="col" colspan="2">Queue Admin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="has-subs">
+                <th scope="row">Clinical Services</th>
+                <td><a href="#" class="sub-queue-toggle">7 active, 1 inactive</a></td>
+                <td class="text-center">active</td>
+                <td>Pat Heerst</td>
+                <td class="text-right">
+                  
+                  <i class="fa fa-pencil-alt"></i>
+                  <a href="#" onclick="return false;" style="color: #CCC;" data-toggle="tooltip" data-placement="bottom" title="Cannot delete queue with active sub-queues">
+                    <i class="fa fa-trash-alt" data-toggle="tooltip" data-placement="bottom" title="Cannot delete queue with active sub-queues"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr class="sub-row-1">
+                <td></td>
+                <td>Nursing</td>
+                <td class="text-center">active</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr class="sub-row-1">
+                <td></td>
+                <td>PCT</td>
+                <td class="text-center">active</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr class="sub-row-1">
+                <td></td>
+                <td>MSW</td>
+                <td class="text-center">active</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr class="sub-row-1">
+                <td></td>
+                <td>Dietician</td>
+                <td class="text-center">active</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr class="sub-row-1">
+                <td></td>
+                <td>Reports / Dashboard / Portal</td>
+                <td class="text-center">active</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr class="sub-row-1">
+                <td></td>
+                <td>Medications / Labs / Exiting Algorithms</td>
+                <td class="text-center">active</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr class="sub-row-1">
+                <td></td>
+                <td>Other</td>
+                <td class="text-center">active</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr class="sub-row-1 disabled">
+                <td></td>
+                <td>Misc</td>
+                <td class="text-center">inactive</td>
+                <td>Samantha Bartholomy</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <!---end of subgroup -->
+              <tr>
+                <th scope="row">Provider / Extender</th>
+                <td>--</td>
+                <td class="text-center">active</td>
+                <td>Dr. Jim Horowitz</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Home Therapy</th>
+                <td>--</td>
+                <td class="text-center">active</td>
+                <td>Vishnu Dhamo</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Other</th>
+                <td>--</td>
+                <td class="text-center">active</td>
+                <td>Mary Joe</td>
+                <td class="text-right">
+                  <i class="fa fa-pencil-alt"></i>
+                  <i class="fa fa-trash-alt"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Fresenius 2018</p>
+      </footer>
+    </div> <!-- /container --> 
+    
+    <div class="modal fade" id="new" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New / Edit Queue</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Queue Name</label>
+                <input type="text" class="form-control count_me3" id="queueName" aria-describedby="headlineHelp">
+                <small id="queueNameHelp" class="form-text text-muted">Required - 100 characters max</small>
+              </div>
+              
+              <div class="row">
+                <div class="col">
+                  <div class="form-check" style="padding-top: 7px;">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Nest this queue under: 
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                  <select id="inputState" class="form-control">
+                    <option selected>Select a Queue...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+              </div>
+              <hr/>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="bodyContent" rows="5"></textarea>
+                <small id="bodyContentHelp" class="form-text text-muted  count_me4">Required - 450 characters max</small>
+              </div>
+              <div id="scrollable-dropdown-menu" class="form-group">
+                <label for="exampleInputEmail1">Search / Assign Administrator for This Queue</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fa fa-search"></i></div>
+                  </div>
+                  <input id="ownerSearch" class="typeahead form-control" type="text" autocomplete="off" placeholder="Type Name or Email to Find Owners">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer" class="d-flex justify-content-end">
+            <div class="toggle-container" data-toggle="tooltip" data-html="true" data-placement="top" title='<i class="fa fa-exclamation-triangle"></i> Cannot make this queue inactive because there are active requests in this queue.'>
+              Make inactive? <input type="checkbox" data-toggle="toggle" data-style="ios" data-on='Yes' data-off="No">
+            </div>
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+    <script src="js/typeahead.min.js"></script>
+    <script src="js/charcount.js"></script>
+    <script src="js/application.js"></script>
+    </body>
+</html>
