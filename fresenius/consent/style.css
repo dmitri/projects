@@ -57,62 +57,19 @@ p small {
 
 .body-text-consent p,
 .body-text-deny p {
-  margin-left: 30px;
+  padding-left: 60px;
+  margin-left: -20px;
 }
 
-.body-text-consent p:before {
-  content: " ";
-  display: block;
-  border: solid 0.8em #DEE2E5;
-  height: 0;
-  width: 0;
-  position: relative;
-  left: -45px;
-  top: 31px;
-  margin-top: -0.75em;
+.body-text-consent p {
+  background: url(img-consent.png) no-repeat top left;
+  background-size: 40px;
 }
 
-.body-text-consent p:after {
-  content: " ";
-  display: block;
-  width: 0.7em;
-  height: 1.2em;
-  border: solid limegreen;
-  border-width: 0 0.3em 0.3em 0;
-  position: relative;
-  left: -38px;
-  top: -111px;
-  margin-top: -0.2em;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.body-text-deny p:before {
-  content: "\f410";
-  color: red;
-  display: block;
-  font-size: 39px;
-  width: 0.7em;
-  height: 1.2em;
-  position: relative;
-  left: -46px;
-  top: 34px;
-  margin-top: -0.2em;
-}
-
-.body-text-deny p:after {
-  content: "\00d7";
-  color: red;
-  display: block;
-  font-size: 39px;
-  width: 0.7em;
-  height: 1.2em;
-  position: relative;
-  left: -44px;
-  top: -127px;
-  margin-top: -0.2em;
+.body-text-deny p {
+  background: url(img-no-consent.png) no-repeat top left;
+  background-size: 35px; 
+  padding-left: 55px;
 }
 
 @media (min-width: 576px) {
