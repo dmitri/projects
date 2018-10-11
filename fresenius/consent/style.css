@@ -62,12 +62,12 @@ p small {
 }
 
 .body-text-consent p {
-  background: url(img-consent.png) no-repeat top left;
+  background: url(img-consent.png?v=2) no-repeat top left;
   background-size: 40px;
 }
 
 .body-text-deny p {
-  background: url(img-no-consent.png) no-repeat top left;
+  background: url(img-no-consent.png?v=2) no-repeat top left;
   background-size: 35px; 
   padding-left: 55px;
 }
