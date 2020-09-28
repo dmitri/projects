@@ -80,3 +80,8 @@ function togglePasswordVisibility(input) {
     $('.pass-visibility-icon').removeClass('show');
   }
 }
+
+function exposeDashBlocks() {
+  $('.welcome-message').slideUp();
+  $('.dash-block').addClass('animate__animated animate_fadeInDown').css('display', 'block');
+}
