@@ -83,5 +83,6 @@ function togglePasswordVisibility(input) {
 
 function exposeDashBlocks() {
   $('.welcome-message').slideUp();
-  $('.dash-block').addClass('animate__animated animate_fadeInDown').css('display', 'block');
+  $('.dash-block').addClass('animate__animated animate__fadeIn animate__delay-.5s').css('display', 'block');
+  $('.right-info-pane').addClass('animate__animated animate__slideInRight animate__delay-1s').css('display', 'block');
 }
