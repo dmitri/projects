@@ -71,8 +71,8 @@ h1,h2,h3,h4,h5,h6 {
 
 p {
 	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
+	font-size: 16px;
+	line-height: 1.6;
 	color: #666666;
 	margin: 0px;
 }
@@ -186,7 +186,7 @@ iframe {
   cursor: pointer;
   position: absolute;
   right: 10px;
-  z-index: 2;
+  z-index: 1;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -495,7 +495,7 @@ iframe {
   width: 100%;
   height: 50px;
   background-color: #57b846;
-  border-radius: 25px;
+  border-radius: 5px;
 
   box-shadow: 0 10px 30px 0px rgba(87, 184, 70, 0.5);
   -moz-box-shadow: 0 10px 30px 0px rgba(87, 184, 70, 0.5);
@@ -619,8 +619,9 @@ iframe {
 }
 
 .masthead img {
-  width: 90px;
+  width: 100px;
   margin-left: -5px;
+  margin-top:-5px;
 }
 
 .sidebar-controls {
@@ -660,12 +661,19 @@ iframe {
 
 .work-area {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 130px;
+}
+
+.dash-block-container {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
   padding: 30px;
-  margin-top: 80px;
   margin-left: 0;
+  justify-content: center;
 }
 
 .work-area.sidebar-open {
@@ -675,18 +683,23 @@ iframe {
 .dash-block {
   border: 1px solid #dbdce0;
   border-radius: 5px;
+  cursor: pointer;
   display: none;
-  height: 200px;
-  padding: 20px;
+  height: auto;
+  padding: 15px;
   width: 300px;
   margin: 0 20px 20px 0;
+}
+
+.message-2 {
+  display: none;
 }
 
 .dash-block h4 {
   font-family: Poppins-Bold;
 }
 
-.dash-block h4 a {
+.dash-block a h4 {
   color: #222;
   font-family: Poppins-Bold;
   font-size: 1.7rem;
@@ -697,10 +710,25 @@ iframe {
   color: #888;
 }
 
+.dash-block h4 i {
+  color: #57b846;
+  font-size: 3rem;
+  display: none;
+}
+
+
+.dash-block.complete h4 span.step-count {
+  display: none;
+}
+
+.dash-block.complete h4 i {
+  display: block;
+}
+
 .dash-block h4 span.step-count {
   align-items: center;
-  background: #EEE;
-  color: #222;
+  background: #444;
+  color: #FFF;
   padding: 15px;
   width: 40px;
   height: 40px;
@@ -708,13 +736,14 @@ iframe {
   display: flex;
   justify-content: center;
   line-height: 1.3;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.welcome-message {
+.message-block {
   background: #FFF;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  display: none;
   position: fixed;
   top: 50%;
   padding: 50px;
@@ -725,7 +754,127 @@ iframe {
   z-index: 3;
 }
 
+.company-form-pane {
+  background: #FFF;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  display: none;
+  position: fixed;
+  padding: 50px;
+  overflow: scroll;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
 
+.stage-overlay {
+  background: rgba(255,255,255,0.8);
+  display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+}
+
+.stage-overlay .spin-container {
+  margin: 200px auto 0 auto;
+}
+
+.stage-overlay .spin-container i {
+  font-size: 5rem;
+}
+
+.stage-overlay.show-with-spinner {
+  display: flex;
+}
+
+
+.close-pane {
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  font-size: 3rem;
+  line-height: .5;
+  z-index: 5;
+  padding: 10px;
+  transition: all ease .2s;
+}
+
+.close-pane:hover {
+  background: #57b846;
+  color: #FFF;
+}
+
+.work-area-2,
+.work-area-3 {
+  display: none;
+  margin: 0 auto;
+  width: 40%;
+}
+
+/* utility classes */
+.no-border {
+  border: none;
+}
+
+.select2-container--default .select2-selection--single {
+  color: #212529;
+  font-size: 18px;
+  border: none;
+  height: 40px;
+  border-radius: 0;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #999999;
+}
+
+.iti {
+  color: #999999;
+ font-size: 18px; 
+ padding: 5px;
+}
+
+.cancel-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-wrap a {
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 1px solid #333;
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-btns {
+  color: #999;
+  display: flex;
+  justify-content: space-around;
+}
+
+.radio-btns label {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+.radio-btns label input[type=radio] {
+  margin: 5px 7px 0 0;
+}
 
 /*
 .login-more li::before {
