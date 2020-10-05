@@ -89,13 +89,13 @@
           </div>
       
           <div class="dash-block dash-block-3 incomplete">
-            <a href="#">
+            <a href="#" onclick="showDriverPane();">
               <h4>
                 <span class="step-count">3</span>
                 <i class="fa fa-check-circle"></i>
                 Invite<br/>Drivers
               </h4>
-              <p>Onboard your drivers to start saving time and money!</p>
+              <p>Onboard drivers so Kliks can start doing the hard work for you.</p>
             </a>
           </div>
         </div>
@@ -319,8 +319,48 @@
     
       <div class="work-area-3 animate__animated animate__slideInRight animate__faster">
   			<span class="login100-form-title p-b-0">
-  				Rate Information Set Up
+  				Mileage Reimbursement Rate
   			</span>
+        
+        <div class="wrap-100 m-t-45 m-b-35">
+  				<div class="wrap-input100 validate-input" data-validate = "Name this Rate Set">
+  					<input class="input100" type="text" name="rate_name">
+  					<span class="focus-input100" data-placeholder="* Name this Rate Set"></span>
+  				</div>
+          <div style="font-size: .8rem;color: #444; margin-top:5px;">
+            "Default Rate" is the recommended name for your first rate setup.
+          </div>
+        </div>
+        
+        <div class="wrap-100 m-t-45 m-b-35">
+  				<div class="wrap-input100 validate-input no-border" style="padding-top: 14px;">
+            <select class="select2-notag" style="width: 100%; border-bottom: 1px solid #DDD;">
+              <option selected>* Country of Operation </option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+            </select>
+  				</div>
+        </div>
+        
+        
+        <div class="wrap-50 m-t-45 m-b-35">
+  				<div class="wrap-input50 validate-input no-border" style="padding-top: 14px;">
+            <select class="select2-notag" style="width: 100%; border-bottom: 1px solid #DDD;">
+              <option selected>* Rate Type  </option>
+              <option>Flat Rate</option>
+              <option>Banded Rate</option>
+            </select>
+  				</div>
+          
+  				<div class="wrap-input50 validate-input" data-validate = "Flat Rate Amount">
+  					<input class="input50" type="text" name="rate_name">
+  					<span class="focus-input100" data-placeholder="* Flat Rate"></span>
+  				</div>
+        </div>
+        
+
+        
       
         <div class="wrap-50 m-t-45 m-b-35">
           <div class="wrap-input50 no-border cancel-wrap">
@@ -334,7 +374,7 @@
     
       <div class="work-area-4 animate__animated animate__slideInRight animate__faster">
   			<span class="login100-form-title p-b-0">
-  				Invite Your Drivers
+  				Invite Drivers
   			</span>
       
         <div class="wrap-50 m-t-45 m-b-35">

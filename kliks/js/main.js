@@ -97,6 +97,11 @@ function showRatePane() {
   $('.work-area-3').show();
 }
 
+function showDriverPane() {
+  $('.work-area-dash').hide();
+  $('.work-area-4').show();
+}
+
 function closePane() {
   $('.stage-overlay, .company-form-pane').hide();
 }
@@ -165,4 +170,6 @@ $(document).ready(function() {
   $('select.select2').select2({
     tags: true
   });
+  
+  $('select.select2-notag').select2({ tags: false });
 });
