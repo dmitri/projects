@@ -116,7 +116,7 @@ $(document).ready(function() {
   $(document).on('click', '.cancel-back-to-dash', function(event) {
     event.preventDefault();
     $('.welcome-header').removeClass('animate__animated animate__slideInDown animate__repeat-1');
-    $('.work-area-2').hide();
+    $('.work-area-2, .work-area-3, .work-area-4').hide();
     $('.work-area-dash').addClass('animate__animated animate__slideInLeft animate__faster animate__repeat-1').css('display', 'block');
   });
   
@@ -129,10 +129,37 @@ $(document).ready(function() {
       $('.work-area-dash').addClass('animate__animated animate__fadeIn animate__faster animate__repeat-1').css('display', 'block');
       $('.stage-overlay').removeClass('show-with-spinner');
       $('.dash-block-1').addClass('complete');
-      $('.message-1').hide();
+      $('.message').hide();
       $('.message-2').addClass('animate__animated animate__slideInDown').css('display', 'block');
     }, 1000);
-    
+  });
+  
+  $(document).on('click', '.save-rate', function(event) {
+    event.preventDefault();
+    $('.welcome-header').removeClass('animate__animated animate__slideInDown animate__repeat-1');
+    $('.work-area-3').hide();
+    $('.stage-overlay').addClass('show-with-spinner');
+    setTimeout(function(){ 
+      $('.work-area-dash').addClass('animate__animated animate__fadeIn animate__faster animate__repeat-1').css('display', 'block');
+      $('.stage-overlay').removeClass('show-with-spinner');
+      $('.dash-block-2').addClass('complete');
+      $('.message').hide();
+      $('.message-3').addClass('animate__animated animate__slideInDown').css('display', 'block');
+    }, 1000);
+  });
+  
+  $(document).on('click', '.save-users', function(event) {
+    event.preventDefault();
+    $('.welcome-header').removeClass('animate__animated animate__slideInDown animate__repeat-1');
+    $('.work-area-4').hide();
+    $('.stage-overlay').addClass('show-with-spinner');
+    setTimeout(function(){ 
+      $('.work-area-dash').addClass('animate__animated animate__fadeIn animate__faster animate__repeat-1').css('display', 'block');
+      $('.stage-overlay').removeClass('show-with-spinner');
+      $('.dash-block-3').addClass('complete');
+      $('.message').hide();
+      $('.message-4').addClass('animate__animated animate__slideInDown').css('display', 'block');
+    }, 1000);
   });
   
   $('select.select2').select2({

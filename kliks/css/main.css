@@ -660,11 +660,13 @@ iframe {
 }
 
 .work-area {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 130px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 90%;
+  overflow-y: scroll;
+  top: 100px;
+  z-index: 1;
 }
 
 .dash-block-container {
@@ -691,7 +693,9 @@ iframe {
   margin: 0 20px 20px 0;
 }
 
-.message-2 {
+.message-2,
+.message-3,
+.message-4 {
   display: none;
 }
 
@@ -810,9 +814,10 @@ iframe {
 }
 
 .work-area-2,
-.work-area-3 {
+.work-area-3,
+.work-area-4 {
   display: none;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
   width: 40%;
 }
 
