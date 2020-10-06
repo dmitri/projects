@@ -327,14 +327,14 @@
   					<input class="input100" type="text" name="rate_name">
   					<span class="focus-input100" data-placeholder="* Name this Rate Set"></span>
   				</div>
-          <div style="font-size: .8rem;color: #444; margin-top:5px;">
+          <div style="font-size: 1rem;color: #666; margin-top:5px;">
             "Default Rate" is the recommended name for your first rate setup.
           </div>
         </div>
         
         <div class="wrap-100 m-t-45 m-b-35">
   				<div class="wrap-input100 validate-input no-border" style="padding-top: 14px;">
-            <select class="select2-notag" style="width: 100%; border-bottom: 1px solid #DDD;">
+            <select class="select2-notag" style="width: 100%; border: none; border-bottom: 1px solid #DDD;">
               <option selected>* Country of Operation </option>
               <option>United States</option>
               <option>Canada</option>
@@ -345,17 +345,32 @@
         
         
         <div class="wrap-50 m-t-45 m-b-35">
-  				<div class="wrap-input50 validate-input no-border" style="padding-top: 14px;">
-            <select class="select2-notag" style="width: 100%; border-bottom: 1px solid #DDD;">
-              <option selected>* Rate Type  </option>
-              <option>Flat Rate</option>
-              <option>Banded Rate</option>
-            </select>
+  				<div class="wrap-input25 validate-input no-border" style="padding-top: 14px;">
+            <label>Rate Type</label>
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="flat" checked>
+              Flat Rate
+            </label>
+            <label>
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="banded" >
+              Banded Rate
+            </label>
   				</div>
           
-  				<div class="wrap-input50 validate-input" data-validate = "Flat Rate Amount">
-  					<input class="input50" type="text" name="rate_name">
-  					<span class="focus-input100" data-placeholder="* Flat Rate"></span>
+  				<div class="wrap-input75 validate-input no-border" data-validate = "Flat Rate Amount">
+            <div id="flat" style="padding-top: 23px;">
+    					<input class="input50" type="text" name="flat_rate_amount" style="border-bottom: 2px solid #d9d9d9; width: 100%;">
+    					<span class="focus-input100" data-placeholder="* Flat Rate Amount"></span>
+              <div class="form-check" style="padding-top: 3px;">
+                <input type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1" style="color: #666;">
+                  Use USA IRS Rate (0.575 / mile)
+                </label>
+              </div>
+            </div>
+            <div id="banded">
+              
+            </div>
   				</div>
         </div>
         
