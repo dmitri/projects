@@ -43,28 +43,11 @@
 			<div class="wrap-login100 p-t-25 p-b-20">
 				<form class="login100-form validate-form" action="reg-step-2.html">
   					<span class="login100-form-title p-b-20">
-  						Mileage reimbursement simplified.
+  						Log in to your account
   					</span>
-          
-  					<span class="login100-form-subhead p-b-10">
-  						Start your free, 14-day trial. No card required. Cancel anytime. 
-  					</span>
-          
-          
-            <div class="wrap-50 m-t-45 m-b-35">
-    					<div class="wrap-input50 validate-input" data-validate = "What's your first name?">
-    						<input class="input100" type="text" name="first_name" autocomplete="off">
-    						<span class="focus-input100" data-placeholder="* First Name"></span>
-    					</div>
-          
-              <div class="wrap-input50 validate-input" data-validate = "What's your last name?">
-    						<input class="input100" type="text" name="last_name" autocomplete="off" value=" ">
-    						<span class="focus-input100" data-placeholder="* Last Name"></span>
-    					</div>
-            </div>
 
   					<div class="wrap-input100 validate-input m-t-35 m-b-35" data-validate = "Enter a valid email">
-  						<input class="input100" type="email" name="email" autocomplete="off" value="">
+  						<input id="email" class="input100" type="email" name="email" autocomplete="off" value="" autofocus>
   						<span class="focus-input100" data-placeholder="* Enter a Valid Work Email"></span>
   					</div>
 
@@ -76,49 +59,31 @@
                 <i class="fa fa-eye-slash"></i>
               </div>
   					</div>
-          
-
-            <div class="wrap-input100 validate-input m-t-35 m-b-60 no-border" data-validate="Please select, or type in your company name.">
-              <select class="select2" style="width: 100%; border:1px solid #D1D3D9" name="company">
-                <option selected>* Select or Enter Your Company or Organization</option>
-                <option>Airbnb</option>
-                <option>Apple</option>
-                <option>Azure</option>
-                <option>General Electric</option>
-                <option>General Motors</option>
-                <option>Sprint T-Mobile</option>
-              </select>
-            </div>
 
   					<div class="container-login100-form-btn">
   						<button class="login100-form-btn">
-  							Start Free Trial
+  							Log in
   						</button>
   					</div>
 
   					<ul class="login-more p-t-60">
   						<li>
   							<span class="txt1">
-  								Already have an account?
+  								Don't have an account?
   							</span>
 
-  							<a href="login.html" class="txt2">
-  								Log in
+  							<a href="reg-step-1.html" class="txt2">
+  								Sign up!
   							</a>
   						</li>
   					</ul>
   				</form>
 			</div>
 		</div>
-    <div class="supporting-text login-terms-text">
-      By creating a Kliks account, you're agreeing to accept the Kliks customer 
-      <a href="#" class="supporting-text-link">Terms of Service</a> and acknowledging Kliks's respect of your 
-      <a href="#" class="supporting-text-link">Privacy</a>.
-    </div>
 	</div>
 	
   
-  <div style="position: fixed; bottom: 0; right: 0; z-index: 2; padding: 25px;"><a href="reg-step-5.html" class="txt2">Pretend you signed up &rarr;</a>
+  <div style="position: fixed; bottom: 0; right: 0; z-index: 2; padding: 25px;"><a href="reg-step-2.html" class="txt2">Pretend you logged in &rarr;</a>
 
 	<div id="dropDownSelect1"></div>
 	
@@ -138,6 +103,15 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+<script>
+  $(document).ready(function() {
+    
+    setTimeout(function(){ 
+      document.getElementById("email").val = "";
+      document.getElementById("password").val = "";
+    }, 500);
+  });
+</script>
 
 </body>
 </html>
