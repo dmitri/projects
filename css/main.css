@@ -128,12 +128,15 @@ ul, li {
 	list-style-type: none;
 }
 
+/* template items _____________________________*/
+.header-onboard-logo {
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
 
 /*---------------------------------------------*/
 
-.focus-container {
-  background: #FFF;
-}
 input {
 	outline: none;
 	border: none;
@@ -169,6 +172,7 @@ textarea::-moz-placeholder { color: #adadad;}
 textarea:-ms-input-placeholder { color: #adadad;}
 
 /*---------------------------------------------*/
+
 button {
 	outline: none !important;
 	border: none;
@@ -214,22 +218,23 @@ iframe {
 
 .container-login100 {
   width: 100%;  
-  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
   background: var(--bgLight);  
 }
 
 .wrap-login100 {
-  width: 500px;
-  background: #fff;
+  background: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  padding: 50px;
+  width: 600px;
 }
 
 .pass-visibility-icon {
@@ -314,7 +319,11 @@ iframe {
 
 .login100-form-logo img,
 .login100-form-logo svg {
-  width: 180px;
+  width: 170px;
+}
+
+.header-onboard-logo svg {
+  width: 170px;
 }
 
 .login100-form-avatar img {
@@ -745,6 +754,7 @@ iframe {
 }
 
 .dash-block {
+  background: #FFF;
   border: 1px solid #dbdce0;
   border-radius: 5px;
   cursor: pointer;
