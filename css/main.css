@@ -799,7 +799,8 @@ input:focus::-webkit-input-placeholder {
   color: #222;
   font-family: Mulish-Bold;
   font-size: 1.7rem;
-  line-height: 1.2;
+  line-height: 1.1;
+  margin-bottom: 10px;
 }
 
 .dash-block h4.disabled {
@@ -823,8 +824,8 @@ input:focus::-webkit-input-placeholder {
 
 .dash-block h4 span.step-count {
   align-items: center;
-  background: #444;
-  color: #FFF;
+  border: 2px solid var(--primaryColor);
+  color: var(--primaryColor);
   padding: 15px;
   width: 40px;
   height: 40px;
