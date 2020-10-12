@@ -306,7 +306,8 @@ iframe {
   width: 175px;
 }
 
-.login100-form-logo img {
+.login100-form-logo img,
+.login100-form-logo svg {
   width: 180px;
 }
 
