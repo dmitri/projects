@@ -211,7 +211,7 @@
         
         <div class="wrap-50 m-t-45 m-b-35">
           
-          <div class="wrap-input50 validate-input no-border" data-validate="Currency">
+          <div class="wrap-input100 validate-input no-border" data-validate="Currency">
             <select class="select2" style="width: 100%; border-bottom: 1px solid #DDD;">
               <option>Select Currency  </option>
               <option value="USD" selected="selected">(USD) United States Dollars ($1000)</option>
@@ -295,22 +295,11 @@
               	<option value="XPT">Platinum Ounces</option>
             </select>
           </div>
-          
-          <div class="wrap-input50 validate-input no-border" data-validate="Time Zone">
-            <select class="select2" style="width: 100%; border-bottom: 1px solid #DDD;">
-              <option selected>Date Format  </option>
-              <option>Less than 15 assets</option>
-              <option>15-99 assets</option>
-              <option>100-499 assets</option>
-              <option>500-999 assets</option>
-              <option>More than 1000 assets</option>
-            </select>
-          </div>
         </div>
         
         <div class="wrap-100 m-t-45 m-b-35">
   				<div class="wrap-input100 validate-input no-border" data-validate = "Time Zone">
-  					<div class="form-group"><label class="control-label" for="new_account_account_time_24_format">Time 24 format</label><div class="radio-btns"><label class="active"><input type="radio" value="false" checked="checked" name="new_account[account][time_24_format]" id="new_account_account_time_24_format_false"><span>12-hour clock <br><small>(e.g. 4:20 PM)</small></span></label><label><input type="radio" value="true" name="new_account[account][time_24_format]" id="new_account_account_time_24_format_true"><span>24-hour clock <br><small>(e.g. 16:20)</small></span></label></div></div>
+  					<div class="form-group"><label class="control-label" for="new_account_account_time_24_format">Time Hour Format</label><div class="radio-btns"><label class="active"><input type="radio" value="false" checked="checked" name="new_account[account][time_24_format]" id="new_account_account_time_24_format_false"><span>12-hour clock <br><small>(e.g. 4:20 PM)</small></span></label><label><input type="radio" value="true" name="new_account[account][time_24_format]" id="new_account_account_time_24_format_true"><span>24-hour clock <br><small>(e.g. 16:20)</small></span></label></div></div>
   				</div>
         </div>
 
@@ -340,7 +329,7 @@
           </div>
         </div>
         
-        <div class="wrap-100 m-t-45 m-b-35">
+        <div class="wrap-100 m-t-10 m-b-35">
   				<div class="wrap-input100 validate-input no-border" style="padding-top: 14px;">
             <select class="select2-notag" style="width: 100%; border: none; border-bottom: 1px solid #DDD;">
               <option selected>Country of Operation </option>
@@ -352,21 +341,39 @@
         </div>
         
         
-        <div class="wrap-50 m-t-45 m-b-35">
-  				<div class="wrap-input25 validate-input no-border" style="padding-top: 14px;">
-            <label>Rate Type</label>
-            <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="flat" checked>
-              Flat Rate
-            </label>
-            <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="banded" >
-              Banded Rate
-            </label>
+        <div class="wrap-100 m-t-45 m-b-35">
+  				<div class="rate-options wrap-input100 validate-input no-border" style="padding-top: 14px;">
+            <h4>Choose Your Rate Type</h4>
+            
+            <div class="middle">
+              <label class="rate-type-option">
+                <input type="radio" name="radio" id="government" onclick="checkRateType()" />
+                <div class="box">
+                  <span>Government Rate<br/><i class="fas fa-angle-down"></i></span>
+                </div>
+              </label>
+
+              <label class="rate-type-option">
+                <input type="radio" name="radio" id="flat" onclick="checkRateType()" />
+                <div class="box">
+                  <span>Flat Rate<br/><i class="fas fa-angle-down"></i></span>
+                </div>
+              </label>
+              <label class="rate-type-option">
+                <input type="radio" name="radio" id="banded" onclick="checkRateType()" />
+                <div class="box">
+                  <span>Banded Rate<br/><i class="fas fa-angle-down"></i></span>
+                </div>
+              </label>
+            </div>
   				</div>
-          
-  				<div class="wrap-input75 validate-input no-border" data-validate = "Flat Rate Amount">
-            <div id="flat" style="padding-top: 23px;">
+        </div>
+        <div class="wrap-100 m-t-45 m-b-35">
+  				<div class="wrap-input100 validate-input no-border" data-validate = "Flat Rate Amount">
+            <div id="rate-type-government" class="rate-type">
+              Government
+            </div>
+            <div id="rate-type-flat" class="rate-type" style="padding-top: 23px;">
     					<input class="input50" type="text" name="flat_rate_amount" class="flat-rate-amount">
     					<span class="focus-input100" data-placeholder="Flat Rate Amount"></span>
               <div class="form-check" style="padding-top: 3px;">
@@ -376,8 +383,8 @@
                 </label>
               </div>
             </div>
-            <div id="banded">
-              
+            <div id="rate-type-banded" class="rate-type">
+              Banded
             </div>
   				</div>
         </div>

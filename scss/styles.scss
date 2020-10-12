@@ -15,6 +15,86 @@ select:-webkit-autofill:focus {
   padding: 40px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
+
+/* large radio buttons */
+.rate-options {
+  h4 {
+    font-family: var(--fontExtraBold);
+    margin-bottom: 25px;
+  }
+}
+.middle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  text-align: center;
+  
+  label {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 33%;
+    height: 150px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+    &:checked {
+      + .box {
+        background: var(--bgLight);
+        span {
+          color: #111;
+          transform: translate(0, 35px);
+          i { display: block; }
+          &:before {
+            transform: translateY(0px);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .box {
+    background-color: #FFF;
+    transition: all 250ms ease;
+    will-change: transition;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-family: var(--fontBold);
+    font-weight: 900;
+    width: 100%;
+    &:active{
+      transform: translateY(10px);
+    }
+    span {
+      transform: translate(0, 20px);
+      transition: all 300ms ease;
+      font-size: 1.2em;
+      user-select: none;
+      color: #222;
+      width: 100%;
+      i { display: none; }
+      &:before {
+        color: var(--primaryColor);
+        font-size: 1.3em;
+        display: block;
+        font-family: "Font Awesome 5 Free"; content: "\f058";
+        transform: translateY(-30px);
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.rate-type {
+  display: none;
+}
+
+
+
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
