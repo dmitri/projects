@@ -1,7 +1,4 @@
 // styles.scss
-body {
-  background: #999 !important;
-}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus textarea:-webkit-autofill,
@@ -10,6 +7,13 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+.work-slide {
+  background: #FFF;
+  border-radius: 4px;
+  padding: 40px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
