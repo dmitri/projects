@@ -339,7 +339,7 @@ iframe {
 }
 
 .supporting-text-link {
-  color: #57b846;
+  color: var(--primaryColor);
 }
 
 /*------------------------------------------------------------------
