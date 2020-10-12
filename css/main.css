@@ -338,9 +338,9 @@ iframe {
 .supporting-text,
 .supporting-text-link {
   font-size: .8rem;
-  max-width: 450px;
+  max-width: 600px;
   text-align: center;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 150px auto;
 }
 
 .supporting-text-link {
