@@ -33,6 +33,7 @@
   --primaryColorHover: #129873;
   
   /* backgrounds */
+  --bgLight: #f7f7f7;
   
   
   /* typography */
@@ -84,6 +85,7 @@
 body, html {
 	height: 100%;
 	font-family: var(--fontRegular);
+  background: var(--bgLight);
 }
 
 /*---------------------------------------------*/
@@ -126,8 +128,15 @@ ul, li {
 	list-style-type: none;
 }
 
+/* template items _____________________________*/
+.header-onboard-logo {
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
 
 /*---------------------------------------------*/
+
 input {
 	outline: none;
 	border: none;
@@ -163,6 +172,7 @@ textarea::-moz-placeholder { color: #adadad;}
 textarea:-ms-input-placeholder { color: #adadad;}
 
 /*---------------------------------------------*/
+
 button {
 	outline: none !important;
 	border: none;
@@ -194,7 +204,7 @@ iframe {
 .txt2 {
 	font-family: var(--fontRegular);
   font-size: 18px;
-  color: #57b846;
+  color: var(--primaryColor);
   line-height: 1.5;
 }
 
@@ -208,22 +218,25 @@ iframe {
 
 .container-login100 {
   width: 100%;  
-  min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #fff;  
+  background: var(--bgLight);  
 }
 
 .wrap-login100 {
-  width: 500px;
-  background: #fff;
+  background: #FFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  padding: 50px;
+  width: 100%;
+  max-width: 700px;
 }
 
 .pass-visibility-icon {
@@ -255,7 +268,7 @@ iframe {
 .login100-form-title {
   display: block;
   font-family: Mulish-ExtraBold;
-  font-size: 39px;
+  font-size: 33px;
   color: #333333;
   line-height: 1.2;
   text-align: center;
@@ -264,7 +277,7 @@ iframe {
 .login100-form-subhead {
   display: block;
   font-family: Mulish-Bold;
-  font-size: 20px;
+  font-size: 18px;
   color: #666;
   line-height: 1.2;
   text-align: center;
@@ -308,7 +321,11 @@ iframe {
 
 .login100-form-logo img,
 .login100-form-logo svg {
-  width: 180px;
+  width: 170px;
+}
+
+.header-onboard-logo svg {
+  width: 170px;
 }
 
 .login100-form-avatar img {
@@ -324,7 +341,7 @@ iframe {
 }
 
 .supporting-text-link {
-  color: #57b846;
+  color: var(--primaryColor);
 }
 
 /*------------------------------------------------------------------
@@ -340,10 +357,11 @@ iframe {
 .wrap-input50 {
   width: 48%;
   position: relative;
-  border-bottom: 2px solid #d9d9d9;
+  border: 1px solid #D1D3D9;
+  border-radius: 5px;
 }
 
-.wrap-input25{
+.wrap-input25 {
   width: 23%;
   position: relative;
   border-bottom: 2px solid #d9d9d9;
@@ -439,7 +457,8 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #d9d9d9;
+  border-radius: 5px;
+  border: 1px solid #D1D3D9;
 }
 
 .input100 {
@@ -479,7 +498,7 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #57b846;
+  background: var(--primaryColor);
 }
 
 .focus-input100::after {
@@ -672,10 +691,11 @@ iframe {
   z-index: 2;
 }
 
-.masthead img {
-  width: 100px;
+.masthead .logo svg {
+  height: auto;
+  width: 80px;
   margin-left: -5px;
-  margin-top:-5px;
+  margin-top: 0;
 }
 
 .sidebar-controls {
@@ -719,7 +739,8 @@ iframe {
   right: 0;
   height: 90%;
   overflow-y: scroll;
-  top: 100px;
+  top: 85px;
+  padding-top: 50px;
   z-index: 1;
 }
 
@@ -737,6 +758,7 @@ iframe {
 }
 
 .dash-block {
+  background: #FFF;
   border: 1px solid #dbdce0;
   border-radius: 5px;
   cursor: pointer;
@@ -884,19 +906,32 @@ iframe {
   color: #212529;
   font-size: 18px;
   border: none;
-  height: 40px;
-  border-radius: 0;
-  border-bottom: 2px solid #d9d9d9;
+  height: 52px;
+  border-radius: 20x;
+  border: 1px solid #D1D3D9;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   color: #999999;
 }
 
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 52px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 26px;
+  position: absolute;
+  top: 12px;
+  right: 1px;
+  width: 20px;
+}
+
 .iti {
-  color: #999999;
+color: #999999;
  font-size: 18px; 
- padding: 5px;
+ padding:11px 0;
 }
 
 .cancel-wrap {
@@ -913,7 +948,7 @@ iframe {
   width: 100%;
   height: 50px;
   padding: 0 20px;
-  border-radius: 8px;
+  border-radius: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
