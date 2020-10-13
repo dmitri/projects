@@ -63,22 +63,22 @@ select:-webkit-autofill:focus {
     cursor: pointer;
     position: relative;
     font-family: var(--fontBold);
-    font-weight: 900;
     width: 100%;
     &:active{
       transform: translateY(10px);
     }
     span {
-      transform: translate(0, 20px);
+      transform: translate(0, 35px);
       transition: all 300ms ease;
       font-size: 1.2em;
+      line-height: 1.2;
       user-select: none;
       color: #222;
       width: 100%;
       i { display: none; }
       &:before {
         color: var(--primaryColor);
-        font-size: 1.3em;
+        font-size: 1.2em;
         display: block;
         font-family: "Font Awesome 5 Free"; content: "\f058";
         transform: translateY(-30px);

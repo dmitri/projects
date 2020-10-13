@@ -339,8 +339,9 @@
             </select>
   				</div>
         </div>
-        
-        
+
+        <hr/>
+
         <div class="wrap-100 m-t-45 m-b-35">
   				<div class="rate-options wrap-input100 validate-input no-border" style="padding-top: 14px;">
             <h4>Choose Your Rate Type</h4>
@@ -349,7 +350,7 @@
               <label class="rate-type-option">
                 <input type="radio" name="radio" id="government" onclick="checkRateType()" />
                 <div class="box">
-                  <span>Government Rate<br/><i class="fas fa-angle-down"></i></span>
+                  <span>Government Rate (0.575/mile)<br/><i class="fas fa-angle-down"></i></span>
                 </div>
               </label>
 
@@ -369,22 +370,115 @@
   				</div>
         </div>
         <div class="wrap-100 m-t-45 m-b-35">
-  				<div class="wrap-input100 validate-input no-border" data-validate = "Flat Rate Amount">
-            <div id="rate-type-government" class="rate-type">
-              Government
+  				<div class="wrap-input100 validate-input no-border">
+            <div id="rate-type-government" class="rate-type ">
+              <h5>
+                Government Rate
+                
+              </h5>
             </div>
-            <div id="rate-type-flat" class="rate-type" style="padding-top: 23px;">
-    					<input class="input50" type="text" name="flat_rate_amount" class="flat-rate-amount">
-    					<span class="focus-input100" data-placeholder="Flat Rate Amount"></span>
-              <div class="form-check" style="padding-top: 3px;">
+            <div id="rate-type-flat" class="rate-type">
+              <h5>Flat Rate</h5>
+              <p>Informational text about flat rate</p>
+              <input class="form-control" type="text" placeholder="Flat Rate Amount">
+              <div class="form-check" style="padding: 3px 0 0 5px;">
                 <input type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1" style="color: #666;">
+                <label class="form-check-label" for="defaultCheck1" style="color: #666; padding-left: .5rem;">
                   Use USA IRS Rate (0.575 / mile)
                 </label>
               </div>
             </div>
             <div id="rate-type-banded" class="rate-type">
-              Banded
+              <h5>Banded Rate</h5>
+              <p>Informational text about banded rate</p>
+              <div class="form-row form-row-1">
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" id="inputBand1">
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" id="inputBand2">
+                </div>
+                <div class="form-group text-right col-md-4">
+                  <input type="text" class="form-control" id="inputBand3">
+                  <a href="#" class="add-row-1" onclick="$('.form-row-2').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Add new band</a>
+                </div>
+              </div>
+              <div class="form-row form-row-2" style="display: none;">
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" id="inputBand1-1">
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" id="inputBand1-2">
+                </div>
+                <div class="form-group text-right col-md-4">
+                  <div style="display: flex; align-items: center;">
+                    <input type="text" class="form-control" id="inputBand1-3">
+                    <a href="#" onclick="$('.form-row-2').hide(); $('.add-row-1').show();" style="margin-left: 10px;">
+                      <i class="fa fa-trash" style="font-size: 1.2rem; color: #999;"></i>
+                    </a>
+                  </div>
+                  <a href="#" class="add-row-2" onclick="$('.form-row-3').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Add new band</a>
+                </div>
+              </div>
+              <div class="form-row form-row-3" style="display: none;">
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" id="inputBand2-1">
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" id="inputBand2-2">
+                </div>
+                <div class="form-group col-md-4">
+                  <div style="display: flex; align-items: center;">
+                    <input type="text" class="form-control" id="inputBand3">
+                    <a href="#" onclick="$('.form-row-3').hide(); $('.add-row-2').show();" style="margin-left: 10px;">
+                      <i class="fa fa-trash" style="font-size: 1.2rem; color: #999;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  				</div>
+        </div>
+        
+        <hr/>
+        
+        <div class="wrap-100 m-t-45 m-b-35">
+  				<div class="rate-options wrap-input100 validate-input no-border" style="padding-top: 14px;">
+            <h4>Mileage Approval Setup</h4>
+            
+            <div class="middle">
+              <label class="approval-pref-option">
+                <input type="radio" name="radio" id="automatic" onclick="checkApprovalPref()" />
+                <div class="box">
+                  <span>Automatic Approval<br/><i class="fas fa-angle-down"></i></span>
+                </div>
+              </label>
+
+              <label class="approval-pref-option">
+                <input type="radio" name="radio" id="semi" onclick="checkApprovalPref()" />
+                <div class="box">
+                  <span>Semi-Automatic Approval<br/><i class="fas fa-angle-down"></i></span>
+                </div>
+              </label>
+              <label class="approval-pref-option">
+                <input type="radio" name="radio" id="manual" onclick="checkApprovalPref()" />
+                <div class="box">
+                  <span>Manual Approval<br/><i class="fas fa-angle-down"></i></span>
+                </div>
+              </label>
+            </div>
+  				</div>
+        </div>
+        <div class="wrap-100 m-t-45 m-b-35">
+  				<div class="wrap-input100 validate-input no-border">
+            <div id="approval-pref-automatic" class="approval-pref">
+              <h5>Automatic Approval</h5>
+            </div>
+            <div id="approval-pref-semi" class="approval-pref">
+    					<h5>Semi-Automatic</h5>
+            </div>
+            <div id="approval-pref-manual" class="approval-pref">
+              <h5>Manual</h5>
             </div>
   				</div>
         </div>

@@ -118,6 +118,19 @@ function checkRateType() {
   }
 }
 
+function checkApprovalPref() {  
+  $('.approval-pref').hide();
+  if(document.getElementById('automatic').checked) { 
+    $("#approval-pref-automatic").fadeIn();
+  } 
+  else if(document.getElementById('semi').checked) { 
+    $("#approval-pref-semi").fadeIn();
+  } 
+  else if(document.getElementById('manual').checked) { 
+   $("#approval-pref-manual").fadeIn();
+  }
+}
+
 
 
 $(document).ready(function() {
