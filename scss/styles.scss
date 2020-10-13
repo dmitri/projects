@@ -17,7 +17,7 @@ select:-webkit-autofill:focus {
 }
 
 /* large radio buttons */
-.rate-options {
+.work-area-3 {
   h4 {
     font-family: var(--fontExtraBold);
     margin-bottom: 25px;
@@ -30,11 +30,15 @@ select:-webkit-autofill:focus {
   text-align: center;
   
   label {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 0 3px rgba(0,0,0,0.25);
     display: flex;
     margin: 0 10px 0 0;
     width: 33%;
     height: 150px;
+    
+    &.last{
+      margin-right: 0;
+    }
   }
   
   input[type="radio"] {

@@ -808,9 +808,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 .dash-block h4 i {
-  color: #57b846;
-  font-size: 3rem;
+  color: var(--primaryColor);
+  font-size: 2.7rem;
   display: none;
+  margin-bottom: 7px;
 }
 
 

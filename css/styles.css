@@ -14,7 +14,7 @@ select:-webkit-autofill:focus {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
 
 /* large radio buttons */
-.rate-options h4 {
+.work-area-3 h4 {
   font-family: var(--fontExtraBold);
   margin-bottom: 25px; }
 
@@ -24,11 +24,13 @@ select:-webkit-autofill:focus {
   width: 100%;
   text-align: center; }
   .middle label {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     display: flex;
     margin: 0 10px 0 0;
     width: 33%;
     height: 150px; }
+    .middle label.last {
+      margin-right: 0; }
   .middle input[type="radio"] {
     display: none; }
     .middle input[type="radio"]:checked + .box {

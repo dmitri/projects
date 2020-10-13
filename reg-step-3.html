@@ -320,9 +320,9 @@
   			</span>
         
         <div class="wrap-100 m-t-45 m-b-15">
-  				<div class="wrap-input100 validate-input" data-validate = "Name this Rate Set">
-  					<input class="input100" type="text" name="rate_name">
-  					<span class="focus-input100" data-placeholder="Name this Rate Set"></span>
+          <h4>Name This Rate Set</h4>
+  				<div id="rate-name-input" class="wrap-input100 validate-input">
+  					<input class="input100" type="text" name="rate_name" value="Default Rate">
   				</div>
           <div style="font-size: 1rem;color: #666; margin-top:5px;">
             "Default Rate" is the recommended name for your first rate setup.
@@ -330,57 +330,72 @@
         </div>
         
         <div class="wrap-100 m-t-10 m-b-35">
-  				<div class="wrap-input100 validate-input no-border" style="padding-top: 14px;">
-            <select class="select2-notag" style="width: 100%; border: none; border-bottom: 1px solid #DDD;">
-              <option selected>Country of Operation </option>
-              <option>United States</option>
-              <option>Canada</option>
-              <option>United Kingdom</option>
-            </select>
-  				</div>
+  				
         </div>
 
         <hr/>
 
-        <div class="wrap-100 m-t-45 m-b-35">
-  				<div class="rate-options wrap-input100 validate-input no-border" style="padding-top: 14px;">
-            <h4>Choose Your Rate Type</h4>
+        <div class="wrap-100 m-t-35 m-b-35">
+          <div class="rate-options wrap-input100 validate-input no-border">
+            <div style="display: flex; justify-content: space-between;">
+              <h4>Set Mileage Rate</h4>
+              <div id="coo-wrapper" style="display: none;">
+                United States 
+                <a href="#" id="country-of-operation-trigger" class="txt2" 
+                    onclick="$('#rate-choices, #coo-wrapper').hide(); $('#coo-control').fadeIn(); return false;">
+                  change country
+                </a>
+              </div>
+            </div>
             
-            <div class="middle">
-              <label class="rate-type-option">
-                <input type="radio" name="radio" id="government" onclick="checkRateType()" />
-                <div class="box">
-                  <span>Government Rate <div style="font-size: 1rem; color: #888;">(0.575/mile)</div><i class="fas fa-angle-down"></i></span>
-                </div>
-              </label>
+            <div id="coo-control">
+              <label>Country of Operation (rates are determined by country)</label>
+              <select class="select2-notag" 
+                style="width: 100%; border: none; border-bottom: 1px solid #DDD;" 
+                onchange="$('#coo-control').hide(); $('#coo-wrapper').show(); $('#rate-choices').fadeIn();">
+                <option selected>Select Company Country of Operation</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+              </select>
+            </div>
+            
+            <div id="rate-choices" style="margin-top: 10px; display: none;">
+              <label>Select Rate Type</label>
+              <div class="middle">
+                <label class="rate-type-option">
+                  <input type="radio" name="radio" id="government" onclick="checkRateType()" />
+                  <div class="box">
+                    <span>Government Rate <div style="font-size: 1rem; color: #888;">(0.575/mile)</div><i class="fas fa-angle-down"></i></span>
+                  </div>
+                </label>
 
-              <label class="rate-type-option">
-                <input type="radio" name="radio" id="flat" onclick="checkRateType()" />
-                <div class="box">
-                  <span>Flat Rate<br/><i class="fas fa-angle-down"></i></span>
-                </div>
-              </label>
-              <label class="rate-type-option">
-                <input type="radio" name="radio" id="banded" onclick="checkRateType()" />
-                <div class="box">
-                  <span>Banded Rate<br/><i class="fas fa-angle-down"></i></span>
-                </div>
-              </label>
-            </div>
-  				</div>
-        </div>
-        <div class="wrap-100 m-t-45 m-b-35">
-  				<div class="wrap-input100 validate-input no-border">
-            <div id="rate-type-government" class="rate-type ">
-              <h5>
-                Terrific! Your drivers will be reimbursed at the USA IRS-backed government rate of 0.575 per mile.
-              </h5>
-            </div>
-            <div id="rate-type-flat" class="rate-type">
-              <p style="margin-bottom: 5px;">Enter the flat reimbursement rate amount:</p>
-              <input class="form-control" type="text" placeholder="Flat Rate Amount">
-            </div>
-            <div id="rate-type-banded" class="rate-type">
+                <label class="rate-type-option">
+                  <input type="radio" name="radio" id="flat" onclick="checkRateType()" />
+                  <div class="box">
+                    <span>Flat Rate<br/><i class="fas fa-angle-down"></i></span>
+                  </div>
+                </label>
+                <label class="rate-type-option last">
+                  <input type="radio" name="radio" id="banded" onclick="checkRateType()" />
+                  <div class="box">
+                    <span>Banded Rate<br/><i class="fas fa-angle-down"></i></span>
+                  </div>
+                </label>
+              </div>
+    				
+
+  				    <div class="wrap-input100 validate-input no-border m-t-25">
+              <div id="rate-type-government" class="rate-type ">
+                <h5>
+                  Terrific! Your drivers will be reimbursed at the USA IRS-backed government rate of 0.575 per mile.
+                </h5>
+              </div>
+              <div id="rate-type-flat" class="rate-type">
+                <p style="margin-bottom: 5px;">Enter the flat reimbursement rate amount:</p>
+                <input class="form-control" type="text" placeholder="Flat Rate Amount">
+              </div>
+              <div id="rate-type-banded" class="rate-type">
               <h5>Banded Rate</h5>
               <p style="margin-bottom: 5px;">Banded rates are best for...</p>
               <div class="form-row form-row-1">
@@ -429,14 +444,16 @@
                 </div>
               </div>
             </div>
-  				</div>
+            </div>
+  				  </div>
+          </div>
         </div>
         
         <hr/>
         
-        <div class="wrap-100 m-t-45 m-b-35">
-  				<div class="rate-options wrap-input100 validate-input no-border" style="padding-top: 14px;">
-            <h4>Mileage Approval Setup</h4>
+        <div class="wrap-100 m-t-35 m-b-35">
+  				<div class="rate-options wrap-input100 validate-input no-border">
+            <h4>Set Approval Preference</h4>
             
             <div class="middle">
               <label class="approval-pref-option">
@@ -452,7 +469,7 @@
                   <span>Semi-Automatic Approval<br/><i class="fas fa-angle-down"></i></span>
                 </div>
               </label>
-              <label class="approval-pref-option">
+              <label class="approval-pref-option last">
                 <input type="radio" name="radio" id="manual" onclick="checkApprovalPref()" />
                 <div class="box">
                   <span>Manual Approval<br/><i class="fas fa-angle-down"></i></span>
@@ -474,8 +491,8 @@
             </div>
   				</div>
         </div>
-      
-        <div class="wrap-50 m-t-45 m-b-35">
+        <hr/>
+        <div class="wrap-50 m-t-35 m-b-35">
           <div class="wrap-input50 no-border cancel-wrap">
             <a href="#" class="cancel-back-to-dash">Cancel</a>
           </div>
