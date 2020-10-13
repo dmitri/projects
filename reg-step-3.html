@@ -350,7 +350,7 @@
               <label class="rate-type-option">
                 <input type="radio" name="radio" id="government" onclick="checkRateType()" />
                 <div class="box">
-                  <span>Government Rate (0.575/mile)<br/><i class="fas fa-angle-down"></i></span>
+                  <span>Government Rate <div style="font-size: 1rem; color: #888;">(0.575/mile)</div><i class="fas fa-angle-down"></i></span>
                 </div>
               </label>
 
@@ -373,24 +373,16 @@
   				<div class="wrap-input100 validate-input no-border">
             <div id="rate-type-government" class="rate-type ">
               <h5>
-                Government Rate
-                
+                Terrific! Your drivers will be reimbursed at the USA IRS-backed government rate of 0.575 per mile.
               </h5>
             </div>
             <div id="rate-type-flat" class="rate-type">
-              <h5>Flat Rate</h5>
-              <p>Informational text about flat rate</p>
+              <p style="margin-bottom: 5px;">Enter the flat reimbursement rate amount:</p>
               <input class="form-control" type="text" placeholder="Flat Rate Amount">
-              <div class="form-check" style="padding: 3px 0 0 5px;">
-                <input type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1" style="color: #666; padding-left: .5rem;">
-                  Use USA IRS Rate (0.575 / mile)
-                </label>
-              </div>
             </div>
             <div id="rate-type-banded" class="rate-type">
               <h5>Banded Rate</h5>
-              <p>Informational text about banded rate</p>
+              <p style="margin-bottom: 5px;">Banded rates are best for...</p>
               <div class="form-row form-row-1">
                 <div class="form-group col-md-4">
                   <input type="text" class="form-control" id="inputBand1">

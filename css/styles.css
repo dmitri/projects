@@ -60,6 +60,7 @@ select:-webkit-autofill:focus {
       line-height: 1.2;
       user-select: none;
       color: #222;
+      font-weight: 900;
       width: 100%; }
       .middle .box span i {
         display: none; }
@@ -73,7 +74,8 @@ select:-webkit-autofill:focus {
         opacity: 0;
         transition: all 300ms ease-in-out; }
 
-.rate-type {
+.rate-type,
+.approval-pref {
   display: none; }
 
 /*!
