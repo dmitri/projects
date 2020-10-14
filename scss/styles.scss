@@ -25,16 +25,16 @@ select:-webkit-autofill:focus {
 }
 .middle {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   text-align: center;
   
-  label {
+  > label {
     box-shadow: 0 0 3px rgba(0,0,0,0.25);
     display: flex;
-    margin: 0 10px 0 0;
-    width: 33%;
-    height: 150px;
+    margin: 0 0 15px 0;
+    width: 100%;
+    min-height: 100px;
     
     &.last{
       margin-right: 0;
@@ -48,11 +48,29 @@ select:-webkit-autofill:focus {
         background: var(--bgLight);
         span {
           color: #111;
-          transform: translate(0, 35px);
+          width: 35%;
+          margin-right: 30px;
+          display: flex;
+          padding-left: 20px;
+          align-items: center;
+          justify-content: flex-start;
           i { display: block; }
           &:before {
-            transform: translateY(0px);
+            color: var(--primaryColor);
+            content: "\f058";
+            transform: translateX(0px);
             opacity: 1;
+            font-weight: 900;
+          }
+        }
+        .option-extra {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          
+          &.left {
+            align-items: flex-start;
           }
         }
       }
@@ -68,27 +86,71 @@ select:-webkit-autofill:focus {
     position: relative;
     font-family: var(--fontBold);
     width: 100%;
-    &:active{
-      transform: translateY(10px);
-    }
+
     span {
-      transform: translate(0, 35px);
       transition: all 300ms ease;
       font-size: 1.2em;
       line-height: 1.2;
       user-select: none;
       color: #222;
       font-weight: 900;
-      width: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      justify-content: center;
+      width: auto;
+      transition: all 300ms ease-in-out;
       i { display: none; }
       &:before {
-        color: var(--primaryColor);
+        color: #555;
         font-size: 1.2em;
         display: block;
-        font-family: "Font Awesome 5 Free"; content: "\f058";
-        transform: translateY(-30px);
-        opacity: 0;
+        font-family: "Font Awesome 5 Free"; content: "\f111";
+        margin-right: 10px;
+        /*transform: translateX(-30px);*/
+        opacity: 1;
+        font-weight: 100;
         transition: all 300ms ease-in-out;
+      }
+    }
+    .option-extra {
+      display: none;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      padding-right: 20px;
+
+      &.banded {
+        padding: 5px 20px 17px 0px;
+        .form-group {
+          margin: .5rem 0 0 0;
+        }
+      }
+      
+      .option-extra-option {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 7px 0;
+        align-items: center;
+        width: 100%;
+        
+        label {
+          cursor: pointer;
+          font-family: var(--fontLight);
+          margin: 0;
+        }
+        
+        input[type="text"],
+        input[type="text"]:focus {
+          outline: .5px solid #DDD;
+          width: 38%;
+        }
+        
+        input[type="radio"] {
+          display: inline-block;
+          margin: 0 6px 0 0;
+        }
       }
     }
   }
@@ -99,6 +161,13 @@ select:-webkit-autofill:focus {
   display: none;
 }
 
+.form-row,
+.rate-type {
+  input:focus {
+    outline: 1px solid #999;
+  }
+}
+
 
 
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
@@ -106,4 +175,3 @@ select:-webkit-autofill:focus {
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
-

@@ -105,18 +105,6 @@ function closePane() {
   $('.stage-overlay, .company-form-pane').hide();
 }
 
-function checkRateType() {  
-  $('.rate-type').hide();
-  if(document.getElementById('government').checked) { 
-    $("#rate-type-government").fadeIn();
-  } 
-  else if(document.getElementById('flat').checked) { 
-    $("#rate-type-flat").fadeIn();
-  } 
-  else if(document.getElementById('banded').checked) { 
-   $("#rate-type-banded").fadeIn();
-  }
-}
 
 function checkApprovalPref() {  
   $('.approval-pref').hide();

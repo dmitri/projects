@@ -2,6 +2,11 @@
 [ Mulish FONT ]*/
 
 @font-face {
+  font-family: Mulish-Light;
+  src: url('../fonts/mulish/Mulish-Light.ttf'); 
+}
+
+@font-face {
   font-family: Mulish-Regular;
   src: url('../fonts/mulish/Mulish-Regular.ttf'); 
 }
@@ -37,6 +42,7 @@
   
   
   /* typography */
+  --fontLight: Mulish-Light, arial, sans-serif;
   --fontRegular: Mulish-Regular, arial, sans-serif;
   --fontMedium: Mulish-Medium, arial, sans-serif;;
   --fontSemiBold: Mulish-SemiBold, arial, sans-serif;;
@@ -913,6 +919,10 @@ input:focus::-webkit-input-placeholder {
   display: none;
   margin: 0 auto 100px auto;
   max-width: 700px;
+}
+
+.work-area-3 {
+  max-width: 800px;
 }
 
 /* utility classes */
