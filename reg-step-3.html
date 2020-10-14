@@ -338,17 +338,16 @@
         <div class="wrap-100 m-t-35 m-b-35">
           <div class="rate-options wrap-input100 validate-input no-border">
             <div style="display: flex; justify-content: space-between;">
-              <h4>Set Mileage Rate</h4>
-              <div id="coo-wrapper" style="display: none;">
-                United States 
+              <h4>Select Mileage Rate for: <u>US</u></h4>
+              <div id="coo-wrapper" style="display: block;">
                 <a href="#" id="country-of-operation-trigger" class="txt2" 
                     onclick="$('#rate-choices, #coo-wrapper').hide(); $('#coo-control').fadeIn(); return false;">
-                  change country
+                  Change country of operation
                 </a>
               </div>
             </div>
             
-            <div id="coo-control">
+            <div id="coo-control" style="display: none;">
               <label>1) Country of Operation (rates are determined by country)</label>
               <select class="select2-notag" 
                 style="width: 100%; border: none; border-bottom: 1px solid #DDD;" 
@@ -360,8 +359,7 @@
               </select>
             </div>
             
-            <div id="rate-choices" style="margin-top: 10px; display: none;">
-              <label>2) Choose Rate to Set Amount(s)</label>
+            <div id="rate-choices" style="margin-top: 10px; display: block;">
               <div class="middle">
                 <label class="rate-type-option">
                   <input type="radio" name="radio" id="government" checked/>
