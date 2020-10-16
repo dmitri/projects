@@ -364,7 +364,7 @@
                 <label class="rate-type-option">
                   <input type="radio" name="radio" id="government" checked/>
                   <div class="box">
-                    <span>Government Rate <br/>(US $0.575/mile)</span>
+                    <span><div>Government Rate <small>(US $0.575/mile)</small></div></span>
                     <div class="option-extra">
                       <p>Drivers will be reimbursed at the US, IRS-backed rate of $0.575 per mile.</p>
                     </div>
@@ -456,11 +456,25 @@
                 <input type="radio" name="radio2" id="automatic" checked />
                 <div class="box">
                   <span>Automatic</span>
-                  <div class="option-extra left">
+                  <div class="option-extra left" style="padding: 10px 0;">
                     <div class="option-extra-option">
                       <div>
-                        <input type="radio" name="radio2-1" id="autoApprove1" value="autoOption1" checked>
-                        <label for="customApprove1">If miles / day less than</label>
+                        <input type="radio" name="radio2-2" id="senuApprove1" value="semiOption1" checked>
+                        <label for="semiApprove1">If miles / day less than</label>
+                      </div>
+                      <input type="text">
+                    </div>
+                    <div class="option-extra-option">
+                      <div>
+                        <input type="radio" name="radio2-2" id="semiApprove2" value="semiOption2">
+                        <label for="semiApprove2">If GPS percent is less than</label>
+                      </div>
+                      <input type="text">
+                    </div>
+                    <div class="option-extra-option">
+                      <div>
+                        <input type="radio" name="radio2-2" id="semiApprove3" value="semiOption3">
+                        <label for="semiApprove3">If reimbursement is less than</label>
                       </div>
                       <input type="text">
                     </div>
@@ -468,37 +482,7 @@
                 </div>
               </label>
 
-              <label class="approval-pref-option">
-                <input type="radio" name="radio2" id="semi"/>
-                <div class="box">
-                  <span>Semi-Automatic</span>
-                  <div class="option-extra left">
-                    <div class="option-extra left">
-                      <div class="option-extra-option">
-                        <div>
-                          <input type="radio" name="radio2-2" id="senuApprove1" value="semiOption1" checked>
-                          <label for="semiApprove1">If miles / day less than</label>
-                        </div>
-                        <input type="text">
-                      </div>
-                      <div class="option-extra-option">
-                        <div>
-                          <input type="radio" name="radio2-2" id="semiApprove2" value="semiOption2">
-                          <label for="semiApprove2">If GPS percent is less than</label>
-                        </div>
-                        <input type="text">
-                      </div>
-                      <div class="option-extra-option">
-                        <div>
-                          <input type="radio" name="radio2-2" id="semiApprove3" value="semiOption3">
-                          <label for="semiApprove3">If reimbursement is less than</label>
-                        </div>
-                        <input type="text">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </label>
+
               <label class="approval-pref-option last">
                 <input type="radio" name="radio2" id="manual" />
                 <div class="box">
@@ -511,7 +495,6 @@
             </div>
   				</div>
         </div>
-        <hr/>
         <div class="wrap-50 m-t-35 m-b-35">
           <div class="wrap-input50 no-border cancel-wrap">
             <a href="#" class="cancel-back-to-dash">Cancel</a>
