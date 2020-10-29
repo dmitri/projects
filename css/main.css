@@ -765,14 +765,20 @@ input:focus::-webkit-input-placeholder {
 }
 
 .work-area {
-  position: fixed;
   left: 80px;
   right: 0;
-  height: 90%;
+  height: 100%;
   overflow-y: scroll;
-  top: 85px;
+  top: 0px;
   padding-top: 50px;
-  z-index: 1;
+  z-index: 100;
+}
+
+.work-area-dash {
+  position: fixed;
+  top: 120px;
+  left: 0px;
+  right: 0px;
 }
 
 .dash-block-container {
@@ -790,7 +796,7 @@ input:focus::-webkit-input-placeholder {
 
 .dash-block {
   background: #FFF;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
   display: none;
   height: auto;
@@ -814,9 +820,20 @@ input:focus::-webkit-input-placeholder {
 .dash-block a h4 {
   color: #222;
   font-family: Mulish-Bold;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   line-height: 1.1;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.dash-block a img {
+  display: block;
+  margin: 15px auto;
+  height: 60px;
+}
+
+.dash-block a p {
+  text-align: center;
 }
 
 .dash-block h4.disabled {
@@ -927,13 +944,21 @@ input:focus::-webkit-input-placeholder {
 .work-area-3,
 .work-area-4 {
   display: none;
-  margin: 0 auto 100px auto;
-  max-width: 700px;
+  margin: 0 auto 0 80px;
+  height: 100%;
+  max-width: calc(100% - 80px);
+  position: fixed;
 }
 
-.work-area-3 {
-  max-width: 800px;
+.form-container {
+  max-width: 700px; margin: 0 auto;
+  overflow-y: scroll;
+  height: 100%;'
+  padding-top: 50px;
+  padding-left:30px;
+  padding-right: 30px;
 }
+
 
 /* utility classes */
 .no-border {

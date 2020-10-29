@@ -9,9 +9,13 @@ select:-webkit-autofill:focus {
 
 .work-slide {
   background: #FFF;
-  border-radius: 4px;
-  padding: 40px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100; }
 
 /* large radio buttons */
 .work-area-3 h4 {
@@ -34,7 +38,7 @@ select:-webkit-autofill:focus {
   .middle input[type="radio"] {
     display: none; }
     .middle input[type="radio"]:checked + .box {
-      background: var(--bgLight); }
+      border: 1px solid var(--primaryColor); }
       .middle input[type="radio"]:checked + .box span {
         color: #111;
         width: 35%;
@@ -60,6 +64,7 @@ select:-webkit-autofill:focus {
           align-items: flex-start; }
   .middle .box {
     background-color: #FFF;
+    border: 1px solid var(--bgLight);
     transition: all 250ms ease;
     will-change: transition;
     display: flex;

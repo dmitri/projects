@@ -11,9 +11,13 @@ select:-webkit-autofill:focus {
 
 .work-slide {
   background: #FFF;
-  border-radius: 4px;
-  padding: 40px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 /* large radio buttons */
@@ -45,7 +49,7 @@ select:-webkit-autofill:focus {
     display: none;
     &:checked {
       + .box {
-        background: var(--bgLight);
+        border: 1px solid var(--primaryColor);
         span {
           color: #111;
           width: 35%;
@@ -78,6 +82,7 @@ select:-webkit-autofill:focus {
   }
   .box {
     background-color: #FFF;
+    border:1px solid var(--bgLight);
     transition: all 250ms ease;
     will-change: transition;
     display: flex;
