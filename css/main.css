@@ -39,6 +39,7 @@
   
   /* backgrounds */
   --bgLight: #f7f7f7;
+  --bgLight: #eeeff1;
   
   
   /* typography */
@@ -704,7 +705,7 @@ input:focus::-webkit-input-placeholder {
   background: #FFF;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: fixed;
   top: 0;
   left: 0; right: 0;
@@ -720,6 +721,13 @@ input:focus::-webkit-input-placeholder {
   margin-left: -5px;
   margin-top: 0;
 }
+
+.sidebar .logo svg {
+  height: 40px;
+  width: 55px;
+  margin-top: 16px;
+}
+
 
 .sidebar-controls {
   border-right: 1px solid #dbdce0;
@@ -758,7 +766,7 @@ input:focus::-webkit-input-placeholder {
 
 .work-area {
   position: fixed;
-  left: 0;
+  left: 80px;
   right: 0;
   height: 90%;
   overflow-y: scroll;
@@ -782,7 +790,6 @@ input:focus::-webkit-input-placeholder {
 
 .dash-block {
   background: #FFF;
-  border: 1px solid #dbdce0;
   border-radius: 5px;
   cursor: pointer;
   display: none;
@@ -790,6 +797,8 @@ input:focus::-webkit-input-placeholder {
   padding: 15px;
   width: 300px;
   margin: 0 20px 20px 0;
+  box-shadow: 0 1px 6px rgba(0,18,71,.1), 0 1px 3px rgba(0,18,71,.1);
+  transition: box-shadow .2s linear;
 }
 
 .message-2,
