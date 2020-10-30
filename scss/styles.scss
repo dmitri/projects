@@ -52,7 +52,7 @@ select:-webkit-autofill:focus {
         border: 1px solid var(--primaryColor);
         span {
           color: #111;
-          width: 35%;
+          width: 30%;
           margin-right: 30px;
           display: flex;
           padding-left: 20px;
@@ -67,6 +67,7 @@ select:-webkit-autofill:focus {
             font-weight: 900;
           }
         }
+        &.govt span {width: 48%;}
         .option-extra {
           display: flex;
           flex-direction: column;
@@ -91,6 +92,8 @@ select:-webkit-autofill:focus {
     position: relative;
     font-family: var(--fontBold);
     width: 100%;
+    
+    small { display: block; }
 
     span {
       transition: all 300ms ease;

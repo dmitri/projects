@@ -726,6 +726,7 @@ input:focus::-webkit-input-placeholder {
   height: 40px;
   width: 55px;
   margin-top: 16px;
+  margin-left: -7px;
 }
 
 
@@ -951,12 +952,18 @@ input:focus::-webkit-input-placeholder {
 }
 
 .form-container {
-  max-width: 700px; margin: 0 auto;
+  max-width: 100%; 
+  margin: 0 auto;
   overflow-y: scroll;
-  height: 100%;'
-  padding-top: 50px;
+  height: 100%;
+  padding-top: 65px;
   padding-left:30px;
   padding-right: 30px;
+}
+
+.form-limiter {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 

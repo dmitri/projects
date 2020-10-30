@@ -41,7 +41,7 @@ select:-webkit-autofill:focus {
       border: 1px solid var(--primaryColor); }
       .middle input[type="radio"]:checked + .box span {
         color: #111;
-        width: 35%;
+        width: 30%;
         margin-right: 30px;
         display: flex;
         padding-left: 20px;
@@ -55,6 +55,8 @@ select:-webkit-autofill:focus {
           transform: translateX(0px);
           opacity: 1;
           font-weight: 900; }
+      .middle input[type="radio"]:checked + .box.govt span {
+        width: 48%; }
       .middle input[type="radio"]:checked + .box .option-extra {
         display: flex;
         flex-direction: column;
@@ -73,6 +75,8 @@ select:-webkit-autofill:focus {
     position: relative;
     font-family: var(--fontBold);
     width: 100%; }
+    .middle .box small {
+      display: block; }
     .middle .box span {
       transition: all 300ms ease;
       font-size: 1.2em;

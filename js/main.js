@@ -137,7 +137,7 @@ $(document).ready(function() {
     event.preventDefault();
     $('.welcome-header').removeClass('animate__animated animate__slideInDown animate__repeat-1');
     $('.work-area-2, .work-area-3, .work-area-4').hide();
-    $('.work-area-dash').addClass('animate__animated animate__slideInLeft animate__faster animate__repeat-1').css('display', 'block');
+    $('.work-area-dash').addClass('animate__animated animate__fadeIn animate__faster animate__repeat-1').css('display', 'block');
   });
   
   $(document).on('click', '.save-company', function(event) {
