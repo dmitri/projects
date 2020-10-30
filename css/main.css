@@ -597,9 +597,6 @@ input:focus::-webkit-input-placeholder {
   background-color: var(--primaryColor);
   border-radius: 2px;
 
-  
-  box-shadow: 0 10px 30px 0 rgba(0, 18, 71, 0.2);
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -775,10 +772,14 @@ input:focus::-webkit-input-placeholder {
   z-index: 100;
 }
 
+.row-add {
+  display: none;
+}
+
 .work-area-dash {
   position: fixed;
   top: 120px;
-  left: 0px;
+  left: 80px;
   right: 0px;
 }
 
@@ -789,6 +790,10 @@ input:focus::-webkit-input-placeholder {
   padding: 30px;
   margin-left: 0;
   justify-content: center;
+}
+
+.form-row {
+  margin-bottom: 10px;
 }
 
 .work-area.sidebar-open {
