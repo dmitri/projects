@@ -536,16 +536,13 @@
                 <div class="col">
                   <input type="email" class="form-control" placeholder="Email">
                 </div>
-              </div>
-              <div class="form-row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
                 </div>
               </div>
               <div class="form-row">
@@ -558,6 +555,14 @@
                 <div class="col">
                   <input type="email" class="form-control" placeholder="Email">
                 </div>
+                <div class="col">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
+                </div>
               </div>
               <div class="form-row">
                 <div class="col">
@@ -568,6 +573,33 @@
                 </div>
                 <div class="col">
                   <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="col">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+                <div class="col">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="col">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
                 </div>
               </div>
               <div id="hidden-1" class="form-row row-add">
@@ -580,6 +612,14 @@
                 <div class="col">
                   <input type="email" class="form-control" placeholder="Email">
                 </div>
+                <div class="col">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
+                </div>
               </div>
               <div id="hidden-2" class="form-row row-add">
                 <div class="col">
@@ -590,6 +630,14 @@
                 </div>
                 <div class="col">
                   <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="col">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
                 </div>
               </div>
               <div id="hidden-3" class="form-row row-add">
@@ -602,6 +650,14 @@
                 <div class="col">
                   <input type="email" class="form-control" placeholder="Email">
                 </div>
+                <div class="col">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
+                </div>
               </div>
               <div id="hidden-4" class="form-row row-add">
                 <div class="col">
@@ -613,10 +669,24 @@
                 <div class="col">
                   <input type="email" class="form-control" placeholder="Email">
                 </div>
+                <div class="col">
+                  <select class="form-control" id="exampleFormControlSelect2">
+                    <option selected>Select User Type</option>
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+                  </select>
+                </div>
               </div>
               <div class="form-row">
                 <div class="col">
-                  <a href="#" class="add-user-invite txt2" onclick="$('.hidden-1').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
+                  <a href="#" class="add-user-invite1 txt2" onclick="$('#hidden-1').css('display', 'flex'); $('.add-user-invite2').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
+
+                  <a href="#" class="add-user-invite2 add-user-invite txt2" onclick="$('#hidden-2').css('display', 'flex'); $('.add-user-invite3').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
+
+                  <a href="#" class="add-user-invite3 add-user-invite txt2" onclick="$('#hidden-3').css('display', 'flex'); $('.add-user-invite4').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
+                  
+                  <a href="#" class="add-user-invite4 add-user-invite txt2" onclick="$('#hidden-4').css('display', 'flex'); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
                 </div>
               </div>
       			</span>

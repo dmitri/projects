@@ -967,8 +967,12 @@ input:focus::-webkit-input-placeholder {
 }
 
 .form-limiter {
-  max-width: 700px;
+  max-width: 790px;
   margin: 0 auto;
+}
+
+.add-user-invite {
+  display: none;
 }
 
 
