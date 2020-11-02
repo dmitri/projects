@@ -859,7 +859,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 .dash-block.complete h4 i {
-  display: block;
+  display: flex;
 }
 
 .dash-block h4 span.step-count {
