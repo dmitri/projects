@@ -405,13 +405,16 @@
                       <div class="option-extra banded">
                         <div class="form-row form-row-1">
                           <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="inputBand1">
+                            <strong>Distance From</strong><br/>
+                            <input type="text" class="form-control" id="inputBand1" placeholder="e.g., 0">
                           </div>
                           <div class="form-group col-md-4">
-                            <input type="text" class="form-control" id="inputBand2">
+                            <strong>Distance To</strong><br/>
+                            <input type="text" class="form-control" id="inputBand2" placeholder="e.g., 5,000">
                           </div>
-                          <div class="form-group text-right col-md-4">
-                            <input type="text" class="form-control" id="inputBand3">
+                          <div class="form-group col-md-4">
+                            <strong>Rate</strong>
+                            <div><input type="text" class="form-control" id="inputBand3" placeholder="e.g., $0.575"></div>
                             <a href="#" class="add-row-1" onclick="$('.form-row-2').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Add new band</a>
                           </div>
                         </div>
@@ -422,7 +425,7 @@
                           <div class="form-group col-md-4">
                             <input type="text" class="form-control" id="inputBand1-2">
                           </div>
-                          <div class="form-group text-right col-md-4">
+                          <div class="form-group col-md-4">
                             <div style="display: flex; align-items: center;">
                               <input type="text" class="form-control" id="inputBand1-3">
                               <a href="#" onclick="$('.form-row-2').hide(); $('.add-row-1').show();" style="margin-left: 10px;">
@@ -519,177 +522,189 @@
     </div>
     </div>
     
-      <div class="work-area-4 work-slide animate__animated animate__slideInRight animate__faster">
+      <div class="work-area-4 work-slide animate__animated animate__slideInUp animate__faster">
         <div class="form-container">
           <div class="form-limiter">
             <span class="login100-form-title p-b-45">
       				Invite Users
       			</span>
-      			<span class="login100-form-title p-b-0">
-              <div class="form-row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Type</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+            <div class="form-row p-b-20">
+              <div class="col">
+                <strong>First Name</strong>
               </div>
-              <div class="form-row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Role</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+              <div class="col">
+                <strong>Last Name</strong>
               </div>
-              <div class="form-row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Role</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+              <div class="col">
+                <strong>Email</strong>
               </div>
-              <div class="form-row">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Role</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+              <div class="col">
+                <strong>User Role</strong>
               </div>
-              <div id="hidden-1" class="form-row row-add">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Role</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
               </div>
-              <div id="hidden-2" class="form-row row-add">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Role</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
               </div>
-              <div id="hidden-3" class="form-row row-add">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Role</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
               </div>
-              <div id="hidden-4" class="form-row row-add">
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="First name">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col">
-                  <select class="form-control" id="exampleFormControlSelect2">
-                    <option selected>Select User Role</option>
-                    <option>User</option>
-                    <option>Manager</option>
-                    <option>Admin</option>
-                  </select>
-                </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
               </div>
-              <div class="form-row">
-                <div class="col">
-                  <a href="#" class="add-user-invite1 txt2" onclick="$('#hidden-1').css('display', 'flex'); $('.add-user-invite2').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div id="hidden-1" class="form-row row-add">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div id="hidden-2" class="form-row row-add">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div id="hidden-3" class="form-row row-add">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div id="hidden-4" class="form-row row-add">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col">
+                <select class="form-control" id="exampleFormControlSelect2">
+                  <option selected>Select User Role</option>
+                  <option>User</option>
+                  <option>Manager</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <a href="#" class="add-user-invite1 txt2" onclick="$('#hidden-1').css('display', 'flex'); $('.add-user-invite2').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
 
-                  <a href="#" class="add-user-invite2 add-user-invite txt2" onclick="$('#hidden-2').css('display', 'flex'); $('.add-user-invite3').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
+                <a href="#" class="add-user-invite2 add-user-invite txt2" onclick="$('#hidden-2').css('display', 'flex'); $('.add-user-invite3').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
 
-                  <a href="#" class="add-user-invite3 add-user-invite txt2" onclick="$('#hidden-3').css('display', 'flex'); $('.add-user-invite4').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
-                  
-                  <a href="#" class="add-user-invite4 add-user-invite txt2" onclick="$('#hidden-4').css('display', 'flex'); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
-                </div>
+                <a href="#" class="add-user-invite3 add-user-invite txt2" onclick="$('#hidden-3').css('display', 'flex'); $('.add-user-invite4').show(); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
+                
+                <a href="#" class="add-user-invite4 add-user-invite txt2" onclick="$('#hidden-4').css('display', 'flex'); $(this).hide(); return false;"><i class="fa fa-plus"></i> Invite Another</a>
               </div>
-      			</span>
+            </div>
       
             <div class="wrap-50 m-t-45 m-b-35">
               <div class="wrap-input50 no-border cancel-wrap">
