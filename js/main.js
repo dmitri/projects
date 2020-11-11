@@ -105,6 +105,12 @@ function closePane() {
   $('.stage-overlay, .company-form-pane').hide();
 }
 
+function checkCompletionStatus() {
+  if($('.complete').length == 2) {
+    $('.show-main-dash-trigger-container').show();
+  }
+}
+
 
 function checkApprovalPref() {  
   $('.approval-pref').hide();
@@ -152,6 +158,7 @@ $(document).ready(function() {
       $('.message').hide();
       $('.message-2').addClass('animate__animated animate__slideInDown').css('display', 'block');
     }, 1000);
+    checkCompletionStatus();
   });
   
   $(document).on('click', '.save-rate', function(event) {
@@ -166,6 +173,7 @@ $(document).ready(function() {
       $('.message').hide();
       $('.message-3').addClass('animate__animated animate__slideInDown').css('display', 'block');
     }, 1000);
+    checkCompletionStatus();
   });
   
   $(document).on('click', '.save-users', function(event) {
@@ -180,6 +188,7 @@ $(document).ready(function() {
       $('.message').hide();
       $('.message-4').addClass('animate__animated animate__slideInDown').css('display', 'block');
     }, 1000);
+    checkCompletionStatus();
   });
   
   $('select.select2').select2({
@@ -187,5 +196,9 @@ $(document).ready(function() {
   });
   
   $('select.select2-notag').select2({ tags: false });
+  
+  document.getElementById("dash-redirect").onclick = function () {
+      location.href = "dashboard.html";
+  };
 
 });
