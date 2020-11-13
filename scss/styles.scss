@@ -176,6 +176,19 @@ select:-webkit-autofill:focus {
   }
 }
 
+.dashboard {
+  .sidebar {
+    position: fixed; left: 0; top: 0; width: 200px; height: 100%; overflow: hidden; background: #47505E; z-index: 100;
+  }
+  
+  .work-area-dash {
+    top: 100px;
+    left: 200px;
+    padding: 50px;
+  }
+}
+
+
 
 
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";

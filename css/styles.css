@@ -140,6 +140,21 @@ select:-webkit-autofill:focus {
 .rate-type input:focus {
   outline: 1px solid #999; }
 
+.dashboard .sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  overflow: hidden;
+  background: #47505E;
+  z-index: 100; }
+
+.dashboard .work-area-dash {
+  top: 100px;
+  left: 200px;
+  padding: 50px; }
+
 /*!
  * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
