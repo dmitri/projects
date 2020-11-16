@@ -612,7 +612,7 @@
                 <strong>User Role</strong>
               </div>
             </div>
-            <div class="form-row">
+            <div class="form-row" style="position: relative;">
               <div class="col">
                 <input type="text" class="form-control" placeholder="First name">
               </div>
@@ -620,7 +620,8 @@
                 <input type="text" class="form-control" placeholder="Last name">
               </div>
               <div class="col">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" class="form-control" placeholder="Email" style="border: .5px solid red;">
+                <span style="color: red; font-size: .8rem; margin: 7px 0;">This email is already in use.</span>
               </div>
               <div class="col">
                 <select class="form-control" id="exampleFormControlSelect2">
@@ -630,6 +631,7 @@
                   <option>Admin</option>
                 </select>
               </div>
+              <a href="#" style="position: absolute; right: -90px; margin-top: 5px;" class="txt2">&times; Remove</a>
             </div>
             <div class="form-row">
               <div class="col">
