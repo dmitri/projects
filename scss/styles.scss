@@ -182,12 +182,41 @@ select:-webkit-autofill:focus {
   }
   
   .work-area-dash {
-    top: 100px;
+    top: 81px;
     left: 200px;
-    padding: 50px;
+    padding: 50px 50px 100px 50px;
+    height: 100%;
+    overflow: scroll;
+    
   }
 }
 
+.status {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 5px 5px 0;
+  padding: 4px 8px;
+  border-radius: 100px;
+  text-align: center;
+  
+  &.status-pending {
+    background: rgba(240, 159, 85, 0.2);
+    border: 1px solid #D38136;
+    color: #D38136;
+  }
+  
+  &.status-approved {
+    background: rgba(22, 178, 150, 0.2);
+    border: 1px solid #16B296;
+    color: #16B296;
+  }
+  
+  &.status-error {
+    background: rgba(255, 97, 97, 0.2);
+    border: 1px solid #FF6161;
+    color: #FF6161;
+  }
+}
 
 
 
