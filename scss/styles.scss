@@ -179,6 +179,51 @@ select:-webkit-autofill:focus {
 .dashboard {
   .sidebar {
     position: fixed; left: 0; top: 0; width: 200px; height: 100%; overflow: hidden; background: #47505E; z-index: 100;
+    padding-left: 20px;
+    flex-direction: column;
+    
+    .logo {
+      display: flex; align-items: flex-start; justify-content: flex-start;
+      flex-direction: column;
+    }
+  }
+  
+  .sidebar-nav {
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    top: 80px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    width: auto;
+    margin-top: 40px;
+    
+    a {
+      color: #e1e1e1;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      
+      &.active {
+        color: #FFF;
+      }
+    }
+    
+    ul li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 0 10px 0;
+      
+      img {
+        margin-right: 10px;
+      }
+    }
+    
+    .nav-dash {
+      margin-bottom: 20px;
+    }
   }
   
   .work-area-dash {

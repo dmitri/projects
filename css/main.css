@@ -726,17 +726,6 @@ input:focus::-webkit-input-placeholder {
   margin-left: -7px;
 }
 
-
-.sidebar-controls {
-  border-right: 1px solid #dbdce0;
-  display: none;
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 110px;
-  height: 100%;
-}
-
 .right-info-pane {
   background: #eff1f3;
   display: none;
@@ -1176,7 +1165,7 @@ color: #999999;
   flex-direction: row; 
   justify-content: space-between;
   padding: 15px 0 15px 0;
-  border-bottom: 1px solid #d7d7d7;
+  border-bottom: 1px solid #D1D3D9;
 }
 
 .data-table-row .data-col {
@@ -1194,6 +1183,13 @@ color: #999999;
 
 h4 {
   font-family: var(--fontExtraBold);
+}
+
+.dash-stat-action {
+  display: block;
+  font-family: var(--fontBold);
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 /*

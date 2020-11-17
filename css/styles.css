@@ -148,7 +148,41 @@ select:-webkit-autofill:focus {
   height: 100%;
   overflow: hidden;
   background: #47505E;
-  z-index: 100; }
+  z-index: 100;
+  padding-left: 20px;
+  flex-direction: column; }
+  .dashboard .sidebar .logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column; }
+
+.dashboard .sidebar-nav {
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  top: 80px;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  width: auto;
+  margin-top: 40px; }
+  .dashboard .sidebar-nav a {
+    color: #e1e1e1;
+    font-size: 16px;
+    display: flex;
+    align-items: center; }
+    .dashboard .sidebar-nav a.active {
+      color: #FFF; }
+  .dashboard .sidebar-nav ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 10px 0; }
+    .dashboard .sidebar-nav ul li img {
+      margin-right: 10px; }
+  .dashboard .sidebar-nav .nav-dash {
+    margin-bottom: 20px; }
 
 .dashboard .work-area-dash {
   top: 81px;
