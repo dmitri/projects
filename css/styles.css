@@ -140,6 +140,15 @@ select:-webkit-autofill:focus {
 .rate-type input:focus {
   outline: 1px solid #999; }
 
+.dashboard .masthead {
+  display: block; }
+  .dashboard .masthead .mast-profile-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .dashboard .masthead .mast-header {
+    margin-left: 225px; }
+
 .dashboard .sidebar {
   position: fixed;
   left: 0;
@@ -168,7 +177,7 @@ select:-webkit-autofill:focus {
   width: auto;
   margin-top: 40px; }
   .dashboard .sidebar-nav a {
-    color: #e1e1e1;
+    color: #CCC;
     font-size: 16px;
     display: flex;
     align-items: center; }
