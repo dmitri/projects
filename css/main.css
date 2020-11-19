@@ -1134,30 +1134,6 @@ color: #999999;
   vertical-align: top;
 }
 
-.dash-stat {
-  width: 33%;
-  font-family: var(--fontSemiBold);
-  font-size: 1.3rem;
-}
-
-.dash-stat,
-.dash-container {
-  background: #FFF;
-  border-radius: 2px;
-  cursor: pointer;
-  height: auto;
-  padding: 40px;
-  margin: 0 30px 30px 0;
-  box-shadow: 0 1px 6px rgba(0,18,71,.1), 0 1px 3px rgba(0,18,71,.1);
-  transition: box-shadow .2s linear;
-}
-
-.dash-stat-number {
-  font-family: var(--fontBold);
-  font-size: 2.7rem;
-  display: block;
-  line-height: 1.2;
-}
 
 .data-table-row {
   align-items: center;

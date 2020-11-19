@@ -200,6 +200,49 @@ select:-webkit-autofill:focus {
   height: 100%;
   overflow: scroll; }
 
+.dashboard .dash-container {
+  background: #FFF;
+  border-radius: 2px;
+  cursor: pointer;
+  height: auto;
+  padding: 40px;
+  margin: 0 30px 30px 0;
+  box-shadow: 0 1px 6px rgba(0, 18, 71, 0.1), 0 1px 3px rgba(0, 18, 71, 0.1);
+  transition: box-shadow .2s linear; }
+
+.dashboard .dash-stat-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .dashboard .dash-stat-row .dash-stat {
+    width: 33%;
+    font-family: var(--fontSemiBold);
+    font-size: 1.3rem; }
+    @media (max-width: 1099px) {
+      .dashboard .dash-stat-row .dash-stat {
+        width: 100%; } }
+  .dashboard .dash-stat-row .dash-stat {
+    background: #FFF;
+    border-radius: 2px;
+    cursor: pointer;
+    height: auto;
+    padding: 40px;
+    margin: 0 30px 30px 0;
+    box-shadow: 0 1px 6px rgba(0, 18, 71, 0.1), 0 1px 3px rgba(0, 18, 71, 0.1);
+    transition: box-shadow .2s linear; }
+  .dashboard .dash-stat-row .dash-stat-number {
+    font-family: var(--fontBold);
+    font-size: 2.7rem;
+    display: block;
+    line-height: 1.2; }
+  @media (max-width: 1099px) {
+    .dashboard .dash-stat-row {
+      flex-direction: column; } }
+
+.mast-header {
+  flex: 1;
+  margin-right: 30px; }
+
 .status {
   display: inline-block;
   font-size: 14px;
