@@ -252,7 +252,7 @@ select:-webkit-autofill:focus {
     cursor: pointer;
     height: auto;
     padding: 40px;
-    margin: 0 30px 30px 0;
+    margin: 0 0 30px 0;
     box-shadow: 0 1px 6px rgba(0,18,71,.1), 0 1px 3px rgba(0,18,71,.1);
     transition: box-shadow .2s linear;
   }
@@ -261,18 +261,11 @@ select:-webkit-autofill:focus {
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
-    
-    .dash-stat {
+
+    .dash-stat{
       width: 33%;
       font-family: var(--fontSemiBold);
       font-size: 1.3rem;
-      
-      @media(max-width: 1099px) {
-        width: 100%;
-      }
-    }
-
-    .dash-stat{
       background: #FFF;
       border-radius: 2px;
       cursor: pointer;
@@ -281,6 +274,15 @@ select:-webkit-autofill:focus {
       margin: 0 30px 30px 0;
       box-shadow: 0 1px 6px rgba(0,18,71,.1), 0 1px 3px rgba(0,18,71,.1);
       transition: box-shadow .2s linear;
+      
+      @media(max-width: 1099px) {
+        margin-right: 0;
+        width: 100%;
+      }
+      
+      &.last {
+        margin-right: 0;
+      }
     }
 
     .dash-stat-number {
