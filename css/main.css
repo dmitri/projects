@@ -1168,6 +1168,17 @@ h4 {
   margin-top: 10px;
 }
 
+.search-block {
+  border: 1px solid #d7d7d7; color: #999; margin-right: 40px; width: 100%; display: flex; flex-direction: row; align-items: center;
+}
+
+.primary-button {
+  color: #FFF;
+  padding: 9px 10px;
+  background: #16b396;
+  box-shadow: 0 2px 5px rgba(0,18,71,.2);
+}
+
 /*
 .login-more li::before {
   content: "";

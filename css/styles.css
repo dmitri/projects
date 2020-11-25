@@ -265,6 +265,84 @@ select:-webkit-autofill:focus {
     border: 1px solid #FF6161;
     color: #FF6161; }
 
+.table-standard {
+  background: none;
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+  border-collapse: separate;
+  border-spacing: 0 4px; }
+  .table-standard label {
+    margin-bottom: 0; }
+  .table-standard .ant-table-column-sorter-inner {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center; }
+  .table-standard .ant-table-column-sorter {
+    display: none;
+    margin-top: .15em;
+    margin-bottom: -.15em;
+    margin-left: 8px;
+    color: #bfbfbf; }
+  .table-standard .ant-table-column-sorter-full {
+    margin-top: -.2em;
+    margin-bottom: 0; }
+  .table-standard .ant-table-column-sorter-down,
+  .table-standard .ant-table-column-sorter-up {
+    display: inline-block;
+    font-size: 11px; }
+  .table-standard td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .table-standard thead > tr > th {
+    position: relative;
+    padding: 16px;
+    overflow-wrap: break-word; }
+  .table-standard tbody > tr {
+    box-shadow: 0 1px 3px rgba(0, 18, 71, 0.16); }
+  .table-standard tbody > tr > td {
+    background-color: #fff;
+    padding: 8px 16px;
+    height: 57px;
+    color: #47505e;
+    font-family: Muli, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 18px !important; }
+  .table-standard label.ant-checkbox-wrapper span.ant-checkbox.ant-checkbox-checked, .table-standard label.ant-checkbox-wrapper span.ant-checkbox.ant-checkbox-checked:after {
+    border-color: #16b396; }
+  .table-standard .style_tag__3drh7.style_primary__If2rP {
+    border-color: #16b296;
+    background: rgba(22, 178, 150, 0.2); }
+  .table-standard .style_tag__3drh7 {
+    min-height: 23px;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    padding: 4px 8px;
+    text-align: center;
+    transition: border-color .3s linear,background-color .3s linear,opacity .3s linear; }
+  .table-standard .style_tag__3drh7.style_primary__If2rP * {
+    color: #16b296; }
+  .table-standard .style_tag__3drh7.style_orange__1VTjB {
+    border-color: #f09f55;
+    background: rgba(240, 159, 85, 0.2); }
+  .table-standard .style_tag__3drh7.style_orange__1VTjB * {
+    color: #f09f55; }
+
 /*!
  * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)

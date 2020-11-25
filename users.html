@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kliks.io Sign Up Proto</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/intlTelInput/css/intlTelInput.min.css">
+</head>
+<body class="dashboard">
+  <div class="stage-overlay">
+    <div class="spin-container">
+      <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+    </div>
+  </div>
+  <div class="masthead">
+
+    <div class="mast-profile-controls">
+      <div class="mast-header">
+        <div class="search-block" style="border: 1px solid #d7d7d7; color: #999; margin-right: 40px; width: 100%; display: flex; flex-direction: row; align-items: center;">
+          <i class="fas fa-search" style="margin-left: 10px;"></i> 
+          <input type="search" placeholder="Search" style="padding: 7px; color: #999; width: 100%;" />
+        </div>
+      </div>
+      <div class="mast-right" style="display: flex; flex-direction: row; align-content: center;">
+        <div style="display: flex; font-family: var(--fontBold); align-items: center; color: var(--primaryColor); margin-right: 30px; border-right: 1px solid #d7d7d7; padding-right: 30px;">
+          <img src="images/icon-info-flag.svg" alt="trial deadline icon" style="margin-right: 15px;">
+          <a href="#" class="txt2">Free trial ends in 14 days</a>
+        </div>
+        <a href="#" style="display: flex;"><img src="images/notification30x30.svg" alt="notifications" style="margin-right: 30px;"/></a>
+        <div class="initial-avatar" style="margin-right: 60px;">AD</div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="logo">
+      <a href="dashboard.html"><img src="images/kliks-logo_inverse.svg" style="width: 100px; margin-top: 15px;"></a>
+      <div class="sidebar-nav">
+        <ul>
+          <li class="nav-dash"><a href="dashboard.html" class="active"><img src="images/16/house-chimney-2.svg"/> Dashboard</a></li>
+          <li class="nav-trips"><a href="#.html"><img src="images/16/car-retro-2.svg"/> Trips</a></li>
+          <li class="nav-receipts"><a href="#.html"><img src="images/16/receipt.svg"/> Receipts</a></li>
+          <li class="nav-reimbursements"><a href="#.html"><img src="images/16/money-bags.svg"/> Reimbursements</a></li>
+          <li class="nav-gear" style="position: fixed; bottom: 25px; z-index: 100; font-size: 15px;"><a href="#.html" style="font-size: 15px;"><img src="images/icon-gear.svg"/> Company Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="main-body" style="padding-top: 0px;">
+
+    
+    <div class="work-area">
+      
+        <div class="work-area-dash">
+          <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h3 style="font-family: var(--fontSemiBold);">Users</h3>
+            <a href="#" class="primary-button" onclick="$('#page-overlay, #add-user-modal').show(); return false;">+ Add User</a>
+          </div>
+          <div>
+            <div class="">
+
+              <table class="table-standard">
+                   <thead class="ant-table-thead">
+                     <tr>
+                       <th class="ant-table-cell ant-table-selection-column" style="width: 50px;">
+                         <div class="ant-table-selection">
+                           <label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label>
+                         </div>
+                       </th>
+                       <th class="ant-table-cell ant-table-column-has-sorters">
+                         <div class="ant-table-column-sorters">
+                           <span>Name</span><span class="ant-table-column-sorter ant-table-column-sorter-full"><span class="ant-table-column-sorter-inner"><span aria-label="caret-up" class="anticon anticon-caret-up ant-table-column-sorter-up" role="img"><svg aria-hidden="true" class="" data-icon="caret-up" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"></path></svg></span><span aria-label="caret-down" class="anticon anticon-caret-down ant-table-column-sorter-down" role="img"><svg aria-hidden="true" class="" data-icon="caret-down" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></span></span></span>
+                         </div>
+                       </th>
+                       <th class="ant-table-cell ant-table-column-has-sorters">
+                         <div class="ant-table-column-sorters">
+                           <span>Email</span><span class="ant-table-column-sorter ant-table-column-sorter-full"><span class="ant-table-column-sorter-inner"><span aria-label="caret-up" class="anticon anticon-caret-up ant-table-column-sorter-up" role="img"><svg aria-hidden="true" class="" data-icon="caret-up" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"></path></svg></span><span aria-label="caret-down" class="anticon anticon-caret-down ant-table-column-sorter-down" role="img"><svg aria-hidden="true" class="" data-icon="caret-down" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></span></span></span>
+                         </div>
+                       </th>
+                       <th class="ant-table-cell ant-table-column-has-sorters">
+                         <div class="ant-table-column-sorters">
+                           <span>Group</span><span class="ant-table-column-sorter ant-table-column-sorter-full"><span class="ant-table-column-sorter-inner"><span aria-label="caret-up" class="anticon anticon-caret-up ant-table-column-sorter-up" role="img"><svg aria-hidden="true" class="" data-icon="caret-up" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"></path></svg></span><span aria-label="caret-down" class="anticon anticon-caret-down ant-table-column-sorter-down" role="img"><svg aria-hidden="true" class="" data-icon="caret-down" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></span></span></span>
+                         </div>
+                       </th>
+                       <th class="ant-table-cell ant-table-column-has-sorters">
+                         <div class="ant-table-column-sorters">
+                           <span>Role</span><span class="ant-table-column-sorter ant-table-column-sorter-full"><span class="ant-table-column-sorter-inner"><span aria-label="caret-up" class="anticon anticon-caret-up ant-table-column-sorter-up" role="img"><svg aria-hidden="true" class="" data-icon="caret-up" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"></path></svg></span><span aria-label="caret-down" class="anticon anticon-caret-down ant-table-column-sorter-down" role="img"><svg aria-hidden="true" class="" data-icon="caret-down" height="1em" viewbox="0 0 1024 1024" width="1em">
+                           <path d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"></path></svg></span></span></span>
+                         </div>
+                       </th>
+                       <th class="ant-table-cell">Status</th>
+                     </tr>
+                   </thead>
+                  <tbody class="ant-table-tbody">
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3843094e606443c4f34b">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Uma Das</td>
+                      <td class="ant-table-cell">umatiger+40@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Admin</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c334a31da63a4d3bb76">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+41@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Manager</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c33094e606443c4f352">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+42@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc600a094e606443c4f355">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Ady Test</td>
+                      <td class="ant-table-cell">ady+12@kliks.io</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_orange__1VTjB">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Pending</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3843094e606443c4f34b">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Uma Das</td>
+                      <td class="ant-table-cell">umatiger+40@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Admin</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c334a31da63a4d3bb76">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+41@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Manager</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c33094e606443c4f352">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+42@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc600a094e606443c4f355">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Ady Test</td>
+                      <td class="ant-table-cell">ady+12@kliks.io</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_orange__1VTjB">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Pending</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3843094e606443c4f34b">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Uma Das</td>
+                      <td class="ant-table-cell">umatiger+40@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Admin</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c334a31da63a4d3bb76">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+41@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Manager</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c33094e606443c4f352">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+42@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc600a094e606443c4f355">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Ady Test</td>
+                      <td class="ant-table-cell">ady+12@kliks.io</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_orange__1VTjB">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Pending</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3843094e606443c4f34b">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Uma Das</td>
+                      <td class="ant-table-cell">umatiger+40@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Admin</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c334a31da63a4d3bb76">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+41@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">Company Manager</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc3c33094e606443c4f352">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">uma das</td>
+                      <td class="ant-table-cell">umatiger+42@gmail.com</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_primary__If2rP">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Active</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr class="ant-table-row ant-table-row-level-0" data-row-key="5fbc600a094e606443c4f355">
+                      <td class="ant-table-cell ant-table-selection-column"><label class="ant-checkbox-wrapper"><span class="ant-checkbox"><input class="ant-checkbox-input" type="checkbox" value=""><span class="ant-checkbox-inner"></span></span></label></td>
+                      <td class="ant-table-cell">Ady Test</td>
+                      <td class="ant-table-cell">ady+12@kliks.io</td>
+                      <td class="ant-table-cell">Default Group</td>
+                      <td class="ant-table-cell">User</td>
+                      <td class="ant-table-cell">
+                        <div class="style_tag__3drh7 style_orange__1VTjB">
+                          <span class="style_text__12JcJ style_strong__ioj3g style_sm__KmxEp">Pending</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              <div class="text" style="width: 100%; text-align: center; padding: 30px 0 0 0;">
+                <a href="#" class="txt2" style="font-family: var(--fontExtraBold);">View All Users</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+<div id="page-overlay" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 100; background: rgba(255,255,255,0.85); width: 100%; height: 100%; display: none;"></div>
+<div id="add-user-modal" style="position: absolute; top: 120px; z-index: 102; background: #FFF; width: 60%; box-shadow: 0 0 14px rgba(0,0,0,0.3); margin: 0 auto; left: 0; right: 0; display: none;">
+  <a href="#" onclick="$('#page-overlay, #add-user-modal').hide(); return false;" style="position: fixed; right: 30px; top: 10px; z-index: 13;font-size: 3rem; color: #000">&times;</a>
+  <div id="add-user-modal-content" style="padding: 60px; height: 500px; overflow: scroll;">
+    <h3>Add User</h3>
+    <form></form>
+    <div id="modal-footer" style="position: absolute; bottom: 10px; width 100%; left: 0; right: 0; z-index: 103; margin: 0 auto; padding: 30px; display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
+      <a href="#" class="secondary-button" onclick="$('#page-overlay, #add-user-modal').hide(); return false;">Cancel</a>
+      <a href="#" class="primary-button" style="margin-left: 20px;">Save and Add Another</a>
+      <a href="#" class="primary-button" style="margin-left: 20px;">Save and Close</a>
+      
+    </div>
+  </div>
+</div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+  <script src="vendor/intlTelInput/js/intlTelInput-jquery.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
