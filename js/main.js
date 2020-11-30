@@ -197,8 +197,8 @@ $(document).ready(function() {
   
   $('select.select2-notag').select2({ tags: false });
   
-  document.getElementById("dash-redirect").onclick = function () {
-      location.href = "dashboard.html";
-  };
+  $(document).on('click', '#dash-redirect', function(event) {
+    location.href = "dashboard.html";
+  });
 
 });
