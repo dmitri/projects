@@ -78,8 +78,17 @@
             <h3 style="font-family: var(--fontSemiBold); display: flex; align-content: center;">
               Users
             </h3>
-            <a href="#" class="primary-button" 
-            onclick="$('#page-overlay, #add-user-modal').show(0, function() {$('#user-modal-first').focus();}); return false;">+ Add User</a>
+            <div class="btn-group">
+              <button class="btn btn-secondary btn-sm" type="button" onclick="$('#page-overlay, #add-user-modal').show(0, function() {$('#user-modal-first').focus();}); return false;">
+                + Invite User
+              </button>
+              <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a href="#" class="txt2" style="padding: 10px;">Upload a List</a>
+              </div>
+            </div>
           </div>
           <div>
             <div class="">
@@ -412,8 +421,8 @@
     </form>
     <div id="modal-footer" style="width: 100%; left: 0; right: 0; z-index: 103; margin: 0 auto; padding: 30px 0 0 0; display: flex; flex-direction: row; justify-content: flex-end; align-items: center;">
       <a href="#" class="secondary-button" onclick="$('#page-overlay, #add-user-modal').hide(); return false;">Cancel</a>
-      <a href="#" class="primary-button" style="margin-left: 20px;">Save and Add Another</a>
-      <a href="#" class="primary-button" style="margin-left: 20px;">Save and Close</a>
+      <a href="#" class="primary-button" style="margin-left: 20px;">Invite and Add Another</a>
+      <a href="#" class="primary-button" style="margin-left: 20px;">Invite and Close</a>
       
     </div>
   </div>
