@@ -526,6 +526,17 @@ select:-webkit-autofill:focus {
   }
 }
 
+.ant-row {
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    
+    .style_box__2yvO0 {
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 0 1px 6px rgba(0,18,71,.1), 0 1px 3px rgba(0,18,71,.1);
+        transition: box-shadow .2s linear;
+    }
+}
 
 
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";

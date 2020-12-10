@@ -408,6 +408,15 @@ select:-webkit-autofill:focus {
     /* Firefox 18- */
     color: #666; }
 
+.ant-row {
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap; }
+  .ant-row .style_box__2yvO0 {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 6px rgba(0, 18, 71, 0.1), 0 1px 3px rgba(0, 18, 71, 0.1);
+    transition: box-shadow .2s linear; }
+
 /*!
  * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
