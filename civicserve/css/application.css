@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900");
+
+body {
+  background: #FFF;
+  font-family: "Poppins", Helvetica, arial, sans-serif;
+  border-top: 7px solid #1B2A3F;
+}
+
+.cs-h1 {
+  
+}
+
+.cs-h1 span {
+  font-weight: 700;
+}
+
+.cs-portal-nav {
+  background: rgba(255,255,255,0.9);
+  align-items: center;
+}
+
+.cs-portal-brand {
+  align-items: center;
+  display: flex;
+}
+
+.cs-cobrand {
+  color: #555;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.cs-navbar-brand-powered-by {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.cs-partner-logo {
+  height: 75px;
+  margin-right: 30px;
+}
+
+.cs-main-content {
+  padding-top: 125px;
+}
+
+.cs-active-programs-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cs-active-programs-list li {
+  align-items: center;
+  box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px, rgb(0 0 0 / 16%) 0px 15px 15px -18px;
+  border-radius: 5px;
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0 0 20px 0;
+  padding: 15px;
+}
+
+.cs-active-program-cta {
+  border: 1px solid #333;
+  color: #222;
+  font-size: .8rem;
+  font-weight: 400;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.cs-extra-links li a {
+  color: #222;
+  text-decoration: underline;
+}

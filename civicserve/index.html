@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>CivicServe Portal Prototype</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CivicServe Portal Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -12,21 +12,102 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/application.css">
+  <script src="https://kit.fontawesome.com/dbaccd1075.js" crossorigin="anonymous"></script>
 
 </head>
 <body class="city-portal-index">
+<nav class="cs-portal-nav navbar sticky-top" style="border-bottom: 1px solid #eff2f9;">
+  <div class="container">
+    <div class="cs-portal-brand">
+      <a class="navbar-brand cs-navbar-brand" href="#">
+        <img src="images/logo-peoria.jpg" alt="Peoria logo" class="cs-partner-logo" height="75">
+      </a>
+      <div class="cs-cobrand">
+        Economic Development Portal
+        <div class="cs-navbar-brand-powered-by" style="display: flex; flex-direction: row; align-items: center; margin-top: 2px;"><span>powered by</span> <img src="images/logo-civicserve-gray.png" alt="CivicServe logo" height="15" style="margin-left: 5px; margin-top: -6px;"></div>
+      </div>
+      
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="cs-main-content">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h1>CivicServe HELLOO</h1>
+      <div class="col-12 col-md-6">
+        <h1 class="cs-h1">The All-in-One <span>Economic Development Platform</span> for Peoria, Illinois.</h1>
+        <p>Applying to do business made simple.</p>
+        <p>
+          This application is for new or existing businesses in Peoria, IL. 
+          It provides a service to easily file for Incentive Programs. 
+          Please fill out the information and answer a few simple business questions to go through the application process.
+        </p>
+      </div>
+      <div class="col-12 col-md-5 offset-md-1">
+        <h4>Current Active Programs in Peoria</h4>
+        <ul class="cs-active-programs-list">
+          <li>
+            <div class="cs-active-program-name">Tax Increment Financing Incentive Program</div>
+            <a class="cs-active-program-cta">Start / Resume</a>
+          </li>
+          <li>
+            <div class="cs-active-program-name">Commercial Interior Renovation Grant</div>
+            <a class="cs-active-program-cta">Start / Resume</a>
+          </li>
+          <li>
+            <div class="cs-active-program-name">Fa&ccedil;ade Improvement Grant</div>
+            <a class="cs-active-program-cta">Start / Resume</a>
+          </li>
+          <li>
+            <div class="cs-active-program-name">Peoria Loan Program</div>
+            <a class="cs-active-program-cta">Start / Resume</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
+</section>
 
+<section class="cs-footer" style="padding: 75px 0 60px 0; background: #eff2f9; margin-top: 100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <h3>About this Platform</h3>
+      </div>
+      <div class="col-12 col-md-4">
+        <h3>Who Is This Best For?</h3>
+      </div>
+      <div class="col-12 col-md-4">
+        <h3>Research Development Possibilities in Peoria</h3>
+        <ul class="cs-extra-links">
+          <li><a href="#">Link set up by Peoria admin</a></li>
+          <li><a href="#">Link set up by Peoria admin</a></li>
+          <li><a href="#">Link set up by Peoria admin</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-	<script src="js/main.js"></script>
+</section>
+
+<section class="cs-footer" style="padding: 60px 0; background: #333333; color: #fff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        &copy; Copyright 2022 CivicServe. All rights reserved
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="js/application.js"></script>
 
 </body>
 </html>
