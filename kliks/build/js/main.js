@@ -105,6 +105,28 @@ function closePane() {
   $('.stage-overlay, .company-form-pane').hide();
 }
 
+function checkCompletionStatus() {
+  if($('.complete').length == 2) {
+    $('.show-main-dash-trigger-container').show();
+  }
+}
+
+
+function checkApprovalPref() {  
+  $('.approval-pref').hide();
+  if(document.getElementById('automatic').checked) { 
+    $("#approval-pref-automatic").fadeIn();
+  } 
+  else if(document.getElementById('semi').checked) { 
+    $("#approval-pref-semi").fadeIn();
+  } 
+  else if(document.getElementById('manual').checked) { 
+   $("#approval-pref-manual").fadeIn();
+  }
+}
+
+
+
 $(document).ready(function() {
   $(document).on('click', '.close-pane, .stage-overlay', function(event) {
     event.preventDefault();
@@ -121,7 +143,7 @@ $(document).ready(function() {
     event.preventDefault();
     $('.welcome-header').removeClass('animate__animated animate__slideInDown animate__repeat-1');
     $('.work-area-2, .work-area-3, .work-area-4').hide();
-    $('.work-area-dash').addClass('animate__animated animate__slideInLeft animate__faster animate__repeat-1').css('display', 'block');
+    $('.work-area-dash').addClass('animate__animated animate__fadeIn animate__faster animate__repeat-1').css('display', 'block');
   });
   
   $(document).on('click', '.save-company', function(event) {
@@ -136,6 +158,7 @@ $(document).ready(function() {
       $('.message').hide();
       $('.message-2').addClass('animate__animated animate__slideInDown').css('display', 'block');
     }, 1000);
+    checkCompletionStatus();
   });
   
   $(document).on('click', '.save-rate', function(event) {
@@ -150,6 +173,7 @@ $(document).ready(function() {
       $('.message').hide();
       $('.message-3').addClass('animate__animated animate__slideInDown').css('display', 'block');
     }, 1000);
+    checkCompletionStatus();
   });
   
   $(document).on('click', '.save-users', function(event) {
@@ -164,6 +188,7 @@ $(document).ready(function() {
       $('.message').hide();
       $('.message-4').addClass('animate__animated animate__slideInDown').css('display', 'block');
     }, 1000);
+    checkCompletionStatus();
   });
   
   $('select.select2').select2({
@@ -171,4 +196,9 @@ $(document).ready(function() {
   });
   
   $('select.select2-notag').select2({ tags: false });
+  
+  $(document).on('click', '#dash-redirect', function(event) {
+    location.href = "dashboard.html";
+  });
+
 });

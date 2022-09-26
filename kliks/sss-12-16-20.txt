@@ -1,0 +1,772 @@
+/* This style sheet should be used for custom client styles.
+This style sheet is applied last, so it will override anything 
+set in site.css, the area-specific css, and theme.css. */
+
+body { 
+  background: #FFF;
+}
+
+dd, input, label, li, ol, p, ul {
+  font-size: .95rem;
+}
+
+/* home page */
+.sitehome-expandednavlink h2, .sitehome-expandednavlink h3 {
+  color: #222;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.sitehome-expandednavlink span {
+  color: #222;
+  font-size: .9rem;
+}
+
+.home-step {
+  background: #eff1f3;
+  border: none;
+}
+
+/* template updates */
+.esg-header-bar__logo-image {
+ max-height: 39px;
+}
+
+@media only screen and (min-width: 48rem) {
+  .esg-page-header {
+    padding: .75rem 30px;
+  }
+}
+
+.esg-page-header {
+  background: #eff1f3;
+  padding: 30px;
+}
+
+.esg-page-header.esg-has-subtitle .esg-page-header-subtitle__wrapper {
+  width: 68%;
+}
+
+.esg-page-header.esg-has-subtitle #page-description-other {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+@media(max-width: 768px) {
+  .esg-page-header.esg-has-subtitle #page-description-other {
+    margin-top: 45px;
+  }
+}
+
+.esg-breadcrumb {
+ padding-left: 30px;
+}
+
+.esg-breadcrumb__list-item+.esg-breadcrumb__list-item:before {
+  content: "\203A";
+  color: #666;
+  font-size: 1.2rem;
+  line-height: .2;
+}
+
+.esg-breadcrumb__list li:last-child {
+  color: #222;
+}
+
+.esg-breadcrumb__link {
+  box-shadow: inset 0 -1px 0 #EE243C;
+  color: #222;
+  text-decoration: none;
+}
+
+.esg-dropdown__menu-item a {
+  color: #222;
+}
+
+.no-meeting-time {
+  padding: 0 30px;
+}
+
+.esg-tab__content .no-meeting-time {
+  padding: 0;
+}
+
+.esg-section--margin-top {
+  margin-top: 2rem;
+}
+
+.esg-table-head__row, .esg-table-head__row:focus, .esg-table-head__row:hover {
+  background-color: #eff1f3;
+}
+.esg-table-head__th,
+.esg-table-head__th:hover {
+  border-bottom: 1px solid #d5d5e5;
+}
+
+.eds-button--primary, 
+.eds-button--primary:visited {
+  background-color: #EE243C;
+  color: #fff;
+  border: none;
+}
+
+.eds-button--primary:hover {
+  background-color: #d81118;
+}
+
+.eds-button--secondary, 
+.eds-button--secondary:visited {
+  border: none;
+  background-color: #fff;
+  color: #555;
+  box-shadow: inset 0 0 0 1px #555;
+}
+
+.eds-button--secondary:hover {
+  background: #555;
+}
+
+.esg-icon {
+  display: block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5625rem;
+  fill: #555;
+}
+
+.esg-tab__content {
+  border-top: .0625rem solid #d5d5d5;
+}
+
+.esg-tab__menu-item.esg-is-active, .esg-person-card__list::after, .esg-person-card__list:nth-last-child(n+4)::after, .esg-person-card--not-popover, .esg-table-head__th--has-action::after, .esg-table--sticky-head thead th.draggable-header:hover {
+  color: #222;
+  border-bottom-color: #EE243C;
+}
+
+.esg-tab__menu {
+  margin-bottom: 30px;
+}
+
+#drawer-nav .primary-menu .menu-item, #drawer-nav .primary-menu a:link, #drawer-nav .primary-menu a:visited, #drawer-nav .primary-menu a:hover, #drawer-nav .primary-menu .menu-item .esg-icon {
+  font-size: 1rem;
+}
+
+.esg-page-wrapper {
+  padding: 30px;
+}
+
+.esg-h2.program-section-header {
+  border-top: 1px solid #d7d7d7;
+  margin-top: 35px;
+  padding-top: 35px;
+}
+
+#page-description {
+  padding: 30px;
+}
+
+#page-description .esg-page-header__title,
+.esg-page-header__title {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative !important;
+  text-align: left;
+  padding: 0;
+  white-space: normal;
+}
+
+.esg-page-header__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  margin-top: 0;
+  padding: 0;
+  text-align: left;
+  white-space: normal;
+}
+
+@media (min-width: 1199px) {
+  #page-description-other {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}
+
+@media (max-width: 1199px) {
+  #page-description-other {
+    float: none;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+ .esg-page-header__input {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.esg-h2.program-section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.esg-h2.program-section-header .program-requirements-expand-all {
+  border: 1px solid #222;
+  border-radius: 34px;
+  font-size: 1.2rem;
+  margin-left: 30px;
+  padding: 8px 45px 8px 15px;
+}
+
+.subrequirements div {
+  line-height: 1.4;
+}
+
+#current-program-text {
+  margin: 0;
+}
+
+@media(min-width: 991px) {
+  #whatif {
+    float:right;
+    max-width: 200px;
+  }
+}
+
+@media(max-width: 991px) {
+  #whatif {
+    margin-top:20px
+  }
+}
+
+.subrequirements {
+  padding-left: 0;
+}
+
+.esg-h2 .program-section-header {
+  border-top: 1px solid #d7d7d7;
+  padding-top: 20px;
+}
+
+.program-stats-wrapper .esg-row span {
+  margin-bottom: .5rem;
+}
+
+#program-list {
+  margin-top: 35px
+}
+
+.esg-table--no-mobile .esg-table-head__th {
+  font-size: 1.1rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.esg-h2 .program-requirements-header-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.program-requirements-header-link {
+  color: #222;
+  font-size: 1rem
+}
+
+.esg-collapsible-group__icon .esg-icon {
+  fill: #222;
+}
+
+.program-requirements-expand-all-label { 
+  margin: 0;
+  right: 17px;
+  top: 11px;
+}
+
+.esg-h4.bold {
+  color: #000;
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin: 3rem 0 1.5rem 0;
+}
+
+.esg-card {
+  border-color: #999;
+}
+
+.requirement-gpa {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.responsiveTable th.colSelect {
+  text-align: center;
+}
+
+.colSelect input[type=checkbox] + label {
+  margin-left: -15px;
+}
+
+/* planning page */
+.schedule-list {
+  min-height: 50rem;
+}
+
+#schedule-inner-plan-wrapper {
+  margin-top: 0px;
+  padding-top: 15px;
+}
+
+.esg-tab__content.esg-tab__content--mobile-only.clear-group {
+  border: none;
+}
+
+.schedule-listitem-banner, .schedule-listitem-course-warning, .schedule-listitem-approved, .schedule-listitem-denied, .schedule-listitem-withdrawnsectionbanner, .schedule-availablesectionfullbanner, .schedule-availablesectionwaitlistbanner, .schedule-availablesectionfull, .schedule-listitem-registeredsectionbanner, .schedule-listitem-plannedsectionbanner {
+  margin: 0;
+}
+
+.meeting-info-toggle-container button, .meeting-info-toggle-container button:hover, .meeting-info-toggle-container button:active, .meeting-info-toggle-container button:focus, .view-other-sections-toggle button, .view-other-sections-toggle button:hover, .view-other-sections-toggle button:active, .view-other-sections-toggle button:focus {
+  color: #078BAA;
+}
+
+.plan-wrapper .column-two .schedule-list {
+  min-height: 775px;
+}
+
+.search-coursedescription {
+  margin-top: 54px;
+}
+
+#btn-make-payment,
+#btn-account-activity {
+ background: #222;
+ border-radius: 32px;
+ color: rgba(255,255,255,.98);
+ font-weight: bold;
+ text-decoration: none;
+ padding: 10px 15px;
+ position: absolute;
+ right: 40px;
+ top: 80px;
+ transition: all ease .2s;
+}
+
+@media(max-width: 769px) {
+  #btn-make-payment,
+  #btn-account-activity {
+    padding: 5px 15px;
+    top: 32px;
+  }
+}
+
+#schedule-partial-outer .column-two {
+  border: none;
+}
+
+#schedule-data .section-contents {
+  border-bottom: 1px solid #999;
+}
+
+#schedule-data .section-header {
+  border-bottom: 1px solid #DDD;
+}
+
+#schedplan-schedule .column-seven {
+  border-width: 0 0 1px 0;
+  margin-top:13px;
+}
+
+.column-two section.filters:nth-child(2),
+.column-two section.filters:nth-child(4),
+.column-two section.filters:nth-child(5),
+.column-two section.filters:nth-child(6),
+.column-two section.filters:nth-child(7),
+.column-two section.filters:nth-child(8),
+.column-two section.filters:nth-child(11),
+.column-two section.filters:nth-child(12),
+.column-two section.filters:nth-child(13){
+  display: none;
+}
+
+.esg-h1, .esg-h2, .esg-h3, .esg-h4, .esg-h5, .esg-h6, body, h1, h2, h3, h4, h5, h6, input, label, p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.esg-footer,
+.esg-list-group__header{
+  background: #EFF1F3;
+  border: none;
+}
+
+.schedule-availablesectionslist-paging  .schedule-sections-paging-curpage {
+  padding: 8px;
+}
+
+.schedule-sections-paging-pagecount {
+  padding-top: .7em
+}
+
+.esg-button {
+  border-radius: 2px;
+}
+
+.esg-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: inset 0 -0.25rem 0 0 #DDD;
+  color: #222;
+}
+
+input[type=submit].esg-button--primary,
+input[type=submit].esg-button--primary:visited,
+input[type=submit].esg-button--primary:focus,
+.esg-button--primary, 
+.esg-button--primary:visited,
+.esg-button--primary:focus {
+  border-color: #ee243c;
+  box-shadow: inset 0 -0.25rem 0 0 #ad1f24;
+  background-color: #ee243c;
+  color: rgba(255,255,255, 1);
+  border-radius: 2px;
+}
+
+input[type=submit].esg-button--primary:hover,
+.esg-button--primary:hover {
+  border-color: #ce252b;
+  background-color: #ce252b;
+  box-shadow: inset 0 -0.24rem 0 0 #ad1f24;
+  color: rgba(255,255,255, 1);
+}
+
+.esg-button--primary:visited[disabled], .esg-button--primary:visited[disabled]:focus, .esg-button--primary:visited[disabled]:hover, .esg-button--primary[disabled], .esg-button--primary[disabled]:focus, .esg-button--primary[disabled]:hover {
+  background: #DEE2E5;
+  border-color: #A6B0B8;
+  color: #444;
+}
+
+/* hides the two empty tab containers in the Plan Your Degree and Schedule your courses */
+#schedplan-tabs > ul > li:nth-child(3),
+#schedplan-tabs > ul > li:nth-child(4){
+  display: none;
+}
+
+.dp-coursebubble-indentedtext {
+  font-family: helvetica, arial, sans-serif;
+  font-weight: normal;
+  font-size: .9rem;
+  margin-right: 15px;
+}
+
+.dp-warning-bubble {
+  font-size: .8rem;
+}
+
+.esg-icon-list-group__item:active, .esg-icon-list-group__item:active:focus, .esg-icon-list-group__item:active:hover, .esg-icon-list-group__item:focus, .esg-icon-list-group__item:hover, .esg-icon-list-group__item:visited:focus, .esg-icon-list-group__item:visited:hover, .esg-list-group__item:active, .esg-list-group__item:active:focus, .esg-list-group__item:active:hover, .esg-list-group__item:focus, .esg-list-group__item:hover, .esg-list-group__item:visited:focus, .esg-list-group__item:visited:hover {
+  background-color: #EFF1F3;
+  border-top: .0625rem solid #DEE2E5;
+  border-bottom: .0625rem solid #DEE2E5;
+}
+
+.search-course-planned-banner {
+  background-position: 10px 11px ;
+  border-width: 1px;
+  padding: 10px 10px 10px 35px;
+}
+
+.course-result { position: relative; }
+
+.available-sections .ui-accordion-header a {
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.course-result .available-sections h3.ui-accordion-header span.ui-icon {
+  display: none;
+}
+
+.course-result .available-sections h3:before {
+  content: "\27a5";
+  position: absolute;
+  left: -5px;
+  top: -7px;
+  font-size: 2.5rem;
+  color: #0a8043;
+  transition: all ease 0.3s;
+}
+
+#course-results .course-result .available-sections h3 a {
+  transition: all ease 0.3s;
+}
+
+#course-results .course-result .available-sections h3.ui-state-active a {
+  padding-left: 10px;
+}
+
+#course-results .course-result-header h3 {
+  margin-top:6px
+}
+
+#course-results .course-result .course-result-header input[type=button] {
+  position: relative;
+}
+
+#course-results > .course-result .section-contents { position: relative;}
+
+@media (max-width: 768px) {
+  #course-results .course-result .section-contents:before {
+    display: none;
+  }
+}
+
+.course-result .available-sections h3.ui-state-active:before {
+  display: none;
+}
+
+.available-sections .ui-accordion-header a:before {
+  content: "Click to ";
+  font-weight: 900;
+}
+
+.available-sections .ui-accordion-header a:after {
+  content: " and Add Section to Upcoming Term's Schedule.";
+  letter-spacing: .5px;
+}
+
+.requirement-details > ul.subrequirements > li {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.requirement-details > ul.subrequirements > li > div:first-child {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color:#000;
+}
+
+.group>:first-child {
+  display: inline-block;
+}
+
+.requirement.section-wrapper {
+  padding-bottom: 10px;
+}
+
+.search-coursedescription {
+  line-height: 150%;
+  color: #222;
+  padding: 10px 5px 15px 5px;
+}
+
+.subrequirement-display-text,
+.subrequirement-directive-complete,
+.subrequirement-directive-incomplete {
+  font-size: .95rem;
+}
+
+.group {
+  padding-left: 0;
+}
+#page-description-other form input, #page-description-other input[type=search] {
+  background-position: 8px 10px;
+  border: 1px solid #CCC;
+  border-radius: 2px;
+  padding: .6875rem .75rem;
+  font-size: 15px;
+}
+
+#load-sample-plan-button {
+  display: none;
+}
+
+#page-description a#btn-make-payment,
+#page-description a#btn-account-activity {
+  background: #555;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.98);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 10px;
+  position: absolute;
+  right: 40px;
+  top: 80px;
+  transition: all ease .2s;
+}
+
+#page-description a#btn-make-payment:hover,
+#page-description a#btn-account-activity:hover {
+  background: #444;
+}
+
+@media (min-width: 1288px) {
+ #page-description-other.column-four {
+   width: 350px;
+ }
+}
+
+a:focus, input[type=text] {
+ outline: 0;
+}
+
+.course-result .available-sections .ui-state-default {
+  background: #ee243c;
+  border:none2px
+  box-shadow: 0 2px 9px rgba(0,0,0,0.3)
+}
+
+.course-result .available-sections .ui-state-default:hover {
+  background: #c0182c;
+}
+
+.course-result .available-sections .ui-state-default a {
+  color: #FFF;
+  font-weight: normal;
+}
+
+.course-result .available-sections h3:before {
+    content: "➥";
+    position: absolute;
+    left: -5px;
+    top: -8px;
+    font-size: 2.5rem;
+    color: #fff;
+    transition: all ease .3s;
+    text-shadow: -3px 2px 3px rgba(0,0,0,0.78);
+}
+
+#course-results .course-result .course-result-header input[type=button] {
+    position: relative;
+    border: none;
+    background: none;
+    color: #FFF;
+    text-decoration: underline;
+    box-shadow: none;
+    font-weight: normal;
+}
+
+.dp-coursebubble-complete {
+  border-radius: 2px;
+  padding: 8px 5px;
+}
+
+.dp-coursebubble-planned {
+  background: #777;
+  border-radius: 2px;
+  padding: 8px 5px;
+}
+
+.dp-coursebubble-planned .esg-icon {
+  fill: #FFF;
+}
+
+#scroll-left {
+  box-shadow: 5px 0 10px rgba(0,0,0,0.3);
+}
+#scroll-right {
+  box-shadow: -5px 0 10px rgba(0,0,0,0.3);
+}
+
+@media(max-width: 768px) {
+  .requirement-gpa {
+   margin-top: 20px; 
+  }
+  .esg-h4.bold {
+    display: inline;
+  }
+  
+  .esg-h2.program-section-header .program-requirements-expand-all {
+    margin: 0 0 20px 0;
+  }
+  
+  .program-requirements-header-link-mobile {
+    margin-left: 0;
+    color: #222;
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+#make-a-payment-dropdown {
+  padding: 20px;
+}
+
+@media(max-width: 768px) {
+  #submit-payment-selection {
+    margin-top: 20px
+  }
+}
+
+@media(min-width: 768px) {
+#make-a-payment-contents .esg-table .esg-table-body__td {
+  display: table-cell;
+  padding: 1rem;
+  line-height: 1rem;
+  vertical-align: middle;
+}
+}
+
+@media(max-width: 768px) {
+  .esg-table-body__td:first-child, .esg-table-footer__td:first-child, .esg-table-head__td:first-child {
+    margin-bottom: .5rem;
+  }
+    .esg-table-body__td:last-child, .esg-table-footer__td:last-child, .esg-table-head__td:last-child {
+    margin-top: .5rem;
+  }
+}
+
+#payment-controls {
+  display: flex;
+  text-align: left;
+}
+
+#payment-controls > div {
+  display: flex;
+}
+
+@media(max-width: 550px) {
+  #btn-make-payment, 
+  #btn-account-activity {
+    display: block;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 30px;
+    top: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
+.step-number {
+  background: #FFF;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+  border: 1px solid #CCC;
+  left: 8px;
+}
+
+#coursedetails-title {
+  margin-bottom: 10px;
+}
+
+#coursedetails-description,
+#sectiondetails-description {
+  line-height: 1.5;
+  padding-bottom: 15px;
+}
+
+#coursedetails-table {
+  padding-top: 15px;
+}
+
+
+/* 2020 Dec 16 additions */
+.esg-person-card__list-item {
+  font-size: 1rem;
+  line-height: 1.2
+}
