@@ -30,18 +30,18 @@ a:hover {
 }
 
 .bg-container {
-  background: #FFF url(/images/bg-peoria-2.png) no-repeat -150px 60px;
+  background: #FFF url(../images/bg-peoria-2.png) no-repeat -150px 60px;
 }
 
 @media(max-width: 991px) {
   .bg-container {
-    background: #FFF url(/images/bg-peoria.jpg) no-repeat center left;
+    background: #FFF url(../images/bg-peoria.jpg) no-repeat center left;
     background-size: cover;
   }
 }
 
 .alternate .bg-container {
-  background: #FFF url(/images/bg-peoria.jpg) no-repeat center left;
+  background: #FFF url(../images/bg-peoria.jpg) no-repeat center left;
   /*background: #FFF url(https://evanstonil.civicserve.com/Image/Pages/1) no-repeat center left;*/
   background-size: cover;
 }
