@@ -46,6 +46,18 @@ a:hover {
   background-size: cover;
 }
 
+.evanston .bg-container {
+  background: #FFF url(../images/bg-evanston.png) no-repeat center left;
+  /*background: #FFF url(https://evanstonil.civicserve.com/Image/Pages/1) no-repeat center left;*/
+  background-size: cover;
+}
+
+.dundee .bg-container {
+  background: #FFF url(../images/bg-dundee.png) no-repeat center left;
+  /*background: #FFF url(https://evanstonil.civicserve.com/Image/Pages/1) no-repeat center left;*/
+  background-size: cover;
+}
+
 .bg-container-overlay {
   background: rgba(255,255,255,0.75);
   width: 100%;
@@ -54,6 +66,14 @@ a:hover {
 
 .alternate .bg-container-overlay {
   background: rgba(255,255,255,0.92);
+}
+
+.alternate.dundee .bg-container-overlay {
+  background: rgba(255,255,255,0.87);
+}
+
+.alternate.evanston .bg-container-overlay {
+  background: rgba(255,255,255,0.87);
 }
 
 .cs-cslogo-cobrand {
@@ -205,9 +225,14 @@ a:hover {
 }
 
 .cs-active-program-name {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   line-height: 1.4;
+  margin-top: 5px;
+}
+
+.cs-active-program-name i {
+  margin-top: 2px;
 }
 
 @media(max-width: 768px) {
