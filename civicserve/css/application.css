@@ -1,13 +1,98 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900");
 
+:root {
+  --link-underline-color: #be2733;
+} 
+
 body {
   background: #FFF;
   font-family: "Poppins", Helvetica, arial, sans-serif;
   border-top: 7px solid #1B2A3F;
 }
 
+strong {
+  font-weight: 600;
+}
+
+h5 {
+  font-weight: 700;
+}
+
+a,
+a:visited {
+  color: #000;
+  text-decoration-color: var(--link-underline-color);
+  text-underline-offset: .2em;
+}
+
+a:hover {
+  background: #;
+}
+
+.bg-container {
+  background: #FFF url(/images/bg-peoria-2.png) no-repeat -150px 60px;
+}
+
+@media(max-width: 991px) {
+  .bg-container {
+    background: #FFF url(/images/bg-peoria.jpg) no-repeat center left;
+    background-size: cover;
+  }
+}
+
+.alternate .bg-container {
+  background: #FFF url(/images/bg-peoria.jpg) no-repeat center left;
+  /*background: #FFF url(https://evanstonil.civicserve.com/Image/Pages/1) no-repeat center left;*/
+  background-size: cover;
+}
+
+.bg-container-overlay {
+  background: rgba(255,255,255,0.75);
+  width: 100%;
+  height: 100%;
+}
+
+.alternate .bg-container-overlay {
+  background: rgba(255,255,255,0.92);
+}
+
+.cs-cslogo-cobrand {
+  border-bottom: 1px solid transparent;
+  margin-left: 5px; 
+  margin-top: -3px;
+  padding-bottom: 2px;
+}
+
+.cs-info {
+  background: #eff2f9;
+  padding: 75px 0 60px 0;
+}
+
+.alternate .cs-info {
+  background: #FFF;
+}
+
+.cs-cslogo-cobrand-color {
+  display: none;
+}
+
+.cs-logo-cobrand-container:hover .cs-cslogo-cobrand-color {
+  display:block;
+  border-bottom: 1px solid var(--link-underline-color);
+}
+
+.cs-logo-cobrand-container:hover .cs-cslogo-cobrand-gray {
+  display: none;
+}
+
 .cs-h1 {
-  
+  padding-top: 55px;
+}
+
+@media(max-width: 768px) {
+  .cs-h1 {
+    padding-top: 25px;
+  }
 }
 
 .cs-h1 span {
@@ -17,6 +102,12 @@ body {
 .cs-portal-nav {
   background: rgba(255,255,255,0.9);
   align-items: center;
+}
+
+@media(max-width: 991px) {
+  .cs-portal-nav {
+    background: rgba(255,255,255,1);
+  }
 }
 
 .cs-portal-brand {
@@ -30,6 +121,13 @@ body {
   font-weight: 600;
   line-height: 1.3;
 }
+
+@media(max-width: 768px) {
+  .cs-cobrand {
+    display: none;
+  }
+}
+
 .cs-navbar-brand-powered-by {
   color: #888;
   font-size: 1rem;
@@ -42,7 +140,14 @@ body {
 }
 
 .cs-main-content {
-  padding-top: 125px;
+  padding-top: 95px;
+  padding-bottom: 75px;
+}
+
+@media(max-width: 991px) {
+  .cs-main-content {
+    padding-top: 25px;
+  }
 }
 
 .cs-active-programs-list {
@@ -52,7 +157,8 @@ body {
 }
 
 .cs-active-programs-list li {
-  align-items: center;
+  align-items: flex-start;
+  background: rgba(255,255,255, 0.7);
   box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px, rgb(0 0 0 / 16%) 0px 15px 15px -18px;
   border-radius: 5px;
   display: flex;
@@ -64,15 +170,106 @@ body {
 }
 
 .cs-active-program-cta {
-  border: 1px solid #333;
-  color: #222;
+  border: 1px solid #1B2A3F;
+  color: #1B2A3F;
   font-size: .8rem;
   font-weight: 400;
-  padding: 10px;
+  margin-left: 30px;
+  padding: 5px 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cs-active-program-details {
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+.cs-active-program-details {
+  padding-left: 21px;
+}
+
+.cs-active-program-cta:hover {
+  background: #1B2A3F;
+  color: #FFF;
   text-decoration: none;
 }
 
-.cs-extra-links li a {
-  color: #222;
-  text-decoration: underline;
+.cs-extra-links {
+  margin: 0;
+  padding: 0 0 0 18px;
+}
+
+.cs-active-program-info i {
+  margin-right: 7px;
+}
+
+.cs-active-program-name {
+  align-items: center;
+  display: flex;
+  line-height: 1.4;
+}
+
+@media(max-width: 768px) {
+  .cs-list-instruct {
+    display: none;
+  }
+  .cs-active-program-name {
+    font-size: .9rem;
+    line-height: 1.2;
+  }
+}
+
+.cs-active-program-info:hover {
+  cursor: pointer;
+}
+
+.cs-active-programs-list-item .fa-square-plus {
+  display: inline;
+}
+
+.cs-active-programs-list-item .fa-square-minus {
+  display: none;
+}
+
+.cs-active-programs-list-item .cs-active-program-details {
+  display: none;
+}
+
+.cs-active-programs-list-item.open .fa-square-plus {
+  display: none;
+}
+
+.cs-active-programs-list-item.open .fa-square-minus {
+  display: inline;
+}
+
+.cs-active-programs-list-item.open .cs-active-program-details {
+  display: block;
+}
+
+.cs-help-footer {
+  background: #444;
+  color: #FFF;
+  padding: 45px 0;
+}
+
+.cs-help-footer a, 
+.cs-help-footer a:visited {
+  color: #FFF;
+}
+
+.cs-footer-util-links {
+  margin-top: 8px;
+}
+
+.cs-footer-util-links a,
+.cs-footer-util-links a:visited {
+  color: #fafafa;
+}
+
+.cs-footer {
+  background: #333333;
+  color: #fafafa  ;
+  padding: 60px 0;
 }
