@@ -4,36 +4,25 @@
   <title>CivicServe Portal Prototype</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-  <link rel="icon" href="images/favicon.png" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" href="https://www.cityofevanston.org/favicon.ico" type="image/x-icon">
 <!--===============================================================================================-->
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-  <link rel="stylesheet" type="text/css" href="css/application.css">
+  <link rel="stylesheet" type="text/css" href="css/application-v2.css">
   <script src="https://kit.fontawesome.com/dbaccd1075.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="city-portal-index alternate">
-<div class="bg-container">
-  <div class="bg-container-overlay">
-    <nav class="cs-portal-nav navbar sticky-top" style="border-bottom: 1px solid #eff2f9;">
+<body class="city-portal-index dundee evanston alternate">
+
+    <nav class="cs-portal-nav navbar sticky-top">
       <div class="container">
         <div class="cs-portal-brand">
           <a class="navbar-brand cs-navbar-brand" href="#">
-            <img src="images/logo-peoria.jpg" alt="Peoria logo" class="cs-partner-logo" height="75">
+            <img src="images/logo-evanston.png" alt="Evanston, IL logo" class="cs-partner-logo" height="75">
           </a>
           <div class="cs-cobrand">
             Economic Development Portal
-            <div class="cs-navbar-brand-powered-by" style="display: flex; flex-direction: row; align-items: center; margin-top: 2px;">
-              <span>powered by</span> 
-              <a href="https://www.civicserve.com" class="cs-logo-cobrand-container">
-                <img src="images/logo-civicserve-gray.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-gray" alt="CivicServe logo" height="19">
-                <img src="images/logo-civicserve-color.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-color" alt="CivicServe logo" height="19">
-              </a>
-            </div>
           </div>
       
         </div>
@@ -44,101 +33,209 @@
         </ul>
       </div>
     </nav>
+    
+    <div class="bg-container">
+      <div class="bg-container-overlay"></div>
+    </div>
 
     <section class="cs-main-content">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-12 col-lg-6">
-            <h1 class="cs-h1">The All-in-One <span>Economic Development Platform</span> for Peoria, Illinois.</h1>
+          <div class="col-12 col-md-12 col-lg-5">
+            <h1 class="cs-h1">The All-in-One <span>Economic Development Platform</span> for Evanston, Illinois.</h1>
             <p>Applying to do business made simple.</p>
-            <p>Choose an active program to apply for, or <a href="#">sign up</a> to get started.
           </div>
-          <div class="col-12 col-md-12 col-lg-6">
-            <h6 style="font-weight: 600; margin-bottom: 15px;" class="cs-list-instruct">Start or resume your application in the following active programs:</h6>
-            <ul class="cs-active-programs-list">
-              <li class="cs-active-programs-list-item">
-                <div class="cs-active-program-info">
-                  <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
-                    <i class="fa-regular fa-square-plus"></i>
-                    <i class="fa-regular fa-square-minus"></i>
-                    Tax Increment Financing Incentive Program
+          <div class="col-12 col-md-12 offset-md-0 col-lg-6 offset-lg-1">
+            <div class="cs-cta-focus-area">
+              <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container">
+                <h5 style="font-size: 1.1rem;">I am interested in Evanston economic development as a:</h5>
+                <br/>
+                <br/>
+                <div class="row">
+                  <div class="col-12 col-md-4 text-center">
+                    <a href="#" id="cs-cta-developer" class="cs-welcome-type">
+                      <i class="fa-light fa-tree-city"></i>
+                      <strong>Developer</strong>
+                    </a>
                   </div>
-                  <div class="cs-active-program-details">
-                    Peoria's Incentives policy is to develop, retain, expand, attract businesses, and expand job opportunities while maintaining a positive balance of growth, social equity, and economic vitality.
+                  <div class="col-12 col-md-4 text-center">
+                    <a href="#" onclick="alert('Coming soon to a platform near you. \n\nClick \'Developer\' to see its portal landing page.'); return false;" class="cs-welcome-type">
+                      <i class="fa-light fa-chart-mixed"></i>
+                      <strong>Business Owner</strong>
+                    </a>
                   </div>
-                </div>
-                <a href="#"  class="cs-active-program-cta">Start / Resume</a>
-              </li>
-              <li class="cs-active-programs-list-item">
-                <div class="cs-active-program-info">
-                  <div class="cs-active-program-name"  data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
-                    <i class="fa-regular fa-square-plus"></i>
-                    <i class="fa-regular fa-square-minus"></i>
-                    Commercial Interior Renovation Grant
-                  </div>
-                  <div class="cs-active-program-details">
-                    Provides assistance to commercial property owners or tenants to attract, retain, improve appearance, increase value of businesses, properties in the city.
-                  </div>
-                </div>
-                <a href="#"  class="cs-active-program-cta">Start / Resume</a>
-              </li>
-              <li class="cs-active-programs-list-item">
-                <div class="cs-active-program-info">
-                  <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
-                    <i class="fa-regular fa-square-plus"></i>
-                    <i class="fa-regular fa-square-minus"></i>
-                    Fa&ccedil;ade Improvement Grant
-                  </div>
-                  <div class="cs-active-program-details">
-                    The Fa&ccedil;ade Improvement Program is designed to improve and visually enhance the façade of commercial buildings and improve the appearance of older and historic commercial districts within the City of Peoria’s TIF Districts.
+                  <div class="col-12 col-md-4 text-center">
+                    <a href="#" onclick="alert('Coming soon to a platform near you. \n\n Click \'Developer\' to see its portal landing page.'); return false;" class="cs-welcome-type">
+                      <i class="fa-light fa-house-day"></i>
+                      <strong>Resident</strong>
+                    </a>
                   </div>
                 </div>
-                <a href="#"  class="cs-active-program-cta">Start / Resume</a>
-              </li>
-              <li class="cs-active-programs-list-item">
-                <div class="cs-active-program-info">
-                  <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
-                    <i class="fa-regular fa-square-plus"></i>
-                    <i class="fa-regular fa-square-minus"></i> 
-                    Peoria Loan Program
-                  </div>
-                  <div class="cs-active-program-details">
-                    Our Business Recovery Loan Program includes the Business Capacity Conversion (BCC) and Business to Landlord (B2L) “standardized” loan.
+                <br/><br/>
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <strong><a href="#">Sign up</a>, and get access to all.<strong>
                   </div>
                 </div>
-                <a href="#" class="cs-active-program-cta">Start / Resume</a>
-              </li>
-            </ul>
+              </div>
+              <div id="cs-cta-developer-container" class="cs-cta-developer cs-cta-container" style="display: none;">
+                <ul id="tablist" class="nav nav-pills nav-justified cs-user-type-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="cs-welcome-developer-tab" aria-current="page" href="#" data-bs-toggle="pill" data-bs-target="#cs-welcome-developer-pane" type="button" role="tab" aria-controls="cs-welcome-developer-pane" aria-selected="true">
+                      <i class="fa-light fa-tree-city"></i>
+                      Developer
+                    </a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="cs-welcome-business-tab" href="#" 
+                      data-bs-toggle="pill" 
+                      data-bs-target="#cs-welcome-business-pane" 
+                      type="link" 
+                      role="tab" 
+                      aria-controls="cs-welcome-business-pane" 
+                      aria-selected="false">
+                      <i class="fa-light fa-chart-mixed"></i>
+                      Business Owner
+                    </a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="cs-welcome-resident-tab" href="#" data-bs-toggle="pill" data-bs-target="#cs-welcome-resident-pane" type="button" role="tab" aria-controls="cs-welcome-residnet-pane" aria-selected="false">
+                      <i class="fa-light fa-house-day"></i>
+                      Resident
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="cs-welcome-developer-tab-content" tabindex="0">
+                  <div class="cs-cta-developer tab-pane fade show active" 
+                        id="cs-welcome-developer-pane" 
+                        aria-labelledby="cs-welcome-business-tab" 
+                        tabindex="0">
+                    <h6 style="font-weight: 600; margin-bottom: 15px;" class="cs-list-instruct">
+                      Start or resume your application in the following active programs:
+                    </h6>
+                    <br/>
+                    <ul class="cs-active-programs-list">
+                      <li class="cs-active-programs-list-item">
+                        <div class="cs-active-program-info">
+                          <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-minus"></i>
+                            Tax Increment Financing Incentive Program
+                          </div>
+                          <div class="cs-active-program-details">
+                            The City of Evanston has established the use of tax increment financing (TIF) as a strategic tool in its economic development program to foster redevelopment in areas of the community where needed.
+                            <br/>
+                            <br/>
+                            <strong>Best for:</strong> List who this is best for.
+                            <br/><br/>
+                            <a href="#" class="" style="position: relative; z-index: 20; padding: 20px 0 0 0;">Learn more</a>
+                          </div>
+                        </div>
+                        <a href="#"  class="cs-active-program-cta">Apply</a>
+                      </li>
+                      <li class="cs-active-programs-list-item">
+                        <div class="cs-active-program-info">
+                          <div class="cs-active-program-name"  data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-minus"></i>
+                            ARPA Grant
+                          </div>
+                          <div class="cs-active-program-details">
+                          	Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward
+                            <br/><br/>
+                            <strong>Best for:</strong> List who this is best for.
+                            <br/><br/>
+                            <a href="#" class=>Learn more</a>
+                          </div>
+                        </div>
+                        <a href="#"  class="cs-active-program-cta">Apply</a>
+                      </li>
+                      <li class="cs-active-programs-list-item">
+                        <div class="cs-active-program-info">
+                          <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-minus"></i>
+                            Entrepeneurship Support Grant
+                          </div>
+                          <div class="cs-active-program-details">
+                          	The program is intended to assist in the growth of jobs in Evanston through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.
+                            <br/><br/>
+                            <strong>Best for:</strong> List who this is best for.
+                            <br/><br/>
+                            <a href="#" class=>Learn more</a>
+                          </div>
+                        </div>
+                        <a href="#"  class="cs-active-program-cta">Apply</a>
+                      </li>
+                      <li class="cs-active-programs-list-item">
+                        <div class="cs-active-program-info">
+                          <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-minus"></i> 
+                            Storefront Modernization
+                          </div>
+                          <div class="cs-active-program-details">
+                            Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.
+                            <br/><br/>
+                            <strong>Best for:</strong> List who this is best for.
+                            <br/><br/>
+                            <a href="#" class=>Learn more</a>
+                          </div>
+                        </div>
+                        <a href="#" class="cs-active-program-cta">Apply</a>
+                      </li>
+                    </ul>
+                  </div>
+                
+                <div class="cs-cta-business tab-pane fade" id="cs-welcome-business-pane"  aria-labelledby="cs-welcome-business-tab" tabindex="0">
+                  <h3 class="text-center">Coming soon.</h3>
+                </div>
+                <div class="cs-cta-resident tab-pane fade" id="cs-welcome-resident-pane"  aria-labelledby="cs-welcome-resident-tab" tabindex="0">
+                  <h3 class="text-center">Coming soon.</h3>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-  </div>
-  <section class="cs-info">
+    </div>
+  </section>
+
+  <section class="cs-info" style="background: #f5f5f5;">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-4">
-          <h5>About this Platform</h5>
-          <p>The CivicServe economic development platform is the leading, all-in-one platform providing a centralized service to easily set up, and file for incentive programs.</p>
-          <p><strong>Learn more at <a href="https://www.civicserve.com">CivicServe</a>.</strong>
-        
+        <div class="col-sm-12 col-md-4">
+          <div class="cs-info-block">
+            <h5>About this Platform</h5>
+            <p>The CivicServe economic development platform is the leading, all-in-one platform providing a centralized service to easily set up, and file for incentive programs.</p>
+            <p><strong>Learn more at <a href="https://www.civicserve.com">CivicServe</a>.</strong>
+          </div>
         </div>
-        <div class="col-12 col-md-4">
-          <h5>Who Is This Best For?</h5>
-          <p>This application is for new or existing businesses, consultants, banks, and others involved in and seeking the economic development of Peoria, IL. who want to learn about, quickly apply for, and manage incentives.
-            <p>
-            <strong>Looking for the business platform?</strong>
-            <a href="#">Go here</a>.
-            </p>
+        <div class="col-sm-12 col-md-4">
+          <div class="cs-info-block">
+            <h5>Who Is This Best For?</h5>
+            <p>This application is for new or existing businesses, consultants, banks, and others involved in and seeking the economic development of East Dundee, IL. who want to learn about, quickly apply for, and manage incentives.
+              <p>
+              <strong>Business Owners:</strong>
+              <a href="#">Visit the business portal</a>.
+              </p>
+              <p>
+              <strong>Residents:</strong>
+              <a href="#">Visit the residents' portal</a>.
+              </p>
+          </div>
         </div>
-        <div class="col-12 col-md-4">
-          <h5>Helpful Links for Peoria Development</h5>
-          <ul class="cs-extra-links">
-            <li><a href="http://www.peoriagov.org/" target="_blank">City of Peoria</a></li>
-            <li><a href="http://growpeoria.com/" target="_blank">Economic Development</a></li>
-            <li><a href="http://growpeoria.com/business-assistance-programs/" target="_blank">Business Incentives</a></li>
-            <li><a href="#">Starting a Business in Peoria</a> (coming soon)</li>
-          </ul>
+        <div class="col-sm-12 col-md-4">
+          <div class="cs-info-block last">
+            <h5>Helpful Links for Evanston Development</h5>
+            <ul class="cs-extra-links">
+              <li><a href="https://www.cityofevanston.org/" target="_blank">City of Evanston</a></li>
+              <li><a href="https://www.cityofevanston.org/business" target="_blank">Economic Development</a></li>
+              <li><a href="https://www.cityofevanston.org/government/departments/community-development/economic-development/doing-business" target="_blank">Doing Business in Evanston</a></li>
+              <li><a href="https://www.cityofevanston.org/business/tif-districts" target="_blank">Business Resources</a></li>
+              <li><a href="#">TIF Districts</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -153,7 +250,7 @@
         <h5>
           <i class="fa-regular fa-message-question"></i> 
           Need help? 
-          <a href="//growpeoria.com/contact/" target="_blank" style="color: #FFF;">Contact us</a> for assistance.
+          <a href="//eastdundee.com/contact/" target="_blank" style="color: #FFF;">Contact us</a> for assistance.
         </h5>
       </div>
     </div>
@@ -163,7 +260,16 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        &copy; Copyright 2022 CivicServe & the city of Peoria, Illinois. All rights reserved.
+        &copy; Copyright 2022 Evanston, Illinois. All rights reserved.
+      </div>
+      <div class="col-12 text-center">
+        <div class="cs-navbar-brand-powered-by powered-by-footer">
+          <span>powered by</span> 
+          <a href="https://www.civicserve.com" class="cs-logo-cobrand-container">
+            <img src="images/logo-civicserve-white.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-color" alt="CivicServe logo" height="19">
+            <img src="images/logo-civicserve-white.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-gray" alt="CivicServe logo" height="19">
+          </a>
+        </div>
       </div>
       <div class="col-12 text-center cs-footer-util-links">
         <a href="#">Privacy</a>  &bull;  <a href="#">Terms of use</a>
@@ -175,12 +281,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="js/application.js"></script>
 <script>
-  var acc = document.getElementsByClassName("cs-active-programs-list-item");
+  var acc = document.getElementsByClassName("cs-active-program-name");
   var i;
 
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
-      this.classList.toggle("open");
+      console.log(this.classList);
+      this.closest('.cs-active-programs-list-item').classList.toggle("open");
     });
   }
   
