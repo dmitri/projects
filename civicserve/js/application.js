@@ -36,6 +36,8 @@ document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 // Update scroll position for first time
 storeScroll();
 
+//----------------------------------------------------------------------------------------------------
+
 /* global fadeIn function */
 
 function fadeIn(element, duration = 600) {
@@ -59,3 +61,36 @@ document.getElementById('cs-cta-developer').addEventListener("click",function(){
   document.getElementById('cs-cta-welcome-container').style.display = "none";
   fadeIn(document.getElementById('cs-cta-developer-container'), 300);
 });
+
+document.getElementById('cs-cta-business').addEventListener("click",function(){
+  document.getElementById('cs-cta-welcome-container').style.display = "none";
+  fadeIn(document.getElementById('cs-cta-developer-container'), 300);
+  triggerTab("business");
+});
+
+document.getElementById('cs-cta-resident').addEventListener("click",function(){
+  document.getElementById('cs-cta-welcome-container').style.display = "none";
+  fadeIn(document.getElementById('cs-cta-developer-container'), 300);
+  triggerTab("resident");
+});
+
+//-----------------------------------------------------------------------------------------------------
+
+
+/* checks the hash to see if a tab should be clicked */
+window.onhashchange=hashTriggerTab;
+window.onload=hashTriggerTab;
+
+function hashTriggerTab(){
+  var current_hash=window.location.hash;
+  if(current_hash.substring(0,1)=='#')current_hash=current_hash.substring(1);
+  if(current_hash!=''){
+      var trigger=document.querySelector('.nav-pills a[href="#'+current_hash+'"]');
+      if(trigger)trigger.click();
+  }
+}
+
+function triggerTab(tab) {
+  var trigger=document.querySelector('.nav-pills a[href="#cs-welcome-'+tab+'-tab"]');
+  if(trigger)trigger.click();
+}

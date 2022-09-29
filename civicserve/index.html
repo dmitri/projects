@@ -59,13 +59,13 @@
                     </a>
                   </div>
                   <div class="col-12 col-md-4 text-center">
-                    <a href="#" onclick="alert('Coming soon to a platform near you. \n\nClick \'Developer\' to see its portal landing page.'); return false;" class="cs-welcome-type">
+                    <a href="#" id="cs-cta-business" class="cs-welcome-type">
                       <i class="fa-light fa-chart-mixed"></i>
                       <strong>Business</strong>
                     </a>
                   </div>
                   <div class="col-12 col-md-4 text-center">
-                    <a href="#" onclick="alert('Coming soon to a platform near you. \n\n Click \'Developer\' to see its portal landing page.'); return false;" class="cs-welcome-type">
+                    <a href="#" id="cs-cta-resident" class="cs-welcome-type">
                       <i class="fa-light fa-house-day"></i>
                       <strong>Resident</strong>
                     </a>
@@ -81,13 +81,13 @@
               <div id="cs-cta-developer-container" class="cs-cta-developer cs-cta-container" style="display: none;">
                 <ul id="tablist" class="nav nav-pills nav-justified cs-user-type-tabs" role="tablist">
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="cs-welcome-developer-tab" aria-current="page" href="#" data-bs-toggle="pill" data-bs-target="#cs-welcome-developer-pane" type="button" role="tab" aria-controls="cs-welcome-developer-pane" aria-selected="true">
+                    <a class="nav-link active" id="cs-welcome-developer-tab" aria-current="page" href="#cs-welcome-developer-tab" data-bs-toggle="pill" data-bs-target="#cs-welcome-developer-pane" type="button" role="tab" aria-controls="cs-welcome-developer-pane" aria-selected="true">
                       <i class="fa-light fa-tree-city"></i>
                       Developer
                     </a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="cs-welcome-business-tab" href="#" 
+                    <a class="nav-link" id="cs-welcome-business-tab" href="#cs-welcome-business-tab" 
                       data-bs-toggle="pill" 
                       data-bs-target="#cs-welcome-business-pane" 
                       type="link" 
@@ -99,7 +99,7 @@
                     </a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="cs-welcome-resident-tab" href="#" data-bs-toggle="pill" data-bs-target="#cs-welcome-resident-pane" type="button" role="tab" aria-controls="cs-welcome-residnet-pane" aria-selected="false">
+                    <a class="nav-link" id="cs-welcome-resident-tab" href="#cs-welcome-resident-tab" data-bs-toggle="pill" data-bs-target="#cs-welcome-resident-pane" type="button" role="tab" aria-controls="cs-welcome-residnet-pane" aria-selected="false">
                       <i class="fa-light fa-house-day"></i>
                       Resident
                     </a>
@@ -110,8 +110,8 @@
                         id="cs-welcome-developer-pane" 
                         aria-labelledby="cs-welcome-business-tab" 
                         tabindex="0">
-                    <h6 style="font-weight: 600; margin-bottom: 15px;" class="cs-list-instruct">
-                      Start or resume your application in the following active programs:
+                    <h6 class="cs-list-instruct">
+                      Active programs available to developers in Evanston.
                     </h6>
                     <br/>
                     <ul class="cs-active-programs-list">
@@ -188,10 +188,44 @@
                   </div>
                 
                 <div class="cs-cta-business tab-pane fade" id="cs-welcome-business-pane"  aria-labelledby="cs-welcome-business-tab" tabindex="0">
-                  <h3 class="text-center">Coming soon.</h3>
+                  <h6 class="cs-list-instruct text-center">
+                    Enter your business's address to find available, active programs.
+                  </h6>
+                  <br/>
+                  <form>
+                    <div class="form-floating input-group mb-3">
+                      <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+                      <label for="floatingInput">Business Address</label>
+                      <button class="btn btn-outline-secondary cs-address-form-button" type="button" id="button-addon2">Search</button>
+                      <datalist id="datalistOptions">
+                        <option value="1600 Dodge Ave. Evanston IL 60201-3451">
+                        <option value="1408 Brown Ave. Evanston IL 60201-3974 USA">
+                        <option value="1740 Ridge Ave. Evanston IL 60201-5918 USA">
+                        <option value="1102 Davis St. Evanston IL 60201-5955 USA">
+                        <option value="815 Ridge Ave. Evanston IL 60202-4338 USA">
+                      </datalist>
+                    </div>
+                  </form>
                 </div>
                 <div class="cs-cta-resident tab-pane fade" id="cs-welcome-resident-pane"  aria-labelledby="cs-welcome-resident-tab" tabindex="0">
-                  <h3 class="text-center">Coming soon.</h3>
+                  <h6 class="cs-list-instruct text-center">
+                    Enter your residential address to find available, active programs.
+                  </h6>
+                  <br/>
+                  <form>
+                    <div class="form-floating input-group mb-3">
+                      <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+                      <label for="floatingInput">Residential Address</label>
+                      <button class="btn btn-outline-secondary cs-address-form-button" type="button" id="button-addon2">Search</button>
+                      <datalist id="datalistOptions">
+                        <option value="1600 Dodge Ave. Evanston IL 60201-3451">
+                        <option value="1408 Brown Ave. Evanston IL 60201-3974 USA">
+                        <option value="1740 Ridge Ave. Evanston IL 60201-5918 USA">
+                        <option value="1102 Davis St. Evanston IL 60201-5955 USA">
+                        <option value="815 Ridge Ave. Evanston IL 60202-4338 USA">
+                      </datalist>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -207,7 +241,8 @@
         <div class="col-sm-12 col-md-4">
           <div class="cs-info-block">
             <h5>About this Platform</h5>
-            <p>The CivicServe economic development platform is the leading, all-in-one platform providing a centralized service to easily set up, and file for incentive programs.</p>
+            <p>The CivicServe economic development platform is the leading, all-in-one platform providing a centralized service to easily set up, and file for economic incentive programs.</p>
+            <p>learn more about our programs, policies, procedures, and application steps you will need to be prepared for prior to applying for the subsidy.</p>
             <p><strong>Learn more at <a href="https://www.civicserve.com">CivicServe</a>.</strong>
           </div>
         </div>

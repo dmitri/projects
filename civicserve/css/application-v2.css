@@ -350,6 +350,11 @@ a:hover {
   margin-top: 2px;
 }
 
+.cs-list-instruct {
+  font-weight: 600; 
+  margin-bottom: 15px;
+}
+
 @media(max-width: 768px) {
   .cs-list-instruct {
     display: none;
@@ -422,6 +427,14 @@ a:hover {
   justify-content: center;
 }
 
+.cs-address-input {
+  z-index: 0 !important;
+}
+
+.cs-address-form-button {
+  border-radius: 0 .375rem .375rem 0 !important;
+}
+
 /* tabs styles */
 
 .cs-user-type-tabs {
@@ -432,6 +445,7 @@ a:hover {
 
 .nav-pills .nav-link {
   border-radius: 0;
+  color: #333;
   border-right: 1px solid #CCC;
 }
 .nav-pills .nav-link.active {
