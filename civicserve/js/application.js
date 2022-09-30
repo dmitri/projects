@@ -57,21 +57,45 @@ function fadeIn(element, duration = 600) {
 /* click assignments */
 
 /* welcome CTA click assignments */
-document.getElementById('cs-cta-developer').addEventListener("click",function(){
+document.getElementById('cs-cta-developer').addEventListener("click",function(e){
+  e.preventDefault();
   document.getElementById('cs-cta-welcome-container').style.display = "none";
   fadeIn(document.getElementById('cs-cta-developer-container'), 300);
 });
 
-document.getElementById('cs-cta-business').addEventListener("click",function(){
+document.getElementById('cs-cta-business').addEventListener("click",function(e){
+  e.preventDefault();
   document.getElementById('cs-cta-welcome-container').style.display = "none";
   fadeIn(document.getElementById('cs-cta-developer-container'), 300);
   triggerTab("business");
 });
 
-document.getElementById('cs-cta-resident').addEventListener("click",function(){
+document.getElementById('cs-cta-resident').addEventListener("click",function(e){
+  e.preventDefault();
   document.getElementById('cs-cta-welcome-container').style.display = "none";
   fadeIn(document.getElementById('cs-cta-developer-container'), 300);
   triggerTab("resident");
+});
+
+document.getElementById('cs-address-form-button-one').addEventListener("click",function(){
+  document.getElementById('cs-form-container-one').style.display = "none";
+  document.getElementById('cs-form-container-spinner-one').style.display = "flex";
+  setTimeout(function(){
+    document.getElementById('cs-form-container-spinner-one').style.display = "none";
+    fadeIn(document.getElementById('cs-list-response-one'), 300);
+    document.getElementById('cs-list-response-one').classList.add('show');
+  }, 1000);
+});
+
+document.getElementById('cs-address-form-button-two').addEventListener("click",function(){
+  document.getElementById('cs-form-container-two').style.display = "none";
+  document.getElementById('cs-form-container-spinner-two').style.display = "flex"; 
+  setTimeout(function(){
+    document.getElementById('cs-form-container-spinner-two').style.display = "none";
+    document.getElementById('cs-list-response-two').style.display = "block"; 
+    fadeIn(document.getElementById('cs-list-response-two'), 300)
+    document.getElementById('cs-list-response-two').classList.add('show');
+  }, 1000);;
 });
 
 //-----------------------------------------------------------------------------------------------------

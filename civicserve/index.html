@@ -74,7 +74,7 @@
                 <br/><br/>
                 <div class="row">
                   <div class="col-12 text-center">
-                    <strong><a href="#">Sign up</a>, and get access to all.<strong>
+                    <strong><a href="#">Sign up</a>, and get access to all.</strong>
                   </div>
                 </div>
               </div>
@@ -95,7 +95,7 @@
                       aria-controls="cs-welcome-business-pane" 
                       aria-selected="false">
                       <i class="fa-light fa-chart-mixed"></i>
-                      Business Owner
+                      Business
                     </a>
                   </li>
                   <li class="nav-item" role="presentation">
@@ -188,8 +188,7 @@
                   </div>
                 
                 <div class="cs-cta-business tab-pane fade" id="cs-welcome-business-pane"  aria-labelledby="cs-welcome-business-tab" tabindex="0">
-                  <div class="cs-form-container">
-                    <br/>
+                  <div id="cs-form-container-one" class="cs-form-container">
                     <h6 class="cs-list-instruct">
                       Enter your business's address to find available, active programs.
                     </h6>
@@ -198,7 +197,7 @@
                       <div class="form-floating input-group mb-3">
                         <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
                         <label for="floatingInput">Business Address</label>
-                        <button class="btn btn-outline-secondary cs-address-form-button" type="button" id="button-addon2">Search</button>
+                        <button class="btn btn-outline-secondary cs-address-form-button" id="cs-address-form-button-one" type="button" id="button-addon2">Search</button>
                         <datalist id="datalistOptions">
                           <option value="1600 Dodge Ave. Evanston IL 60201-3451">
                           <option value="1408 Brown Ave. Evanston IL 60201-3974 USA">
@@ -209,10 +208,72 @@
                       </div>
                     </form>
                   </div>
+                  <div id="cs-form-container-spinner-one" class="cs-form-container-spinner justify-content-center">
+                    <div class="spinner-border text-secondary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                  <div id="cs-list-response-one" class="cs-list-response">
+                    <h6 class="cs-list-instruct"><i class="fa-light fa-message-check"></i> Explore 3 active programs available for your business:</h6>
+                    <br/>
+                    <ul class="cs-active-programs-list">
+                      <li class="cs-active-programs-list-item">
+                        <div class="cs-active-program-info">
+                          <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-minus"></i>
+                            Tax Increment Financing Incentive Program
+                          </div>
+                          <div class="cs-active-program-details">
+                            The City of Evanston has established the use of tax increment financing (TIF) as a strategic tool in its economic development program to foster redevelopment in areas of the community where needed.
+                            <br/>
+                            <br/>
+                            <strong>Best for:</strong> List who this is best for.
+                            <br/><br/>
+                            <a href="#" class="" style="position: relative; z-index: 20; padding: 20px 0 0 0;">Learn more</a>
+                          </div>
+                        </div>
+                        <a href="#"  class="cs-active-program-cta">Apply</a>
+                      </li>
+                      <li class="cs-active-programs-list-item">
+                        <div class="cs-active-program-info">
+                          <div class="cs-active-program-name"  data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-minus"></i>
+                            ARPA Grant
+                          </div>
+                          <div class="cs-active-program-details">
+                          	Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward
+                            <br/><br/>
+                            <strong>Best for:</strong> List who this is best for.
+                            <br/><br/>
+                            <a href="#" class=>Learn more</a>
+                          </div>
+                        </div>
+                        <a href="#"  class="cs-active-program-cta">Apply</a>
+                      </li>
+                      <li class="cs-active-programs-list-item">
+                        <div class="cs-active-program-info">
+                          <div class="cs-active-program-name" data-bs-toggle="tooltip" data-bs-title="Click for program details." data-bs-placement="top">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-regular fa-square-minus"></i> 
+                            Storefront Modernization
+                          </div>
+                          <div class="cs-active-program-details">
+                            Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.
+                            <br/><br/>
+                            <strong>Best for:</strong> List who this is best for.
+                            <br/><br/>
+                            <a href="#" class=>Learn more</a>
+                          </div>
+                        </div>
+                        <a href="#" class="cs-active-program-cta">Apply</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="cs-cta-resident tab-pane fade" id="cs-welcome-resident-pane"  aria-labelledby="cs-welcome-resident-tab" tabindex="0">
-                  <div class="cs-form-container">
-                    <br/>
+                  <div id="cs-form-container-two" class="cs-form-container">
                     <h6 class="cs-list-instruct">
                       Enter your residential address to find available, active programs.
                     </h6>
@@ -221,7 +282,7 @@
                       <div class="form-floating input-group mb-3">
                         <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
                         <label for="floatingInput">Residential Address</label>
-                        <button class="btn btn-outline-secondary cs-address-form-button" type="button" id="button-addon2">Search</button>
+                        <button class="btn btn-outline-secondary cs-address-form-button" id="cs-address-form-button-two" type="button" id="button-addon3">Search</button>
                         <datalist id="datalistOptions">
                           <option value="1600 Dodge Ave. Evanston IL 60201-3451">
                           <option value="1408 Brown Ave. Evanston IL 60201-3974 USA">
@@ -231,6 +292,22 @@
                         </datalist>
                       </div>
                     </form>
+                  </div>
+                  <div id="cs-form-container-spinner-two" class="cs-form-container-spinner justify-content-center">
+                    <div class="spinner-border text-secondary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                  <div id="cs-list-response-two" class="cs-list-response">
+                    <div class="alert alert-primary" role="alert">
+                      <h6 style="margin: 0; padding: 0;"><i class="fa-regular fa-circle-info"></i> No active programs are available yet in your area.</h6>
+                    </div>
+                    <br/>
+                    <div class="text-left">
+                      <h4>Stay Informed</h4>
+                      <p>Sign up to keep informed when new programs become active...</p>
+                      <a href="#cs-subscribe" class="btn btn-light" style="border: 1px solid #DDD;">Subscribe</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -240,7 +317,6 @@
       </div>
     </div>
   </section>
-
   <section class="cs-info" style="background: #f5f5f5;">
     <div class="container">
       <div class="row">
@@ -248,8 +324,8 @@
           <div class="cs-info-block">
             <h5>About this Platform</h5>
             <p>The CivicServe economic development platform is the leading, all-in-one platform providing a centralized service to easily set up, and file for economic incentive programs.</p>
-            <p>learn more about our programs, policies, procedures, and application steps you will need to be prepared for prior to applying for the subsidy.</p>
-            <p><strong>Learn more at <a href="https://www.civicserve.com">CivicServe</a>.</strong>
+            <p>Learn more about our programs, policies, procedures, and application steps you will need to be prepared for prior to applying for the subsidy.</p>
+            <p><strong>Learn more at <a href="https://www.civicserve.com">CivicServe</a>.</strong></p>
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
@@ -283,7 +359,25 @@
   </div>
 </div>
 </section>
-
+<section id="cs-subscribe" class="cs-subscribe" style="background: #f5f5f5; padding: 50px; border-top: 1px solid #DDD;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12" style="background: #f5f5f5;">
+        <div class="cs-subscribe-form-container">
+          <h6>Keep informed when new programs become active in your area.</h6>
+          <form>
+            <div class="form-floating input-group mb-3">
+              <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+              <label for="floatingInput">Enter your email address</label>
+              <button class="btn btn-outline-secondary cs-address-form-button" id="cs-address-form-button-one" type="button" id="button-addon2" style="background: #848d95; color: #FFF;">Subscribe</button>
+            </div>
+            <div class="txt-sm" style="font-size: .8rem; margin-top:-5px;">Your email will NOT be sold, nor used for other marketing purposes.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="cs-help-footer">
   <div class="container">
     <div class="row">
