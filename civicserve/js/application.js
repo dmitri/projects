@@ -60,6 +60,7 @@ function fadeIn(element, duration = 600) {
 document.getElementById('cs-cta-developer').addEventListener("click",function(e){
   e.preventDefault();
   document.getElementById('cs-cta-welcome-container').style.display = "none";
+  addPaddingToTabs();
   fadeIn(document.getElementById('cs-cta-developer-container'), 300);
 });
 
@@ -67,6 +68,7 @@ document.getElementById('cs-cta-business').addEventListener("click",function(e){
   e.preventDefault();
   document.getElementById('cs-cta-welcome-container').style.display = "none";
   fadeIn(document.getElementById('cs-cta-developer-container'), 300);
+  addPaddingToTabs();
   triggerTab("business");
 });
 
@@ -74,6 +76,7 @@ document.getElementById('cs-cta-resident').addEventListener("click",function(e){
   e.preventDefault();
   document.getElementById('cs-cta-welcome-container').style.display = "none";
   fadeIn(document.getElementById('cs-cta-developer-container'), 300);
+  addPaddingToTabs();
   triggerTab("resident");
 });
 
@@ -117,4 +120,8 @@ function hashTriggerTab(){
 function triggerTab(tab) {
   var trigger=document.querySelector('.nav-pills a[href="#cs-welcome-'+tab+'-tab"]');
   if(trigger)trigger.click();
+}
+
+function addPaddingToTabs() {
+  document.getElementById('cs-cta-focus-area').classList.add('tabs');
 }
