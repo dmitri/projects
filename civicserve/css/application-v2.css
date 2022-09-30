@@ -379,9 +379,6 @@ a:hover {
 }
 
 @media(max-width: 768px) {
-  .cs-list-instruct {
-    display: none;
-  }
   .cs-active-program-name {
     font-size: .9rem;
     line-height: 1.2;
