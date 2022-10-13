@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CivicServe Portal Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+  <link rel="icon" href="https://www.cityofevanston.org/favicon.ico" type="image/x-icon">
+<!--===============================================================================================-->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="css/application-v2.css">
+  <script src="https://kit.fontawesome.com/dbaccd1075.js" crossorigin="anonymous"></script>
+<style>
+  .hero-left {
+    background: #FFF;
+    padding: 36px 48px 36px 36px;
+  }
+  
+  .hero-right {
+    background: #FFF url(images/bg-evanston.png) no-repeat center right;
+    background-size: cover;
+    clip-path: polygon(13% 0,100% 0,100% 100%,0 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .alternate .bg-container {
+    background: #FFF url(../images/bg-evanston.png) no-repeat center right;
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .bg-hero-overlay {
+    background: rgba(255,255,255,0.62);
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%; 
+  }
+  
+  .cs-cta-focus-area {
+    margin: 40px 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .inverse .cs-welcome-type {
+    background: #1c3859;
+    border-radius: 5px;
+    color: #FFF;
+  }
+  .toggle-inverse-container {
+    background: rgba(255,255,255,0.9);
+    box-shadow: -5px -5px 10px rgba(0,0,0,0.1);
+    border-radius: 10px 0 0 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    padding: 5px 15px;
+    z-index:100;
+  }
+  
+  .toggle-inverse-container:not(.inverse-active) .fa-square-check {
+    display: none;
+  }
+  
+  .toggle-inverse-container:not(.inverse-active) .fa-square {
+    display: inline-block;
+  }
+  
+  .toggle-inverse-container.inverse-active .fa-square-check {
+    display: inline-block;
+  }
+  
+  .toggle-inverse-container.inverse-active .fa-square {
+    display: none;
+  }
+  
+  @media (max-width: 991px) {
+    .cs-cta-focus-area {
+        border: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cs-welcome-type{
+      margin-bottom: 24px;
+    }
+    .cs-welcome-type.last {
+      margin-bottom: 0;
+    }
+  }
+  
+
+</style>
+</head>
+<body class="city-portal-index alternate">
+
+    <nav class="cs-portal-nav navbar sticky-top">
+      <div class="container-fluid">
+        <div class="cs-portal-brand">
+          <a class="navbar-brand cs-navbar-brand" href="#">
+            <img src="images/logo-evanston.png" alt="Evanston, IL logo" class="cs-partner-logo" height="75">
+          </a>
+          <div class="cs-cobrand">
+            Economic Development Portal
+          </div>
+      
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active link-login" aria-current="page" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Log in</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="hero-container">
+      <div class="row mx-0">
+        <div class="col-12 col-md-7 col-lg-6 hero-left">
+          <h1 class="cs-h1">The All-in-One <span>Economic Development Platform</span> for Evanston, Illinois.</h1>
+          <div id="cs-cta-focus-area" class="cs-cta-focus-area">
+            <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container">
+              <h5 style="font-size: 1.1rem;">I am interested in Evanston economic development as a:</h5>
+              <br/>
+              <br/>
+              <div class="row">
+                <div class="col-12 col-sm-6 text-center">
+                  <a href="evanston-developer.html" class="cs-welcome-type">
+                    <i class="fa-light fa-tree-city"></i>
+                    <strong>Developer</strong>
+                  </a>
+                </div>
+                <div class="col-12 col-sm-6 text-center">
+                  <a href="evanston-business.html" class="cs-welcome-type last">
+                    <i class="fa-light fa-chart-mixed"></i>
+                    <strong>Business</strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-6 hero-right">
+          <div class="bg-hero-overlay"></div>
+        </div>
+      </div>
+    </div>
+
+  <section class="cs-info" style="background: #f5f5f5;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="cs-info-block">
+            <h5>About this Platform</h5>
+            <p>The Evanston economic development platform is an all-in-one platform providing a centralized service to easily set up, and file for economic incentive programs.</p>
+            <p>Learn more about Evanston programs, policies, procedures, and application steps you will need to be prepared for prior to applying for the subsidy.</p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="cs-info-block">
+            <h5>Who Is This Best For?</h5>
+            <p>This application is for new or existing businesses, consultants, banks, and others involved in and seeking the economic development of Evanston, IL. who want to learn about, quickly apply for, and manage incentives.
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="cs-info-block last">
+            <h5>Helpful Links for Evanston Development</h5>
+            <ul class="cs-extra-links">
+              <li><a href="https://www.cityofevanston.org/" target="_blank">City of Evanston</a></li>
+              <li><a href="https://www.cityofevanston.org/business" target="_blank">Economic Development</a></li>
+              <li><a href="https://www.cityofevanston.org/government/departments/community-development/economic-development/doing-business" target="_blank">Doing Business in Evanston</a></li>
+              <li><a href="https://www.cityofevanston.org/business/tif-districts" target="_blank">Business Resources</a></li>
+              <li><a href="#">TIF Districts</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section id="cs-subscribe" class="cs-subscribe">
+  <div class="container">
+    <div class="row">
+      <div class="col-12" style="background: #f5f5f5;">
+        <div class="cs-subscribe-form-container">
+          <h6>Keep informed when new programs become active in your area.</h6>
+          <form>
+            <div class="form-floating input-group mb-3">
+              <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+              <label for="floatingInput">Email address</label>
+              <button class="btn btn-outline-secondary cs-address-form-button" id="cs-address-form-button-one" type="button" id="button-addon2" style="background: #848d95; color: #FFF;">Subscribe</button>
+            </div>
+            <div class="txt-sm" style="font-size: .8rem; margin-top:-5px;">Your email will NOT be sold, nor used for other marketing purposes.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-help-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h5>
+          <i class="fa-regular fa-message-question"></i> 
+          Need help? 
+          <a href="//eastdundee.com/contact/" target="_blank" style="color: #FFF;">Contact us</a> for assistance.
+        </h5>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        &copy; Copyright 2022 Evanston, Illinois. All rights reserved.
+      </div>
+      <div class="col-12 text-center">
+        <div class="cs-navbar-brand-powered-by powered-by-footer">
+          <span>powered by</span> 
+          <a href="https://www.civicserve.com" class="cs-logo-cobrand-container">
+            <img src="images/logo-civicserve-white.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-color" alt="CivicServe logo" height="19">
+            <img src="images/logo-civicserve-white.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-gray" alt="CivicServe logo" height="19">
+          </a>
+        </div>
+      </div>
+      <div class="col-12 text-center cs-footer-util-links">
+        <a href="#">Privacy</a>  &bull;  <a href="#">Terms of use</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="toggle-inverse-container" class="toggle-inverse-container">
+  <i class="far fa-square-check"></i> <i class="far fa-square"></i> <a href="#" id="toggle-inverse">Inverse</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<script>
+  /* detect scroll for the logo resizing */
+  // The debounce function receives our function as a parameter
+  const debounce = (fn) => {
+
+    // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+    let frame;
+
+    // The debounce function returns a new function that can receive a variable number of arguments
+    return (...params) => {
+    
+      // If the frame variable has been defined, clear it now, and queue for next frame
+      if (frame) { 
+        cancelAnimationFrame(frame);
+      }
+
+      // Queue our function call for the next frame
+      frame = requestAnimationFrame(() => {
+      
+        // Call our function and pass any params we received
+        fn(...params);
+      });
+
+    } 
+  };
+
+
+  // Reads out the scroll position and stores it in the data attribute
+  // so we can use it in our stylesheets
+  const storeScroll = () => {
+    document.documentElement.dataset.scroll = window.scrollY;
+  }
+
+  // Listen for new scroll events, here we debounce our `storeScroll` function
+  document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+  // Update scroll position for first time
+  storeScroll();
+  
+
+  document.getElementById('toggle-inverse').addEventListener("click",function(e){
+    e.preventDefault();
+    document.body.classList.toggle('inverse');
+    document.getElementById('toggle-inverse-container').classList.toggle('inverse-active');
+  });
+</script>
+</body>
+</html>

@@ -92,14 +92,15 @@ document.getElementById('cs-address-form-button-one').addEventListener("click",f
 
 document.getElementById('cs-address-form-button-two').addEventListener("click",function(){
   document.getElementById('cs-form-container-two').style.display = "none";
-  document.getElementById('cs-form-container-spinner-two').style.display = "flex"; 
+  document.getElementById('cs-form-container-spinner-two').style.display = "flex";
   setTimeout(function(){
     document.getElementById('cs-form-container-spinner-two').style.display = "none";
-    document.getElementById('cs-list-response-two').style.display = "block"; 
+    document.getElementById('cs-list-response-two').style.display = "block";
     fadeIn(document.getElementById('cs-list-response-two'), 300)
     document.getElementById('cs-list-response-two').classList.add('show');
   }, 1000);;
 });
+
 
 //-----------------------------------------------------------------------------------------------------
 
