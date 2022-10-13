@@ -56,6 +56,19 @@
     border-radius: 5px;
     color: #FFF;
   }
+  
+  .inverse .cs-welcome-type i {
+    color: #FFF;
+  }
+  
+  .inverse .cta-apply-block a,
+  .inverse .cta-apply-block a:visited {
+    background: #FFF;
+    color: #1c3859;
+    font-weight: 600;
+  }
+  
+
   .toggle-inverse-container {
     background: rgba(255,255,255,0.9);
     box-shadow: -5px -5px 10px rgba(0,0,0,0.1);
@@ -98,8 +111,13 @@
     padding-bottom: 65px;
   }
   
+  .cs-welcome-type strong {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    padding: 0 20px; 
+  }
+  
   .cta-apply-block {
-    background: #FFF;
     padding: 0;
     position: absolute;
     bottom: 30px;
@@ -115,7 +133,7 @@
     color: #FFF;
     font-size: 1rem;
     font-weight: 600;
-    padding: 5px 20px;
+    padding: 10px 25px;
     border-radius: 3px;
     text-decoration: none;
   }
@@ -165,12 +183,12 @@
 
 </style>
 </head>
-<body class="city-portal-index alternate">
+<body class="city-portal-index alternate inverse">
 
     <nav class="cs-portal-nav navbar sticky-top">
       <div class="container-fluid">
         <div class="cs-portal-brand">
-          <a class="navbar-brand cs-navbar-brand" href="#">
+          <a class="navbar-brand cs-navbar-brand" href="evanston.html">
             <img src="images/logo-evanston.png" alt="Evanston, IL logo" class="cs-partner-logo" height="75">
           </a>
           <div class="cs-cobrand">
@@ -203,7 +221,7 @@
                   <i class="fa-light fa-tree-city"></i>
                   <strong>TIF Incentive Program</strong>
                   <p>The City of Evanston has established the use of tax increment financing (TIF) as a strategic tool in its economic development program to foster redevelopment in areas of the community where needed.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <div class="cta-apply-block"><a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=4" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
@@ -211,7 +229,7 @@
                   <i class="fa-light fa-money-check-dollar-pen"></i>
                   <strong>AARPA Grant</strong>
                   <p>Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <div class="cta-apply-block"><a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
@@ -219,7 +237,7 @@
                   <i class="fa-light fa-briefcase"></i>
                   <strong>Entrepreneurship Support Grant</strong>
                   <p>The program is intended to assist in the growth of jobs in Evanston through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <div class="cta-apply-block"><a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
@@ -227,7 +245,7 @@
                   <i class="fa-light fa-building-circle-check"></i>
                   <strong>Storefront Modernization</strong>
                   <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <div class="cta-apply-block"><a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
             </div>
@@ -246,7 +264,7 @@
     <div class="row">
       <div class="col-12" style="background: #f5f5f5;">
         <div class="cs-subscribe-form-container">
-          <h4>Don't see the active program that's right for your development project?</h4>
+          <h4>Don't see an active program that benefits your development project?</h4>
           <h6>Keep informed when new programs become active in your area.</h6>
           <form>
             <div class="form-floating input-group mb-3">
@@ -276,15 +294,15 @@
       <div class="col-12 col-md-5 offset-md-1">
         <form>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
             <label for="floatingInput">First Name</label>
           </div>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
             <label for="floatingInput">Last Name</label>
           </div>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
             <label for="floatingInput">Email</label>
           </div>
           <div class="action text-flex-end" style="text-align: right;">

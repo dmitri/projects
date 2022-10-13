@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900");
+@import url("https://fonts.googleapis.com/css?family=OpenSans:300,400,500,600,700,900");
 
 :root {
   --link-underline-color: #319bcc;
@@ -13,7 +13,7 @@ html:not([data-scroll='0']) .cs-partner-logo {
 
 body {
   background: #FFF;
-  font-family: "Poppins", Helvetica, arial, sans-serif;
+  font-family: "Open Sans", Helvetica, arial, sans-serif;
   border-top: 7px solid #1B2A3F;
 }
 
@@ -226,7 +226,7 @@ a:hover {
 }
 
 .cs-navbar-brand-powered-by {
-  color: #ccc;
+  color: #fafafa;
   font-size: 1rem;
   font-weight: 400;
 }

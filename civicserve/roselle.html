@@ -138,8 +138,13 @@
     display: none;
   }
   
+  .cs-help-footer a,
+  .cs-help-footer a:visited 
+  .cs-footer a,
+  .cs-footer a:visited {
+    text-decoration-color: #FFF;
+  }
 
-  
   @media (max-width: 991px) {
     .cs-cta-focus-area {
         border: none;
@@ -158,12 +163,12 @@
 
 </style>
 </head>
-<body class="city-portal-index">
+<body class="city-portal-index inverse">
 
     <nav class="cs-portal-nav navbar sticky-top">
       <div class="container-fluid">
         <div class="cs-portal-brand">
-          <a class="navbar-brand cs-navbar-brand" href="#">
+          <a class="navbar-brand cs-navbar-brand" href="roselle.html">
             <img src="images/logo-roselle.png" alt="Roselle, IL logo" class="cs-partner-logo" height="75">
           </a>
           <div class="cs-cobrand">
@@ -190,7 +195,7 @@
               <br/>
               <div class="row">
                 <div class="col-12 col-sm-6 text-center">
-                  <a href="roselle-developer.html" class="cs-welcome-type">
+                  <a href="#" class="cs-welcome-type" onclick="alert('Not active for this prototype. Click Business.\n\n(Developer is active for Evanston.)'); return false;">
                     <i class="fa-light fa-tree-city"></i>
                     <strong>Developer</strong>
                   </a>

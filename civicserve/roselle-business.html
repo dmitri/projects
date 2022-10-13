@@ -4,7 +4,7 @@
   <title>CivicServe Portal Prototype</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-  <link rel="icon" href="https://www.cityofevanston.org/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://www.roselle.il.us/images/favicon.ico" type="image/x-icon">
 <!--===============================================================================================-->
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -102,10 +102,22 @@
   }
 
   .inverse .cs-welcome-type {
-    background: #1c3859;
+    background: #902246;
     border-radius: 5px;
     color: #FFF;
   }
+  
+  .inverse .cs-welcome-type i {
+    color: #FFF;
+  }
+  
+  .inverse .cta-apply-block a, 
+  .inverse .cta-apply-block a:visited {
+    background: #FFF;
+    color: #902246;
+    font-weight: normal;
+  }
+
   .toggle-inverse-container {
     background: rgba(255,255,255,0.9);
     box-shadow: -5px -5px 10px rgba(0,0,0,0.1);
@@ -134,22 +146,18 @@
     display: none;
   }
   
-  .cs-welcome-type i {
-    color: #902246;
-  }
-  
   .cs-welcome-type strong {
     font-weight: 700;
   }
   
   .cs-welcome-type {
+    background: #fcfaf5;
     height: 100%;
     position: relative;
     padding-bottom: 65px;
   }
   
   .cta-apply-block {
-    background: #FFF;
     padding: 0;
     position: absolute;
     bottom: 30px;
@@ -165,11 +173,15 @@
     color: #FFF;
     font-size: 1rem;
     font-weight: 600;
-    padding: 5px 20px;
+    padding: 10px 25px;
     border-radius: 3px;
     text-decoration: none;
   }
-  
+  .cs-welcome-type strong {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    padding: 0 20px; 
+  }
   .cs-welcome-type p {
     text-align: left;
     padding: 0 20px;
@@ -197,6 +209,13 @@
     padding-top: 40px;
   }
   
+  .cs-help-footer a,
+  .cs-help-footer a:visited 
+  .cs-footer a,
+  .cs-footer a:visited {
+    text-decoration-color: #FFF;
+  }
+  
   @media (max-width: 991px) {
     .cs-cta-focus-area {
         border: none;
@@ -220,11 +239,11 @@
     <nav class="cs-portal-nav navbar sticky-top">
       <div class="container-fluid">
         <div class="cs-portal-brand">
-          <a class="navbar-brand cs-navbar-brand" href="#">
+          <a class="navbar-brand cs-navbar-brand" href="roselle.html">
             <img src="images/logo-roselle.png" alt="Roselle, IL logo" class="cs-partner-logo" height="75">
           </a>
           <div class="cs-cobrand">
-            Business Development Portal
+            Business Economic Development Portal
           </div>
         </div>
         <ul class="navbar-nav ">
@@ -244,7 +263,7 @@
       <h1 class="cs-h1 text-center">Roselle <span>Business Economic Development Platform</span></h1>
       <div id="cs-cta-focus-area" class="cs-cta-focus-area">
         <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container text-center">
-          <h5 style="font-size: 1.1rem; text-center">Roselle currently has 4 active programs:</h5>
+          <h5 style="font-size: 1.1rem; text-center">Roselle currently has 8 active programs:</h5>
           <br/>
           <div class="text-right"><i class="fa-regular fa-filter-list"></i> <a href="#" onclick="document.getElementById('address-form').style.display='block';" class="filter-list-trigger"> Filter list by your business address</a></div>
           <br/><br/>
@@ -277,72 +296,76 @@
               <div class="col-12 col-sm-3 text-center">
                 <div class="cs-welcome-type">
                   <i class="fa-light fa-tree-city"></i>
-                  <strong>TIF Incentive Program</strong>
-                  <p>The City of Roselle has established the use of tax increment financing (TIF) as a strategic tool in its economic development program to foster redevelopment in areas of the community where needed.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <strong>Tax Increment Financing Incentive Program</strong>
+                  <p>The Village of Roselle has established the use of tax increment financing (TIF) as a strategic tool in its economic development program to foster redevelopment in areas of the community where needed.</p>
+                  <div class="cta-apply-block"><a href="https://roselleil.civicserve.com/IncentiveProject/ProgramInfo?programId=4" class="cta-apply">Learn More & Apply</a></div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
                 <div class="cs-welcome-type last">
                   <i class="fa-light fa-money-check-dollar-pen"></i>
-                  <strong>AARPA Grant</strong>
-                  <p>Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <strong>TIF - Façade - Exterior Improvement Grant</strong>
+                  <p>A Façade-Exterior Improvement Grant is intended for property improvements undertaken on the exterior of a building structure.</p>
+                  <div class="cta-apply-block">
+                    <a href="https://roselleil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cta-apply" target="_blank">
+                      Learn More & Apply
+                    </a>
+                  </div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
                 <div class="cs-welcome-type last">
-                  <i class="fa-light fa-briefcase"></i>
-                  <strong>Entrepreneurship Support Grant</strong>
-                  <p>The program is intended to assist in the growth of jobs in Roselle through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <i class="fa-light fa-money-check-dollar-pen"></i>
+                  <strong>TIF - Interior Improvement Grant</strong>
+                  <p>An Interior Improvement Grant is intended for enhancements undertaken on the interior of a structure.</p>
+                  <div class="cta-apply-block"><a href="https://roselleil.civicserve.com/IncentiveProject/ProgramInfo?programId=8" class="cta-apply">Learn More & Apply</a></div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
                 <div class="cs-welcome-type last">
                   <i class="fa-light fa-building-circle-check"></i>
-                  <strong>Storefront Modernization</strong>
-                  <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <strong>TIF - Site Appearance Grant</strong>
+                  <p>This Grant is intended for improvements that enhance the attractiveness, functionality, or business appeal of property and to leverage positive impact that appearance improvements can have on the property and surrounding area.</p>
+                  <div class="cta-apply-block"><a href="https://roselleil.civicserve.com/IncentiveProject/ProgramInfo?programId=6" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
             </div>
-            <div id="another-row" class="row" style="display: none;">
+            <div id="another-row" class="row" style="display: none; margin-top: 45px;">
               <br/><br/><br/>
               <div class="col-12 col-sm-3 text-center">
                 <div class="cs-welcome-type">
-                  <i class="fa-light fa-tree-city"></i>
-                  <strong>TIF Incentive Program</strong>
-                  <p>The City of Roselle has established the use of tax increment financing (TIF) as a strategic tool in its economic development program to foster redevelopment in areas of the community where needed.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <i class="fa-light fa-money-check-dollar-pen"></i>
+                  <strong>TIF - Small Business Micro-Grant</strong>
+                  <p>A Small Business Micro-Grant is intended to provide start-up funds for physical changes typically associated with leasing a new space. This grant provides funding directly to new businesses that are renting or leasing space within the TIF Districts.</p>
+                  <div class="cta-apply-block"><a href="https://roselleil.civicserve.com/IncentiveProject/ProgramInfo?programId=" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
                 <div class="cs-welcome-type last">
                   <i class="fa-light fa-money-check-dollar-pen"></i>
-                  <strong>AARPA Grant</strong>
-                  <p>Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <strong>TIF - Strategic Investment Incentive</strong>
+                  <p>A Strategic Investment Incentive is a customized assistance package intended to encourage projects that will have a considerable impact upon the Village.</p>
+                  <div class="cta-apply-block"><a href="https://roselleil.civicserve.com/IncentiveProject/ProgramInfo?programId=9" class="cta-apply" target="_blank">Learn More & Apply</a></div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-3 text-center">
+                <div class="cs-welcome-type last">
+                  <i class="fa-light fa-money-check-dollar-pen"></i>
+                  <strong>ARPA Business Reimbursement Grant Program</strong>
+                  <p>The Village of Roselle is seeking to utilize a portion of these funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
+                  <div class="cta-apply-block"><a href="#" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
               <div class="col-12 col-sm-3 text-center">
                 <div class="cs-welcome-type last">
                   <i class="fa-light fa-briefcase"></i>
-                  <strong>Entrepreneurship Support Grant</strong>
-                  <p>The program is intended to assist in the growth of jobs in Roselle through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-3 text-center">
-                <div class="cs-welcome-type last">
-                  <i class="fa-light fa-building-circle-check"></i>
-                  <strong>Storefront Modernization</strong>
-                  <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
-                  <div class="cta-apply-block"><a href="#" class="cta-apply">Apply</a></div>
+                  <strong>ARPA Business Resiliency</strong>
+                  <p>The Village of Roselle is seeking to utilize a portion of these funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
+                  <div class="cta-apply-block"><a href="#" class="cta-apply" target="_blank">Learn More & Apply</a></div>
                 </div>
               </div>
             </div>
-            <div class="see-more" style="padding: 65px 0 0 0;"><a href="#" onclick="document.getElementById('another-row').style.display='flex';">Show All</a></div>
+            <div id="see-more" class="see-more" style="padding: 65px 0 0 0; font-weight: 900;"><a href="#" onclick="document.getElementById('another-row').style.display='flex'; document.getElementById('see-more').style.display='none'; return false;">Show All (4 more )</a></div>
           </div>
         </div>
       </div>
@@ -355,11 +378,11 @@
     <div class="row">
       <div class="col-12">
         <div class="cs-subscribe-form-container">
-          <h4>Don't see the active program that's right for your development project?</h4>
-          <h6>Keep informed when new programs become active in your area.</h6>
+          <h4>Don't see an active program that benefit your business?</h4>
+          <h6>Keep informed when new programs become active.</h6>
           <form>
             <div class="form-floating input-group mb-3">
-              <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
+              <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
               <label for="floatingInput">Email address</label>
               <button class="btn btn-outline-secondary cs-address-form-button" id="cs-address-form-button-one" type="button" id="button-addon2" style="background: #848d95; color: #FFF;">Subscribe</button>
             </div>
@@ -370,7 +393,7 @@
     </div>
   </div>
 </section>
-<section id="cs-subscribe" class="cs-subscribe" style="border-top: 1px solid #DDD; background: none;">
+<section id="cs-subscribe" class="cs-subscribe" style="background: none;">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12 col-md-2">
@@ -385,19 +408,19 @@
       <div class="col-12 col-md-5 offset-md-1">
         <form>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
             <label for="floatingInput">First Name</label>
           </div>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
             <label for="floatingInput">Last Name</label>
           </div>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
             <label for="floatingInput">Email</label>
           </div>
           <div class="action text-flex-end" style="text-align: right;">
-            <button type="button" class="btn btn-primary" style="background: #902246;">Submit</button>
+            <button type="button" class="btn btn-primary" style="background: #902246; border-color: #902246;">Submit</button>
           </div>
         </form>
       </div>
