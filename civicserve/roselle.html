@@ -14,14 +14,22 @@
 <style>
 
   /* styles for theme */
+  :root {
+    --primary-color: #902246;
+  } 
+  
   body {
     border-top: none;
   }
   
   .cs-portal-nav {
-    background: #902246;
+    background: var(--primary-color);
     border-bottom: none;
     color: #FFF;
+  }
+  
+  .header-border {
+    background: var(--primary-color);
   }
   
   .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
@@ -42,15 +50,15 @@
   
   .cs-welcome-type {
     background: #FFF;
-    border-color: #902246;
+    border-color: var(--primary-color);
   }
   
   a, a:visited {
-    text-decoration-color: #902246;
+    text-decoration-color: var(--primary-color);
   }
   
   a:hover {
-    color: #902246;
+    color: var(--primary-color);
   }
   
   .cs-help-footer {
@@ -70,7 +78,6 @@
 
   .hero-left {
     background: #fcfaf5;
-    padding: 36px 48px 36px 36px;
   }
   
   .hero-right {
@@ -106,7 +113,7 @@
     padding: 0;
   }
   .inverse .cs-welcome-type {
-    background: #902246;
+    background: var(--primary-color);
     border-radius: 5px;
     color: #FFF;
   }
@@ -222,19 +229,21 @@
       <div class="row">
         <div class="col-sm-12 col-md-4">
           <div class="cs-info-block">
+            <div class="header-border"></div>
             <h5>About this Platform</h5>
             <p>The Roselle economic development platform is an all-in-one platform providing a centralized service to easily set up, and file for economic incentive programs.</p>
-            <p>Learn more about Roselle programs, policies, procedures, and application steps you will need to be prepared for prior to applying for the subsidy.</p>
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
           <div class="cs-info-block">
+            <div class="header-border"></div>
             <h5>Who Is This Best For?</h5>
             <p>This application is for new or existing businesses, consultants, banks, and others involved in and seeking the economic development of Roselle, IL. who want to learn about, quickly apply for, and manage incentives.
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
           <div class="cs-info-block last">
+            <div class="header-border"></div>
             <h5>Helpful Links for Roselle Development</h5>
             <ul class="cs-extra-links">
               <li><a href="https://www.roselle.il.us/" target="_blank">Village of Roselle</a></li>
