@@ -8,7 +8,7 @@ html:not([data-scroll='0']) {
   padding-top: 3em;
 }
 html:not([data-scroll='0']) .cs-partner-logo {
-  height: 65px;
+  height: 50px;
 }
 
 body {
@@ -102,9 +102,17 @@ a:hover {
   padding: 75px 0 60px 0;
 }
 
+.fa-clipboard-list {
+  font-size: 160px; transform: rotate(-10deg); color: #1c3859;
+}
+
 @media(max-width: 768px) {
   .cs-info-block:not(.last) {
     margin-bottom: 45px;
+  }
+  
+  .fa-clipboard-list {
+    font-size: 115px; margin-right: 35px; margin-top:-20px;
   }
 }
 
@@ -570,6 +578,16 @@ a:hover {
   .cs-info, .cs-subscribe {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  
+  .link-login {
+    border: none;
+    padding: 2px 5px;
+    text-decoration: underline;
+  }
+  
+  .link-login i {
+    display: none;
   }
 }
 
