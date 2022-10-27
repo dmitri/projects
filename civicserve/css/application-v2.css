@@ -191,6 +191,52 @@ a:hover {
   margin-bottom: 30px;
 }
 
+
+.cs-education-block {
+  background: #FFF;
+  border-radius: 4px;
+  color: #222;
+  box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px, rgb(0 0 0 / 16%) 0px 15px 15px -18px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.cs-education-block h4 {
+  color: #222;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cs-education-block i:not(.cs-arrow-right) {
+  color:#3f81ce;
+  font-size: 50px;
+  margin: 0 auto 15px auto;
+  text-align: center;
+}
+
+.cs-education-block i.cs-arrow-right {
+  color: #FFF;
+  position: absolute;
+  font-size: 40px;
+  right: -25px;
+  top: 40%;
+  z-index: 200;
+}
+
+@media(max-width: 768px) {
+  .cs-education-block {
+    margin-bottom: 15px;
+  }
+  .cs-education-block i.cs-arrow-right {
+   display: none; 
+  }
+}
+
 .bg-container {
   height: 225px;
 }

@@ -227,6 +227,24 @@
     }
   }
   
+  .checkmark-list {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .checkmark-list li {
+    display: flex;
+    font-size: 1.1rem;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
+  .checkmark-list li:before {
+    content: '\2713';
+    color: #902246;
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
 
 </style>
 </head>
@@ -368,55 +386,150 @@
     </div>
   </div>
 </div>
-<section id="cs-subscribe" class="cs-subscribe">
+<section id="cs-subscribe" class="cs-subscribe" style="padding: 48px 0;">
   <div class="arrow-up"></div>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <div class="cs-subscribe-form-container">
-          <h4>Don't see an active program that benefit your business?</h4>
-          <h6>Keep informed when new programs become active.</h6>
-          <form>
-            <div class="form-floating input-group mb-3">
-              <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
-              <label for="floatingInput">Email address</label>
-              <button class="btn btn-outline-secondary cs-address-form-button" id="cs-address-form-button-one" type="button" id="button-addon2" style="background: #848d95; color: #FFF;">Subscribe</button>
+      <div class="col-9 col-md-12 col-lg-5">
+        <div class="TIF-lead-in" style="margin-top: 155px;">
+
+          <h2 style="font-weight: 700; font-size: 2.5rem; display: flex;">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+                  <lottie-player src="https://lottie.host/483f7d54-4177-467a-ae61-f083d17a7447/m40ZnjZra9.json" background="transparent" speed="1" style="width: 100%; margin-left: -150px; margin-top: -50px;" loop autoplay></lottie-player>
+             <span style="display: inline-block; margin-left: -50px;">How Can We Help Your Business?</span></h2>
+          <br/>
+          <p style="font-size: 1.3rem;">Register your business here, and keep informed about new programs as they become active.</p>
+          <ul class="checkmark-list">
+            <li>Reason #1 why it's good to register</li>
+            <li>Reason #2 why it's good to register</li>
+            <li>Reason #3 why it's good to register</li>
+            <li>Reason #4 why it's good to register</li>
+          </ul>
+          <br/>
+
+        </div>
+      </div>
+      <div class="col-12 col-md-12 offset-md-0 col-lg-6 offset-md-1">
+        <br/><br/>
+        <form style="padding: 30px; background: #FFF; margin: 15px 0; box-shadow: 10px 10px 20px rgb(0 0 0 / 20%)">
+          <div class="row g-2" style="margin-bottom: 15px;">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="First Name">
+                <label for="floatingInputGrid">* First Name</label>
+              </div>
             </div>
-            <div class="txt-sm" style="font-size: .8rem; margin-top:-5px;">Your email will NOT be sold, nor used for other marketing purposes.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="cs-subscribe" class="cs-subscribe" style="background: none;">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-3 col-md-2">
-        <i class="fal fa-clipboard-list"></i>
-      </div>
-      <div class="col-9 col-md-4">
-        <div class="TIF-lead-in">
-          <h4>TIF Interested Party Registry</h4>
-          <p>Register here to get on the TIF Interested Parties Registry for one or more tax increment financing (TIF) redevelopment project areas.</p>
-        </div>
-      </div>
-      <div class="col-12 col-md-5 offset-md-1">
-        <form>
-          <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
-            <label for="floatingInput">First Name</label>
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="Last Name">
+                <label for="floatingInputGrid">* Last Name</label>
+              </div>
+            </div>
           </div>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
-            <label for="floatingInput">Last Name</label>
+            <input type="email" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">* Email</label>
           </div>
           <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Roselle, IL 60202">
-            <label for="floatingInput">Email</label>
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">* Business Name</label>
           </div>
+          <div class="form-floating input-group mb-3">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">* Business Address 1</label>
+          </div>
+          <div class="row g-2" style="margin-bottom: 15px;">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                <label for="floatingInputGrid">* Business City</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid">
+                  <option selected>Select state<option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <label for="floatingSelectGrid">* Business State</label>
+              </div>
+            </div>
+          </div>
+          <div class="row g-2" style="margin-bottom: 15px;">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                <label for="floatingInputGrid">* Industry</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid">
+                  <option selected>Select state<option>
+                  <option value="1">0-49</option>
+                  <option value="2">50-99</option>
+                  <option value="3">100-250</option>
+                  <option value="3">251-499</option>
+                  <option value="3">More than 500</option>
+                </select>
+                <label for="floatingSelectGrid">* Select...</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-floating input-group mb-3">
+            <input type="tel" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">* Business Phone Number</label>
+          </div>
+          <br/>
+          <div class="form-checkboxes">
+            <strong style="display: block; margin-bottom: 10px;">Register as an interested party for:</strong>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                TIFs
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+              <label class="form-check-label" for="defaultCheck2">
+                Grants
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+              <label class="form-check-label" for="defaultCheck3">
+                Loans
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+              <label class="form-check-label" for="defaultCheck4">
+                Business Development Districts
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+              <label class="form-check-label" for="defaultCheck5">
+                Enterprise Zones
+              </label>
+            </div>
+          </div>
+
+          <hr style="margin: 20px auto;">
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Yes, I'd like to receive email communications about business growth opportunities and incentives in Roselle, and agree to
+              <a href="#">Roselle's Privacy Policy</a>.
+            </label>
+          </div>
+          <br/>
           <div class="action text-flex-end" style="text-align: right;">
-            <button type="button" class="btn btn-primary" style="background: #902246; border-color: #902246;">Submit</button>
+            <button type="button" class="btn btn-primary" style="background: #902246; border: none;">Register</button>
           </div>
         </form>
       </div>
