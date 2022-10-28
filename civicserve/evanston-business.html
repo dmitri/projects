@@ -161,6 +161,11 @@
     padding-top: 40px;
   }
   
+  
+  .checkmark-list li:before {
+    color: #1c3859;
+  }
+  
   .cs-footer {
     padding: 20px 0;
   }
@@ -196,7 +201,7 @@
             <img src="images/logo-evanston.png" alt="Evanston, IL logo" class="cs-partner-logo" height="75">
           </a>
           <div class="cs-cobrand">
-            Economic Development Portal
+            Business Economic Development Portal
           </div>
         </div>
         <ul class="navbar-nav ">
@@ -213,7 +218,7 @@
 <div class="hero-container">
   <div class="row mx-0">
     <div class="col-lg-12 hero-left">
-      <h1 class="cs-h1 text-center">Evanston <span>Developer Economic Development Platform</span></h1>
+      <h1 class="cs-h1 text-center">Evanston <span>Business Economic Development Platform</span></h1>
       <div id="cs-cta-focus-area" class="cs-cta-focus-area">
         <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container text-center">
           <h5 style="font-size: 1.1rem; text-center">Evanston currently has 4 active programs:</h5>
@@ -265,38 +270,102 @@
 <section id="cs-subscribe" class="cs-subscribe" style="padding: 75px 0;">
   <div class="arrow-up"></div>
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-3 col-md-2">
-        <i class="fal fa-clipboard-list"></i>
-      </div>
-      <div class="col-9 col-md-12 col-lg-4">
-        <div class="TIF-lead-in">
-          <h2 style="font-weight: 700;">Don't see an active program that benefits your business?</h2>
-          <p>Register here to get on the interested parties registry for one or more tax increment financing (TIF) redevelopment project areas.</p>
+    <div class="row">
+      <div class="col-9 col-md-12 col-lg-5">
+        <div class="TIF-lead-in" style="margin-top: 155px;">
+
+          <h2 style="font-weight: 700; font-size: 2.5rem; display: flex;">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_MYtZN5.json"  background="transparent"  speed="1" style="width: 100%; margin-left: -150px; margin-top: -75px;"    autoplay></lottie-player>
+             <span style="display: inline-block; margin-left: -70px;">Register Your Business</span></h2>
+          <br/>
+          <p style="font-size: 1.3rem;">Register your business here, and keep informed about new programs as they become active.</p>
+          <ul class="checkmark-list">
+            <li>Reason #1 why it's good to register</li>
+            <li>Reason #2 why it's good to register</li>
+            <li>Reason #3 why it's good to register</li>
+            <li>Reason #4 why it's good to register</li>
+          </ul>
+          <br/>
+
         </div>
       </div>
-      <div class="col-12 col-md-12 offset-md-0 col-lg-5 offset-md-1">
+      <div class="col-12 col-md-12 offset-md-0 col-lg-6 offset-md-1">
         <br/><br/>
         <form style="padding: 30px; background: #FFF; margin: 15px 0; box-shadow: 10px 10px 20px rgb(0 0 0 / 20%)">
-          <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">First Name</label>
-          </div>
-          <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">Last Name</label>
+          <div class="row g-2" style="margin-bottom: 15px;">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="First Name">
+                <label for="floatingInputGrid">* First Name</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="Last Name">
+                <label for="floatingInputGrid">* Last Name</label>
+              </div>
+            </div>
           </div>
           <div class="form-floating input-group mb-3">
             <input type="email" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">Email</label>
+            <label for="floatingInput">* Email</label>
+          </div>
+          <div class="form-floating input-group mb-3">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">* Business Name</label>
+          </div>
+          <div class="form-floating input-group mb-3">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">* Business Address 1</label>
+          </div>
+          <div class="row g-2" style="margin-bottom: 15px;">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                <label for="floatingInputGrid">* Business City</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid">
+                  <option selected>Select state<option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <label for="floatingSelectGrid">* Business State</label>
+              </div>
+            </div>
+          </div>
+          <div class="row g-2" style="margin-bottom: 15px;">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                <label for="floatingInputGrid">* Industry</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid">
+                  <option selected>Select...<option>
+                  <option value="1">0-49</option>
+                  <option value="2">50-99</option>
+                  <option value="3">100-250</option>
+                  <option value="3">251-499</option>
+                  <option value="3">More than 500</option>
+                </select>
+                <label for="floatingSelectGrid">* Number of Employees</label>
+              </div>
+            </div>
           </div>
           <div class="form-floating input-group mb-3">
             <input type="tel" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">Phone Number</label>
+            <label for="floatingInput">* Business Phone Number</label>
           </div>
           <br/>
           <div class="form-checkboxes">
-            <strong style="display: block; margin-bottom: 10px;">Register as an interested party for:</strong>
+            <strong style="display: block; margin-bottom: 10px;">Are you also an interested party for any of the following?</strong>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
               <label class="form-check-label" for="defaultCheck1">
@@ -328,8 +397,19 @@
               </label>
             </div>
           </div>
+
+          <hr style="margin: 20px auto;">
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Yes, I'd like to receive email communications about business growth opportunities and incentives in Roselle, and agree to
+              <a href="#">Roselle's Privacy Policy</a>.
+            </label>
+          </div>
+          <br/>
           <div class="action text-flex-end" style="text-align: right;">
-            <button type="button" class="btn btn-primary" style="background: #3c6ba4;">Submit</button>
+            <button type="button" class="btn btn-primary" style="background: #3f81ce; border: none;">Register</button>
           </div>
         </form>
       </div>

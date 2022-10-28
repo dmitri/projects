@@ -228,6 +228,25 @@ a:hover {
   z-index: 200;
 }
 
+.checkmark-list {
+  margin: 0;
+  padding: 0;
+}
+
+.checkmark-list li {
+  display: flex;
+  font-size: 1.1rem;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.checkmark-list li:before {
+  content: '\2713';
+  color: #902246;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
 @media(max-width: 768px) {
   .cs-education-block {
     margin-bottom: 15px;
