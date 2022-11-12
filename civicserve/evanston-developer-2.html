@@ -325,6 +325,7 @@
       font-size: 1.45rem;
     }
   }
+  
 
 </style>
 </head>
@@ -337,10 +338,10 @@
             <img src="images/logo-evanston.png" alt="Evanston, IL logo" class="cs-partner-logo" height="75">
           </a>
           <div class="cs-cobrand">
-            Business Economic Development Portal
+            Economic Development Portal
           </div>
         </div>
-        <ul class="navbar-nav ">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active link-login" aria-current="page" href="#">Sign Up</a>
           </li>
@@ -350,14 +351,15 @@
         </ul>
       </div>
     </nav>
+
 <div class="hero-container">
   <div class="row mx-0">
     <div class="col-lg-12">
-      <h1 class="cs-h1 text-center">Evanston <span>Business Economic Development Platform</span></h1>
+      <h1 class="cs-h1 text-center">Evanston <span>Developer Economic Development Platform</span></h1>
     </div>
   </div>
 </div>
-<div class="address-container">
+<div class="address-container" style="position: sticky; top: 0; z-index: 100;">
   <div class="container">
       <div id="address-form" class="row mx-0">
         <div class="col-12 col-md-8 offset-md-2">
@@ -402,25 +404,18 @@
     </div>
   </div>
 </div>
+
 <div class="program-container">
   <div class="row mx-0">
     <div class="col-lg-12 ">
       <div id="cs-cta-focus-area" class="cs-cta-focus-area">
         <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container text-center">
             <div class="row">
-              <div class="col-12 col-sm-3 text-center">
-                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=4" class="cs-welcome-type">
-                  <div class="icon-wrapper">
-                    <i class="fa-light fa-tree-city"></i>
-                  </div>
-                  <strong>TIF Incentive Program</strong>
-                  <p>The City of Evanston has established the use of tax increment financing (TIF) as a strategic tool in its economic development program to foster redevelopment in areas of the community where needed.</p>
-                  <div class="cta-apply-block">
-                    <div class="cta-apply">Learn More & Apply</div>
-                  </div>
-                </a>
+              <div class="col-12 col-lg-3 text-center" style="display: flex; align-items: flex-end; flex-direction: column; justify-content: center;">
+                <h4 style="font-weight: 900;">Financial Programs (8)</h4>
+                <p class="text-center text-lg-end">Copy that explains the benefit<br/>and reasons for financial incentives.</p>
               </div>
-              <div class="col-12 col-sm-3 text-center">
+              <div class="col-12 col-lg-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type ">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-money-check-dollar-pen"></i>
@@ -430,7 +425,7 @@
                   <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
                 </a>
               </div>
-              <div class="col-12 col-sm-3 text-center">
+              <div class="col-12 col-lg-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-welcome-type ">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-briefcase"></i>
@@ -440,7 +435,7 @@
                   <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
                 </a>
               </div>
-              <div class="col-12 col-sm-3 text-center">
+              <div class="col-12 col-lg-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-welcome-type last">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-building-circle-check"></i>
@@ -453,112 +448,92 @@
             </div>
             <br/>
             <br/>
-            <div>Already have an application in progress? <a href="#">Log in</a></div>
+            <button class="btn btn-secondary" style="background: #3c6ba4;">Show 5 more</button>
+            <br/><br/>
+            <hr>
+            <br/>
+            <br/>
+            <div class="row">
+              <div class="col-12 col-lg-3 text-center" style="display: flex; align-items: flex-end; flex-direction: column; justify-content: center;">
+                <h4 style="font-weight: 900;">Non-Financial Programs (4)</h4>
+                <p class="text-center text-lg-end">Copy that explains the benefit<br/>and reason for non-financial incentives.</p>
+              </div>
+              <div class="col-12 col-lg-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type ">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-money-check-dollar-pen"></i>
+                  </div>
+                  <strong>AARPA Grant</strong>
+                  <p>Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
+                </a>
+              </div>
+              <div class="col-12 col-lg-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-welcome-type ">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-briefcase"></i>
+                  </div>
+                  <strong>Entrepreneurship Support Grant</strong>
+                  <p>The program is intended to assist in the growth of jobs in Evanston through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
+                </a>
+              </div>
+              <div class="col-12 col-lg-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-welcome-type last">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-building-circle-check"></i>
+                  </div>
+                  <strong>Storefront Modernization</strong>
+                  <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
+                </a>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <button class="btn btn-secondary" style="background: #3c6ba4;">Show 1 more</button>
+            <br/><br/>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<section id="cs-subscribe" class="cs-subscribe" style="padding: 75px 0;">
+<br/><br/>
+<section id="cs-subscribe" class="cs-subscribe">
   <div class="arrow-up"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-9 col-md-12 col-lg-5">
-        <div class="TIF-lead-in" style="margin-top: 155px;">
-
-          <h2 style="font-weight: 700; font-size: 2.5rem; display: flex;">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_MYtZN5.json"  background="transparent"  speed="1" style="width: 100%; margin-left: -150px; margin-top: -75px;"    autoplay></lottie-player>
-             <span style="display: inline-block; margin-left: -70px;">Register Your Business</span></h2>
-          <br/>
-          <p style="font-size: 1.3rem;">Register your business here, and keep informed about new programs as they become active.</p>
-          <ul class="checkmark-list">
-            <li>Reason #1 why it's good to register</li>
-            <li>Reason #2 why it's good to register</li>
-            <li>Reason #3 why it's good to register</li>
-            <li>Reason #4 why it's good to register</li>
-          </ul>
-          <br/>
-
+    <div class="row align-items-center">
+      <div class="col-3 col-md-2">
+        <i class="fal fa-clipboard-list"></i>
+      </div>
+      <div class="col-9 col-md-12 col-lg-4">
+        <div class="TIF-lead-in">
+          <h2 style="font-weight: 700;">Don't see an active program that benefits your business?</h2>
+          <p>Register here to get on the interested parties registry for one or more tax increment financing (TIF) redevelopment project areas.</p>
         </div>
       </div>
-      <div class="col-12 col-md-12 offset-md-0 col-lg-6 offset-md-1">
-        <br/><br/>
-        <form style="padding: 30px; background: #FFF; margin: 15px 0; box-shadow: 10px 10px 20px rgb(0 0 0 / 20%)">
-          <div class="row g-2" style="margin-bottom: 15px;">
-            <div class="col-md">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="First Name">
-                <label for="floatingInputGrid">* First Name</label>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="Last Name">
-                <label for="floatingInputGrid">* Last Name</label>
-              </div>
-            </div>
+      <div class="col-12 col-md-12 offset-md-0 col-lg-5 offset-md-1">
+        <form class="cs-footer-form">
+          <div class="form-floating input-group mb-3">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">First Name</label>
+          </div>
+          <div class="form-floating input-group mb-3">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">Last Name</label>
           </div>
           <div class="form-floating input-group mb-3">
             <input type="email" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">* Email</label>
-          </div>
-          <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">* Business Name</label>
-          </div>
-          <div class="form-floating input-group mb-3">
-            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">* Business Address 1</label>
-          </div>
-          <div class="row g-2" style="margin-bottom: 15px;">
-            <div class="col-md">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
-                <label for="floatingInputGrid">* Business City</label>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="form-floating">
-                <select class="form-select" id="floatingSelectGrid">
-                  <option selected>Select state<option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-                <label for="floatingSelectGrid">* Business State</label>
-              </div>
-            </div>
-          </div>
-          <div class="row g-2" style="margin-bottom: 15px;">
-            <div class="col-md">
-              <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
-                <label for="floatingInputGrid">* Industry</label>
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="form-floating">
-                <select class="form-select" id="floatingSelectGrid">
-                  <option selected>Select...<option>
-                  <option value="1">0-49</option>
-                  <option value="2">50-99</option>
-                  <option value="3">100-250</option>
-                  <option value="3">251-499</option>
-                  <option value="3">More than 500</option>
-                </select>
-                <label for="floatingSelectGrid">* Number of Employees</label>
-              </div>
-            </div>
+            <label for="floatingInput">Email</label>
           </div>
           <div class="form-floating input-group mb-3">
             <input type="tel" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
-            <label for="floatingInput">* Business Phone Number</label>
+            <label for="floatingInput">Phone Number</label>
           </div>
           <br/>
           <div class="form-checkboxes">
-            <strong style="display: block; margin-bottom: 10px;">Are you also an interested party for any of the following?</strong>
+            <strong style="display: block; margin-bottom: 10px;">Register as an interested party for:</strong>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
               <label class="form-check-label" for="defaultCheck1">
@@ -590,19 +565,8 @@
               </label>
             </div>
           </div>
-
-          <hr style="margin: 20px auto;">
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Yes, I'd like to receive email communications about business growth opportunities and incentives in Evanston, and agree to
-              <a href="#">Evanston's Privacy Policy</a>.
-            </label>
-          </div>
-          <br/>
           <div class="action text-flex-end" style="text-align: right;">
-            <button type="button" class="btn btn-primary" style="background: #3f81ce; border: none;">Register</button>
+            <button type="button" class="btn btn-primary" style="background: #3c6ba4;">Submit</button>
           </div>
         </form>
       </div>
@@ -636,8 +600,8 @@
       <div class="col-12 col-md-4 text-center">
         &copy; Copyright 2022 Evanston, Illinois.
       </div>
-      <div class="col-12 col-md-4 text-center">
-        <div class="cs-navbar-brand-powered-by powered-by-footer ">
+      <div class="col-12 col-md-4">
+        <div class="cs-navbar-brand-powered-by powered-by-footer">
           <span>Powered by</span> 
           <a href="https://www.civicserve.com" class="cs-logo-cobrand-container">
             <img src="images/logo-civicserve-white.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-color" alt="CivicServe logo" height="19">

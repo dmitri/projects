@@ -54,7 +54,14 @@
     background: #1c3859;
     border-radius: 5px;
     color: #FFF;
+    transition: all ease .2s;
   }
+  
+  .inverse .cs-welcome-type:hover {
+    background: #3d5f87;
+    transform: scale(1.1);
+  }
+
   .toggle-inverse-container {
     background: rgba(255,255,255,0.9);
     box-shadow: -5px -5px 10px rgba(0,0,0,0.1);
@@ -139,16 +146,28 @@
               <h5 style="font-size: 1.1rem;">I am interested in Evanston's economic development as a:</h5>
               <br/>
               <div class="row">
-                <div class="col-12 col-sm-6 text-center">
+                <div class="col-12 col-sm-3 col-md-6 col-lg-3 text-center">
                   <a href="evanston-developer.html" class="cs-welcome-type">
-                    <i class="fa-light fa-tree-city"></i>
+                    <i class="fa-light fa-tree-city" style="color: #cadef1;"></i>
                     <strong>Developer</strong>
                   </a>
                 </div>
-                <div class="col-12 col-sm-6 text-center">
-                  <a href="evanston-business.html" class="cs-welcome-type last">
-                    <i class="fa-light fa-chart-mixed"></i>
+                <div class="col-12 col-sm-3 col-md-6 col-lg-3 text-center">
+                  <a href="evanston-business.html" class="cs-welcome-type">
+                    <i class="fa-light fa-chart-mixed" style="color: #CCFFCC;"></i>
                     <strong>Business</strong>
+                  </a>
+                </div>
+                <div class="col-12 col-sm-3 col-md-6 col-lg-3 text-center">
+                  <a href="evanston-developer.html" class="cs-welcome-type">
+                    <i class="fa-light fa-house-day" style="color: #FFFFCC;"></i>
+                    <strong>Resident</strong>
+                  </a>
+                </div>
+                <div class="col-12 col-sm-3 col-md-6 col-lg-3 text-center">
+                  <a href="evanston-developer.html" class="cs-welcome-type last">
+                    <i class="fa-light fa-briefcase" style="color: #ffdfba;"></i>
+                    <strong>Consultant</strong>
                   </a>
                 </div>
               </div>
