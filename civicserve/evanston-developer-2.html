@@ -264,13 +264,24 @@
     margin-top:-105px;
   }
   
-  @media (max-width: 991px) {
-    .cs-cta-focus-area {
-        border: none;
-    }
+  .row-header {
+    display: flex; align-items: flex-end; flex-direction: column; justify-content: center;
   }
   
-  @media (max-width: 768px) {
+  .row-header h4,
+  .row-header p {
+    align-items: flex-end;
+    text-align: right;
+  }
+  
+  .row-header h4 {
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 1199px) {  
+    .row-header {
+      align-items: center;
+    }
     .icon-wrapper {
       background: none;
       box-shadow: none;
@@ -279,6 +290,15 @@
     .inverse .cs-welcome-type i {
       color: #fff !important;
     }
+  }
+  
+  @media (max-width: 991px) {
+    .cs-cta-focus-area {
+        border: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
     .cs-welcome-type{
       margin-bottom: 24px;
     }
@@ -317,6 +337,11 @@
     
     .cs-footer-form {
       margin-top: 25px;
+    }
+    
+    .row-header h4,
+    .row-header p {
+      text-align: center !important;
     }
   }
   
@@ -411,11 +436,11 @@
       <div id="cs-cta-focus-area" class="cs-cta-focus-area">
         <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container text-center">
             <div class="row">
-              <div class="col-12 col-md-6 col-lg-3 text-center" style="display: flex; align-items: flex-end; flex-direction: column; justify-content: center;">
+              <div class="col-12 col-lg-12 col-xl-3 text-center row-header">
                 <h4 style="font-weight: 900;">Financial Programs (8)</h4>
-                <p class="text-center text-lg-end">Copy that explains the benefit<br/>and reasons for financial incentives.</p>
+                <p>Copy that explains the benefit<br/>and reasons for financial incentives.</p>
               </div>
-              <div class="col-12 col-md-6 col-lg-3 text-center">
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type ">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-money-check-dollar-pen"></i>
@@ -425,7 +450,7 @@
                   <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
                 </a>
               </div>
-              <div class="col-12 col-md-6 col-lg-3 text-center">
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-welcome-type ">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-briefcase"></i>
@@ -435,7 +460,7 @@
                   <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
                 </a>
               </div>
-              <div class="col-12 col-md-6 col-lg-3 text-center">
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-welcome-type last">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-building-circle-check"></i>
@@ -454,11 +479,11 @@
             <br/>
             <br/>
             <div class="row">
-              <div class="col-12 col-md-6 col-lg-3 text-center text-lg-end" style="display: flex; align-items: flex-end; flex-direction: column; justify-content: center;">
+              <div class="col-12 col-lg-12 col-xl-3 text-center row-header">
                 <h4 style="font-weight: 900;">Non-Financial Programs (4)</h4>
-                <p class="text-center text-lg-end">Copy that explains the benefit<br/>and reason for non-financial incentives.</p>
+                <p>Copy that explains the benefit<br/>and reason for non-financial incentives.</p>
               </div>
-              <div class="col-12 col-md-6 col-lg-3 text-center">
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type ">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-money-check-dollar-pen"></i>
@@ -468,7 +493,7 @@
                   <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
                 </a>
               </div>
-              <div class="col-12 col-md-6 col-lg-3 text-center">
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-welcome-type ">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-briefcase"></i>
@@ -478,7 +503,7 @@
                   <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
                 </a>
               </div>
-              <div class="col-12 col-md-6 col-lg-3 text-center">
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-welcome-type last">
                   <div class="icon-wrapper">
                     <i class="fa-light fa-building-circle-check"></i>
