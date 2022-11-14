@@ -98,6 +98,52 @@
     margin: 0;
   }
   
+  .header-border {
+    background: #cadef1; margin: 35px auto;
+  }
+  
+  .header-border.left {
+    margin-left: 0;
+  }
+  
+  .cs-news-block {
+    padding: 75px 0;
+  }
+  
+  .cs-news-block h3 {
+    font-weight: 800;
+  }
+  
+  .cs-news-scrolling-pane {
+    height: 300px;
+    overflow-y: scroll;
+    padding-right: 50px;
+  }
+  
+  .cs-news-item {
+    border-bottom: 1px solid #cadef1;
+    padding: 15px 0;
+  }
+
+  .cs-news-item h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: .35rem;
+  }
+  
+  .cs-news-item p {
+    margin-bottom: 0;
+  }
+  
+  .cs-news-item a,
+  .cs-news-item a:visited{
+    text-decoration: none;
+  }
+  
+  .cs-news-item a:hover {
+    background: #cadef1;
+  }
+  
   @media (max-width: 991px) {
     .cs-cta-focus-area {
         border: none;
@@ -151,6 +197,10 @@
                     <i class="fa-light fa-tree-city" style="color: #cadef1;"></i>
                     <strong>Developer</strong>
                   </a>
+                  <br/>
+                  <a href="evanston-developer-2.html">Labelled version</a>
+                  <br/>
+                  <a href="evanston-developer-3.html">Labelled version, with colors</a>
                 </div>
                 <div class="col-12 col-sm-3 col-md-6 col-lg-3 text-center">
                   <a href="evanston-business.html" class="cs-welcome-type">
@@ -237,6 +287,8 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Developer</a></li>
             <li><a class="dropdown-item" href="#">Business</a></li>
+            <li><a class="dropdown-item" href="#">Resident</a></li>
+            <li><a class="dropdown-item" href="#">Consultant</a></li>
           </ul>
         </div>
         
@@ -317,6 +369,60 @@
     </div>
   </div>
 </section>
+<section class="cs-news-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="header-border left"></div>
+        <h3>News</h3>
+        <div class="cs-news-scrolling-pane">
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Economic Development Bill Includes $143M for Evanston</h4>
+              <p>The county won the bid to receive a portion of the state's economic development...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Group Working to Foster Economic Development</h4>
+              <p>An information and resource provider, Evanston Developent Partners is enhancing its services to...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Evaston Economic Development Executive Director Retires, and names Rita MacCarthy as New Head</h4>
+              <p>After 25 years of service as executive director, Walter Cyrus has named Rita MacCarthy...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Evanston Works With the Local Community to Complete Projects That Benefit Each District</h4>
+              <p>It's no secret that each district has its own needs...</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 offset-0 col-lg-5 offset-lg-1">
+        <div class="header-border left"></div>
+        <h3>Frequently Asked Economic Development Questions</h3>
+        <br/><br/>
+        <div class="row">
+          <div class="col-12 col-sm-3 col-md-6 col-lg-6 text-center">
+            <a href="#" class="cs-welcome-type">
+              <i class="fa-light fa-tree-city" style="color: #cadef1;"></i>
+              <strong>Developer FAQs</strong>
+            </a>
+          </div>
+          <div class="col-12 col-sm-3 col-md-6 col-lg-6 text-center">
+            <a href="#" class="cs-welcome-type last">
+              <i class="fa-light fa-chart-mixed" style="color: #ccffcc;"></i>
+              <strong>Business FAQs</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 <section class="cs-help-footer">
   <div class="container">
     <div class="row">
@@ -342,7 +448,6 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-4 text-start">
-
         &copy; Copyright 2022 Evanston, Illinois.
       </div>
       <div class="col-12 col-md-4 text-center">

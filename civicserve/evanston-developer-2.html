@@ -278,6 +278,66 @@
     white-space: nowrap;
   }
   
+  .header-border {
+    background: #cadef1; margin: 35px auto;
+  }
+  
+  .header-border.left {
+    margin-left: 0;
+  }
+  
+  .cs-news-block {
+    padding: 75px 0;
+  }
+  
+  .cs-news-block h3 {
+    font-weight: 800;
+  }
+  
+  .cs-news-scrolling-pane {
+    height: 300px;
+    overflow-y: scroll;
+    padding-right: 50px;
+  }
+  
+  .cs-news-item {
+    border-bottom: 1px solid #cadef1;
+    padding: 15px 0;
+  }
+
+  .cs-news-item h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: .35rem;
+  }
+  
+  .cs-news-item p {
+    margin-bottom: 0;
+  }
+  
+  .cs-news-item a,
+  .cs-news-item a:visited{
+    text-decoration: none;
+  }
+  
+  .cs-news-item a:hover {
+    background: #cadef1;
+  }
+  
+  .cs-welcome-type i {
+    font-size: 50px;
+    margin: 30px 0 15px 0;
+  }
+  
+  .cs-news-block .cs-welcome-type {
+    padding-bottom: 0;
+  }
+  
+  .cs-news-block .cs-welcome-type i {
+    font-size: 50px;
+    margin: 30px 0 15px 0;
+  }
+  
   @media (max-width: 1199px) {  
     .row-header {
       align-items: center;
@@ -420,10 +480,10 @@
           <label class="btn btn-outline-secondary cs-filter-label" for="btnradio1">All</label>
 
           <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-          <label class="btn btn-outline-secondary cs-filter-label" for="btnradio2">Financial (8)</label>
+          <label class="btn btn-outline-secondary cs-filter-label" for="btnradio2">Incentive (8)</label>
 
           <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-          <label class="btn btn-outline-secondary cs-filter-label" for="btnradio3">Non-Financial (4)</label>
+          <label class="btn btn-outline-secondary cs-filter-label" for="btnradio3">Non-Incentive (4)</label>
         </div>
       </div>
     </div>
@@ -437,8 +497,8 @@
         <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container text-center">
             <div class="row">
               <div class="col-12 col-lg-12 col-xl-3 text-center row-header">
-                <h4 style="font-weight: 900;">Financial Programs (8)</h4>
-                <p>Copy that explains the benefit<br/>and reasons for financial incentives.</p>
+                <h4 style="font-weight: 900;">Incentive Programs (8)</h4>
+                <p>Copy that explains the benefit<br/>and reasons for programs with incentives.</p>
               </div>
               <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type ">
@@ -480,8 +540,8 @@
             <br/>
             <div class="row">
               <div class="col-12 col-lg-12 col-xl-3 text-center row-header">
-                <h4 style="font-weight: 900;">Non-Financial Programs (4)</h4>
-                <p>Copy that explains the benefit<br/>and reason for non-financial incentives.</p>
+                <h4 style="font-weight: 900;">Non-Incentive Programs (4)</h4>
+                <p>Copy that explains the benefit<br/>and reasons for non-incentivized programs.</p>
               </div>
               <div class="col-12 col-lg-4 col-xl-3 text-center">
                 <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type ">
@@ -597,6 +657,60 @@
       </div>
     </div>
   </div>
+</section>
+<section class="cs-news-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="header-border left"></div>
+        <h3>News</h3>
+        <div class="cs-news-scrolling-pane">
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Economic Development Bill Includes $143M for Evanston</h4>
+              <p>The county won the bid to receive a portion of the state's economic development...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Group Working to Foster Economic Development</h4>
+              <p>An information and resource provider, Evanston Developent Partners is enhancing its services to...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Evaston Economic Development Executive Director Retires, and names Rita MacCarthy as New Head</h4>
+              <p>After 25 years of service as executive director, Walter Cyrus has named Rita MacCarthy...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Evanston Works With the Local Community to Complete Projects That Benefit Each District</h4>
+              <p>It's no secret that each district has its own needs...</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 offset-0 col-lg-5 offset-lg-1">
+        <div class="header-border left"></div>
+        <h3>Frequently Asked Economic Development Questions</h3>
+        <br/><br/>
+        <div class="row">
+          <div class="col-12 col-sm-3 col-md-6 col-lg-6 text-center">
+            <a href="evanston-developer.html" class="cs-welcome-type">
+              <i class="fa-light fa-house-day" style="color: #FFFFCC;"></i>
+              <strong>Developer FAQs</strong>
+            </a>
+          </div>
+          <div class="col-12 col-sm-3 col-md-6 col-lg-6 text-center">
+            <a href="evanston-developer.html" class="cs-welcome-type last">
+              <i class="fa-light fa-briefcase" style="color: #ffdfba;"></i>
+              <strong>Business FAQs</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
 <section class="cs-help-footer">
   <div class="container">

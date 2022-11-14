@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CivicServe Portal Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+  <link rel="icon" href="https://www.cityofevanston.org/favicon.ico" type="image/x-icon">
+<!--===============================================================================================-->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="css/application-v2.css">
+  <script src="https://kit.fontawesome.com/dbaccd1075.js" crossorigin="anonymous"></script>
+<style>
+  
+  .hero-right {
+    background: #FFF url(images/bg-evanston.png) no-repeat center right;
+    background-size: cover;
+    clip-path: polygon(13% 0,100% 0,100% 100%,0 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .alternate .bg-container {
+    background: #FFF url(../images/bg-evanston.png) no-repeat center right;
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .bg-hero-overlay {
+    background: rgba(255,255,255,0.62);
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%; 
+  }
+  
+  .cs-cta-focus-area {
+    margin: 40px 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .cs-welcome-type {
+    background: #FFF;
+  }
+
+  .inverse .cs-welcome-type {
+    background: #1c3859;
+    border-radius: 5px;
+    color: #FFF;
+  }
+  
+  .inverse .cs-welcome-type {
+    background: #1c3859;
+    border-radius: 5px;
+    color: #FFF;
+    background: linear-gradient(177deg, #ff8787 41%, #ffffff 41.5%);
+  }
+  
+  .inverse .cs-welcome-type.two {
+    background: linear-gradient(177deg, #74c0fc 41%, #ffffff 41.5%);
+  }
+  
+  .inverse .cs-welcome-type.three {
+    background: linear-gradient(177deg, #63e6be 41%, #ffffff 41.5%);
+  }
+  
+  .inverse .cs-welcome-type.four {
+    background: linear-gradient(177deg, #fab005 41%, #ffffff 41.5%);
+  }
+
+  
+  .inverse .cs-welcome-type p {
+    color: #222;
+    padding-top: 50px;
+  }
+  
+  
+  .inverse .cs-welcome-type i {
+    color: #1c3859;
+  }
+  
+  .inverse .cta-apply-block a,
+  .inverse .cta-apply-block a:visited {
+    background: #FFF;
+    color: #1c3859;
+    font-weight: 600;
+  }
+  
+
+  .toggle-inverse-container {
+    background: rgba(255,255,255,0.9);
+    box-shadow: -5px -5px 10px rgba(0,0,0,0.1);
+    border-radius: 10px 0 0 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    padding: 5px 15px;
+    z-index:100;
+  }
+  
+  .toggle-inverse-container:not(.inverse-active) .fa-square-check {
+    display: none;
+  }
+  
+  .toggle-inverse-container:not(.inverse-active) .fa-square {
+    display: inline-block;
+  }
+  
+  .toggle-inverse-container.inverse-active .fa-square-check {
+    display: inline-block;
+  }
+  
+  .toggle-inverse-container.inverse-active .fa-square {
+    display: none;
+  }
+  
+  .cs-welcome-type i {
+    color: #3c6ba4;
+    margin: 0;
+    margin-top: 5px;
+  }
+  
+  .cs-welcome-type strong {
+    font-weight: 700;
+  }
+  
+  .cs-welcome-type {
+    height: 100%;
+    position: relative;
+    padding-bottom: 90px;
+  }
+  
+  .cs-welcome-type strong {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    padding: 0 20px; 
+  }
+  
+  .cta-apply-block {
+    padding: 0;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .cta-apply {
+    background: #3c6ba4;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 10px 25px;
+    border-radius: 3px;
+    text-decoration: none;
+    width: 90%;
+  }
+  
+  .cs-welcome-type p {
+    text-align: left;
+    padding: 0 20px;
+  }
+  
+  .cs-subscribe {
+    border-top: 0;
+  }
+  
+  .arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+  
+    border-bottom: 60px solid #F5f5f5;
+    margin-top: -108px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 100;
+  }
+  
+  .cs-subscribe {
+    padding: 50px 0 25px 0;
+  }
+  
+  .cs-subscribe-form-container {
+    padding-top: 40px;
+  }
+  
+  .cs-footer {
+    padding: 20px 0;
+  }
+  
+  .powered-by-footer {
+    margin: 0;
+  }
+  
+  .icon-wrapper {
+    background: #FFF;
+    border-radius: 4px;
+    width: 90px;
+    height: 90px;
+    margin: -15px auto 30px auto;
+    box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .inverse .cs-welcome-type {
+    transition: all ease .2s;
+  }
+  
+  .inverse .cs-welcome-type:hover {
+    transform: scale(1.05);
+  }
+  
+  .inverse .cs-welcome-type:hover .cta-apply {
+    background: #1c3859;
+  }
+  
+  .cs-address-form-wrapper {
+    box-shadow: 0 0 14px rgb(0 0 0 / 29%);
+    border-radius: 4px;
+  }
+  
+  .cs-filter-container {
+    background: linear-gradient(to bottom, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 30%);
+    margin-top: 75px;
+    padding: 70px 0 140px 0;
+  }
+  
+  .cs-filters {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  @media(max-width: 768px) {
+    .cs-filters {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .address-container {
+    margin: 45px 0 0 0;
+  }
+  
+  .cs-filters-header {
+    margin: 0 15px 0 0;
+    padding: 0;
+  }
+  
+  .cs-filters .btn-group>.btn-check:checked+.btn.cs-filter-label {
+    background: #3c6ba4;
+  }
+  
+  .cs-filters .btn-outline-secondary {
+    border: none;
+    background: #FFF;
+  }
+  
+  .cs-filter-label {
+    letter-spacing: .09rem;
+    margin-right: 10px;
+    border-radius: 20px !important;
+    padding: .35rem 1.25rem; 
+  }
+  
+  .cs-footer-form {
+    background: #FFF;
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 20%);
+    margin: 55px 0;
+    padding: 30px;
+  }
+  
+  .program-container {
+    margin-top:-105px;
+  }
+  
+  .row-header {
+    display: flex; align-items: flex-end; flex-direction: column; justify-content: center;
+  }
+  
+  .row-header h4,
+  .row-header p {
+    align-items: flex-end;
+    text-align: right;
+  }
+  
+  .row-header h4 {
+    white-space: nowrap;
+  }
+  
+  .header-border {
+    background: #cadef1; margin: 35px auto;
+  }
+  
+  .header-border.left {
+    margin-left: 0;
+  }
+  
+  .cs-news-block {
+    padding: 75px 0;
+  }
+  
+  .cs-news-block h3 {
+    font-weight: 800;
+  }
+  
+  .cs-news-scrolling-pane {
+    height: 300px;
+    overflow-y: scroll;
+    padding-right: 50px;
+  }
+  
+  .cs-news-item {
+    border-bottom: 1px solid #cadef1;
+    padding: 15px 0;
+  }
+
+  .cs-news-item h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: .35rem;
+  }
+  
+  .cs-news-item p {
+    margin-bottom: 0;
+  }
+  
+  .cs-news-item a,
+  .cs-news-item a:visited{
+    text-decoration: none;
+  }
+  
+  .cs-news-item a:hover {
+    background: #cadef1;
+  }
+  
+  .cs-news-block .cs-welcome-type {
+    background: #1c3859;
+    padding-bottom: 0;
+  }
+  
+  .cs-news-block .cs-welcome-type i {
+    font-size: 50px;
+    margin: 30px 0 15px 0;
+  }
+  
+  @media (max-width: 1199px) {  
+    .row-header {
+      align-items: center;
+    }
+    .icon-wrapper {
+      background: none;
+      box-shadow: none;
+      margin: 0 auto;
+    }
+    .inverse .cs-welcome-type i {
+      color: #fff !important;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .cs-cta-focus-area {
+        border: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cs-welcome-type{
+      margin-bottom: 24px;
+    }
+    .cs-welcome-type.last {
+      margin-bottom: 0;
+    }
+    .address-container {
+      margin-top: 25px;
+    }
+    
+    .arrow-up {
+      margin-top: -150px;
+    }
+
+    .cs-filter-container {
+      margin-top: 25px;
+      padding: 35px 0 85px 0;
+    }
+    
+    .cs-filters-header {
+      margin-bottom: 15px;
+    }
+    
+    .cs-filter-label {
+      letter-spacing: normal;
+      margin-right: 0;
+    }
+    
+    .cs-subscribe {
+      padding: 125px 0 35px 0;
+    }
+    
+    .fa-clipboard-list {
+      font-size: 90px;
+    }
+    
+    .cs-footer-form {
+      margin-top: 25px;
+    }
+    
+    .row-header h4,
+    .row-header p {
+      text-align: center !important;
+    }
+  }
+  
+  @media (max-width: 540px) {
+    .cs-h1 {
+      font-size: 1.45rem;
+    }
+  }
+  
+
+</style>
+</head>
+<body class="city-portal-index alternate inverse">
+
+    <nav class="cs-portal-nav navbar sticky-top">
+      <div class="container-fluid">
+        <div class="cs-portal-brand">
+          <a class="navbar-brand cs-navbar-brand" href="evanston.html">
+            <img src="images/logo-evanston.png" alt="Evanston, IL logo" class="cs-partner-logo" height="75">
+          </a>
+          <div class="cs-cobrand">
+            Economic Development Portal
+          </div>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active link-login" aria-current="page" href="#">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active link-login" aria-current="page" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Log in</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<div class="hero-container">
+  <div class="row mx-0">
+    <div class="col-lg-12">
+      <h1 class="cs-h1 text-center">Evanston <span>Developer Economic Development Platform</span></h1>
+    </div>
+  </div>
+</div>
+<div class="address-container" style="position: sticky; top: 0; z-index: 100;">
+  <div class="container">
+      <div id="address-form" class="row mx-0">
+        <div class="col-12 col-md-8 offset-md-2">
+          <div class="address-block">
+            <div id="cs-form-container-one" class="cs-form-container">
+              <form>
+                <div class="cs-address-form-wrapper form-floating input-group mb-3">
+                  <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+                  <label for="floatingInput">Enter address to view programs</label>
+                  <button class="btn btn-outline-secondary cs-address-form-button" id="cs-address-form-button-one" type="button" id="button-addon2" style="background: #444; border: none; color: #FFF;">Search</button>
+                  <datalist id="datalistOptions">
+                    <option value="1600 Dodge Ave. Evanston IL 60201-3451">
+                    <option value="1408 Brown Ave. Evanston IL 60201-3974 USA">
+                    <option value="1740 Ridge Ave. Evanston IL 60201-5918 USA">
+                    <option value="1102 Davis St. Evanston IL 60201-5955 USA">
+                    <option value="815 Ridge Ave. Evanston IL 60202-4338 USA">
+                  </datalist>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="cs-filter-container">
+  <div class="row mx-0">
+    <div class="col-lg-12">
+      <div class="cs-filters text-center">
+        <h5 class="cs-filters-header">View by</h5>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+          <label class="btn btn-outline-secondary cs-filter-label" for="btnradio1">All</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+          <label class="btn btn-outline-secondary cs-filter-label" for="btnradio2">Incentive (8)</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+          <label class="btn btn-outline-secondary cs-filter-label" for="btnradio3">Non-Incentive (4)</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="program-container">
+  <div class="row mx-0">
+    <div class="col-lg-12 ">
+      <div id="cs-cta-focus-area" class="cs-cta-focus-area">
+        <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container text-center">
+            <div class="row">
+              <div class="col-12 col-lg-12 col-xl-3 text-center row-header">
+                <h4 style="font-weight: 900;">Incentive Programs (8)</h4>
+                <p>Copy that explains the benefit<br/>and reasons for programs with incentives.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type ">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-money-check-dollar-pen"></i>
+                  </div>
+                  <strong>AARPA Grant</strong>
+                  <p>Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
+                </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-welcome-type two">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-briefcase"></i>
+                  </div>
+                  <strong>Entrepreneurship Support Grant</strong>
+                  <p>The program is intended to assist in the growth of jobs in Evanston through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
+                </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-welcome-type three last">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-building-circle-check"></i>
+                  </div>
+                  <strong>Storefront Modernization</strong>
+                  <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More & Apply</div></div>
+                </a>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <button class="btn btn-secondary" style="background: #3c6ba4;">Show 5 more</button>
+            <br/><br/>
+            <hr>
+            <br/>
+            <br/>
+            <div class="row">
+              <div class="col-12 col-lg-12 col-xl-3 text-center row-header">
+                <h4 style="font-weight: 900;">Non-Incentive Programs (4)</h4>
+                <p>Copy that explains the benefit<br/>and reasons for non-incentivized programs.</p>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-welcome-type three">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-farm"></i>
+                  </div>
+                  <strong>Farmers Market</strong>
+                  <p>Making your nutritious, hard work accessible to those who aren't normally able to source from farms will benefit the community.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More</div></div>
+                </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-welcome-type four">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-handshake-angle"></i>
+                  </div>
+                  <strong>Volunteer Opportunity</strong>
+                  <p>There's always more help needed, and there are a lot of traditional, and new opportunities.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More</div></div>
+                </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-3 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-welcome-type two last">
+                  <div class="icon-wrapper">
+                    <i class="fa-light fa-warehouse-full"></i>
+                  </div>
+                  <strong>Warehouse</strong>
+                  <p>It's big, it fits a lot, and organized via a modern database with a state of the art storefront.</p>
+                  <div class="cta-apply-block"><div class="cta-apply">Learn More</div></div>
+                </a>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <button class="btn btn-secondary" style="background: #3c6ba4;">Show 1 more</button>
+            <br/><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/><br/>
+<section id="cs-subscribe" class="cs-subscribe">
+  <div class="arrow-up"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-3 col-md-2">
+        <i class="fal fa-clipboard-list"></i>
+      </div>
+      <div class="col-9 col-md-12 col-lg-4">
+        <div class="TIF-lead-in">
+          <h2 style="font-weight: 700;">Don't see an active program that benefits your business?</h2>
+          <p>Register here to get on the interested parties registry for one or more tax increment financing (TIF) redevelopment project areas.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 offset-md-0 col-lg-5 offset-md-1">
+        <form class="cs-footer-form">
+          <div class="form-floating input-group mb-3">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">First Name</label>
+          </div>
+          <div class="form-floating input-group mb-3">
+            <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">Last Name</label>
+          </div>
+          <div class="form-floating input-group mb-3">
+            <input type="email" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating input-group mb-3">
+            <input type="tel" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+            <label for="floatingInput">Phone Number</label>
+          </div>
+          <br/>
+          <div class="form-checkboxes">
+            <strong style="display: block; margin-bottom: 10px;">Register as an interested party for:</strong>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                TIFs
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+              <label class="form-check-label" for="defaultCheck2">
+                Grants
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+              <label class="form-check-label" for="defaultCheck3">
+                Loans
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+              <label class="form-check-label" for="defaultCheck4">
+                Business Development Districts
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+              <label class="form-check-label" for="defaultCheck5">
+                Enterprise Zones
+              </label>
+            </div>
+          </div>
+          <div class="action text-flex-end" style="text-align: right;">
+            <button type="button" class="btn btn-primary" style="background: #3c6ba4;">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-news-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="header-border left"></div>
+        <h3>News</h3>
+        <div class="cs-news-scrolling-pane">
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Economic Development Bill Includes $143M for Evanston</h4>
+              <p>The county won the bid to receive a portion of the state's economic development...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Group Working to Foster Economic Development</h4>
+              <p>An information and resource provider, Evanston Developent Partners is enhancing its services to...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Evaston Economic Development Executive Director Retires, and names Rita MacCarthy as New Head</h4>
+              <p>After 25 years of service as executive director, Walter Cyrus has named Rita MacCarthy...</p>
+            </a>
+          </div>
+          <div class="cs-news-item">
+            <a href="#" target="_blank" class="cs-news-item-headline">
+              <h4>Evanston Works With the Local Community to Complete Projects That Benefit Each District</h4>
+              <p>It's no secret that each district has its own needs...</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 offset-0 col-lg-5 offset-lg-1">
+        <div class="header-border left"></div>
+        <h3>Frequently Asked Economic Development Questions</h3>
+        <br/><br/>
+        <div class="row">
+          <div class="col-12 col-sm-3 col-md-6 col-lg-6 text-center">
+            <a href="evanston-developer.html" class="cs-welcome-type">
+              <i class="fa-light fa-house-day" style="color: #FFFFCC;"></i>
+              <strong>Developer FAQs</strong>
+            </a>
+          </div>
+          <div class="col-12 col-sm-3 col-md-6 col-lg-6 text-center">
+            <a href="evanston-developer.html" class="cs-welcome-type last">
+              <i class="fa-light fa-briefcase" style="color: #ffdfba;"></i>
+              <strong>Business FAQs</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="cs-help-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h5>
+          <i class="fa-regular fa-message-question"></i> 
+          Need help? 
+          <a href="http://www.cityofevanston.org/business" target="_blank" style="color: #FFF;">Contact us</a> for assistance.
+        </h5>
+        <div class="header-border" style="background: #cadef1; margin: 35px auto;"></div>
+        <ul class="cs-extra-links" style="list-style-type: none; padding: 0;">
+          <li><a href="https://www.cityofevanston.org/" target="_blank">City of Evanston Home</a></li>
+          <li><a href="https://www.cityofevanston.org/business" target="_blank">Economic Development</a></li>
+          <li><a href="https://www.cityofevanston.org/government/departments/community-development/economic-development/doing-business" target="_blank">Doing Business in Evanston</a></li>
+          <li><a href="https://www.cityofevanston.org/business/tif-districts" target="_blank">Business Resources</a></li>
+          <li><a href="#">TIF Districts</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cs-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-4 text-center">
+        &copy; Copyright 2022 Evanston, Illinois.
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="cs-navbar-brand-powered-by powered-by-footer">
+          <span>Powered by</span> 
+          <a href="https://www.civicserve.com" class="cs-logo-cobrand-container">
+            <img src="images/logo-civicserve-white.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-color" alt="CivicServe logo" height="19">
+            <img src="images/logo-civicserve-white.png" class="cs-cslogo-cobrand cs-cslogo-cobrand-gray" alt="CivicServe logo" height="19">
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 text-center cs-footer-util-links">
+        <a href="#">Privacy</a>  &bull;  <a href="#">Terms of use</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="toggle-inverse-container" class="toggle-inverse-container">
+  <i class="far fa-square-check"></i> <i class="far fa-square"></i> <a href="#" id="toggle-inverse">Inverse</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<script>
+  /* detect scroll for the logo resizing */
+  // The debounce function receives our function as a parameter
+  const debounce = (fn) => {
+
+    // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+    let frame;
+
+    // The debounce function returns a new function that can receive a variable number of arguments
+    return (...params) => {
+    
+      // If the frame variable has been defined, clear it now, and queue for next frame
+      if (frame) { 
+        cancelAnimationFrame(frame);
+      }
+
+      // Queue our function call for the next frame
+      frame = requestAnimationFrame(() => {
+      
+        // Call our function and pass any params we received
+        fn(...params);
+      });
+
+    } 
+  };
+
+
+  // Reads out the scroll position and stores it in the data attribute
+  // so we can use it in our stylesheets
+  const storeScroll = () => {
+    document.documentElement.dataset.scroll = window.scrollY;
+  }
+
+  // Listen for new scroll events, here we debounce our `storeScroll` function
+  document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+  // Update scroll position for first time
+  storeScroll();
+  
+
+  document.getElementById('toggle-inverse').addEventListener("click",function(e){
+    e.preventDefault();
+    document.body.classList.toggle('inverse');
+    document.getElementById('toggle-inverse-container').classList.toggle('inverse-active');
+  });
+</script>
+</body>
+</html>
