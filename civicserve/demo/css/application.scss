@@ -1,0 +1,707 @@
+/* client variables  */
+$primary-color: #1c3859;
+$secondary-color: #cadef1;
+$light-color: #f5f5f5;
+$link-underline-color: #319bcc;
+
+
+/* TOC *************************/
+
+/* Global Vars & Base CSS -----*/
+/* Nav -----------------------------*/
+/* Hero ----------------------------*/
+/* Address form --------------------*/
+/* How it Works --------------------*/
+/* Subscribe form --------------- --*/
+/* Footer --------------------------*/
+/* Accent Elements -----------------*/
+
+
+/* Global Vars & Base CSS ***********************************/
+$font-stack: "Open Sans", Helvetica, arial, sans-serif;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+ font-family: $font-stack;
+ border-top: 5px solid $primary-color;
+}
+
+h1 {
+  padding-top: 45px;
+}
+
+h2, h3, h4, h5 {
+  font-weight: 800;
+}
+
+a,
+a:visited {
+  text-decoration-color: $link-underline-color;
+  text-underline-offset: .2em;
+}
+
+/* Header *************************************************/
+.cs-portal-nav {
+  position: sticky;
+  top: -1px;
+  border-bottom: 1px solid $light-color;
+  z-index: 2;
+  
+  &__light {
+    background: rgba(255,255,255, 1);
+  }
+  
+  &__brand {
+    align-items: center;
+    display: flex;
+
+    @media(max-width: 600px) {
+      flex: 1;
+
+      .cs-navbar-brand {
+        margin: 0 auto;
+      }
+    }
+  }
+  
+  &__logo {
+    height: 85px;
+    transition: ease all 0.2s;
+    
+    .is-stuck & {
+      height: 65px;
+    }
+  }
+  
+  &__header {
+    color: #555;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-left: 30px;
+    
+    @media(max-width: 768px) {
+      display: none;
+    }
+  }
+  
+  &__btn-login,
+  &__btn-register {
+    border: 1px solid #222;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-left: 15px;
+  }
+}
+
+.navbar-right {
+  flex-direction: row;
+}
+
+/* Index Hero ****************************************************/
+
+.hero-left {
+  background: #FFF;
+  padding: 36px 48px 36px 36px;
+
+  &__header {
+    padding-top: 45px;
+    span {
+    font-weight: 800;
+    }
+    @media(max-width: 768px) {
+      padding-top: 0;
+    }
+  }
+
+  &__subhead {
+    font-size: 1.1rem;
+    margin: 45px 0 30px 0;
+  }
+}
+
+.hero-right {
+  background: #FFF url(../images/bg-demo-hero.jpg) no-repeat center right;
+  background-size: cover;
+  clip-path: polygon(13% 0,100% 0,100% 100%,0 100%);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  &__overlay {
+    background: rgba(255,255,255,0.42);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+/* Secondary page hero ******************************************/
+.hero {
+  &__header {
+    padding-top: 45px;
+    span {
+    font-weight: 800;
+    }
+    @media(max-width: 768px) {
+      padding-top: 45px;
+    }
+  }
+}
+
+/* Address form block *******************************************/
+.cs-address-block {
+  padding-top: 45px;
+
+  &__form-wrapper {
+    box-shadow: 0 0 14px rgb(0 0 0 / 29%);
+    border-radius: 4px;
+  }
+
+  &__form-submit {
+    border-radius: 0 0.375rem 0.375rem 0 !important;
+
+  }
+}
+
+/* How it Works block (cs-info) *********************************/
+.cs-info {
+  background: $primary-color;
+  color: #FFF;
+  padding: 75px 0;
+
+  h6 {
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+  }
+}
+.cs-education-block {
+  background: #FFF;
+  border-radius: 4px;
+  color: #222;
+  box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px, rgb(0 0 0 / 16%) 0px 15px 15px -18px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  text-decoration: none;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+
+  @media(max-width: 768px) {
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  i:not(.cs-arrow-right) {
+    color: #3f81ce;
+    font-size: 50px;
+    font-weight: 800;
+    margin: 0 auto 15px auto;
+    text-align: center;
+  }
+
+  i.cs-arrow-right {
+    color: #FFF;
+    position: absolute;
+    font-size: 40px;
+    right: -25px;
+    top: 40%;
+    z-index: 200;
+    @media(max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+/* News block ********************************************/
+
+.cs-news {
+  background: $light-color;
+  padding: 75px 0;
+
+  h3 {
+    font-weight: 800;
+  }
+
+  &__scrolling-pane {
+    height: 300px;
+    overflow-y: scroll;
+    padding-right: 25px;
+  }
+
+  &__item {
+    border-bottom: 1px solid $secondary-color;
+    padding: 15px 0;
+
+    &:hover {
+      background: #FFF;
+    }
+
+    a, a:visited {
+      color: $primary-color;
+      text-decoration: none;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Subscribe block *******************************************/
+.cs-subscribe {
+  background: url(../images/bg-subscribe-2.png) no-repeat center;
+  background-size: 100%;
+  padding: 50px 0 25px 0;
+
+  form {
+    background: #FFF;
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 20%);
+    margin: 15px 0;
+    padding: 30px;   
+
+    .form-checkboxes strong {
+      display: block; margin-bottom: 10px;
+    }
+    
+    button {
+      background:lighten($primary-color, 25%);
+      &:hover {
+        background:darken($primary-color, 5%);
+      }
+    }
+  }
+
+  @media(max-width: 768px) {
+    background: none;
+    padding: 75px 0;
+  }
+
+}
+.fa-clipboard-list-check {
+  color: $secondary-color;
+  font-size: 200px;
+  transform: rotate(-5deg);
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+/* Help Footer ***********************************************/
+
+.cs-help-footer {
+  background: $primary-color;
+  color: #FFF;
+  padding: 75px 0;
+
+  h4 {
+    margin-bottom: 25px;
+  }
+  
+  a, a:visited {
+    color: #FFF;
+
+    &:hover {
+      text-decoration-color: #FFF;
+    }
+  }
+  
+  .cs-extra-links {
+    list-style-type: none;
+    padding: 0;
+  
+    li {
+      padding: 7px 0 0 0;
+    }
+  }
+  
+  .cs-welcome-type {
+    background: #FFF;
+    color: $primary-color;
+    padding-bottom: 0;
+    
+    i {
+      color: $primary-color;
+      font-size: 45px;
+    }
+
+    strong {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 30px;
+      padding: 0 20px;
+    }
+    
+    &:hover {
+      background: $secondary-color;
+    }
+    
+    &:visited {
+      color: #FFF;
+    }
+  }
+}
+
+/* Footer *************************************************/
+.cs-footer {
+  background: darken($primary-color, 5%);
+  color: $light-color;
+  padding: 20px 0;
+
+  &__powered-by {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+
+    a:hover img {
+      border-bottom: 1px solid $link-underline-color;
+    }
+
+    img {
+      border-bottom: 1px solid #FFF;
+      margin-left: 5px;
+      margin-top: -3px;
+      padding-bottom: 2px;
+    }
+  }
+
+  &__util-links {
+    a, a:visited {
+      color: $light-color;
+      
+      &:hover {
+        text-decoration-color: #FFF;
+      }
+    }
+  }
+}
+
+
+/* Accent Elements ***************************************/
+
+/* Persona type cards */
+.cs-welcome-type {
+  background: $primary-color;
+  border-bottom: 4px solid $secondary-color;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px, rgb(0 0 0 / 16%) 0px 15px 15px -18px;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  font-size: .9rem;
+  height: auto;
+  text-decoration: none;
+  transition: all ease .2s;
+  padding: 30px 0;
+  
+  i {
+    font-size: 50px;
+    margin: 0 0 15px 0;
+    &.one {
+      color: #cadef1;
+    }
+    &.two {
+      color: #CCFFCC;
+    }
+    &.three {
+      color: #FFFFCC;
+    }
+    &.four {
+      color: #ffdfba;
+    }
+  }
+
+  &:hover {
+    background:lighten($primary-color, 10%);
+    color: #FFF;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+
+    &.last {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+/* Product cards ***********************************************/
+.cs-product-container {
+  margin-top: -45px;
+  padding-bottom: 65px;
+
+  .row-header {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 50%;
+
+    h4 {
+     font-size: 1.3rem;
+    }
+    p {
+      text-align: right;
+    }
+
+    @media(max-width: 1199px) {
+      align-items: center;
+      padding-top:0;
+
+      h4, p {
+        text-align: center;
+      }
+      p {
+        margin-bottom: 35px;
+      }
+    }
+  }
+  .cs-product-show-more-cta {
+    margin: 45px auto;
+    text-align: center;
+    button {
+      background:lighten($primary-color, 25%);
+      &:hover {
+        background:darken($primary-color, 5%);
+      }
+    }
+  }
+}
+
+.cs-product-card {
+  background: $primary-color;
+  border-bottom: 4px solid $secondary-color;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 6%) 0px 1px 8px 0px, rgb(0 0 0 / 16%) 0px 15px 15px -18px;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  font-size: .9rem;
+  height: 100%;
+  text-decoration: none;
+  transition: all ease .2s;
+  padding: 30px 0 90px 0;
+  position: relative;
+
+  &:hover {
+    background:lighten($primary-color, 10%);
+    color: #FFF;
+    transform: scale(1.07);
+  }
+
+  .icon-wrapper {
+    align-items: center;
+    background: #FFF;
+    border-radius: 4px;
+    box-shadow: 0 0 14px rgb(0 0 0 / 20%);
+    color: $primary-color;
+    display: flex;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    margin: -45px auto 30px auto;
+    padding: 0;
+
+    i {
+      font-size: 50px;
+    }
+    
+    @media(max-width: 1199px) {
+      background: none;
+      box-shadow: none;
+      margin: 0 auto;
+
+      i {
+        color: #FFF;
+      }
+    }
+  }
+
+  strong {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+
+  p {
+    line-height: 1.5;
+    padding: 0 20px;
+    text-align: left;
+  }
+
+  .cta-block {
+    padding: 0;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    &__apply {
+      background: #3c6ba4;
+      color: #FFF;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 auto;
+      padding: 10px 25px;
+      border-radius: 3px;
+      text-decoration: none;
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+
+    &.last {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Header border ***********************************************/
+.header-border {
+  background: $secondary-color;
+  margin: 0 auto 35px auto;
+  height: 7px;
+  width: 80px;
+
+  &.left {
+    margin-left: 0;
+  }
+}
+
+/* Up arrow ***************************************************/
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 60px solid #FAFAFA;
+  margin-top: -108px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 100;
+}
+
+/* Spinners ***************************************************/
+
+#product-loading-spinner {
+  display: none;
+  margin-bottom: 200px;
+}
+
+.btn-spinner {
+  display: none;
+}
+
+/* Checkmark list *********************************************/
+
+.checkmark-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    font-size: 1.1rem;
+    list-style: none;
+    margin-bottom: 10px;
+
+    &:before {
+      content: '\2713';
+      color: $primary-color;
+      font-size: 1.1rem;
+      margin-right: 10px;
+    }
+  }
+}
+
+/* Filter container *******************************************/
+.cs-filter-block {
+  background: linear-gradient(to bottom, rgba(245,245,245,1) 0%,rgba(255,255,255,0) 30%);
+  margin-top: 75px;
+  padding: 70px 0 140px 0;
+
+  @media(max-width: 768px) {
+    padding: 70px 0 75px 0;
+  }
+
+
+  .cs-filters {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+
+    @media(max-width: 768px) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    &__header {
+      margin: 0 15px 0 0;
+      padding: 0;
+
+      @media(max-width: 768px) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    .cs-filter-label {
+      letter-spacing: .09rem;
+      margin-right: 10px;
+      border-radius: 20px !important;
+      padding: 0.35rem 1.25rem;
+
+      @media(max-width: 768px) {
+        letter-spacing: normal;
+        margin-right: 0;
+        padding: 0.35rem 1.15rem;
+      }
+    }
+
+    .btn-group>.btn-check:checked+.btn.cs-filter-label {
+      background: lighten($primary-color, 20%);
+      &:hover {
+        background: lighten($primary-color, 30%);
+      }
+    }
+    .btn-outline-secondary {
+      border: none;
+      background: #FFF;
+    }
+  }
+}

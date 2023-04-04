@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CivicServe Portal Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+  <link rel="icon" href="https://www.civicserve.com/favicon.png" type="image/x-icon">
+<!--===============================================================================================-->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="css/civicserve-index.css">
+  <script src="https://kit.fontawesome.com/dbaccd1075.js" crossorigin="anonymous"></script>
+
+
+<style>
+  h1 {
+    margin-bottom: 45px;
+  }
+  a,
+  a:visited {
+    color: #1B2A3F;
+    text-decoration-color: #7eb9ed;
+  }
+  .cta-example {
+    box-sizing: border-box;
+    box-shadow: 0 45px 35px rgb(16 30 54 / 5%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .cta-example img {
+    margin-bottom: 25px;
+  }
+  .cs-footer {
+    background: #1B2A3F;
+    color: #FFF;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    width: 100%; 
+    padding: 10px 20px 15px 20px; 
+    border-top: 1px solid #e1e1e1;
+  }
+  
+  .logo-block {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .checkmark-list {
+    list-style-type: square;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .checkmark-list li {
+    display: flex;
+    list-style: none;
+  }
+  .checkmark-list li:before {
+    content: "\2022";
+    color: #7eb9ed;
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body class="city-portal-index">
+
+    <section class="cs-main-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="cs-h1 text-center" style="font-weight:800; margin-top: 200px;">CivicServe Portal Demo</h1>
+          </div>
+          <div class="col-12">
+            <div id="cs-cta-focus-area" class="cs-cta-focus-area">
+              <div id="cs-cta-welcome-container" class="cs-cta-welcome cs-cta-container">
+                <div class="row">
+                  <div class="col-12 offset-0 col-md-4 offset-md-4 text-center">
+                    <div class="cta-example">
+                      <a href="landing.html" class="logo-block">
+                        <img src="images/gc-logo.png" height="75" />
+                      </a>
+                      <ul class="checkmark-list">
+                        <li><a href="demo-landing.html">Landing Page</a></li>
+                        <li><a href="demo-developer.html">Developer Page</a></li>
+                        <li><a href="demo-business.html">Business Page</a></li>
+                        <li><a href="demo-color.html">Colorful Products Page</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="cs-footer">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-12" style="text-align: right;">
+        <img src="images/logo-civicserve-white.png" height="20">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="js/application.js"></script>
+</body>
+</html>

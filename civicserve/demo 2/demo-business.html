@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Economic Development Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!--===============================================================================================-->
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/dbaccd1075.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/application.css">
+
+</head>
+<body class="business">
+<section class="page-parent"><!-- page wrapper for sticky nav -->
+  <nav class="cs-portal-nav cs-portal-nav__light navbar sticky-top">
+    <div class="container-fluid">
+      <div class="cs-portal-nav__brand">
+        <a class="navbar-brand cs-navbar-brand" href="index.html">
+          <img src="images/gc-logo.png" alt="Growth City, USA logo" class="cs-portal-nav__logo">
+        </a>
+        <div class="cs-portal-nav__header">
+          Economic Development Portal
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link active cs-portal-nav__btn-register" aria-current="page" href="#cs-subscribe">
+            Register Your Business
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active cs-portal-nav__btn-login" aria-current="page" href="#">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> 
+            Log in
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section id="hero">
+    <div class="row mx-0">
+        <div class="col-lg-12">
+          <h1 class="hero__header text-center">Growth City <span>Business Economic Development Platform</span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="cs-address-block">
+      <div class="container">
+          <div id="cs-address-block__form" class="row mx-0">
+            <div class="col-12 col-md-8 offset-md-2">
+              <div>
+                <div id="cs-form-container-one" class="cs-form-container">
+                  <form>
+                    <div class="cs-address-block__form-wrapper form-floating input-group mb-3">
+                      <input type="text" class="form-control cs-address-input" list="datalistOptions" id="floatingInput" aria-describedby="button-addon2" placeholder="525 Hinman Ave. Evanston, IL 60202">
+                      <label for="floatingInput">Enter address to view programs</label>
+                      <button class="btn btn-outline-secondary cs-address-block__form-submit" id="cs-address-form-button-one" type="button" id="button-addon2" style="background: #444; border: none; color: #FFF;">Search</button>
+                      <datalist id="datalistOptions">
+                        <option value="1600 Dodge Ave. Growth City, USA 60201-3451">
+                        <option value="1408 Brown Ave. Growth City, USA 60201-3974">
+                        <option value="1740 Ridge Ave. Growth City, USA 60201-5918">
+                        <option value="1102 Davis St. Growth City, USA 60201-5955">
+                        <option value="815 Ridge Ave. Growth City, USA 60202-4338">
+                      </datalist>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+  <section class="cs-filter-block">
+    <div class="row mx-0">
+      <div class="col-lg-12">
+        <div class="cs-filters text-center">
+          <h5 class="cs-filters__header">View by</h5>
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label id="filter-all" class="btn btn-outline-secondary cs-filter-label" for="btnradio1">All</label>
+  
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label id="filter-incentive" class="btn btn-outline-secondary cs-filter-label" for="btnradio2">Incentive (8)</label>
+  
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label id="filter-non-incentive" class="btn btn-outline-secondary cs-filter-label" for="btnradio3">Non-Incentive (4)</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="product-loading-spinner" class="justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <section class="cs-product-container">
+    <div class="row mx-0">
+      <div class="col-lg-12">
+        <div id="incentive" class="row product-set">
+          <div class="col-lg-12 col-xl-3">
+            <div class="col-12 col-lg-12 col-xl-12 text-center row-header">
+              <h4>Incentive Programs (8)</h4>
+              <p>The benefit and reasons for programs with incentives.</p>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xl-9">
+            <div class="row">
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-product-card">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-money-check-dollar-pen"></i>
+                  </div>
+                  <strong>AARPA Grant</strong>
+                  <p>Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-product-card">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-briefcase"></i>
+                  </div>
+                  <strong>Entrepreneurship Support Grant</strong>
+                  <p>The program is intended to assist in the growth of jobs in Evanston through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-product-card last">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-building-circle-check"></i>
+                  </div>
+                  <strong>Storefront Modernization</strong>
+                  <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+            </div>
+            <div id="more-incentives" class="row" style="display: none;">
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-product-card">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-money-check-dollar-pen"></i>
+                  </div>
+                  <strong>AARPA Grant</strong>
+                  <p>Program designed to utilize a portion of ARPA funds to assist businesses with the financial impacts of the pandemic, as well as support economic resiliency moving forward.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-product-card">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-briefcase"></i>
+                  </div>
+                  <strong>Entrepreneurship Support Grant</strong>
+                  <p>The program is intended to assist in the growth of jobs in Evanston through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-product-card last">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-building-circle-check"></i>
+                  </div>
+                  <strong>Storefront Modernization</strong>
+                  <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-product-card">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-briefcase"></i>
+                  </div>
+                  <strong>Entrepreneurship Support Grant</strong>
+                  <p>The program is intended to assist in the growth of jobs in Evanston through entrepreneurship, helping residents and local business owners to create jobs by starting and retaining sustainable small businesses.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-product-card last">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-building-circle-check"></i>
+                  </div>
+                  <strong>Storefront Modernization</strong>
+                  <p>Storefront Modernization Program is a funding tool to assist small business owners improve the appearance and functionality of commercial buildings located in the city's business districts.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-xl-3"></div>
+            <div class="col-12 col-xl-9">
+              <div class="cs-product-show-more-cta">
+                  <button id="get-more-incentives" class="btn btn-secondary"><span id="incentive-spinner" class="spinner-border btn-spinner spinner-border-sm" role="status" aria-hidden="true"></span> Show 5 more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div id="divider">
+          <hr>
+          <br/>
+          <br/>
+        </div>
+        <div id="non-incentive" class="row product-set">
+          <div class="col-lg-12 col-xl-3">
+            <div class="col-12 col-lg-12 col-xl-12 text-center row-header">
+              <h4>Non-Incentive Programs (4)</h4>
+              <p>The benefit and reasons for non-incentivized programs.</p>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xl-9">
+            <div class="row">
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=10" class="cs-product-card">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-farm"></i>
+                  </div>
+                  <strong>Farmers Market</strong>
+                  <p>Making your nutritious, hard work accessible to those who aren't normally able to source from farms will benefit the community.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-product-card">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-handshake-angle"></i>
+                  </div>
+                  <strong>Volunteer Opportunity</strong>
+                  <p>There's always more help needed, and there are a lot of traditional, and new opportunities.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                  <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=7" class="cs-product-card last">
+                  <div class="icon-wrapper">
+                      <i class="fa-light fa-warehouse-full"></i>
+                  </div>
+                  <strong>Warehouse</strong>
+                  <p>It's big, it fits a lot, and organized via a modern database with a state of the art storefront.</p>
+                  <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                  </a>
+              </div>
+            </div>
+            <div id="more-non-incentives" class="row" style="display: none;">
+              <div class="col-12 col-lg-4 col-xl-4 text-center">
+                <a href="https://evanstonil.civicserve.com/IncentiveProject/ProgramInfo?programId=11" class="cs-product-card">
+                <div class="icon-wrapper">
+                    <i class="fa-light fa-handshake-angle"></i>
+                </div>
+                <strong>Volunteer Opportunity</strong>
+                <p>There's always more help needed, and there are a lot of traditional, and new opportunities.</p>
+                <div class="cta-block"><div class="cta-block__apply">Learn More & Apply</div></div>
+                </a>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-xl-3"></div>
+          <div class="col-12 col-xl-9">
+            <div class="cs-product-show-more-cta">
+                <button id="get-more-non-incentives" class="btn btn-secondary"><span id="non-incentive-spinner" class="spinner-border btn-spinner spinner-border-sm" role="status" aria-hidden="true"></span> Show 1 more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <a name="cs-subscribe"></a>
+
+  <section id="cs-subscribe" class="cs-subscribe" style="padding: 48px 0;">
+    <div class="arrow-up"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-9 col-md-12 col-lg-5">
+          <div class="TIF-lead-in" style="margin-top: 155px;">
+  
+            <h2 style="font-weight: 700; font-size: 2.5rem; display: flex;">
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  
+                    <lottie-player src="https://lottie.host/483f7d54-4177-467a-ae61-f083d17a7447/m40ZnjZra9.json" background="transparent" speed="1" style="width: 100%; margin-left: -150px; margin-top: -50px;" autoplay></lottie-player>
+               <span style="display: inline-block; margin-left: -50px;">Register Your Business</span></h2>
+            <br/>
+            <p style="font-size: 1.3rem;">Register your business here, and keep informed about new programs as they become active.</p>
+            <ul class="checkmark-list">
+              <li>Reason #1 why it's good to register</li>
+              <li>Reason #2 why it's good to register</li>
+              <li>Reason #3 why it's good to register</li>
+              <li>Reason #4 why it's good to register</li>
+            </ul>
+            <br/>
+  
+          </div>
+        </div>
+        <div class="col-12 col-md-12 offset-md-0 col-lg-6 offset-md-1">
+          <br/><br/>
+          <form style="padding: 30px; background: #FFF; margin: 15px 0; box-shadow: 10px 10px 20px rgb(0 0 0 / 20%)">
+            <div class="row g-2" style="margin-bottom: 15px;">
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingInputGrid" placeholder="First Name">
+                  <label for="floatingInputGrid">* First Name</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingInputGrid" placeholder="Last Name">
+                  <label for="floatingInputGrid">* Last Name</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-floating input-group mb-3">
+              <input type="email" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+              <label for="floatingInput">* Email</label>
+            </div>
+            <div class="form-floating input-group mb-3">
+              <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+              <label for="floatingInput">* Business Name</label>
+            </div>
+            <div class="form-floating input-group mb-3">
+              <input type="text" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+              <label for="floatingInput">* Business Address 1</label>
+            </div>
+            <div class="row g-2" style="margin-bottom: 15px;">
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                  <label for="floatingInputGrid">* Business City</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelectGrid">
+                    <option selected>Select state<option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <label for="floatingSelectGrid">* Business State</label>
+                </div>
+              </div>
+            </div>
+            <div class="row g-2" style="margin-bottom: 15px;">
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                  <label for="floatingInputGrid">* Industry</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelectGrid">
+                    <option selected>Select...<option>
+                    <option value="1">0-49</option>
+                    <option value="2">50-99</option>
+                    <option value="3">100-250</option>
+                    <option value="3">251-499</option>
+                    <option value="3">More than 500</option>
+                  </select>
+                  <label for="floatingSelectGrid">* Number of Employees</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-floating input-group mb-3">
+              <input type="tel" class="form-control cs-address-input" id="floatingInput" aria-describedby="button-addon2"placeholder="525 Hinman Ave. Evanston, IL 60202">
+              <label for="floatingInput">* Business Phone Number</label>
+            </div>
+            <br/>
+            <div class="form-checkboxes">
+              <strong style="display: block; margin-bottom: 10px;">Are you also an interested party for any of the following?</strong>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  TIFs
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                <label class="form-check-label" for="defaultCheck2">
+                  Grants
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                <label class="form-check-label" for="defaultCheck3">
+                  Loans
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                <label class="form-check-label" for="defaultCheck4">
+                  Business Development Districts
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                <label class="form-check-label" for="defaultCheck5">
+                  Enterprise Zones
+                </label>
+              </div>
+            </div>
+  
+            <hr style="margin: 20px auto;">
+  
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Yes, I'd like to receive email communications about business growth opportunities and incentives in Growth City, and agree to
+                <a href="#">Growth City's Privacy Policy</a>.
+              </label>
+            </div>
+            <br/>
+            <div class="action text-flex-end" style="text-align: right;">
+              <button type="button" class="btn btn-primary">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cs-news">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="header-border left"></div>
+          <h3>News</h3>
+          <div class="cs-news__scrolling-pane">
+            <div class="cs-news__item">
+              <a href="#" target="_blank" class="cs-news__item-headline">
+                <h4>Economic Development Bill Includes $143M for Growth City</h4>
+                <p>The county won the bid to receive a portion of the state's economic development...</p>
+              </a>
+            </div>
+            <div class="cs-news__item">
+              <a href="#" target="_blank" class="cs-news__item-headline">
+                <h4>Group Working to Foster Economic Development</h4>
+                <p>An information and resource provider, Growth City Development Partners is enhancing its services to...</p>
+              </a>
+            </div>
+            <div class="cs-news__item">
+              <a href="#" target="_blank" class="cs-news__item-headline">
+                <h4>Growth City Economic Development Executive Director Retires, and names Rita MacCarthy as New Head</h4>
+                <p>After 25 years of service as executive director, Walter Cyrus has named Rita MacCarthy...</p>
+              </a>
+            </div>
+            <div class="cs-news__item">
+              <a href="#" target="_blank" class="cs-news__item-headline">
+                <h4>Growth City Works With the Local Community to Complete Projects That Benefit Each District</h4>
+                <p>It's no secret that each district has its own needs...</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 offset-0 col-lg-5 offset-lg-1">
+          <div class="header-border left"></div>
+          <h3>Need Help?</h3>
+          <br/><br/>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-center">
+              <a href="#" class="cs-welcome-type">
+                <i class="fa-light fa-message-question"></i>
+                <strong>FAQs</strong>
+              </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 text-center">
+              <a href="#" class="cs-welcome-type last">
+                <i class="fa-light fa-phone"></i>
+                <strong>Contact Us</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="cs-help-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h4>Helpful Growth City Resources</h4>
+          <ul class="cs-extra-links">
+            <li><a href="#" target="_blank">Growth City Home</a></li>
+            <li><a href="#" target="_blank">Economic Development in Growth City</a></li>
+            <li><a href="#" target="_blank">Doing Business in Growth City</a></li>
+            <li><a href="#" target="_blank">Business Resources</a></li>
+            <li><a href="#">TIF Districts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 text-center">
+          &copy; Copyright <script>document.write(new Date().getFullYear())</script> Growth City, USA.
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="cs-navbar-brand-powered-by cs-footer__powered-by">
+            <span>Powered by</span> 
+            <a href="https://www.civicserve.com">
+              <img src="images/logo-civicserve-white.png" class="cs-footer__powered-by-cobrand color" alt="CivicServe logo" height="19">
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 text-center cs-footer__util-links">
+          <a href="#">Privacy</a>  &bull;  <a href="#">Terms of use</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section><!-- Close page wrapper for sticky nav parent -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="js/application.js"></script>
+<script>
+
+</script>
+</body>
+</html>

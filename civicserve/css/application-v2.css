@@ -36,9 +36,7 @@ a:visited {
   text-underline-offset: .2em;
 }
 
-a:hover {
-  background: #;
-}
+
 
 .bg-container {
   background: #FFF url(../images/bg-peoria-2.png) no-repeat -150px 60px;
