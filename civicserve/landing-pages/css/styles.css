@@ -10995,8 +10995,8 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+    padding-top: 10.5rem;
+    padding-bottom: 7.5rem;
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
@@ -11005,22 +11005,30 @@ header.masthead .masthead-heading {
     margin-bottom: 2rem;
   }
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    font-size: 2.75rem;
     font-weight: 700;
-    line-height: 4.5rem;
-    margin-bottom: 4rem;
+    line-height: 2.75rem;
+    margin-bottom: 2.5rem;
   }
 }
 #portfolio .portfolio-item {
   max-width: 26rem;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
   display: block;
   margin: 0 auto;
+  text-align: center;
 }
+
+#portfolio .portfolio-item img {
+  max-height: 250px;
+  margin: 3rem auto;
+}
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   display: flex;
   position: absolute;
