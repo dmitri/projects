@@ -10,6 +10,11 @@
         <link rel="shortcut icon" href="https://www.civicserve.com/favicon.png" type="image/x-icon">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script>
+          window.FontAwesomeConfig = {
+             searchPseudoElements: true
+          }
+       </script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
@@ -197,7 +202,7 @@
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Message From the COO</h2>
                 </div>
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/jd.jpg" alt="John Dilenschneider Head Shot" />
@@ -209,7 +214,9 @@
                         </div>
                     </div>
                     <div class="col-lg-7 offset-lg-1">
-                        CivicServe's platform is trusted and used by local governments, consultants, banks and other teams devoted to facilitating economic growth.
+                        <div class="quote">
+                            CivicServe's platform is trusted and used by local governments, consultants, banks and other teams devoted to facilitating economic growth.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -441,10 +448,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
