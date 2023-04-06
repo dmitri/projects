@@ -1938,6 +1938,12 @@ progress {
   -webkit-overflow-scrolling: touch;
 }
 
+.video-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 35px;
+}
+
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     overflow-x: auto;
@@ -11045,7 +11051,6 @@ header.masthead .masthead-heading {
   margin-bottom: 0;
 }
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-subheading {
-  font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
