@@ -12,7 +12,6 @@
     <img src="images/sp-filler.jpg" style="width: 100%;"/>
 
     <div class="container my-5">
-      <h1>Enroll Data!</h1>
       <div class="col-lg-8 px-0">
         <div id="jsonOutput">
           <!-- JSON data will be displayed here -->
@@ -26,24 +25,25 @@
       fetch('sp-aye-data.json')
           .then(response => response.json())
           .then(data => {
-              // Assuming the JSON is an array of objects
+              // set up the array
               const jsonOutputDiv = document.getElementById('jsonOutput');
 
               // Loop through each object in the array
               data.forEach(jsonNode => {
                   // Access properties from the JSON node
                   const postenrollmentInfoBlocks = jsonNode.postenrollmentInfoBlocks;
-                  const copy = jsonNode.copy;
-                  const appliesToProgram = jsonNode.appliesToProgram;
+                  const copy = jsonNode.copy || "Not yet available..."; // Use a default value if copy is undefined
+                  const appliesToProgram = jsonNode.appliesToProgram || "No program assigned..."
                   const bucketForSiteOrganization = jsonNode.bucketForSiteOrganization;
 
                   // Create an HTML string with the extracted data for each node
                   const htmlOutput = `
-                      <div class="${getProgramClass(appliesToProgram)} aye-block">
+                      <div class="aye-block" data-filter="${getProgramClass(appliesToProgram)}">
                           <h3>${postenrollmentInfoBlocks}</h3>
-                          <p>Bucket for Site Organization: ${bucketForSiteOrganization}</p>
-                          <p>Copy: ${copy}</p>
-                          <p>Applies to Program: ${appliesToProgram}</p>
+                          <p>Applies to Program: ${appliesToProgram}<br/>
+                          Bucket for Site Organization: ${bucketForSiteOrganization}</p>
+                          <p>${copy}</p<
+
                       </div>
                   `;
 
