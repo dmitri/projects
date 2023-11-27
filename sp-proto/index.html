@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//assets.online.berklee.edu/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>Summer Programs Enroll Chooser Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <img src="images/sp-filler.jpg" style="width: 100%;"/>
+
+    <div class="container my-5">
+      <h1>Enroll Data!</h1>
+      <div class="col-lg-8 px-0">
+        <div id="jsonOutput">
+          <!-- JSON data will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+      // Fetch JSON data
+      fetch('sp-aye-data.json')
+          .then(response => response.json())
+          .then(data => {
+              // Assuming the JSON is an array of objects
+              const jsonOutputDiv = document.getElementById('jsonOutput');
+
+              // Loop through each object in the array
+              data.forEach(jsonNode => {
+                  // Access properties from the JSON node
+                  const postenrollmentInfoBlocks = jsonNode.postenrollmentInfoBlocks;
+                  const copy = jsonNode.copy;
+                  const appliesToProgram = jsonNode.appliesToProgram;
+                  const bucketForSiteOrganization = jsonNode.bucketForSiteOrganization;
+
+                  // Create an HTML string with the extracted data for each node
+                  const htmlOutput = `
+                      <div class="${getProgramClass(appliesToProgram)} aye-block">
+                          <h3>${postenrollmentInfoBlocks}</h3>
+                          <p>Bucket for Site Organization: ${bucketForSiteOrganization}</p>
+                          <p>Copy: ${copy}</p>
+                          <p>Applies to Program: ${appliesToProgram}</p>
+                      </div>
+                  `;
+
+                  // Append the HTML content to the output div
+                  jsonOutputDiv.innerHTML += htmlOutput;
+              });
+          })
+          .catch(error => console.error('Error fetching JSON:', error));
+
+        // Function to map appliesToProgram values to class names
+        function getProgramClass(appliesToProgram) {
+            // Replace "\n" with a placeholder (e.g., "NEWLINE")
+            let stringWithoutNewlines = appliesToProgram.replace(/\n+/g, 'newline');
+
+            // Convert appliesToProgram values to lowercase,
+            // replace spaces with dashes, remove commas, slashes, and colons
+            let className = stringWithoutNewlines.toLowerCase().replace(/[\/:,]+/g, '');
+
+            // Replace spaces with dashes
+            className = className.replace(/\s+/g, '-');
+
+            // Replace the placeholder with a space
+            className = className.replace(/newline+/g, ' ');
+
+            return className;
+        }
+    </script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
