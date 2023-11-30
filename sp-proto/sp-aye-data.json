@@ -1,13 +1,13 @@
 [
     {
         "postenrollmentInfoBlocks": "Make your tuition payment",
-        "copy": "<h4>Make your Tuition Payment</h4><p>All programs have a limited capacity. Complete your full tuition payment in order to reserve your space in the program.</p>",
+        "copy": "<p>All programs have a limited capacity. <a href='https://berklee.my.site.com/onlineapplication/TX_SiteLogin' target='_blank'>Complete your full tuition payment</a> in order to reserve your space in the program.</p>",
         "appliesToProgram": "All Programs",
         "bucketForSiteOrganization": "Action Items"
     },
     {
         "postenrollmentInfoBlocks": "Request on-campus housing",
-        "copy": "<strong>Availability is limited, and will be offered on a first-come, first-served basis based on the completion of all the following steps:</strong><ol><li>Read, sign, and submit your residence hall agreement via apply.berklee.edu.</li><li>Allow a few business days for review by Summer Programs.</li><li>After review, you will be sent a decision notification email inviting you to return to your portal account at <a href='apply.berklee.edu'>apply.berklee.edu</a> to view your decision letter.</li><li>If your request has been approved, secure your spot by accepting your offer and paying the housing fee in full.</li></ol><h4>Important Considerations</h4><ul><li>Students enrolled in multiple programs must complete a separate residence hall agreement (along with the accompanying housing fee payment) for each program.</li><li>You must be 15 years of age before the start of your program to request housing. No exceptions.</li><li>This request for housing must be filled out by a parent or guardian if the student is under the age of 18. The student and parent or guardian must agree to all the terms and conditions.</li><li>Musical Theater Acting Intensive (MTAI) and Vocal/Choral Intensive (VCI) applicants must first be offered admission and accept their offer of admission before their residence hall agreement submission will be considered.</li><li>Space in our residence halls is limited, therefore a spot in our residence halls will only be guaranteed once a student has both fully registered for their chosen program and paid the program tuition in full. Any housing requests or payments made prior to the completion of both these steps do not ensure a guaranteed place in on-campus housing.</li></ul><h4>Learn more about housing and campus life by exploring the <a href='https://help.summer.berklee.edu/en_US/campus-life-and-housing' target='_blank'>Help Center.</a></h4><ul><li><a href='https://help.summer.berklee.edu/en_US/1604985' target='_blank'>Housing Amenities</a></li><li><a href='https://help.summer.berklee.edu/en_US/1618096' target='_blank'>How to Know if Housing is Confirmed</a></li><li><a href='https://help.summer.berklee.edu/en_US/1574632' target='_blank'>How to Request a Roommate</a></li><li><a href='https://help.summer.berklee.edu/en_US/1593762' target='_blank'>Requesting Additional Nights in the Residence Halls</a></li></ul>",
+        "copy": "<strong>Availability is limited, and will be offered on a first-come, first-served basis based on the completion of all the following steps:</strong><ol><li>Read, sign, and submit your residence hall agreement via apply.berklee.edu.</li><li>Allow a few business days for review by Summer Programs.</li><li>After review, you will be sent a decision notification email inviting you to return to your portal account at <a href='apply.berklee.edu'>apply.berklee.edu</a> to view your decision letter.</li><li>If your request has been approved, secure your spot by accepting your offer and paying the housing fee in full.</li></ol><h4>Important Considerations</h4><ul><li>Students enrolled in multiple programs must complete a separate residence hall agreement (along with the accompanying housing fee payment) for each program.</li><li>You must be 15 years of age before the start of your program to request housing. No exceptions.</li><li>This request for housing must be filled out by a parent or guardian if the student is under the age of 18. The student and parent or guardian must agree to all the terms and conditions.</li><li>Musical Theater Acting Intensive (MTAI) and Vocal/Choral Intensive (VCI) applicants must first be offered admission and accept their offer of admission before their residence hall agreement submission will be considered.</li><li>Space in our residence halls is limited, therefore a spot in our residence halls will only be guaranteed once a student has both fully registered for their chosen program and paid the program tuition in full. Any housing requests or payments made prior to the completion of both these steps do not ensure a guaranteed place in on-campus housing.</li></ul><h4>Learn more about housing and campus life by exploring the <a href='https://help.summer.berklee.edu/en_US/campus-life-and-housing' target='_blank'>Help Center</a>.</h4><ul><li><a href='https://help.summer.berklee.edu/en_US/1604985' target='_blank'>Housing Amenities</a></li><li><a href='https://help.summer.berklee.edu/en_US/1618096' target='_blank'>How to Know if Housing is Confirmed</a></li><li><a href='https://help.summer.berklee.edu/en_US/1574632' target='_blank'>How to Request a Roommate</a></li><li><a href='https://help.summer.berklee.edu/en_US/1593762' target='_blank'>Requesting Additional Nights in the Residence Halls</a></li></ul>",
         "appliesToProgram": "All Programs",
         "bucketForSiteOrganization": "Action Items",
         "notes": "Copied from new Residence Hall Agreement, only slight modification made to Step 1"
@@ -23,18 +23,8 @@
         "bucketForSiteOrganization": "Action Items"
     },
     {
-        "postenrollmentInfoBlocks": "Complete any testing (aspire)",
-        "appliesToProgram": "Aspire: Five-Week Music Performance Intensive",
-        "bucketForSiteOrganization": "Action Items"
-    },
-    {
         "postenrollmentInfoBlocks": "Submit placement videos",
-        "appliesToProgram": "Bass Workshop\nBrass Workshop\nCommercial Dance Intensive\nDrums and Percussion Workshop\nGlobal String Program\nGospel Performance Program\nGuitar Sessions\nMusical Theater Dance Intensive\nSummer Dance Intensive\nYouth Musical Theater Summer Program\nVocal Summit",
-        "bucketForSiteOrganization": "Action Items"
-    },
-    {
-        "postenrollmentInfoBlocks": "Choose your ensembles and electives",
-        "appliesToProgram": "Musical Theater Workshop",
+        "appliesToProgram": "Bass Workshop • Brass Workshop • Commercial Dance Intensive • Drums and Percussion Workshop • Global String Program • Gospel Performance Program • Guitar Sessions • Musical Theater Dance Intensive • Summer Dance Intensive • Youth Musical Theater Summer Program • Vocal Summit",
         "bucketForSiteOrganization": "Action Items"
     },
     {
@@ -45,26 +35,6 @@
     {
         "postenrollmentInfoBlocks": "Download the CrowdCompass App",
         "appliesToProgram": "All Programs",
-        "bucketForSiteOrganization": "Action Items"
-    },
-    {
-        "postenrollmentInfoBlocks": "Review your Berklee OnePass credentials",
-        "appliesToProgram": "Aspire: Five-Week Music Performance Intensive",
-        "bucketForSiteOrganization": "Action Items"
-    },
-    {
-        "postenrollmentInfoBlocks": "Complete your course placement assessments",
-        "appliesToProgram": "Aspire: Five-Week Music Performance Intensive",
-        "bucketForSiteOrganization": "Action Items"
-    },
-    {
-        "postenrollmentInfoBlocks": "International students: Obtain an I-20 form and apply for your F-1 visa",
-        "appliesToProgram": "Aspire: Five-Week Music Performance Intensive",
-        "bucketForSiteOrganization": "Action Items"
-    },
-    {
-        "postenrollmentInfoBlocks": "Gather your academic supplies",
-        "appliesToProgram": "Aspire: Five-Week Music Performance Intensive",
         "bucketForSiteOrganization": "Action Items"
     },
     {
@@ -108,8 +78,8 @@
         "bucketForSiteOrganization": "Help Center"
     },
     {
-        "postenrollmentInfoBlocks": "Aspire: Five-Week Music Performance Intensive Packing List",
-        "copy": "<ul><li>If you are staying on campus, you can reference <a href='https://help.summer.berklee.edu/en_US/1584413' target='_blank'>this packing list</a> with any additional items you’ll need while attending your program.</li><li>With the exception of pianists and drummers, students are expected to bring their instruments to all summer programs. Review our <a href='https://help.summer.berklee.edu/en_US/1594931' target='_blank'>list of instruments and gear to bring to your program</a> in this knowledge base article.</li></ul>",
+        "postenrollmentInfoBlocks": "Aspire: Five-Week Music Performance Intensive",
+        "copy": "<h5>Gather academic supplies</h5><p>Copy being created...</p><h5>International Students Only</h5><p>Obtain an I-20 form and apply for your F-1 visa</p><h5>Complete Your Placement Assessments</h5><p>Copy being created...</p><h5>Review your Berklee OnePass Credentials</h5><p>Copy being created...</p><h5>Complete Testing</h5><p>Copy being created...</p><h5>Packing List</h5><ul><li>If you are staying on campus, you can reference <a href='https://help.summer.berklee.edu/en_US/1584413' target='_blank'>this packing list</a> with any additional items you’ll need while attending your program.</li><li>With the exception of pianists and drummers, students are expected to bring their instruments to all summer programs. Review our <a href='https://help.summer.berklee.edu/en_US/1594931' target='_blank'>list of instruments and gear to bring to your program</a> in this knowledge base article.</li></ul>",
         "appliesToProgram": "Aspire: Five-Week Music Performance Intensive",
         "bucketForSiteOrganization": "Packing List"
     },
@@ -204,8 +174,8 @@
         "bucketForSiteOrganization": "Packing List"
     },
     {
-        "postenrollmentInfoBlocks": "Musical Theater Workshop Packing List",
-        "copy": "<h5>For classes</h5><ul><li>Please wear dance or active wear with socks. Bring tennis shoes, Toms, jazz shoes, or any dance shoes—including character heels—that you already own. If you are choosing a tap elective, you must also bring tap shoes. Pack any hair accessories needed to keep your hair secure and away from your face. Consider a towel and deodorant. You will also need a refillable water bottle, notebook, pencil, black sharpie, highlighter, and tape recorder or phone recording app. </li><li> We recommend you arrive with clearly marked sheet music in your correct key for several musical theater songs you have memorized. There will be multiple opportunities to be coached on your repertoire by our faculty or visiting artists.</li></ul><h5>For performances</h5><ul><li>Bring a variety of black clothing and black socks, tights, and shoes.</li></ul><h5>For a practice audition</h5><ul><li>Pack clothes without rips, holes, or visible logos. Your outfit could be as dressed down as jeans and a nicely fitting tee-shirt with sneakers or boots, or more dressed up with a button-down shirt, dress shoes, or heels. Select two pieces of music demonstrating your ability to act and sing. We ask that you have clearly marked sheet music ready to supply an accompanist, typically 16 bars, but no longer than 32 bars in length. If you are inexperienced in preparing vocal selections, we recommend “Happy Birthday” as a great solution in a pinch. Headshots and résumés are welcome, but not required.</li></ul><p>If you are staying on campus, you can reference <a href='https://help.summer.berklee.edu/en_US/1584413' target='_blank'>this packing list</a> with any additional items you’ll need while attending your program.</p>",
+        "postenrollmentInfoBlocks": "Musical Theater Workshop",
+        "copy": "<h4>Choose your ensembles and electives</h4><p>Copy being created...</p><h4>Packing List</h4><h5>For classes</h5><ul><li>Please wear dance or active wear with socks. Bring tennis shoes, Toms, jazz shoes, or any dance shoes—including character heels—that you already own. If you are choosing a tap elective, you must also bring tap shoes. Pack any hair accessories needed to keep your hair secure and away from your face. Consider a towel and deodorant. You will also need a refillable water bottle, notebook, pencil, black sharpie, highlighter, and tape recorder or phone recording app. </li><li> We recommend you arrive with clearly marked sheet music in your correct key for several musical theater songs you have memorized. There will be multiple opportunities to be coached on your repertoire by our faculty or visiting artists.</li></ul><h5>For performances</h5><ul><li>Bring a variety of black clothing and black socks, tights, and shoes.</li></ul><h5>For a practice audition</h5><ul><li>Pack clothes without rips, holes, or visible logos. Your outfit could be as dressed down as jeans and a nicely fitting tee-shirt with sneakers or boots, or more dressed up with a button-down shirt, dress shoes, or heels. Select two pieces of music demonstrating your ability to act and sing. We ask that you have clearly marked sheet music ready to supply an accompanist, typically 16 bars, but no longer than 32 bars in length. If you are inexperienced in preparing vocal selections, we recommend “Happy Birthday” as a great solution in a pinch. Headshots and résumés are welcome, but not required.</li></ul><p>If you are staying on campus, you can reference <a href='https://help.summer.berklee.edu/en_US/1584413' target='_blank'>this packing list</a> with any additional items you’ll need while attending your program.</p>",
         "appliesToProgram": "Musical Theater Workshop",
         "bucketForSiteOrganization": "Packing List"
     },

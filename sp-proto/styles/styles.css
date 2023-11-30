@@ -1,6 +1,29 @@
 /* styles for proto */
+body {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
 
 .aye-block {
   border-bottom: 1px solid #DDD;
   padding: 20px 0;
+}
+
+h3 {
+  font-weight: 900;
+}
+
+h4 {
+  font-weight: 800;
+}
+
+h5 {
+  font-weight: 700;
+}
+
+a, a:visited {
+  color: #ee243c;
+}
+
+select {
+  width: 100%;
 }
