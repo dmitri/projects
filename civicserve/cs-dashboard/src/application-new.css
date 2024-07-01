@@ -27,6 +27,13 @@
   background-color: rgb(var(--c-primary));
 }
 
+@media(max-width: 1400px) {
+  .page-header .page-header-left {
+    flex-direction: column;
+  }
+}
+
+
 .cs-crm-popover {
   --bs-border-radius: 0.15rem;
   --bs-popover-max-width: 300px;
@@ -47,7 +54,6 @@
   top: 70px;
   width: 335px; /* Adjust this value based on your side panel width */
   height: 100%;
-  background-color: #f8f9fa; /* Example background color */
   box-shadow: -2px 0 8px rgba(0,0,0,0.2);
   transition: right 1s ease; /* Transition for the right property */
   padding: 40px 25px 25px 25px;
@@ -90,7 +96,7 @@
 }
 
 .side-panel-contact-detail {
-  padding: .25rem 0;
+  padding: .45rem 0;
   border-bottom: 1px solid #DDD;
   font-size: .9rem;
   display: flex;
@@ -100,8 +106,12 @@
   width: 100%;
 }
 
-.side-panel-contact-detail i {
+.side-panel-contact-detail i:not(.type-icon) {
   font-size: .8rem;
+}
+
+.side-panel-contact-detail i.type-icon {
+  margin-right: 10px;
 }
 
 .nav-tabs .nav-link.active {
