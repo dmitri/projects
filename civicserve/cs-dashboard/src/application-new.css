@@ -1,0 +1,114 @@
+/* Wrapper mods for sticky top */
+.main-content-wrapper {
+  padding-top: 0;
+}
+.admin-wrapper {
+  padding-top: 0;
+}
+
+/* Header */
+.page-header {
+  background: #f6f6fb;
+  margin: 0;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 30px 10px;
+  position: sticky;
+  top: 70px;
+  z-index: 1;
+}
+
+.page-header .sub-title {
+  font-size: .875rem;
+  color: var(--c-card-title);
+}
+
+.page-header .page-header-left .badge.text-bg-brand-primary {
+  background-color: rgb(var(--c-primary));
+}
+
+.cs-crm-popover {
+  --bs-border-radius: 0.15rem;
+  --bs-popover-max-width: 300px;
+  --bs-popover-font-size: 1rem;
+  --bs-popover-border-color: rgb(var(--c-primary));
+  --bs-popover-header-bg: rgb(var(--c-primary));
+  --bs-header-font-size: .6rem;
+  --bs-popover-header-color: #FFF;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: .5rem;
+}
+
+/* Side Panel Styling */
+.side-panel {
+  background: #FFF;
+  position: fixed;
+  right: -350px; /* Initially hidden off the screen to the right */
+  top: 70px;
+  width: 335px; /* Adjust this value based on your side panel width */
+  height: 100%;
+  background-color: #f8f9fa; /* Example background color */
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  transition: right 1s ease; /* Transition for the right property */
+  padding: 40px 25px 25px 25px;
+  z-index: 2;
+}
+
+/* Arrow Button Styling */
+.open-panel, .close-panel {
+  background-color: rgb(var(--c-primary)); /* Example background color */
+  color: white;
+  border: none;
+  padding: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 50px;
+  cursor: pointer;
+  width: 70px;
+  margin-right: -65px;
+  border-radius: 5px 0px 0px 5px;
+  text-align: left !important;
+  transition: opacity 0.2s ease; /* Optional transition for button appearance */
+  position:relative;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1;
+}
+
+.open-panel:hover, .close-panel:hover {
+  background: #5a68bc;
+}
+
+.close-panel {
+  width: 60px;
+  margin-right: -50px;
+  display: none;
+}
+
+.main-content-wrapper.side-panel-open {
+  padding-right: 350px; /* Adjust this value based on your side panel width */
+}
+
+.side-panel-contact-detail {
+  padding: .25rem 0;
+  border-bottom: 1px solid #DDD;
+  font-size: .9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.side-panel-contact-detail i {
+  font-size: .8rem;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+}
+
+.nav-link {
+  color: #222;
+  font-weight: bold;
+}
