@@ -27,12 +27,59 @@
   background-color: rgb(var(--c-primary));
 }
 
-@media(max-width: 1400px) {
+@media(max-width: 1780px) {
   .page-header .page-header-left {
     flex-direction: column;
   }
 }
 
+.metrics-card .metrics-card-content .title{
+  font-size: 1rem;
+  color: #000;
+  font-weight: 900;
+}
+
+.metrics-card-cta-line {
+  display: flex; 
+  align-items: center; 
+  font-size:.8rem;
+}
+
+.metrics-card-cta-line:hover {
+  text-decoration: underline;
+}
+
+.metrics-card-footer {
+  font-size: .9rem;
+  padding:  7px 5px;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+}
+
+.metrics-card-footer.c-1 {
+  background-color: #e4cfff;
+}
+.metrics-card-footer.c-2 {
+  background-color: #ffd1eb;
+}
+
+.metrics-card-footer.c-4 {
+  background-color: #d4ebfe;
+}
+
+.metrics-card-footer.c-6 {
+  background-color: #cae5bc;
+}
+
+.metrics-card-footer a,
+.metrics-card-footer a:visited {
+  color: #222;
+}
+
+.side-panel .accordion-item button {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 .cs-crm-popover {
   --bs-border-radius: 0.15rem;
