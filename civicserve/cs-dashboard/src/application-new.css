@@ -33,13 +33,65 @@
   }
 }
 
-.metrics-card .metrics-card-content .title{
+.metrics-card {
+  flex-direction: column;
+}
+
+.metrics-card .metrics-card-title-wrapper {
+  align-items: center;
+  display: flex; 
+  flex-direction: row; 
+}
+
+.metrics-card .metrics-card-title-wrapper .title {
+  font-size: 1.3rem;
+}
+
+.metrics-card .metrics-card-content {
+  text-align: start;
+}
+
+.metrics-card .metrics-card-content svg:not(.non-action),
+.metrics-card .metrics-card-content i {
+  align-items: center;
+  background: whitesmoke;
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  cursor:pointer;
+  display: flex;
+  font-size: .8rem;
+  color: #000;
+  padding: 3px;
+}
+
+.metrics-card .metrics-card-content .value {
+  justify-content: space-between;
+}
+
+.metrics-card .metrics-card-icon {
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+  color: var(--c-font-secondary);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.3rem;
+  align-self: center;
+  background-color: #eee;
+  margin-right: 15px;
+}
+
+.metrics-card .metrics-card-content .title {
   font-size: 1rem;
   color: #000;
   font-weight: 900;
 }
 
-.metrics-card-cta-line {
+.metrics-card-cta-line,
+.metrics-card-content .approval-status {
   display: flex; 
   align-items: center; 
   font-size:.8rem;
@@ -54,6 +106,7 @@
   padding:  7px 5px;
   text-align: center;
   border-radius: 0 0 5px 5px;
+  box-shadow: #0000000d 0 4px 12px;
 }
 
 .metrics-card-footer.c-1 {
@@ -76,9 +129,54 @@
   color: #222;
 }
 
+.activity-date {
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  background: #FFF; 
+  padding: 4px 10px 4px 10px;
+}
+
+.accordion-button-details-time {
+  width: 100px;
+}
+
+.activity-date .month {
+  color: #999;
+ font-size: .7rem;
+ text-transform: uppercase;
+}
+
+.activity-date .day {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.7rem;
+ }
+
+ .activity-date .year {
+  font-size: .9rem;
+ }
+
+ .side-panel-map-mask {
+  position: absolute; height: 85%; left: 0; right: 0; background: rgba(255,255, 255, 0.4); display: flex; align-items: center; justify-content: center;
+ }
+
 .side-panel .accordion-item button {
   padding-left: 0;
   padding-right: 0;
+}
+
+.activity-day-group {
+  display: flex; margin-top: 24px;
+}
+
+.accordion-button:not(.collapsed) {
+  outline: none;
+  background-color: #fff;
+  box-shadow: none;
 }
 
 .cs-crm-popover {
@@ -93,6 +191,38 @@
   --bs-popover-body-padding-y: .5rem;
 }
 
+.accordion-body {
+  padding: 0 0 1.5rem 7rem;
+}
+.accordion-button.singleton {
+  cursor: default;
+}
+.accordion-button.singleton:after {
+  background-image: none;
+}
+
+.accordion-button-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.accordion-button-details-entry {
+  font-weight: 600;
+}
+
+.accordion-button-details-header {
+  display: flex;
+}
+
+.accordion-button-details-time {
+  margin-right: 20px;
+}
+
+.accordion-button-details-owner {
+  padding-right: 20px;
+}
+
 /* Side Panel Styling */
 .side-panel {
   background: #FFF;
@@ -100,11 +230,38 @@
   right: -350px; /* Initially hidden off the screen to the right */
   top: 70px;
   width: 335px; /* Adjust this value based on your side panel width */
-  height: 100%;
+  height: calc(100% - 70px); /* Adjusted height to fit within the viewport */
   box-shadow: -2px 0 8px rgba(0,0,0,0.2);
   transition: right 1s ease; /* Transition for the right property */
-  padding: 40px 25px 25px 25px;
+  padding: 0 25px; /* Remove padding from top and bottom */
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel-header {
+  padding: 40px 0 0px 0; /* Adjust padding for header */
+  background: #FFF; /* Background color for header */
+  flex-shrink: 0; /* Ensure header does not shrink */
+}
+
+.side-panel-header h5 {
+  font-weight: 500;
+}
+
+.side-panel-body {
+  flex-grow: 1; /* Allow body to grow and take available space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px 0; /* Padding for body content */
+}
+
+.side-panel-footer {
+  padding: 20px 0; /* Adjust padding for footer */
+  background: #FFF; /* Background color for footer */
+  border-top: 1px solid #ccc; /* Optional: Add a border to separate footer */
+  flex-shrink: 0; /* Ensure footer does not shrink */
+  flex-basis: auto; /* Ensure footer occupies its intrinsic height */
+  position: relative;
 }
 
 /* Arrow Button Styling */

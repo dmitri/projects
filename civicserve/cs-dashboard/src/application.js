@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   setUpRightSidebar();
+
+  // Wait 1 second after load and then trigger the open of the side panel
+  setTimeout(function() {
+    document.getElementById('open-panel').click();
+  }, 300);
 });
 
 
@@ -26,5 +31,24 @@ setUpRightSidebar = function() {
       document.getElementById('close-panel').style.display = 'none'; /* Hide the close button */
       document.getElementById('main-content-wrapper').classList.remove('side-panel-open'); /* Add a class to the main content wrapper */
   });
+}
+
+toggleAllCollapsibles = function() {
+  const collapsibles = document.querySelectorAll('.accordion-collapse');
+  const toggleButton = document.getElementById('toggleAll');
+  const isAnyOpen = Array.from(collapsibles).some(collapse => collapse.classList.contains('show'));
+
+  collapsibles.forEach(collapse => {
+    if (isAnyOpen) {
+      // Close all
+      bootstrap.Collapse.getOrCreateInstance(collapse).hide();
+    } else {
+      // Open all
+      bootstrap.Collapse.getOrCreateInstance(collapse).show();
+    }
+  });
+
+  // Update button text
+  toggleButton.textContent = isAnyOpen ? 'Open All' : 'Close All';
 }
 
