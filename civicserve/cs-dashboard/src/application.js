@@ -35,7 +35,7 @@ setUpRightSidebar = function() {
 
 toggleAllCollapsibles = function() {
   const collapsibles = document.querySelectorAll('.accordion-collapse');
-  const toggleButton = document.getElementById('toggleAll');
+  const toggleButton = document.querySelector('#toggleAll span');
   const isAnyOpen = Array.from(collapsibles).some(collapse => collapse.classList.contains('show'));
 
   collapsibles.forEach(collapse => {

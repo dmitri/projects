@@ -6,6 +6,10 @@
   padding-top: 0;
 }
 
+.panel {
+  padding-bottom: 0 !important;
+}
+
 /* Header */
 .page-header {
   background: #f6f6fb;
@@ -163,10 +167,16 @@ transform: translateY(-50%);
   margin-right: 15px;
 }
 
+.export-activity-logs {
+white-space: nowrap;
+
+}
+
 .activity-date .month {
   color: #999;
  font-size: .7rem;
  text-transform: uppercase;
+ white-space: nowrap;
 }
 
 .activity-date .day {
@@ -211,7 +221,7 @@ transform: translateY(-50%);
 }
 
 .accordion-body {
-  padding: 0 0 1.5rem 150px;
+  padding: 0 0 1.5rem 56px;
 }
 .accordion-button.singleton {
   cursor: default;
@@ -259,7 +269,7 @@ transform: translateY(-50%);
 }
 
 .side-panel-header {
-  padding: 40px 0 0px 0; /* Adjust padding for header */
+  padding: 45px 20px 0 0; /* Adjust padding for header */
   background: #FFF; /* Background color for header */
   flex-shrink: 0; /* Ensure header does not shrink */
 }
