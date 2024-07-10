@@ -276,7 +276,7 @@ transform: translateY(-50%);
 }
 
 .side-panel-footer {
-  padding: 20px 0; /* Adjust padding for footer */
+  padding: 20px 20px 20px 0; /* Adjust padding for footer */
   background: #FFF; /* Background color for footer */
   flex-shrink: 0; /* Ensure footer does not shrink */
   flex-basis: auto; /* Ensure footer occupies its intrinsic height */
