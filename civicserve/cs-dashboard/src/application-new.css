@@ -180,7 +180,7 @@ transform: translateY(-50%);
  }
 
  .side-panel-map-mask {
-  position: absolute; height: 85%; left: 0; right: 0; background: rgba(255,255, 255, 0.4); display: flex; align-items: center; justify-content: center;
+  position: absolute; height: 100%; left: 0; right: 0; background: rgba(255,255, 255, 0.4); display: flex; align-items: center; justify-content: center;
  }
 
 .side-panel .accordion-item button {
@@ -276,11 +276,13 @@ transform: translateY(-50%);
 }
 
 .side-panel-footer {
-  padding: 20px 20px 20px 0; /* Adjust padding for footer */
+  padding: 0; /* Adjust padding for footer */
   background: #FFF; /* Background color for footer */
   flex-shrink: 0; /* Ensure footer does not shrink */
   flex-basis: auto; /* Ensure footer occupies its intrinsic height */
   position: relative;
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.2);
+  margin-left: -25px;
 }
 
 /* Arrow Button Styling */
