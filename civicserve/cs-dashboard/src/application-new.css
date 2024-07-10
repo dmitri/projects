@@ -221,7 +221,7 @@ white-space: nowrap;
 }
 
 .accordion-body {
-  padding: 0 0 1.5rem 56px;
+  padding: 0 50px 1.5rem 56px;
 }
 .accordion-button.singleton {
   cursor: default;
@@ -232,6 +232,7 @@ white-space: nowrap;
 
 .accordion-button-details {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
 }
@@ -249,7 +250,9 @@ white-space: nowrap;
 }
 
 .accordion-button-details-owner {
-  padding-right: 20px;
+  padding-left: 35px;
+  font-size: .8rem;
+  margin-top: 4px;
 }
 
 .panel-visibility {
@@ -370,4 +373,8 @@ white-space: nowrap;
 .nav-link {
   color: #222;
   font-weight: bold;
+}
+
+.nav-tabs-wrapper {
+  border-radius: 0;
 }
