@@ -252,7 +252,7 @@ transform: translateY(-50%);
   height: calc(100% - 70px); /* Adjusted height to fit within the viewport */
   box-shadow: -2px 0 8px rgba(0,0,0,0.2);
   transition: right 1s ease; /* Transition for the right property */
-  padding: 0 25px; /* Remove padding from top and bottom */
+  padding: 0 0 0 25px; /* Remove padding from top and bottom */
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -271,7 +271,8 @@ transform: translateY(-50%);
 .side-panel-body {
   flex-grow: 1; /* Allow body to grow and take available space */
   overflow-y: auto; /* Enable vertical scrolling */
-  padding: 20px 0; /* Padding for body content */
+  padding: 20px 25px 20px 0; /* Padding for body content */
+  
 }
 
 .side-panel-footer {
