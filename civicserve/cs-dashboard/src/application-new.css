@@ -211,7 +211,7 @@ transform: translateY(-50%);
 }
 
 .accordion-body {
-  padding: 0 0 1.5rem 140px;
+  padding: 0 0 1.5rem 150px;
 }
 .accordion-button.singleton {
   cursor: default;
