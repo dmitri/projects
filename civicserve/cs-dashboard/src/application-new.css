@@ -154,7 +154,13 @@ transform: translateY(-50%);
 }
 
 .accordion-button-details-time {
-  width: 100px;
+  justify-content: flex-end;
+  width: 75px;
+}
+
+.accordion-button-details-icon {
+  width: 20px;
+  margin-right: 15px;
 }
 
 .activity-date .month {
