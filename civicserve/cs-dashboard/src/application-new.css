@@ -309,7 +309,7 @@ white-space: nowrap;
   top: 70px;
   width: 335px; /* Adjust this value based on your side panel width */
   height: calc(100% - 70px); /* Adjusted height to fit within the viewport */
-  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  box-shadow: -2px 0 7px rgba(0,0,0,0.1);
   transition: right 1s ease; /* Transition for the right property */
   padding: 0 0 0 25px; /* Remove padding from top and bottom */
   z-index: 2;
