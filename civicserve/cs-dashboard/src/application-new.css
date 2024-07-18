@@ -68,6 +68,34 @@
   padding: 3px;
 }
 
+.new-activity-icon {
+  width: 20px;
+}
+
+.nav-item {
+  padding: 0 2.5rem;
+}
+
+.nav-item a,
+.nav-item a.nav-link.active {
+  font-weight: 500;
+}
+
+.nav-item a.nav-link:hover,
+.nav-item a.nav-link.active {
+  border-bottom-color: rgb(var(--c-primary));
+  border-bottom-width: 4px;
+  color: rgb(var(--c-primary));
+}
+
+.nav-item:first-child {
+  padding-left: 0;
+}
+
+.tab-content {
+  margin: 2rem 0
+}
+
 .metrics-card .metrics-card-content .value {
   justify-content: space-between;
 }
