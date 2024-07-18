@@ -701,7 +701,7 @@
                       </div>
                       <br/><br/>
                       <div class="nav-tabs-wrapper mt-12" role="tabpanel">
-                        <ul class="nav nav-underline" id="myTab" role="tablist" style="border-bottom: 1px solid #DDD;">
+                        <ul class="nav nav-underline" id="myTab" role="tablist" style="border-bottom: 1px solid #DDD; position:relative;">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="activity-tab" data-bs-toggle="tab" href="#activity" role="tab" aria-controls="activity" aria-selected="true">Activity</a>
                             </li>
@@ -712,10 +712,29 @@
                                 <a class="nav-link" id="projects-tab" data-bs-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="false">Projects</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="tasks-tab" data-bs-toggle="tab" href="#tasks" role="tab" aria-controls="tasks" aria-selected="false">Tasks</a>
+                                <a class="nav-link" id="tasks-tab" data-bs-toggle="tab" href="#tasks-mock" role="tab" aria-controls="tasks" aria-selected="false">Tasks</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="audit-tab" data-bs-toggle="tab" href="#audit" role="tab" aria-controls="audit" aria-selected="false">Audit</a>
+                            </li>
+                            <li style="position: absolute; right: 0;">
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 15px;">
+                                  <i class="fa-light fa-plus"></i> Add Activity
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><span class="dropdown-optgroup-header">Log a...</span></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fa-light fa-phone mr-2 new-activity-icon"></i> Call</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fa-light fa-envelope mr-2 new-activity-icon"></i> Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fa-light fa-message-text mr-2 new-activity-icon"></i> Text</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fa-light fa-location-check mr-2 new-activity-icon"></i> Site Visit</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><span class="dropdown-optgroup-header">Create a...</span></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fa-light fa-message-lines mr-2 new-activity-icon"></i> Message</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fa-light fa-note-sticky mr-2 new-activity-icon"></i> Note</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fa-light fa-square-check new-activity-icon"></i> Task</a></li>
+                                </ul>
+                              </div>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -732,31 +751,16 @@
                                       <li><a class="dropdown-item" href="#"><i class="fa-light fa-phone mr-2 new-activity-icon"></i> Call</a></li>
                                       <li><a class="dropdown-item" href="#"><i class="fa-light fa-envelope mr-2 new-activity-icon"></i> Email</a></li>
                                       <li><a class="dropdown-item" href="#"><i class="fa-light fa-message-text mr-2 new-activity-icon"></i> Text</a></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-note-sticky mr-2 new-activity-icon"></i> Note</a></li>
                                       <li><a class="dropdown-item" href="#"><i class="fa-light fa-location-check mr-2 new-activity-icon"></i> Site Visit</a></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-circle-info new-activity-icon"></i> Information Update</a></li>
+                                      <li><hr class="dropdown-divider"></li>
+                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-message-lines mr-2 new-activity-icon"></i> Message</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-note-sticky mr-2 new-activity-icon"></i> Note</a></li>
+                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-square-check new-activity-icon"></i> Task</a></li>
                                     </ul>
                                   </div>
                                 </div>
                                 <div>
                                   <button href="#" id="toggleAll" class="btn btn-outline-primary" onclick="toggleAllCollapsibles()" style="white-space: nowrap;"><i class="fa-light fa-layer-plus"></i> <span>Open All</span></button>
-                                  <div class="btn-group">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 15px;">
-                                      <i class="fa-light fa-plus"></i> Activity
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-end">
-                                      <li><span class="dropdown-optgroup-header">Log a...</span></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-phone mr-2 new-activity-icon"></i> Call</a></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-envelope mr-2 new-activity-icon"></i> Email</a></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-message-text mr-2 new-activity-icon"></i> Text</a></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-location-check mr-2 new-activity-icon"></i> Site Visit</a></li>
-                                      <li><hr class="dropdown-divider"></li>
-                                      <li><span class="dropdown-optgroup-header">Create a...</span></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-message-lines mr-2 new-activity-icon"></i> Message</a></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-note-sticky mr-2 new-activity-icon"></i> Note</a></li>
-                                      <li><a class="dropdown-item" href="#"><i class="fa-light fa-circle-info new-activity-icon"></i> Task</a></li>
-                                    </ul>
-                                  </div>
                                 </div>
                               </div>
                               <div style="width: 100%; text-align: right; padding-top: 35px;">
@@ -927,19 +931,863 @@
                             </div>
                             <!-- FILES TAB -->
                             <div class="tab-pane fade" id="files" role="tabpanel" aria-labelledby="files-tab">
-                               Files <!-- Files content goes here -->
+                              <div class="panel mt-4">
+                                <div class="panel-inner">
+                                    <h3 class="panel-heading">Business Associated Files</h3></div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div>
+                                            <div class="label-wrapper">
+                                                <div class="panel-body">
+                                                    <div class="dx-form dx-widget dx-visibility-change-handler" role="form">
+                                                        <div class="dx-layout-manager dx-widget">
+                                                            <div class="dx-widget dx-collection dx-responsivebox-screen-lg dx-responsivebox" style="width: 100%; height: 100%;">
+                                                                <div class="dx-box-flex dx-box dx-widget dx-collection" style="display: flex; flex-direction: row; width: 100%; height: 100%; justify-content: flex-start; align-items: stretch;">
+                                                                    <div class="dx-item dx-box-item" style="display: flex; max-width: none; min-width: 0px; flex: 1 1 auto;">
+                                                                        <div class="dx-item-content dx-box-item-content dx-root-simple-item" style="width: auto; height: auto; display: flex; flex-basis: 0px; flex-grow: 1; flex-direction: column;">
+                                                                            <div class="dx-first-row dx-first-col dx-last-col dx-last-row dx-field-item dx-col-0 dx-field-item-optional dx-flex-layout">
+                                                                                <div class="dx-field-item-content dx-field-item-content-location-right">
+                                                                                    <div class="">
+                                                                                        <div id="file-uploader-trigger-business">
+                                                                                            <div class="file-uploader-trigger">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-import" class="svg-inline--fa fa-file-import " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                    <path fill="currentColor" d="M448 464H192c-8.8 0-16-7.2-16-16V368H128v80c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L402.7 18.7C390.7 6.7 374.5 0 357.5 0H192c-35.3 0-64 28.7-64 64V256h48V64c0-8.8 7.2-16 16-16H352v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16zM297 215c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H24c-13.3 0-24 10.7-24 24s10.7 24 24 24H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80z"></path>
+                                                                                                </svg>
+                                                                                                <div>Click or drag and drop file here</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="file-uploader-icon-wrapper ready-to-upload-message-container dx-show-invalid-badge dx-widget dx-fileuploader dx-fileuploader-show-file-list dx-fileuploader-empty">
+                                                                                            <div class="dx-fileuploader-wrapper">
+                                                                                                <div class="dx-fileuploader-container">
+                                                                                                    <div class="dx-fileuploader-content">
+                                                                                                        <div class="dx-fileuploader-input-wrapper">
+                                                                                                            <div class="dx-widget dx-button dx-button-mode-contained dx-button-normal dx-button-has-text dx-fileuploader-button" role="button" aria-label="Click or drag and drop file here"
+                                                                                                            tabindex="0">
+                                                                                                                <div class="dx-button-content"><span class="dx-button-text">Click or drag and drop file here</span></div>
+                                                                                                            </div>
+                                                                                                            <div class="dx-fileuploader-input-container">
+                                                                                                                <input type="file" accept=".xlsx,.xls,.csv,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf,.XLSX,.XLS,.CSV,.IMAGE/*,.DOC,.DOCX,.PPT,.PPTX,.TXT,.PDF" title="null" tabindex="-1" name="files[]"
+                                                                                                                class="dx-fileuploader-input" aria-labelledby="dx-fileuploader-input-label-8990c7c3-8e9a-49de-22c4-96652be480d2">
+                                                                                                                <div id="dx-fileuploader-input-label-8990c7c3-8e9a-49de-22c4-96652be480d2" class="dx-fileuploader-input-label">or Drop a file here</div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="dx-widget dx-button dx-button-mode-contained dx-button-normal dx-button-has-text dx-fileuploader-button dx-fileuploader-upload-button" role="button" aria-label="Choose Files"
+                                                                                                        tabindex="0">
+                                                                                                            <div class="dx-button-content"><span class="dx-button-text">Choose Files</span></div>
+                                                                                                        </div>
+                                                                                                        <div class="dx-fileuploader-files-container"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div style="display: none;"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="data-grid-wrapper">
+                                        <div id="grid-container" class="devextreme-table dx-widget dx-visibility-change-handler" role="presentation" style="height: auto;">
+                                            <div class="dx-datagrid dx-gridbase-container dx-datagrid-borders" role="group" aria-label="Data grid with 6 rows and 3 columns">
+                                                <div class="dx-hidden"></div>
+                                                <div class="dx-datagrid-columns-separator dx-datagrid-columns-separator-transparent" style="height: 38px; left: 0px;"></div>
+                                                <div class="dx-datagrid-tracker dx-state-invisible" style="height: 38px;"></div>
+                                                <div class="dx-hidden"></div>
+                                                <div class="dx-datagrid-headers dx-bordered-top-view" role="presentation" style="padding-right: 0px;">
+                                                    <div class="dx-datagrid-content dx-datagrid-scroll-container" role="presentation">
+                                                        <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-7feed4b3-9952-5594-19ac-58d85d6d772a" role="presentation">
+                                                            <colgroup>
+                                                                <col style="width: 505.469px;">
+                                                                    <col style="width: 384.703px;">
+                                                                        <col style="width: 338.828px;">
+                                                            </colgroup>
+                                                            <tbody role="presentation" class="">
+                                                                <tr class="dx-row dx-column-lines dx-header-row" role="row">
+                                                                    <td role="columnheader" aria-colindex="1" id="dx-col-13" aria-label="Column File Name" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                        <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                        <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">File Name</div>
+                                                                    </td>
+                                                                    <td role="columnheader" aria-colindex="2" id="dx-col-14" aria-label="Column Association Type" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                        <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                        <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Association Type</div>
+                                                                    </td>
+                                                                    <td role="columnheader" aria-colindex="3" id="dx-col-15" aria-label="Column undefined" aria-sort="none" class="dx-cell-focus-disabled" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                        <div class="dx-datagrid-text-content" role="presentation"></div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="dx-bordered-bottom-view dx-datagrid-rowsview dx-scrollable dx-visibility-change-handler dx-scrollable-both dx-scrollable-native dx-scrollable-native-generic" role="presentation">
+                                                    <div class="dx-scrollable-wrapper">
+                                                        <div class="dx-scrollable-container">
+                                                            <div class="dx-scrollable-content">
+                                                                <div class="dx-datagrid-content" aria-owns="dx-7feed4b3-9952-5594-19ac-58d85d6d772a dx-29a13943-f72a-e9a7-7cd4-59e6e671d599" role="grid">
+                                                                    <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-29a13943-f72a-e9a7-7cd4-59e6e671d599" role="presentation" style="table-layout: fixed;">
+                                                                        <colgroup style="">
+                                                                            <col style="width: 505.469px;">
+                                                                                <col style="width: 384.703px;">
+                                                                                    <col style="width: 338.828px;">
+                                                                        </colgroup>
+                                                                        <tbody role="presentation">
+                                                                            <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="1">
+                                                                                <td aria-describedby="dx-col-13" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">Project Score - High.pdf</td>
+                                                                                <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Project (Staff)</td>
+                                                                                <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">
+                                                                                    <div class="edit-delete-actions">
+                                                                                        <div class="d-flex gap-5p">
+                                                                                            <button class="btn btn-info" title="View">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                                                                    <path fill="currentColor" d="M117.2 136C160.3 96 217.6 64 288 64s127.7 32 170.8 72c43.1 40 71.9 88 85.2 120c-13.3 32-42.1 80-85.2 120c-43.1 40-100.4 72-170.8 72s-127.7-32-170.8-72C74.1 336 45.3 288 32 256c13.3-32 42.1-80 85.2-120zM288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM192 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                            <button class="btn btn-info" title="Download">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="download" class="svg-inline--fa fa-download " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                    <path fill="currentColor" d="M272 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V329.4L139.3 228.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l128 128c6.2 6.2 16.4 6.2 22.6 0l128-128c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L272 329.4V16zM140.1 320H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384c0-35.3-28.7-64-64-64H371.9l-32 32H448c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V384c0-17.7 14.3-32 32-32H172.1l-32-32zM432 416a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div style="display: none;"></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="2">
+                                                                                <td aria-describedby="dx-col-13" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">Project Details Summary.pdf</td>
+                                                                                <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Project (Staff)</td>
+                                                                                <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">
+                                                                                    <div class="edit-delete-actions">
+                                                                                        <div class="d-flex gap-5p">
+                                                                                            <button class="btn btn-info" title="View">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                                                                    <path fill="currentColor" d="M117.2 136C160.3 96 217.6 64 288 64s127.7 32 170.8 72c43.1 40 71.9 88 85.2 120c-13.3 32-42.1 80-85.2 120c-43.1 40-100.4 72-170.8 72s-127.7-32-170.8-72C74.1 336 45.3 288 32 256c13.3-32 42.1-80 85.2-120zM288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM192 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                            <button class="btn btn-info" title="Download">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="download" class="svg-inline--fa fa-download " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                    <path fill="currentColor" d="M272 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V329.4L139.3 228.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l128 128c6.2 6.2 16.4 6.2 22.6 0l128-128c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L272 329.4V16zM140.1 320H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384c0-35.3-28.7-64-64-64H371.9l-32 32H448c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V384c0-17.7 14.3-32 32-32H172.1l-32-32zM432 416a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div style="display: none;"></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="3">
+                                                                                <td aria-describedby="dx-col-13" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">Commercial Lease.pdf</td>
+                                                                                <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Project (Applicant)</td>
+                                                                                <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">
+                                                                                    <div class="edit-delete-actions">
+                                                                                        <div class="d-flex gap-5p">
+                                                                                            <button class="btn btn-info" title="View">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                                                                    <path fill="currentColor" d="M117.2 136C160.3 96 217.6 64 288 64s127.7 32 170.8 72c43.1 40 71.9 88 85.2 120c-13.3 32-42.1 80-85.2 120c-43.1 40-100.4 72-170.8 72s-127.7-32-170.8-72C74.1 336 45.3 288 32 256c13.3-32 42.1-80 85.2-120zM288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM192 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                            <button class="btn btn-info" title="Download">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="download" class="svg-inline--fa fa-download " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                    <path fill="currentColor" d="M272 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V329.4L139.3 228.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l128 128c6.2 6.2 16.4 6.2 22.6 0l128-128c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L272 329.4V16zM140.1 320H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384c0-35.3-28.7-64-64-64H371.9l-32 32H448c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V384c0-17.7 14.3-32 32-32H172.1l-32-32zM432 416a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div style="display: none;"></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="4">
+                                                                                <td aria-describedby="dx-col-13" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">Floor Plan.pdf</td>
+                                                                                <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Project (Applicant)</td>
+                                                                                <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">
+                                                                                    <div class="edit-delete-actions">
+                                                                                        <div class="d-flex gap-5p">
+                                                                                            <button class="btn btn-info" title="View">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                                                                    <path fill="currentColor" d="M117.2 136C160.3 96 217.6 64 288 64s127.7 32 170.8 72c43.1 40 71.9 88 85.2 120c-13.3 32-42.1 80-85.2 120c-43.1 40-100.4 72-170.8 72s-127.7-32-170.8-72C74.1 336 45.3 288 32 256c13.3-32 42.1-80 85.2-120zM288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM192 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                            <button class="btn btn-info" title="Download">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="download" class="svg-inline--fa fa-download " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                    <path fill="currentColor" d="M272 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V329.4L139.3 228.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l128 128c6.2 6.2 16.4 6.2 22.6 0l128-128c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L272 329.4V16zM140.1 320H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384c0-35.3-28.7-64-64-64H371.9l-32 32H448c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V384c0-17.7 14.3-32 32-32H172.1l-32-32zM432 416a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div style="display: none;"></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="5">
+                                                                                <td aria-describedby="dx-col-13" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">Project Costs.pdf</td>
+                                                                                <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Project (Applicant)</td>
+                                                                                <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">
+                                                                                    <div class="edit-delete-actions">
+                                                                                        <div class="d-flex gap-5p">
+                                                                                            <button class="btn btn-info" title="View">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                                                                    <path fill="currentColor" d="M117.2 136C160.3 96 217.6 64 288 64s127.7 32 170.8 72c43.1 40 71.9 88 85.2 120c-13.3 32-42.1 80-85.2 120c-43.1 40-100.4 72-170.8 72s-127.7-32-170.8-72C74.1 336 45.3 288 32 256c13.3-32 42.1-80 85.2-120zM288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM192 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                            <button class="btn btn-info" title="Download">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="download" class="svg-inline--fa fa-download " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                    <path fill="currentColor" d="M272 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V329.4L139.3 228.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l128 128c6.2 6.2 16.4 6.2 22.6 0l128-128c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L272 329.4V16zM140.1 320H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384c0-35.3-28.7-64-64-64H371.9l-32 32H448c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V384c0-17.7 14.3-32 32-32H172.1l-32-32zM432 416a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div style="display: none;"></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="6">
+                                                                                <td aria-describedby="dx-col-13" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">Project RDA.pdf</td>
+                                                                                <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Project (Agreement)</td>
+                                                                                <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">
+                                                                                    <div class="edit-delete-actions">
+                                                                                        <div class="d-flex gap-5p">
+                                                                                            <button class="btn btn-info" title="View">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="eye" class="svg-inline--fa fa-eye " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                                                                    <path fill="currentColor" d="M117.2 136C160.3 96 217.6 64 288 64s127.7 32 170.8 72c43.1 40 71.9 88 85.2 120c-13.3 32-42.1 80-85.2 120c-43.1 40-100.4 72-170.8 72s-127.7-32-170.8-72C74.1 336 45.3 288 32 256c13.3-32 42.1-80 85.2-120zM288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM192 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                            <button class="btn btn-info" title="Download">
+                                                                                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="download" class="svg-inline--fa fa-download " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                    <path fill="currentColor" d="M272 16c0-8.8-7.2-16-16-16s-16 7.2-16 16V329.4L139.3 228.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l128 128c6.2 6.2 16.4 6.2 22.6 0l128-128c6.2-6.2 6.2-16.4 0-22.6s-16.4-6.2-22.6 0L272 329.4V16zM140.1 320H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V384c0-35.3-28.7-64-64-64H371.9l-32 32H448c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V384c0-17.7 14.3-32 32-32H172.1l-32-32zM432 416a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z"></path>
+                                                                                                </svg>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div style="display: none;"></div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="dx-row dx-freespace-row dx-column-lines dx-state-invisible" role="presentation" style="height: 0px;">
+                                                                                <td style="text-align: left; min-width: 150px;"></td>
+                                                                                <td style="text-align: left; min-width: 150px;"></td>
+                                                                                <td style="text-align: left; min-width: 150px;"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><span class="dx-datagrid-nodata dx-hidden">No Data</span></div>
+                                                <div class="dx-overlay dx-widget dx-visibility-change-handler dx-loadpanel dx-state-invisible">
+                                                    <div class="dx-overlay-content dx-loadpanel-content dx-state-invisible" style="width: 200px; height: 90px; left: 0px; top: 0px; transform: translate(515px, 43px); transition: all 0s ease 0s; z-index: 1501;">
+                                                        <div class="dx-loadpanel-content-wrapper">
+                                                            <div class="dx-loadpanel-indicator dx-loadindicator dx-widget">
+                                                                <div class="dx-loadindicator-wrapper">
+                                                                    <div class="dx-loadindicator-content">
+                                                                        <div class="dx-loadindicator-icon">
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment7"></div>
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment6"></div>
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment5"></div>
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment4"></div>
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment3"></div>
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment2"></div>
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment1"></div>
+                                                                            <div class="dx-loadindicator-segment dx-loadindicator-segment0"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="dx-loadpanel-message">Loading...</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dx-hidden" style="padding-right: 0px;"></div>
+                                                <div></div>
+                                                <div class="dx-hidden"></div>
+                                                <div class="dx-hidden"></div>
+                                                <div class="dx-datagrid-drag-header dx-datagrid-text-content dx-widget dx-state-invisible"></div>
+                                                <div class="dx-context-menu dx-has-context-menu dx-widget dx-visibility-change-handler dx-collection" role="presentation"></div>
+                                                <div class="dx-header-filter-menu"></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                             <!-- PROJECTS TAB-->
                             <div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="projects-tab">
-                               Projects <!-- Projects content goes here -->
+                              <div class="panel">
+                                <div class="panel-inner"><h3 class="panel-heading">Projects</h3><div class="panel-inner-right"><button class="btn btn-primary" title="Toggle filters"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="filter" class="svg-inline--fa fa-filter " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M0 73.7C0 50.7 18.7 32 41.7 32H470.3c23 0 41.7 18.7 41.7 41.7c0 9.6-3.3 18.9-9.4 26.3L336 304.5V447.7c0 17.8-14.5 32.3-32.3 32.3c-7.3 0-14.4-2.5-20.1-7l-92.5-73.4c-9.6-7.6-15.1-19.1-15.1-31.3V304.5L9.4 100C3.3 92.6 0 83.3 0 73.7zM55 80L218.6 280.8c3.5 4.3 5.4 9.6 5.4 15.2v68.4l64 50.8V296c0-5.5 1.9-10.9 5.4-15.2L457 80H55z"></path></svg></button><a class="btn btn-primary" href="/admin/projects/new"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="plus" class="svg-inline--fa fa-plus " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M248 72c0-13.3-10.7-24-24-24s-24 10.7-24 24V232H40c-13.3 0-24 10.7-24 24s10.7 24 24 24H200V440c0 13.3 10.7 24 24 24s24-10.7 24-24V280H408c13.3 0 24-10.7 24-24s-10.7-24-24-24H248V72z"></path></svg>Create New</a></div></div>
+                                <div class="data-grid-wrapper">
+                                    <div id="grid-container" class="devextreme-table dx-widget dx-visibility-change-handler" role="presentation" style="height: auto;">
+                                        <div class="dx-datagrid dx-gridbase-container dx-datagrid-borders" role="group" aria-label="Data grid with 2 rows and 7 columns">
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-datagrid-columns-separator dx-datagrid-columns-separator-transparent" style="height: 38px; left: 0px; top: 0px;"></div>
+                                            <div class="dx-datagrid-tracker dx-state-invisible" style="height: 38px; top: 0px;"></div>
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-datagrid-headers dx-bordered-top-view" role="presentation" style="padding-right: 0px;">
+                                                <div class="dx-datagrid-content dx-datagrid-scroll-container" role="presentation">
+                                                    <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-68d66267-7f49-463b-7c36-ea6fd7e24bb2" role="presentation">
+                                                        <colgroup>
+                                                            <col style="width: 166.188px;">
+                                                                <col style="width: 263.344px;">
+                                                                    <col style="width: 357.156px;">
+                                                                        <col style="width: 178.703px;">
+                                                                            <col style="width: 166.188px;">
+                                                                                <col style="width: 166.188px;">
+                                                                                    <col style="width: 166.234px;">
+                                                        </colgroup>
+                                                        <tbody role="presentation" class="">
+                                                            <tr class="dx-row dx-column-lines dx-header-row" role="row">
+                                                                <td role="columnheader" aria-colindex="1" id="dx-col-22" aria-label="Column undefined" aria-sort="none" class="dx-cell-focus-disabled" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-datagrid-text-content" role="presentation"></div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="2" id="dx-col-23" aria-label="Column Name" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Name</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="3" id="dx-col-24" aria-label="Column Address" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Address</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="4" id="dx-col-25" aria-label="Column Boundary" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Boundary</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="5" id="dx-col-26" aria-label="Column Status" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Status</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="6" id="dx-col-27" aria-label="Column Project Score" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: right; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: left;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-right" role="presentation">Project Score</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="7" id="dx-col-28" aria-label="Column undefined" aria-sort="none" class="dx-cell-focus-disabled" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-datagrid-text-content" role="presentation"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="dx-bordered-bottom-view dx-datagrid-rowsview dx-scrollable dx-visibility-change-handler dx-scrollable-both dx-scrollable-native dx-scrollable-native-generic" role="presentation">
+                                                <div class="dx-scrollable-wrapper">
+                                                    <div class="dx-scrollable-container">
+                                                        <div class="dx-scrollable-content">
+                                                            <div class="dx-datagrid-content" aria-owns="dx-68d66267-7f49-463b-7c36-ea6fd7e24bb2 dx-5de658e6-de22-274b-4810-d7444860c74b" role="grid">
+                                                                <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-5de658e6-de22-274b-4810-d7444860c74b" role="presentation" style="table-layout: fixed;">
+                                                                    <colgroup style="">
+                                                                        <col style="width: 166.188px;">
+                                                                            <col style="width: 263.344px;">
+                                                                                <col style="width: 357.156px;">
+                                                                                    <col style="width: 178.703px;">
+                                                                                        <col style="width: 166.188px;">
+                                                                                            <col style="width: 166.188px;">
+                                                                                                <col style="width: 166.234px;">
+                                                                    </colgroup>
+                                                                    <tbody role="presentation">
+                                                                        <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="1">
+                                                                            <td aria-describedby="dx-col-22" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">
+                                                                                <svg aria-labelledby="svg-inline--fa-title-qSsKP5te7qGx" data-prefix="fal" data-icon="circle" class="svg-inline--fa fa-circle " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                    <title id="svg-inline--fa-title-qSsKP5te7qGx">Application has been reviewed</title>
+                                                                                    <path fill="currentColor" d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path>
+                                                                                </svg>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-23" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">
+                                                                                <div>
+                                                                                    <div class="gap-10p mb-2">
+                                                                                        <p class="mb-0 align-self-center h6 mb-1"> Lone Pine Mall</p>
+                                                                                        <div class="d-flex flex-column mb-1"><small>Started on 6/17/2024</small><small>Ends on 7/31/2026</small></div>
+                                                                                        <a href="/admin/projects/view/1334/compliance">
+                                                                                            <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="octagon-exclamation" class="svg-inline--fa fa-octagon-exclamation " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                <path fill="currentColor" d="M191.5 32.1c-10.6 0-20.8 4.2-28.3 11.7L43.8 163.2c-7.5 7.5-11.7 17.7-11.7 28.3v129c0 10.6 4.2 20.8 11.7 28.3L21.2 371.4C7.7 357.9 .1 339.6 .1 320.5v-129c0-19.1 7.6-37.4 21.1-50.9L140.6 21.2C154.1 7.7 172.4 .1 191.5 .1h129c19.1 0 37.4 7.6 50.9 21.1L490.8 140.6c13.5 13.5 21.1 31.8 21.1 50.9v129c0 19.1-7.6 37.4-21.1 50.9L371.4 490.8c-13.5 13.5-31.8 21.1-50.9 21.1h-129c-19.1 0-37.4-7.6-50.9-21.1L21.2 371.4l22.6-22.6L163.2 468.2c7.5 7.5 17.7 11.7 28.3 11.7h129c10.6 0 20.8-4.2 28.3-11.7L468.2 348.8c7.5-7.5 11.7-17.7 11.7-28.3v-129c0-10.6-4.2-20.8-11.7-28.3L348.8 43.8c-7.5-7.5-17.7-11.7-28.3-11.7h-129zM256 128c8.8 0 16 7.2 16 16V272c0 8.8-7.2 16-16 16s-16-7.2-16-16V144c0-8.8 7.2-16 16-16zM232 352a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path>
+                                                                                            </svg>&nbsp;Out of Compliance - Review</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-24" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">207 JEFFERSON ST , Bloomington, IL 61701
+                                                                                <div style="display: none;"></div><span style="display: none;"></span></td>
+                                                                            <td aria-describedby="dx-col-25" role="gridcell" aria-colindex="4" style="text-align: left; min-width: 150px;">Downtown District</td>
+                                                                            <td aria-describedby="dx-col-26" role="gridcell" aria-colindex="5" style="text-align: left; min-width: 150px;"><span class="badge badge-success">Approved Project</span>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-27" role="gridcell" aria-colindex="6" style="text-align: right; min-width: 150px;"><a class="text-decoration-underline" href="/admin/impacts/scoring/1334/report">85%</a>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-28" role="gridcell" aria-colindex="7" style="text-align: left; min-width: 150px;">
+                                                                                <div class="edit-delete-actions">
+                                                                                    <a class="btn btn-info" title="View more details" href="/admin/projects/view/1334/details">
+                                                                                        <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                                                            <path fill="currentColor" d="M443.3 267.3c6.2-6.2 6.2-16.4 0-22.6l-176-176c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L393.4 240 16 240c-8.8 0-16 7.2-16 16s7.2 16 16 16l377.4 0L244.7 420.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l176-176z"></path>
+                                                                                        </svg>
+                                                                                    </a>
+                                                                                    <button class="btn btn-danger" title="Delete">
+                                                                                        <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="trash" class="svg-inline--fa fa-trash " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                                                            <path fill="currentColor" d="M177.7 32h92.5c5.5 0 10.6 2.8 13.6 7.5L299.1 64H148.9l15.3-24.5c2.9-4.7 8.1-7.5 13.6-7.5zM336.9 64L311 22.6C302.2 8.5 286.8 0 270.3 0H177.7C161.2 0 145.8 8.5 137 22.6L111.1 64H64.1 32 16C7.2 64 0 71.2 0 80s7.2 16 16 16H34.3L59.8 452.6C62.1 486.1 90 512 123.6 512H324.4c33.6 0 61.4-25.9 63.8-59.4L413.7 96H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H416 383.9 336.9zm44.8 32L356.3 450.3C355.1 467 341.2 480 324.4 480H123.6c-16.8 0-30.7-13-31.9-29.7L66.4 96H381.6z"></path>
+                                                                                        </svg>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="2">
+                                                                            <td aria-describedby="dx-col-22" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">
+                                                                                <svg aria-labelledby="svg-inline--fa-title-HgvthYRgrart" data-prefix="fal" data-icon="circle" class="svg-inline--fa fa-circle " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                    <title id="svg-inline--fa-title-HgvthYRgrart">Application has been reviewed</title>
+                                                                                    <path fill="currentColor" d="M256 32a224 224 0 1 1 0 448 224 224 0 1 1 0-448zm0 480A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path>
+                                                                                </svg>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-23" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">
+                                                                                <div>
+                                                                                    <div class="gap-10p mb-2">
+                                                                                        <p class="mb-0 align-self-center h6 mb-1"> Food Hall</p>
+                                                                                        <div class="d-flex flex-column mb-1"><small>Started on 2/5/2024</small><small>Ends on 8/1/2036</small></div>
+                                                                                        <a href="/admin/projects/view/1326/compliance">
+                                                                                            <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="octagon-exclamation" class="svg-inline--fa fa-octagon-exclamation " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                                <path fill="currentColor" d="M191.5 32.1c-10.6 0-20.8 4.2-28.3 11.7L43.8 163.2c-7.5 7.5-11.7 17.7-11.7 28.3v129c0 10.6 4.2 20.8 11.7 28.3L21.2 371.4C7.7 357.9 .1 339.6 .1 320.5v-129c0-19.1 7.6-37.4 21.1-50.9L140.6 21.2C154.1 7.7 172.4 .1 191.5 .1h129c19.1 0 37.4 7.6 50.9 21.1L490.8 140.6c13.5 13.5 21.1 31.8 21.1 50.9v129c0 19.1-7.6 37.4-21.1 50.9L371.4 490.8c-13.5 13.5-31.8 21.1-50.9 21.1h-129c-19.1 0-37.4-7.6-50.9-21.1L21.2 371.4l22.6-22.6L163.2 468.2c7.5 7.5 17.7 11.7 28.3 11.7h129c10.6 0 20.8-4.2 28.3-11.7L468.2 348.8c7.5-7.5 11.7-17.7 11.7-28.3v-129c0-10.6-4.2-20.8-11.7-28.3L348.8 43.8c-7.5-7.5-17.7-11.7-28.3-11.7h-129zM256 128c8.8 0 16 7.2 16 16V272c0 8.8-7.2 16-16 16s-16-7.2-16-16V144c0-8.8 7.2-16 16-16zM232 352a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path>
+                                                                                            </svg>&nbsp;Out of Compliance - Review</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-24" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">207 JEFFERSON ST , Bloomington, IL 61701
+                                                                                <div style="display: none;"></div><span style="display: none;"></span></td>
+                                                                            <td aria-describedby="dx-col-25" role="gridcell" aria-colindex="4" style="text-align: left; min-width: 150px;">Downtown District</td>
+                                                                            <td aria-describedby="dx-col-26" role="gridcell" aria-colindex="5" style="text-align: left; min-width: 150px;"><span class="badge badge-success">Approved Project</span>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-27" role="gridcell" aria-colindex="6" style="text-align: right; min-width: 150px;"><a class="text-decoration-underline" href="/admin/impacts/scoring/1326/report">85%</a>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-28" role="gridcell" aria-colindex="7" style="text-align: left; min-width: 150px;">
+                                                                                <div class="edit-delete-actions">
+                                                                                    <a class="btn btn-info" title="View more details" href="/admin/projects/view/1326/details">
+                                                                                        <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                                                            <path fill="currentColor" d="M443.3 267.3c6.2-6.2 6.2-16.4 0-22.6l-176-176c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6L393.4 240 16 240c-8.8 0-16 7.2-16 16s7.2 16 16 16l377.4 0L244.7 420.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l176-176z"></path>
+                                                                                        </svg>
+                                                                                    </a>
+                                                                                    <button class="btn btn-danger" title="Delete">
+                                                                                        <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="trash" class="svg-inline--fa fa-trash " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                                                            <path fill="currentColor" d="M177.7 32h92.5c5.5 0 10.6 2.8 13.6 7.5L299.1 64H148.9l15.3-24.5c2.9-4.7 8.1-7.5 13.6-7.5zM336.9 64L311 22.6C302.2 8.5 286.8 0 270.3 0H177.7C161.2 0 145.8 8.5 137 22.6L111.1 64H64.1 32 16C7.2 64 0 71.2 0 80s7.2 16 16 16H34.3L59.8 452.6C62.1 486.1 90 512 123.6 512H324.4c33.6 0 61.4-25.9 63.8-59.4L413.7 96H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H416 383.9 336.9zm44.8 32L356.3 450.3C355.1 467 341.2 480 324.4 480H123.6c-16.8 0-30.7-13-31.9-29.7L66.4 96H381.6z"></path>
+                                                                                        </svg>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="dx-row dx-freespace-row dx-column-lines dx-state-invisible" role="presentation" style="height: 0px;">
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: right; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><span class="dx-datagrid-nodata dx-hidden">No Data</span></div>
+                                            <div class="dx-overlay dx-widget dx-visibility-change-handler dx-loadpanel dx-state-invisible">
+                                                <div class="dx-overlay-content dx-loadpanel-content dx-state-invisible" style="width: 200px; height: 90px; left: 0px; top: 0px; transform: translate(632px, 43px); transition: all 0s ease 0s; z-index: 1501;">
+                                                    <div class="dx-loadpanel-content-wrapper">
+                                                        <div class="dx-loadpanel-indicator dx-loadindicator dx-widget">
+                                                            <div class="dx-loadindicator-wrapper">
+                                                                <div class="dx-loadindicator-content">
+                                                                    <div class="dx-loadindicator-icon">
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment7"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment6"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment5"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment4"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment3"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment2"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment1"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment0"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-loadpanel-message">Loading...</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dx-hidden" style="padding-right: 0px;"></div>
+                                            <div></div>
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-widget dx-datagrid-pager dx-pager dx-light-mode" role="navigation" aria-label="Page Navigation">
+                                                <!-- <div class="dx-page-sizes">
+                                                    <div isreactcomponentwrapper="true" class="dx-show-invalid-badge dx-selectbox dx-textbox dx-texteditor dx-dropdowneditor-button-visible dx-editor-outlined dx-widget dx-dropdowneditor dx-dropdowneditor-field-clickable" style="width: 72px;">
+                                                        <div class="dx-dropdowneditor-input-wrapper dx-selectbox-container">
+                                                            <input type="hidden" value="10">
+                                                            <div class="dx-texteditor-container">
+                                                                <div class="dx-texteditor-input-container">
+                                                                    <input autocomplete="off" placeholder=" " aria-label="Page size" class="dx-texteditor-input" aria-haspopup="listbox" aria-autocomplete="list" type="text" readonly="" spellcheck="false" tabindex="0" role="combobox" aria-expanded="false">
+                                                                    <div data-dx_placeholder="" class="dx-placeholder dx-state-invisible"></div>
+                                                                </div>
+                                                                <div class="dx-texteditor-buttons-container">
+                                                                    <div></div>
+                                                                    <div role="button" class="dx-widget dx-button-normal dx-dropdowneditor-button" aria-label="Select">
+                                                                        <div class="dx-button-content">
+                                                                            <div class="dx-dropdowneditor-icon"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dx-pages">
+                                                    <div class="dx-info">Page 1 of 1 (2 items)</div>
+                                                    <div class="dx-page-indexes">
+                                                        <div class="dx-button-disable dx-navigate-button dx-prev-button" tabindex="-1" role="button" aria-label="Previous Page"></div>
+                                                        <div class="dx-light-pages">
+                                                            <div class="dx-page-index dx-show-invalid-badge dx-numberbox dx-texteditor dx-editor-outlined dx-widget" isreactcomponentwrapper="true" style="width: 29px;">
+                                                                <input type="hidden" value="1">
+                                                                <div class="dx-texteditor-container">
+                                                                    <div class="dx-texteditor-input-container">
+                                                                        <input autocomplete="off" placeholder=" " inputmode="decimal" aria-label="Page number" class="dx-texteditor-input" type="text" min="1" max="1" step="1" aria-valuemin="1" aria-valuemax="1" tabindex="0" aria-valuenow="1"
+                                                                        role="spinbutton">
+                                                                        <div data-dx_placeholder="" class="dx-placeholder dx-state-invisible"></div>
+                                                                    </div>
+                                                                    <div class="dx-texteditor-buttons-container">
+                                                                        <div></div>
+                                                                        <div></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div><span class="dx-info  dx-info-text">of</span>
+                                                            <div class="dx-pages-count" tabindex="0" role="button" aria-label="Page 1">1</div>
+                                                        </div>
+                                                        <div class="dx-button-disable dx-navigate-button dx-next-button" tabindex="-1" role="button" aria-label="Next Page"></div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <div class="dx-datagrid-drag-header dx-datagrid-text-content dx-widget dx-state-invisible"></div>
+                                            <div class="dx-context-menu dx-has-context-menu dx-widget dx-visibility-change-handler dx-collection" role="presentation"></div>
+                                            <div class="dx-header-filter-menu"></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                             <!-- TASKS TAB -->
-                            <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="tasks-tab">
-                               Tasks <!-- Tasks content goes here -->
+                            <div class="tab-pane fade" id="tasks-mock" role="tabpanel" aria-labelledby="tasks-mock-tab">
+                              <div class="panel mt-4">
+                                <div class="panel-inner">
+                                    <h3 class="panel-heading">Tasks</h3>
+                                    <div class="page-header-right">
+                                        <button class="btn btn-primary">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="plus" class="svg-inline--fa fa-plus " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                <path fill="currentColor" d="M248 72c0-13.3-10.7-24-24-24s-24 10.7-24 24V232H40c-13.3 0-24 10.7-24 24s10.7 24 24 24H200V440c0 13.3 10.7 24 24 24s24-10.7 24-24V280H408c13.3 0 24-10.7 24-24s-10.7-24-24-24H248V72z"></path>
+                                            </svg>Add</button>
+                                    </div>
+                                </div>
+                                <div class="data-grid-wrapper">
+                                    <div id="grid-container" class="devextreme-table dx-widget dx-visibility-change-handler" role="presentation" style="height: auto;">
+                                        <div class="dx-datagrid dx-gridbase-container dx-datagrid-borders" role="group" aria-label="Data grid with 1 rows and 5 columns">
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-datagrid-columns-separator dx-datagrid-columns-separator-transparent" style="height: 38px; left: 0px;"></div>
+                                            <div class="dx-datagrid-tracker dx-state-invisible" style="height: 38px;"></div>
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-datagrid-headers dx-bordered-top-view" role="presentation" style="padding-right: 0px;">
+                                                <div class="dx-datagrid-content dx-datagrid-scroll-container" role="presentation">
+                                                    <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-f81bec78-6164-b802-5c39-94b6cc9e443d" role="presentation">
+                                                        <colgroup>
+                                                            <col style="width: 415.406px;">
+                                                                <col style="width: 285.094px;">
+                                                                    <col style="width: 245.75px;">
+                                                                        <col style="width: 245.75px;">
+                                                                            <col style="width: 256px;">
+                                                        </colgroup>
+                                                        <tbody role="presentation" class="">
+                                                            <tr class="dx-row dx-column-lines dx-header-row" role="row">
+                                                                <td role="columnheader" aria-colindex="1" id="dx-col-6" aria-label="Column Activity" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Activity</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="2" id="dx-col-7" aria-label="Column Responsible Party" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Responsible Party</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="3" id="dx-col-8" aria-label="Column Status" aria-sort="none" class="dx-cell-focus-disabled" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-datagrid-text-content" role="presentation">Status</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="4" id="dx-col-9" aria-label="Column Due Date" class="dx-datagrid-action dx-cell-focus-disabled" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-column-indicators" role="presentation" style="float: right;"><span class="dx-sort dx-sort-none"></span></div>
+                                                                    <div class="dx-datagrid-text-content dx-text-content-alignment-left" role="presentation">Due Date</div>
+                                                                </td>
+                                                                <td class="edit-delete-actions me-3 dx-cell-focus-disabled" role="columnheader" aria-colindex="5" id="dx-col-10" aria-label="Column Actions" aria-sort="none" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-datagrid-text-content" role="presentation">Actions</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="dx-bordered-bottom-view dx-datagrid-rowsview dx-scrollable dx-visibility-change-handler dx-scrollable-both dx-scrollable-native dx-scrollable-native-generic" role="presentation">
+                                                <div class="dx-scrollable-wrapper">
+                                                    <div class="dx-scrollable-container">
+                                                        <div class="dx-scrollable-content">
+                                                            <div class="dx-datagrid-content" aria-owns="dx-f81bec78-6164-b802-5c39-94b6cc9e443d dx-64ebeaa1-1d63-4551-8d4d-3e319761441b" role="grid">
+                                                                <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-64ebeaa1-1d63-4551-8d4d-3e319761441b" role="presentation" style="table-layout: fixed;">
+                                                                    <colgroup style="">
+                                                                        <col style="width: 415.406px;">
+                                                                            <col style="width: 285.094px;">
+                                                                                <col style="width: 245.75px;">
+                                                                                    <col style="width: 245.75px;">
+                                                                                        <col style="width: 256px;">
+                                                                    </colgroup>
+                                                                    <tbody role="presentation">
+                                                                        <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="1">
+                                                                            <td aria-describedby="dx-col-6" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px;">Contact General GC Services LLC</td>
+                                                                            <td aria-describedby="dx-col-7" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Scott Government </td>
+                                                                            <td aria-describedby="dx-col-8" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;"><span class="badge badge-danger">Past Due</span>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                            <td aria-describedby="dx-col-9" role="gridcell" aria-colindex="4" style="text-align: left; min-width: 150px;">6/12/2023</td>
+                                                                            <td aria-describedby="dx-col-10" class="edit-delete-actions me-3" role="gridcell" aria-colindex="5" style="text-align: left; min-width: 150px;">
+                                                                                <button class="btn btn-info" title="Mark as Completed">
+                                                                                    <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="check" class="svg-inline--fa fa-check " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                                                        <path fill="currentColor" d="M443.3 100.7c6.2 6.2 6.2 16.4 0 22.6l-272 272c-6.2 6.2-16.4 6.2-22.6 0l-144-144c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L160 361.4 420.7 100.7c6.2-6.2 16.4-6.2 22.6 0z"></path>
+                                                                                    </svg>
+                                                                                </button>
+                                                                                <button class="btn btn-info" title="Edit">
+                                                                                    <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                                                        <path fill="currentColor" d="M454.6 45.3l12.1 12.1c12.5 12.5 12.5 32.8 0 45.3L440 129.4 382.6 72l26.7-26.7c12.5-12.5 32.8-12.5 45.3 0zM189 265.6l171-171L417.4 152l-171 171c-4.2 4.2-9.6 7.2-15.4 8.6l-65.6 15.1L180.5 281c1.3-5.8 4.3-11.2 8.6-15.4zm197.7-243L166.4 243c-8.5 8.5-14.4 19.2-17.1 30.9l-20.9 90.6c-1.2 5.4 .4 11 4.3 14.9s9.5 5.5 14.9 4.3l90.6-20.9c11.7-2.7 22.4-8.6 30.9-17.1L489.4 125.3c25-25 25-65.5 0-90.5L477.3 22.6c-25-25-65.5-25-90.5 0zM80 64C35.8 64 0 99.8 0 144V432c0 44.2 35.8 80 80 80H368c44.2 0 80-35.8 80-80V304c0-8.8-7.2-16-16-16s-16 7.2-16 16V432c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48H208c8.8 0 16-7.2 16-16s-7.2-16-16-16H80z"></path>
+                                                                                    </svg>
+                                                                                </button>
+                                                                                <button class="btn btn-danger" title="Delete">
+                                                                                    <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="trash" class="svg-inline--fa fa-trash " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                                                        <path fill="currentColor" d="M177.7 32h92.5c5.5 0 10.6 2.8 13.6 7.5L299.1 64H148.9l15.3-24.5c2.9-4.7 8.1-7.5 13.6-7.5zM336.9 64L311 22.6C302.2 8.5 286.8 0 270.3 0H177.7C161.2 0 145.8 8.5 137 22.6L111.1 64H64.1 32 16C7.2 64 0 71.2 0 80s7.2 16 16 16H34.3L59.8 452.6C62.1 486.1 90 512 123.6 512H324.4c33.6 0 61.4-25.9 63.8-59.4L413.7 96H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H416 383.9 336.9zm44.8 32L356.3 450.3C355.1 467 341.2 480 324.4 480H123.6c-16.8 0-30.7-13-31.9-29.7L66.4 96H381.6z"></path>
+                                                                                    </svg>
+                                                                                </button>
+                                                                                <div style="display: none;"></div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="dx-row dx-freespace-row dx-column-lines dx-state-invisible" role="presentation" style="height: 0px;">
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td class="edit-delete-actions me-3" style="text-align: left; min-width: 150px;"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><span class="dx-datagrid-nodata dx-hidden">No Data</span></div>
+                                            <div class="dx-overlay dx-widget dx-visibility-change-handler dx-loadpanel dx-state-invisible">
+                                                <div class="dx-overlay-content dx-loadpanel-content dx-state-invisible" style="width: 200px; height: 90px; left: 0px; top: 0px; transform: translate(632px, 43px); transition: all 0s ease 0s; z-index: 1501;">
+                                                    <div class="dx-loadpanel-content-wrapper">
+                                                        <div class="dx-loadpanel-indicator dx-loadindicator dx-widget">
+                                                            <div class="dx-loadindicator-wrapper">
+                                                                <div class="dx-loadindicator-content">
+                                                                    <div class="dx-loadindicator-icon">
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment7"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment6"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment5"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment4"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment3"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment2"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment1"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment0"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-loadpanel-message">Loading...</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dx-hidden" style="padding-right: 0px;"></div>
+                                            <div></div>
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-datagrid-drag-header dx-datagrid-text-content dx-widget dx-state-invisible"></div>
+                                            <div class="dx-context-menu dx-has-context-menu dx-widget dx-visibility-change-handler dx-collection" role="presentation"></div>
+                                            <div class="dx-header-filter-menu"></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                             <!-- AUDIT TAB -->
                             <div class="tab-pane fade" id="audit" role="tabpanel" aria-labelledby="audit-tab">
-                               Audit <button href="#" class="ml-4 btn btn-primary export-activity-logs" style="margin-top: 2px;"><i class="fa-light fa-file-export"></i> Export Activity Logs</button> <!-- Audit content goes here -->
+                              <div class="panel mt-4">
+                                <div class="panel-inner">
+                                    <h3 class="panel-heading">Audit</h3>
+                                    <div class="panel-inner-right">
+                                        <button class="btn btn-primary">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-export" class="svg-inline--fa fa-file-export " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path fill="currentColor" d="M336 448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80v96h48V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V368H336v80zM489 215c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H216c-13.3 0-24 10.7-24 24s10.7 24 24 24H494.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80z"></path>
+                                            </svg>Export Audit Logs</button>
+                                    </div>
+                                </div>
+                                <div class="data-grid-wrapper">
+                                    <div id="grid-container" class="devextreme-table dx-widget dx-visibility-change-handler" role="presentation" style="height: auto;">
+                                        <div class="dx-datagrid dx-gridbase-container dx-datagrid-borders" role="group" aria-label="Data grid with 4 rows and 3 columns">
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-datagrid-columns-separator dx-datagrid-columns-separator-transparent" style="left: 0px; height: 38px;"></div>
+                                            <div class="dx-datagrid-tracker dx-state-invisible" style="height: 38px;"></div>
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-datagrid-headers dx-bordered-top-view" role="presentation" style="padding-right: 0px;">
+                                                <div class="dx-datagrid-content dx-datagrid-scroll-container" role="presentation">
+                                                    <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-39011677-9b1c-14ac-f859-8852ea19f4ae" role="presentation">
+                                                        <colgroup>
+                                                            <col style="width: 200px;">
+                                                                <col style="width: 930.578px;">
+                                                                    <col style="width: 333.422px;">
+                                                        </colgroup>
+                                                        <tbody role="presentation" class="">
+                                                            <tr class="dx-row dx-column-lines dx-header-row" role="row">
+                                                                <td role="columnheader" aria-colindex="1" id="dx-col-14" aria-label="Column Date" aria-sort="none" class="dx-cell-focus-disabled" tabindex="0" style="text-align: left; min-width: 150px; max-width: 200px; width: 200px;">
+                                                                    <div class="dx-datagrid-text-content" role="presentation">Date</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="2" id="dx-col-15" aria-label="Column Description" aria-sort="none" class="dx-cell-focus-disabled" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-datagrid-text-content" role="presentation">Description</div>
+                                                                </td>
+                                                                <td role="columnheader" aria-colindex="3" id="dx-col-16" aria-label="Column By" aria-sort="none" class="dx-cell-focus-disabled" tabindex="0" style="text-align: left; min-width: 150px;">
+                                                                    <div class="dx-datagrid-text-content" role="presentation">By</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="dx-bordered-bottom-view dx-datagrid-rowsview dx-scrollable dx-visibility-change-handler dx-scrollable-both dx-scrollable-native dx-scrollable-native-generic" role="presentation">
+                                                <div class="dx-scrollable-wrapper">
+                                                    <div class="dx-scrollable-container">
+                                                        <div class="dx-scrollable-content">
+                                                            <div class="dx-datagrid-content" aria-owns="dx-39011677-9b1c-14ac-f859-8852ea19f4ae dx-3ec57d24-2a59-1b6c-c2a5-be35adb949dc" role="grid">
+                                                                <table class="dx-datagrid-table dx-datagrid-table-fixed" id="dx-3ec57d24-2a59-1b6c-c2a5-be35adb949dc" role="presentation" style="table-layout: fixed;">
+                                                                    <colgroup style="">
+                                                                        <col style="width: 200px;">
+                                                                            <col style="width: 930.578px;">
+                                                                                <col style="width: 333.422px;">
+                                                                    </colgroup>
+                                                                    <tbody role="presentation">
+                                                                        <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="1">
+                                                                            <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px; max-width: 200px; width: 200px;">7/17/2024 8:39:54 PM
+                                                                                <div style="display: none;"></div><span style="display: none;"></span></td>
+                                                                            <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Physical address was updated for General GC Services LLC</td>
+                                                                            <td aria-describedby="dx-col-16" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">Nick Tully</td>
+                                                                        </tr>
+                                                                        <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="2">
+                                                                            <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px; max-width: 200px; width: 200px;">7/17/2024 8:39:54 PM
+                                                                                <div style="display: none;"></div><span style="display: none;"></span></td>
+                                                                            <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Mailing address was updated for General GC Services LLC</td>
+                                                                            <td aria-describedby="dx-col-16" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">Nick Tully</td>
+                                                                        </tr>
+                                                                        <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="3">
+                                                                            <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px; max-width: 200px; width: 200px;">6/5/2024 3:59:30 PM
+                                                                                <div style="display: none;"></div><span style="display: none;"></span></td>
+                                                                            <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">General GC Services LLC started an application</td>
+                                                                            <td aria-describedby="dx-col-16" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">Amalie Degenhart</td>
+                                                                        </tr>
+                                                                        <tr class="dx-row dx-data-row dx-column-lines" role="row" aria-rowindex="4">
+                                                                            <td aria-describedby="dx-col-14" role="gridcell" aria-colindex="1" style="text-align: left; min-width: 150px; max-width: 200px; width: 200px;">3/4/2024 8:00:00 AM
+                                                                                <div style="display: none;"></div><span style="display: none;"></span></td>
+                                                                            <td aria-describedby="dx-col-15" role="gridcell" aria-colindex="2" style="text-align: left; min-width: 150px;">Contact information was updated for General GC Services LLC</td>
+                                                                            <td aria-describedby="dx-col-16" role="gridcell" aria-colindex="3" style="text-align: left; min-width: 150px;">Amalie Degenhart</td>
+                                                                        </tr>
+                                                                        <tr class="dx-row dx-freespace-row dx-column-lines dx-state-invisible" role="presentation" style="height: 0px;">
+                                                                            <td style="text-align: left; min-width: 150px; max-width: 200px; width: 200px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                            <td style="text-align: left; min-width: 150px;"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><span class="dx-datagrid-nodata dx-hidden">No Data</span></div>
+                                            <div class="dx-overlay dx-widget dx-visibility-change-handler dx-loadpanel dx-state-invisible">
+                                                <div class="dx-overlay-content dx-loadpanel-content dx-state-invisible" style="width: 200px; height: 90px; left: 0px; top: 0px; transform: translate(632px, 43px); transition: all 0s ease 0s; z-index: 1501;">
+                                                    <div class="dx-loadpanel-content-wrapper">
+                                                        <div class="dx-loadpanel-indicator dx-loadindicator dx-widget">
+                                                            <div class="dx-loadindicator-wrapper">
+                                                                <div class="dx-loadindicator-content">
+                                                                    <div class="dx-loadindicator-icon">
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment7"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment6"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment5"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment4"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment3"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment2"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment1"></div>
+                                                                        <div class="dx-loadindicator-segment dx-loadindicator-segment0"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-loadpanel-message">Loading...</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dx-hidden" style="padding-right: 0px;"></div>
+                                            <div></div>
+                                            <div class="dx-hidden"></div>
+                                            <div class="dx-widget dx-datagrid-pager dx-pager dx-light-mode" role="navigation" aria-label="Page Navigation">
+                                                <!-- <div class="dx-page-sizes">
+                                                    <div isreactcomponentwrapper="true" class="dx-show-invalid-badge dx-selectbox dx-textbox dx-texteditor dx-dropdowneditor-button-visible dx-editor-outlined dx-widget dx-dropdowneditor dx-dropdowneditor-field-clickable" style="width: 72px;">
+                                                        <div class="dx-dropdowneditor-input-wrapper dx-selectbox-container">
+                                                            <input type="hidden" value="10">
+                                                            <div class="dx-texteditor-container">
+                                                                <div class="dx-texteditor-input-container">
+                                                                    <input autocomplete="off" placeholder=" " aria-label="Page size" class="dx-texteditor-input" aria-haspopup="listbox" aria-autocomplete="list" type="text" readonly="" spellcheck="false" tabindex="0" role="combobox" aria-expanded="false">
+                                                                    <div data-dx_placeholder="" class="dx-placeholder dx-state-invisible"></div>
+                                                                </div>
+                                                                <div class="dx-texteditor-buttons-container">
+                                                                    <div></div>
+                                                                    <div role="button" class="dx-widget dx-button-normal dx-dropdowneditor-button" aria-label="Select">
+                                                                        <div class="dx-button-content">
+                                                                            <div class="dx-dropdowneditor-icon"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dx-pages">
+                                                    <div class="dx-info">Page 1 of 1 (4 items)</div>
+                                                    <div class="dx-page-indexes">
+                                                        <div class="dx-button-disable dx-navigate-button dx-prev-button" tabindex="-1" role="button" aria-label="Previous Page"></div>
+                                                        <div class="dx-light-pages">
+                                                            <div class="dx-page-index dx-show-invalid-badge dx-numberbox dx-texteditor dx-editor-outlined dx-widget" isreactcomponentwrapper="true" style="width: 29px;">
+                                                                <input type="hidden" value="1">
+                                                                <div class="dx-texteditor-container">
+                                                                    <div class="dx-texteditor-input-container">
+                                                                        <input autocomplete="off" placeholder=" " inputmode="decimal" aria-label="Page number" class="dx-texteditor-input" type="text" min="1" max="1" step="1" aria-valuemin="1" aria-valuemax="1" tabindex="0" aria-valuenow="1"
+                                                                        role="spinbutton">
+                                                                        <div data-dx_placeholder="" class="dx-placeholder dx-state-invisible"></div>
+                                                                    </div>
+                                                                    <div class="dx-texteditor-buttons-container">
+                                                                        <div></div>
+                                                                        <div></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div><span class="dx-info  dx-info-text">of</span>
+                                                            <div class="dx-pages-count" tabindex="0" role="button" aria-label="Page 1">1</div>
+                                                        </div>
+                                                        <div class="dx-button-disable dx-navigate-button dx-next-button" tabindex="-1" role="button" aria-label="Next Page"></div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <div class="dx-datagrid-drag-header dx-datagrid-text-content dx-widget dx-state-invisible"></div>
+                                            <div class="dx-context-menu dx-has-context-menu dx-widget dx-visibility-change-handler dx-collection" role="presentation"></div>
+                                            <div class="dx-header-filter-menu"></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
