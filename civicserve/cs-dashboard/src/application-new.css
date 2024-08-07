@@ -6,8 +6,18 @@
   padding-top: 0;
 }
 
-.panel {
+.panel.no-pad-bottom {
   padding-bottom: 0 !important;
+}
+
+#filter-panel {
+  display: none;
+}
+
+.columnheader-header {
+  cursor: pointer;
+  display: flex !important;
+  justify-content: space-between;
 }
 
 /* Header */
