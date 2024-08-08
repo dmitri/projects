@@ -16,6 +16,56 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 300);
   }
 
+  // Listen for when the modal is fully shown
+
+
+    var myModal = document.getElementById('columnsModal'); // Replace with your modal's ID
+
+    if (myModal) {
+        myModal.addEventListener('shown.bs.modal', function () {
+            console.log("Modal is fully shown.");
+
+            var switchElement = document.getElementById('flexSwitchBusinessOwner');
+            var saveButton = document.getElementById('save-column-changes');
+
+            console.log("Switch element inside modal:", switchElement);
+            console.log("Save button element:", saveButton);
+
+            if (switchElement && saveButton) {
+                // Add event listener to the Save button
+                saveButton.addEventListener('click', function() {
+                    console.log("Save button clicked.");
+
+                    // Show spinner on the save button
+                    saveButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...';
+
+                    // Check the switch state and apply changes
+                    var isChecked = switchElement.checked;
+                    console.log("Switch state at save:", isChecked);
+                    toggleAddColumns(isChecked);
+
+                    // Close the modal after a short delay (to simulate processing)
+                    setTimeout(function() {
+                        var bootstrapModal = bootstrap.Modal.getInstance(myModal); // Bootstrap 5 method to get modal instance
+                        bootstrapModal.hide();
+
+                        // Optionally, reset the Save button's text after saving
+                        saveButton.innerHTML = 'Save';
+                    }, 1000); // Adjust delay as needed
+                });
+            } else {
+                console.log("Switch or Save button element not found.");
+            }
+
+            
+        });
+    } else {
+        console.log("Modal element not found.");
+    }
+
+
+
+
   document.getElementById('filter-toggle').addEventListener('click', function() {
     var filterPanel = document.getElementById('filter-panel');
     
@@ -65,24 +115,48 @@ setUpRightSidebar = function() {
   });
 }
 
+function toggleAddColumns(isChecked) {
+  var addColumnElements = document.querySelectorAll('.add-column');
+  console.log("Number of elements with class 'add-column':", addColumnElements.length);
+
+  addColumnElements.forEach(function(element) {
+      console.log("Toggling element:", element, "New display state:", isChecked ? 'table-cell' : 'none');
+      element.style.display = isChecked ? 'table-cell' : 'none';
+  });
+}
+
 
 // Function to toggle the 'dx-checkbox-checked' class on the parent element with 'dx-select-checkbox' class
 function toggleCheckbox(event) {
+  // Function to check if any checkbox is checked
+  function updateBatchCtasVisibility() {
+      var checkboxes = document.querySelectorAll('div.dx-select-checkbox');
+      var anyChecked = Array.from(checkboxes).some(function(checkbox) {
+          return checkbox.classList.contains('dx-checkbox-checked');
+      });
+
+      var batchCtas = document.getElementById('batch-ctas');
+      if (anyChecked) {
+          batchCtas.style.display = 'flex';
+      } else {
+          batchCtas.style.display = 'none';
+      }
+  }
+
   // Check if the clicked element is the 'dx-select-all' checkbox
   if (event.target.id === 'dx-select-all') {
+      var checkboxes = document.querySelectorAll('div.dx-select-checkbox');
+      var allChecked = Array.from(checkboxes).every(function(checkbox) {
+          return checkbox.classList.contains('dx-checkbox-checked');
+      });
 
-    var checkboxes = document.querySelectorAll('div.dx-select-checkbox');
-    var allChecked = Array.from(checkboxes).every(function(checkbox) {
-        return checkbox.classList.contains('dx-checkbox-checked');
-    });
-    
-    checkboxes.forEach(function(checkbox) {
-        if (allChecked) {
-            checkbox.classList.remove('dx-checkbox-checked');
-        } else {
-            checkbox.classList.add('dx-checkbox-checked');
-        }
-    });
+      checkboxes.forEach(function(checkbox) {
+          if (allChecked) {
+              checkbox.classList.remove('dx-checkbox-checked');
+          } else {
+              checkbox.classList.add('dx-checkbox-checked');
+          }
+      });
   } else {
       // Find the closest parent with 'dx-select-checkbox' class
       var checkbox = event.target.closest('.dx-select-checkbox');
@@ -90,7 +164,11 @@ function toggleCheckbox(event) {
           checkbox.classList.toggle('dx-checkbox-checked');
       }
   }
+
+  // Update visibility of batch-ctas
+  updateBatchCtasVisibility();
 }
+
 
 toggleAllCollapsibles = function() {
   const collapsibles = document.querySelectorAll('.accordion-collapse');
