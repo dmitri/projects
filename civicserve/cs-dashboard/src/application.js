@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Listen for when the modal is fully shown
 
 
+ 
     var myModal = document.getElementById('columnsModal'); // Replace with your modal's ID
 
     if (myModal) {
@@ -57,11 +58,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log("Switch or Save button element not found.");
             }
 
-            
+            function toggleAddColumns(isChecked) {
+                var addColumnElements = document.querySelectorAll('.add-column');
+                console.log("Number of elements with class 'add-column':", addColumnElements.length);
+
+                addColumnElements.forEach(function(element) {
+                    console.log("Toggling element:", element, "New display state:", isChecked ? 'table-cell' : 'none');
+                    element.style.display = isChecked ? 'table-cell' : 'none';
+                });
+
+                // Force reflow for the table
+                var table = document.getElementById('businessTable');
+                if (table) {
+                    table.style.display = 'none';
+                    table.offsetHeight; // Trigger reflow
+                    table.style.display = 'table';
+                }
+            }
         });
     } else {
         console.log("Modal element not found.");
     }
+
+
 
 
 
