@@ -43,6 +43,30 @@
   text-align: left;
 }
 
+.split-column-row {
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  padding: 1rem 0; 
+  border-bottom: 1px solid #DDD;
+}
+
+.split-column-row.last {
+  border-bottom: none;
+}
+
+.split-column-row .column {
+  flex: 40% 1;
+  flex-direction: column;
+}
+
+.split-column-row .column .txt-sm {
+  color: #888;
+  font-size: .8rem;
+}
+
 .tooltip-list li {
   margin-bottom: .5rem;
 }
