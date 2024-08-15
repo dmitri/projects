@@ -10,6 +10,22 @@
   padding-bottom: 0 !important;
 }
 
+/* .dx-command-select {
+  position: sticky;
+  left: 0;
+}
+
+.dx-name-column {
+  position: sticky;
+  left: 40px;
+  border-right: 1px solid #999;
+}
+
+.dx-actions {
+  position: sticky;
+  right: 0;
+} */
+
 .dx-name-value {
   display: block;
   font-size: 1rem;
