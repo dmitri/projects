@@ -18,62 +18,86 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // set up the select
 
-    var multiSelects = document.querySelectorAll('.custom-multi-select');
+  var multiSelects = document.querySelectorAll('.custom-multi-select');
 
-    multiSelects.forEach(function(multiSelect) {
-        var selectedOptions = multiSelect.querySelector('.selected-options');
-        var selectedOptionsPlaceholder = multiSelect.querySelector('.selected-options-placeholder');
-        var optionsList = multiSelect.querySelector('.options-list');
-        var options = multiSelect.querySelectorAll('.option');
-
-        // Toggle the visibility of the options list when the select is clicked
-        selectedOptions.addEventListener('click', function() {
-            optionsList.style.display = optionsList.style.display === 'none' || optionsList.style.display === '' ? 'block' : 'none';
-        });
-
-        // Close the options list if clicked outside
-        document.addEventListener('click', function(event) {
-            if (!multiSelect.contains(event.target)) {
-                optionsList.style.display = 'none';
-            }
-        });
-
-        options.forEach(function(option) {
-            option.addEventListener('click', function() {
-                option.classList.toggle('selected');
-                
-                var value = option.getAttribute('data-value');
-                
-                if (option.classList.contains('selected')) {
-                    // Add to selected options
-                    var span = document.createElement('span');
-                    span.setAttribute('data-value', value);
-                    span.setAttribute('class', 'selected-option-tag');
-                    span.textContent = option.textContent.trim() + ', ';
-                    selectedOptions.appendChild(span);
-                } else {
-                    // Remove from selected options
-                    var spanToRemove = selectedOptions.querySelector('span[data-value="' + value + '"]');
-                    if (spanToRemove) {
-                        selectedOptions.removeChild(spanToRemove);
-                    }
-                }
-                
-                // Remove trailing comma
-                var spans = selectedOptions.querySelectorAll('span');
-                if (spans.length > 0) {
-                    spans[spans.length - 1].textContent = spans[spans.length - 1].textContent.replace(', ', '');
-                }
-
-                // Update placeholder text if no options are selected
-                if (selectedOptions.querySelectorAll('.selected-option-tag').length === 0) {
-                    selectedOptionsPlaceholder.style.display = 'block';
-                } else {
-                    selectedOptionsPlaceholder.style.display = 'none';
-                }
-            });
-        });
-    });
+  multiSelects.forEach(function(multiSelect) {
+      var selectedOptions = multiSelect.querySelector('.selected-options');
+      var selectedOptionsPlaceholder = multiSelect.querySelector('.selected-options-placeholder');
+      var optionsList = multiSelect.querySelector('.options-list');
+      var options = multiSelect.querySelectorAll('.option');
+      var fundingSelect = document.getElementById('funding-type-select');
+  
+      // Function to check if at least one option is selected that isn't "None"
+      function checkSelections() {
+          var anyValidSelection = false;
+  
+          options.forEach(function(option) {
+              if (option.classList.contains('selected') && option.getAttribute('data-value') !== 'none') {
+                  anyValidSelection = true;
+              }
+          });
+  
+          if (anyValidSelection) {
+              if (fundingSelect) {
+                  fundingSelect.classList.remove('disabled');
+              }
+              selectedOptionsPlaceholder.style.display = 'none';
+          } else {
+              if (fundingSelect) {
+                  fundingSelect.classList.add('disabled');
+              }
+              selectedOptionsPlaceholder.style.display = 'block';
+          }
+      }
+  
+      // Toggle the visibility of the options list when the select is clicked
+      selectedOptions.addEventListener('click', function() {
+          optionsList.style.display = optionsList.style.display === 'none' || optionsList.style.display === '' ? 'block' : 'none';
+      });
+  
+      // Close the options list if clicked outside
+      document.addEventListener('click', function(event) {
+          if (!multiSelect.contains(event.target)) {
+              optionsList.style.display = 'none';
+          }
+      });
+  
+      options.forEach(function(option) {
+          option.addEventListener('click', function() {
+              option.classList.toggle('selected');
+              
+              var value = option.getAttribute('data-value');
+              
+              if (option.classList.contains('selected')) {
+                  // Add to selected options
+                  var span = document.createElement('span');
+                  span.setAttribute('data-value', value);
+                  span.setAttribute('class', 'selected-option-tag');
+                  span.textContent = option.textContent.trim() + ', ';
+                  selectedOptions.appendChild(span);
+              } else {
+                  // Remove from selected options
+                  var spanToRemove = selectedOptions.querySelector('span[data-value="' + value + '"]');
+                  if (spanToRemove) {
+                      selectedOptions.removeChild(spanToRemove);
+                  }
+              }
+              
+              // Remove trailing comma
+              var spans = selectedOptions.querySelectorAll('span');
+              if (spans.length > 0) {
+                  spans[spans.length - 1].textContent = spans[spans.length - 1].textContent.replace(', ', '');
+              }
+  
+              // Check selections and update the funding select state
+              checkSelections();
+          });
+      });
+  
+      // Initial check on page load
+      checkSelections();
+  });
+  
 
 
 
