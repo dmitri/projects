@@ -16,10 +16,68 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 300);
   }
 
+  // set up the select
+
+    var multiSelects = document.querySelectorAll('.custom-multi-select');
+
+    multiSelects.forEach(function(multiSelect) {
+        var selectedOptions = multiSelect.querySelector('.selected-options');
+        var selectedOptionsPlaceholder = multiSelect.querySelector('.selected-options-placeholder');
+        var optionsList = multiSelect.querySelector('.options-list');
+        var options = multiSelect.querySelectorAll('.option');
+
+        // Toggle the visibility of the options list when the select is clicked
+        selectedOptions.addEventListener('click', function() {
+            optionsList.style.display = optionsList.style.display === 'none' || optionsList.style.display === '' ? 'block' : 'none';
+        });
+
+        // Close the options list if clicked outside
+        document.addEventListener('click', function(event) {
+            if (!multiSelect.contains(event.target)) {
+                optionsList.style.display = 'none';
+            }
+        });
+
+        options.forEach(function(option) {
+            option.addEventListener('click', function() {
+                option.classList.toggle('selected');
+                
+                var value = option.getAttribute('data-value');
+                
+                if (option.classList.contains('selected')) {
+                    // Add to selected options
+                    var span = document.createElement('span');
+                    span.setAttribute('data-value', value);
+                    span.setAttribute('class', 'selected-option-tag');
+                    span.textContent = option.textContent.trim() + ', ';
+                    selectedOptions.appendChild(span);
+                } else {
+                    // Remove from selected options
+                    var spanToRemove = selectedOptions.querySelector('span[data-value="' + value + '"]');
+                    if (spanToRemove) {
+                        selectedOptions.removeChild(spanToRemove);
+                    }
+                }
+                
+                // Remove trailing comma
+                var spans = selectedOptions.querySelectorAll('span');
+                if (spans.length > 0) {
+                    spans[spans.length - 1].textContent = spans[spans.length - 1].textContent.replace(', ', '');
+                }
+
+                // Update placeholder text if no options are selected
+                if (selectedOptions.querySelectorAll('.selected-option-tag').length === 0) {
+                    selectedOptionsPlaceholder.style.display = 'block';
+                } else {
+                    selectedOptionsPlaceholder.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+
   // Listen for when the modal is fully shown
-
-
- 
     var myModal = document.getElementById('columnsModal'); // Replace with your modal's ID
 
     if (myModal) {
@@ -80,30 +138,33 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Modal element not found.");
     }
 
+   
 
 
+    var filterToggle = document.getElementById('filter-toggle');
 
-
-
-  document.getElementById('filter-toggle').addEventListener('click', function() {
-    var filterPanel = document.getElementById('filter-panel');
-    
-      // Check if the filter panel exists
-      if (filterPanel) {
-          // Toggle the display style of the filter panel
-          if (filterPanel.style.display === 'none' || filterPanel.style.display === '') {
-              filterPanel.style.display = 'block'; // Show the panel
-          } else {
-              filterPanel.style.display = 'none';  // Hide the panel
-          }
-          
-          // Scroll to the top of the page
-          window.scrollTo({
-              top: 0,
-              behavior: 'smooth' // Smooth scrolling
-          });
-      }
-  });
+    // Check if the filter toggle button exists
+    if (filterToggle) {
+        filterToggle.addEventListener('click', function() {
+            var filterPanel = document.getElementById('filter-panel');
+            
+            // Check if the filter panel exists
+            if (filterPanel) {
+                // Toggle the display style of the filter panel
+                if (filterPanel.style.display === 'none' || filterPanel.style.display === '') {
+                    filterPanel.style.display = 'block'; // Show the panel
+                } else {
+                    filterPanel.style.display = 'none';  // Hide the panel
+                }
+                
+                // Scroll to the top of the page
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Smooth scrolling
+                });
+            }
+        });
+    }
 
   // Find all div elements with the class 'dx-select-checkbox'
   var checkboxes = document.querySelectorAll('.dx-select-checkbox');
