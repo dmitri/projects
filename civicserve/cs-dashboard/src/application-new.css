@@ -51,6 +51,7 @@
 
 .selected-options {
   min-height: 20px;
+  padding-right: 50px;
 }
 
 .options-list {
@@ -59,33 +60,51 @@
   display: none; /* Hidden by default */
   position: absolute;
   width: 100%;
+  padding-left: .5rem;
+  padding-right: .5rem;
   background-color: white;
   z-index: 1000;
   top: 100%;
   left: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
 }
 
 .selected-option-tag {
   background: whitesmoke;
-  display: inline-flex;
-  align-items: center;
+  border: 3px solid #FFF;
+  display: inline-block;
   font-size: .8rem;
-  padding: 3px 3px 3px 10px;
-  border-radius: 8px;
+  padding: 3px 35px 3px 10px;
+  border-radius: 15px;
   margin-right: .4rem;
+  text-align: left;
+  position: relative;
 }
 
-.selected-option-tag::after {
+.selected-option-tag:hover {
+  background: #DDD;
+}
+
+.selected-option-tag:hover .remove-option {
+  background: #222;
+  color: #FFF;
+}
+
+.selected-option-tag .remove-option {
   background: #DDD;
   content: "x";
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 7.5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 8.5px;
   margin-left: 10px;
   text-align: center;
-  line-height: 1;
+  line-height: 1.05;
+  position: absolute;
+  right: 5px; /* Position to the right end of the tag */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .option {
@@ -105,11 +124,15 @@
 }
 
 .option.selected {
- 
-
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path id="checkbox-3-icon" fill="%23000" d="M81,81v350h350V81H81z M227.383,345.013l-81.476-81.498l34.69-34.697l46.783,46.794l108.007-108.005 l34.706,34.684L227.383,345.013z"/></svg>');
+}
 
-
+.close-select {
+  border-top: 1px solid #DDD;
+  text-align: left;
+  margin-top: .5rem;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .dx-name-value {
