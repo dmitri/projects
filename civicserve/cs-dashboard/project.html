@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en" class="dxChrome dxMacOSPlatform dxWebKitFamily dxBrowserVersion-126 dxChrome dxMacOSPlatform dxWebKitFamily dxBrowserVersion-126" style="--c-landing-primary: 8,158,154; --c-landing-light20-primary-color: #0abeb9; --c-landing-light30-primary-color: #0acdc8; --c-landing-light35-primary-color: #0bd5d0; --c-landing-light40-primary-color: #0bddd8; --c-landing-darken10-primary-color: #078e8b; --c-landing-secondary: #ffa800; --c-primary-contrast: #003760;">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Progress City - Add Project</title>
+  <!--<base href="/">--><base href=".">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+</style>
+
+<link rel="icon" type="image/x-icon" href="https://demo2.civicserve.com/favicon.png">
+<script src="https://kit.fontawesome.com/1ad7921aa1.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"  href="src/application-base.css">
+<link rel="stylesheet"  href="src/application-new.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="dx-device-desktop dx-device-generic" style="overflow: unset;">
+  <div id="root">
+      <div class="container-fluid p-0 dx-viewport" data-theme="light">
+          <div id="loader" class="linear-activity" style="display: none;">
+              <div class="indeterminate"></div>
+          </div>
+          <div class="header-content-wrapper">
+              <div>
+                  <div class="header-wrapper">
+                      <div class="align-self-center header-left-wrapper">
+                          <button class="btn side-nav-toggle-btn px-0">
+                              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                  <path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
+                              </svg>
+                          </button>
+                          <a href="https://demo2.civicserve.com/admin"><img src="src/cs-logo-white.png"></a>
+                      </div>
+                      <form class="search-wrapper">
+                          <div class="search-input">
+                              <div class="search-icon">
+                                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                                  </svg>
+                              </div>
+                              <div class="form-control dx-show-invalid-badge dx-textbox dx-texteditor dx-editor-outlined dx-texteditor-empty dx-widget dx-dropdowneditor dx-autocomplete">
+                                  <div class="dx-dropdowneditor-input-wrapper">
+                                      <div class="dx-texteditor-container">
+                                          <div class="dx-texteditor-input-container">
+                                              <input autocomplete="off" placeholder="Search Programs, Projects, or Contacts" class="dx-texteditor-input" aria-haspopup="listbox" aria-autocomplete="inline" type="text" spellcheck="false" tabindex="0" role="combobox"
+                                              aria-expanded="false">
+                                              <div id="dx-9d0b18eb-fb11-2057-801c-15194d767a80" data-dx_placeholder="Search Programs, Projects, or Contacts" class="dx-placeholder"></div>
+                                          </div>
+                                          <div class="dx-texteditor-buttons-container">
+                                              <div></div>
+                                              <div></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="select-dropdown">
+                              <select class="form-select">
+                                  <option>All</option>
+                                  <option>Programs</option>
+                                  <option>Projects</option>
+                                  <option>Contacts</option>
+                              </select>
+                          </div>
+                      </form>
+                      <div class="header-right align-self-center">
+                          <div class="header-support-wrapper">
+                              <div class="dx-show-invalid-badge dx-selectbox dx-textbox dx-texteditor dx-dropdowneditor-button-visible dx-editor-outlined dx-texteditor-empty dx-widget dx-dropdowneditor dx-dropdowneditor-field-clickable">
+                                  <div class="dx-dropdowneditor-input-wrapper dx-selectbox-container">
+                                      <input type="hidden" value="">
+                                      <div class="dx-texteditor-container">
+                                          <div class="dx-texteditor-input-container">
+                                              <input autocomplete="off" placeholder="Select..." class="dx-texteditor-input" aria-haspopup="listbox" aria-autocomplete="list" type="text" readonly="" spellcheck="false" tabindex="0" role="combobox" aria-expanded="false">
+                                              <div id="dx-36a87714-21bc-61a0-5e59-501d46dc27f6" data-dx_placeholder="Select..." class="dx-placeholder"></div>
+                                          </div>
+                                          <div class="dx-texteditor-buttons-container">
+                                              <div></div>
+                                              <div role="button" class="dx-widget dx-button-normal dx-dropdowneditor-button" aria-label="Select">
+                                                  <div class="dx-button-content">
+                                                      <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="circle-question" class="svg-inline--fa fa-circle-question " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                          <path fill="currentColor" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path>
+                                                      </svg>
+                                                      <div style="display: none;"></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="d-flex">
+                              <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="list-check" class="svg-inline--fa fa-list-check " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="tasks">
+                                  <path fill="currentColor" d="M153.8 72.1c8.9-9.9 8.1-25-1.8-33.9s-25-8.1-33.9 1.8L63.1 101.1 41 79C31.6 69.7 16.4 69.7 7 79s-9.4 24.6 0 33.9l40 40c4.7 4.7 11 7.2 17.6 7s12.8-3 17.2-7.9l72-80zm0 160c8.9-9.9 8.1-25-1.8-33.9s-25-8.1-33.9 1.8L63.1 261.1 41 239c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l40 40c4.7 4.7 11 7.2 17.6 7s12.8-3 17.2-7.9l72-80zM216 120H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H216c-13.3 0-24 10.7-24 24s10.7 24 24 24zM192 256c0 13.3 10.7 24 24 24H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H216c-13.3 0-24 10.7-24 24zM160 416c0 13.3 10.7 24 24 24H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H184c-13.3 0-24 10.7-24 24zm-64 0a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path>
+                              </svg>
+                              <div class="dx-overlay dx-popup dx-popover dx-widget dx-state-invisible dx-visibility-change-handler">
+                                  <div class="dx-overlay-content dx-popup-normal" role="tooltip" style="width: 350px; height: auto;">
+                                      <div class="dx-popover-arrow"></div>
+                                      <div class="dx-popup-content dx-popup-content-scrollable"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="user-details-wrapper">
+                              <div class="user-details-container">
+                                  <div class="dx-show-invalid-badge dx-selectbox dx-textbox dx-texteditor dx-dropdowneditor-button-visible dx-editor-outlined dx-texteditor-empty dx-widget dx-dropdowneditor dx-dropdowneditor-field-clickable">
+                                      <div class="dx-dropdowneditor-input-wrapper dx-selectbox-container">
+                                          <input type="hidden" value="">
+                                          <div class="dx-texteditor-container">
+                                              <div class="dx-texteditor-input-container">
+                                                  <input autocomplete="off" placeholder="Select..." class="dx-texteditor-input" aria-haspopup="listbox" aria-autocomplete="list" type="text" readonly="" spellcheck="false" tabindex="0" role="combobox" aria-expanded="false">
+                                                  <div id="dx-3b10a7bb-971d-b6c2-5685-8b51854b3d18" data-dx_placeholder="Select..." class="dx-placeholder"></div>
+                                              </div>
+                                              <div class="dx-texteditor-buttons-container">
+                                                  <div></div>
+                                                  <div role="button" class="dx-widget dx-button-normal dx-dropdowneditor-button" aria-label="Select">
+                                                      <div class="dx-button-content">
+                                                          <div class="user-details-wrapper">
+                                                              <div>
+                                                                  <div class="name-initial-container">
+                                                                      <div id="name">DD</div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="user-details">
+                                                                  <div class="user-name">Dave Developer </div>
+                                                                  <div class="user-role">CivicServe Admin</div>
+                                                              </div>
+                                                          </div>
+                                                          <div style="display: none;"></div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="content-wrapper">
+              <div class="overlay-effect"></div>
+              <nav class="side-nav ">
+                <div class="side-nav-tooltip" style="top: 0px; left: 120px; opacity: 1; display: none;">
+                    <div class="arrow"></div>
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+                <ul class="side-nav-list"><li><a class="menu-item " href="/admin/dashboard"><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="grid-2" class="svg-inline--fa fa-grid-2 menu-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M80 64c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16H80zM32 80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V80zM80 320c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16V336c0-8.8-7.2-16-16-16H80zM32 336c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V336zM432 64H336c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16zM336 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H336c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48zm0 288c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16V336c0-8.8-7.2-16-16-16H336zm-48 16c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H336c-26.5 0-48-21.5-48-48V336z"></path></svg><div class="menu-label">Dashboard</div></a></li><li><a class="menu-item "><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="globe" class="svg-inline--fa fa-globe menu-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 480c16.7 0 40.4-14.4 61.9-57.3c9.9-19.8 18.2-43.7 24.1-70.7H170c5.9 27 14.2 50.9 24.1 70.7C215.6 465.6 239.3 480 256 480zM164.3 320H347.7c2.8-20.2 4.3-41.7 4.3-64s-1.5-43.8-4.3-64H164.3c-2.8 20.2-4.3 41.7-4.3 64s1.5 43.8 4.3 64zM170 160H342c-5.9-27-14.2-50.9-24.1-70.7C296.4 46.4 272.7 32 256 32s-40.4 14.4-61.9 57.3C184.2 109.1 175.9 133 170 160zm210 32c2.6 20.5 4 41.9 4 64s-1.4 43.5-4 64h90.8c6-20.3 9.3-41.8 9.3-64s-3.2-43.7-9.3-64H380zm78.5-32c-25.9-54.5-73.1-96.9-130.9-116.3c21 28.3 37.6 68.8 47.2 116.3h83.8zm-321.1 0c9.6-47.6 26.2-88 47.2-116.3C126.7 63.1 79.4 105.5 53.6 160h83.7zm-96 32c-6 20.3-9.3 41.8-9.3 64s3.2 43.7 9.3 64H132c-2.6-20.5-4-41.9-4-64s1.4-43.5 4-64H41.3zM327.5 468.3c57.8-19.5 105-61.8 130.9-116.3H374.7c-9.6 47.6-26.2 88-47.2 116.3zm-143 0c-21-28.3-37.5-68.8-47.2-116.3H53.6c25.9 54.5 73.1 96.9 130.9 116.3zM256 512A256 256 0 1 1 256 0a256 256 0 1 1 0 512z"></path></svg><div class="menu-label">Community</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu "><li><a class="menu-item " href="/admin/community/dashboard"><div class="menu-label">Dashboard</div></a></li><li><a class="menu-item " href="/admin/community/swot-analysis"><div class="menu-label">SWOT Analysis</div></a></li><li><a class="menu-item " href="/admin/community/target-industries-and-areas"><div class="menu-label">Target Industries &amp; Areas</div></a></li><li><a class="menu-item " href="/admin/community/stakeholder-surveys"><div class="menu-label">Stakeholder Surveys</div></a></li><li><a class="menu-item " href="/admin/community/goals"><div class="menu-label">Goals</div></a></li></ul></li><li><a class="menu-item "><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="rectangle-history" class="svg-inline--fa fa-rectangle-history menu-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 224c0-8.8-7.2-16-16-16L64 208c-8.8 0-16 7.2-16 16l0 224c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-224zm-16-64c35.3 0 64 28.7 64 64l0 224c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 224c0-35.3 28.7-64 64-64l384 0zm-8-80c13.3 0 24 10.7 24 24s-10.7 24-24 24L72 128c-13.3 0-24-10.7-24-24s10.7-24 24-24l368 0zM392 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L120 48c-13.3 0-24-10.7-24-24s10.7-24 24-24L392 0z"></path></svg><div class="menu-label">Program Types</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu "><li><a class="menu-item " href="/admin/programs/non-incentives/available-properties"><div class="menu-label">Available Properties</div></a></li><li><a class="menu-item " href="/admin/programs/75"><div class="menu-label">Enterprise Zone</div></a></li><li><a class="menu-item " href="/admin/programs/event-program/106"><div class="menu-label">Event</div></a></li><li><a class="menu-item " href="/admin/programs/incentives/2"><div class="menu-label">Grant</div></a></li><li><a class="menu-item " href="/admin/programs/non-incentives/10"><div class="menu-label">Leads</div></a></li><li><a class="menu-item " href="/admin/programs/incentives/4"><div class="menu-label">Loan</div></a></li><li><a class="menu-item " href="/admin/programs/non-incentives/9"><div class="menu-label">Specialty Business Certification </div></a></li><li><a class="menu-item " href="/admin/programs/1"><div class="menu-label">TIF</div></a></li><li><a class="menu-item " href="/admin/programs/non-incentives/vacant-properties"><div class="menu-label">Vacant Property Registration</div></a></li><li><a class="menu-item " href="/admin/programs/all"><div class="menu-label">Program Management</div></a></li></ul></li><li><a class="menu-item active"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="list-check" class="svg-inline--fa fa-list-check menu-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M153.8 72.1c8.9-9.9 8.1-25-1.8-33.9s-25-8.1-33.9 1.8L63.1 101.1 41 79C31.6 69.7 16.4 69.7 7 79s-9.4 24.6 0 33.9l40 40c4.7 4.7 11 7.2 17.6 7s12.8-3 17.2-7.9l72-80zm0 160c8.9-9.9 8.1-25-1.8-33.9s-25-8.1-33.9 1.8L63.1 261.1 41 239c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l40 40c4.7 4.7 11 7.2 17.6 7s12.8-3 17.2-7.9l72-80zM216 120H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H216c-13.3 0-24 10.7-24 24s10.7 24 24 24zM192 256c0 13.3 10.7 24 24 24H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H216c-13.3 0-24 10.7-24 24zM160 416c0 13.3 10.7 24 24 24H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H184c-13.3 0-24 10.7-24 24zm-64 0a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg><div class="menu-label">Projects</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu sub-menu-show"><li><a class="menu-item " href="/admin/projects/all"><div class="menu-label">All</div></a></li><li><a class="menu-item " href="/admin/projects/active"><div class="menu-label">Active</div></a></li><li><a class="menu-item " href="/admin/projects/pending-approval"><div class="menu-label">Pending Approval</div></a></li><li><a class="menu-item " href="/admin/projects/closed"><div class="menu-label">Closed</div></a></li><li><a class="menu-item " href="/admin/projects/denied"><div class="menu-label">Denied</div></a></li></ul></li><li><a class="menu-item "><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="people-group" class="svg-inline--fa fa-people-group menu-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M128 64a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm0 80a56 56 0 1 0 0-112 56 56 0 1 0 0 112zM0 280c0 43.3 26.4 80.4 64 96v48c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V384c0-8.8-7.2-16-16-16s-16 7.2-16 16v32H96V208.4c2.6-.3 5.3-.4 8-.4h48c9.3 0 18.1 1.7 26.2 4.9c8.2 3.2 17.5-.9 20.7-9.1s-.9-17.5-9.1-20.7c-11.7-4.6-24.5-7.1-37.8-7.1H104C46.6 176 0 222.6 0 280zm64 59.9C44.7 327 32 304.9 32 280c0-25 12.7-47 32-59.9V339.9zM512 64a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm0 80a56 56 0 1 0 0-112 56 56 0 1 0 0 112zM640 280c0-57.4-46.6-104-104-104H488c-13.3 0-26.1 2.5-37.8 7.1c-8.2 3.2-12.3 12.5-9.1 20.7s12.5 12.3 20.7 9.1c8.1-3.2 16.9-4.9 26.2-4.9h48c2.7 0 5.4 .1 8 .4V416H480V384c0-8.8-7.2-16-16-16s-16 7.2-16 16v40c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V376c37.6-15.7 64-52.7 64-96zm-64 59.9V220.1C595.3 233 608 255 608 280c0 24.9-12.7 47-32 59.9zM288 96a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm96 0A64 64 0 1 0 256 96a64 64 0 1 0 128 0zm-80 96c-57.4 0-104 46.6-104 104c0 40.1 22.7 74.9 56 92.3V456c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V388.3c33.3-17.3 56-52.1 56-92.3c0-57.4-46.6-104-104-104H304zm-48 50.3V349.7c-14.7-13.2-24-32.4-24-53.7c0-21.3 9.3-40.5 24-53.7zM288 448V225.8c5.1-1.2 10.5-1.8 16-1.8h32c5.5 0 10.9 .6 16 1.8V448H288zm96-98.3V242.3c14.7 13.2 24 32.3 24 53.7c0 21.3-9.3 40.5-24 53.7z"></path></svg><div class="menu-label">Contacts</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu "><li><a class="menu-item " href="/admin/contacts/all"><div class="menu-label">All</div></a></li><li><a class="menu-item " href="/admin/contacts/businesses"><div class="menu-label">Businesses</div></a></li><li><a class="menu-item " href="/admin/contacts/people"><div class="menu-label">Individuals</div></a></li><li><a class="menu-item " href="/admin/contacts/survey-management/surveys"><div class="menu-label">Surveys</div></a></li></ul></li><li><a class="menu-item "><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chart-pie-simple" class="svg-inline--fa fa-chart-pie-simple menu-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M495.4 240c9 0 16.6-7 16.6-16C512 100.3 411.7 0 288 0c-9 0-16 7.6-16 16.6V240H495.4zM176 288c0 26.5 21.5 48 48 48H421.1C394.7 410.6 323.6 464 240 464C134 464 48 378 48 272c0-83.6 53.4-154.7 128-181.1V288zM224 66.7c0-18.5-15.7-33.3-33.8-29.5C81.5 60.1 0 156.5 0 272C0 404.6 107.5 512 240 512c115.5 0 211.9-81.5 234.8-190.2c3.8-18.1-11-33.8-29.5-33.8H272 224V240 66.7z"></path></svg><div class="menu-label">Analytics</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu "><li><a class="menu-item "><div class="menu-label">Reports</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu "><li><a class="menu-item " href="/admin/analytics/reports/compliance"><div class="menu-label">Compliance</div></a></li><li><a class="menu-item " href="/admin/analytics/reports/intelligence"><div class="menu-label">Intelligence</div></a></li><li><a class="menu-item " href="/admin/analytics/reports/annual-compliance/templates"><div class="menu-label">Compliance Report Templates</div></a></li><li><a class="menu-item " href="/admin/analytics/reports/annual-compliance/docs"><div class="menu-label">Compliance Admin Documentation</div></a></li><li><a class="menu-item " href="/admin/analytics/reports/audit-trail"><div class="menu-label">Audit Trail Report</div></a></li></ul></li><li><a class="menu-item "><div class="menu-label">Dashboards</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu "><li><a class="menu-item " href="/admin/analytics/dashboards/agreement-compliances/dashboard"><div class="menu-label">Compliance</div></a></li><li><a class="menu-item " href="/admin/analytics/dashboards/surveys"><div class="menu-label">Surveys</div></a></li><li><a class="menu-item " href="/admin/analytics/dashboards/demographics"><div class="menu-label">Demographics</div></a></li><li><a class="menu-item " href="/admin/analytics/dashboards/impacts/dashboard"><div class="menu-label">Impacts</div></a></li><li><a class="menu-item " href="/admin/analytics/dashboards/impacts/key-performance-indicators/dashboard"><div class="menu-label">Key Performance Indicators</div></a></li><li><a class="menu-item " href="/admin/analytics/dashboards/impacts/scoring"><div class="menu-label">Scoring</div></a></li><li><a class="menu-item " href="/admin/analytics/dashboards/impacts/timeline/dashboard"><div class="menu-label">Timeline Events</div></a></li></ul></li></ul></li><li><a class="menu-item "><svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="screwdriver-wrench" class="svg-inline--fa fa-screwdriver-wrench menu-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64.7 34.6L160 107.9V160H107.9L34.6 64.7 64.7 34.6zM192 169.3c0-.4 0-.9 0-1.3V104c0-7.5-3.5-14.5-9.4-19L78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h64c.4 0 .9 0 1.3 0L271.2 293.9c-19.5 30-16.2 70.5 10.1 96.8l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-26.3-26.3-66.8-29.7-96.8-10.1L192 169.3zM304 304c17.7-17.7 46.3-17.7 64 0L480 416l-64 64L304 368c-17.7-17.7-17.7-46.3 0-64zM104 424a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zM23.2 376.8C8.3 391.7 0 411.8 0 432.8C0 476.5 35.5 512 79.2 512c21 0 41.1-8.3 56-23.2L238.5 385.5c-5.7-11.2-9.3-23.1-10.9-35.3L112.1 465.7c-8.7 8.7-20.6 13.6-32.9 13.6c-25.7 0-46.6-20.8-46.6-46.6c0-12.3 4.9-24.2 13.6-32.9L189.1 257l-23.1-23.1L23.2 376.8zM479.4 160c0 44.8-23.1 84.1-58 106.8l23.5 23.5c40.7-29 67.2-76.6 67.2-130.3c0-24.8-5.7-48.3-15.7-69.3c-4.4-9.2-16.5-10.5-23.7-3.3l-67.9 67.9c-3 3-7.1 4.7-11.3 4.7H368c-8.8 0-16-7.2-16-16V118.6c0-4.2 1.7-8.3 4.7-11.3l67.9-67.9c7.2-7.2 5.9-19.3-3.3-23.7C400.3 5.7 376.8 0 352 0C296.1 0 246.9 28.6 218.3 72.1l26 20C266.8 56.3 306.7 32.6 352 32.6c10.3 0 20.2 1.2 29.7 3.5L333.6 84.2c-9.1 9.1-14.2 21.5-14.2 34.4V144c0 26.9 21.8 48.6 48.6 48.6h25.4c12.9 0 25.3-5.1 34.4-14.2l48.1-48.1c2.3 9.5 3.5 19.5 3.5 29.7z"></path></svg><div class="menu-label">Tools</div><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-xs action-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"></path></svg></a><ul class="sub-menu "><li><a class="menu-item " href="/admin/tools/documents"><div class="menu-label">Documents</div></a></li><li><a class="menu-item " href="/admin/tools/email-templates"><div class="menu-label">Templates</div></a></li><li><a class="menu-item " href="/admin/tools/forecasting"><div class="menu-label">Forecasting</div></a></li></ul></li></ul>
+                <div class="switch-wrapper">
+                    <div>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" class="svg-inline--fa fa-sun " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+                        </svg>
+                    </div>
+                    <label class="switch-theme">
+                        <input type="checkbox"><span class="theme-slider round" id="toggle-switch"></span></label>
+                    <div>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon" class="svg-inline--fa fa-moon " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path fill="currentColor" d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div style="position: absolute; bottom: 0px; left: 5px; margin: 5px; display: flex; gap: 5px;">
+                    <a href="/admin/customer-metrics">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="space-station-moon-construction" class="svg-inline--fa fa-space-station-moon-construction " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="color: white; height: 0.5em;">
+                            <path fill="currentColor" d="M512 256c0 7.8-.3 15.5-1 23.1C438.8 304.7 351.2 320 256 320s-182.8-15.3-255-40.9c-.7-7.6-1-15.3-1-23.1C0 114.6 114.6 0 256 0c57.8 0 111.1 19.1 153.9 51.4c3.9 2.9 6.1 7.5 6.1 12.4V80c0 8.8-7.2 16-16 16H368c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48 16c8.8 0 16 7.2 16 16v32c0 8.8 7.2 16 16 16h31.9c8.1 0 14.9 6 15.5 14.1c.4 5.9 .6 11.9 .6 17.9zM256 512C134.9 512 33.4 427.9 6.8 314.8C79.4 338.4 164.7 352 256 352c44.3 0 87.3-3.2 128-9.2V368c0 8.8 7.2 16 16 16h32c8.8 0 16 7.2 16 16v19.3c0 3.9-1.4 7.7-4.1 10.5C397.2 480.4 330.3 512 256 512zM160 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm112 0a80 80 0 1 0 -160 0 80 80 0 1 0 160 0z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+            <div class="main-content-wrapper">
+                <div class="compliance-messages">
+                    <div class="alert alert-danger"><strong class="d-flex align-items-center gap-1"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="triangle-exclamation" class="svg-inline--fa fa-triangle-exclamation " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>Ineligible Project Warning</strong>
+                        <p>This project has been scored against eligibility criteria and found to be ineligible. View the Impact Scoring Report for more detail.</p>
+                    </div>
+                </div>
+                <div class="page-header">
+                    <div class="page-header-left">
+                        <div class="d-flex align-items-center gap-1">
+                            <h3>Michael Scott Paper Company</h3>
+                            <a>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="page-header-right">
+                        <div class="d-flex gap-1">
+                            <div class="_ExpandableItemList_1dawo_1">
+                                <div><span class="fw-bold">Project Owner:</span></div>
+                                <div>Bill Towns</div>
+                            </div>
+                            <a class="cursor-pointer ms-1">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-xl-3 mt-3">
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-1">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="building" class="svg-inline--fa fa-building " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                        <path fill="currentColor" d="M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h96c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Program / Boundary</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value-change">
+                                    <div class="status">
+                                        <div class="value">Tax Increment Financing (TIF) Program</div>
+                                        <div class="value"></div>
+                                    </div>
+                                </div>
+                                <div class="value-change">
+                                    <div class="status">
+                                        <div class="value">Downtown District</div>
+                                        <div class="value"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-1"></div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-1">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" class="svg-inline--fa fa-user " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path fill="currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Funding Requested Ratio</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value">2.65 : 1</div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-1"></div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-4">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pen" class="svg-inline--fa fa-file-pen " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <path fill="currentColor" d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V299.6l-94.7 94.7c-8.2 8.2-14 18.5-16.8 29.7l-15 60.1c-2.3 9.4-1.8 19 1.4 27.8H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Approval Status</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value-change">
+                                    <div class="status d-flex gap-3">
+                                        <div class="value">Pending Approval</div>
+                                        <div class="value">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-4"></div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-4">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star-half-stroke" class="svg-inline--fa fa-star-half-stroke " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <path fill="currentColor" d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3V376.4zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Project Score</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value-change">
+                                    <div class="status gap-3 mb-2">
+                                        <div class="item-name">Overall Impact Score</div>
+                                        <div class="value"><a href="/admin/impacts/scoring/1325/report">40.67%<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right inline ms-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></a></div>
+                                    </div>
+                                </div>
+                                <div class="value-change">
+                                    <div class="status gap-3 mb-2">
+                                        <div class="item-name">Obligation Compliances</div>
+                                        <div class="value"><a href="/admin/projects/view/1325/agreement-obligations">100.00%<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right inline ms-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-4"></div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-5">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star-half-stroke" class="svg-inline--fa fa-star-half-stroke " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                        <path fill="currentColor" d="M288 376.4l.1-.1 26.4 14.1 85.2 45.5-16.5-97.6-4.8-28.7 20.7-20.5 70.1-69.3-96.1-14.2-29.3-4.3-12.9-26.6L288.1 86.9l-.1 .3V376.4zm175.1 98.3c2 12-3 24.2-12.9 31.3s-23 8-33.8 2.3L288.1 439.8 159.8 508.3C149 514 135.9 513.1 126 506s-14.9-19.3-12.9-31.3L137.8 329 33.6 225.9c-8.6-8.5-11.7-21.2-7.9-32.7s13.7-19.9 25.7-21.7L195 150.3 259.4 18c5.4-11 16.5-18 28.8-18s23.4 7 28.8 18l64.3 132.3 143.6 21.2c12 1.8 22 10.2 25.7 21.7s.7 24.2-7.9 32.7L438.5 329l24.6 145.7z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Estimated Project Cost</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value">$305,000.00</div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-5"></div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-6">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dollar-sign" class="svg-inline--fa fa-dollar-sign " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                        <path fill="currentColor" d="M160 0c17.7 0 32 14.3 32 32V67.7c1.6 .2 3.1 .4 4.7 .7c.4 .1 .7 .1 1.1 .2l48 8.8c17.4 3.2 28.9 19.9 25.7 37.2s-19.9 28.9-37.2 25.7l-47.5-8.7c-31.3-4.6-58.9-1.5-78.3 6.2s-27.2 18.3-29 28.1c-2 10.7-.5 16.7 1.2 20.4c1.8 3.9 5.5 8.3 12.8 13.2c16.3 10.7 41.3 17.7 73.7 26.3l2.9 .8c28.6 7.6 63.6 16.8 89.6 33.8c14.2 9.3 27.6 21.9 35.9 39.5c8.5 17.9 10.3 37.9 6.4 59.2c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.1c-.4-.1-.9-.1-1.3-.2l-.2 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.1-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.5 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.6 .4-16.7-1.3-20.4c-1.9-4-5.6-8.4-13-13.3c-16.4-10.7-41.5-17.7-74-26.3l-2.8-.7 0 0C119.4 279.3 84.4 270 58.4 253c-14.2-9.3-27.5-22-35.8-39.6c-8.4-17.9-10.1-37.9-6.1-59.2C23.7 116 52.3 91.2 84.8 78.3c13.3-5.3 27.9-8.9 43.2-11V32c0-17.7 14.3-32 32-32z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Submitted Eligible Costs</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value">$557,800.00</div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-6"></div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-4">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dollar-sign" class="svg-inline--fa fa-dollar-sign " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                        <path fill="currentColor" d="M160 0c17.7 0 32 14.3 32 32V67.7c1.6 .2 3.1 .4 4.7 .7c.4 .1 .7 .1 1.1 .2l48 8.8c17.4 3.2 28.9 19.9 25.7 37.2s-19.9 28.9-37.2 25.7l-47.5-8.7c-31.3-4.6-58.9-1.5-78.3 6.2s-27.2 18.3-29 28.1c-2 10.7-.5 16.7 1.2 20.4c1.8 3.9 5.5 8.3 12.8 13.2c16.3 10.7 41.3 17.7 73.7 26.3l2.9 .8c28.6 7.6 63.6 16.8 89.6 33.8c14.2 9.3 27.6 21.9 35.9 39.5c8.5 17.9 10.3 37.9 6.4 59.2c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.1c-.4-.1-.9-.1-1.3-.2l-.2 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.1-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.5 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.6 .4-16.7-1.3-20.4c-1.9-4-5.6-8.4-13-13.3c-16.4-10.7-41.5-17.7-74-26.3l-2.8-.7 0 0C119.4 279.3 84.4 270 58.4 253c-14.2-9.3-27.5-22-35.8-39.6c-8.4-17.9-10.1-37.9-6.1-59.2C23.7 116 52.3 91.2 84.8 78.3c13.3-5.3 27.9-8.9 43.2-11V32c0-17.7 14.3-32 32-32z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Total Funding Requested</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value-change">
+                                    <div class="status">
+                                        <div class="value">$115,000.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-4"></div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 mb-4 mt-xl-0">
+                        <div class="panel metrics-card c-2">
+                            <div class="metrics-card-title-wrapper">
+                                <div class="metrics-card-icon mr-5">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="dollar-sign" class="svg-inline--fa fa-dollar-sign " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                        <path fill="currentColor" d="M160 0c17.7 0 32 14.3 32 32V67.7c1.6 .2 3.1 .4 4.7 .7c.4 .1 .7 .1 1.1 .2l48 8.8c17.4 3.2 28.9 19.9 25.7 37.2s-19.9 28.9-37.2 25.7l-47.5-8.7c-31.3-4.6-58.9-1.5-78.3 6.2s-27.2 18.3-29 28.1c-2 10.7-.5 16.7 1.2 20.4c1.8 3.9 5.5 8.3 12.8 13.2c16.3 10.7 41.3 17.7 73.7 26.3l2.9 .8c28.6 7.6 63.6 16.8 89.6 33.8c14.2 9.3 27.6 21.9 35.9 39.5c8.5 17.9 10.3 37.9 6.4 59.2c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.1c-.4-.1-.9-.1-1.3-.2l-.2 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.1-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.5 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.6 .4-16.7-1.3-20.4c-1.9-4-5.6-8.4-13-13.3c-16.4-10.7-41.5-17.7-74-26.3l-2.8-.7 0 0C119.4 279.3 84.4 270 58.4 253c-14.2-9.3-27.5-22-35.8-39.6c-8.4-17.9-10.1-37.9-6.1-59.2C23.7 116 52.3 91.2 84.8 78.3c13.3-5.3 27.9-8.9 43.2-11V32c0-17.7 14.3-32 32-32z"></path>
+                                    </svg>
+                                </div>
+                                <div class="title">Total Funding Offered</div>
+                            </div>
+                            <div class="metrics-card-content">
+                                <div class="value">$0.00</div>
+                            </div>
+                        </div>
+                        <div class="metrics-card-footer c-2"></div>
+                    </div>
+                </div>
+                <div class="project-timeline-wrapper">
+                    <div class="panel">
+                        <div class="panel-inner">
+                            <h3 class="panel-heading">Timeline</h3>
+                            <div class="panel-inner-right">
+                                <a class="btn btn-primary" href="/admin/projects/view/1325/timeline-event/create">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="plus" class="svg-inline--fa fa-plus " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path fill="currentColor" d="M248 72c0-13.3-10.7-24-24-24s-24 10.7-24 24V232H40c-13.3 0-24 10.7-24 24s10.7 24 24 24H200V440c0 13.3 10.7 24 24 24s24-10.7 24-24V280H408c13.3 0 24-10.7 24-24s-10.7-24-24-24H248V72z"></path>
+                                    </svg>Create New</a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="timeline-container">
+                                <ul class="horizontal-timeline">
+                                    <li class="timeline-item">
+                                        <div class="event-badge primary">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fass" data-icon="star" class="svg-inline--fa fa-star " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path fill="currentColor" d="M288.1 0l86.5 164 182.7 31.6L428 328.5 454.4 512 288.1 430.2 121.7 512l26.4-183.5L18.9 195.6 201.5 164 288.1 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="event-panel  ">
+                                            <div class="event-status completed">
+                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" class="svg-inline--fa fa-circle-check " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="event-heading">
+                                                <h4 class="event-title">October 19, 2022</h4></div>
+                                            <div class="event-body">Application Started</div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <div class="event-badge primary">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fass" data-icon="file-import" class="svg-inline--fa fa-file-import " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                <path fill="currentColor" d="M128 0H352V160H512V512H128V336H302.1l-39 39-17 17L280 425.9l17-17 80-80 17-17-17-17-80-80-17-17L246.1 232l17 17 39 39H128V0zm0 288v48H24 0V288H24 128zM512 128H384V0L512 128z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="event-panel  ">
+                                            <div class="event-status completed">
+                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-check" class="svg-inline--fa fa-circle-check " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="event-heading">
+                                                <h4 class="event-title">March 14, 2024</h4></div>
+                                            <div class="event-body">Application Submitted</div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <div class="event-badge primary">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fass" data-icon="calendar-day" class="svg-inline--fa fa-calendar-day " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                <path fill="currentColor" d="M160 0V64H288V0h64V64h96v96H0V64H96V0h64zM0 192H448V512H0V192zm192 64H64V384H192V256z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="event-panel  cursor-pointer">
+                                            <div class="event-heading">
+                                                <h4 class="event-title"></h4></div>
+                                            <div class="event-body">Plans Submitted</div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <div class="event-badge warning">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fass" data-icon="calendar-day" class="svg-inline--fa fa-calendar-day " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                <path fill="currentColor" d="M160 0V64H288V0h64V64h96v96H0V64H96V0h64zM0 192H448V512H0V192zm192 64H64V384H192V256z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="event-panel  cursor-pointer">
+                                            <div class="event-heading">
+                                                <h4 class="event-title">June 13, 2024</h4></div>
+                                            <div class="event-body">Break Ground</div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <div class="event-badge warning">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fass" data-icon="calendar-day" class="svg-inline--fa fa-calendar-day " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                <path fill="currentColor" d="M160 0V64H288V0h64V64h96v96H0V64H96V0h64zM0 192H448V512H0V192zm192 64H64V384H192V256z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="event-panel  cursor-pointer">
+                                            <div class="event-heading">
+                                                <h4 class="event-title">October 17, 2024</h4></div>
+                                            <div class="event-body">Occupancy Begins</div>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <div class="event-badge warning">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fass" data-icon="calendar-day" class="svg-inline--fa fa-calendar-day " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                <path fill="currentColor" d="M160 0V64H288V0h64V64h96v96H0V64H96V0h64zM0 192H448V512H0V192zm192 64H64V384H192V256z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="event-panel  cursor-pointer">
+                                            <div class="event-heading">
+                                                <h4 class="event-title">December 13, 2024</h4></div>
+                                            <div class="event-body">Construction Complete</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-header">
+                    <div class="page-header-right">
+                        <button class="btn btn-primary">
+                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-export" class="svg-inline--fa fa-file-export " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path fill="currentColor" d="M336 448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80v96h48V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V368H336v80zM489 215c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H216c-13.3 0-24 10.7-24 24s10.7 24 24 24H494.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80z"></path>
+                            </svg>Export Project Summary</button>
+                        <button class="btn btn-primary">
+                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-export" class="svg-inline--fa fa-file-export " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path fill="currentColor" d="M336 448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80v96h48V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V368H336v80zM489 215c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H216c-13.3 0-24 10.7-24 24s10.7 24 24 24H494.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80z"></path>
+                            </svg>Export Details</button>
+                    </div>
+                </div>
+                <div class="nav-tabs-wrapper dx-multiview dx-swipeable dx-tabpanel dx-tabpanel-tabs-position-top dx-widget dx-visibility-change-handler dx-collection" tabindex="-1" role="tabpanel">
+                    <div class="dx-tabpanel-tabs">
+                        <div class="dx-tabs dx-tabs-scrolling-enabled dx-tabs-horizontal dx-tab-indicator-position-bottom dx-tabs-icon-position-start dx-tabs-styling-mode-primary dx-widget dx-visibility-change-handler dx-collection dx-tabs-stretched dx-tabs-expanded"
+                        tabindex="0">
+                            <div class="dx-tabs-wrapper" role="tablist">
+                                <div class="dx-item dx-tab dx-tabpanel-tab dx-tab-selected" role="tab" aria-selected="true">
+                                    <div class="dx-item-content dx-tab-content">
+                                        <div class="dx-tab-text"><span class="dx-tab-text-span">Overview<span class="dx-tab-text-span-pseudo">Overview</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                    <div class="dx-item-content dx-tab-content">
+                                        <div class="dx-tab-text"><span class="dx-tab-text-span">Compliance<span class="dx-tab-text-span-pseudo">Compliance</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                    <div class="dx-item-content dx-tab-content">
+                                        <div class="dx-tab-text"><span class="dx-tab-text-span">Files<span class="dx-tab-text-span-pseudo">Files</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                    <div class="dx-item-content dx-tab-content">
+                                        <div class="dx-tab-text"><span class="dx-tab-text-span">Audit<span class="dx-tab-text-span-pseudo">Audit</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                    <div class="dx-item-content dx-tab-content">
+                                        <div class="dx-tab-text"><span class="dx-tab-text-span">Correspondence<span class="dx-tab-text-span-pseudo">Correspondence</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                    <div class="dx-item-content dx-tab-content">
+                                        <div class="dx-tab-text"><span class="dx-tab-text-span">External Submissions<span class="dx-tab-text-span-pseudo">External Submissions</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                    <div class="dx-item-content dx-tab-content">
+                                        <div class="dx-tab-text"><span class="dx-tab-text-span">Tasks<span class="dx-tab-text-span-pseudo">Tasks</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dx-tabpanel-container">
+                        <div class="dx-multiview-wrapper">
+                            <div class="dx-multiview-item-container">
+                                <div class="dx-item dx-multiview-item dx-item-selected" role="tabpanel" style="transform: translate(0px, 0px);">
+                                    <div class="dx-item-content dx-multiview-item-content"></div>
+                                </div>
+                                <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                    <div class=""></div>
+                                </div>
+                                <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                    <div class=""></div>
+                                </div>
+                                <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                    <div class=""></div>
+                                </div>
+                                <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                    <div class=""></div>
+                                </div>
+                                <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                    <div class=""></div>
+                                </div>
+                                <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                    <div class=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="panel">
+                        <div class="panel-inner">
+                            <h3 class="panel-heading">Details</h3></div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="label-wrapper">
+                                        <div class="title">Funding Sources</div>
+                                        <div class="value">
+                                            <div class="_ExpandableItemList_1dawo_1">
+                                                <div>TIF Fund</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="label-wrapper">
+                                        <div class="title">Description</div>
+                                        <div class="value">
+                                            <div> Build an eco-friendly paper factory, this build will focus on sustainability, resource efficiency and community engagement </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="label-wrapper">
+                                        <div class="title">Project Intention</div>
+                                        <div class="value">Existing Business Already Established</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="label-wrapper">
+                                        <div class="title">Estimated Future Assessed Value</div>
+                                        <div class="value">$300,000.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="label-wrapper">
+                                        <div class="title">
+                                            <div class="d-flex justify-space-between gap-1 align-items-center">Census Track
+                                                <svg aria-labelledby="svg-inline--fa-title-anpsj9jdfg6u" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <title id="svg-inline--fa-title-anpsj9jdfg6u">Edit field</title>
+                                                    <path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="value"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="label-wrapper">
+                                        <div class="title">
+                                            <div class="d-flex justify-space-between gap-1 align-items-center">Previous funding amount
+                                                <svg aria-labelledby="svg-inline--fa-title-xN16ZOJBBWkB" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <title id="svg-inline--fa-title-xN16ZOJBBWkB">Edit field</title>
+                                                    <path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="value">$0.00</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="label-wrapper">
+                                        <div class="title">
+                                            <div class="d-flex justify-space-between gap-1 align-items-center">Permit ID
+                                                <svg aria-labelledby="svg-inline--fa-title-I8YuBLhmkFfN" data-prefix="fas" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <title id="svg-inline--fa-title-I8YuBLhmkFfN">Edit field</title>
+                                                    <path fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="value"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex vertical-tab-container">
+                        <button class="btn outlined-btn py-0 mb-2">
+                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevrons-right" class="svg-inline--fa fa-chevrons-right fa-xs show-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path fill="currentColor" d="M465 239c9.4 9.4 9.4 24.6 0 33.9L273 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L239 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L465 239zM81 47L273 239c9.4 9.4 9.4 24.6 0 33.9L81 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L47 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"></path>
+                            </svg>
+                        </button>
+                        <div class="nav-tabs-wrapper vertical-tab-wrapper vertical-nav-tabs dx-multiview dx-swipeable dx-tabpanel dx-tabpanel-tabs-position-top dx-widget dx-visibility-change-handler dx-collection" role="tabpanel" tabindex="-1">
+                            <div class="dx-tabpanel-tabs">
+                                <div class="dx-tabs dx-tabs-scrolling-enabled dx-tabs-horizontal dx-tab-indicator-position-bottom dx-tabs-icon-position-start dx-tabs-styling-mode-primary dx-widget dx-visibility-change-handler dx-collection" tabindex="0">
+                                    <div class="dx-tabs-scrollable dx-scrollable dx-visibility-change-handler dx-scrollable-horizontal dx-scrollable-simulated">
+                                        <div class="dx-scrollable-wrapper">
+                                            <div class="dx-scrollable-container">
+                                                <div class="dx-scrollable-content" style="left: 0px; top: 0px; transform: none;">
+                                                    <div class="dx-tabs-wrapper" role="tablist">
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab dx-tab-selected dx-state-focused" role="tab" aria-selected="true">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Property Information<span class="dx-tab-text-span-pseudo">Property Information</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Applicant Information<span class="dx-tab-text-span-pseudo">Applicant Information</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Project Details<span class="dx-tab-text-span-pseudo">Project Details</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Eligible Costs<span class="dx-tab-text-span-pseudo">Eligible Costs</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Financing Details<span class="dx-tab-text-span-pseudo">Financing Details</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Projections<span class="dx-tab-text-span-pseudo">Projections</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Timeline<span class="dx-tab-text-span-pseudo">Timeline</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Parties<span class="dx-tab-text-span-pseudo">Parties</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Documentation Collection<span class="dx-tab-text-span-pseudo">Documentation Collection</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dx-item dx-tab dx-tabpanel-tab" role="tab" aria-selected="false">
+                                                            <div class="dx-item-content dx-tab-content">
+                                                                <div class="dx-tab-text"><span class="dx-tab-text-span">Declarations<span class="dx-tab-text-span-pseudo">Declarations</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dx-scrollable-scrollbar dx-widget dx-scrollbar-horizontal" style="display: none;">
+                                                    <div class="dx-scrollable-scroll dx-state-invisible">
+                                                        <div class="dx-scrollable-scroll-content"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dx-tabpanel-container">
+                                <div class="dx-multiview-wrapper">
+                                    <div class="dx-multiview-item-container" style="transition: none; transform: translate(0px, 0px); left: 0px;">
+                                        <div class="dx-item dx-multiview-item dx-item-selected" role="tabpanel" style="transform: translate(0px, 0px);">
+                                            <div class="dx-item-content dx-multiview-item-content"></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                        <div class="dx-item dx-multiview-item dx-multiview-item-hidden" aria-hidden="true" role="tabpanel">
+                                            <div class=""></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 label-wrapper-container">
+                            <div class="page-header">
+                                <div class="page-header-right">
+                                    <button title="Edit" class="btn btn-primary">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="pen-to-square" class="svg-inline--fa fa-pen-to-square " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"></path>
+                                        </svg>Edit Associated Project Parcels</button>
+                                    <button class="btn btn-primary">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user-plus" class="svg-inline--fa fa-user-plus " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                            <path fill="currentColor" d="M224 48a80 80 0 1 1 0 160 80 80 0 1 1 0-160zm0 208A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 96h91.4c65.7 0 120.1 48.7 129 112H49.3c8.9-63.3 63.3-112 129-112zm0-48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3zM504 312c0 13.3 10.7 24 24 24s24-10.7 24-24V248h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H552V136c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H440c-13.3 0-24 10.7-24 24s10.7 24 24 24h64v64z"></path>
+                                        </svg>Request Submission</button>
+                                </div>
+                            </div>
+                            <div class="page-header">
+                                <div class="page-header-left">
+                                    <h3>Parcels</h3></div>
+                            </div>
+                            <div class="panel h-auto">
+                                <div class="panel-body">
+                                    <div>
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div>
+                                                        <div class="business-address-map dx-map dx-widget dx-visibility-change-handler" style="width: 100%; height: 250px;">
+                                                            <div class="dx-map-container">
+                                                                <div class="MicrosoftMap" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;">
+                                                                    <div style="position: absolute; overflow: hidden; width: 100%; height: 100%; top: 0px; left: 0px;">
+                                                                        <div class="ms-composite" tabindex="-1" dir="ltr" style="z-index: 0; background-color: rgb(1, 20, 34); opacity: 1; position: absolute; top: 0px; left: 0px;">
+                                                                            <canvas id="Microsoft.Maps.Imagery.Aerial" width="669" height="250" style="z-index: 0; position: absolute; left: 0px; opacity: 1; transform-origin: left top; zoom: 1; width: 669px; height: 250px; transform: matrix(1, 0, 0, 1, 0, 0);"></canvas>
+                                                                            <div tabindex="0" id="mapFocus" role="region" aria-label="Bing Maps - Interact to see more" style="top: 1px; left: 1px; z-index: 25100; pointer-events: none; position: absolute; width: 667px; height: 248px;"></div>
+                                                                            <canvas style="z-index: -1; position: absolute; opacity: 0;"></canvas>
+                                                                            <canvas id="labelCanvasId" class="labelCanvas" width="1269" height="626" style="outline: none; position: absolute; z-index: 20000; width: 1269px; height: 626px; top: -188px; left: -300px; transform: translate(0px, 0px); display: block;"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div style="position: absolute; overflow: hidden; width: 100%; height: 100%; top: 0px; left: 0px; pointer-events: none; transform: scale(1); z-index: 100;">
+                                                                        <div style="position: absolute; width: 100%; height: 100%; pointer-events: none;">
+                                                                            <div id="MicrosoftNav" class="NavBar_Container Dark" style="position: absolute; inset: 0px 0px auto auto;">
+                                                                                <div class="NavBar_MapTypeButtonContainerWrapper" style="display: none;">
+                                                                                    <div class="NavBar_MapTypeButtonContainer NavBar_MapTypeButtonHeight NavBar_Delay withBackground" id="MapStyleSelector" tabindex="0" title="Current Map Type: Aerial - View aerial, birds eye, and more..."
+                                                                                    role="button" aria-expanded="false">
+                                                                                        <div id="NavBar_MapTypeIcon" class="NavBar_MapTypeButtonIcon NavBar_MapTypeButtonHeight selectorIconAerial"></div>
+                                                                                        <div id="NavBar_MapTypeText" class="NavBar_MapTypeButtonText NavBar_MapTypeButtonHeight">Aerial</div>
+                                                                                        <div class="NavBar_MapTypeButtonDropDownIcon NavBar_MapTypeButtonHeight selectorIconDropDown"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="RadialMenu" class="NavBar_DropDown menu" role="listbox" aria-multiselectable="true" aria-label="View aerial, birds eye, and more...">
+                                                                                    <div class="slot road" tabindex="0" role="option" aria-selected="false">
+                                                                                        <div class="mapTypeIcon"></div>
+                                                                                        <div class="pie-label labelStyle">Road</div>
+                                                                                        <div class="pie-label-description labelStyleDescription">A standard road map</div>
+                                                                                    </div>
+                                                                                    <div class="slot aerial selected" tabindex="0" role="option" aria-selected="true">
+                                                                                        <div class="mapTypeIcon"></div>
+                                                                                        <div class="pie-label labelStyle">Aerial</div>
+                                                                                        <div class="pie-label-description labelStyleDescription">A detailed look from above</div>
+                                                                                    </div>
+                                                                                    <div class="slot birdseye disabled" tabindex="-1" role="option" aria-selected="false">
+                                                                                        <div class="mapTypeIcon"></div>
+                                                                                        <div class="pie-label labelStyle">Bird's eye</div>
+                                                                                        <div class="pie-label-description labelStyleDescription">A better angle of aerial photography</div>
+                                                                                    </div>
+                                                                                    <div class="slot streetside" tabindex="0" role="option" aria-selected="false">
+                                                                                        <div class="mapTypeIcon"></div>
+                                                                                        <div class="pie-label labelStyle">Streetside</div>
+                                                                                        <div class="pie-label-description labelStyleDescription">Explore at eye level</div>
+                                                                                    </div>
+                                                                                    <div class="switchSlot labelToggle" for="navbarLabelToggleInput" tabindex="0" role="checkbox" aria-checked="true" aria-label="" title="Turn labels on or off" aria-selected="false">
+                                                                                        <div class="labelToggle_Container labelStyle">
+                                                                                            <input id="navbarLabelToggleInput" type="checkbox" class="labelToggle_Input" checked="" tabindex="-1" aria-disabled="true">
+                                                                                            <label class="labelStyleSwitch" title="Labels">Labels</label>
+                                                                                            <label class="labelToggle_label" helper="[object Object]" role="button" aria-label="Labels"></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="birdseyeV2InfoExitControl be2LabelsEnabled" style="display: none;">
+                                                                                    <div class="birdseyeV2InfoExitControl left">
+                                                                                        <div class="birdseyeV2InfoExitControl left bottom">
+                                                                                            <div class="birdseyeV2Geochain"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="birdseyeV2InfoExitControl right">
+                                                                                        <a id="BirdseyeV2ExitButton" class="NavBar_Button birdseyeV2Exit" href="#" role="button">
+                                                                                            <div class="NavButton_Icon" title="Exit Bird's eye"></div>
+                                                                                        </a>
+                                                                                        <div class="be2LabelToggleContainer">
+                                                                                            <div class="be2LabelsTag">Labels</div>
+                                                                                            <div class="be2LabelToggle switchSlot labelToggle" for="be2ToggleInput">
+                                                                                                <div class="labelToggle_Container labelStyle">
+                                                                                                    <input id="be2ToggleInput" type="checkbox" class="labelToggle_Input" checked="" tabindex="-1">
+                                                                                                    <label class="labelToggle_label" role="button" aria-label="Labels"></label>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="bm_LocateMeControl" style="display: none;">
+                                                                                    <a id="LocateMeButton" class="NavBar_Button NavBar_locateMe" href="#" role="button" aria-pressed="false" style="display: none;">
+                                                                                        <div class="NavButton_Icon" title="Locate me"></div>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div id="RotateButtonContainer" class="NavBarButton_Container" style="margin-top: 5px; display: none;">
+                                                                                    <a id="RotateLeftButton" class="NavBar_Button NavBar_rotateLeft" href="#" role="button">
+                                                                                        <div class="NavButton_Icon" title="Rotate left"></div>
+                                                                                    </a>
+                                                                                    <a id="RotateButton" class="NavBar_Button NavBar_rotate NavBar_heading_0D" href="#" role="button">
+                                                                                        <div class="NavButton_Icon" title="Reset orientation"></div>
+                                                                                    </a>
+                                                                                    <a id="RotateRightButton" class="NavBar_Button NavBar_rotateRight" href="#" role="button">
+                                                                                        <div class="NavButton_Icon" title="Rotate right"></div>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <a id="ZoomInButton" class="NavBar_Button NavBar_zoomIn" href="#" role="button" aria-label="Current Level 18, Zoom In " style="display: none;" tabindex="">
+                                                                                    <div class="NavButton_Icon" title="Zoom in"></div>
+                                                                                </a>
+                                                                                <a id="ZoomOutButton" class="NavBar_Button NavBar_zoomOut" href="#" role="button" aria-label="Current Level 18, Zoom Out" style="display: none;">
+                                                                                    <div class="NavButton_Icon" title="Zoom out"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="bm_bottomLeftOverlay" style="position: absolute; left: 5px; bottom: 5px;">
+                                                                            <div class="bm_LogoContainer quadrantOverride">
+                                                                                <a href="https://www.bing.com/maps?cp=40.47915179999998~-88.9973856&amp;lvl=18&amp;style=a&amp;FORM=BMLOGO" title="Microsoft Bing" aria-label="Microsoft Bing" target="mc_bingMaps" style="pointer-events: auto">
+                                                                                    <div class="bingLogoDark bm_bingLogo"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="bm_bottomRightOverlay" style="position: absolute; right: 25px; bottom: 5px;">
+                                                                            <div class="CopyrightContainer quadrantOverride">
+                                                                                <div class="CopyrightControl" style="max-width: 1047px;"><span class="ShadowTextDark"><span class="CopyrightAttributionStyle">© Vexcel Imaging, © 2024 Microsoft Corporation</span>
+                                                                                    <a class="copyrightLink ShadowTextDark" style="pointer-events: auto; display: none;"
+                                                                                    role="link"></a>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div id="TermsLinkContainer" class="TermsLinkContainer"><a class="ShadowTextDark" href="https://www.microsoft.com/maps/assets/docs/terms.aspx" title="Terms" target="mc_bingMaps" style="pointer-events: auto">Terms</a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="label-wrapper d-flex mt-2 gap-5">
+                                                        <div class="flex-column">
+                                                            <div class="title">Parcel ID</div>
+                                                            <div class="value">21-04-337-006</div>
+                                                        </div>
+                                                        <div class="flex-column">
+                                                            <div class="title">Parcel Address</div>
+                                                            <div class="value">112 CENTER ST , MCLEAN, BLOOMINGTON, IL 61701</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel">
+                                            <div class="panel-inner">
+                                                <h3 class="panel-heading">Current Key Details</h3></div>
+                                            <div class="panel-body">
+                                                <div class="label-wrapper d-flex gap-5 flex-column flex-sm-row">
+                                                    <div class="flex-column">
+                                                        <div class="title">Last Assessment:</div>
+                                                        <div class="value">7/18/2023 - $2,500,250.00</div>
+                                                    </div>
+                                                    <div class="flex-column">
+                                                        <div class="title">Previous Assessment:</div>
+                                                        <div class="value">No recent assessments</div>
+                                                    </div>
+                                                    <div class="flex-column w-30">
+                                                        <div class="title">Boundaries:</div>
+                                                        <div class="value">Downtown District, Main Street Corridor District, Bloomington Wide, Ward 6</div>
+                                                    </div>
+                                                    <div class="flex-column">
+                                                        <div class="title">Owner</div>
+                                                        <div class="value">CONSOLIDATED PROPERTIES LLC 120, CENTER SERIES AND ILLINOIS LLC</div>
+                                                    </div>
+                                                    <div class="flex-column w-30">
+                                                        <div class="title">Identity Information</div>
+                                                        <div class="value">No Data Available</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>0</div>
+          </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modals -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="settingsModalLabel">Panel Visibility</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+          <label class="form-check-label" for="flexRadioDefault1" style="cursor: pointer;">
+            Show side panel on page load (default)
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2" style="cursor: pointer;">
+            Hide panel on page load
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="associatedContactsModal" tabindex="-1" aria-labelledby="associatedContactsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="settingsModalLabel">
+            <div style="font-size: .9rem; color: #888;">Stewart Rehabilitation & Sons</div>
+            Owner / Associated Contacts
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="split-column-row">
+            <div class="column">
+              <div>Catelyn Moore</div>
+              <div class="txt-sm">(owner)</div>
+            </div>
+            <div class="column">
+              <div class="flex"><i class="fa-light fa-envelope"></i> <a href="mailto:eproctor@stewartrehab.org">eproctor@stewartrehab.org</a></div>
+              <div class="flex"><i class="fa-light fa-phone"></i> (878) 988-9898</div>
+            </div>
+        </div>
+        <div class="split-column-row">
+           <div class="column">   
+              <div>Emily Proctor</div>
+              <div class="txt-sm">(owner)</div>
+            </div>
+          <div class="column">
+            <div class="flex"><i class="fa-light fa-envelope"></i> <a href="mailto:eproctor@stewartrehab.org">eproctor@stewartrehab.org</a></div>
+            <div class="flex"><i class="fa-light fa-phone"></i> (878) 988-9898</div>
+          </div>
+        </div>
+        <div class="split-column-row">
+            <div class="column">Robert Zciewiski</div>
+            <div class="column">
+              <div class="flex" style="white-space: nowrap;"><i class="fa-light fa-envelope"></i> <a href="mailto:rzciewiski@stewartrehab.org">rzciewiski@stewartrehab.org</a></div>
+              <div class="flex"><i class="fa-light fa-phone"></i> (878) 988-9898</div>
+            </div>
+          </div>
+          <div class="split-column-row last">
+            <div class="column">Scott Jannoy</div>
+            <div class="column">
+              <div class="flex"><i class="fa-light fa-envelope"></i> <a href="mailto:sjannoy@stewartrehab.org">sjannoy@stewartrehab.org</a></div>
+              <div class="flex"><i class="fa-light fa-phone"></i> (878) 988-9898</div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modals -->
+<div class="modal fade" id="columnsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="settingsModalLabel">Choose Columns</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchTags" checked disabled>
+                <label class="form-check-label" for="flexSwitchTags">Name (Cannot be hidden)</label>
+            </div>
+            <hr/>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchTags" checked>
+                <label class="form-check-label" for="flexSwitchTags">Tags</label>
+            </div>
+            <hr/>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchEmail" checked>
+                <label class="form-check-label" for="flexSwitchEmail">Contact</label>
+            </div>
+            <hr/>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchAddress" checked>
+                <label class="form-check-label" for="flexSwitchAddress">Address</label>
+            </div>
+            <hr/>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchPhone" checked>
+                <label class="form-check-label" for="flexSwitchPhone">Last Contacted</label>
+            </div>
+            <hr/>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchBusinessOwner" checked>
+                <label class="form-check-label" for="flexSwitchBusinessOwner">Business Owner</label>
+            </div>
+            <hr/>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-1" checked>
+                <label class="form-check-label" for="anotherColumn-1">Another Column</label>
+            </div>
+            <hr/>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-2" checked>
+              <label class="form-check-label" for="anotherColumn-2">Another Column</label>
+          </div>
+            <hr/>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-3" checked>
+              <label class="form-check-label" for="anotherColumn-3">Another Column</label>
+          </div>
+          <hr/>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-4" checked>
+            <label class="form-check-label" for="anotherColumn-4">Another Column</label>
+        </div>
+          <hr/>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-5" checked>
+            <label class="form-check-label" for="anotherColumn-5">Another Column</label>
+        </div>
+          <hr/>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-6" checked>
+            <label class="form-check-label" for="anotherColumn-6">Another Column</label>
+        </div>
+          <hr/>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-7" checked>
+            <label class="form-check-label" for="anotherColumn-7">Another Column</label>
+        </div>
+          <hr/>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-8" checked>
+            <label class="form-check-label" for="anotherColumn-8">Another Column</label>
+        </div>
+          <hr/>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-9" checked>
+            <label class="form-check-label" for="anotherColumn-9">Another Column</label>
+        </div>
+          <hr/>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-10" checked>
+            <label class="form-check-label" for="anotherColumn-10">Another Column</label>
+        </div>
+        <hr/>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-11" checked>
+          <label class="form-check-label" for="anotherColumn-11">Another Column</label>
+      </div>
+        <hr/>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-12" checked>
+          <label class="form-check-label" for="anotherColumn-12">Another Column</label>
+      </div>
+        <hr/>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-13" checked>
+          <label class="form-check-label" for="anotherColumn-13">Another Column</label>
+      </div>
+        <hr/>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-14" checked>
+          <label class="form-check-label" for="anotherColumn-14">Another Column</label>
+      </div>
+        <hr/>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-15" checked>
+          <label class="form-check-label" for="anotherColumn-15">Another Column</label>
+      </div>
+        <hr/>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="anotherColumn-16" checked>
+          <label class="form-check-label" for="anotherColumn-16">Another Column</label>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="save-column-changes" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script src="src/application.js"></script>"
+</body>
+</html>
