@@ -217,11 +217,13 @@
                       </div>
                       <div style="display: flex;">
                         <div class="metrics-card-icon" style="margin-left: 1rem;"><i class="fa-solid fa-chart-mixed-up-circle-dollar" style="color: #3862e5;"></i></div> 
-                        <div class="label" >Project Costs</div><div class="value">$1,500,000</div>
+                        <div class="label" >Estimated Project Costs</div><div class="value">$1,500,000</div>
                         <div class="metrics-card-icon" style="margin-left: 2rem;"><i class="fa-solid fa-clipboard-check" style="color: #3862e5;"></i></div> 
-                        <div class="label">Approval Amounts</div><div class="value">$850,000</div>
+                        <div class="label" >Submitted Eligible Costs</div><div class="value">$850,000</div>
+                        <div class="metrics-card-icon" style="margin-left: 2rem;"><i class="fa-solid fa-clipboard-check" style="color: #3862e5;"></i></div> 
+                        <div class="label">Total Funding Requested</div><div class="value">$250,000</div>
                         <div class="metrics-card-icon" style="margin-left: 2rem;"><i class="fa-solid fa-flag-checkered" style="color: #3862e5;"></i></div> 
-                        <div class="label">Amount to Goal</div><div class="value">$650,000</div>
+                        <div class="label">Total Funding Offered</div><div class="value">$0</div>
                       </div>
                     </div>
                     
@@ -266,7 +268,7 @@
                           </div>
                       </div>
                       <div class="metrics-card-footer c-1">
-                        <a href="#" class="metrics-card-cta">+ Add New</a>
+                        <a href="#" class="metrics-card-cta" data-bs-toggle="modal" data-bs-target="#addToProjectModal">+ Add New</a>
                       </div>
                         
                     </div>
@@ -983,30 +985,19 @@
 
 
 <!-- Modals -->
-<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+<div class="modal fade" id="addToProjectModal" tabindex="-1" aria-labelledby="addToProjectModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="settingsModalLabel">Panel Visibility</h1>
+        <h1 class="modal-title fs-5" id="addToProjectModalLabel">Add Boundaries / Programs / Funding</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-          <label class="form-check-label" for="flexRadioDefault1" style="cursor: pointer;">
-            Show side panel on page load (default)
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-          <label class="form-check-label" for="flexRadioDefault2" style="cursor: pointer;">
-            Hide panel on page load
-          </label>
-        </div>
+        This will be the ADD modal
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Save Changes</button>
       </div>
     </div>
   </div>
