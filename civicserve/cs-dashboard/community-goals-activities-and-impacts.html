@@ -936,269 +936,334 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   <script src="src/application.js"></script>
   <script>
-    // Store charts in a global array for easy access
-      const charts = [];
-      
-      function generateDateCategories() {
-        const today = new Date();
-        const categories = [];
-        
-        // Get the 4 weeks, going backward from today
-        for (let i = 3; i >= 0; i--) {
-          // Clone today's date and subtract weeks
-          const date = new Date(today);
-          date.setDate(today.getDate() - (i * 7));
-          
-          // Format as M/D/YY (e.g., 2/26/25)
-          const month = date.getMonth() + 1; // Months are 0-indexed
-          const day = date.getDate();
-          const year = date.getFullYear().toString().slice(-2); // Get last 2 digits
-          
-          categories.push(`${month}/${day}/${year}`);
+// Function to parse ratio strings into numerical values
+function parseRatio(ratioStr) {
+  // Handle different formats of ratios
+  if (typeof ratioStr === 'number') {
+    return ratioStr; // Already a number, return as is
+  }
+  
+  // Remove any whitespace
+  const cleanStr = ratioStr.trim();
+  
+  // Check if it's in the format "1:5"
+  if (cleanStr.includes(':')) {
+    const [numerator, denominator] = cleanStr.split(':');
+    
+    // Convert to numbers, handling decimal points
+    const num = parseFloat(numerator);
+    const denom = parseFloat(denominator);
+    
+    if (!isNaN(num) && !isNaN(denom) && denom !== 0) {
+      return num / denom; // Return as a decimal
+    }
+  }
+  
+  // If we can't parse it as a ratio, try to parse it as a single number
+  const asNumber = parseFloat(cleanStr);
+  if (!isNaN(asNumber)) {
+    return asNumber;
+  }
+  
+  // If all else fails, return null or a default value
+  console.warn(`Couldn't parse ratio: ${ratioStr}`);
+  return null;
+}
+
+// Store charts in a global array for easy access
+const charts = [];
+
+function generateDateCategories() {
+  const today = new Date();
+  const categories = [];
+  
+  // Get the 4 weeks, going backward from today
+  for (let i = 3; i >= 0; i--) {
+    // Clone today's date and subtract weeks
+    const date = new Date(today);
+    date.setDate(today.getDate() - (i * 7));
+    
+    // Format as M/D/YY (e.g., 2/26/25)
+    const month = date.getMonth() + 1; // Months are 0-indexed
+    const day = date.getDate();
+    const year = date.getFullYear().toString().slice(-2); // Get last 2 digits
+    
+    categories.push(`${month}/${day}/${year}`);
+  }
+  
+  return categories;
+}
+
+// Common x-axis categories for all charts
+const categories = generateDateCategories();
+
+// Data for different goals
+const goalData = {
+  "goal1": {
+    "chart1": [32, 96, 82, 100],
+    "chart2": [24, 44, 16, 88],
+    "chart3": [1, 17, 3, 1],
+    "chart4": [2, 10, 7, 6],
+    "chart5": [5, 25, 50, 5],
+    "chart6": [0, 0, 6, 0],
+    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
+    "chart8": [880, 882, 875, 880],
+    "chart9": [10, 50, 0, 8],
+    "chart10": [100000, 111000, 111581, 231088],
+    "chart11": [5, 6, 3, 1],
+    "chart12": [44, 44, 49, 49],
+    "chart13": [44, 44, 49, 49],
+    "chart14": [0, 2, 2, 0]
+  },
+  "goal2": {
+    "chart1": [12, 27, 31, 55],
+    "chart2": [100, 61, 31, 73],
+    "chart3": [58, 27, 97, 91],
+    "chart4": [45, 18, 2, 70],
+    "chart5": [50, 4, 98, 45],
+    "chart6": [20, 37, 76, 22],
+    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
+    "chart8": [5, 52, 1, 22],
+    "chart9": [56, 8, 78, 67],
+    "chart10": [121000, 141000, 171581, 231088],
+    "chart11": [48, 100, 98, 17],
+    "chart12": [79, 4, 54, 36],
+    "chart13": [71, 10, 54, 51],
+    "chart14": [75, 82, 100, 27]
+  },
+  "goal3": {
+    "chart1": [81, 37, 15, 44],
+    "chart2": [63, 78, 47, 12],
+    "chart3": [14, 16, 62, 38],
+    "chart4": [100, 79, 32, 80],
+    "chart5": [49, 2, 81, 86],
+    "chart6": [70, 19, 42, 24],
+    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
+    "chart8": [0, 86, 40, 45],
+    "chart9": [70, 49, 27, 51],
+    "chart10": [233000, 154000, 111581, 544088],
+    "chart11": [97, 7, 69, 14],
+    "chart12": [23, 74, 86, 40],
+    "chart13": [85, 72, 9, 8],
+    "chart14": [82, 81, 50, 79]
+  },
+  "goal4": {
+    "chart1": [43, 69, 75, 46],
+    "chart2": [92, 63, 23, 6],
+    "chart3": [90, 1, 24, 8],
+    "chart4": [81, 69, 21, 45],
+    "chart5": [90, 53, 38, 59],
+    "chart6": [11, 5, 8, 65],
+    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
+    "chart8": [41, 54, 74, 76],
+    "chart9": [5, 45, 0, 41],
+    "chart10": [323000, 341000, 221581, 676088],
+    "chart11": [80, 46, 95, 81],
+    "chart12": [87, 16, 21, 92],
+    "chart13": [94, 60, 1, 25],
+    "chart14": [86, 93, 58, 73]
+  },
+  "goal5": {
+    "chart1": [7, 22, 38, 72],
+    "chart2": [88, 53, 92, 57],
+    "chart3": [43, 70, 2, 37],
+    "chart4": [14, 30, 39, 70],
+    "chart5": [25, 7, 48, 44],
+    "chart6": [37, 20, 58, 31],
+    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
+    "chart8": [45, 76, 8, 61],
+    "chart9": [57, 53, 90, 68],
+    "chart10": [130000, 101000, 103581, 555088],
+    "chart11": [46, 20, 56, 69],
+    "chart12": [50, 51, 87, 56],
+    "chart13": [68, 90, 92, 86],
+    "chart14": [43, 58, 10, 71]
+  }
+};
+
+// Process the ratio data for all charts and goals
+function processAllRatioData(data) {
+  const processedData = JSON.parse(JSON.stringify(data));
+  
+  // Process chart7 for all goals
+  for (const goal in processedData) {
+    if (processedData[goal] && processedData[goal].chart7) {
+      processedData[goal].chart7 = processedData[goal].chart7.map(val => parseRatio(val));
+    }
+  }
+  
+  return processedData;
+}
+
+// Process all the data up front
+const processedGoalData = processAllRatioData(goalData);
+
+// Chart colors
+const chartColors = {
+  chart1: '#008FFB',
+  chart2: '#00E396',
+  chart3: '#FEB019',
+  chart4: '#FF4560',
+  chart5: '#775DD0',
+  chart6: '#2E93fA',
+  chart7: '#4CAF50',
+  chart8: '#9C27B0',
+  chart9: '#FF9800',
+  chart10: '#607D8B',
+  chart11: '#E91E63',
+  chart12: '#3F51B5',
+  chart13: '#CDDC39',
+  chart14: '#795548'
+};
+
+// Chart titles
+const chartTitles = {
+  chart1: 'Total',
+  chart2: 'City Economic Development',
+  chart3: 'EDO',
+  chart4: 'Chamber',
+  chart5: 'Downtown Association',
+  chart6: 'Consultant',
+  chart7: 'Investment Ratio (Public to Private)',
+  chart8: 'Business Count',
+  chart9: 'Jobs Created',
+  chart10: 'Capital Investment',
+  chart11: 'Leads',
+  chart12: 'Projects',
+  chart13: 'Agreements',
+  chart14: 'Events'
+};
+
+// Initialize all charts
+for (let i = 1; i <= 14; i++) {
+  const chartId = `chart${i}`;
+  const options = {
+    series: [{
+      name: chartTitles[chartId],
+      data: processedGoalData.goal1[chartId] // Use the processed data
+    }],
+    chart: {
+      height: 200,
+      type: 'line',
+      zoom: {
+        enabled: false
+      },
+      toolbar: {
+        show: false
+      },
+      animations: {
+        enabled: true,
+        easing: 'easeinout',
+        speed: 800,
+        animateGradually: {
+          enabled: true,
+          delay: 150
+        },
+        dynamicAnimation: {
+          enabled: true,
+          speed: 350
         }
-        
-        return categories;
       }
-
-      // Common x-axis categories for all charts
-      const categories = generateDateCategories();
-
-      // Data for different goals
-      const goalData = {
-        "goal1": {
-          "chart1": [32, 96, 82, 100],
-          "chart2": [24, 44, 16, 88],
-          "chart3": [1, 17, 3, 1],
-          "chart4": [2, 10, 7, 6],
-          "chart5": [5, 25, 50, 5],
-          "chart6": [0, 0, 6, 0],
-          "chart7": [80, 29, 40, 70],
-          "chart8": [880, 882, 875, 880],
-          "chart9": [10, 50, 0, 8],
-          "chart10": [100000, 111000, 111581, 231088],
-          "chart11": [5, 6, 3, 1],
-          "chart12": [44, 44, 49, 49],
-          "chart13": [44, 44, 49, 49],
-          "chart14": [0, 2, 2, 0]
-        },
-        "goal2": {
-          "chart1": [12, 27, 31, 55],
-          "chart2": [100, 61, 31, 73],
-          "chart3": [58, 27, 97, 91],
-          "chart4": [45, 18, 2, 70],
-          "chart5": [50, 4, 98, 45],
-          "chart6": [20, 37, 76, 22],
-          "chart7": [41, 32, 40, 61],
-          "chart8": [5, 52, 1, 22],
-          "chart9": [56, 8, 78, 67],
-          "chart10": [95, 57, 3, 38],
-          "chart11": [48, 100, 98, 17],
-          "chart12": [79, 4, 54, 36],
-          "chart13": [71, 10, 54, 51],
-          "chart14": [75, 82, 100, 27]
-        },
-        "goal3": {
-          "chart1": [81, 37, 15, 44],
-          "chart2": [63, 78, 47, 12],
-          "chart3": [14, 16, 62, 38],
-          "chart4": [100, 79, 32, 80],
-          "chart5": [49, 2, 81, 86],
-          "chart6": [70, 19, 42, 24],
-          "chart7": [52, 84, 63, 0],
-          "chart8": [0, 86, 40, 45],
-          "chart9": [70, 49, 27, 51],
-          "chart10": [0, 46, 89, 19],
-          "chart11": [97, 7, 69, 14],
-          "chart12": [23, 74, 86, 40],
-          "chart13": [85, 72, 9, 8],
-          "chart14": [82, 81, 50, 79]
-        },
-        "goal4": {
-          "chart1": [43, 69, 75, 46],
-          "chart2": [92, 63, 23, 6],
-          "chart3": [90, 1, 24, 8],
-          "chart4": [81, 69, 21, 45],
-          "chart5": [90, 53, 38, 59],
-          "chart6": [11, 5, 8, 65],
-          "chart7": [87, 46, 25, 85],
-          "chart8": [41, 54, 74, 76],
-          "chart9": [5, 45, 0, 41],
-          "chart10": [66, 91, 83, 67],
-          "chart11": [80, 46, 95, 81],
-          "chart12": [87, 16, 21, 92],
-          "chart13": [94, 60, 1, 25],
-          "chart14": [86, 93, 58, 73]
-        },
-        "goal5": {
-          "chart1": [7, 22, 38, 72],
-          "chart2": [88, 53, 92, 57],
-          "chart3": [43, 70, 2, 37],
-          "chart4": [14, 30, 39, 70],
-          "chart5": [25, 7, 48, 44],
-          "chart6": [37, 20, 58, 31],
-          "chart7": [30, 77, 77, 6],
-          "chart8": [45, 76, 8, 61],
-          "chart9": [57, 53, 90, 68],
-          "chart10": [99, 28, 67, 35],
-          "chart11": [46, 20, 56, 69],
-          "chart12": [50, 51, 87, 56],
-          "chart13": [68, 90, 92, 86],
-          "chart14": [43, 58, 10, 71]
+    },
+    colors: [chartColors[chartId]],
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight',
+      width: 2.5
+    },
+    title: {
+      text: chartTitles[chartId],
+      align: 'left',
+      style: {
+        fontSize: '14px'
+      }
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'],
+        opacity: 0.5
+      },
+      borderColor: '#f1f1f1'
+    },
+    xaxis: {
+      categories: categories, // Use the dynamic dates
+      labels: {
+        style: {
+          fontSize: '10px'
         }
-      };
-
-      // Chart colors
-      const chartColors = {
-        chart1: '#008FFB',
-        chart2: '#00E396',
-        chart3: '#FEB019',
-        chart4: '#FF4560',
-        chart5: '#775DD0',
-        chart6: '#2E93fA',
-        chart7: '#4CAF50',
-        chart8: '#9C27B0',
-        chart9: '#FF9800',
-        chart10: '#607D8B',
-        chart11: '#E91E63',
-        chart12: '#3F51B5',
-        chart13: '#CDDC39',
-        chart14: '#795548'
-      };
-
-      // Chart titles
-      const chartTitles = {
-        chart1: 'Total',
-        chart2: 'City Economic Development',
-        chart3: 'EDO',
-        chart4: 'Chamber',
-        chart5: 'Downtown Association',
-        chart6: 'Consultant',
-        chart7: 'Investment Ratio (Public to Private)',
-        chart8: 'Business Count',
-        chart9: 'Jobs Created',
-        chart10: 'Capital Investment',
-        chart11: 'Leads',
-        chart12: 'Projects',
-        chart13: 'Agreements',
-        chart14: 'Events'
-      };
-
-      // Initialize all charts
-      for (let i = 1; i <= 14; i++) {
-        const chartId = `chart${i}`;
-        const options = {
-          series: [{
-            name: chartTitles[chartId],
-            data: goalData.goal1[chartId] // Start with goal1 data
-          }],
-          chart: {
-            height: 200,
-            type: 'line',
-            zoom: {
-              enabled: false
-            },
-            toolbar: {
-              show: false
-            },
-            animations: {
-              enabled: true,
-              easing: 'easeinout',
-              speed: 800,
-              animateGradually: {
-                enabled: true,
-                delay: 150
-              },
-              dynamicAnimation: {
-                enabled: true,
-                speed: 350
-              }
-            }
-          },
-          colors: [chartColors[chartId]],
-          dataLabels: {
-            enabled: false
-          },
-          stroke: {
-            curve: 'straight',
-            width: 2.5
-          },
-          title: {
-            text: chartTitles[chartId],
-            align: 'left',
-            style: {
-              fontSize: '14px'
-            }
-          },
-          grid: {
-            row: {
-              colors: ['#f3f3f3', 'transparent'],
-              opacity: 0.5
-            },
-            borderColor: '#f1f1f1'
-          },
-          xaxis: {
-            categories: categories, // Use the dynamic dates
-            labels: {
-              style: {
-                fontSize: '10px'
-              }
-            }
-          },
-          yaxis: {
-            labels: {
-              style: {
-                fontSize: '10px'
-              }
-            }
+      }
+    },
+    yaxis: {
+      labels: {
+        style: {
+          fontSize: '10px'
+        },
+        formatter: function(val) {
+          // Special formatting for chart7 (ratio chart)
+          if (chartId === 'chart7') {
+            return `1:${Math.round(1/val * 100) / 100}`;
           }
-        };
-
-        const chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
-        chart.render();
-        charts.push({
-          id: chartId,
-          chart: chart
-        });
-      }
-
-      // Event listeners for goal selector buttons
-      document.querySelectorAll('.goal-btn').forEach(button => {
-        button.addEventListener('click', function() {
-          // Update active button style
-          document.querySelectorAll('.goal-btn').forEach(btn => {
-            btn.classList.remove('active');
-          });
-          this.classList.add('active');
-          
-          // Get selected goal
-          const selectedGoal = this.getAttribute('data-goal');
-          
-          // Update all charts with new data
-          charts.forEach(chartObj => {
-            chartObj.chart.updateSeries([{
-              data: goalData[selectedGoal][chartObj.id]
-            }]);
-          });
-        });
-      });
-
-      // for the goal scroll indicators
-      document.addEventListener("DOMContentLoaded", function () {
-        const goalSelector = document.querySelector(".goal-selector");
-        const scrollUpIndicator = document.querySelector(".scroll-up");
-        const scrollDownIndicator = document.querySelector(".scroll-down");
-
-        function updateScrollIndicators() {
-          const atTop = goalSelector.scrollTop === 0;
-          const atBottom = goalSelector.scrollTop + goalSelector.clientHeight >= goalSelector.scrollHeight;
-
-          scrollUpIndicator.style.opacity = atTop ? "0" : "1";
-          scrollDownIndicator.style.opacity = atBottom ? "0" : "1";
+          // Money formatting for chart10 (Capital Investment)
+          else if (chartId === 'chart10') {
+            return '$' + val.toLocaleString();
+          }
+          // For other charts, only show decimal if it's not a whole number
+          else {
+            return Number.isInteger(val) ? val.toString() : val.toFixed(1);
+          }
         }
+      }
+    }
+  };
 
-        goalSelector.addEventListener("scroll", updateScrollIndicators);
-        updateScrollIndicators(); // Initial check
-      });
+  const chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
+  chart.render();
+  charts.push({
+    id: chartId,
+    chart: chart
+  });
+}
+
+// Event listeners for goal selector buttons
+document.querySelectorAll('.goal-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    // Update active button style
+    document.querySelectorAll('.goal-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    this.classList.add('active');
+    
+    // Get selected goal
+    const selectedGoal = this.getAttribute('data-goal');
+    
+    // Update all charts with new data from the processed data
+    charts.forEach(chartObj => {
+      chartObj.chart.updateSeries([{
+        data: processedGoalData[selectedGoal][chartObj.id]
+      }]);
+    });
+  });
+});
+
+// for the goal scroll indicators
+document.addEventListener("DOMContentLoaded", function () {
+  const goalSelector = document.querySelector(".goal-selector");
+  const scrollUpIndicator = document.querySelector(".scroll-up");
+  const scrollDownIndicator = document.querySelector(".scroll-down");
+
+  function updateScrollIndicators() {
+    const atTop = goalSelector.scrollTop === 0;
+    const atBottom = goalSelector.scrollTop + goalSelector.clientHeight >= goalSelector.scrollHeight;
+
+    scrollUpIndicator.style.opacity = atTop ? "0" : "1";
+    scrollDownIndicator.style.opacity = atBottom ? "0" : "1";
+  }
+
+  goalSelector.addEventListener("scroll", updateScrollIndicators);
+  updateScrollIndicators(); // Initial check
+});
 
   </script>
 </body>
