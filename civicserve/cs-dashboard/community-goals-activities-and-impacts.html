@@ -1022,7 +1022,7 @@ const goalData = {
     "chart4": [45, 18, 2, 70],
     "chart5": [50, 4, 98, 45],
     "chart6": [20, 37, 76, 22],
-    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
+    "chart7": ["2:3", "01:05.1", "1:06", "1:065"], // Use ratio strings here
     "chart8": [5, 52, 1, 22],
     "chart9": [56, 8, 78, 67],
     "chart10": [121000, 141000, 171581, 231088],
@@ -1135,19 +1135,46 @@ const chartTitles = {
 };
 
 // Initialize all charts
+// To implement this change, you'll need to modify your chart initialization loop.
+// Here's how to integrate the new chart7 bar chart into your existing code:
+
+// 1. Find your chart initialization loop (where you create all 14 charts)
+// 2. Replace it with this structure:
+
+// Initialize all charts
 for (let i = 1; i <= 14; i++) {
   const chartId = `chart${i}`;
+  
+  // Special handling for chart7 (ratio chart)
+  if (i === 7) {
+  // Transform ratio data into public and private parts
+  // Using percentage-based approach to ensure visibility
+  const publicData = [];
+  const privateData = [];
+  
+  processedGoalData.goal1[chartId].forEach(ratio => {
+    // Calculate percentage split
+    const total = 1 + 1/ratio;
+    const publicPct = (1/total) * 100;
+    const privatePct = ((1/ratio)/total) * 100;
+    
+    publicData.push(publicPct);
+    privateData.push(privatePct);
+  });
+  
   const options = {
     series: [{
-      name: chartTitles[chartId],
-      data: processedGoalData.goal1[chartId] // Use the processed data
+      name: 'Public Investment',
+      data: publicData
+    }, {
+      name: 'Private Investment',
+      data: privateData
     }],
     chart: {
+      type: 'bar',
       height: 200,
-      type: 'line',
-      zoom: {
-        enabled: false
-      },
+      stacked: true,
+      stackType: '100%', // Makes all bars uniform height
       toolbar: {
         show: false
       },
@@ -1165,16 +1192,39 @@ for (let i = 1; i <= 14; i++) {
         }
       }
     },
-    colors: [chartColors[chartId]],
+    colors: ['#4CAF50', '#8BC34A'], // Green shades for public/private
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '60%',
+      }
+    },
     dataLabels: {
-      enabled: false
+      enabled: true,
+      formatter: function(val, opt) {
+        // For the percentage display, calculate the ratio
+        const seriesIndex = opt.seriesIndex;
+        const dataPointIndex = opt.dataPointIndex;
+        const ratio = processedGoalData.goal1[chartId][dataPointIndex];
+        
+        if (seriesIndex === 0) { // Public investment
+          return '$1';
+        } else { // Private investment
+          return '$' + (1/ratio).toFixed(2);
+        }
+      },
+      style: {
+        fontSize: '11px',
+        fontWeight: 'normal',
+        colors: ['#000', '#000'] // Black for public (might be small), white for private
+      }
     },
     stroke: {
-      curve: 'straight',
-      width: 2.5
+      width: 1,
+      colors: ['#fff']
     },
     title: {
-      text: chartTitles[chartId],
+      text: 'Public vs. Private Investment Ratio',
       align: 'left',
       style: {
         fontSize: '14px'
@@ -1188,7 +1238,7 @@ for (let i = 1; i <= 14; i++) {
       borderColor: '#f1f1f1'
     },
     xaxis: {
-      categories: categories, // Use the dynamic dates
+      categories: categories,
       labels: {
         style: {
           fontSize: '10px'
@@ -1201,20 +1251,28 @@ for (let i = 1; i <= 14; i++) {
           fontSize: '10px'
         },
         formatter: function(val) {
-          // Special formatting for chart7 (ratio chart)
-          if (chartId === 'chart7') {
-            return `1:${Math.round(1/val * 100) / 100}`;
-          }
-          // Money formatting for chart10 (Capital Investment)
-          else if (chartId === 'chart10') {
-            return '$' + val.toLocaleString();
-          }
-          // For other charts, only show decimal if it's not a whole number
-          else {
-            return Number.isInteger(val) ? val.toString() : val.toFixed(1);
+          return val.toFixed(0) + '%';
+        }
+      }
+    },
+    tooltip: {
+      shared: true,
+      intersect: false, // This explicitly sets intersect to false to avoid the conflict
+      y: {
+        formatter: function(val, opt) {
+          if (opt.seriesIndex === 0) {
+            return 'Public: $1 (' + val.toFixed(2) + '%)';
+          } else {
+            const dataPointIndex = opt.dataPointIndex;
+            const ratio = processedGoalData.goal1[chartId][dataPointIndex];
+            return 'Private: $' + (1/ratio).toFixed(2) + ' (' + val.toFixed() + '%)';
           }
         }
       }
+    },
+    legend: {
+      position: 'top',
+      fontSize: '12px'
     }
   };
 
@@ -1224,6 +1282,90 @@ for (let i = 1; i <= 14; i++) {
     id: chartId,
     chart: chart
   });
+} else {
+    // Standard chart initialization for all other charts
+    const options = {
+      series: [{
+        name: chartTitles[chartId],
+        data: processedGoalData.goal1[chartId]
+      }],
+      chart: {
+        height: 200,
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+        toolbar: {
+          show: false
+        },
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 800,
+          animateGradually: {
+            enabled: true,
+            delay: 150
+          },
+          dynamicAnimation: {
+            enabled: true,
+            speed: 350
+          }
+        }
+      },
+      colors: [chartColors[chartId]],
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'straight',
+        width: 2.5
+      },
+      title: {
+        text: chartTitles[chartId],
+        align: 'left',
+        style: {
+          fontSize: '14px'
+        }
+      },
+      grid: {
+        row: {
+          colors: ['#f3f3f3', 'transparent'],
+          opacity: 0.5
+        },
+        borderColor: '#f1f1f1'
+      },
+      xaxis: {
+        categories: categories,
+        labels: {
+          style: {
+            fontSize: '10px'
+          }
+        }
+      },
+      yaxis: {
+        labels: {
+          style: {
+            fontSize: '10px'
+          },
+          formatter: function(val) {
+            // Money formatting for chart10
+            if (chartId === 'chart10') {
+              return '$' + val.toLocaleString();
+            }
+            // For other charts, only show decimal if needed
+            return Number.isInteger(val) ? val.toString() : val.toFixed(2);
+          }
+        }
+      }
+    };
+
+    const chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
+    chart.render();
+    charts.push({
+      id: chartId,
+      chart: chart
+    });
+  }
 }
 
 // Event listeners for goal selector buttons
@@ -1240,9 +1382,39 @@ document.querySelectorAll('.goal-btn').forEach(button => {
     
     // Update all charts with new data from the processed data
     charts.forEach(chartObj => {
-      chartObj.chart.updateSeries([{
-        data: processedGoalData[selectedGoal][chartObj.id]
-      }]);
+      // Special handling for the ratio chart (chart7)
+      if (chartObj.id === 'chart7') {
+        // Transform ratio data into percentage-based public and private parts
+        const publicData = [];
+        const privateData = [];
+        
+        processedGoalData[selectedGoal][chartObj.id].forEach(ratio => {
+          // Calculate percentage split
+          const total = 1 + 1/ratio;
+          const publicPct = (1/total) * 100;
+          const privatePct = ((1/ratio)/total) * 100;
+          
+          publicData.push(publicPct);
+          privateData.push(privatePct);
+        });
+        
+        // Update both series in the stacked bar chart
+        chartObj.chart.updateSeries([
+          {
+            name: 'Public Investment',
+            data: publicData
+          },
+          {
+            name: 'Private Investment',
+            data: privateData
+          }
+        ]);
+      } else {
+        // Regular update for other charts
+        chartObj.chart.updateSeries([{
+          data: processedGoalData[selectedGoal][chartObj.id]
+        }]);
+      }
     });
   });
 });
