@@ -225,6 +225,43 @@
     transform: scale(4);
   }
 
+  /* Style for the drag handle to make it obvious it's draggable */
+  .goal-drag-handle {
+    cursor: grab;
+    padding: 10px 5px;
+    color: #888;
+    transition: color 0.2s ease;
+  }
+
+  .goal-drag-handle:hover {
+    color: #444;
+  }
+
+  .goal-drag-handle.dragging {
+    cursor: grabbing;
+    color: #4CAF50;
+  }
+
+  /* Style for the item being dragged */
+  .goal-btn.dragging-item {
+    opacity: 0.5;
+    cursor: grabbing;
+  }
+
+  /* Styles for the drag-over indicators */
+  .goal-btn.drag-over-top {
+    border-top: 2px solid #4CAF50;
+  }
+
+  .goal-btn.drag-over-bottom {
+    border-bottom: 2px solid #4CAF50;
+  }
+
+  /* Add a transition for smoother reordering */
+  .goal-btn {
+    transition: transform 0.2s ease;
+  }
+
 </style>
 </head>
 
@@ -1435,6 +1472,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
   goalSelector.addEventListener("scroll", updateScrollIndicators);
   updateScrollIndicators(); // Initial check
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Include Sortable.js via CDN if not already included
+  if (typeof Sortable === 'undefined') {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js';
+    script.onload = initSortable;
+    document.head.appendChild(script);
+  } else {
+    initSortable();
+  }
+  
+  function initSortable() {
+    const goalSelector = document.querySelector('.goal-selector');
+    
+    // Initialize Sortable on the goal selector
+    const sortable = new Sortable(goalSelector, {
+      handle: '.goal-drag-handle', // Only the handle starts dragging
+      animation: 150,
+      ghostClass: 'sortable-ghost', // Class for the drop placeholder
+      chosenClass: 'sortable-chosen', // Class for the chosen item
+      dragClass: 'sortable-drag', // Class for the dragging item
+      
+      // Called when the order changes
+      onEnd: function(evt) {
+        console.log('New goal order:');
+        const goals = document.querySelectorAll('.goal-btn');
+        goals.forEach((goal, index) => {
+          const goalTitle = goal.querySelector('.goal-title div');
+          if (goalTitle) {
+            console.log(`Position ${index + 1}: ${goalTitle.textContent}`);
+          }
+        });
+        
+        // Here you would typically save the new order to your server
+        // saveGoalOrder();
+      }
+    });
+    
+    // Add styling for the handles
+    document.querySelectorAll('.goal-drag-handle').forEach(handle => {
+      handle.style.cursor = 'grab';
+      
+      // Prevent the click event from triggering the goal selection
+      handle.addEventListener('click', e => {
+        e.stopPropagation();
+      });
+      
+      // Change cursor on mousedown
+      handle.addEventListener('mousedown', () => {
+        handle.style.cursor = 'grabbing';
+      });
+      
+      // Restore cursor on mouseup
+      document.addEventListener('mouseup', () => {
+        document.querySelectorAll('.goal-drag-handle').forEach(h => {
+          h.style.cursor = 'grab';
+        });
+      });
+    });
+  }
 });
 
   </script>
