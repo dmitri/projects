@@ -177,8 +177,8 @@
 
   .scroll-indicator {
     text-align: center;
-    font-size: .95rem;
-    font-weight: bold;
+    font-size: .85rem;
+    font-weight: normal;
     color: #555;
     width: 100%;
     position: absolute;
@@ -739,10 +739,14 @@
                     <div class="panel-inner" style="flex-direction: column; justify-content: flex-start;">
                       <h3 class="panel-heading" style="align-self: flex-start; margin-bottom: 2rem;">Goals</h3>
                       <div class="goal-selector-container" style="position: relative;">
-                      <div class="scroll-indicator scroll-up">Scroll for more <i class="fa fa-chevron-up"></i></div>
+                      <div class="scroll-indicator scroll-up"><i class="fa-light fa-computer-mouse-scrollwheel"></i> Scroll <i class="fa fa-chevron-up"></i> for more </div>
                       <div class="goal-selector" style="display: flex; flex-direction: column;">
                         <div class="goal-btn active align-items-center" data-goal="goal1">
-                          <div class="goal-drag-handle"><i class="fa fa-grip-dots-vertical"></i></div>
+                          <div class="goal-drag-handle"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-title="Drag to reorder.">
+                            <i class="fa fa-grip-dots-vertical"></i>
+                          </div>
                           <div>
                             <div class="progress-wrapper">
                               <svg class="progress-circle" viewBox="0 0 36 36">
@@ -769,8 +773,12 @@
                           </div>
                           <div class="goal-progress-bar"></div>
                         </div>
-                        <div class="goal-btn align-items-center" data-goal="goal2">
-                          <div class="goal-drag-handle"><i class="fa fa-grip-dots-vertical"></i></div>
+                        <div class="goal-btn align-items-center" data-goal="goal2" style="position:relative;">
+                          <div class="goal-drag-handle"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-title="Drag to reorder.">
+                            <i class="fa fa-grip-dots-vertical"></i>
+                          </div>
                           <div>  
                             <div class="progress-wrapper">
                               <svg class="progress-circle" viewBox="0 0 36 36">
@@ -786,6 +794,7 @@
                               <div class="goal-icon fa-stack fa-2x text-center">
                                 <i class="fa-light fa-briefcase"></i>
                               </div>
+                              <i class="fa-solid fa-circle-check" style="position: absolute; top: -2px; right: 37px; color: #06901f; background: #FFF;"></i>
                             </div>
                             <div class="goal-progress-count">150/100</div>
                           </div>
@@ -796,9 +805,14 @@
                             </div>
                             Generate 100 new jobs
                           </div>
+                          <!-- <i class="fa-light fa-party-horn" style="position: absolute; top: 5px; right: 5px; font-size: 3rem;"></i> -->
                         </div>
                         <div class="goal-btn align-items-center" data-goal="goal3">
-                          <div class="goal-drag-handle"><i class="fa fa-grip-dots-vertical"></i></div>
+                          <div class="goal-drag-handle"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-title="Drag to reorder.">
+                            <i class="fa fa-grip-dots-vertical"></i>
+                          </div>
                           <div>  
                             <div class="progress-wrapper">
                               <svg class="progress-circle" viewBox="0 0 36 36">
@@ -826,7 +840,11 @@
                           <div class="goal-progress-bar"></div>
                         </div>
                         <div class="goal-btn align-items-center" data-goal="goal4">
-                          <div class="goal-drag-handle"><i class="fa fa-grip-dots-vertical"></i></div>
+                          <div class="goal-drag-handle"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-title="Drag to reorder.">
+                            <i class="fa fa-grip-dots-vertical"></i>
+                          </div>
                           <div>  
                             <div class="progress-wrapper">
                               <svg class="progress-circle" viewBox="0 0 36 36">
@@ -854,7 +872,11 @@
                           <div class="goal-progress-bar"></div>
                         </div>
                         <div class="goal-btn align-items-center" data-goal="goal5">
-                          <div class="goal-drag-handle"><i class="fa fa-grip-dots-vertical"></i></div>
+                          <div class="goal-drag-handle"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-title="Drag to reorder.">
+                            <i class="fa fa-grip-dots-vertical"></i>
+                          </div>
                           <div>  
                             <div class="progress-wrapper">
                               <svg class="progress-circle" viewBox="0 0 36 36">
@@ -885,7 +907,7 @@
                           
                         </div>
                       </div>
-                      <div class="scroll-indicator scroll-down">Scroll for more <i class="fa fa-chevron-down"></i></div>
+                      <div class="scroll-indicator scroll-down"><i class="fa-light fa-computer-mouse-scrollwheel"></i> Scroll <i class="fa fa-chevron-down"></i> for more </div>
                     </div>
                     </div>
                   </div>
@@ -1486,54 +1508,79 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   function initSortable() {
-    const goalSelector = document.querySelector('.goal-selector');
+  const goalSelector = document.querySelector('.goal-selector');
+  
+  // Initialize Sortable on the goal selector
+  const sortable = new Sortable(goalSelector, {
+    handle: '.goal-drag-handle', // Only the handle starts dragging
+    animation: 150,
+    ghostClass: 'sortable-ghost', // Class for the drop placeholder
+    chosenClass: 'sortable-chosen', // Class for the chosen item
+    dragClass: 'sortable-drag', // Class for the dragging item
     
-    // Initialize Sortable on the goal selector
-    const sortable = new Sortable(goalSelector, {
-      handle: '.goal-drag-handle', // Only the handle starts dragging
-      animation: 150,
-      ghostClass: 'sortable-ghost', // Class for the drop placeholder
-      chosenClass: 'sortable-chosen', // Class for the chosen item
-      dragClass: 'sortable-drag', // Class for the dragging item
+    // Add these new event handlers
+    onStart: function(evt) {
+      // Disable tooltips when drag starts
+      document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+        const tooltip = bootstrap.Tooltip.getInstance(el);
+        if (tooltip) {
+          tooltip.dispose();
+        }
+      });
       
-      // Called when the order changes
-      onEnd: function(evt) {
-        console.log('New goal order:');
-        const goals = document.querySelectorAll('.goal-btn');
-        goals.forEach((goal, index) => {
-          const goalTitle = goal.querySelector('.goal-title div');
-          if (goalTitle) {
-            console.log(`Position ${index + 1}: ${goalTitle.textContent}`);
-          }
+      // Change cursor to grabbing
+      document.querySelectorAll('.goal-drag-handle').forEach(h => {
+        h.style.cursor = 'grabbing';
+      });
+    },
+    
+    // Called when the order changes
+    onEnd: function(evt) {
+      console.log('New goal order:');
+      const goals = document.querySelectorAll('.goal-btn');
+      goals.forEach((goal, index) => {
+        const goalTitle = goal.querySelector('.goal-title div');
+        if (goalTitle) {
+          console.log(`Position ${index + 1}: ${goalTitle.textContent}`);
+        }
+      });
+      
+      // Restore cursor style
+      document.querySelectorAll('.goal-drag-handle').forEach(h => {
+        h.style.cursor = 'grab';
+      });
+      
+      // Wait for sortable to complete all operations then reinitialize tooltips
+      setTimeout(() => {
+        document.querySelectorAll('.goal-drag-handle').forEach(h => {
+          h.setAttribute('data-bs-toggle', 'tooltip');
         });
         
-        // Here you would typically save the new order to your server
-        // saveGoalOrder();
-      }
-    });
-    
-    // Add styling for the handles
-    document.querySelectorAll('.goal-drag-handle').forEach(handle => {
-      handle.style.cursor = 'grab';
-      
-      // Prevent the click event from triggering the goal selection
-      handle.addEventListener('click', e => {
-        e.stopPropagation();
-      });
-      
-      // Change cursor on mousedown
-      handle.addEventListener('mousedown', () => {
-        handle.style.cursor = 'grabbing';
-      });
-      
-      // Restore cursor on mouseup
-      document.addEventListener('mouseup', () => {
-        document.querySelectorAll('.goal-drag-handle').forEach(h => {
-          h.style.cursor = 'grab';
+        // Reinitialize all tooltips
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+          new bootstrap.Tooltip(el);
         });
-      });
+      }, 500);
+      
+      // Here you would typically save the new order to your server
+      // saveGoalOrder();
+    }
+  });
+  
+  // Add styling for the handles - Keep only the basic styling
+  document.querySelectorAll('.goal-drag-handle').forEach(handle => {
+    handle.style.cursor = 'grab';
+    
+    // Prevent the click event from triggering the goal selection
+    handle.addEventListener('click', e => {
+      e.stopPropagation();
     });
-  }
+  });
+  
+  // Initial tooltip setup
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+}
 });
 
   </script>
