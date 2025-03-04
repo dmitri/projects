@@ -31,6 +31,7 @@
 </script>
     
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 <style>
 
   h2, h3, h4, h5, h6 {
@@ -87,7 +88,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-    margin: 20px auto;
+    margin: 50px auto;
     width: 100%;
   }
 
@@ -111,53 +112,6 @@
     .grid-container-agency {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-  }
-
-  .goal-btn {
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 1.25rem 1rem;
-    border-bottom: 2px solid #f6f6fb;
-  }
-
-  .goal-btn:first-child {
-    border-top: 1px solid #f6f6fb;
-  }
-
-  .goal-btn.active {
-    background: #f6f6fb;
-    border-radius: 5px;
-    border-color:transparent;
-  }
-
-  .goal-drag-handle {
-    cursor: grab;
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-
-  .goal-title {
-    font-size: .9rem;
-    text-transform: uppercase;
-    font-weight: 800;
-    padding-bottom:.25rem;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .goal-progress-count {
-    font-size: .85rem;
-    font-weight: 400;
-    text-align: center;
-    padding-top: .25rem;
-  }
-
-  .goal-label {
-    line-height: 1.3;
-    width: 100%;
   }
 
   .fa-light.fa-circle {
@@ -265,6 +219,286 @@
   .panel-heading {
     align-self: flex-start; margin-bottom: 2rem;
   }
+
+  .chart-container-combined {
+    width: 100%;
+  }
+
+  #combinedAgencyChart {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .time-period-selector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.time-period-label {
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.time-period-options {
+  display: flex;
+  gap: 10px;
+}
+
+.time-btn.active {
+  background-color: rgb(var(--c-primary));
+  color: white;
+  border-color: rgb(var(--c-primary));
+}
+
+.metrics-card-number {
+  font-size: 3rem; font-weight: bold; line-height: 3rem; padding-top: .5rem;
+}
+
+.metrics-card-percentage {
+   display: flex; justify-content: center; align-items: center; flex-direction: row;
+   padding-top: .5rem;
+   font-size: 1.25rem;
+}
+
+.metrics-card-percentage-positive {
+  color: #468b5b;
+}
+
+.metrics-card-percentage-negative {
+  color: #ee233b;
+}
+
+.metrics-card-change {
+  font-size: .9rem; color: #444;
+}
+
+.metrics-card .metrics-card-title-wrapper .title {
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+/* Add this CSS to create a subtle animation when metrics cards update */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.metrics-card-updating {
+  animation: pulse 0.5s ease;
+}
+
+.metrics-card-percentage-positive {
+  color: #4CAF50;
+}
+
+.metrics-card-percentage-negative {
+  color: #F44336;
+}
+
+/* Ensure the metrics card elements have transitions for smooth updates */
+.metrics-card-number, 
+.metrics-card-percentage-number {
+  transition: all 0.3s ease;
+}
+
+/* Custom Date Button */
+.time-btn[data-period="custom"] {
+  position: relative;
+}
+
+/* Calendar Popup */
+.calendar-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-popup.active {
+  display: flex;
+}
+
+.calendar-popup-content {
+  background-color: white;
+  border-radius: 6px;
+  width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.calendar-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.calendar-body {
+  padding: 20px;
+}
+
+.date-group {
+  margin-bottom: 15px;
+}
+
+.date-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.date-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.calendar-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+
+.btn-cancel, 
+.btn-apply {
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn-cancel {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.btn-apply {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* When a custom range is active */
+.time-btn.active[data-period="custom"]::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+}
+
+.time-period-options {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.inline-date-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-input-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.date-input {
+  width: 150px;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.date-separator {
+  margin: 0 5px;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .time-period-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .inline-date-selector {
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .date-input-group {
+    flex-grow: 1;
+  }
+  
+  .date-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .date-input-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .inline-date-selector {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .date-input {
+    width: 100%;
+  }
+  
+  #applyDateRange {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.active-date-input {
+  border-color: #4CAF50 !important;
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25) !important;
+}
 
 </style>
 </head>
@@ -742,35 +976,120 @@
                         </div>
                     </div>
                 </div>
+                <div class="time-period-selector" style=" background: #FFF; border-radius: 8px; padding: 1rem;">
+                  <div class="time-period-label">Time Period:</div>
+                  <div class="time-period-options">
+                    <button class="time-btn btn btn-outline-primary" data-period="week">This Week</button>
+                    <button class="time-btn btn btn-outline-primary active" data-period="month">This Month</button>
+                    <button class="time-btn btn btn-outline-primary" data-period="quarter">This Quarter</button>
+                    <button class="time-btn btn btn-outline-primary" data-period="year">This Year</button>
+                    - or -
+                    <!-- Inline date range selector -->
+                    <div class="inline-date-selector">
+                      <div class="date-input-group">
+                        <input type="date" id="startDate" class="date-input form-control">
+                        <span class="date-separator">to</span>
+                        <input type="date" id="endDate" class="date-input form-control">
+                      </div>
+                      <button id="applyDateRange" class="btn btn-outline-primary">Apply</button>
+                    </div>
+                  </div>
+                </div>
                 <div class="grid-container">
+                  <div>
+                    <div class="panel metrics-card c-2">
+                      <div class="metrics-card-title-wrapper">
+                        <div class="metrics-card-icon">
+                          <i class="fa-solid fa-triangle-exclamation" style="color: #8a4b6f;" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Projects Out of Compliance</div>
+                      </div>
 
-                  <div class="panel">
-                    <div class="panel-inner">
-                      <h3 class="panel-heading">Projects Out of Compliance</h3>
+                      <div class="metrics-card-content text-center">
+                        <div class="metrics-card-number">23</div>
+                        <div class="metrics-card-percentage metrics-card-percentage-positive text-center">
+                          ↑
+                          <div class="metrics-card-percentage-number">25%</div>
+                        </div>
+                        <div class="metrics-card-change">vs previous 30 days</div>
+                      </div>
+                    </div>
+                    <div class="metrics-card-footer c-2">
+                      <a href="#" class="metrics-card-cta">See All <i class="fa-light fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                   </div>
-                  
-       
-                  <div class="panel">
-                    <div class="panel-inner">
-                      <h3 class="panel-heading">Total Activities</h3>
+
+                  <div>
+                    <div class="panel metrics-card c-4">
+                      <div class="metrics-card-title-wrapper">
+                        <div class="metrics-card-icon">
+                          <i class="fa-solid fa-list-check" style="color: #3862e5;" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Total Activities</div>
+                      </div>
+
+                      <div class="metrics-card-content text-center">
+                        <div class="metrics-card-number">86</div>
+                        <div class="metrics-card-percentage metrics-card-percentage-positive text-center">
+                          ↑
+                          <div class="metrics-card-percentage-number">23%</div>
+                        </div>
+                        <div class="metrics-card-change">vs previous 30 days</div>
+                        
+                      </div>
+                    </div>
+                    <div class="metrics-card-footer c-4">
+                      <a href="#" class="metrics-card-cta">See All <i class="fa-light fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                   </div>
-                  
-                
-                  <div class="panel">
-                    <div class="panel-inner">
-                      <h3 class="panel-heading">Upcoming Timeline Events</h3>
+
+                  <div>
+                    <div class="panel metrics-card c-4">
+                      <div class="metrics-card-title-wrapper">
+                        <div class="metrics-card-icon">
+                          <i class="fa-solid fa-calendar-clock" style="color:#3862e5;" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Upcoming Timeline Events</div>
+                      </div>
+
+                      <div class="metrics-card-content text-center">
+                        <div class="metrics-card-number">70</div>
+                        <div class="metrics-card-percentage metrics-card-percentage-positive text-center">
+                          ↑
+                          <div class="metrics-card-percentage-number">8.7%</div>
+                        </div>
+                        <div class="metrics-card-change">vs previous 30 days</div>
+                        
+                      </div>
+                    </div>
+                    <div class="metrics-card-footer c-4">
+                      <a href="#" class="metrics-card-cta">See All <i class="fa-light fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                   </div>
-                  
-               
-                  <div class="panel">
-                    <div class="panel-inner">
-                      <h3 class="panel-heading">Goal Progress</h3>
+
+                  <div>
+                    <div class="panel metrics-card c-6">
+                      <div class="metrics-card-title-wrapper">
+                        <div class="metrics-card-icon">
+                          <i class="fa-solid fa-bars-progress" style="color:#468b5b;" aria-hidden="true"></i>
+                        </div>
+                        <div class="title">Goal Progress</div>
+                      </div>
+
+                      <div class="metrics-card-content text-center">
+                        <div class="metrics-card-number">9</div>
+                        <div class="metrics-card-percentage metrics-card-percentage-negative text-center">
+                          ↓
+                          <div class="metrics-card-percentage-number">2.5%</div>
+                        </div>
+                        <div class="metrics-card-change">vs previous 30 days</div>
+                        
+                      </div>
+                    </div>
+                    <div class="metrics-card-footer c-6">
+                      <a href="#" class="metrics-card-cta">See All <i class="fa-light fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                   </div>
-                  
                 </div>
                 <div class="two-column-grid">
                   <div class="panel">
@@ -787,177 +1106,9 @@
                   <div class="panel">
                     <div class="panel-inner">
                       <h3 class="panel-heading">Multi-Agency Activities</h3>
-                      <div class="goal-selector-container" style="position: relative;">
-                      <div class="scroll-indicator scroll-up"><i class="fa-light fa-computer-mouse-scrollwheel"></i> Scroll <i class="fa fa-chevron-up"></i> for more </div>
-                      <div class="goal-selector" style="display: flex; flex-direction: column;">
-                        <div class="goal-btn active align-items-center" data-goal="goal1">
-                          <div class="goal-drag-handle"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-title="Drag to reorder">
-                            <i class="fa fa-grip-dots-vertical"></i>
-                          </div>
-                          <div>
-                            <div class="progress-wrapper">
-                              <svg class="progress-circle" viewBox="0 0 36 36">
-                                <!-- Background circle track -->
-                                <circle cx="18" cy="18" r="16" stroke="#DDD" stroke-width="2"></circle>
-                                
-                                <!-- Progress circle -->
-                                <circle id="progress" cx="18" cy="18" r="16" stroke="#4CAF50" stroke-width="2"
-                                        stroke-dasharray="100" stroke-dashoffset="7.54">
-                                </circle>
-                              </svg>
-                              
-                              <div class="goal-icon fa-stack fa-2x text-center">
-                                <i class="fa-light fa-home"></i>
-                              </div>
-                            </div>
-                            <div class="goal-progress-count text-center">37/40</div>
-                          </div>
-                          <div class="goal-label">
-                            <div class="goal-title">
-                              <div>Goal 1</div>
-                            </div>
-                            Increase number of affordable housing units
-                          </div>
-                          <div class="goal-progress-bar"></div>
-                        </div>
-                        <div class="goal-btn align-items-center" data-goal="goal2" style="position:relative;">
-                          <div class="goal-drag-handle"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-title="Drag to reorder">
-                            <i class="fa fa-grip-dots-vertical"></i>
-                          </div>
-                          <div>  
-                            <div class="progress-wrapper">
-                              <svg class="progress-circle" viewBox="0 0 36 36">
-                                <!-- Background circle track -->
-                                <circle cx="18" cy="18" r="16" stroke="#DDD" stroke-width="2"></circle>
-                                
-                                <!-- Progress circle -->
-                                <circle id="progress" cx="18" cy="18" r="16" stroke="#4CAF50" stroke-width="2"
-                                        stroke-dasharray="100" stroke-dashoffset="0">
-                                </circle>
-                              </svg>
-                              
-                              <div class="goal-icon fa-stack fa-2x text-center">
-                                <i class="fa-light fa-briefcase"></i>
-                              </div>
-                              <i class="fa-light fa-circle-check" style="font-weight: 500; position: absolute; top: -2px; right: 37px; color: #06901f; background: #FFF;"></i>
-                            </div>
-                            <div class="goal-progress-count">150/100</div>
-                          </div>
-                          <div class="goal-label">
-                            <div class="goal-title">
-                              <div>Goal 2</div>
-                              
-                            </div>
-                            Generate 100 new jobs
-                          </div>
-                          <!-- <i class="fa-light fa-party-horn" style="position: absolute; top: 5px; right: 5px; font-size: 3rem;"></i> -->
-                        </div>
-                        <div class="goal-btn align-items-center" data-goal="goal3">
-                          <div class="goal-drag-handle"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-title="Drag to reorder">
-                            <i class="fa fa-grip-dots-vertical"></i>
-                          </div>
-                          <div>  
-                            <div class="progress-wrapper">
-                              <svg class="progress-circle" viewBox="0 0 36 36">
-                                <!-- Background circle track -->
-                                <circle cx="18" cy="18" r="16" stroke="#DDD" stroke-width="2"></circle>
-                                
-                                <!-- Progress circle -->
-                                <circle id="progress" cx="18" cy="18" r="16" stroke="#4CAF50" stroke-width="2"
-                                        stroke-dasharray="100" stroke-dashoffset="55">
-                                </circle>
-                              </svg>
-                              
-                              <div class="goal-icon fa-stack fa-2x text-center">
-                                <i class="fa-light fa-seedling"></i>
-                              </div>
-                            </div>
-                            <div class="goal-progress-count">$425k/$1M</div>
-                          </div>
-                          <div class="goal-label">
-                            <div class="goal-title">
-                              <div>Goal 3</div>
-                            </div>
-                            Secure $1M in new capital investment
-                          </div>
-                          <div class="goal-progress-bar"></div>
-                        </div>
-                        <div class="goal-btn align-items-center" data-goal="goal4">
-                          <div class="goal-drag-handle"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-title="Drag to reorder">
-                            <i class="fa fa-grip-dots-vertical"></i>
-                          </div>
-                          <div>  
-                            <div class="progress-wrapper">
-                              <svg class="progress-circle" viewBox="0 0 36 36">
-                                <!-- Background circle track -->
-                                <circle cx="18" cy="18" r="16" stroke="#DDD" stroke-width="2"></circle>
-                                
-                                <!-- Progress circle -->
-                                <circle id="progress" cx="18" cy="18" r="16" stroke="#4CAF50" stroke-width="2"
-                                        stroke-dasharray="100" stroke-dashoffset="60.32">
-                                </circle>
-                              </svg>
-                              
-                              <div class="goal-icon fa-stack fa-2x text-center">
-                                <i class="fa-light fa-buildings"></i>
-                              </div>
-                            </div>
-                            <div class="goal-progress-count">2/5</div>
-                          </div>
-                          <div class="goal-label">
-                            <div class="goal-title">
-                              <div>Goal 4</div>
-                            </div>
-                            Attract small businesses and startups
-                          </div>
-                          <div class="goal-progress-bar"></div>
-                        </div>
-                        <div class="goal-btn align-items-center" data-goal="goal5">
-                          <div class="goal-drag-handle"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-title="Drag to reorder">
-                            <i class="fa fa-grip-dots-vertical"></i>
-                          </div>
-                          <div>  
-                            <div class="progress-wrapper">
-                              <svg class="progress-circle" viewBox="0 0 36 36">
-                                <!-- Background circle track -->
-                                <circle cx="18" cy="18" r="16" stroke="#DDD" stroke-width="2"></circle>
-                                
-                                <!-- Progress circle -->
-                                <circle id="progress" cx="18" cy="18" r="16" stroke="#4CAF50" stroke-width="2"
-                                        stroke-dasharray="100" stroke-dashoffset="50">
-                                </circle>
-                              </svg>
-                              
-                              <div class="goal-icon fa-stack fa-2x text-center">
-                                <i class="fa-light fa-bench-tree"></i>
-                              </div>
-                            </div>
-                            <div class="goal-progress-count">1/2</div>
-                          </div>
-                          <div class="goal-label">
-                            <div>
-                              <div class="goal-title">
-                                <div>Goal 5</div>
-                              </div>
-                              Increased green spaces
-                            </div>
-                          </div>
-                          <div class="goal-progress-bar"></div>
-                          
-                        </div>
+                      <div class="chart-container-combined">
+                        <div id="combinedAgencyChart"></div>
                       </div>
-                      <div class="scroll-indicator scroll-down"><i class="fa-light fa-computer-mouse-scrollwheel"></i> Scroll <i class="fa fa-chevron-down"></i> for more </div>
-                    </div>
                     </div>
                   </div>
                 </div>
@@ -968,17 +1119,73 @@
         </div>
     </div>
 </div>
-
-
-
-  <script
+<script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   <script src="src/application.js"></script>
+  <script src="../js/chart-script.js"></script>
   <script>
+    // Function to generate appropriate date categories based on the time period
+function generateTimeBasedCategories(timePeriod) {
+  const today = new Date();
+  const categories = [];
+  
+  switch(timePeriod) {
+    case 'week':
+      // Daily labels for the past 7 days
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(today.getDate() - i);
+        
+        // Format as "Mon, Tue, Wed, etc."
+        const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+        categories.push(dayName);
+      }
+      break;
+      
+    case 'month':
+      // Weekly labels for the past 4 weeks
+      for (let i = 3; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(today.getDate() - (i * 7));
+        
+        // Format as M/D (e.g., 2/26)
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        categories.push(`${month}/${day}`);
+      }
+      break;
+      
+    case 'quarter':
+      // Monthly labels for the past 3 months
+      for (let i = 2; i >= 0; i--) {
+        const date = new Date(today);
+        date.setMonth(today.getMonth() - i);
+        
+        // Format as "Jan", "Feb", etc.
+        const monthName = date.toLocaleDateString('en-US', { month: 'short' });
+        categories.push(monthName);
+      }
+      // Add "Now"
+      categories.push('Now');
+      break;
+      
+    case 'year':
+      // Quarterly labels for the past year
+      const currentQuarter = Math.floor(today.getMonth() / 3) + 1;
+      for (let i = 3; i >= 0; i--) {
+        let quarterNum = currentQuarter - i;
+        if (quarterNum <= 0) quarterNum += 4; // Wrap around to Q4 if needed
+        categories.push(`Q${quarterNum}`);
+      }
+      break;
+  }
+  
+  return categories;
+}
 // Function to parse ratio strings into numerical values
 function parseRatio(ratioStr) {
   // Handle different formats of ratios
@@ -1040,98 +1247,224 @@ function generateDateCategories() {
 // Common x-axis categories for all charts
 const categories = generateDateCategories();
 
-// Data for different goals
-const goalData = {
-  "goal1": {
-    "chart1": [32, 96, 82, 100],
-    "chart2": [24, 44, 16, 88],
-    "chart3": [1, 17, 3, 1],
-    "chart4": [2, 10, 7, 6],
-    "chart5": [5, 25, 50, 5],
-    "chart6": [0, 0, 6, 0],
-    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
-    "chart8": [880, 882, 875, 880],
-    "chart9": [10, 50, 0, 8],
-    "chart10": [100000, 111000, 111581, 231088],
-    "chart11": [5, 6, 3, 1],
-    "chart12": [44, 44, 49, 49],
-    "chart13": [44, 44, 49, 49],
-    "chart14": [0, 2, 2, 0]
+// Define data for the metrics cards for each time period
+const metricsCardsData = {
+  "week": [
+    {
+      number: 8,
+      percentage: 12,
+      positive: true
+    },
+    {
+      number: 15,
+      percentage: -5,
+      positive: false
+    },
+    {
+      number: 4,
+      percentage: 20,
+      positive: true
+    },
+    {
+      number: 32,
+      percentage: 8,
+      positive: true
+    }
+  ],
+  "month": [
+    {
+      number: 23,
+      percentage: 27,
+      positive: true
+    },
+    {
+      number: 86,
+      percentage: 25,
+      positive: true
+    },
+    {
+      number: 70,
+      percentage: 8.7,
+      positive: true
+    },
+    {
+      number: 9,
+      percentage: 2.5,
+      positive: false
+    }
+  ],
+  "quarter": [
+    {
+      number: 65,
+      percentage: 32,
+      positive: true
+    },
+    {
+      number: 142,
+      percentage: 22,
+      positive: true
+    },
+    {
+      number: 37,
+      percentage: -12,
+      positive: false
+    },
+    {
+      number: 254,
+      percentage: 45,
+      positive: true
+    }
+  ],
+  "year": [
+    {
+      number: 245,
+      percentage: 28,
+      positive: true
+    },
+    {
+      number: 520,
+      percentage: -3,
+      positive: false
+    },
+    {
+      number: 128,
+      percentage: 42,
+      positive: true
+    },
+    {
+      number: 980,
+      percentage: 65,
+      positive: true
+    }
+  ]
+};
+
+const timePeriodsData = {
+  "week": {
+    // Agency data (for combinedAgencyChart)
+    "chart1": [42, 50, 31, 45], // Total
+    "chart2": [28, 32, 18, 30], // City Economic Development
+    "chart3": [15, 10, 5, 12], // EDO
+    "chart4": [8, 6, 10, 9], // Chamber
+    "chart5": [15, 12, 14, 18], // Downtown Association
+    "chart6": [4, 2, 7, 6], // Consultant
+    
+    // Indicator charts
+    "chart7": ["1:3.5", "1:4.2", "1:3.8", "1:4.5"], // Investment Ratio
+    "chart8": [25, 28, 22, 24], // Business Count
+    "chart11": [12, 15, 10, 14], // Leads
+    "chart12": [8, 10, 7, 9]  // Projects
   },
-  "goal2": {
-    "chart1": [12, 27, 31, 55],
-    "chart2": [100, 61, 31, 73],
-    "chart3": [58, 27, 97, 91],
-    "chart4": [45, 18, 2, 70],
-    "chart5": [50, 4, 98, 45],
-    "chart6": [20, 37, 76, 22],
-    "chart7": ["2:3", "01:05.1", "1:06", "1:065"], // Use ratio strings here
-    "chart8": [5, 52, 1, 22],
-    "chart9": [56, 8, 78, 67],
-    "chart10": [121000, 141000, 171581, 231088],
-    "chart11": [48, 100, 98, 17],
-    "chart12": [79, 4, 54, 36],
-    "chart13": [71, 10, 54, 51],
-    "chart14": [75, 82, 100, 27]
+  
+  "month": {
+    // Agency data (for combinedAgencyChart)
+    "chart1": [32, 96, 82, 100], // Total
+    "chart2": [24, 44, 16, 88], // City Economic Development
+    "chart3": [1, 17, 3, 1], // EDO
+    "chart4": [2, 10, 7, 6], // Chamber
+    "chart5": [5, 25, 50, 5], // Downtown Association
+    "chart6": [0, 0, 6, 0], // Consultant
+    
+    // Indicator charts
+    "chart7": ["1:5", "1:5.1", "1:6", "1:6.5"], // Investment Ratio
+    "chart8": [880, 882, 875, 880], // Business Count
+    "chart11": [5, 6, 3, 1], // Leads
+    "chart12": [44, 44, 49, 49]  // Projects
   },
-  "goal3": {
-    "chart1": [81, 37, 15, 44],
-    "chart2": [63, 78, 47, 12],
-    "chart3": [14, 16, 62, 38],
-    "chart4": [100, 79, 32, 80],
-    "chart5": [49, 2, 81, 86],
-    "chart6": [70, 19, 42, 24],
-    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
-    "chart8": [0, 86, 40, 45],
-    "chart9": [70, 49, 27, 51],
-    "chart10": [233000, 154000, 111581, 544088],
-    "chart11": [97, 7, 69, 14],
-    "chart12": [23, 74, 86, 40],
-    "chart13": [85, 72, 9, 8],
-    "chart14": [82, 81, 50, 79]
+  
+  "quarter": {
+    // Agency data (for combinedAgencyChart)
+    "chart1": [120, 135, 142, 150], // Total
+    "chart2": [80, 85, 78, 95], // City Economic Development
+    "chart3": [25, 28, 30, 22], // EDO
+    "chart4": [35, 38, 42, 40], // Chamber
+    "chart5": [50, 48, 52, 55], // Downtown Association
+    "chart6": [18, 20, 12, 15], // Consultant
+    
+    // Indicator charts
+    "chart7": ["1:4.8", "1:5.2", "1:4.6", "1:5.0"], // Investment Ratio
+    "chart8": [950, 975, 980, 1000], // Business Count
+    "chart11": [18, 22, 20, 24], // Leads
+    "chart12": [65, 70, 72, 68]  // Projects
   },
-  "goal4": {
-    "chart1": [43, 69, 75, 46],
-    "chart2": [92, 63, 23, 6],
-    "chart3": [90, 1, 24, 8],
-    "chart4": [81, 69, 21, 45],
-    "chart5": [90, 53, 38, 59],
-    "chart6": [11, 5, 8, 65],
-    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
-    "chart8": [41, 54, 74, 76],
-    "chart9": [5, 45, 0, 41],
-    "chart10": [323000, 341000, 221581, 676088],
-    "chart11": [80, 46, 95, 81],
-    "chart12": [87, 16, 21, 92],
-    "chart13": [94, 60, 1, 25],
-    "chart14": [86, 93, 58, 73]
-  },
-  "goal5": {
-    "chart1": [7, 22, 38, 72],
-    "chart2": [88, 53, 92, 57],
-    "chart3": [43, 70, 2, 37],
-    "chart4": [14, 30, 39, 70],
-    "chart5": [25, 7, 48, 44],
-    "chart6": [37, 20, 58, 31],
-    "chart7": ["1:5", "01:05.1", "1:06", "1:065"], // Use ratio strings here
-    "chart8": [45, 76, 8, 61],
-    "chart9": [57, 53, 90, 68],
-    "chart10": [130000, 101000, 103581, 555088],
-    "chart11": [46, 20, 56, 69],
-    "chart12": [50, 51, 87, 56],
-    "chart13": [68, 90, 92, 86],
-    "chart14": [43, 58, 10, 71]
+  
+  "year": {
+    // Agency data (for combinedAgencyChart)
+    "chart1": [420, 480, 510, 550], // Total
+    "chart2": [280, 320, 350, 380], // City Economic Development
+    "chart3": [90, 85, 95, 100], // EDO
+    "chart4": [110, 120, 100, 130], // Chamber
+    "chart5": [150, 160, 170, 165], // Downtown Association
+    "chart6": [60, 55, 65, 70], // Consultant
+    
+    // Indicator charts
+    "chart7": ["1:5.5", "1:6.0", "1:5.8", "1:6.2"], // Investment Ratio
+    "chart8": [1200, 1250, 1300, 1350], // Business Count
+    "chart11": [75, 80, 85, 90], // Leads
+    "chart12": [220, 230, 240, 250]  // Projects
   }
 };
 
-// Process the ratio data for all charts and goals
-function processAllRatioData(data) {
+// Function to update metrics cards based on time period
+function updateMetricsCards(timePeriod) {
+  // Get all metrics cards
+  const metricsCards = document.querySelectorAll('.metrics-card-content');
+  
+  // Define comparison text for each time period
+  const comparisonText = {
+    "week": "vs previous 7 days",
+    "month": "vs previous 30 days",
+    "quarter": "vs previous quarter",
+    "year": "year over year"
+  };
+  
+  // Update each metrics card with data from the selected time period
+  metricsCards.forEach((card, index) => {
+    // Get card elements
+    const numberElement = card.querySelector('.metrics-card-number');
+    const percentageElement = card.querySelector('.metrics-card-percentage');
+    const percentageNumberElement = card.querySelector('.metrics-card-percentage-number');
+    const changeElement = card.querySelector('.metrics-card-change');
+    
+    // Get data for this card
+    const cardData = metricsCardsData[timePeriod][index];
+    
+    // Update number
+    numberElement.textContent = cardData.number;
+    
+    // Update percentage and its styling
+    percentageNumberElement.textContent = `${Math.abs(cardData.percentage)}%`;
+    
+    // Update arrow and class for positive/negative
+    if (cardData.positive) {
+      percentageElement.classList.remove('metrics-card-percentage-negative');
+      percentageElement.classList.add('metrics-card-percentage-positive');
+      percentageElement.innerHTML = `↑<div class="metrics-card-percentage-number">${Math.abs(cardData.percentage)}%</div>`;
+    } else {
+      percentageElement.classList.remove('metrics-card-percentage-positive');
+      percentageElement.classList.add('metrics-card-percentage-negative');
+      percentageElement.innerHTML = `↓<div class="metrics-card-percentage-number">${Math.abs(cardData.percentage)}%</div>`;
+    }
+    
+    // Update comparison text
+    changeElement.textContent = comparisonText[timePeriod];
+    
+    // Add a subtle animation for the update
+    card.classList.add('metrics-card-updating');
+    setTimeout(() => {
+      card.classList.remove('metrics-card-updating');
+    }, 500);
+  });
+}
+
+// Process the ratio data for all time periods
+function processAllTimePeriodRatioData(data) {
   const processedData = JSON.parse(JSON.stringify(data));
   
-  // Process chart7 for all goals
-  for (const goal in processedData) {
-    if (processedData[goal] && processedData[goal].chart7) {
-      processedData[goal].chart7 = processedData[goal].chart7.map(val => parseRatio(val));
+  // Process chart7 for all time periods
+  for (const period in processedData) {
+    if (processedData[period] && processedData[period].chart7) {
+      processedData[period].chart7 = processedData[period].chart7.map(val => parseRatio(val));
     }
   }
   
@@ -1139,201 +1472,89 @@ function processAllRatioData(data) {
 }
 
 // Process all the data up front
-const processedGoalData = processAllRatioData(goalData);
+const processedTimePeriodsData = processAllTimePeriodRatioData(timePeriodsData);
 
-// Chart colors
-const chartColors = {
-  chart1: '#008FFB',
-  chart2: '#00E396',
-  chart3: '#FEB019',
-  chart4: '#FF4560',
-  chart5: '#775DD0',
-  chart6: '#2E93fA',
-  chart7: '#4CAF50',
-  chart8: '#9C27B0',
-  chart9: '#FF9800',
-  chart10: '#607D8B',
-  chart11: '#E91E63',
-  chart12: '#3F51B5',
-  chart13: '#CDDC39',
-  chart14: '#795548'
-};
+// Main charts initialization code
+document.addEventListener('DOMContentLoaded', function() {
+  // Store charts in a global array for easy access
+  const charts = [];
 
-// Chart titles
-const chartTitles = {
-  chart1: 'Total',
-  chart2: 'City Economic Development',
-  chart3: 'EDO',
-  chart4: 'Chamber',
-  chart5: 'Downtown Association',
-  chart6: 'Consultant',
-  chart7: 'Investment Ratio (Public to Private)',
-  chart8: 'Business Count',
-  chart9: 'Jobs Created',
-  chart10: 'Capital Investment',
-  chart11: 'Leads',
-  chart12: 'Projects',
-  chart13: 'Agreements',
-  chart14: 'Events'
-};
-
-// Initialize all charts
-// To implement this change, you'll need to modify your chart initialization loop.
-// Here's how to integrate the new chart7 bar chart into your existing code:
-
-// 1. Find your chart initialization loop (where you create all 14 charts)
-// 2. Replace it with this structure:
-
-// Initialize all charts
-for (let i = 1; i <= 14; i++) {
-  const chartId = `chart${i}`;
-  
-  // Special handling for chart7 (ratio chart)
-  if (i === 7) {
-  // Transform ratio data into public and private parts
-  // Using percentage-based approach to ensure visibility
-  const publicData = [];
-  const privateData = [];
-  
-  processedGoalData.goal1[chartId].forEach(ratio => {
-    // Calculate percentage split
-    const total = 1 + 1/ratio;
-    const publicPct = (1/total) * 100;
-    const privatePct = ((1/ratio)/total) * 100;
+  // Generate date categories based on the current date
+  function generateDateCategories() {
+    const today = new Date();
+    const categories = [];
     
-    publicData.push(publicPct);
-    privateData.push(privatePct);
-  });
-  
-  const options = {
-    series: [{
-      name: 'Public Investment',
-      data: publicData
-    }, {
-      name: 'Private Investment',
-      data: privateData
-    }],
-    chart: {
-      type: 'bar',
-      height: 200,
-      stacked: true,
-      stackType: '100%', // Makes all bars uniform height
-      toolbar: {
-        show: false
-      },
-      animations: {
-        enabled: true,
-        easing: 'easeinout',
-        speed: 800,
-        animateGradually: {
-          enabled: true,
-          delay: 150
-        },
-        dynamicAnimation: {
-          enabled: true,
-          speed: 350
-        }
-      }
-    },
-    colors: ['#4CAF50', '#8BC34A'], // Green shades for public/private
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: '60%',
-      }
-    },
-    dataLabels: {
-      enabled: true,
-      formatter: function(val, opt) {
-        // For the percentage display, calculate the ratio
-        const seriesIndex = opt.seriesIndex;
-        const dataPointIndex = opt.dataPointIndex;
-        const ratio = processedGoalData.goal1[chartId][dataPointIndex];
-        
-        if (seriesIndex === 0) { // Public investment
-          return '$1';
-        } else { // Private investment
-          return '$' + (1/ratio).toFixed(2);
-        }
-      },
-      style: {
-        fontSize: '11px',
-        fontWeight: 'normal',
-        colors: ['#000', '#000'] // Black for public (might be small), white for private
-      }
-    },
-    stroke: {
-      width: 1,
-      colors: ['#fff']
-    },
-    title: {
-      text: 'Public vs. Private Investment Ratio',
-      align: 'left',
-      style: {
-        fontSize: '14px'
-      }
-    },
-    grid: {
-      row: {
-        colors: ['#f3f3f3', 'transparent'],
-        opacity: 0.5
-      },
-      borderColor: '#f1f1f1'
-    },
-    xaxis: {
-      categories: categories,
-      labels: {
-        style: {
-          fontSize: '10px'
-        }
-      }
-    },
-    yaxis: {
-      labels: {
-        style: {
-          fontSize: '10px'
-        },
-        formatter: function(val) {
-          return val.toFixed(0) + '%';
-        }
-      }
-    },
-    tooltip: {
-      shared: true,
-      intersect: false, // This explicitly sets intersect to false to avoid the conflict
-      y: {
-        formatter: function(val, opt) {
-          if (opt.seriesIndex === 0) {
-            return 'Public: $1 (' + val.toFixed(2) + '%)';
-          } else {
-            const dataPointIndex = opt.dataPointIndex;
-            const ratio = processedGoalData.goal1[chartId][dataPointIndex];
-            return 'Private: $' + (1/ratio).toFixed(2) + ' (' + val.toFixed() + '%)';
-          }
-        }
-      }
-    },
-    legend: {
-      position: 'top',
-      fontSize: '12px'
+    // Get the 4 weeks, going backward from today
+    for (let i = 3; i >= 0; i--) {
+      // Clone today's date and subtract weeks
+      const date = new Date(today);
+      date.setDate(today.getDate() - (i * 7));
+      
+      // Format as M/D/YY (e.g., 2/26/25)
+      const month = date.getMonth() + 1; // Months are 0-indexed
+      const day = date.getDate();
+      const year = date.getFullYear().toString().slice(-2); // Get last 2 digits
+      
+      categories.push(`${month}/${day}/${year}`);
     }
+    
+    return categories;
+  }
+
+  // Common x-axis categories for all charts
+  const categories = generateDateCategories();
+
+  // Chart colors
+  const chartColors = {
+    chart1: '#008FFB',
+    chart2: '#00E396',
+    chart3: '#FEB019',
+    chart4: '#FF4560',
+    chart5: '#775DD0',
+    chart6: '#2E93fA',
+    chart7: '#4CAF50',
+    chart8: '#9C27B0',
+    chart11: '#E91E63',
+    chart12: '#3F51B5'
   };
 
-  const chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
-  chart.render();
-  charts.push({
-    id: chartId,
-    chart: chart
-  });
-} else {
-    // Standard chart initialization for all other charts
+  // Chart titles
+  const chartTitles = {
+    chart7: 'Investment Ratio (Public to Private)',
+    chart8: 'Business Count',
+    chart11: 'Leads',
+    chart12: 'Projects'
+  };
+
+  // Default time period is 'month'
+  let currentTimePeriod = 'month';
+
+  // Initialize Combined Agency Chart
+  function initCombinedAgencyChart() {
+    const agencyChartIds = ['chart1', 'chart2', 'chart3', 'chart4', 'chart5', 'chart6'];
+    const agencyNames = [
+      'Total', 
+      'City Economic Development', 
+      'EDO', 
+      'Chamber', 
+      'Downtown Association', 
+      'Consultant'
+    ];
+    
+    // Create series array for the combined chart using the current time period data
+    const combinedSeries = agencyChartIds.map((chartId, index) => {
+      return {
+        name: agencyNames[index],
+        data: processedTimePeriodsData[currentTimePeriod][chartId],
+        color: chartColors[chartId]
+      };
+    });
+    
+    // Options for the combined chart
     const options = {
-      series: [{
-        name: chartTitles[chartId],
-        data: processedGoalData.goal1[chartId]
-      }],
+      series: combinedSeries,
       chart: {
-        height: 200,
+        height: 540,
         type: 'line',
         zoom: {
           enabled: false
@@ -1344,15 +1565,242 @@ for (let i = 1; i <= 14; i++) {
         animations: {
           enabled: true,
           easing: 'easeinout',
-          speed: 800,
-          animateGradually: {
-            enabled: true,
-            delay: 150
-          },
-          dynamicAnimation: {
-            enabled: true,
-            speed: 350
+          speed: 800
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'straight',
+        width: 2.5
+      },
+      title: {
+        text: '',
+        align: 'left',
+        style: {
+          fontSize: '16px',
+          fontWeight: 'bold'
+        }
+      },
+      grid: {
+        row: {
+          colors: ['#f3f3f3', 'transparent'],
+          opacity: 0.5
+        },
+        borderColor: '#f1f1f1'
+      },
+      xaxis: {
+        categories: categories,
+        labels: {
+          style: {
+            fontSize: '12px'
           }
+        }
+      },
+      yaxis: {
+        labels: {
+          style: {
+            fontSize: '12px'
+          },
+          formatter: function(val) {
+            return Number.isInteger(val) ? val.toString() : val.toFixed(1);
+          }
+        }
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'right',
+        fontSize: '12px'
+      },
+      markers: {
+        size: 4,
+        hover: {
+          size: 6
+        }
+      },
+      tooltip: {
+        shared: true,
+        intersect: false
+      }
+    };
+
+    // Create the combined chart
+    const combinedChart = new ApexCharts(document.querySelector('#combinedAgencyChart'), options);
+    combinedChart.render();
+    
+    // Add this chart to the charts array
+    charts.push({
+      id: 'combinedAgencyChart',
+      chart: combinedChart
+    });
+  }
+
+  // Initialize Individual Indicator Charts (7, 8, 11, 12)
+  function initIndicatorCharts() {
+    // Charts to initialize
+    const chartIds = ['chart7', 'chart8', 'chart11', 'chart12'];
+    
+    // Initialize each indicator chart
+    chartIds.forEach(chartId => {
+      // Special handling for chart7 (ratio chart)
+      if (chartId === 'chart7') {
+        initRatioChart(chartId);
+      } else {
+        initRegularChart(chartId);
+      }
+    });
+  }
+
+  // Initialize the special ratio chart (chart7)
+  function initRatioChart(chartId) {
+    // Transform ratio data into public and private parts
+    const publicData = [];
+    const privateData = [];
+    
+    processedTimePeriodsData[currentTimePeriod][chartId].forEach(ratio => {
+      // Calculate percentage split
+      const total = 1 + 1/ratio;
+      const publicPct = (1/total) * 100;
+      const privatePct = ((1/ratio)/total) * 100;
+      
+      publicData.push(publicPct);
+      privateData.push(privatePct);
+    });
+    
+    const options = {
+      series: [{
+        name: 'Public Investment',
+        data: publicData
+      }, {
+        name: 'Private Investment',
+        data: privateData
+      }],
+      chart: {
+        type: 'bar',
+        height: 250,
+        stacked: true,
+        stackType: '100%',
+        toolbar: {
+          show: false
+        },
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 800
+        }
+      },
+      colors: ['#4CAF50', '#8BC34A'],
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '60%',
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: function(val, opt) {
+          const seriesIndex = opt.seriesIndex;
+          const dataPointIndex = opt.dataPointIndex;
+          const ratio = processedTimePeriodsData[currentTimePeriod][chartId][dataPointIndex];
+          
+          if (seriesIndex === 0) {
+            return '$1';
+          } else {
+            return '$' + (1/ratio).toFixed(1);
+          }
+        },
+        style: {
+          fontSize: '11px',
+          fontWeight: 'normal',
+          colors: ['#000', '#000']
+        }
+      },
+      stroke: {
+        width: 1,
+        colors: ['#fff']
+      },
+      title: {
+        text: chartTitles[chartId],
+        align: 'left',
+        style: {
+          fontSize: '14px'
+        }
+      },
+      grid: {
+        row: {
+          colors: ['#f3f3f3', 'transparent'],
+          opacity: 0.5
+        },
+        borderColor: '#f1f1f1'
+      },
+      xaxis: {
+        categories: categories,
+        labels: {
+          style: {
+            fontSize: '10px'
+          }
+        }
+      },
+      yaxis: {
+        labels: {
+          style: {
+            fontSize: '10px'
+          },
+          formatter: function(val) {
+            return val.toFixed(0) + '%';
+          }
+        }
+      },
+      tooltip: {
+        shared: true,
+        intersect: false,
+        y: {
+          formatter: function(val, opt) {
+            if (opt.seriesIndex === 0) {
+              return 'Public: $1 (' + val.toFixed(1) + '%)';
+            } else {
+              const dataPointIndex = opt.dataPointIndex;
+              const ratio = processedTimePeriodsData[currentTimePeriod][chartId][dataPointIndex];
+              return 'Private: $' + (1/ratio).toFixed(1) + ' (' + val.toFixed(1) + '%)';
+            }
+          }
+        }
+      },
+      legend: {
+        position: 'top',
+        fontSize: '12px'
+      }
+    };
+
+    const chart = new ApexCharts(document.querySelector(`#${chartId}`), options);
+    chart.render();
+    charts.push({
+      id: chartId,
+      chart: chart
+    });
+  }
+
+  // Initialize regular charts (8, 11, 12)
+  function initRegularChart(chartId) {
+    const options = {
+      series: [{
+        name: chartTitles[chartId],
+        data: processedTimePeriodsData[currentTimePeriod][chartId]
+      }],
+      chart: {
+        height: 250,
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+        toolbar: {
+          show: false
+        },
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 800
         }
       },
       colors: [chartColors[chartId]],
@@ -1391,12 +1839,7 @@ for (let i = 1; i <= 14; i++) {
             fontSize: '10px'
           },
           formatter: function(val) {
-            // Money formatting for chart10
-            if (chartId === 'chart10') {
-              return '$' + val.toLocaleString();
-            }
-            // For other charts, only show decimal if needed
-            return Number.isInteger(val) ? val.toString() : val.toFixed(2);
+            return Number.isInteger(val) ? val.toString() : val.toFixed(1);
           }
         }
       }
@@ -1409,164 +1852,103 @@ for (let i = 1; i <= 14; i++) {
       chart: chart
     });
   }
-}
 
-// Event listeners for goal selector buttons
-document.querySelectorAll('.goal-btn').forEach(button => {
-  button.addEventListener('click', function() {
-    // Update active button style
-    document.querySelectorAll('.goal-btn').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    this.classList.add('active');
-    
-    // Get selected goal
-    const selectedGoal = this.getAttribute('data-goal');
-    
-    // Update all charts with new data from the processed data
-    charts.forEach(chartObj => {
-      // Special handling for the ratio chart (chart7)
-      if (chartObj.id === 'chart7') {
-        // Transform ratio data into percentage-based public and private parts
-        const publicData = [];
-        const privateData = [];
+  // Initialize Time Period Selector
+  function initTimePeriodSelector() {
+    document.querySelectorAll('.time-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        // Update active button style
+        document.querySelectorAll('.time-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
         
-        processedGoalData[selectedGoal][chartObj.id].forEach(ratio => {
-          // Calculate percentage split
-          const total = 1 + 1/ratio;
-          const publicPct = (1/total) * 100;
-          const privatePct = ((1/ratio)/total) * 100;
+        // Get selected time period
+        currentTimePeriod = this.getAttribute('data-period');
+
+        // Remove active state from date inputs
+        document.getElementById('startDate').classList.remove('active-date-input');
+        document.getElementById('endDate').classList.remove('active-date-input');
+        
+        // Generate new x-axis categories based on the selected time period
+        const newCategories = generateTimeBasedCategories(currentTimePeriod);
+        
+        // Update all charts with new data and categories for the selected time period
+        charts.forEach(chartObj => {
+          // First update the x-axis categories for all charts
+          chartObj.chart.updateOptions({
+            xaxis: {
+              categories: newCategories
+            }
+          });
           
-          publicData.push(publicPct);
-          privateData.push(privatePct);
-        });
-        
-        // Update both series in the stacked bar chart
-        chartObj.chart.updateSeries([
-          {
-            name: 'Public Investment',
-            data: publicData
-          },
-          {
-            name: 'Private Investment',
-            data: privateData
+          // Then update the series data appropriately for each chart type
+          if (chartObj.id === 'combinedAgencyChart') {
+            // Update the combined agency chart
+            const agencyChartIds = ['chart1', 'chart2', 'chart3', 'chart4', 'chart5', 'chart6'];
+            const agencyNames = [
+              'Total', 
+              'City Economic Development', 
+              'EDO', 
+              'Chamber', 
+              'Downtown Association', 
+              'Consultant'
+            ];
+            
+            const updatedSeries = agencyChartIds.map((chartId, index) => {
+              return {
+                name: agencyNames[index],
+                data: processedTimePeriodsData[currentTimePeriod][chartId]
+              };
+            });
+            
+            chartObj.chart.updateSeries(updatedSeries);
+          } else if (chartObj.id === 'chart7') {
+            // Update the ratio chart (chart7)
+            const publicData = [];
+            const privateData = [];
+            
+            processedTimePeriodsData[currentTimePeriod][chartObj.id].forEach(ratio => {
+              // Calculate percentage split
+              const total = 1 + 1/ratio;
+              const publicPct = (1/total) * 100;
+              const privatePct = ((1/ratio)/total) * 100;
+              
+              publicData.push(publicPct);
+              privateData.push(privatePct);
+            });
+            
+            chartObj.chart.updateSeries([
+              {
+                name: 'Public Investment',
+                data: publicData
+              },
+              {
+                name: 'Private Investment',
+                data: privateData
+              }
+            ]);
+          } else {
+            // Update regular charts (8, 11, 12)
+            chartObj.chart.updateSeries([{
+              data: processedTimePeriodsData[currentTimePeriod][chartObj.id]
+            }]);
           }
-        ]);
-      } else {
-        // Regular update for other charts
-        chartObj.chart.updateSeries([{
-          data: processedGoalData[selectedGoal][chartObj.id]
-        }]);
-      }
+        });
+
+        // Update the metrics cards with data for the selected time period
+        updateMetricsCards(currentTimePeriod);
+
+      });
     });
-  });
-});
-
-// for the goal scroll indicators
-document.addEventListener("DOMContentLoaded", function () {
-  const goalSelector = document.querySelector(".goal-selector");
-  const scrollUpIndicator = document.querySelector(".scroll-up");
-  const scrollDownIndicator = document.querySelector(".scroll-down");
-
-  function updateScrollIndicators() {
-    const atTop = goalSelector.scrollTop === 0;
-    const atBottom = goalSelector.scrollTop + goalSelector.clientHeight >= goalSelector.scrollHeight;
-
-    scrollUpIndicator.style.opacity = atTop ? "0" : "1";
-    scrollDownIndicator.style.opacity = atBottom ? "0" : "1";
   }
 
-  goalSelector.addEventListener("scroll", updateScrollIndicators);
-  updateScrollIndicators(); // Initial check
+  // Initialize all components
+  initCombinedAgencyChart();
+  initIndicatorCharts();
+  initTimePeriodSelector();
+  initInlineDateRangeSelector();
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Include Sortable.js via CDN if not already included
-  if (typeof Sortable === 'undefined') {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js';
-    script.onload = initSortable;
-    document.head.appendChild(script);
-  } else {
-    initSortable();
-  }
-  
-  function initSortable() {
-  const goalSelector = document.querySelector('.goal-selector');
-  
-  // Initialize Sortable on the goal selector
-  const sortable = new Sortable(goalSelector, {
-    handle: '.goal-drag-handle', // Only the handle starts dragging
-    animation: 150,
-    ghostClass: 'sortable-ghost', // Class for the drop placeholder
-    chosenClass: 'sortable-chosen', // Class for the chosen item
-    dragClass: 'sortable-drag', // Class for the dragging item
-    
-    // Add these new event handlers
-    onStart: function(evt) {
-      // Disable tooltips when drag starts
-      document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-        const tooltip = bootstrap.Tooltip.getInstance(el);
-        if (tooltip) {
-          tooltip.dispose();
-        }
-      });
-      
-      // Change cursor to grabbing
-      document.querySelectorAll('.goal-drag-handle').forEach(h => {
-        h.style.cursor = 'grabbing';
-      });
-    },
-    
-    // Called when the order changes
-    onEnd: function(evt) {
-      console.log('New goal order:');
-      const goals = document.querySelectorAll('.goal-btn');
-      goals.forEach((goal, index) => {
-        const goalTitle = goal.querySelector('.goal-title div');
-        if (goalTitle) {
-          console.log(`Position ${index + 1}: ${goalTitle.textContent}`);
-        }
-      });
-      
-      // Restore cursor style
-      document.querySelectorAll('.goal-drag-handle').forEach(h => {
-        h.style.cursor = 'grab';
-      });
-      
-      // Wait for sortable to complete all operations then reinitialize tooltips
-      setTimeout(() => {
-        document.querySelectorAll('.goal-drag-handle').forEach(h => {
-          h.setAttribute('data-bs-toggle', 'tooltip');
-        });
-        
-        // Reinitialize all tooltips
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-          new bootstrap.Tooltip(el);
-        });
-      }, 500);
-      
-      // Here you would typically save the new order to your server
-      // saveGoalOrder();
-    }
-  });
-  
-  // Add styling for the handles - Keep only the basic styling
-  document.querySelectorAll('.goal-drag-handle').forEach(handle => {
-    handle.style.cursor = 'grab';
-    
-    // Prevent the click event from triggering the goal selection
-    handle.addEventListener('click', e => {
-      e.stopPropagation();
-    });
-  });
-  
-  // Initial tooltip setup
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-}
-});
-
   </script>
 </body>
 </html>
