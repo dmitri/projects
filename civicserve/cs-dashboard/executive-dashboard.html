@@ -232,7 +232,6 @@
   .time-period-selector {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .time-period-label {
@@ -966,35 +965,38 @@
                 </div>
             </nav>
             <div class="main-content-wrapper">
-                <div class="page-header">
-                    <div class="page-header-left">
-                        <h3>Executive Dashboard</h3>
-                    </div>
-                    <div class="page-header-right">
-                        <div role="button" aria-label="Export" class=" dx-button btn btn-primary dx-button-normal dx-button-has-text dx-button-has-icon" tabindex="0">
-                            <div><i class="fa-solid fa-download" style="margin-right: 1rem;"></i> <span class="dx-button-text">Export</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="time-period-selector" style=" background: #FFF; border-radius: 8px; padding: 1rem;">
-                  <div class="time-period-label">Time Period:</div>
-                  <div class="time-period-options">
-                    <button class="time-btn btn btn-outline-primary" data-period="week">This Week</button>
-                    <button class="time-btn btn btn-outline-primary active" data-period="month">This Month</button>
-                    <button class="time-btn btn btn-outline-primary" data-period="quarter">This Quarter</button>
-                    <button class="time-btn btn btn-outline-primary" data-period="year">This Year</button>
-                    - or -
-                    <!-- Inline date range selector -->
-                    <div class="inline-date-selector">
-                      <div class="date-input-group">
-                        <input type="date" id="startDate" class="date-input form-control">
-                        <span class="date-separator">to</span>
-                        <input type="date" id="endDate" class="date-input form-control">
+                <div class="page-header" style="flex-direction: column;">
+                    <div style="display: flex; flex-direction: row;">
+                      <div class="page-header-left">
+                          <h3>Executive Dashboard</h3>
                       </div>
-                      <button id="applyDateRange" class="btn btn-outline-primary">Apply</button>
+                      <div class="page-header-right">
+                          <div role="button" aria-label="Export" class=" dx-button btn btn-primary dx-button-normal dx-button-has-text dx-button-has-icon" tabindex="0">
+                              <div><i class="fa-solid fa-download" style="margin-right: 1rem;"></i> <span class="dx-button-text">Export</span></div>
+                          </div>
+                      </div>
                     </div>
-                  </div>
+                    <div class="time-period-selector" style=" background: #FFF; border-radius: 8px; padding: 1rem;">
+                      <div class="time-period-label">Time Period:</div>
+                      <div class="time-period-options">
+                        <button class="time-btn btn btn-outline-primary" data-period="week">This Week</button>
+                        <button class="time-btn btn btn-outline-primary active" data-period="month">This Month</button>
+                        <button class="time-btn btn btn-outline-primary" data-period="quarter">This Quarter</button>
+                        <button class="time-btn btn btn-outline-primary" data-period="year">This Year</button>
+                        - or -
+                        <!-- Inline date range selector -->
+                        <div class="inline-date-selector">
+                          <div class="date-input-group">
+                            <input type="date" id="startDate" class="date-input form-control">
+                            <span class="date-separator">to</span>
+                            <input type="date" id="endDate" class="date-input form-control">
+                          </div>
+                          <button id="applyDateRange" class="btn btn-outline-primary">Apply</button>
+                        </div>
+                      </div>
+                    </div>
                 </div>
+                
                 <div class="grid-container">
                   <div>
                     <div class="panel metrics-card c-2">
