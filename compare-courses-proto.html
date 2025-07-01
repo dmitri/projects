@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Courses - Berklee Online</title>
+    <link href="https://assets.online.berklee.edu/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito Sans', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFFFFF;
+            color: #0e1416;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #FFFFFF;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            height: 60px;
+        }
+
+        .header h1 {
+            color: #0e1416;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header p {
+            text-align: center;
+            color: #0e1416;
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .course-column {
+            background: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(14, 20, 22, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eff1f3;
+            position: relative;
+        }
+
+        .course-column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(14, 20, 22, 0.15);
+        }
+
+        .dropdown-section {
+            background: #ee243c;
+            padding: 1.5rem;
+            color: #FFFFFF;
+        }
+
+        .dropdown-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .course-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #FFFFFF;
+            color: #0e1416;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .course-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(238, 36, 60, 0.3);
+        }
+
+        .course-content {
+            padding: 2rem;
+        }
+
+        .course-title {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            color: #0e1416;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .course-code {
+            background: #eff1f3;
+            color: #0e1416;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0e1416;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-content {
+            color: #0e1416;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .learning-outcomes {
+            list-style: none;
+            padding: 0;
+        }
+
+        .learning-outcomes li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eff1f3;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .learning-outcomes li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ee243c;
+            font-weight: bold;
+        }
+
+        .learning-outcomes li:last-child {
+            border-bottom: none;
+        }
+
+        .syllabus-preview {
+            background: #eff1f3;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            border-left: 4px solid #ee243c;
+        }
+
+        .instructor-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .instructor-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ee243c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .price-section {
+            background: #7ea0af;
+            color: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .career-roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .career-tag {
+            background: #eff1f3;
+            color: #0e1416;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .enroll-btn {
+            width: 100%;
+            background: #ee243c;
+            color: #FFFFFF;
+            display: block;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media(min-width: 768px) {
+            .enroll-btn {
+                position: absolute;
+                bottom: 1.5rem;
+                width: calc(100% - 4rem); /* Account for left/right padding */
+            }
+
+            .course-column {
+                position: relative;
+                padding-bottom: 3rem; /* Space for button */
+            }
+        }
+
+        .enroll-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(238, 36, 60, 0.3);
+            background: #d91e36;
+        }
+
+        .enroll-btn:disabled {
+            background: #eff1f3;
+            color: #0e1416;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.5;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #0e1416;
+            padding: 3rem 1rem;
+            opacity: 0.6;
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <img alt="Berklee Online logo" class="logo-color img-logo" height="47" loading="eager" src="https://assets.online.berklee.edu/berklee-online-logo.svg?v=3" width="220">
+                <h1>Compare Courses Concept (Prototype)</h1>
+            </div>
+            <p>Find the perfect guitar course for your musical journey</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="comparison-grid">
+            <!-- Course 1: Guitar Chords 101 -->
+            <div class="course-column">
+                <div class="dropdown-section">
+                    <select class="course-select" disabled>
+                        <option>Guitar Chords 101</option>
+                    </select>
+                </div>
+                
+                <div class="course-content">
+                    <h2 class="course-title">Guitar Chords 101</h2>
+                    <span class="course-code">OGUIT-120</span>
+                    
+                    <div class="section">
+                        <h3 class="section-title">Description</h3>
+                        <div class="section-content">
+                            Learn Berklee's approach to chord construction, focusing on the notes that chords are based around rather than just shapes. Master triads, 7th chords, inversions, and voicings to unlock the fretboard and gain freedom on your instrument.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Learning Outcomes</h3>
+                        <ul class="learning-outcomes">
+                            <li>Play chord voicings from lead sheets in various musical styles</li>
+                            <li>Construct triads, seventh chords, extended voicings, and inversions</li>
+                            <li>Master major, minor, diminished, augmented, and seventh chord voicings</li>
+                            <li>Play triads over bass notes and alterations</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Syllabus Preview</h3>
+                        <div class="syllabus-preview">
+                            <strong>12 Lessons including:</strong><br>
+                            • Triads & Inversions<br>
+                            • Barre Chords & Power Chords<br>
+                            • Seventh Chords: Drop 2s & Drop 3s<br>
+                            • Guide Tone Chords<br>
+                            • Triads over Bass Notes
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Instructor</h3>
+                        <div class="instructor-info">
+                            <div class="instructor-avatar">RP</div>
+                            <div>
+                                <strong>Rick Peckham</strong><br>
+                                <small>Jazz guitarist, educator, and full professor in Berklee's Guitar department since 1986</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Next Start Date</h3>
+                        <div class="section-content">
+                            <strong>August 26, 2025</strong> (Fall Semester)
+                        </div>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">$1,545</div>
+                        <div>12-week course</div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Related Career Roles</h3>
+                        <div class="career-roles">
+                            <span class="career-tag">Session Musician</span>
+                            <span class="career-tag">Music Teacher</span>
+                            <span class="career-tag">Songwriter</span>
+                            <span class="career-tag">Composer</span>
+                            <span class="career-tag">Band Member</span>
+                        </div>
+                    </div>
+
+                    <button class="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Course 2: Acoustic Guitar Techniques -->
+            <div class="course-column">
+                <div class="dropdown-section">
+                    <select class="course-select" disabled>
+                        <option>Acoustic Guitar Techniques</option>
+                    </select>
+                </div>
+                
+                <div class="course-content">
+                    <h2 class="course-title">Acoustic Guitar Techniques</h2>
+                    <span class="course-code">OGUIT-350</span>
+                    
+                    <div class="section">
+                        <h3 class="section-title">Description</h3>
+                        <div class="section-content">
+                            Become a more effective acoustic guitarist through strengthened rhythmic strumming, alternate tunings, and fingerstyle playing. Features in-depth techniques for improving fluency, tone, dynamics, and control.
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Learning Outcomes</h3>
+                        <ul class="learning-outcomes">
+                            <li>Play and compose in various non-standard tunings</li>
+                            <li>Use practice techniques to refine fingerstyle and strumming</li>
+                            <li>Achieve increased control, evenness, and fluency</li>
+                            <li>Understand phrasing in multi-voiced fingerstyle pieces</li>
+                            <li>Connect technique and position with instrument tone</li>
+                            <li>Integrate melodic lines into accompaniments</li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Syllabus Preview</h3>
+                        <div class="syllabus-preview">
+                            <strong>12 Lessons including:</strong><br>
+                            • Open Triad Tunings<br>
+                            • Travis Picking Techniques<br>
+                            • Modal Approaches in Open Tunings<br>
+                            • Fingerstyle Fundamentals<br>
+                            • Advanced Strumming & Triplets
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Instructor</h3>
+                        <div class="instructor-info">
+                            <div class="instructor-avatar">AZ</div>
+                            <div>
+                                <strong>Abigail Aronson Zocher</strong><br>
+                                <small>Associate Professor in Guitar department, classical and jazz specialist</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Next Start Date</h3>
+                        <div class="section-content">
+                            <strong>August 26, 2025</strong> (Fall Semester)
+                        </div>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">$1,545</div>
+                        <div>12-week course</div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Related Career Roles</h3>
+                        <div class="career-roles">
+                            <span class="career-tag">Singer-Songwriter</span>
+                            <span class="career-tag">Folk Musician</span>
+                            <span class="career-tag">Fingerstyle Guitarist</span>
+                            <span class="career-tag">Music Teacher</span>
+                            <span class="career-tag">Studio Musician</span>
+                        </div>
+                    </div>
+
+                    <button class="enroll-btn">Enroll Now</button>
+                </div>
+            </div>
+
+            <!-- Course 3: Empty Selection -->
+            <div class="course-column">
+                <div class="dropdown-section">
+                    <select class="course-select" onchange="selectCourse(this.value)">
+                        <option value="">Select a course</option>
+                        <option value="music-theory-101">Music Theory 101</option>
+                        <option value="songwriting-101">Songwriting 101</option>
+                        <option value="guitar-scales-101">Guitar Scales 101</option>
+                        <option value="recording-techniques">Recording Techniques</option>
+                        <option value="music-business">Music Business 101</option>
+                    </select>
+                </div>
+                
+                <div class="course-content">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🎵</div>
+                        <h3>Select a Course</h3>
+                        <p>Choose a course from the dropdown above to compare it with the other selected courses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectCourse(courseValue) {
+            const column = document.querySelector('.course-column:last-child .course-content');
+            
+            if (!courseValue) {
+                column.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🎵</div>
+                        <h3>Select a Course</h3>
+                        <p>Choose a course from the dropdown above to compare it with the other selected courses.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Sample course data for demonstration
+            const courseData = {
+                'music-theory-101': {
+                    title: 'Music Theory 101',
+                    code: 'OMUS-101',
+                    description: 'Build a solid foundation in music theory fundamentals including scales, intervals, chords, and basic harmonic progressions.',
+                    outcomes: [
+                        'Understand major and minor scales',
+                        'Identify intervals and chord qualities',
+                        'Analyze basic harmonic progressions',
+                        'Read and write music notation'
+                    ],
+                    instructor: 'Dr. Sarah Johnson',
+                    instructorInitials: 'SJ',
+                    price: '$1,545',
+                    careers: ['Composer', 'Music Teacher', 'Arranger', 'Music Analyst']
+                },
+                'songwriting-101': {
+                    title: 'Songwriting 101',
+                    code: 'OSONG-101',
+                    description: 'Learn the craft of songwriting through melody, harmony, rhythm, and lyric writing techniques used by professional songwriters.',
+                    outcomes: [
+                        'Write compelling melodies and hooks',
+                        'Craft meaningful lyrics with strong imagery',
+                        'Understand song structure and form',
+                        'Develop your unique songwriting voice'
+                    ],
+                    instructor: 'Pat Pattison',
+                    instructorInitials: 'PP',
+                    price: '$1,545',
+                    careers: ['Songwriter', 'Lyricist', 'Recording Artist', 'Music Producer']
+                }
+            };
+
+            const course = courseData[courseValue];
+            if (course) {
+                column.innerHTML = `
+                    <h2 class="course-title">${course.title}</h2>
+                    <span class="course-code">${course.code}</span>
+                    
+                    <div class="section">
+                        <h3 class="section-title">Description</h3>
+                        <div class="section-content">${course.description}</div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Learning Outcomes</h3>
+                        <ul class="learning-outcomes">
+                            ${course.outcomes.map(outcome => `<li>${outcome}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Syllabus Preview</h3>
+                        <div class="syllabus-preview">
+                            <strong>12 Lessons</strong><br>
+                            Detailed syllabus available after course selection
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Instructor</h3>
+                        <div class="instructor-info">
+                            <div class="instructor-avatar">${course.instructorInitials}</div>
+                            <div>
+                                <strong>${course.instructor}</strong><br>
+                                <small>Berklee College of Music Faculty</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Next Start Date</h3>
+                        <div class="section-content">
+                            <strong>August 26, 2025</strong> (Fall Semester)
+                        </div>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">${course.price}</div>
+                        <div>12-week course</div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">Related Career Roles</h3>
+                        <div class="career-roles">
+                            ${course.careers.map(career => `<span class="career-tag">${career}</span>`).join('')}
+                        </div>
+                    </div>
+
+                    <button class="enroll-btn">Enroll Now</button>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
