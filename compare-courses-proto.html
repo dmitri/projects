@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Nunito Sans', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Nunito Sans', arial, sans-serif;
             background: #FFFFFF;
             color: #0e1416;
             line-height: 1.6;
@@ -72,7 +72,6 @@
             background: #FFFFFF;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(14, 20, 22, 0.1);
-            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #eff1f3;
             position: relative;
@@ -87,6 +86,9 @@
             background: #ee243c;
             padding: 1.5rem;
             color: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 10; /* Add this line */
         }
 
         .dropdown-section h3 {
@@ -193,6 +195,8 @@
         .instructor-avatar {
             width: 50px;
             height: 50px;
+            min-width: 50px; /* Add this line */
+            min-height: 50px; /* Add this line */
             border-radius: 50%;
             background: #ee243c;
             display: flex;
@@ -201,6 +205,7 @@
             color: #FFFFFF;
             font-weight: bold;
             font-size: 1.2rem;
+            flex-shrink: 0; /* Add this line */
         }
 
         .price-section {
@@ -233,32 +238,61 @@
             font-size: 0.85rem;
         }
 
-        .enroll-btn {
+        .details-btn {
+            background: none;
             width: 100%;
-            background: #ee243c;
-            color: #FFFFFF;
-            display: block;
-            border: none;
-            padding: 1rem 2rem;
+            border: 1px solid #ee243c;
+            color: #ee243c;
+            padding: .5rem 1rem;
             font-size: 1.1rem;
             font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
+        .enroll-btn {
+            width: 100%;
+            background: #ee243c;
+            border: 1px solid #ee243c;
+            color: #FFFFFF;
+            border: none;
+            padding: .5rem 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 60%; /* Takes up 60% of available space */
+        }
+
+        .enroll-btn span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-top: 0.1rem;
+            opacity: 0.9;
+        }
+
         @media(min-width: 768px) {
-            .enroll-btn {
-                position: absolute;
-                bottom: 1.5rem;
-                width: calc(100% - 4rem); /* Account for left/right padding */
+            .footer-section {
+                background: #FFF;
+                border-top: 1px solid #DDD;
+                position: sticky;
+                bottom: 0rem;
+                display: flex;
+                gap: 1rem; /* Add this line for space between buttons */
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                width: calc(100%);
             }
 
             .course-column {
                 position: relative;
-                padding-bottom: 3rem; /* Space for button */
             }
         }
 
@@ -324,7 +358,7 @@
                 
                 <div class="course-content">
                     <h2 class="course-title">Guitar Chords 101</h2>
-                    <span class="course-code">OGUIT-120</span>
+                    <span class="course-code">12-Week Course • $1,575</span>
                     
                     <div class="section">
                         <h3 class="section-title">Description</h3>
@@ -366,17 +400,7 @@
                         </div>
                     </div>
 
-                    <div class="section">
-                        <h3 class="section-title">Next Start Date</h3>
-                        <div class="section-content">
-                            <strong>August 26, 2025</strong> (Fall Semester)
-                        </div>
-                    </div>
-
-                    <div class="price-section">
-                        <div class="price">$1,545</div>
-                        <div>12-week course</div>
-                    </div>
+                   
 
                     <div class="section">
                         <h3 class="section-title">Related Career Roles</h3>
@@ -389,7 +413,10 @@
                         </div>
                     </div>
 
-                    <button class="enroll-btn">Enroll Now</button>
+                    <div class="footer-section">
+                        <button class="details-btn">Details</button>
+                        <button class="enroll-btn">Enroll Now <span>Next semester starts Sept 29</span></button>
+                    </div>
                 </div>
             </div>
 
@@ -403,7 +430,7 @@
                 
                 <div class="course-content">
                     <h2 class="course-title">Acoustic Guitar Techniques</h2>
-                    <span class="course-code">OGUIT-350</span>
+                    <span class="course-code">12-Week Course • $1,575</span>
                     
                     <div class="section">
                         <h3 class="section-title">Description</h3>
@@ -448,18 +475,6 @@
                     </div>
 
                     <div class="section">
-                        <h3 class="section-title">Next Start Date</h3>
-                        <div class="section-content">
-                            <strong>August 26, 2025</strong> (Fall Semester)
-                        </div>
-                    </div>
-
-                    <div class="price-section">
-                        <div class="price">$1,545</div>
-                        <div>12-week course</div>
-                    </div>
-
-                    <div class="section">
                         <h3 class="section-title">Related Career Roles</h3>
                         <div class="career-roles">
                             <span class="career-tag">Singer-Songwriter</span>
@@ -469,8 +484,10 @@
                             <span class="career-tag">Studio Musician</span>
                         </div>
                     </div>
-
-                    <button class="enroll-btn">Enroll Now</button>
+                    <div class="footer-section">
+                        <button class="details-btn">Details</button>
+                        <button class="enroll-btn">Enroll Now <span>Next semester starts Sept 29</span></button>
+                    </div>
                 </div>
             </div>
 
@@ -551,7 +568,7 @@
             if (course) {
                 column.innerHTML = `
                     <h2 class="course-title">${course.title}</h2>
-                    <span class="course-code">${course.code}</span>
+                    <span class="course-code">12-Week Course • $1,575</span>
                     
                     <div class="section">
                         <h3 class="section-title">Description</h3>
@@ -583,30 +600,44 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="section">
-                        <h3 class="section-title">Next Start Date</h3>
-                        <div class="section-content">
-                            <strong>August 26, 2025</strong> (Fall Semester)
+                            <h3 class="section-title">Related Career Roles</h3>
+                            <div class="career-roles">
+                                ${course.careers.map(career => `<span class="career-tag">${career}</span>`).join('')}
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="price-section">
-                        <div class="price">${course.price}</div>
-                        <div>12-week course</div>
+                        <div class="footer-section">
+                        <button class="details-btn">Details</button>
+                        <button class="enroll-btn">Enroll Now <span>Next semester starts Sept 29</span></button>
                     </div>
-
-                    <div class="section">
-                        <h3 class="section-title">Related Career Roles</h3>
-                        <div class="career-roles">
-                            ${course.careers.map(career => `<span class="career-tag">${career}</span>`).join('')}
-                        </div>
-                    </div>
-
-                    <button class="enroll-btn">Enroll Now</button>
                 `;
             }
         }
+
+        function handleStickyFooters() {
+            const columns = document.querySelectorAll('.course-column');
+            
+            columns.forEach(column => {
+                const footer = column.querySelector('.footer-section');
+                const rect = column.getBoundingClientRect();
+                
+                // If column is scrolled past, make footer fixed at bottom
+                if (rect.bottom <= window.innerHeight) {
+                    footer.style.position = 'absolute';
+                    footer.style.bottom = '0';
+                    footer.style.width = 'calc(100% - 4rem)'; // Adjust width to account for padding
+                    column.style.paddingBottom = '6rem'; // Add padding to avoid content overlap
+                } else {
+                    footer.style.position = 'sticky';
+                    footer.style.width = 'calc(100%)';
+                    footer.style.left = 'auto';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleStickyFooters);
+        window.addEventListener('resize', handleStickyFooters);
     </script>
 </body>
 </html>
