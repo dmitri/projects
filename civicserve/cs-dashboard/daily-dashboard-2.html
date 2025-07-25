@@ -83,6 +83,52 @@
     max-height: 80vh !important;
  }
 
+ h2.toggle-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative
+}
+
+.collapse-chevron {
+  transition: transform 0.3s ease;
+}
+
+h2.collapsed .collapse-chevron {
+  transform: rotate(180deg);
+}
+
+.grid-collapsible {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 1000px; /* must be large enough to fit tallest content */
+  opacity: 1;
+}
+
+.grid-collapsible.collapsed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.collapsible-section {
+  box-shadow:#000000 0 4px 12px;
+}
+
+.toggle-header.collapsed::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #e5e7eb; /* Tailwind's gray-200 */
+  margin-bottom: 1rem;
+  width: 100%;
+  position: absolute;
+  top: -20px;
+  left:0;
+}
+
 </style>
 </head>
 
@@ -469,7 +515,7 @@
                                       </a>
                                   </li>
                                   <li>
-                                    <a class="menu-item active" href="/civicserve/cs-dashboard/executive-dashboard">
+                                    <a class="menu-item" href="/civicserve/cs-dashboard/executive-dashboard">
                                         <div class="menu-label">Executive Dashboard</div>
                                     </a>
                                 </li>
@@ -487,6 +533,11 @@
                                       <a class="menu-item " href="/admin/analytics/dashboards/impacts/scoring">
                                           <div class="menu-label">Scoring</div>
                                       </a>
+                                  </li>
+                                  <li>
+                                    <a class="menu-item active" href="/civicserve/cs-dashboard/daily-dashboard-2">
+                                        <div class="menu-label">Management Dashboard</div>
+                                    </a>
                                   </li>
                                   <li>
                                       <a class="menu-item " href="/admin/analytics/dashboards/impacts/timeline/dashboard">
@@ -549,15 +600,21 @@
                 </div>
             </nav>
             <div class="main-content-wrapper">
-              <div id="main-dashboard" class="mx-auto p-6 space-y-8">
+              <div class="page-header"><div class="page-header-left"><h3>Management Dashboard</h3></div><div class="page-header-right"></div></div>
+              <div id="main-dashboard" class="mx-auto space-y-8">
     
                 <!-- Row 1: People -->
                 <div id="people-row" class="space-y-6">
-                    <h1 class="text-2xl font-bold text-gray-900">People</h1>
+                    <h2 class="text-xl text-gray-900">
+                      <button id="collapse-toggle-my-todos" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                        <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                      </button>
+                      People
+                    </h2>
                     
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 grid-collapsible">
                         <!-- My To-Dos -->
-                        <div id="my-todos-section" class="bg-white rounded-xl shadow-sm h-[600px] flex flex-col">
+                        <div id="my-todos-section" class="collapsible-section bg-white rounded-xl shadow-sm h-[500px] flex flex-col">
                             <div class="p-6 border-b border-gray-100">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-3">
@@ -576,6 +633,7 @@
                                     <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Today</button>
                                     <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">This Week</button>
                                     <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Completed</button>
+                                    <button class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full hover:bg-red-300">Overdue</button>
                                 </div>
                             </div>
                             
@@ -646,14 +704,14 @@
                                     </div>
                                 </div>
                                 
-                                <button id="show-all-my-todos" class="w-full mt-4 py-2 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100 pt-4">
+                                <button id="show-all-my-todos" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
                                     Show all
                                 </button>
                             </div>
                         </div>
             
                         <!-- Team To-Dos -->
-                        <div id="team-todos-section" class="bg-white rounded-xl shadow-sm h-[600px] flex flex-col">
+                        <div id="team-todos-section" class="collapsible-section bg-white rounded-xl shadow-sm h-[500px] flex flex-col">
                             <div class="p-6 border-b border-gray-100">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-3">
@@ -672,6 +730,7 @@
                                     <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Today</button>
                                     <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">This Week</button>
                                     <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Completed</button>
+                                    <button class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full hover:bg-red-300">Overdue</button>
                                 </div>
                             </div>
                             
@@ -739,7 +798,7 @@
                                     </div>
                                 </div>
                                 
-                                <button id="show-all-team-todos" class="w-full mt-4 py-2 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100 pt-4">
+                                <button id="show-all-team-todos" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
                                     Show all
                                 </button>
                             </div>
@@ -749,11 +808,16 @@
             
                 <!-- Row 2: Data -->
                 <div id="data-row" class="space-y-6">
-                    <h1 class="text-2xl font-bold text-gray-900 ">Data</h1>
+                    <h2 class="text-xl text-gray-900 ">
+                      <button id="collapse-toggle-data" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                        <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                      </button>
+                      Data
+                    </h2>
                     
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 grid-collapsible">
                         <!-- My Data -->
-                        <div id="my-data-section" class="bg-white rounded-xl shadow-sm h-[600px] flex flex-col">
+                        <div id="my-data-section" class="bg-white rounded-xl shadow-sm h-[500px] flex flex-col">
                             <div class="p-6 border-b border-gray-100">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-3">
@@ -853,14 +917,14 @@
                                     </div>
                                 </div>
                                 
-                                <button id="show-all-my-data" class="w-full mt-4 py-2 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100 pt-4">
+                                <button id="show-all-my-data" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
                                     Show all
                                 </button>
                             </div>
                         </div>
             
                         <!-- External Data -->
-                        <div id="external-data-section" class="bg-white rounded-xl h-[600px] flex flex-col">
+                        <div id="external-data-section" class="bg-white rounded-xl h-[500px] flex flex-col">
                             <div class="p-6 border-b border-gray-100">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-3">
@@ -960,7 +1024,7 @@
                                     </div>
                                 </div>
                                 
-                                <button id="show-all-external-data" class="w-full mt-4 py-2 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100 pt-4">
+                                <button id="show-all-external-data" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
                                     Show all
                                 </button>
                             </div>
@@ -969,226 +1033,257 @@
                     </div>
                 
 
-                 <!-- Row 3: Data -->
-<div id="data-row" class="space-y-6">
-  <h1 class="text-2xl font-bold text-gray-900 ">Systems</h1>
-  
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <!-- Internal Systems -->
-      <div id="internal-systems-section" class="bg-white rounded-xl shadow-sm h-[600px] flex flex-col">
-          <div class="p-6 border-b border-gray-100">
-              <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-database text-orange-600"></i>
-                      </div>
-                      <h2 class="text-xl font-semibold text-gray-900">Internal Systems</h2>
-                  </div>
-                  <button id="add-my-data-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primaryHover transition-colors">
-                      <i class="fa-solid fa-plus text-sm"></i>
-                      <span>Add System</span>
-                  </button>
-              </div>
-          </div>
-          
-          <div class="flex-1 p-6 overflow-hidden flex flex-col">
-              <div id="my-data-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-users text-blue-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">HR</span>
-                          <p class="text-xs text-gray-600">Everything you need from your fave department</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-money-check-dollar text-green-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Benefits and Pay</span>
-                          <p class="text-xs text-gray-600">Pay stubs, W-2s, and more</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-chart-pie text-purple-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Revenue Tracking Report</span>
-                          <p class="text-xs text-gray-600">Track monthly revenue progress</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-images text-red-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
-                          <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                    <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                        <i class="fa-solid fa-images text-red-600 text-sm"></i>
-                    </div>
-                    <div class="flex-1">
-                        <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
-                        <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
-                    </div>
-                </div>
-                  <!-- Additional hidden items -->
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                    <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                        <i class="fa-solid fa-images text-red-600 text-sm"></i>
-                    </div>
-                    <div class="flex-1">
-                        <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
-                        <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
-                    </div>
-                </div>
+                    <!-- Row 3: Data -->
+                    <div id="systems-row" class="space-y-6">
+                        <h2 class="text-xl text-gray-900 ">
+                          <button id="collapse-toggle-systems" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                            <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                          </button>
+                          Systems
+                        </h2>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 grid-collapsible">
+                            <!-- Internal Systems -->
+                            <div id="internal-systems-section" class="bg-white rounded-xl shadow-sm h-[500px] flex flex-col">
+                                <div class="p-6 border-b border-gray-100">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-database text-orange-600"></i>
+                                            </div>
+                                            <h2 class="text-xl font-semibold text-gray-900">Internal Systems</h2>
+                                        </div>
+                                        <button id="add-my-data-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primaryHover transition-colors">
+                                            <i class="fa-solid fa-plus text-sm"></i>
+                                            <span>Add System</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex-1 p-6 overflow-hidden flex flex-col">
+                                    <div id="my-data-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-users text-blue-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">HR</span>
+                                                <p class="text-xs text-gray-600">Everything you need from your fave department</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-money-check-dollar text-green-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Benefits and Pay</span>
+                                                <p class="text-xs text-gray-600">Pay stubs, W-2s, and more</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-chart-pie text-purple-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Revenue Tracking Report</span>
+                                                <p class="text-xs text-gray-600">Track monthly revenue progress</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-images text-red-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
+                                                <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-images text-red-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
+                                                <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
+                                            </div>
+                                        </div>
+                                        <!-- Additional hidden items -->
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-images text-red-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
+                                                <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
+                                            </div>
+                                        </div>
 
-                <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                  <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                      <i class="fa-solid fa-images text-red-600 text-sm"></i>
-                  </div>
-                  <div class="flex-1">
-                      <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
-                      <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
-                  </div>
-              </div>
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                        <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                            <i class="fa-solid fa-images text-red-600 text-sm"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
+                                            <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
+                                        </div>
+                                    </div>
 
-              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                    <i class="fa-solid fa-images text-red-600 text-sm"></i>
-                </div>
-                <div class="flex-1">
-                    <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
-                    <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
-                </div>
-            </div>
+                                    <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                        <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                            <i class="fa-solid fa-images text-red-600 text-sm"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
+                                            <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                    <button id="show-all-my-data" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+                                        Show all
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- External Data -->
+                            <div id="external-systems-section" class="bg-white rounded-xl h-[500px] flex flex-col">
+                                <div class="p-6 border-b border-gray-100">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-cloud-download-alt text-teal-600"></i>
+                                            </div>
+                                            <h2 class="text-xl font-semibold text-gray-900">External Systems</h2>
+                                        </div>
+                                        <button id="add-external-data-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primaryHover transition-colors">
+                                            <i class="fa-solid fa-plus text-sm"></i>
+                                            <span>Add System</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex-1 p-6 overflow-hidden flex flex-col">
+                                    <div id="external-data-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-balance-scale text-blue-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Government Compliance Portal</span>
+                                                <p class="text-xs text-gray-600">Help you need keeping in compliance with legal standards</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-building text-green-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">City Management Portal</span>
+                                                <p class="text-xs text-gray-600">Keep on track with city activities</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-file-contract text-yellow-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Permitting Portal</span>
+                                                <p class="text-xs text-gray-600">Regional economic indicators</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-chart-line text-pink-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Labor Statistics Portal</span>
+                                                <p class="text-xs text-gray-600">Employment & wage data</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                                            <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-map text-orange-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">GIS Mapping Services</span>
+                                                <p class="text-xs text-gray-600">Geographic analysis tools</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Additional hidden items -->
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-landmark text-purple-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Federal Reserve Economic Data</span>
+                                                <p class="text-xs text-gray-600">National economic indicators</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                                            <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-road text-indigo-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Transportation Data Hub</span>
+                                                <p class="text-xs text-gray-600">Traffic & infrastructure metrics</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                                            <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                                <i class="fa-solid fa-shield-alt text-red-600 text-sm"></i>
+                                            </div>
+                                            <div class="flex-1">
+                                                <span class="font-medium text-gray-900 text-sm">Public Safety Analytics</span>
+                                                <p class="text-xs text-gray-600">Crime statistics & trends</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button id="show-all-external-data" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+                                        Show all
+                                    </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
               </div>
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  const rows = [
+                    { id: 'people-row' },
+                    { id: 'data-row' },
+                    { id: 'systems-row' }
+                  ];
               
-              <button id="show-all-my-data" class="w-full mt-4 py-2 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100 pt-4">
-                  Show all
-              </button>
-          </div>
-      </div>
-
-      <!-- External Data -->
-      <div id="external-systems-section" class="bg-white rounded-xl h-[600px] flex flex-col">
-          <div class="p-6 border-b border-gray-100">
-              <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-cloud-download-alt text-teal-600"></i>
-                      </div>
-                      <h2 class="text-xl font-semibold text-gray-900">External Systems</h2>
-                  </div>
-                  <button id="add-external-data-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primaryHover transition-colors">
-                      <i class="fa-solid fa-plus text-sm"></i>
-                      <span>Add System</span>
-                  </button>
-              </div>
-          </div>
-          
-          <div class="flex-1 p-6 overflow-hidden flex flex-col">
-              <div id="external-data-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-balance-scale text-blue-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Government Compliance Portal</span>
-                          <p class="text-xs text-gray-600">Help you need keeping in compliance with legal standards</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-building text-green-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">City Management Portal</span>
-                          <p class="text-xs text-gray-600">Keep on track with city activities</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-file-contract text-yellow-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Permitting Portal</span>
-                          <p class="text-xs text-gray-600">Regional economic indicators</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-chart-line text-pink-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Labor Statistics Portal</span>
-                          <p class="text-xs text-gray-600">Employment & wage data</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-map text-orange-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">GIS Mapping Services</span>
-                          <p class="text-xs text-gray-600">Geographic analysis tools</p>
-                      </div>
-                  </div>
-
-                  <!-- Additional hidden items -->
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
-                      <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-landmark text-purple-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Federal Reserve Economic Data</span>
-                          <p class="text-xs text-gray-600">National economic indicators</p>
-                      </div>
-                  </div>
-
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
-                      <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-road text-indigo-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Transportation Data Hub</span>
-                          <p class="text-xs text-gray-600">Traffic & infrastructure metrics</p>
-                      </div>
-                  </div>
-
-                  <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
-                      <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
-                          <i class="fa-solid fa-shield-alt text-red-600 text-sm"></i>
-                      </div>
-                      <div class="flex-1">
-                          <span class="font-medium text-gray-900 text-sm">Public Safety Analytics</span>
-                          <p class="text-xs text-gray-600">Crime statistics & trends</p>
-                      </div>
-                  </div>
-              </div>
+                  rows.forEach(row => {
+                    const section = document.getElementById(row.id);
+                    if (!section) return;
               
-              <button id="show-all-external-data" class="w-full mt-4 py-2 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100 pt-4">
-                  Show all
-              </button>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-              </div>
+                    const header = section.querySelector('h2');
+                    const grid = section.querySelector('.grid-collapsible');
+              
+                    if (!header || !grid) return;
+              
+                    header.classList.add('toggle-header');
+              
+                    header.addEventListener('click', () => {
+                      const isCollapsed = grid.classList.toggle('collapsed');
+                      header.classList.toggle('collapsed', isCollapsed);
+                    });
+                  });
+                });
+              </script>
             </body>
           </html>
