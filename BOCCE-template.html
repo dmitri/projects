@@ -653,6 +653,8 @@
                         // Replace dark mode text colors back to light mode
                         element.className = classes
                             .replace(/text-gray-800/g, 'text-gray-100')
+                            .replace(/border-gray-200/g, 'border-gray-700')
+                            .replace(/border-gray-300/g, 'border-gray-700')
                             .replace(/bg-gray-50/g, 'bg-gray-700')
                             .replace(/bg-gray-100/g, 'bg-gray-700')
                             .replace(/bg-white/g, 'bg-gray-500');
@@ -692,6 +694,7 @@
                     // Replace dark mode text colors back to light mode
                     element.className = classes
                         .replace(/text-gray-100/g, 'text-gray-800')
+                        .replace(/border-gray-700/g, 'border-gray-200')
                         .replace(/bg-gray-700/g, 'bg-gray-100')
                         .replace(/bg-gray-500/g, 'bg-white');
                 });
