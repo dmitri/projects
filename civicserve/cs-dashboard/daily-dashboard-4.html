@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Executive Dashboard - Complete</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/1ad7921aa1.js" crossorigin="anonymous"></script>
+  
+  <style>
+    .bg-primary {
+      background-color: #003760 !important;
+    }
+
+    .bg-primary-outline {
+      border: 1px solid #003760 !important;
+      color: #003760 !important;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+
+    /* Collapsible animation styles */
+    .collapsible-content {
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
+    }
+    
+    .collapsible-content.collapsed {
+      max-height: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      opacity: 0;
+    }
+    
+    .collapsible-content.expanded {
+      opacity: 1;
+    }
+
+    /* Chevron rotation animation */
+    .collapse-chevron {
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .collapse-chevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    /* Height adjustment for collapsed state */
+    .collapsible-section {
+      transition: all 0.3s ease-in-out;
+      min-height: 500px;
+    }
+    
+    .collapsible-section.collapsed {
+      min-height: auto !important;
+      height: auto !important;
+    }
+    
+    /* Hide the flex-1 content when collapsed */
+    .collapsible-section.collapsed .collapsible-content {
+      display: none !important;
+    }
+    
+    /* Grid layout with independent heights */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    
+    @media (min-width: 1024px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <div id="main-dashboard" class="mx-auto p-6 space-y-8">
+    
+    <!-- Row 1: People -->
+    <div id="people-row" class="space-y-6">
+      <h1 class="text-2xl font-bold text-gray-900">People</h1>
+      
+      <div class="dashboard-grid">
+        <!-- My To-Dos -->
+        <div id="my-todos-section" class="collapsible-section bg-white rounded-xl shadow-sm flex flex-col">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <button id="collapse-toggle-my-todos" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                    <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                </button>
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-check-square text-blue-600"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900">My To-Dos</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="add-my-task-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i class="fa-solid fa-plus text-sm"></i>
+                  <span>Add Task</span>
+                </button>
+                
+              </div>
+            </div>
+            <div class="flex gap-2 mt-4 collapsible-content" id="filter-buttons">
+              <button class="px-3 py-1 bg-primary text-white text-sm rounded-full">All</button>
+              <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Today</button>
+              <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">This Week</button>
+              <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Completed</button>
+              <button class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full hover:bg-red-300">Overdue</button>
+            </div>
+          </div>
+          
+          <div class="flex-1 p-6 overflow-hidden flex flex-col collapsible-content" id="todos-content" style="height: 400px;">
+            <div id="my-todos-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+              <div class="todo-item flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                <input type="checkbox" class="mt-1 rounded border-gray-300">
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-900">Review Q4 economic impact report</h4>
+                  <p class="text-sm text-gray-600 mt-1">Due: Today</p>
+                  <span class="inline-block bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full mt-2">High Priority</span>
+                </div>
+              </div>
+              
+              <div class="todo-item flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                <input type="checkbox" class="mt-1 rounded border-gray-300">
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-900">Schedule meeting with development team</h4>
+                  <p class="text-sm text-gray-600 mt-1">Due: Tomorrow</p>
+                  <span class="inline-block bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full mt-2">Medium Priority</span>
+                </div>
+              </div>
+              
+              <div class="todo-item flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+                <input type="checkbox" class="mt-1 rounded border-gray-300">
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-900">Update project timeline documentation</h4>
+                  <p class="text-sm text-gray-600 mt-1">Due: Dec 20</p>
+                  <span class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full mt-2">Low Priority</span>
+                </div>
+              </div>
+
+              <!-- Additional hidden items that show when expanded -->
+              <div class="todo-item flex items-start gap-3 p-4 bg-gray-50 rounded-lg hidden-item" style="display: none;">
+                <input type="checkbox" class="mt-1 rounded border-gray-300">
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-900">Prepare budget presentation for city council</h4>
+                  <p class="text-sm text-gray-600 mt-1">Due: Dec 25</p>
+                  <span class="inline-block bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full mt-2">High Priority</span>
+                </div>
+              </div>
+
+              <div class="todo-item flex items-start gap-3 p-4 bg-gray-50 rounded-lg hidden-item" style="display: none;">
+                <input type="checkbox" class="mt-1 rounded border-gray-300">
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-900">Review zoning variance applications</h4>
+                  <p class="text-sm text-gray-600 mt-1">Due: Dec 30</p>
+                  <span class="inline-block bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full mt-2">Medium Priority</span>
+                </div>
+              </div>
+            </div>
+            
+            <button id="show-all-my-todos" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+              Show all
+            </button>
+          </div>
+        </div>
+
+        <!-- Team To-Dos -->
+        <div id="team-todos-section" class="collapsible-section bg-white rounded-xl shadow-sm flex flex-col">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-users text-green-600"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900">Team To-Dos</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="add-team-task-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i class="fa-solid fa-plus text-sm"></i>
+                  <span>Add Task</span>
+                </button>
+                <button id="collapse-toggle-team" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                  <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                </button>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-4 collapsible-content" id="filter-buttons-team">
+              <button class="px-3 py-1 bg-primary text-white text-sm rounded-full">All</button>
+              <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Today</button>
+              <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">This Week</button>
+              <button class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300">Completed</button>
+              <button class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full hover:bg-red-300">Overdue</button>
+            </div>
+          </div>
+          
+          <div class="flex-1 p-6 overflow-hidden flex flex-col collapsible-content" id="team-todos-content" style="height: 400px;">
+            <div id="team-todos-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+              <div class="team-todo-item p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-start justify-between mb-2">
+                  <h4 class="font-medium text-gray-900">Complete infrastructure assessment</h4>
+                  <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full">Urgent</span>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" class="w-6 h-6 rounded-full">
+                  <span class="text-sm text-gray-600">John Martinez</span>
+                </div>
+                <p class="text-xs text-gray-600">Due: Dec 19</p>
+              </div>
+              
+              <div class="team-todo-item p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-start justify-between mb-2">
+                  <h4 class="font-medium text-gray-900">Review zoning proposals</h4>
+                  <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Medium</span>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" class="w-6 h-6 rounded-full">
+                  <span class="text-sm text-gray-600">Sarah Chen</span>
+                </div>
+                <p class="text-xs text-gray-600">Due: Dec 22</p>
+              </div>
+              
+              <div class="team-todo-item p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-start justify-between mb-2">
+                  <h4 class="font-medium text-gray-900">Update community outreach plan</h4>
+                  <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Low</span>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" class="w-6 h-6 rounded-full">
+                  <span class="text-sm text-gray-600">Mike Johnson</span>
+                </div>
+                <p class="text-xs text-gray-600">Due: Dec 28</p>
+              </div>
+
+              <!-- Additional hidden items -->
+              <div class="team-todo-item p-4 bg-gray-50 rounded-lg hidden-item" style="display: none;">
+                <div class="flex items-start justify-between mb-2">
+                  <h4 class="font-medium text-gray-900">Coordinate with state environmental agency</h4>
+                  <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full">Urgent</span>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" class="w-6 h-6 rounded-full">
+                  <span class="text-sm text-gray-600">Lisa Rodriguez</span>
+                </div>
+                <p class="text-xs text-gray-600">Due: Jan 3</p>
+              </div>
+
+              <div class="team-todo-item p-4 bg-gray-50 rounded-lg hidden-item" style="display: none;">
+                <div class="flex items-start justify-between mb-2">
+                  <h4 class="font-medium text-gray-900">Prepare annual compliance reports</h4>
+                  <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded-full">Medium</span>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" class="w-6 h-6 rounded-full">
+                  <span class="text-sm text-gray-600">David Wilson</span>
+                </div>
+                <p class="text-xs text-gray-600">Due: Jan 15</p>
+              </div>
+            </div>
+            
+            <button id="show-all-team-todos" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+              Show all
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Data -->
+    <div id="data-row" class="space-y-6">
+      <h1 class="text-2xl font-bold text-gray-900">Data</h1>
+      
+      <div class="dashboard-grid">
+        <!-- My Data -->
+        <div id="my-data-section" class="collapsible-section bg-white rounded-xl shadow-sm flex flex-col">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-database text-orange-600"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900">My Data</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="add-my-data-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i class="fa-solid fa-plus text-sm"></i>
+                  <span>Add Data</span>
+                </button>
+                <button id="collapse-toggle-my-data" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                  <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex-1 p-6 overflow-hidden flex flex-col collapsible-content" id="my-data-content" style="height: 400px;">
+            <div id="my-data-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-chart-line text-blue-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Economic Indicators Dashboard</span>
+                  <p class="text-xs text-gray-600">Personal analysis workspace</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-file-excel text-green-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Budget Analysis Spreadsheet</span>
+                  <p class="text-xs text-gray-600">Q4 2024 analysis</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-chart-pie text-purple-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Revenue Tracking Report</span>
+                  <p class="text-xs text-gray-600">Monthly performance data</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-file-pdf text-red-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Market Research Summary</span>
+                  <p class="text-xs text-gray-600">Quarterly market analysis</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-calculator text-indigo-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Financial Projections Model</span>
+                  <p class="text-xs text-gray-600">5-year forecast analysis</p>
+                </div>
+              </div>
+
+              <!-- Additional hidden items -->
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-chart-area text-teal-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Population Growth Analysis</span>
+                  <p class="text-xs text-gray-600">Demographic trends study</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-file-chart-line text-pink-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Infrastructure Assessment Report</span>
+                  <p class="text-xs text-gray-600">Capital improvement needs</p>
+                </div>
+              </div>
+            </div>
+            
+            <button id="show-all-my-data" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+              Show all
+            </button>
+          </div>
+        </div>
+
+        <!-- External Data -->
+        <div id="external-data-section" class="collapsible-section bg-white rounded-xl shadow-sm flex flex-col">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-cloud-download-alt text-teal-600"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900">External Data</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="add-external-data-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i class="fa-solid fa-plus text-sm"></i>
+                  <span>Add Data</span>
+                </button>
+                <button id="collapse-toggle-external-data" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                  <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex-1 p-6 overflow-hidden flex flex-col collapsible-content" id="external-data-content" style="height: 400px;">
+            <div id="external-data-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-chart-bar text-blue-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Census Bureau Data</span>
+                  <p class="text-xs text-gray-600">Population & demographics</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-building text-green-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Commercial Real Estate Portal</span>
+                  <p class="text-xs text-gray-600">Market trends & pricing</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-industry text-yellow-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Economic Development API</span>
+                  <p class="text-xs text-gray-600">Regional economic indicators</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-globe text-pink-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Labor Statistics Portal</span>
+                  <p class="text-xs text-gray-600">Employment & wage data</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-map text-orange-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">GIS Mapping Services</span>
+                  <p class="text-xs text-gray-600">Geographic analysis tools</p>
+                </div>
+              </div>
+
+              <!-- Additional hidden items -->
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-university text-purple-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Federal Reserve Economic Data</span>
+                  <p class="text-xs text-gray-600">National economic indicators</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-road text-indigo-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Transportation Data Hub</span>
+                  <p class="text-xs text-gray-600">Traffic & infrastructure metrics</p>
+                </div>
+              </div>
+            </div>
+            
+            <button id="show-all-external-data" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+              Show all
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Systems -->
+    <div id="systems-row" class="space-y-6">
+      <h1 class="text-2xl font-bold text-gray-900">Systems</h1>
+      
+      <div class="dashboard-grid">
+        <!-- Internal Systems -->
+        <div id="internal-systems-section" class="collapsible-section bg-white rounded-xl shadow-sm flex flex-col">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-server text-indigo-600"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900">Internal Systems</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="add-internal-system-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i class="fa-solid fa-plus text-sm"></i>
+                  <span>Add System</span>
+                </button>
+                <button id="collapse-toggle-internal-systems" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                  <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex-1 p-6 overflow-hidden flex flex-col collapsible-content" id="internal-systems-content" style="height: 400px;">
+            <div id="internal-systems-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-users text-blue-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">HR Management System</span>
+                  <p class="text-xs text-gray-600">Everything you need from your fave department</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-money-check-dollar text-green-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Benefits and Payroll</span>
+                  <p class="text-xs text-gray-600">Pay stubs, W-2s, and more</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-chart-line text-purple-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Performance Analytics</span>
+                  <p class="text-xs text-gray-600">Track monthly progress and metrics</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-images text-red-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Digital Asset Management</span>
+                  <p class="text-xs text-gray-600">Brand-related assets, imagery, and more</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-calendar-alt text-yellow-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Event Management System</span>
+                  <p class="text-xs text-gray-600">Schedule and track community events</p>
+                </div>
+              </div>
+
+              <!-- Additional hidden items -->
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-file-invoice text-teal-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Procurement System</span>
+                  <p class="text-xs text-gray-600">Purchase orders and vendor management</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-warehouse text-pink-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Inventory Management</span>
+                  <p class="text-xs text-gray-600">Track equipment and supplies</p>
+                </div>
+              </div>
+            </div>
+            
+            <button id="show-all-internal-systems" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+              Show all
+            </button>
+          </div>
+        </div>
+
+        <!-- External Systems -->
+        <div id="external-systems-section" class="collapsible-section bg-white rounded-xl shadow-sm flex flex-col">
+          <div class="p-6 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-cloud text-cyan-600"></i>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-900">External Systems</h2>
+              </div>
+              <div class="flex items-center gap-2">
+                <button id="add-external-system-btn" class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  <i class="fa-solid fa-plus text-sm"></i>
+                  <span>Add System</span>
+                </button>
+                <button id="collapse-toggle-external-systems" class="p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Toggle collapse">
+                  <i class="fa-solid fa-chevron-up text-gray-600 collapse-chevron"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex-1 p-6 overflow-hidden flex flex-col collapsible-content" id="external-systems-content" style="height: 400px;">
+            <div id="external-systems-list" class="space-y-3 flex-1 overflow-y-auto custom-scrollbar pr-2">
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-balance-scale text-blue-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Government Compliance Portal</span>
+                  <p class="text-xs text-gray-600">Help staying compliant with legal standards</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-building text-green-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">City Management Portal</span>
+                  <p class="text-xs text-gray-600">Keep track of city activities</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-file-contract text-yellow-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Permitting Portal</span>
+                  <p class="text-xs text-gray-600">Process permits and applications</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-landmark text-pink-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">State Reporting System</span>
+                  <p class="text-xs text-gray-600">Submit required state reports</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-handshake text-orange-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Partner Portal</span>
+                  <p class="text-xs text-gray-600">Collaborate with regional partners</p>
+                </div>
+              </div>
+
+              <!-- Additional hidden items -->
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-university text-purple-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Federal Grant Management</span>
+                  <p class="text-xs text-gray-600">Track and apply for federal grants</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer hidden-item" style="display: none;">
+                <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                  <i class="fa-solid fa-shield-alt text-indigo-600 text-sm"></i>
+                </div>
+                <div class="flex-1">
+                  <span class="font-medium text-gray-900 text-sm">Emergency Management System</span>
+                  <p class="text-xs text-gray-600">Coordinate emergency responses</p>
+                </div>
+              </div>
+            </div>
+            
+            <button id="show-all-external-systems" class="w-full mt-4 py-3 text-primary font-medium hover:bg-blue-50 rounded-lg transition-colors border-t border-gray-100">
+              Show all
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Generic collapse functionality
+      function setupCollapse(toggleId, sectionId, contentId) {
+        const collapseToggle = document.getElementById(toggleId);
+        const chevronIcon = collapseToggle.querySelector('.collapse-chevron');
+        const section = document.getElementById(sectionId);
+        const content = document.getElementById(contentId);
+        
+        let isCollapsed = false;
+
+        collapseToggle.addEventListener('click', function() {
+          isCollapsed = !isCollapsed;
+          
+          if (isCollapsed) {
+            // Collapse
+            content.classList.add('collapsed');
+            chevronIcon.classList.add('rotated');
+            section.classList.add('collapsed');
+          } else {
+            // Expand
+            content.classList.remove('collapsed');
+            chevronIcon.classList.remove('rotated');
+            section.classList.remove('collapsed');
+          }
+        });
+      }
+
+      // Generic show all functionality
+      function setupShowAll(buttonId, listId) {
+        const showAllButton = document.getElementById(buttonId);
+        const hiddenItems = document.querySelectorAll(`#${listId} .hidden-item`);
+        let showingAllItems = false;
+
+        showAllButton.addEventListener('click', function() {
+          showingAllItems = !showingAllItems;
+          
+          hiddenItems.forEach(item => {
+            if (showingAllItems) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+          
+          showAllButton.textContent = showingAllItems ? 'Show less' : 'Show all';
+        });
+      }
+
+      // Setup collapse for all sections
+      setupCollapse('collapse-toggle-my-todos', 'my-todos-section', 'todos-content');
+      setupCollapse('collapse-toggle-team', 'team-todos-section', 'team-todos-content');
+      setupCollapse('collapse-toggle-my-data', 'my-data-section', 'my-data-content');
+      setupCollapse('collapse-toggle-external-data', 'external-data-section', 'external-data-content');
+      setupCollapse('collapse-toggle-internal-systems', 'internal-systems-section', 'internal-systems-content');
+      setupCollapse('collapse-toggle-external-systems', 'external-systems-section', 'external-systems-content');
+
+      // Setup show all functionality
+      setupShowAll('show-all-my-todos', 'my-todos-list');
+      setupShowAll('show-all-team-todos', 'team-todos-list');
+      setupShowAll('show-all-my-data', 'my-data-list');
+      setupShowAll('show-all-external-data', 'external-data-list');
+      setupShowAll('show-all-internal-systems', 'internal-systems-list');
+      setupShowAll('show-all-external-systems', 'external-systems-list');
+
+      // Add button functionality (placeholders)
+      const addButtons = [
+        'add-my-task-btn', 
+        'add-team-task-btn', 
+        'add-my-data-btn', 
+        'add-external-data-btn',
+        'add-internal-system-btn',
+        'add-external-system-btn'
+      ];
+      
+      addButtons.forEach(btnId => {
+        const btn = document.getElementById(btnId);
+        if (btn) {
+          btn.addEventListener('click', function() {
+            alert(`${btnId.replace(/-/g, ' ').replace('btn', '')} functionality would be implemented here`);
+          });
+        }
+      });
+
+      // Filter button functionality for todo sections
+      function setupFilters(filterContainerId) {
+        const filterBtns = document.querySelectorAll(`#${filterContainerId} button`);
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            // Remove active class from all buttons in this container
+            filterBtns.forEach(b => {
+              b.classList.remove('bg-primary', 'text-white');
+              b.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            // Add active class to clicked button
+            this.classList.remove('bg-gray-200', 'text-gray-700');
+            this.classList.add('bg-primary', 'text-white');
+            
+            // Filter functionality would be implemented here
+            console.log('Filter by:', this.textContent);
+          });
+        });
+      }
+
+      setupFilters('filter-buttons');
+      setupFilters('filter-buttons-team');
+    });
+  </script>
+</body>
+</html>
