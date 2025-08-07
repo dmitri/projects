@@ -1,69 +1,115 @@
-<html><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berklee Online - Acoustics</title>
 
     <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/08ce533d2a.js" crossorigin="anonymous"></script>
     <link href="https://assets.online.berklee.edu/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         ::-webkit-scrollbar { display: none; }
         body { font-family: 'Nunito Sans', sans-serif; }
         .shadow-elegant { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
         .shadow-soft { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+
+        .highlighted-section {
+            background-color: rgba(63, 32, 251, 0.1);
+        }
+
+        .edit-button {
+            position: absolute;
+            z-index: 1000;
+        }
+
+        html, body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Dark mode toggle button */
+        .toggle-switch {
+            position: relative;
+            width: 30px;
+            height: 19px;
+            background-color: #374151;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-switch.active {
+            background-color: #ee243c;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(11px);
+        }
     </style>
-    <script>tailwind.config = {
-  "theme": {
-    "extend": {
-      "fontFamily": {
-        "nunito-sans": [
-          "\"Nunito Sans\"",
-          "sans-serif"
-        ]
-      },
-      "colors": {
-        "primary": "#ee243c"
-      }
-    }
-  }
-};</script>
+    
+    <script>
+        tailwind.config = {
+            "theme": {
+                "extend": {
+                    "fontFamily": {
+                        "nunito-sans": ["Nunito Sans", "sans-serif"]
+                    },
+                    "colors": {
+                        "primary": "#ee243c",
+                        "tertiary": "#1988bb",
+                    }
+                }
+            }
+        };
+    </script>
+</head>
 
-<style>
-  .highlighted-section {
-    background-color: rgba(63, 32, 251, 0.1);
-  }
-
-  .edit-button {
-    position: absolute;
-    z-index: 1000;
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  html, body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  </style></head>
 <body class="bg-gray-50 font-nunito-sans">
 
 <div id="app-container" class="bg-gray-100 text-gray-800 w-full flex flex-col h-[100vh]">
     <!-- Header spanning full width -->
-    <header id="header" class="flex items-center justify-between p-4 border-b border-gray-200 bg-white shadow-soft z-10">
-        <div class="flex items-center space-x-11">
-            <div id="logo-container" class="w-12 h-12 pl-1"><img src="https://assets.online.berklee.edu/android-chrome-192x192.png" alt="Berklee Online logo mark"></div>
+    <header id="header" class="flex items-center justify-between p-2 border-b border-gray-200 bg-white shadow-soft z-10">
+        <div class="flex items-center space-x-10">
+            <div id="logo-container" class="w-14 h-14 pl-2 pt-1">
+                <img src="https://assets.online.berklee.edu/android-chrome-192x192.png" alt="Berklee Online logo mark">
+            </div>
             <div>
-                <h1 class="text-3xl font-bold text-gray-900">Acoustics</h1>
-                <p class="text-sm text-gray-500 font-medium mt-1">SECTION 2 | WINTER 2025 | WEEK 6</p>
+                <h1 class="text-2xl font-bold text-gray-900">Acoustics</h1>
+                <p class="text-xs text-gray-500 font-medium mt-1">SECTION 2 | WINTER 2025 | WEEK 6</p>
             </div>
         </div>
         <div class="flex items-center space-x-4">
-            <button class="px-6 py-3 border border-gray-300 rounded-xl text-sm font-semibold flex items-center space-x-3 hover:bg-gray-50 transition-all duration-200 shadow-soft"><i class="fa-solid fa-wand-magic-sparkles text-primary"></i><span>Ask BOB AI Assistant</span></button>
+            <button class="p-3 rounded-lg hover:bg-gray-200">
+                <i class="fa-regular fa-message-music"></i>
+                <div class="text-sm text-gray-500 font-medium">Forums</div>
+            </button>
+            <button class="p-3 rounded-lg hover:bg-gray-200 relative">
+                <i class="fa-regular fa-inbox"></i>
+                <span class="absolute -top-1 -right-1 bg-primary text-white text-[9px] px-1.5 py-0.5 rounded-full flex items-center justify-center font-semibold shadow-sm">99+</span>
+                <div class="text-sm text-gray-500 font-medium">Inbox</div>
+            </button>
+            <button class="px-6 py-3 border border-gray-300 rounded-xl text-sm font-semibold flex items-center space-x-3 hover:bg-gray-50 transition-all duration-200 shadow-soft">
+                <i class="fa-regular fa-wand-magic-sparkles text-primary"></i>
+                <span>Ask BOB AI</span>
+            </button>
             <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full shadow-soft">
         </div>
     </header>
@@ -74,86 +120,598 @@
         <aside id="left-sidebar" class="w-20 bg-gray-100 border-r border-gray-200 flex flex-col items-center py-6 space-y-6 shadow-elegant">
             <nav id="main-nav" class="flex-grow w-full px-2">
                 <ul class="space-y-3">
-                    <li><span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200 cursor-pointer"><i class="fa-solid fa-book text-xl"></i><span class="text-xs mt-1.5 font-medium">Syllabus</span></span></li>
-                    <li class="relative"><span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200 cursor-pointer"><i class="fa-solid fa-bell text-xl"></i><span class="text-xs mt-1.5 font-medium">Activity</span><span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-semibold shadow-sm">14</span></span></li>
-                    <li id="work-nav" class="relative"><span class="flex flex-col items-center py-3 px-2 rounded-xl cursor-pointer shadow-soft transition-all duration-200 bg-white text-black cursor-pointer"><i class="fa-solid fa-briefcase text-xl"></i><span class="text-xs mt-1.5 font-semibold">Work</span><span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-semibold shadow-sm">3</span></span></li>
-                    <li><span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200 cursor-pointer"><i class="fa-solid fa-video text-xl"></i><span class="text-xs mt-1.5 font-medium">Live</span></span></li>
-                    <li><span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200 cursor-pointer"><i class="fa-solid fa-users text-xl"></i><span class="text-xs mt-1.5 font-medium">Roster</span></span></li>
-                    <li class="relative"><span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200 cursor-pointer"><i class="fa-solid fa-inbox text-xl"></i><span class="text-xs mt-1.5 font-medium">Inbox</span><span class="absolute -top-1 -right-1 bg-primary text-white text-[9px] px-1.5 py-0.5 rounded-full flex items-center justify-center font-semibold shadow-sm">99+</span></span></li>
-                    <li><span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200 cursor-pointer"><i class="fa-solid fa-graduation-cap text-xl"></i><span class="text-xs mt-1.5 font-medium">Grades</span></span></li>
+                    <li>
+                        <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
+                            <i class="fa-regular fa-book text-xl"></i>
+                            <span class="text-xs mt-1.5 font-medium">Syllabus</span>
+                        </span>
+                    </li>
+                    <li class="relative">
+                        <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
+                            <i class="fa-regular fa-bell text-xl"></i>
+                            <span class="text-xs mt-1.5 font-medium">Activity</span>
+                            <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-semibold shadow-sm">14</span>
+                        </span>
+                    </li>
+                    <li id="work-nav" class="relative">
+                        <span class="flex flex-col items-center py-3 px-2 rounded-xl cursor-pointer shadow-soft transition-all duration-200 bg-white text-black">
+                            <i class="fa-regular fa-pen-field text-xl"></i>
+                            <span class="text-xs mt-1.5 font-semibold">Work</span>
+                            <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-semibold shadow-sm">3</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
+                            <i class="fa-regular fa-video text-xl"></i>
+                            <span class="text-xs mt-1.5 font-medium">Live</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
+                            <i class="fa-regular fa-users text-xl"></i>
+                            <span class="text-xs mt-1.5 font-medium">Roster</span>
+                        </span>
+                    </li>
+                    <!-- <li class="relative">
+                        <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
+                            <i class="fa-regular fa-inbox text-xl"></i>
+                            <span class="text-xs mt-1.5 font-medium">Inbox</span>
+                            <span class="absolute -top-1 -right-1 bg-primary text-white text-[9px] px-1.5 py-0.5 rounded-full flex items-center justify-center font-semibold shadow-sm">99+</span>
+                        </span>
+                    </li> -->
+                    <li>
+                        <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
+                            <i class="fa-regular fa-badge-check text-xl"></i>
+                            <span class="text-xs mt-1.5 font-medium">Grades</span>
+                        </span>
+                    </li>
                 </ul>
             </nav>
-            <div class="mt-auto">
-                <button class="w-12 h-12 flex items-center justify-center text-gray-500 hover:text-primary rounded-xl transition-all duration-200"><i class="fa-regular fa-circle-question text-2xl"></i></button>
+            <div class="mt-auto flex flex-col items-center border-t border-gray-300 pt-2">
+
+                <button class="w-12 h-12 flex items-center justify-center text-gray-500 hover:text-primary rounded-xl transition-all duration-200">
+                    <i class="fa-regular fa-gear text-2xl"></i>
+                </button>
+                <button class="w-12 h-12 flex items-center justify-center text-gray-500 hover:text-primary rounded-xl transition-all duration-200">
+                    <i class="fa-regular fa-circle-question text-2xl"></i>
+                </button>
+                <div class="flex flex-row items-center border-t border-gray-300 pt-3 mt-2">
+                    <!-- Dark Mode Toggle -->
+                    <i class="fa-regular fa-sun text-gray-500 text-lg mr-1 mt-1"></i>
+                    <div class="toggle-switch" onclick="toggleDarkMode()" id="darkModeToggle">
+                        <div class="toggle-slider"></div>
+                    </div>
+                    <i class="fa-regular fa-moon text-gray-500 text-lg ml-1 mt-1"></i>
+                </div>
             </div>
         </aside>
 
         <div id="content-area" class="flex flex-1 overflow-hidden">
             <aside id="assignments-sidebar" class="w-80 bg-white border-r border-gray-200 flex flex-col shadow-soft">
                 <div class="p-6 border-b border-gray-200">
-                    <div class="flex justify-between items-center mb-6"><h2 class="text-2xl font-bold text-gray-900">Work</h2><div class="flex items-center space-x-4 text-gray-500"><i class="fa-solid fa-filter hover:text-gray-700 cursor-pointer"></i><i class="fa-solid fa-arrow-left hover:text-gray-700 cursor-pointer"></i></div></div>
-                    <div class="flex space-x-2"><button class="px-4 py-2 text-sm bg-gray-100 text-black rounded-lg font-semibold shadow-soft">All</button><button class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg font-medium whitespace-nowrap">Unread (3)</button><button class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg font-medium whitespace-nowrap">Ungraded (3)</button></div>
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900">Work</h2>
+                        <div class="flex items-center space-x-4 text-gray-500">
+                            <i class="fa-regular fa-sliders hover:text-gray-700 cursor-pointer"></i>
+                            <i class="fa-regular fa-arrow-left hover:text-gray-700 cursor-pointer sidebar-toggle"></i>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-4 py-2 text-sm bg-gray-100 text-black rounded-lg font-semibold shadow-soft">All</button>
+                        <button class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg font-medium whitespace-nowrap">Unread (3)</button>
+                        <button class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg font-medium whitespace-nowrap">Ungraded (3)</button>
+                    </div>
                 </div>
-                <div id="assignments-list" class="flex-1 overflow-y-auto p-4 space-y-2">
-                    <div id="lesson-1-container" class="bg-gray-50 rounded-xl p-4 shadow-soft">
-                        <div id="lesson-1-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-1')"><div class="flex flex-col"><p class="text-sm font-semibold text-gray-800">Lesson 1</p><h3 class="text-lg font-bold">Pitch and Note Names</h3></div><i id="lesson-1-icon" class="fa-solid fa-chevron-up text-gray-500 transition-transform duration-200"></i></div>
-                        <ul id="lesson-1-content" class=" mt-3 transition-all duration-300 overflow-hidden">
-                            <li class="p-3 hover:bg-white cursor-pointer transition-all duration-200 shadow-soft"><p class="text-sm font-bold text-gray-800">Pitch and Note Names</p><p class="text-xs text-gray-500 mt-1 font-medium">1/4</p></li>
-                            <li class="p-3 hover:bg-white cursor-pointer transition-all duration-200 shadow-soft"><div class="flex items-center space-x-3"><i class="fa-solid fa-comments text-black-300"></i><p class="text-sm font-medium text-gray-800">Meet and Greet</p></div><p class="text-xs text-gray-500 mt-1 ml-7 font-medium">Avg 88% • 6/6 graded</p></li>
-                            <li class="p-3 bg-red-50 border border-red-200 cursor-pointer shadow-soft"><div class="flex items-center space-x-3"><i class="fa-regular fa-file-lines text-primary"></i><p class="text-sm font-semibold text-gray-800">Assignment 1: Diatonic Fifths</p></div><p class="text-xs text-primary mt-1 ml-7 font-semibold">3/6 graded</p></li>
+                <div id="assignments-list" class="flex-1 overflow-y-auto p-3 space-y-5">
+                    <div id="lesson-1-container" class="border border-gray-200 rounded-sm p-3 shadow-soft">
+                        <div id="lesson-1-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-1')">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-gray-700">Lesson 1</p>
+                                <h3 class="text-base font-extrabold leading-5 text-gray-800">Pitch and Note Names</h3>
+                            </div>
+                            <i id="lesson-1-icon" class="fa-regular fa-chevron-up text-gray-500 transition-transform duration-200"></i>
+                        </div>
+                        <ul id="lesson-1-content" class="mt-4 transition-all duration-300 overflow-hidden">
+                            <li class="p-3 hover:bg-red-100 cursor-pointer transition-all duration-200 shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-comments text-gray-800"></i>
+                                    <p class="text-sm font-bold text-gray-800">Meet and Greet</p>
+                                </div>
+                            </li>
+                            <li class="p-3 hover:bg-red-100 bg-gray-100 rounded-sm cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <div class="relative">
+                                        <i class="fa-regular fa-file-lines text-gray-800 text-lg"></i>
+                                        <i class="fa-solid fa-circle-check text-green-700 text-xs absolute -top-1 -right-1 bg-white rounded-full"></i>
+                                    </div>
+                                    <p class="text-sm font-bold text-gray-800">Assignment 1: Diatonic Fifths</p>
+                                </div>
+                                <p class="text-xs text-gray-800 mt-1 ml-7 font-semibold">6/6 graded</p>
+                            </li>
+                            <li class="p-3 hover:bg-red-100 rounded-sm cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <div class="relative">
+                                        <i class="fa-regular fa-message-dots text-gray-800 text-lg"></i>                                    </div>
+                                    <p class="text-sm font-bold text-gray-800">Assignment 2: How to Dissect the Fifths</p>
+                                </div>
+                                <p class="text-xs text-gray-800 mt-1 ml-7 font-semibold">3/6 graded</p>
+                            </li>
                         </ul>
                     </div>
-                    <div id="lesson-2-container" class="bg-gray-50 rounded-xl p-4 shadow-soft">
-                        <div id="lesson-2-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-2')"><h3 class="text-lg font-semibold text-gray-800">Lesson 2</h3><i id="lesson-2-icon" class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-200"></i></div>
-                        <ul id="lesson-2-content" class="space-y-3 mt-3 hidden transition-all duration-300 overflow-hidden"><li class="p-3 rounded-lg hover:bg-white cursor-pointer transition-all duration-200 shadow-soft"><p class="text-sm font-medium text-gray-800">Beat, Meter, and the Major Scale</p><p class="text-xs text-gray-500 mt-1 font-medium">0/4</p></li></ul>
+                    
+                    <div id="lesson-2-container" class="border border-gray-200 rounded-lg p-3 shadow-soft">
+                        <div id="lesson-2-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-2')">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-gray-700">Lesson 2</p>
+                                <h3 class="text-base font-extrabold leading-5 text-gray-800">Beat, Meter, and the Major Scale</h3>
+                            </div>
+                            <i id="lesson-2-icon" class="fa-regular fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                        </div>
+                        <ul id="lesson-2-content" class="mt-4 hidden transition-all duration-300 overflow-hidden">
+                            <li class="p-3 hover:bg-red-100 rounded-lg cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Discussion 2: Fifths and More</p>
+                                </div>
+                            </li>
+                            <li class="p-3 hover:bg-red-100 rounded-lg cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Harmony 1</p>
+                                </div>
+                            </li>
+                            <li class="p-3 hover:bg-red-100 rounded-lg cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Discussion 2: Fifths and More</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="lesson-3-container" class="border border-gray-200  rounded-lg p-3 shadow-soft">
+                        <div id="lesson-3-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-3')">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-gray-700">Lesson 3</p>
+                                <h3 class="text-base font-bold leading-5 text-gray-800">Vocal Introduction and the C Major Scale</h3>
+                            </div>
+                            <i id="lesson-3-icon" class="fa-regular fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                        </div>
+                        <ul id="lesson-3-content" class="mt-4 hidden transition-all duration-300 overflow-hidden">
+                            <li class="p-3 hover:bg-red-100 cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Discussion 3: Diatonic Fifths</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="lesson-4-container" class="border border-gray-200  rounded-lg p-3 shadow-soft">
+                        <div id="lesson-4-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-4')">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-gray-700">Lesson 4</p>
+                                <h3 class="text-base font-bold leading-5 text-gray-800">Beginning Conducting and Intervals</h3>
+                            </div>
+                            <i id="lesson-4-icon" class="fa-regular fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                        </div>
+                        <ul id="lesson-4-content" class="mt-4 hidden transition-all duration-300 overflow-hidden">
+                            <li class="p-3 hover:bg-red-100 cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Discussion 4: Diatonic Fifths</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="lesson-5-container" class="border border-gray-200  rounded-lg p-3 shadow-soft">
+                        <div id="lesson-5-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-5')">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-gray-700">Lesson 5</p>
+                                <h3 class="text-base font-bold leading-5 text-gray-800">Intervals and C Minor Diads</h3>
+                            </div>
+                            <i id="lesson-5-icon" class="fa-regular fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                        </div>
+                        <ul id="lesson-5-content" class="mt-4  hidden transition-all duration-300 overflow-hidden">
+                            <li class="p-3 hover:bg-red-100 cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Discussion 5: Diatonic Fifths</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </aside>
+            
             <main id="main-content" class="flex-1 bg-white p-8 overflow-y-auto">
-                <h1 class="text-4xl font-bold text-gray-900 mb-8">Assignment 1: Diatonic Fifths</h1>
-                <div class="grid grid-cols-3 gap-6 mb-8 p-6 bg-gray-50 rounded-xl shadow-soft">
-                    <div class="flex items-center space-x-3"><span class="text-gray-600 font-semibold">Student</span><img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Mina H" class="w-10 h-10 rounded-full shadow-soft"><span class="font-semibold text-gray-800">Mina H</span></div>
-                    <div><span class="text-gray-600 font-semibold">Submitted</span><span class="block text-gray-800 font-medium mt-1">Sunday, Jun 9th 11:59 PM</span></div>
-                    <div><span class="text-gray-600 font-semibold">Grade</span><div class="flex items-center space-x-3 mt-1"><span class="text-orange-600 font-bold text-lg">78%</span><span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">C+</span></div></div>
+                <div class="flex flex-row justify-between">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-8">Assignment 1: Diatonic Fifths</h1>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <button class="px-6 py-3 border border-gray-300 rounded-xl text-sm font-medium flex items-center space-x-3 hover:bg-gray-50 shadow-soft">
+                            <span>Show Instructions</span>
+                            <i class="fa-regular fa-chevron-down text-xs"></i>
+                        </button>
+                        <button class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-xl text-gray-600 hover:bg-gray-50 shadow-soft">
+                            <i class="fa-regular fa-bell"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="flex items-center space-x-4 mb-8">
-                    <button class="px-6 py-3 border border-gray-300 rounded-xl text-sm font-medium flex items-center space-x-3 hover:bg-gray-50 shadow-soft"><span>Show Instructions</span><i class="fa-solid fa-chevron-down text-xs"></i></button>
-                    <button class="w-12 h-12 flex items-center justify-center border border-gray-300 rounded-xl text-gray-600 hover:bg-gray-50 shadow-soft"><i class="fa-regular fa-bell"></i></button>
+                <div class="relative w-full mb-8 mx-auto border border-gray-200 rounded-xl">
+                    <!-- Header (Trigger) -->
+                    <div id="dropdownHeader" class="grid grid-cols-2 gap-6 p-6 bg-gray-50 rounded-xl shadow-soft cursor-pointer w-full">
+                      <div class="flex items-center space-x-3">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Mina H" class="w-10 h-10 rounded-full shadow-soft">
+                        <span class="font-bold text-lg text-gray-800">
+                          Mina Hadley
+                          <div class="text-gray-800 font-normal text-sm">Submitted Sun, Jun 9 11:59 PM</div>
+                        </span>
+                      </div>
+                      <div class="flex items-center justify-end border-l border-white">
+                        <div class="flex items-center space-x-3 mr-16">
+                            <div class="text-black font-bold text-lg">78%</div>
+                            <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">C+</div>
+                        </div>
+                        <div class="border-l border-gray-300 pl-3">
+                            <i id="chevronIcon" class="fa-regular fa-chevron-down text-xl transition-transform duration-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <!-- Dropdown Content -->
+                    <div
+                      id="dropdownContent"
+                      class="absolute top-full left-0 w-full z-50 hidden mt-2 space-y-2 bg-white rounded-xl shadow-2xl p-4"
+                    >
+                      <!-- Additional Student Row -->
+                      <div class="grid grid-cols-2 gap-6 p-4 bg-gray-50 rounded-xl shadow-soft">
+                        <div class="flex items-center space-x-3">
+                          <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Jonas K" class="w-10 h-10 rounded-full shadow-soft">
+                          <span class="font-bold text-lg text-gray-800">
+                            Jonas Kramer
+                            <div class="text-gray-800 font-normal text-sm">Submitted Mon, Jun 10 10:12 AM</div>
+                          </span>
+                        </div>
+                        <div class="flex items-center justify-end space-x-4">
+                          <div class="flex items-center space-x-3">
+                            <div class="text-black font-bold text-lg">92%</div>
+                            <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">A-</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-2 gap-6 p-4 bg-gray-50 rounded-xl shadow-soft">
+                        <div class="flex items-center space-x-3">
+                          <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Jonas K" class="w-10 h-10 rounded-full shadow-soft">
+                          <span class="font-bold text-lg text-gray-800">
+                            Nikolaus Klaustenhauser
+                            <div class="text-gray-800 font-normal text-sm">Submitted Mon, Jun 10 10:12 AM</div>
+                          </span>
+                        </div>
+                        <div class="flex items-center justify-end space-x-4">
+                          <div class="flex items-center space-x-3">
+                            <div class="text-black font-bold text-lg">82%</div>
+                            <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">B-</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-2 gap-6 p-4 bg-gray-50 rounded-xl shadow-soft">
+                        <div class="flex items-center space-x-3">
+                          <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Jonas K" class="w-10 h-10 rounded-full shadow-soft">
+                          <span class="font-bold text-lg text-gray-800">
+                            Miles Dehdin
+                            <div class="text-gray-800 font-normal text-sm">Submitted Mon, Jun 10 10:12 AM <span class="bg-red-100 text-red-700">Late submission</span></div>
+                          </span>
+                        </div>
+                        <div class="flex items-center justify-end space-x-4">
+                          <div class="flex items-center space-x-3">
+                            <div class="text-black font-bold text-lg"></div>
+                            <div class="bg-gray-200 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">Not yet graded</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-2 gap-6 p-4 bg-gray-50 rounded-xl shadow-soft">
+                        <div class="flex items-center space-x-3">
+                          <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="Jonas K" class="w-10 h-10 rounded-full shadow-soft">
+                          <span class="font-bold text-lg text-gray-800">
+                            Amy Smith
+                            <div class="text-gray-800 font-normal text-sm"></div>
+                          </span>
+                        </div>
+                        <div class="flex items-center justify-end space-x-4">
+                          <div class="flex items-center space-x-3">
+                            <div class="text-black font-bold text-lg"></div>
+                            <div class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">Not yet submitted</div>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <!-- Add more student rows here -->
+                    </div>
                 </div>
+                
                 <p class="text-gray-800 mb-8 text-lg leading-relaxed">Here we go! Sorry I have to get everything out of the way early this week because I'm going to the Masters down in Augusta!</p>
                 <div id="audio-player" class="bg-gray-50 p-6 rounded-xl border border-gray-200 flex items-center space-x-6 mb-10 shadow-soft">
-                    <button class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-colors shadow-soft"><i class="fa-solid fa-play"></i></button>
+                    <button class="w-12 h-12 bg-tertiary text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-colors shadow-soft">
+                        <i class="fa-regular fa-play"></i>
+                    </button>
                     <span class="text-sm text-gray-600 font-medium">0:03 / 5:25</span>
-                    <div class="flex-1 h-2 bg-gray-300 rounded-full"><div class="w-1/4 bg-primary h-2 rounded-full shadow-sm"></div></div>
+                    <div class="flex-1 h-2 bg-gray-300 rounded-full">
+                        <div class="w-1/4 bg-tertiary h-2 rounded-full shadow-sm"></div>
+                    </div>
                     <span class="text-sm text-gray-700 hover:text-primary cursor-pointer font-medium">Scarborough L2-1.mp3</span>
-                    <button class="text-gray-600 hover:text-gray-800"><i class="fa-solid fa-volume-high"></i></button><button class="text-gray-600 hover:text-gray-800"><i class="fa-solid fa-download"></i></button>
+                    <button class="text-gray-600 hover:text-gray-800">
+                        <i class="fa-regular fa-volume-high"></i>
+                    </button>
+                    <button class="text-gray-600 hover:text-gray-800">
+                        <i class="fa-regular fa-download"></i>
+                    </button>
                 </div>
                 <div id="feedback-editor" class="border border-gray-300 rounded-xl shadow-soft overflow-hidden">
-                    <div class="flex items-center p-4 border-b border-gray-200 bg-gray-50 space-x-3 text-gray-600"><button class="p-3 rounded-lg hover:bg-gray-200"><i class="fa-solid fa-bold"></i></button><button class="p-3 rounded-lg hover:bg-gray-200"><i class="fa-solid fa-italic"></i></button><button class="p-3 rounded-lg hover:bg-gray-200"><i class="fa-solid fa-underline"></i></button><div class="h-6 border-l border-gray-300"></div><button class="p-3 rounded-lg hover:bg-gray-200"><i class="fa-solid fa-list-ul"></i></button><span class="text-sm ml-auto text-green-600 font-semibold">✓ Draft Saved</span></div>
-                    <div class="p-6"><p class="text-gray-800 font-semibold mb-4">Student Name,</p><p class="text-gray-800 leading-relaxed">This is a standard paragraph style. This is a body paragraph with excellent work shown throughout. The technical execution demonstrates strong understanding of the concepts.</p></div>
+                    <div class="flex items-center p-4 border-b border-gray-200 bg-gray-50 space-x-3 text-gray-600 justify-between">
+                        <!-- Left Buttons -->
+                        <div class="flex items-center space-x-3">
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-bold"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-italic"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-underline"></i>
+                            </button>
+                    
+                            <div class="h-6 border-l border-gray-300"></div>
+                    
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-list-ul"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-text-size"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-list-ol"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-link"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-hashtag"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-face-smile-plus"></i>
+                            </button>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-code"></i>
+                            </button>
+                        </div>
+                    
+                        <!-- Right-aligned content -->
+                        <div class="ml-auto flex items-center space-x-3">
+                            <span class="text-sm text-green-600 font-semibold">✓ Draft Saved</span>
+                            <button class="p-3 rounded-lg hover:bg-gray-200">
+                                <i class="fa-regular fa-arrow-up-right-and-arrow-down-left-from-center"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <p class="text-gray-800 font-semibold mb-4">Student Name,</p>
+                        <p class="text-gray-800 leading-relaxed">This is a standard paragraph style. This is a body paragraph with excellent work shown throughout. The technical execution demonstrates strong understanding of the concepts.</p>
+                    </div>
                     <div class="p-6 border-t border-gray-200 bg-gray-50">
-                        <div class="flex items-center space-x-3 mb-6"><span class="text-lg font-semibold text-gray-800">Grade</span><button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">A</button><button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">B+</button><button class="px-4 py-2 border border-orange-300 rounded-lg text-sm bg-orange-100 text-orange-700 font-semibold">C+</button><input type="text" value="78%" class="w-20 px-3 py-2 border border-gray-300 rounded-lg text-sm text-center font-semibold"></div>
-                        <div class="flex justify-between items-center"><div class="flex items-center space-x-3 text-gray-600"><button class="p-3 rounded-lg hover:bg-gray-200"><i class="fa-regular fa-folder"></i></button><button class="p-3 rounded-lg hover:bg-gray-200"><i class="fa-solid fa-link"></i></button><button class="p-3 rounded-lg hover:bg-gray-200"><i class="fa-regular fa-image"></i></button></div><button class="px-8 py-3 bg-primary text-white rounded-xl text-sm font-semibold flex items-center space-x-3 hover:bg-red-700 shadow-soft"><span>Submit Feedback</span><i class="fa-solid fa-paper-plane"></i></button></div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <span class="text-lg font-semibold text-gray-800">Grade</span>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">A</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">A-</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">B+</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">B</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">B-</button>
+                            <button class="px-4 py-2 border border-green-600 bg-green-100 rounded-lg text-sm bg-primary-100 text-green-900 font-semibold">C+</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">C</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">C-</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">W</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">D</button>
+                            <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm hover:bg-gray-100 font-medium">F</button>
+                            <input type="text" value="78%" class="w-20 px-3 py-2 border border-gray-300 rounded-lg text-sm text-center font-semibold">
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-3 text-gray-600">
+                                <button class="p-3 rounded-lg hover:bg-gray-200">
+                                    <i class="fa-regular fa-folder"></i>
+                                </button>
+                                <button class="p-3 rounded-lg hover:bg-gray-200">
+                                    <i class="fa-regular fa-paperclip"></i>
+                                </button>
+                                <button class="p-3 rounded-lg hover:bg-gray-200">
+                                    <i class="fa-regular fa-image"></i>
+                                </button>
+                            </div>
+                            <button class="px-8 py-3 bg-tertiary text-white rounded-xl text-sm font-semibold flex items-center space-x-3 hover:bg-red-700 shadow-soft">
+                                <span>Submit Feedback</span>
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </main>
+            
             <aside id="submissions-sidebar" class="w-80 bg-white border-l border-gray-200 flex flex-col shadow-soft">
-                <div class="p-6 border-b border-gray-200"><div class="flex items-center space-x-4 mb-2"><button class="text-gray-600 hover:text-gray-800"><i class="fa-solid fa-arrow-left"></i></button><h2 class="text-xl font-bold text-gray-900">Submissions</h2></div><p class="text-sm text-gray-500 ml-9 font-medium">3/6 graded</p></div>
+                <!-- <div class="p-6 border-b border-gray-200">
+                    <div class="flex items-center space-x-4 mb-2">
+                        <button class="text-gray-600 hover:text-gray-800">
+                            <i class="fa-regular fa-arrow-left"></i>
+                        </button>
+                        <h2 class="text-xl font-bold text-gray-900">Submissions</h2>
+                    </div>
+                    <p class="text-sm text-gray-500 ml-9 font-medium">3/6 graded</p>
+                </div> -->
                 <ul id="student-list" class="flex-1 overflow-y-auto divide-y divide-gray-100">
-                    <li class="p-6 bg-red-50 border-l-4 border-primary"><div class="flex items-start space-x-4"><img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Mina Hadley" class="w-12 h-12 rounded-full shadow-soft"><div class="flex-1"><p class="font-semibold text-gray-900 text-lg">Mina Hadley</p><p class="text-sm text-gray-600 mt-2 leading-relaxed">These are notes for accessibility and miscellaneous purposes</p><div class="text-xs text-gray-500 mt-3 flex items-center"><span class="mr-2">• First note...</span><button class="text-xs text-primary hover:text-red-800 font-medium">More <i class="fa-solid fa-chevron-down text-xs"></i></button></div></div></div></li>
-                    <li class="p-6 hover:bg-gray-50 cursor-pointer"><div class="flex items-center space-x-4"></div></li></ul></aside>
+                    <li class="p-6">
+                        <div class="flex items-start space-x-4">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Mina Hadley" class="w-12 h-12 rounded-full shadow-soft">
+                            <div class="flex-1">
+                                <p class="font-bold text-gray-900 text-lg">Mina Hadley</p>
+                                <div class="gap-2"><i class="fa-regular fa-graduation-cap"></i><i class="fa-brands fa-accessible-icon"></i></div>
+                                <p class="text-sm text-gray-600 mt-2 leading-5">These are notes for accessibility and miscellaneous purposes</p>
+                                <div class="text-xs text-gray-500 mt-3 flex flex-col items-center">
+                                    <ul class="list-disc pl-4 mb-2">
+                                        <li>
+                                            <div>
+                                            Usually finishes homework very ahead of time. Took Intro to Logic in 2021, got an A.
+                                            </div>
+                                            <button class="text-xs text-primary hover:text-red-800 font-medium pt-3">
+                                                More <i class="fa-regular fa-chevron-down text-xs"></i>
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="p-6 hover:bg-gray-50 cursor-pointer">
+                        <div class="flex items-center space-x-4"></div>
+                    </li>
+                </ul>
+            </aside>
         </div>
     </div>
 </div>
+
 <script>
+    let isDarkMode = false; // Start in light mode
+
+    function toggleDarkMode() {
+        const body = document.body;
+        const toggle = document.getElementById('darkModeToggle');
+        const appContainer = document.getElementById('app-container');
+        
+        isDarkMode = !isDarkMode;
+        
+        if (isDarkMode) {
+            // Switch to dark mode
+            body.className = 'bg-gray-900 font-nunito-sans text-gray-100 transition-colors duration-300';
+            appContainer.className = 'bg-gray-900 text-gray-100 w-full flex flex-col h-[100vh]';
+            toggle.classList.add('active');
+            
+            // Update all components to dark mode
+            updateElementsForDarkMode(true);
+        } else {
+            // Switch to light mode
+            body.className = 'bg-gray-50 font-nunito-sans text-gray-800 transition-colors duration-300';
+            appContainer.className = 'bg-gray-100 text-gray-800 w-full flex flex-col h-[100vh]';
+            toggle.classList.remove('active');
+            
+            // Update all components to light mode
+            updateElementsForDarkMode(false);
+        }
+    }
+    
+    function updateElementsForDarkMode(dark) {
+        const header = document.getElementById('header');
+        const leftSidebar = document.getElementById('left-sidebar');
+        const assignmentsSidebar = document.getElementById('assignments-sidebar');
+        const mainContent = document.getElementById('main-content');
+        const submissionsSidebar = document.getElementById('submissions-sidebar');
+        
+        if (dark) {
+            // Dark mode classes - exactly as specified
+            header.className = 'flex items-center justify-between p-4 border-b border-gray-700 bg-gray-800 shadow-soft z-10';
+            leftSidebar.className = 'w-20 bg-gray-800 border-r border-gray-700 flex flex-col items-center py-6 space-y-6 shadow-elegant';
+            assignmentsSidebar.className = 'w-80 bg-gray-800 border-r border-gray-700 flex flex-col shadow-soft';
+            mainContent.className = 'flex-1 bg-gray-800 p-8 overflow-y-auto';
+            submissionsSidebar.className = 'w-80 bg-gray-800 border-l border-gray-700 flex flex-col shadow-soft';
+            
+            // Update header text colors
+            const headerH1 = header.querySelector('h1');
+            const headerP = header.querySelector('p');
+            if (headerH1) headerH1.className = 'text-3xl font-bold text-gray-100';
+            if (headerP) headerP.className = 'text-sm text-gray-400 font-medium mt-1';
+            
+            // Update all text elements in all sections
+            const sections = [leftSidebar, assignmentsSidebar, mainContent, submissionsSidebar];
+            sections.forEach(section => {
+                const textElements = section.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, button, a, li, label, input');
+                const focusElements = section.querySelectorAll('div, li, span, button, i');
+                textElements.forEach(element => {
+                    const classes = element.className;
+                    // Replace common text color classes with dark mode equivalents
+                    element.className = classes
+                        .replace(/text-gray-900/g, 'text-gray-100')
+                        .replace(/text-gray-800/g, 'text-gray-200')
+                        .replace(/text-gray-700/g, 'text-gray-300')
+                        .replace(/text-gray-600/g, 'text-gray-400')
+                        .replace(/text-gray-500/g, 'text-gray-400')
+                        .replace(/text-black/g, 'text-gray-100');
+                    });
+                    focusElements.forEach(element => {
+                        const classes = element.className;
+                        // Replace dark mode text colors back to light mode
+                        element.className = classes
+                            .replace(/text-gray-800/g, 'text-gray-100')
+                            .replace(/bg-gray-50/g, 'bg-gray-700')
+                            .replace(/bg-gray-100/g, 'bg-gray-700')
+                            .replace(/bg-white/g, 'bg-gray-500');
+                    });
+            });
+            
+        } else {
+            // Light mode classes - back to original
+            header.className = 'flex items-center justify-between p-4 border-b border-gray-200 bg-white shadow-soft z-10';
+            leftSidebar.className = 'w-20 bg-gray-100 border-r border-gray-200 flex flex-col items-center py-6 space-y-6 shadow-elegant';
+            assignmentsSidebar.className = 'w-80 bg-white border-r border-gray-200 flex flex-col shadow-soft';
+            mainContent.className = 'flex-1 bg-white p-8 overflow-y-auto';
+            submissionsSidebar.className = 'w-80 bg-white border-l border-gray-200 flex flex-col shadow-soft';
+            
+            // Reset header text colors to original
+            const headerH1 = header.querySelector('h1');
+            const headerP = header.querySelector('p');
+            if (headerH1) headerH1.className = 'text-3xl font-bold text-gray-900';
+            if (headerP) headerP.className = 'text-sm text-gray-500 font-medium mt-1';
+            
+            // Reset all text elements back to original colors
+            const sections = [leftSidebar, assignmentsSidebar, mainContent, submissionsSidebar];
+            sections.forEach(section => {
+                const textElements = section.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, button, a, li, label, input');
+                const focusElements = section.querySelectorAll('div, li, span, span, button, i');
+                textElements.forEach(element => {
+                    const classes = element.className;
+                    // Replace dark mode text colors back to light mode
+                    element.className = classes
+                        .replace(/text-gray-100/g, 'text-gray-900')
+                        .replace(/text-gray-200/g, 'text-gray-800')
+                        .replace(/text-gray-300/g, 'text-gray-700')
+                        .replace(/text-gray-400/g, 'text-gray-600');
+                });
+                focusElements.forEach(element => {
+                    const classes = element.className;
+                    // Replace dark mode text colors back to light mode
+                    element.className = classes
+                        .replace(/text-gray-100/g, 'text-gray-800')
+                        .replace(/bg-gray-700/g, 'bg-gray-100')
+                        .replace(/bg-gray-500/g, 'bg-white');
+                });
+            });
+        }
+    }
+
+
     function toggleLesson(lessonId) {
         const content = document.getElementById(lessonId + '-content');
         const icon = document.getElementById(lessonId + '-icon');
         
-        if (content.classList.contains('hidden')) {
+        // Determine current state by checking if content is hidden
+        const isHidden = content.classList.contains('hidden');
+        
+        if (isHidden) {
             // Show content
             content.classList.remove('hidden');
             content.style.maxHeight = content.scrollHeight + 'px';
+            // Ensure icon is pointing up (expanded state)
             icon.classList.remove('fa-chevron-down');
             icon.classList.add('fa-chevron-up');
             icon.style.transform = 'rotate(0deg)';
@@ -163,10 +721,22 @@
             setTimeout(() => {
                 content.classList.add('hidden');
             }, 300);
+            // Ensure icon is pointing down (collapsed state)
             icon.classList.remove('fa-chevron-up');
             icon.classList.add('fa-chevron-down');
             icon.style.transform = 'rotate(180deg)';
         }
     }
-    </script>
-</body></html>
+
+    const dropdownHeader = document.getElementById('dropdownHeader');
+    const dropdownContent = document.getElementById('dropdownContent');
+    const chevronIcon = document.getElementById('chevronIcon');
+
+    dropdownHeader.addEventListener('click', () => {
+        dropdownContent.classList.toggle('hidden');
+        chevronIcon.classList.toggle('rotate-180');
+    });
+</script>
+
+</body>
+</html>
