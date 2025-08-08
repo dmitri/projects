@@ -165,7 +165,7 @@
                     <li class="relative">
                         <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
                             <i class="fa-regular fa-bell text-xl"></i>
-                            <span class="text-xs mt-1.5 font-medium">Activity</span>
+                            <span class="text-xs mt-1.5 font-medium">Notifications</span>
                             <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-semibold shadow-sm">14</span>
                         </span>
                     </li>
@@ -696,7 +696,7 @@
             // Update header text colors
             const headerH1 = header.querySelector('h1');
             const headerP = header.querySelector('p');
-            if (headerH1) headerH1.className = 'text-3xl font-bold text-gray-100';
+            if (headerH1) headerH1.className = 'text-xl font-bold text-gray-100';
             if (headerP) headerP.className = 'text-sm text-gray-400 font-medium mt-1';
             
             // Update all text elements in all sections
@@ -739,7 +739,7 @@
             // Reset header text colors to original
             const headerH1 = header.querySelector('h1');
             const headerP = header.querySelector('p');
-            if (headerH1) headerH1.className = 'text-3xl font-bold text-gray-900';
+            if (headerH1) headerH1.className = 'text-xl font-bold text-gray-900';
             if (headerP) headerP.className = 'text-sm text-gray-500 font-medium mt-1';
             
             // Reset all text elements back to original colors
@@ -847,9 +847,9 @@
 
     // Color ramp
     const color = pct < 34 ? '#ee243c' : (pct < 75 ? '#f59e0b' : '#10b981');
-    // Gradient from light green to dark green
-    const gradStart = '#bbf7d0'; // Tailwind's green-100
-    const gradEnd = '#15803d';   // Tailwind's green-800
+    // Gradient for progress
+    const gradStart = '#fecaca'; // light red
+    const gradEnd = '#ee243c';   // brand primary red
     fill.style.background = `linear-gradient(to right, ${gradStart}, ${gradEnd})`;
 
     // Encouragement copy by phase
