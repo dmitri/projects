@@ -63,6 +63,27 @@
         .toggle-switch.active .toggle-slider {
             transform: translateX(11px);
         }
+
+        /* Smoothly hide/show the assignments sidebar */
+        #assignments-sidebar {
+            width: 20rem;                /* matches w-80 */
+            transition: width 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+            will-change: width, transform, opacity;
+        }
+
+        #assignments-sidebar.collapsed {
+            width: 0;                    /* frees space so main can expand */
+            transform: translateX(-100%);
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden;            /* hide inner content while collapsing */
+        }
+
+        /* Ensure main content can actually expand / shrink in a flex row */
+        #main-content {
+            min-width: 0;                /* critical for flex children with overflow */
+            transition: width 0.3s ease; /* optional visual smoothness */
+        }
     </style>
     
     <script>
@@ -86,14 +107,29 @@
 
 <div id="app-container" class="bg-gray-100 text-gray-800 w-full flex flex-col h-[100vh]">
     <!-- Header spanning full width -->
-    <header id="header" class="flex items-center justify-between p-2 border-b border-gray-200 bg-white shadow-soft z-10">
+    <header id="header" data-total-weeks="12" class="relative flex items-center justify-between p-2 border-b border-gray-200 bg-white shadow-soft z-10">
         <div class="flex items-center space-x-10">
             <div id="logo-container" class="w-14 h-14 pl-2 pt-1">
                 <img src="https://assets.online.berklee.edu/android-chrome-192x192.png" alt="Berklee Online logo mark">
             </div>
             <div>
-                <h1 class="text-2xl font-bold text-gray-900">Acoustics</h1>
+                <h1 class="text-xl font-bold text-gray-900">Acoustics</h1>
                 <p class="text-xs text-gray-500 font-medium mt-1">SECTION 2 | WINTER 2025 | WEEK 6</p>
+            </div>
+        </div>
+        <!-- Course Linear Progress (centered, compact, with encouragement) -->
+        <div id="course-progress-linear" class="absolute left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center select-none">
+            <div class="flex items-center gap-3 mb-1">
+            <div class="flex items-center gap-1">
+                <span id="cpl-label-left" class="text-[12px] text-gray-500 font-semibold uppercase tracking-wide">Week</span>
+                <span id="cpl-week" class="text-[12px] text-gray-900 font-extrabold">6</span>
+                <span class="text-[12px] text-gray-400">/</span>
+                <span id="cpl-total" class="text-[12px] text-gray-500">12</span>
+            </div>
+            <span id="cpl-encouragement" class="text-[12px] text-gray-500 font-medium whitespace-nowrap">Keep the streak going!</span>
+            </div>
+            <div class="w-56 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+            <div id="cpl-fill" class="h-full rounded-full" style="width: 0%; transition: width .6s ease, background-color .3s ease;"></div>
             </div>
         </div>
         <div class="flex items-center space-x-4">
@@ -152,13 +188,6 @@
                             <span class="text-xs mt-1.5 font-medium">Roster</span>
                         </span>
                     </li>
-                    <!-- <li class="relative">
-                        <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
-                            <i class="fa-regular fa-inbox text-xl"></i>
-                            <span class="text-xs mt-1.5 font-medium">Inbox</span>
-                            <span class="absolute -top-1 -right-1 bg-primary text-white text-[9px] px-1.5 py-0.5 rounded-full flex items-center justify-center font-semibold shadow-sm">99+</span>
-                        </span>
-                    </li> -->
                     <li>
                         <span class="flex flex-col items-center py-3 px-2 text-gray-500 hover:text-primary rounded-xl cursor-pointer transition-all duration-200">
                             <i class="fa-regular fa-badge-check text-xl"></i>
@@ -175,7 +204,7 @@
                 <button class="w-12 h-12 flex items-center justify-center text-gray-500 hover:text-primary rounded-xl transition-all duration-200">
                     <i class="fa-regular fa-circle-question text-2xl"></i>
                 </button>
-                <div class="flex flex-row items-center border-t border-gray-300 pt-3 mt-2">
+                <div class="flex flex-row items-center border-t border-gray-300 pt-3 mt-1">
                     <!-- Dark Mode Toggle -->
                     <i class="fa-regular fa-sun text-gray-500 text-lg mr-1 mt-1"></i>
                     <div class="toggle-switch" onclick="toggleDarkMode()" id="darkModeToggle">
@@ -193,7 +222,9 @@
                         <h2 class="text-2xl font-bold text-gray-900">Work</h2>
                         <div class="flex items-center space-x-4 text-gray-500">
                             <i class="fa-regular fa-sliders hover:text-gray-700 cursor-pointer"></i>
-                            <i class="fa-regular fa-arrow-left hover:text-gray-700 cursor-pointer sidebar-toggle"></i>
+                            <button id="assignments-sidebar-toggle">
+                                <i class="fa-regular fa-arrow-left hover:text-gray-700 cursor-pointer sidebar-toggle"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="flex space-x-2">
@@ -203,7 +234,7 @@
                     </div>
                 </div>
                 <div id="assignments-list" class="flex-1 overflow-y-auto p-3 space-y-5">
-                    <div id="lesson-1-container" class="border border-gray-200 rounded-sm p-3 shadow-soft">
+                    <div id="lesson-1-container" class="border rounded-lg border-gray-200 p-3 shadow-soft">
                         <div id="lesson-1-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-1')">
                             <div class="flex flex-col">
                                 <p class="text-sm font-semibold text-gray-700">Lesson 1</p>
@@ -318,6 +349,42 @@
                                 <div class="flex items-center space-x-3">
                                     <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
                                     <p class="text-sm font-bold text-gray-800">Discussion 5: Diatonic Fifths</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="lesson-6-container" class="border border-gray-200  rounded-lg p-3 shadow-soft">
+                        <div id="lesson-6-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-6')">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-gray-700">Lesson 6</p>
+                                <h3 class="text-base font-bold leading-5 text-gray-800">Intervals and C Minor Diads</h3>
+                            </div>
+                            <i id="lesson-5-icon" class="fa-regular fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                        </div>
+                        <ul id="lesson-5-content" class="mt-4  hidden transition-all duration-300 overflow-hidden">
+                            <li class="p-3 hover:bg-red-100 cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Discussion 6: Diatonic Fifths</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="lesson-7-container" class="border border-gray-200  rounded-lg p-3 shadow-soft">
+                        <div id="lesson-7-toggle" class="flex justify-between items-center cursor-pointer hover:bg-gray-100 rounded-lg p-2 -m-2 transition-all duration-200" onclick="toggleLesson('lesson-7')">
+                            <div class="flex flex-col">
+                                <p class="text-sm font-semibold text-gray-700">Lesson 7</p>
+                                <h3 class="text-base font-bold leading-5 text-gray-800">Intervals and C Minor Diads</h3>
+                            </div>
+                            <i id="lesson-5-icon" class="fa-regular fa-chevron-down text-gray-500 transition-transform duration-200"></i>
+                        </div>
+                        <ul id="lesson-5-content" class="mt-4  hidden transition-all duration-300 overflow-hidden">
+                            <li class="p-3 hover:bg-red-100 cursor-pointer shadow-soft">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fa-regular fa-message-dots text-gray-800 font-bold"></i>
+                                    <p class="text-sm font-bold text-gray-800">Discussion 7: Diatonic Fifths</p>
                                 </div>
                             </li>
                         </ul>
@@ -731,14 +798,85 @@
         }
     }
 
+    // Student List Dropdown
     const dropdownHeader = document.getElementById('dropdownHeader');
     const dropdownContent = document.getElementById('dropdownContent');
     const chevronIcon = document.getElementById('chevronIcon');
-
+    
     dropdownHeader.addEventListener('click', () => {
         dropdownContent.classList.toggle('hidden');
         chevronIcon.classList.toggle('rotate-180');
     });
+
+    // Sidebar toggle functionality
+    const sidebar = document.getElementById('assignments-sidebar');
+    const toggleBtn = document.getElementById('assignments-sidebar-toggle');
+    const workNavBtn = document.querySelector('#work-nav span');
+
+    /* Toggle on left-arrow button */
+    toggleBtn.addEventListener('click', function () {
+    sidebar.classList.toggle('collapsed');
+    });
+
+    /* Reopen sidebar when Work nav is clicked */
+    workNavBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('collapsed')) {
+        sidebar.classList.remove('collapsed');
+    }
+    });
+
+    // Set the weekly progress bar
+    (function initCourseLinearProgress() {
+    const header = document.getElementById('header');
+    const totalWeeks = parseInt(header.dataset.totalWeeks || '12', 10);
+
+    // Extract current week from header subline (e.g., "… | WEEK 6")
+    const subline = header.querySelector('p')?.textContent || '';
+    const weekMatch = subline.match(/WEEK\s+(\d+)/i);
+    const currentWeek = Math.max(1, Math.min(totalWeeks, parseInt(weekMatch?.[1] || '1', 10)));
+
+    const fill = document.getElementById('cpl-fill');
+    const weekEl = document.getElementById('cpl-week');
+    const totalEl = document.getElementById('cpl-total');
+    const encourEl = document.getElementById('cpl-encouragement');
+
+    const pct = (currentWeek / totalWeeks) * 100;
+    weekEl.textContent = currentWeek;
+    totalEl.textContent = totalWeeks;
+    fill.style.width = pct.toFixed(2) + '%';
+
+    // Color ramp
+    const color = pct < 34 ? '#ee243c' : (pct < 75 ? '#f59e0b' : '#10b981');
+    // Gradient from light green to dark green
+    const gradStart = '#bbf7d0'; // Tailwind's green-100
+    const gradEnd = '#15803d';   // Tailwind's green-800
+    fill.style.background = `linear-gradient(to right, ${gradStart}, ${gradEnd})`;
+
+    // Encouragement copy by phase
+    let msg = 'Off to a strong start!';
+    if (pct >= 25 && pct < 50) msg = 'You’re in the groove!';
+    else if (pct >= 50 && pct < 75) msg = 'Over halfway—nice!';
+    else if (pct >= 75 && pct < 100) msg = 'Final stretch—keep going!';
+    else if (pct >= 100) msg = 'Course complete—well done!';
+    encourEl.textContent = msg;
+
+    // Optional API for dynamic updates
+    window.setLinearCourseProgress = function(newWeek, newTotal = totalWeeks) {
+      const clampedWeek = Math.max(1, Math.min(newTotal, newWeek));
+      const newPct = (clampedWeek / newTotal) * 100;
+      weekEl.textContent = clampedWeek;
+      totalEl.textContent = newTotal;
+      fill.style.width = newPct.toFixed(2) + '%';
+      fill.style.backgroundColor = newPct < 34 ? '#ee243c' : (newPct < 75 ? '#f59e0b' : '#10b981');
+      let newMsg = 'Off to a strong start!';
+      if (newPct >= 25 && newPct < 50) newMsg = 'You’re in the groove!';
+      else if (newPct >= 50 && newPct < 75) newMsg = 'Over halfway—nice!';
+      else if (newPct >= 75 && newPct < 100) newMsg = 'Final stretch—keep going!';
+      else if (newPct >= 100) newMsg = 'Course complete—well done!';
+      encourEl.textContent = newMsg;
+    };
+  })();
+  setLinearCourseProgress(6, 12);
 </script>
 
 </body>
