@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS New Announcement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#fff1f2', 100: '#ffe4e6', 200: '#fecdd3', 500: '#ee243c', 600: '#e11d48', 700: '#be123c', 900: '#881337' },
+                        dark: { 800: '#1f2937', 900: '#111827' }
+                    },
+                    fontFamily: { sans: ['Nunito Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/08ce533d2a.js"></script>
+    <style>
+        :root { --color-brand-primary: #ee243c; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
+        .editor-toolbar button { color: #4b5563; }
+        .editor-toolbar button:hover { color: #111827; background-color: #f3f4f6; }
+        .card-fade-in { animation: fadeSlideIn 0.2s ease forwards; }
+        @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        #save-btn { transition: all 0.2s ease; }
+        #save-btn.enabled { background-color: #e11d48; color: white; cursor: pointer; border-color: #e11d48; }
+        #save-btn.enabled:hover { background-color: #be123c; }
+        .collapsible-section {
+            max-height: 0; opacity: 0; overflow: hidden; pointer-events: none;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin-top 0.35s ease;
+            margin-top: 0;
+        }
+        .collapsible-section.visible {
+            max-height: 800px; opacity: 1; overflow: visible; pointer-events: auto; margin-top: 1.5rem;
+        }
+        .poll-option-enter { animation: fadeSlideIn 0.2s ease forwards; }
+        .attachment-chip { animation: fadeSlideIn 0.15s ease forwards; }
+        .checkbox-toggle { transition: all 0.15s ease; }
+        .checkbox-toggle:checked { accent-color: #e11d48; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans h-screen flex flex-col overflow-hidden">
+
+    <header class="bg-white border-b border-gray-200 h-16 flex-none z-30">
+        <div class="h-full px-5 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-brand-600 rounded flex items-center justify-center text-white font-bold text-xl"></div>
+                <div class="pl-5">
+                    <h1 class="text-lg font-bold text-gray-900 leading-tight">Bass Performance 101</h1>
+                    <p class="text-xs text-gray-500 font-medium">SECTION 1 | WINTER 2026</p>
+                </div>
+            </div>
+            <div class="hidden md:flex flex-col items-end w-64">
+                <div class="flex justify-between w-full text-xs mb-1">
+                    <span class="text-gray-500 font-medium">WEEK 7 / 12</span>
+                    <span class="text-gray-400">Over halfway — Nice!</span>
+                </div>
+                <div class="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-brand-500 h-1.5 rounded-full" style="width: 58%"></div>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="hidden sm:flex items-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-500"></i>
+                    <div>ASK BOB</div>
+                    <div class="text-gray-500 text-xs font-medium">AI Assistant</div>
+                </button>
+                <div class="h-9 w-9 rounded-full overflow-hidden border border-gray-200 cursor-pointer">
+                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="User" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-grow overflow-hidden relative">
+        <aside class="w-20 bg-dark-900 flex-none flex flex-col items-center py-6 gap-8 text-gray-400 z-20 hidden sm:flex">
+            <div class="flex flex-col items-center gap-1 cursor-pointer hover:text-white group"><i class="fa-solid fa-book-open text-xl mb-1 group-hover:scale-110 transition-transform"></i><span class="text-[10px] font-medium">Syllabus</span></div>
+            <div class="flex flex-col items-center gap-1 cursor-pointer text-white relative group">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-500 -ml-6 rounded-r"></div>
+                <div class="bg-gray-800 p-2 rounded-lg mb-1"><i class="fa-regular fa-bell text-xl"></i></div>
+                <span class="text-[10px] font-medium">Activity</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 cursor-pointer hover:text-white group"><i class="fa-regular fa-video text-xl mb-1 group-hover:scale-110 transition-transform"></i><span class="text-[10px] font-medium">Live</span></div>
+            <div class="flex flex-col items-center gap-1 cursor-pointer hover:text-white group"><i class="fa-regular fa-users text-xl mb-1 group-hover:scale-110 transition-transform"></i><span class="text-[10px] font-medium">Roster</span></div>
+            <div class="flex flex-col items-center gap-1 cursor-pointer hover:text-white group relative">
+                <div class="absolute top-0 right-2 w-4 h-4 bg-brand-600 text-white text-[10px] flex items-center justify-center rounded-full border-2 border-dark-900 -mt-1 -mr-1">1</div>
+                <i class="fa-regular fa-envelope text-xl mb-1 group-hover:scale-110 transition-transform"></i><span class="text-[10px] font-medium">Inbox</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 cursor-pointer hover:text-white group"><i class="fa-regular fa-circle-check text-xl mb-1 group-hover:scale-110 transition-transform"></i><span class="text-[10px] font-medium">Grades</span></div>
+            <div class="flex flex-col items-center gap-1 cursor-pointer hover:text-white group"><i class="fa-solid fa-chart-simple text-xl mb-1 group-hover:scale-110 transition-transform"></i><span class="text-[10px] font-medium">Surveys</span></div>
+            <div class="mt-auto flex flex-col gap-6">
+                <button class="text-gray-400 hover:text-white"><i class="fa-solid fa-gear text-xl"></i></button>
+                <button class="text-gray-400 hover:text-white"><i class="fa-regular fa-circle-question text-xl"></i></button>
+                <button class="text-gray-400 hover:text-white"><i class="fa-regular fa-sun text-xl"></i></button>
+            </div>
+        </aside>
+
+        <aside id="secondary-sidebar" class="w-80 bg-white border-r border-gray-200 flex-none flex flex-col z-10 hidden lg:flex">
+            <div class="p-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-bold text-gray-900">Activity</h2>
+                    <button class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <button class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-sliders"></i></button>
+            </div>
+            <div class="flex-grow overflow-y-auto">
+                <div class="px-4 py-3 bg-gray-50 border-b border-gray-100 flex justify-between items-center cursor-pointer hover:bg-gray-100">
+                    <span class="text-sm font-medium text-gray-700">Latest</span>
+                    <i class="fa-solid fa-chevron-up text-xs text-gray-400"></i>
+                </div>
+                <div class="p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group cursor-pointer"><div class="flex gap-3 mb-2"><i class="fa-regular fa-video text-gray-400 text-xs"></i><div><h3 class="text-sm font-bold text-gray-900 leading-snug mb-1 group-hover:text-brand-600">Item 1</h3></div></div><div class="pl-6"><p class="text-xs text-gray-500 mb-1">Wed, Jan 28, 11:00am ET | <i class="fa-regular fa-user ml-1"></i> 0/19</p></div></div>
+                <div class="p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group cursor-pointer"><div class="flex gap-3 mb-2"><i class="fa-regular fa-video text-gray-400 text-xs"></i><div><h3 class="text-sm font-bold text-gray-900 leading-snug mb-1 group-hover:text-brand-600">Item 2</h3></div></div><div class="pl-6"><p class="text-xs text-gray-500 mb-1">Wed, Jan 21, 11:00am ET | <i class="fa-regular fa-user ml-1"></i> 0/19</p></div></div>
+                <div class="p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group cursor-pointer"><div class="flex gap-3 mb-2"><i class="fa-regular fa-video text-gray-400 text-xs"></i><div><h3 class="text-sm font-bold text-gray-900 leading-snug mb-1 group-hover:text-brand-600">Item 3</h3></div></div><div class="pl-6"><p class="text-xs text-gray-500 mb-1">Sat, Jan 17, 3:00pm ET | <i class="fa-regular fa-user ml-1"></i> 0/19</p></div></div>
+                <div class="p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors group cursor-pointer"><div class="flex gap-3 mb-2"><i class="fa-regular fa-video text-gray-400 text-xs"></i><div><h3 class="text-sm font-bold text-gray-900 leading-snug mb-1 group-hover:text-brand-600">Item 4</h3></div></div><div class="pl-6"><p class="text-xs text-gray-500 mb-1">Tue, Jan 13, 11:00am ET | <i class="fa-regular fa-user ml-1"></i> 0/19</p></div></div>
+            </div>
+            <div class="p-4 border-t border-gray-200 bg-white">
+                <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-4 rounded flex items-center justify-center gap-2 transition-colors">
+                    <i class="fa-regular fa-plus"></i><span>New</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="flex-grow bg-white overflow-y-auto p-6 md:p-10 lg:p-12 relative">
+            <div class="max-w-3xl mx-auto">
+                <div id="form-view">
+                    <h1 class="text-2xl font-bold text-gray-900 mb-6">New Announcement</h1>
+
+                    <div class="space-y-6">
+
+                        <!-- Title -->
+                        <div>
+                            <label for="session-title" class="block text-sm font-semibold text-gray-900 mb-2">
+                                Announcement Title <span class="text-red-500">*</span>
+                            </label>
+                            <input id="session-title" type="text" placeholder="Title (Max length 200)" maxlength="200" oninput="checkFormValidity()"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-shadow">
+                        </div>
+
+                        <!-- Description -->
+                        <div>
+                            <div class="border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition-shadow">
+                                <div class="flex items-center gap-1 p-2 border-b border-gray-200 bg-gray-50 editor-toolbar flex-wrap">
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-bold text-sm"></i></button>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-italic text-sm"></i></button>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-underline text-sm"></i></button>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-heading text-sm"></i></button>
+                                    <div class="w-px h-5 bg-gray-300 mx-1"></div>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-list-ul text-sm"></i></button>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-list-ol text-sm"></i></button>
+                                    <div class="w-px h-5 bg-gray-300 mx-1"></div>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-regular fa-file text-sm"></i></button>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-solid fa-hashtag text-sm"></i></button>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><span class="font-serif italic text-sm">♭</span></button>
+                                    <div class="w-px h-5 bg-gray-300 mx-1"></div>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-regular fa-floppy-disk text-sm"></i></button>
+                                    <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-8 h-8 flex items-center justify-center"><i class="fa-regular fa-folder text-sm"></i></button>
+                                </div>
+                                <textarea id="session-description" class="w-full p-4 min-h-[160px] focus:outline-none resize-y text-gray-700" placeholder="Announcement copy..." oninput="checkFormValidity()"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- ═══ Multi-Section Toggle ═══ -->
+                        <div class="border-t border-gray-100 pt-5">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" id="multi-section-toggle" onchange="toggleMultiSection()" class="checkbox-toggle w-4 h-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500 cursor-pointer">
+                                <span class="text-sm font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">Multi-section announcement?</span>
+                            </label>
+                            <div id="multi-section-panel" class="collapsible-section">
+                                <p class="text-xs text-gray-500 mb-3">This announcement will also be posted to the selected sections.</p>
+                                <div class="space-y-2 pl-1">
+                                    <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-md hover:bg-gray-50 transition-colors">
+                                        <input type="checkbox" class="section-cb w-4 h-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500 cursor-pointer" value="bass-perf-s2">
+                                        <span class="text-sm text-gray-700 group-hover:text-gray-900">Bass Performance 101 — Section 2</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-md hover:bg-gray-50 transition-colors">
+                                        <input type="checkbox" class="section-cb w-4 h-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500 cursor-pointer" value="rnb-bass-s1">
+                                        <span class="text-sm text-gray-700 group-hover:text-gray-900">R&B Bass — Section 1</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-md hover:bg-gray-50 transition-colors">
+                                        <input type="checkbox" class="section-cb w-4 h-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500 cursor-pointer" value="rock-bass-s1">
+                                        <span class="text-sm text-gray-700 group-hover:text-gray-900">Rock Bass — Section 1</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 cursor-pointer group p-2 rounded-md hover:bg-gray-50 transition-colors">
+                                        <input type="checkbox" class="section-cb w-4 h-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500 cursor-pointer" value="rock-bass-s2">
+                                        <span class="text-sm text-gray-700 group-hover:text-gray-900">Rock Bass — Section 2</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══ Poll Toggle ═══ -->
+                        <div class="border-t border-gray-100 pt-5">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" id="poll-toggle" onchange="togglePoll()" class="checkbox-toggle w-4 h-4 rounded border-gray-300 text-brand-600 focus:ring-brand-500 cursor-pointer">
+                                <span class="text-sm font-semibold text-gray-900 group-hover:text-brand-600 transition-colors">Add a poll?</span>
+                            </label>
+                            <div id="poll-panel" class="collapsible-section">
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-1">
+                                    <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wide mb-3">Poll Choices</label>
+                                    <div id="poll-options-list" class="space-y-2">
+                                        <!-- Default 2 options rendered by JS -->
+                                    </div>
+                                    <button onclick="addPollOption()" class="mt-3 flex items-center gap-1.5 text-sm font-semibold text-black-800 hover:text-brand-700 transition-colors">
+                                        <i class="fa-regular fa-plus text-xs"></i> Add Another Poll Choice
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ═══ Attachments ═══ -->
+                        <div class="border-t border-gray-100 pt-5">
+                            <label class="block text-sm font-semibold text-gray-900 mb-3">Attachments</label>
+                            <div id="attachment-list" class="flex flex-wrap gap-2 mb-3"></div>
+                            <input type="file" id="file-input" multiple class="hidden" onchange="handleFiles(this)">
+                            <button onclick="document.getElementById('file-input').click()"
+                                class="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-gray-700 font-medium rounded-lg border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all text-sm shadow-sm">
+                                <i class="fa-regular fa-paperclip text-gray-900"></i> Add Attachment
+                            </button>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="flex items-center justify-end gap-3 pt-8 border-t">
+                            <button onclick="handleCancel()" class="px-5 py-2.5 bg-white text-gray-600 font-semibold rounded-lg border border-gray-200 hover:bg-gray-50 transition-all text-sm">
+                                Cancel
+                            </button>
+                            <div class="relative group/tip">
+                                <button id="save-btn" disabled onclick="handleSave()"
+                                    class="px-6 py-2.5 bg-gray-100 text-gray-400 font-semibold rounded-lg border border-gray-200 transition-all">
+                                    Post Announcement
+                                </button>
+                                <div id="post-tooltip" class="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg shadow-lg whitespace-nowrap opacity-0 pointer-events-none group-hover/tip:opacity-100 transition-opacity duration-150">
+                                    Announcement must include a title and copy to be able to post.
+                                    <div class="absolute top-full right-4 w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-gray-900"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── SUCCESS VIEW ── -->
+                <div id="success-view" class="hidden text-center py-20">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fa-solid fa-check text-green-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-2">Announcement Posted!</h2>
+                    <p id="success-msg" class="text-sm text-gray-500 mb-6"></p>
+                    <button onclick="resetForm()" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-lg transition-colors text-sm">
+                        Create Another
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script>
+// ── State ──
+let pollOptionCount = 0;
+let attachments = [];
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', () => {
+    renderDefaultPollOptions();
+});
+
+// ── Form Validity ──
+function checkFormValidity() {
+    const title = document.getElementById('session-title').value.trim();
+    const desc = document.getElementById('session-description').value.trim();
+    const btn = document.getElementById('save-btn');
+    if (title.length > 0 && desc.length > 0) {
+        btn.disabled = false;
+        btn.classList.add('enabled');
+        document.getElementById('post-tooltip').classList.add('!hidden');
+    } else {
+        btn.disabled = true;
+        btn.classList.remove('enabled');
+        document.getElementById('post-tooltip').classList.remove('!hidden');
+    }
+}
+
+// ── Multi-Section ──
+function toggleMultiSection() {
+    const panel = document.getElementById('multi-section-panel');
+    const checked = document.getElementById('multi-section-toggle').checked;
+    if (checked) {
+        panel.classList.add('visible');
+    } else {
+        panel.classList.remove('visible');
+        document.querySelectorAll('.section-cb').forEach(cb => cb.checked = false);
+    }
+}
+
+// ── Poll ──
+function togglePoll() {
+    const panel = document.getElementById('poll-panel');
+    const checked = document.getElementById('poll-toggle').checked;
+    if (checked) {
+        panel.classList.add('visible');
+    } else {
+        panel.classList.remove('visible');
+    }
+}
+
+function renderDefaultPollOptions() {
+    const list = document.getElementById('poll-options-list');
+    list.innerHTML = '';
+    pollOptionCount = 0;
+    addPollOption();
+    addPollOption();
+}
+
+function addPollOption() {
+    pollOptionCount++;
+    const list = document.getElementById('poll-options-list');
+    const div = document.createElement('div');
+    div.className = 'flex items-center gap-2 poll-option-enter';
+    div.id = 'poll-opt-' + pollOptionCount;
+    const num = pollOptionCount;
+    div.innerHTML = `
+        <span class="text-xs text-gray-400 font-bold w-5 text-center">${num}</span>
+        <input type="text" placeholder="Choice ${num}" class="flex-grow px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+        <button onclick="removePollOption('poll-opt-${num}')" class="p-1.5 text-gray-400 hover:text-red-500 transition-colors ${num <= 2 ? 'invisible' : ''}" title="Remove">
+            <i class="fa-regular fa-trash-can text-sm"></i>
+        </button>
+    `;
+    list.appendChild(div);
+    updatePollRemoveButtons();
+}
+
+function removePollOption(id) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(10px)';
+        el.style.transition = 'all 0.15s ease';
+        setTimeout(() => {
+            el.remove();
+            renumberPollOptions();
+        }, 150);
+    }
+}
+
+function renumberPollOptions() {
+    const items = document.querySelectorAll('#poll-options-list > div');
+    items.forEach((item, i) => {
+        const span = item.querySelector('span');
+        const input = item.querySelector('input');
+        if (span) span.textContent = i + 1;
+        if (input && !input.value) input.placeholder = 'Option ' + (i + 1);
+    });
+    updatePollRemoveButtons();
+}
+
+function updatePollRemoveButtons() {
+    const items = document.querySelectorAll('#poll-options-list > div');
+    items.forEach(item => {
+        const btn = item.querySelector('button');
+        if (btn) {
+            btn.classList.toggle('invisible', items.length <= 2);
+        }
+    });
+}
+
+// ── Attachments ──
+function handleFiles(input) {
+    const files = Array.from(input.files);
+    files.forEach(f => {
+        if (!attachments.find(a => a.name === f.name && a.size === f.size)) {
+            attachments.push({ name: f.name, size: f.size });
+        }
+    });
+    input.value = '';
+    renderAttachments();
+}
+
+function renderAttachments() {
+    const list = document.getElementById('attachment-list');
+    list.innerHTML = '';
+    attachments.forEach((a, i) => {
+        const ext = a.name.split('.').pop().toLowerCase();
+        let icon = 'fa-regular fa-file';
+        if (['pdf'].includes(ext)) icon = 'fa-regular fa-file-pdf';
+        else if (['doc','docx'].includes(ext)) icon = 'fa-regular fa-file-word';
+        else if (['jpg','jpeg','png','gif','webp','svg'].includes(ext)) icon = 'fa-regular fa-file-image';
+        else if (['mp3','wav','aac','flac'].includes(ext)) icon = 'fa-regular fa-file-audio';
+        else if (['mp4','mov','avi'].includes(ext)) icon = 'fa-regular fa-file-video';
+        else if (['zip','rar','7z'].includes(ext)) icon = 'fa-regular fa-file-zipper';
+
+        const chip = document.createElement('div');
+        chip.className = 'attachment-chip flex items-center gap-2 bg-gray-100 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700';
+        chip.innerHTML = `
+            <i class="${icon} text-brand-500"></i>
+            <span class="max-w-[180px] truncate">${a.name}</span>
+            <button onclick="removeAttachment(${i})" class="ml-1 text-gray-400 hover:text-red-500 transition-colors">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+        `;
+        list.appendChild(chip);
+    });
+}
+
+function removeAttachment(idx) {
+    attachments.splice(idx, 1);
+    renderAttachments();
+}
+
+// ── Save ──
+function handleSave() {
+    const title = document.getElementById('session-title').value.trim();
+    if (!title) return;
+
+    const sections = ['Bass Performance 101 — Section 1'];
+    if (document.getElementById('multi-section-toggle').checked) {
+        document.querySelectorAll('.section-cb:checked').forEach(cb => {
+            const label = cb.parentElement.querySelector('span').textContent;
+            sections.push(label);
+        });
+    }
+
+    const msg = sections.length > 1
+        ? `Posted to ${sections.length} sections.`
+        : 'Posted to Bass Performance 101 — Section 1.';
+
+    document.getElementById('success-msg').textContent = msg;
+    document.getElementById('form-view').classList.add('hidden');
+    document.getElementById('success-view').classList.remove('hidden');
+}
+
+function handleCancel() {
+    if (confirm('Discard this announcement?')) resetForm();
+}
+
+function resetForm() {
+    document.getElementById('session-title').value = '';
+    document.getElementById('session-description').value = '';
+    document.getElementById('multi-section-toggle').checked = false;
+    document.getElementById('multi-section-panel').classList.remove('visible');
+    document.querySelectorAll('.section-cb').forEach(cb => cb.checked = false);
+    document.getElementById('poll-toggle').checked = false;
+    document.getElementById('poll-panel').classList.remove('visible');
+    renderDefaultPollOptions();
+    attachments = [];
+    renderAttachments();
+    checkFormValidity();
+    document.getElementById('form-view').classList.remove('hidden');
+    document.getElementById('success-view').classList.add('hidden');
+}
+</script>
+</body>
+</html>

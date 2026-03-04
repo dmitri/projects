@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Classes — Prototype Index</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#fff1f2', 100: '#ffe4e6', 200: '#fecdd3', 500: '#ee243c', 600: '#e11d48', 700: '#be123c', 900: '#881337' },
+                        dark: { 800: '#1f2937', 900: '#111827' }
+                    },
+                    fontFamily: { sans: ['Nunito Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/08ce533d2a.js"></script>
+    <style>
+        .screen-card {
+            transition: all 0.2s ease;
+        }
+        .screen-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1), 0 4px 10px -6px rgba(0,0,0,0.05);
+        }
+        .screen-card:hover .screen-arrow {
+            transform: translateX(3px);
+        }
+        .screen-arrow {
+            transition: transform 0.2s ease;
+        }
+        .card-fade-in {
+            animation: fadeSlideIn 0.3s ease forwards;
+            opacity: 0;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen">
+
+    <div class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-600 rounded-xl mb-5">
+                <i class="fa-regular fa-video text-white text-xl"></i>
+            </div>
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-2">Live Classes Prototype</h1>
+            <p class="text-gray-500 text-sm max-w-md mx-auto">Schedule & manage live class sessions, and multi-section announcements</p>
+            <div class="flex items-center justify-center gap-2 mt-4">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">5 Screens</span>
+            </div>
+        </div>
+
+        <!-- Screen List -->
+        <div class="space-y-4">
+
+            <!-- 1 -->
+            <a href="live-1.html" class="screen-card card-fade-in block bg-white border border-gray-200 rounded-xl p-5 shadow-sm cursor-pointer" style="animation-delay: 0ms">
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                        <span class="text-sm font-extrabold text-gray-500">1</span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <h3 class="text-sm font-bold text-gray-900">First Screen</h3>
+                        <p class="text-xs text-gray-400 mt-0.5">Original full-featured scheduling flow with all template options and mode selector.</p>
+                    </div>
+                    <div class="flex-shrink-0 text-gray-300">
+                        <i class="fa-solid fa-arrow-right screen-arrow"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 2 -->
+            <a href="live-number-first-no-templates.html" class="screen-card card-fade-in block bg-white border border-gray-200 rounded-xl p-5 shadow-sm cursor-pointer" style="animation-delay: 60ms">
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                        <span class="text-sm font-extrabold text-gray-500">2</span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <h3 class="text-sm font-bold text-gray-900">Create New Live Class <span class="text-[10px] font-semibold text-gray-400 uppercase ml-1">No Saved Templates</span></h3>
+                        <p class="text-xs text-gray-400 mt-0.5">Simplified flow — no template mode selector or populate-from-template dropdown. Includes "Save as Form Template" option.</p>
+                    </div>
+                    <div class="flex-shrink-0 text-gray-300">
+                        <i class="fa-solid fa-arrow-right screen-arrow"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 3 -->
+            <a href="live-number-first.html" class="screen-card card-fade-in block bg-white border border-gray-200 rounded-xl p-5 shadow-sm cursor-pointer" style="animation-delay: 120ms">
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                        <span class="text-sm font-extrabold text-gray-500">3</span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <h3 class="text-sm font-bold text-gray-900">Create New Live Class <span class="text-[10px] font-semibold text-gray-400 uppercase ml-1">Includes Saved Templates</span></h3>
+                        <p class="text-xs text-gray-400 mt-0.5">Full flow with "Create New" vs "Use a Template" mode selector, populate-from-template, and "Save Template Without Scheduling" option.</p>
+                    </div>
+                    <div class="flex-shrink-0 text-gray-300">
+                        <i class="fa-solid fa-arrow-right screen-arrow"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 4 -->
+            <a href="live-manage-templates.html" class="screen-card card-fade-in block bg-white border border-gray-200 rounded-xl p-5 shadow-sm cursor-pointer" style="animation-delay: 180ms">
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                        <span class="text-sm font-extrabold text-gray-500">4</span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <h3 class="text-sm font-bold text-gray-900">Manage Templates</h3>
+                        <p class="text-xs text-gray-400 mt-0.5">Browse, create, duplicate & delete form and group templates. Includes group session generator with card review.</p>
+                    </div>
+                    <div class="flex-shrink-0 text-gray-300">
+                        <i class="fa-solid fa-arrow-right screen-arrow"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 5 -->
+            <a href="live-manage-templates.html" class="screen-card card-fade-in block bg-white border border-gray-200 rounded-xl p-5 shadow-sm cursor-pointer" style="animation-delay: 180ms">
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                        <span class="text-sm font-extrabold text-gray-500">4</span>
+                    </div>
+                    <div class="flex-grow min-w-0">
+                        <h3 class="text-sm font-bold text-gray-900">Multi-Section Announcements</h3>
+                        <p class="text-xs text-gray-400 mt-0.5">Create and post a singular or multi-section announcement.</p>
+                    </div>
+                    <div class="flex-shrink-0 text-gray-300">
+                        <i class="fa-solid fa-arrow-right screen-arrow"></i>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-12 pt-8 border-t border-gray-200">
+            <p class="text-[11px] text-gray-400 uppercase tracking-wider font-semibold">Berklee Online BOCCE LMS · Winter 2026 Design Exploration · &copy; Copyright 2026</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
