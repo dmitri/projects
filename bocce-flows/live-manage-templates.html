@@ -67,6 +67,20 @@
         .save-btn { transition: all 0.2s ease; }
         .save-btn.enabled { background-color: #e11d48; color: white; cursor: pointer; border-color: #e11d48; }
         .save-btn.enabled:hover { background-color: #be123c; }
+        /* Inline edit */
+        .card-edit-body {
+            max-height: 0; opacity: 0; overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.3s ease;
+            padding-top: 0; padding-bottom: 0;
+        }
+        .card-edit-body.open {
+            max-height: 650px; opacity: 1; overflow: visible;
+            padding-top: 1rem; padding-bottom: 0.25rem;
+        }
+        .card-summary { transition: opacity 0.2s ease; }
+        .card-summary.dimmed { opacity: 0.45; pointer-events: none; }
+        .card-wrapper { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+        .card-wrapper.editing { border-color: #e11d48; box-shadow: 0 0 0 3px rgba(225,29,72,0.08); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans h-screen flex flex-col overflow-hidden">
@@ -128,7 +142,7 @@
         <main class="flex-grow bg-white overflow-y-auto p-6 md:p-10 lg:p-12 relative">
             <div class="max-w-3xl mx-auto">
 
-                <!-- ── LIST VIEW ── -->
+                <!-- LIST VIEW -->
                 <div id="list-view">
                     <div class="flex items-center justify-between mb-6">
                         <h1 class="text-2xl font-bold text-gray-900">Manage Live Class Templates</h1>
@@ -178,11 +192,8 @@
                         <button onclick="switchTab('group')" id="tab-group" class="tab-inactive pb-3 text-sm font-semibold border-b-2 transition-colors">Group Templates</button>
                     </div>
 
-                    <!-- Template List -->
-                    <div id="template-list" class="space-y-2">
-                    </div>
+                    <div id="template-list" class="space-y-2"></div>
 
-                    <!-- Empty state -->
                     <div id="empty-state" class="hidden text-center py-16">
                         <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fa-regular fa-folder-open text-2xl text-gray-400"></i>
@@ -192,7 +203,7 @@
                     </div>
                 </div>
 
-                <!-- ── FORM TEMPLATE CREATOR ── -->
+                <!-- FORM TEMPLATE CREATOR -->
                 <div id="form-template-view" class="hidden">
                     <div class="flex items-center gap-3 mb-6">
                         <button onclick="goBackToList()" class="text-gray-400 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0">
@@ -203,9 +214,7 @@
                             <p class="text-sm text-gray-500">Create a reusable template for individual live class sessions.</p>
                         </div>
                     </div>
-
                     <div class="space-y-6">
-                        <!-- Template Name -->
                         <div class="bg-brand-50 border border-brand-200 rounded-xl p-4">
                             <label class="flex items-center gap-2 mb-2">
                                 <i class="fa-regular fa-floppy-disk text-brand-600 text-sm"></i>
@@ -216,8 +225,6 @@
                                    oninput="checkFormTemplateValidity()"
                                    class="w-full px-4 py-3 border border-brand-200 rounded-lg text-gray-900 placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-shadow">
                         </div>
-
-                        <!-- Title -->
                         <div>
                             <label for="ft-title" class="block text-sm font-semibold text-gray-900 mb-2">
                                 Live Class Title <span class="text-red-500">*</span>
@@ -225,8 +232,6 @@
                             <input id="ft-title" type="text" placeholder="Title (Max length 200)" oninput="checkFormTemplateValidity()"
                                 class="w-full px-4 py-3 border border-gray-300 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-shadow">
                         </div>
-
-                        <!-- Description -->
                         <div>
                             <label class="block text-sm font-semibold text-gray-900 mb-2">Description</label>
                             <div class="border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition-shadow">
@@ -249,8 +254,6 @@
                                 <textarea id="ft-description" class="w-full p-4 min-h-[160px] focus:outline-none resize-y text-gray-700" placeholder="Say something (or paste a cool URL)..."></textarea>
                             </div>
                         </div>
-
-                        <!-- Actions -->
                         <div class="flex items-center justify-end gap-4 pt-8 border-t">
                             <button onclick="goBackToList()" class="px-5 py-2.5 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
                             <button id="ft-save-btn" disabled onclick="saveFormTemplate()"
@@ -261,7 +264,7 @@
                     </div>
                 </div>
 
-                <!-- ── GROUP TEMPLATE CREATOR ── -->
+                <!-- GROUP TEMPLATE CREATOR -->
                 <div id="group-template-view" class="hidden">
                     <div class="flex items-center gap-3 mb-6">
                         <button onclick="goBackToList()" class="text-gray-400 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0">
@@ -272,9 +275,7 @@
                             <p class="text-sm text-gray-500">Create a multi-session template for a semester, workshop, or series.</p>
                         </div>
                     </div>
-
                     <div class="space-y-6">
-                        <!-- Template Name -->
                         <div class="bg-brand-50 border border-brand-200 rounded-xl p-4">
                             <label class="flex items-center gap-2 mb-2">
                                 <i class="fa-solid fa-layer-group text-brand-600 text-sm"></i>
@@ -288,8 +289,6 @@
                                       class="mt-3 block w-full px-4 py-2.5 border border-brand-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 bg-white
                                              focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all resize-none min-h-[64px]"></textarea>
                         </div>
-
-                        <!-- How Many -->
                         <div class="border border-gray-200 rounded-xl p-5 bg-white">
                             <label class="block text-[10px] font-semibold text-gray-600 uppercase tracking-wider text-center mb-3">How many sessions?</label>
                             <div class="flex items-center justify-center gap-4">
@@ -303,13 +302,9 @@
                             </div>
                             <p id="gt-count-helper" class="text-center text-[11px] text-gray-400 mt-2">2 sessions</p>
                         </div>
-
-                        <!-- Start Date & Time -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-900 mb-2">
-                                    First Session Date <span class="text-red-500">*</span>
-                                </label>
+                                <label class="block text-sm font-semibold text-gray-900 mb-2">First Session Date <span class="text-red-500">*</span></label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"><i class="fa-regular fa-calendar text-gray-400"></i></div>
                                     <input type="date" id="gt-date" onchange="checkGroupTemplateValidity()" class="block w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-base text-gray-900 bg-white transition-all">
@@ -317,17 +312,13 @@
                                 <p class="text-xs text-gray-400 mt-1.5 flex"><i class="fa-regular fa-circle-info mr-1 text-gray-400 mt-0.5 flex-shrink-0"></i>Sessions will be spaced at 1-week intervals. You can edit each one after generating.</p>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-gray-900 mb-2">
-                                    Default Start Time <span class="text-red-500">*</span>
-                                </label>
+                                <label class="block text-sm font-semibold text-gray-900 mb-2">Default Start Time <span class="text-red-500">*</span></label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"><i class="fa-regular fa-clock text-gray-400"></i></div>
                                     <input type="time" id="gt-time" onchange="checkGroupTemplateValidity()" class="block w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-base text-gray-900 bg-white transition-all">
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Actions -->
                         <div class="flex items-center justify-end gap-4 pt-8 border-t">
                             <button onclick="goBackToList()" class="px-5 py-2.5 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
                             <button id="gt-generate-btn" disabled onclick="generateGroupSessions()"
@@ -338,7 +329,7 @@
                     </div>
                 </div>
 
-                <!-- ── GROUP TEMPLATE CARDS VIEW ── -->
+                <!-- GROUP TEMPLATE CARDS VIEW -->
                 <div id="group-cards-view" class="hidden pb-12">
                     <div class="flex items-center gap-3 mb-1">
                         <button onclick="goBackToGroupForm()" class="text-gray-400 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0">
@@ -369,57 +360,8 @@
         </main>
     </div>
 
-    <!-- Edit Modal -->
-    <div id="edit-modal" class="hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
-                <h3 class="text-base font-bold text-gray-900">Edit Session</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="px-6 py-5 space-y-4 overflow-y-auto">
-                <div>
-                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Title <span class="text-red-500">*</span></label>
-                    <input id="modal-title" type="text" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Description</label>
-                    <div class="border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition-shadow">
-                        <div class="flex items-center gap-1 p-2 border-b border-gray-200 bg-gray-50 editor-toolbar flex-wrap">
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-bold text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-italic text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-underline text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-heading text-xs"></i></button>
-                            <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ul text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ol text-xs"></i></button>
-                            <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-file text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-hashtag text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><span class="font-serif italic text-xs">♭</span></button>
-                        </div>
-                        <textarea id="modal-description" class="w-full p-3 min-h-[120px] focus:outline-none resize-y text-sm text-gray-700" placeholder="Say something (or paste a cool URL)..."></textarea>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-900 mb-1.5">Date</label>
-                        <input id="modal-date" type="date" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-900 mb-1.5">Start Time</label>
-                        <input id="modal-time" type="time" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                    </div>
-                </div>
-            </div>
-            <div class="px-6 py-4 border-t border-gray-100 flex justify-end gap-3 flex-shrink-0">
-                <button onclick="closeModal()" class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
-                <button onclick="saveModal()" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg">Save Changes</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // ── DATA ──
+        // DATA
         let savedTemplates = [
             { id: 1, type: 'form', name: 'Weekly Standard', title: 'Week Live Class', description: 'Regular weekly class with agenda & notes', createdAt: '2026-01-15' },
             { id: 2, type: 'form', name: 'Guest Speaker', title: 'Guest Speaker Session', description: 'Intro, Q&A format for special guests', createdAt: '2026-01-20' },
@@ -434,7 +376,7 @@
         let gtSessions = [];
         let editingId = null;
 
-        // ── LIST VIEW ──
+        // LIST VIEW
         function switchTab(tab) {
             currentTab = tab;
             ['all','form','group'].forEach(t => {
@@ -447,14 +389,8 @@
             const list = document.getElementById('template-list');
             const empty = document.getElementById('empty-state');
             const filtered = currentTab === 'all' ? savedTemplates : savedTemplates.filter(t => t.type === currentTab);
-
-            if (filtered.length === 0) {
-                list.innerHTML = '';
-                empty.classList.remove('hidden');
-                return;
-            }
+            if (filtered.length === 0) { list.innerHTML = ''; empty.classList.remove('hidden'); return; }
             empty.classList.add('hidden');
-
             list.innerHTML = filtered.map((t, idx) => `
                 <div class="template-row card-fade-in flex items-center justify-between p-4 border border-gray-200 rounded-xl" style="animation-delay:${idx*30}ms">
                     <div class="flex items-center gap-3 min-w-0">
@@ -485,10 +421,8 @@
         }
 
         function duplicateTemplate(id) {
-            const t = savedTemplates.find(x => x.id === id);
-            if (!t) return;
-            const dup = { ...t, id: Date.now(), name: t.name + ' (Copy)' };
-            savedTemplates.push(dup);
+            const t = savedTemplates.find(x => x.id === id); if (!t) return;
+            savedTemplates.push({ ...t, id: Date.now(), name: t.name + ' (Copy)' });
             renderTemplateList();
         }
 
@@ -496,7 +430,7 @@
             alert('Edit template #' + id + ' — would open the appropriate editor pre-filled.');
         }
 
-        // ── ADD MENU ──
+        // ADD MENU
         function toggleAddMenu() {
             document.getElementById('add-menu').classList.toggle('hidden');
             document.getElementById('add-menu-chevron').classList.toggle('rotate-180');
@@ -513,10 +447,11 @@
         function startNewTemplate(type) {
             document.getElementById('add-menu').classList.add('hidden');
             document.getElementById('add-menu-chevron').classList.remove('rotate-180');
+            editingId = null;
             showView(type === 'form' ? 'form-template-view' : 'group-template-view');
         }
 
-        // ── NAVIGATION ──
+        // NAVIGATION
         function showView(viewId) {
             ['list-view','form-template-view','group-template-view','group-cards-view'].forEach(id => {
                 document.getElementById(id).classList.toggle('hidden', id !== viewId);
@@ -524,15 +459,10 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function goBackToList() {
-            showView('list-view');
-        }
+        function goBackToList() { editingId = null; showView('list-view'); }
+        function goBackToGroupForm() { editingId = null; showView('group-template-view'); }
 
-        function goBackToGroupForm() {
-            showView('group-template-view');
-        }
-
-        // ── FORM TEMPLATE ──
+        // FORM TEMPLATE
         function checkFormTemplateValidity() {
             const btn = document.getElementById('ft-save-btn');
             const name = document.getElementById('ft-template-name').value.trim();
@@ -546,10 +476,7 @@
             const name = document.getElementById('ft-template-name').value.trim();
             const title = document.getElementById('ft-title').value.trim();
             const desc = document.getElementById('ft-description').value.trim();
-            savedTemplates.push({
-                id: Date.now(), type: 'form', name, title, description: desc,
-                createdAt: new Date().toISOString().split('T')[0]
-            });
+            savedTemplates.push({ id: Date.now(), type: 'form', name, title, description: desc, createdAt: new Date().toISOString().split('T')[0] });
             document.getElementById('ft-template-name').value = '';
             document.getElementById('ft-title').value = '';
             document.getElementById('ft-description').value = '';
@@ -557,7 +484,7 @@
             renderTemplateList();
         }
 
-        // ── GROUP TEMPLATE ──
+        // GROUP TEMPLATE
         function gtAdjustCount(delta) {
             gtSessionCount = Math.max(2, Math.min(20, gtSessionCount + delta));
             const display = document.getElementById('gt-count-display');
@@ -586,55 +513,129 @@
             const time = document.getElementById('gt-time').value;
             const startDate = new Date(date + 'T00:00:00');
             gtSessions = [];
+            editingId = null;
             for (let i = 0; i < gtSessionCount; i++) {
                 const d = new Date(startDate);
                 d.setDate(startDate.getDate() + (i * 7));
-                gtSessions.push({
-                    id: Date.now() + i,
-                    title: `Session ${i + 1}`,
-                    description: '',
-                    date: d.toISOString().split('T')[0],
-                    time: time,
-                    edited: false
-                });
+                gtSessions.push({ id: Date.now() + i, title: `Session ${i + 1}`, description: '', date: d.toISOString().split('T')[0], time, edited: false });
             }
             showView('group-cards-view');
             document.getElementById('gt-cards-subtitle').textContent = `${gtSessions.length} sessions generated.`;
             renderGtCards();
         }
 
+        function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+        function editorToolbarHtml() {
+            return `<div class="flex items-center gap-1 p-2 border-b border-gray-200 bg-gray-50 editor-toolbar flex-wrap">
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-bold text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-italic text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-underline text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-heading text-xs"></i></button>
+                <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ul text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ol text-xs"></i></button>
+                <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-file text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-hashtag text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><span class="font-serif italic text-xs">♭</span></button>
+            </div>`;
+        }
+
         function renderGtCards() {
             const list = document.getElementById('gt-cards-list');
             list.innerHTML = '';
             gtSessions.forEach((s, idx) => {
+                const isEditing = editingId === s.id;
                 const card = document.createElement('div');
                 card.id = `gt-card-${s.id}`;
-                card.className = 'card-fade-in bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow';
+                card.className = `card-fade-in card-wrapper bg-white border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow ${isEditing ? 'editing border-brand-500' : 'border-gray-200'}`;
                 card.style.animationDelay = `${idx * 40}ms`;
+
                 card.innerHTML = `
-                    <div class="flex items-start justify-between gap-3">
-                        <div class="flex items-start gap-3 min-w-0">
-                            <div class="flex-shrink-0 w-7 h-7 rounded-full ${s.edited ? 'bg-emerald-100 border border-emerald-300' : 'bg-gray-100 border border-gray-200'} flex items-center justify-center">
-                                ${s.edited ? '<i class="fa-solid fa-check text-emerald-600 text-[10px]"></i>' : `<span class="text-xs font-bold text-gray-500">${idx + 1}</span>`}
+                    <div class="card-summary ${isEditing ? 'dimmed' : ''}" id="gt-summary-${s.id}">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-start gap-3 min-w-0">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full ${s.edited ? 'bg-emerald-100 border border-emerald-300' : 'bg-gray-100 border border-gray-200'} flex items-center justify-center">
+                                    ${s.edited ? '<i class="fa-solid fa-check text-emerald-600 text-[10px]"></i>' : `<span class="text-xs font-bold text-gray-500">${idx + 1}</span>`}
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-sm font-bold text-gray-900 truncate">${escHtml(s.title)}</p>
+                                    <p class="text-xs text-gray-500 mt-0.5">
+                                        <i class="fa-regular fa-calendar mr-1"></i>${formatDate(s.date)}
+                                        &nbsp;·&nbsp;
+                                        <i class="fa-regular fa-clock mr-1"></i>${formatTime(s.time)}
+                                    </p>
+                                    ${s.description ? `<p class="text-xs text-gray-400 mt-1.5 line-clamp-2 whitespace-pre-line">${escHtml(s.description)}</p>` : ''}
+                                </div>
                             </div>
-                            <div class="min-w-0">
-                                <p class="text-sm font-bold text-gray-900 truncate">${escHtml(s.title)}</p>
-                                <p class="text-xs text-gray-500 mt-0.5">
-                                    <i class="fa-regular fa-calendar mr-1"></i>${formatDate(s.date)}
-                                    &nbsp;·&nbsp;
-                                    <i class="fa-regular fa-clock mr-1"></i>${formatTime(s.time)}
-                                </p>
-                                ${s.description ? `<p class="text-xs text-gray-400 mt-1.5 line-clamp-2 whitespace-pre-line">${escHtml(s.description)}</p>` : ''}
+                            <div class="flex items-center gap-1 flex-shrink-0">
+                                <button onclick="openGtInlineEdit(${s.id})" title="Edit" class="w-7 h-7 rounded-md text-gray-400 hover:text-brand-600 hover:bg-brand-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button onclick="deleteGtCard(${s.id})" title="Delete" class="w-7 h-7 rounded-md text-gray-400 hover:text-red-500 hover:bg-red-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-trash-can"></i></button>
                             </div>
                         </div>
-                        <div class="flex items-center gap-1 flex-shrink-0">
-                            <button onclick="openGtEdit(${s.id})" title="Edit" class="w-7 h-7 rounded-md text-gray-400 hover:text-brand-600 hover:bg-brand-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button onclick="deleteGtCard(${s.id})" title="Delete" class="w-7 h-7 rounded-md text-gray-400 hover:text-red-500 hover:bg-red-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                    <div class="card-edit-body ${isEditing ? 'open' : ''}" id="gt-edit-body-${s.id}">
+                        <div class="border-t border-gray-100 pt-4 mt-1 space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-900 mb-1.5">Title <span class="text-red-500">*</span></label>
+                                <input id="gt-inline-title-${s.id}" type="text" value="${escHtml(s.title)}" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-900 mb-1.5">Description</label>
+                                <div class="border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition-shadow">
+                                    ${editorToolbarHtml()}
+                                    <textarea id="gt-inline-desc-${s.id}" class="w-full p-3 min-h-[100px] focus:outline-none resize-y text-sm text-gray-700" placeholder="Say something (or paste a cool URL)...">${escHtml(s.description)}</textarea>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Date</label>
+                                    <input id="gt-inline-date-${s.id}" type="date" value="${s.date}" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Start Time</label>
+                                    <input id="gt-inline-time-${s.id}" type="time" value="${s.time}" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                                </div>
+                            </div>
+                            <div class="flex justify-end gap-3 pt-2">
+                                <button onclick="cancelGtInlineEdit()" class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
+                                <button onclick="saveGtInlineEdit(${s.id})" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg transition-colors">Save Changes</button>
+                            </div>
                         </div>
                     </div>`;
                 list.appendChild(card);
             });
             document.getElementById('gt-cards-subtitle').textContent = `${gtSessions.length} sessions generated.`;
+        }
+
+        function openGtInlineEdit(id) {
+            if (editingId === id) return;
+            editingId = id;
+            renderGtCards();
+            setTimeout(() => {
+                const el = document.getElementById(`gt-card-${id}`);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                const titleInput = document.getElementById(`gt-inline-title-${id}`);
+                if (titleInput) titleInput.focus();
+            }, 60);
+        }
+
+        function cancelGtInlineEdit() {
+            editingId = null;
+            renderGtCards();
+        }
+
+        function saveGtInlineEdit(id) {
+            const s = gtSessions.find(x => x.id === id);
+            if (!s) return;
+            s.title = document.getElementById(`gt-inline-title-${id}`).value.trim();
+            s.description = document.getElementById(`gt-inline-desc-${id}`).value.trim();
+            s.date = document.getElementById(`gt-inline-date-${id}`).value;
+            s.time = document.getElementById(`gt-inline-time-${id}`).value;
+            s.edited = true;
+            editingId = null;
+            renderGtCards();
         }
 
         function gtAddSession() {
@@ -647,56 +648,28 @@
             setTimeout(() => { const el = document.getElementById(`gt-card-${ns.id}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
         }
 
-        function deleteGtCard(id) { gtSessions = gtSessions.filter(s => s.id !== id); renderGtCards(); }
-
-        function openGtEdit(id) {
-            const s = gtSessions.find(x => x.id === id); if (!s) return;
-            editingId = id;
-            document.getElementById('modal-title').value = s.title;
-            document.getElementById('modal-description').value = s.description;
-            document.getElementById('modal-date').value = s.date;
-            document.getElementById('modal-time').value = s.time;
-            document.getElementById('edit-modal').classList.remove('hidden');
+        function deleteGtCard(id) {
+            if (editingId === id) editingId = null;
+            gtSessions = gtSessions.filter(s => s.id !== id);
+            renderGtCards();
         }
 
         function saveGroupTemplate() {
             const name = document.getElementById('gt-template-name').value.trim();
             const desc = document.getElementById('gt-template-desc').value.trim();
-            savedTemplates.push({
-                id: Date.now(), type: 'group', name, description: desc,
-                sessionCount: gtSessions.length,
-                createdAt: new Date().toISOString().split('T')[0]
-            });
-            // Reset
+            savedTemplates.push({ id: Date.now(), type: 'group', name, description: desc, sessionCount: gtSessions.length, createdAt: new Date().toISOString().split('T')[0] });
             document.getElementById('gt-template-name').value = '';
             document.getElementById('gt-template-desc').value = '';
             gtSessionCount = 2;
             document.getElementById('gt-count-display').textContent = '2';
             document.getElementById('gt-count-helper').textContent = '2 sessions';
             document.getElementById('gt-stepper-minus').disabled = true;
+            editingId = null;
             showView('list-view');
             renderTemplateList();
         }
 
-        // ── MODAL ──
-        function closeModal() { document.getElementById('edit-modal').classList.add('hidden'); editingId = null; }
-
-        function saveModal() {
-            const s = gtSessions.find(x => x.id === editingId); if (!s) return;
-            s.title = document.getElementById('modal-title').value.trim();
-            s.description = document.getElementById('modal-description').value.trim();
-            s.date = document.getElementById('modal-date').value;
-            s.time = document.getElementById('modal-time').value;
-            s.edited = true;
-            closeModal();
-            renderGtCards();
-        }
-
-        document.getElementById('edit-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-
-        // ── HELPERS ──
-        function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
+        // HELPERS
         function formatDate(iso) {
             const [y,m,d] = iso.split('-');
             return new Date(y, m-1, d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -708,7 +681,7 @@
             return `${h % 12 || 12}:${String(m).padStart(2,'0')} ${h >= 12 ? 'PM' : 'AM'}`;
         }
 
-        // ── INIT ──
+        // INIT
         renderTemplateList();
     </script>
 </body>
