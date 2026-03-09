@@ -50,32 +50,38 @@
         .multi-only { max-height: 0; opacity: 0; overflow: hidden; pointer-events: none;
             transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin-top 0.35s ease; margin-top: 0; }
         .multi-only.visible { max-height: 200px; opacity: 1; overflow: visible; pointer-events: auto; margin-top: 0.5rem; }
-
         .mode-card {
-            border: 2px solid #e5e7eb;
-            background: white;
-            transition: all 0.2s ease;
-            cursor: pointer;
+            border: 2px solid #e5e7eb; background: white; transition: all 0.2s ease; cursor: pointer;
         }
         .mode-card:hover:not(.mode-disabled) { border-color: #fecdd3; }
         .mode-card.mode-active {
-            border-color: #e11d48;
-            background: #fff1f2;
-            box-shadow: 0 0 0 1px #e11d48;
+            border-color: #e11d48; background: #fff1f2; box-shadow: 0 0 0 1px #e11d48;
         }
         .mode-card .mode-radio {
             width: 18px; height: 18px; border-radius: 50%;
             border: 2px solid #d1d5db; transition: all 0.15s ease;
             display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .mode-card.mode-active .mode-radio {
-            border-color: #e11d48;
-        }
+        .mode-card.mode-active .mode-radio { border-color: #e11d48; }
         .mode-card.mode-active .mode-radio::after {
             content: ''; width: 10px; height: 10px; border-radius: 50%; background: #e11d48;
         }
         .mode-card .mode-content { transition: opacity 0.2s ease; }
         .mode-card:not(.mode-active) .mode-content { opacity: 0.45; pointer-events: none; }
+        /* Inline edit */
+        .card-edit-body {
+            max-height: 0; opacity: 0; overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.3s ease;
+            padding-top: 0; padding-bottom: 0;
+        }
+        .card-edit-body.open {
+            max-height: 650px; opacity: 1; overflow: visible;
+            padding-top: 1rem; padding-bottom: 0.25rem;
+        }
+        .card-summary { transition: opacity 0.2s ease; }
+        .card-summary.dimmed { opacity: 0.45; pointer-events: none; }
+        .card-wrapper { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+        .card-wrapper.editing { border-color: #e11d48; box-shadow: 0 0 0 3px rgba(225,29,72,0.08); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans h-screen flex flex-col overflow-hidden">
@@ -137,14 +143,12 @@
         <main class="flex-grow bg-white overflow-y-auto p-6 md:p-10 lg:p-12 relative">
             <div class="max-w-3xl mx-auto">
 
-                <!-- ── FORM VIEW ── -->
+                <!-- FORM VIEW -->
                 <div id="form-view">
                     <h1 class="text-2xl font-bold text-gray-900 mb-6">Schedule New Live Classes</h1>
 
-                    <!-- ★ MODE SELECTOR ★ -->
+                    <!-- MODE SELECTOR -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-
-                        <!-- Option A: Create New -->
                         <div id="mode-create" class="mode-card mode-active rounded-xl p-5" onclick="selectMode('create')">
                             <div class="flex items-start gap-3 mb-4">
                                 <div class="mode-radio mt-0.5"></div>
@@ -168,7 +172,6 @@
                             </div>
                         </div>
 
-                        <!-- Option B: Use Template -->
                         <div id="mode-template" class="mode-card rounded-xl p-5" onclick="selectMode('template')">
                             <div class="flex items-start gap-3 mb-4">
                                 <div class="mode-radio mt-0.5"></div>
@@ -202,7 +205,6 @@
                     </div>
 
                     <div class="space-y-6">
-
                         <!-- Title (collapsible — single only) -->
                         <div id="section-title" class="collapsible-section">
                             <div class="flex items-center justify-between mb-2">
@@ -262,7 +264,7 @@
                             </div>
                         </div>
 
-                        <!-- Date & Time (always visible) -->
+                        <!-- Date & Time -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <label for="session-date" class="block text-sm font-semibold text-gray-900 mb-2">
@@ -287,7 +289,7 @@
                             </div>
                         </div>
 
-                        <!-- Save as Template — single session (collapsible) -->
+                        <!-- Save as Template — single session -->
                         <div id="section-template-single" class="collapsible-section">
                             <label class="flex text-sm font-semibold text-gray-900 mb-2 gap-2 cursor-pointer items-center group">
                                 <input type="checkbox" id="save-template-checkbox"
@@ -318,7 +320,7 @@
                     </div>
                 </div>
 
-                <!-- ── CARDS VIEW ── -->
+                <!-- CARDS VIEW -->
                 <div id="cards-view" class="hidden pb-12">
                     <div class="flex items-center gap-3 mb-1">
                         <button onclick="goBackToForm()" class="text-gray-400 hover:text-gray-700 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors flex-shrink-0">
@@ -370,7 +372,7 @@
                         <span>Add another session</span>
                     </button>
 
-                    <!-- Save group as template (moved below Add another session) -->
+                    <!-- Save group as template -->
                     <div class="mb-8 bg-gray-50 rounded-xl border border-gray-200 p-4 space-y-3">
                         <label class="flex text-sm font-semibold text-gray-900 gap-2 cursor-pointer items-center group">
                             <input type="checkbox" id="cards-save-group-checkbox"
@@ -399,70 +401,6 @@
 
             </div>
         </main>
-    </div>
-
-    <!-- Edit Modal -->
-    <div id="edit-modal" class="hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
-            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
-                <h3 class="text-base font-bold text-gray-900">Edit Session</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="px-6 py-5 space-y-4 overflow-y-auto">
-                <div>
-                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Title <span class="text-red-500">*</span></label>
-                    <input id="modal-title" type="text" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                </div>
-                <div>
-                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Description</label>
-                    <div class="border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition-shadow">
-                        <div class="flex items-center gap-1 p-2 border-b border-gray-200 bg-gray-50 editor-toolbar flex-wrap">
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-bold text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-italic text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-underline text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-heading text-xs"></i></button>
-                            <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ul text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ol text-xs"></i></button>
-                            <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-file text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-hashtag text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><span class="font-serif italic text-xs">♭</span></button>
-                            <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-floppy-disk text-xs"></i></button>
-                            <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-folder text-xs"></i></button>
-                        </div>
-                        <textarea id="modal-description" class="w-full p-3 min-h-[120px] focus:outline-none resize-y text-sm text-gray-700" placeholder="Say something (or paste a cool URL)..."></textarea>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-900 mb-1.5">Date <span class="text-red-500">*</span></label>
-                        <input id="modal-date" type="date" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-900 mb-1.5">Start Time <span class="text-red-500">*</span></label>
-                        <input id="modal-time" type="time" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
-                    </div>
-                </div>
-                <div class="pt-2 border-t border-gray-100">
-                    <label class="flex text-sm font-semibold text-gray-900 mb-2 gap-2 cursor-pointer items-center group">
-                        <input type="checkbox" id="modal-save-template-checkbox"
-                               class="w-4 h-4 rounded border-gray-400 accent-[#e11d48] cursor-pointer flex-shrink-0"
-                               onchange="const f = document.getElementById('modal-template-name'); f.disabled = !this.checked; if (this.checked) f.focus();">
-                        <span class="text-sm font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Save as Template?</span>
-                    </label>
-                    <input type="text" id="modal-template-name" disabled placeholder="Template name..."
-                           class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400
-                                  disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed
-                                  focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all">
-                </div>
-            </div>
-            <div class="px-6 py-4 border-t border-gray-100 flex justify-end gap-3 flex-shrink-0">
-                <button onclick="closeModal()" class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50">Cancel</button>
-                <button onclick="saveModal()" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg">Save Changes</button>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -498,7 +436,6 @@
             currentMode = mode;
             document.getElementById('mode-create').classList.toggle('mode-active', mode === 'create');
             document.getElementById('mode-template').classList.toggle('mode-active', mode === 'template');
-
             if (mode === 'template') {
                 toggleCollapsibleSections(true);
                 document.getElementById('date-label-text').textContent = "First Live Class's Date";
@@ -511,7 +448,6 @@
                 document.getElementById('time-label-text').textContent = isMulti ? 'Default Start Time' : 'Start Time';
                 document.getElementById('date-hint').classList.toggle('visible', isMulti);
             }
-
             checkFormValidity();
         }
 
@@ -550,9 +486,7 @@
             document.getElementById('date-hint').classList.toggle('visible', isMulti);
         }
 
-        function adjustCount(delta) {
-            setCount(Math.max(1, Math.min(12, sessionCount + delta)));
-        }
+        function adjustCount(delta) { setCount(Math.max(1, Math.min(12, sessionCount + delta))); }
 
         function setCount(n) {
             sessionCount = Math.max(1, Math.min(12, n));
@@ -560,19 +494,13 @@
             display.textContent = sessionCount;
             display.classList.add('count-bump');
             setTimeout(() => display.classList.remove('count-bump'), 120);
-
             document.getElementById('stepper-minus').disabled = sessionCount <= 1;
             document.getElementById('stepper-plus').disabled = sessionCount >= 12;
-
             const isMulti = sessionCount > 1;
-            document.getElementById('count-helper').textContent = isMulti
-                ? `${sessionCount} sessions` : 'Single session';
-
+            document.getElementById('count-helper').textContent = isMulti ? `${sessionCount} sessions` : 'Single session';
             toggleCollapsibleSections(isMulti);
-
             document.getElementById('date-label-text').textContent = isMulti ? "First Live Class's Date" : 'Date';
             document.getElementById('time-label-text').textContent = isMulti ? 'Default Start Time' : 'Start Time';
-
             checkFormValidity();
         }
 
@@ -632,17 +560,11 @@
             const startTime = sessions.length > 0 ? sessions[0].time : '10:00';
             const sd = new Date(startDate + 'T00:00:00');
             sessions = [];
+            editingId = null;
             for (let i = 0; i < tpl.count; i++) {
                 const d = new Date(sd);
                 d.setDate(sd.getDate() + (i * 7));
-                sessions.push({
-                    id: Date.now() + i,
-                    title: `${tpl.prefix} ${i + 1}`,
-                    description: tpl.desc,
-                    date: d.toISOString().split('T')[0],
-                    time: startTime,
-                    edited: false
-                });
+                sessions.push({ id: Date.now() + i, title: `${tpl.prefix} ${i + 1}`, description: tpl.desc, date: d.toISOString().split('T')[0], time: startTime, edited: false });
             }
             document.getElementById('group-template-menu').classList.add('hidden');
             document.getElementById('group-template-chevron').classList.remove('rotate-180');
@@ -652,14 +574,12 @@
         function checkFormValidity() {
             const btn = document.getElementById('save-btn');
             let ok = false;
-
             if (currentMode === 'create') {
                 const isMulti = sessionCount > 1;
                 const title = document.getElementById('session-title').value.trim();
-                const date  = document.getElementById('session-date').value;
-                const time  = document.getElementById('session-time').value;
+                const date = document.getElementById('session-date').value;
+                const time = document.getElementById('session-time').value;
                 ok = isMulti ? (date && time) : (title && date && time);
-
                 if (isMulti) {
                     btn.innerHTML = `<i class="fa-solid fa-layer-group mr-1.5 text-xs"></i>Generate ${sessionCount} Sessions`;
                 } else {
@@ -671,7 +591,6 @@
                 ok = selectedSetupTemplate && date && time;
                 btn.innerHTML = `<i class="fa-solid fa-layer-group mr-1.5 text-xs"></i>Generate Sessions from Template`;
             }
-
             btn.disabled = !ok;
             btn.classList.toggle('enabled', !!ok);
         }
@@ -691,10 +610,11 @@
             const date = document.getElementById('session-date').value;
             const time = document.getElementById('session-time').value;
             sessions = [];
+            editingId = null;
 
             if (currentMode === 'create' && sessionCount === 1) {
                 const title = document.getElementById('session-title').value.trim();
-                const desc  = document.getElementById('session-description').value.trim();
+                const desc = document.getElementById('session-description').value.trim();
                 sessions.push({ id: Date.now(), title, description: desc, date, time });
                 alert('Session created successfully!');
                 return;
@@ -712,14 +632,7 @@
             for (let i = 0; i < count; i++) {
                 const d = new Date(startDate);
                 d.setDate(startDate.getDate() + (i * 7));
-                sessions.push({
-                    id: Date.now() + i,
-                    title: `${prefix} ${i + 1}`,
-                    description: desc,
-                    date: d.toISOString().split('T')[0],
-                    time: time,
-                    edited: currentMode === 'template'
-                });
+                sessions.push({ id: Date.now() + i, title: `${prefix} ${i + 1}`, description: desc, date: d.toISOString().split('T')[0], time, edited: currentMode === 'template' });
             }
 
             document.getElementById('form-view').classList.add('hidden');
@@ -733,6 +646,7 @@
         function goBackToForm() {
             document.getElementById('cards-view').classList.add('hidden');
             document.getElementById('form-view').classList.remove('hidden');
+            editingId = null;
         }
 
         function addSession() {
@@ -745,33 +659,87 @@
             setTimeout(() => { const el = document.getElementById(`card-${ns.id}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
         }
 
+        function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+        function editorToolbarHtml() {
+            return `<div class="flex items-center gap-1 p-2 border-b border-gray-200 bg-gray-50 editor-toolbar flex-wrap">
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-bold text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-italic text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-underline text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-heading text-xs"></i></button>
+                <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ul text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-list-ol text-xs"></i></button>
+                <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-file text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-solid fa-hashtag text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><span class="font-serif italic text-xs">♭</span></button>
+                <div class="w-px h-4 bg-gray-300 mx-0.5"></div>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-floppy-disk text-xs"></i></button>
+                <button class="p-1.5 hover:bg-gray-200 rounded text-gray-600 w-7 h-7 flex items-center justify-center"><i class="fa-regular fa-folder text-xs"></i></button>
+            </div>`;
+        }
+
         function renderCards() {
             const list = document.getElementById('cards-list');
             list.innerHTML = '';
             sessions.forEach((s, idx) => {
+                const isEditing = editingId === s.id;
                 const card = document.createElement('div');
                 card.id = `card-${s.id}`;
-                card.className = 'card-fade-in bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow';
+                card.className = `card-fade-in card-wrapper bg-white border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow ${isEditing ? 'editing border-brand-500' : 'border-gray-200'}`;
                 card.style.animationDelay = `${idx * 40}ms`;
+
                 card.innerHTML = `
-                    <div class="flex items-start justify-between gap-3">
-                        <div class="flex items-start gap-3 min-w-0">
-                            <div class="flex-shrink-0 w-7 h-7 rounded-full ${s.edited ? 'bg-emerald-100 border border-emerald-300' : 'bg-gray-100 border border-gray-200'} flex items-center justify-center">
-                                ${s.edited ? '<i class="fa-solid fa-check text-emerald-600 text-[10px]"></i>' : `<span class="text-xs font-bold text-gray-500">${idx + 1}</span>`}
+                    <div class="card-summary ${isEditing ? 'dimmed' : ''}" id="summary-${s.id}">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-start gap-3 min-w-0">
+                                <div class="flex-shrink-0 w-7 h-7 rounded-full ${s.edited ? 'bg-emerald-100 border border-emerald-300' : 'bg-gray-100 border border-gray-200'} flex items-center justify-center">
+                                    ${s.edited ? '<i class="fa-solid fa-check text-emerald-600 text-[10px]"></i>' : `<span class="text-xs font-bold text-gray-500">${idx + 1}</span>`}
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-sm font-bold text-gray-900 truncate">${escHtml(s.title)}</p>
+                                    <p class="text-xs text-gray-500 mt-0.5">
+                                        <i class="fa-regular fa-calendar mr-1"></i>${formatDate(s.date)}
+                                        &nbsp;·&nbsp;
+                                        <i class="fa-regular fa-clock mr-1"></i>${formatTime(s.time)}
+                                    </p>
+                                    ${s.description ? `<p class="text-xs text-gray-400 mt-1.5 line-clamp-2 whitespace-pre-line">${escHtml(s.description)}</p>` : ''}
+                                </div>
                             </div>
-                            <div class="min-w-0">
-                                <p class="text-sm font-bold text-gray-900 truncate">${escHtml(s.title)}</p>
-                                <p class="text-xs text-gray-500 mt-0.5">
-                                    <i class="fa-regular fa-calendar mr-1"></i>${formatDate(s.date)}
-                                    &nbsp;·&nbsp;
-                                    <i class="fa-regular fa-clock mr-1"></i>${formatTime(s.time)}
-                                </p>
-                                ${s.description ? `<p class="text-xs text-gray-400 mt-1.5 line-clamp-2 whitespace-pre-line">${escHtml(s.description)}</p>` : ''}
+                            <div class="flex items-center gap-1 flex-shrink-0">
+                                <button onclick="openInlineEdit(${s.id})" title="Edit" class="w-7 h-7 rounded-md text-gray-400 hover:text-brand-600 hover:bg-brand-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button onclick="deleteCard(${s.id})" title="Delete" class="w-7 h-7 rounded-md text-gray-400 hover:text-red-500 hover:bg-red-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-trash-can"></i></button>
                             </div>
                         </div>
-                        <div class="flex items-center gap-1 flex-shrink-0">
-                            <button onclick="openEdit(${s.id})" title="Edit" class="w-7 h-7 rounded-md text-gray-400 hover:text-brand-600 hover:bg-brand-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button onclick="deleteCard(${s.id})" title="Delete" class="w-7 h-7 rounded-md text-gray-400 hover:text-red-500 hover:bg-red-50 flex items-center justify-center transition-colors text-xs"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                    <div class="card-edit-body ${isEditing ? 'open' : ''}" id="edit-body-${s.id}">
+                        <div class="border-t border-gray-100 pt-4 mt-1 space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-900 mb-1.5">Title <span class="text-red-500">*</span></label>
+                                <input id="inline-title-${s.id}" type="text" value="${escHtml(s.title)}" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-900 mb-1.5">Description</label>
+                                <div class="border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-brand-500 focus-within:border-brand-500 transition-shadow">
+                                    ${editorToolbarHtml()}
+                                    <textarea id="inline-desc-${s.id}" class="w-full p-3 min-h-[100px] focus:outline-none resize-y text-sm text-gray-700" placeholder="Say something (or paste a cool URL)...">${escHtml(s.description)}</textarea>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Date <span class="text-red-500">*</span></label>
+                                    <input id="inline-date-${s.id}" type="date" value="${s.date}" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-1.5">Start Time <span class="text-red-500">*</span></label>
+                                    <input id="inline-time-${s.id}" type="time" value="${s.time}" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500">
+                                </div>
+                            </div>
+                            <div class="flex justify-end gap-3 pt-2">
+                                <button onclick="cancelInlineEdit()" class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
+                                <button onclick="saveInlineEdit(${s.id})" class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg transition-colors">Save Changes</button>
+                            </div>
                         </div>
                     </div>`;
                 list.appendChild(card);
@@ -779,36 +747,40 @@
             document.getElementById('cards-subtitle').textContent = `${sessions.length} session${sessions.length !== 1 ? 's' : ''} generated.`;
         }
 
-        function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-        function openEdit(id) {
-            const s = sessions.find(x => x.id === id); if (!s) return;
+        function openInlineEdit(id) {
+            if (editingId === id) return;
             editingId = id;
-            document.getElementById('modal-title').value = s.title;
-            document.getElementById('modal-description').value = s.description;
-            document.getElementById('modal-date').value = s.date;
-            document.getElementById('modal-time').value = s.time;
-            document.getElementById('modal-save-template-checkbox').checked = false;
-            document.getElementById('modal-template-name').value = '';
-            document.getElementById('modal-template-name').disabled = true;
-            document.getElementById('edit-modal').classList.remove('hidden');
+            renderCards();
+            setTimeout(() => {
+                const el = document.getElementById(`card-${id}`);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                const titleInput = document.getElementById(`inline-title-${id}`);
+                if (titleInput) titleInput.focus();
+            }, 60);
         }
 
-        function closeModal() { document.getElementById('edit-modal').classList.add('hidden'); editingId = null; }
+        function cancelInlineEdit() {
+            editingId = null;
+            renderCards();
+        }
 
-        function saveModal() {
-            const s = sessions.find(x => x.id === editingId); if (!s) return;
-            s.title = document.getElementById('modal-title').value.trim();
-            s.description = document.getElementById('modal-description').value.trim();
-            s.date = document.getElementById('modal-date').value;
-            s.time = document.getElementById('modal-time').value;
+        function saveInlineEdit(id) {
+            const s = sessions.find(x => x.id === id);
+            if (!s) return;
+            s.title = document.getElementById(`inline-title-${id}`).value.trim();
+            s.description = document.getElementById(`inline-desc-${id}`).value.trim();
+            s.date = document.getElementById(`inline-date-${id}`).value;
+            s.time = document.getElementById(`inline-time-${id}`).value;
             s.edited = true;
-            closeModal(); renderCards();
+            editingId = null;
+            renderCards();
         }
 
-        document.getElementById('edit-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-
-        function deleteCard(id) { sessions = sessions.filter(s => s.id !== id); renderCards(); }
+        function deleteCard(id) {
+            if (editingId === id) editingId = null;
+            sessions = sessions.filter(s => s.id !== id);
+            renderCards();
+        }
     </script>
 </body>
 </html>
