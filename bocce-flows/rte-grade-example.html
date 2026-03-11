@@ -1,235 +1,482 @@
+<!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade &amp; Message Editor</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/08ce533d2a.js"></script>
-    <script>
-      window.FontAwesomeConfig = {
-        autoReplaceSvg: 'nest'
-      };
-    </script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap"
-      rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme:
-        {
-          extend:
-          {
-            fontFamily:
-            {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors:
-            {
-              primary: '#0ea5e9',
-              surface: '#f8fafc',
-              border: '#e2e8f0',
-              textMain: '#334155',
-              textMuted: '#94a3b8'
-            }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade & Message Editor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Nunito Sans', 'sans-serif'] },
+          colors: {
+            primary: '#0ea5e9',
+            surface: '#f8fafc',
+            border: '#e2e8f0',
+            textMain: '#334155',
+            textMuted: '#94a3b8'
           }
         }
       }
-    </script>
-    <style>
-      ::-webkit-scrollbar
-      {
-        display: none;
-      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { display: none; }
+    body { -ms-overflow-style: none; scrollbar-width: none; background-color: #f1f5f9; }
 
-      body
-      {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        background-color: #f1f5f9;
-      }
-    </style>
-  </head>
+    .editor-wrapper { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+    .editor-wrapper.fullscreen {
+      position: fixed !important;
+      top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+      width: 100% !important; max-width: 100% !important; height: 100vh !important;
+      z-index: 50; border-radius: 0 !important; margin: 0 !important; border: none !important;
+    }
+    .editor-wrapper.fullscreen .editor-body { flex: 1 1 auto; min-height: 0; }
+    .editor-wrapper.fullscreen .editor-body textarea { height: 100% !important; min-height: 100% !important; }
+    .editor-wrapper.fullscreen .rounded-t-lg { border-radius: 0 !important; }
+    .editor-wrapper.fullscreen .rounded-b-lg { border-radius: 0 !important; }
 
-  <body
-    class="min-h-screen p-4 md:p-8 flex flex-col items-center justify-center space-y-8">
-    <!-- Desktop View -->
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade &amp; Message Editor</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap"
-      rel="stylesheet">
-    <div id="desktop-container"
-      class="w-full max-w-4xl hidden md:flex flex-col space-y-6">
-      <h2 class="text-xl font-semibold text-textMain mb-2">Desktop Layout</h2>
-      <!-- Grading Component (Separated) -->
-      <div id="desktop-grading-bar"
-        class="bg-white rounded-lg border border-border shadow-sm p-4 flex items-center justify-between">
-        <div class="flex items-center space-x-2"><span
-            class="text-sm font-medium text-textMain mr-2">Assign Grade:</span>
-          <div
-            class="flex border border-border rounded-md overflow-hidden bg-surface">
-            <button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">A</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">A-</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">B+</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">B</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">B-</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">C+</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">C</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">C-</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors">D</button><button
-              class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary transition-colors">F</button>
-          </div>
-          <div class="h-6 w-px bg-border mx-2"></div><button
-            class="p-1.5 text-textMuted hover:text-textMain rounded-md hover:bg-surface transition-colors"><i
-              class="fa-solid fa-ban"></i></button><button
-            class="p-1.5 text-textMuted hover:text-textMain rounded-md hover:bg-surface transition-colors"><i
-              class="fa-solid fa-rotate-exclamation"></i></button>
+    textarea { transition: height 0.15s ease; overflow-y: auto; }
+    .grade-btn.active { background-color: #0ea5e9; color: white; }
+
+    .draft-info-bar {
+      background-color: #edf0f4;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), inset 0 1px 0 rgba(0,0,0,0.04);
+    }
+    .draft-info-bar .draft-info-text { text-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+
+    .saved-draft-btn { display: none; }
+    .saved-draft-btn.visible { display: flex; }
+
+    .editor-footer { transition: opacity 0.2s ease; }
+    .editor-footer.hidden-footer { opacity: 0; pointer-events: none; height: 0; padding: 0; border: none; overflow: hidden; }
+  </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex flex-col items-center justify-center space-y-8">
+
+  <!-- Desktop View -->
+  <div id="desktop-container" class="w-full max-w-4xl hidden md:flex flex-col space-y-6">
+    <h2 class="text-xl font-semibold text-textMain mb-2">Desktop Layout</h2>
+
+    <!-- Grading Bar -->
+    <div class="bg-white rounded-lg border border-border shadow-sm p-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="text-sm font-medium text-textMain mr-2">Assign Grade:</span>
+        <div class="flex border border-border rounded-md overflow-hidden bg-surface">
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="A">A</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="A-">A-</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="B+">B+</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="B">B</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="B-">B-</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="C+">C+</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="C">C</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="C-">C-</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border transition-colors" data-grade="D">D</button>
+          <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary transition-colors" data-grade="F">F</button>
         </div>
-        <div class="flex items-center space-x-3">
-          <div class="relative"><input type="text" value="999"
-              class="w-20 pl-3 pr-6 py-1.5 border border-border rounded-md text-sm text-right focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"><span
-              class="absolute right-2 top-1/2 -translate-y-1/2 text-textMuted text-sm">%</span>
-          </div>
-        </div>
-      </div><!-- Rich Text Editor Component -->
-      <div id="desktop-editor"
-        class="bg-white rounded-lg border border-border shadow-sm flex flex-col h-[400px]">
-        <!-- Toolbar -->
-        <div
-          class="flex items-center justify-between p-2 border-b border-border bg-surface rounded-t-lg">
-          <div class="flex items-center space-x-1"><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-bold"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-italic"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-text-height"></i></button>
-            <div class="h-5 w-px bg-border mx-1"></div><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-link"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-list-ul"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-list-ol"></i></button>
-            <div class="h-5 w-px bg-border mx-1"></div><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-music"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-solid fa-code"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-regular fa-face-smile"></i></button>
-              <button
-              class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i
-                class="fa-regular fa-folder"></i></button>
-          </div>
-          <div class="flex items-center space-x-3 pr-2"><span
-              class="text-xs text-textMuted">Draft Saved</span><button
-              class="text-textMuted hover:text-textMain"><i
-                class="fa-solid fa-expand"></i></button><button
-              class="text-textMuted hover:text-textMain"><i
-                class="fa-solid fa-chevron-down"></i></button></div>
-        </div><!-- Editor Area -->
-        <div class="flex-1 p-4">
-          <textarea placeholder="Include a message about the assignment?" class="w-full h-full resize-none outline-none text-textMain placeholder-textMuted"></textarea>
-        </div><!-- Footer Actions -->
-        <div
-          class="p-3 flex justify-between items-center bg-white rounded-b-lg border-t border-border">
-          <div class="flex items-center"><button
-              class="p-2 text-textMuted hover:text-textMain rounded-full hover:bg-surface transition-colors border border-border"><i
-                class="fa-solid fa-paperclip"></i></button></div>
-          <div class="flex items-center space-x-4"><a href="#"
-              class="text-sm font-medium text-textMuted hover:text-primary transition-colors underline-offset-2 hover:underline border border-t-0 border-r-0 border-l-0"
-              id="i4xc3">
-              <i class="fa-regular fa-floppy-disk"></i> Save as Draft
-            </a><button
-              class="p-2.5 bg-primary text-white rounded-full hover:bg-sky-600 transition-colors shadow-sm"><i
-                class="fa-regular fa-paper-plane"></i></button></div>
-        </div>
+        <div class="h-6 w-px bg-border mx-2"></div>
+        <button class="p-1.5 text-textMuted hover:text-textMain rounded-md hover:bg-surface transition-colors"><i class="fa-solid fa-ban"></i></button>
+        <button class="p-1.5 text-textMuted hover:text-textMain rounded-md hover:bg-surface transition-colors"><i class="fa-solid fa-rotate-right"></i></button>
       </div>
-    </div><!-- Mobile View -->
-    <div id="mobile-container"
-      class="w-full max-w-md md:hidden flex flex-col space-y-4">
-      <h2 class="text-xl font-semibold text-textMain mb-2">Mobile Layout</h2>
-      <!-- Grading Component (Separated & Scrollable) -->
-      <div id="mobile-grading-bar"
-        class="bg-white rounded-lg border border-border shadow-sm p-3 flex flex-col space-y-3">
-        <div class="flex items-center justify-between"><span
-            class="text-sm font-medium text-textMain">Assign Grade</span>
-          <div class="flex items-center space-x-2">
-            <div class="relative"><input type="text" value="999"
-                class="w-16 pl-2 pr-5 py-1 border border-border rounded text-sm text-right focus:outline-none focus:border-primary"><span
-                class="absolute right-1.5 top-1/2 -translate-y-1/2 text-textMuted text-xs">%</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center space-x-2">
-          <div class="flex-1 overflow-x-auto pb-1 -mb-1 hide-scrollbar">
-            <div class="flex border border-border rounded-md bg-surface w-max">
-              <button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">A</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">A-</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">B+</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">B</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">B-</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">C+</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">C</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">C-</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border">D</button><button
-                class="px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary">F</button>
-            </div>
-          </div>
-          <div class="flex items-center space-x-1 pl-1 border-l border-border">
-            <button
-              class="p-1.5 text-textMuted hover:text-textMain rounded bg-surface"><i
-                class="fa-solid fa-ban text-xs"></i></button><button
-              class="p-1.5 text-textMuted hover:text-textMain rounded bg-surface"><i
-                class="fa-regular fa-rotate-exclamation text-xs"></i></button></div>
-        </div>
-      </div><!-- Rich Text Editor Component -->
-      <div id="mobile-editor"
-        class="bg-white rounded-lg border border-border shadow-sm flex flex-col h-[350px]">
-        <!-- Toolbar (Scrollable) -->
-        <div
-          class="overflow-x-auto pb-1 -mb-1 border-b border-border bg-surface rounded-t-lg hide-scrollbar">
-          <div class="flex items-center p-2 w-max space-x-1"><button
-              class="p-2 text-textMain hover:bg-white rounded"><i
-                class="fa-solid fa-bold"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded"><i
-                class="fa-solid fa-italic"></i></button>
-            <div class="h-4 w-px bg-border mx-1"></div><button
-              class="p-2 text-textMain hover:bg-white rounded"><i
-                class="fa-solid fa-link"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded"><i
-                class="fa-solid fa-list-ul"></i></button>
-            <div class="h-4 w-px bg-border mx-1"></div><button
-              class="p-2 text-textMain hover:bg-white rounded"><i
-                class="fa-regular fa-face-smile"></i></button><button
-              class="p-2 text-textMain hover:bg-white rounded"><i
-                class="fa-regular fa-folder"></i></button>
-          </div>
-        </div><!-- Editor Area -->
-        <div class="flex-1 p-3">
-          <textarea placeholder="Include a message about the assignment? Message Firstname..." class="w-full h-full resize-none outline-none text-sm text-textMain placeholder-textMuted"></textarea>
-        </div><!-- Footer Actions -->
-        <div
-          class="p-2 flex justify-between items-center bg-white rounded-b-lg border-t border-border">
-          <div class="flex items-center"><button
-              class="p-2 text-textMuted hover:text-textMain rounded-full border border-border"><i
-                class="fa-solid fa-paperclip"></i></button></div>
-          <div class="flex items-center space-x-3"><a href="#"
-              class="text-xs font-medium text-textMuted hover:text-primary underline-offset-2 hover:underline">
-              Save as Draft
-            </a><button
-              class="p-2 bg-primary text-white rounded-full shadow-sm"><i
-                class="fa-solid fa-paper-plane"></i></button></div>
+      <div class="flex items-center space-x-3">
+        <div class="relative">
+          <input type="text" value="999" class="w-20 pl-3 pr-6 py-1.5 border border-border rounded-md text-sm text-right focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+          <span class="absolute right-2 top-1/2 -translate-y-1/2 text-textMuted text-sm">%</span>
         </div>
       </div>
     </div>
-  </body>
 
+    <!-- Rich Text Editor -->
+    <div id="desktop-editor" class="editor-wrapper bg-white rounded-lg border border-border shadow-sm flex flex-col" style="height: 400px; min-height: 200px;">
+      <!-- Toolbar -->
+      <div class="flex items-center justify-between p-2 border-b border-border bg-surface rounded-t-lg shrink-0">
+        <div class="flex items-center space-x-1">
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-bold"></i></button>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-italic"></i></button>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-text-height"></i></button>
+          <div class="h-5 w-px bg-border mx-1"></div>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-link"></i></button>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-list-ul"></i></button>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-list-ol"></i></button>
+          <div class="h-5 w-px bg-border mx-1"></div>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-music"></i></button>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-code"></i></button>
+          <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-regular fa-face-smile"></i></button>
+          <button class="saved-draft-btn p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all items-center space-x-1" data-editor="desktop-editor">
+            <i class="fa-regular fa-folder"></i>
+            <span class="text-xs font-medium">Saved Draft</span>
+          </button>
+        </div>
+        <div class="flex items-center space-x-3 pr-2">
+          <span class="text-xs text-textMuted draft-status"></span>
+          <button class="text-textMuted hover:text-textMain expand-btn" data-target="desktop-editor">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Draft Info Bar -->
+      <div class="draft-info-bar hidden shrink-0 px-4 py-2.5 items-center justify-between" data-role="draft-info">
+        <span class="text-xs font-medium text-textMain draft-info-text"></span>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-xs font-medium text-textMain hover:text-textMain/70 underline-offset-2 hover:underline delete-draft-btn">Delete Draft</a>
+          <button class="px-3 py-1 bg-primary text-white text-xs font-medium rounded-md hover:bg-sky-600 transition-colors shadow-sm use-draft-btn">Use this draft</button>
+          <button class="px-3 py-1.5 border border-border rounded-md bg-white text-textMain hover:bg-surface transition-colors cancel-draft-btn flex items-center space-x-1.5" title="Cancel">
+            <i class="fa-solid fa-xmark text-xs"></i>
+            <span class="text-xs font-medium">Cancel</span>
+          </button>
+        </div>
+      </div>
+      <!-- Editor Area -->
+      <div class="editor-body flex-1 p-4 min-h-0">
+        <textarea placeholder="Include a message about the assignment?" class="editor-textarea w-full h-full resize-none outline-none text-textMain placeholder-textMuted" data-editor="desktop-editor"></textarea>
+      </div>
+      <!-- Footer -->
+      <div class="editor-footer p-3 flex justify-between items-center bg-white rounded-b-lg border-t border-border shrink-0" data-role="footer">
+        <div class="flex items-center">
+          <button class="p-2 text-textMuted hover:text-textMain rounded-full hover:bg-surface transition-colors border border-border"><i class="fa-solid fa-paperclip"></i></button>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="save-draft-link text-sm font-medium text-textMuted hover:text-primary transition-colors underline-offset-2 hover:underline" data-editor="desktop-editor">
+            <i class="fa-regular fa-floppy-disk"></i> Save as Draft
+          </a>
+          <button class="p-2.5 bg-primary text-white rounded-full hover:bg-sky-600 transition-colors shadow-sm"><i class="fa-regular fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile View -->
+  <div id="mobile-container" class="w-full max-w-md md:hidden flex flex-col space-y-4">
+    <h2 class="text-xl font-semibold text-textMain mb-2">Mobile Layout</h2>
+
+    <!-- Mobile Grading Bar -->
+    <div class="bg-white rounded-lg border border-border shadow-sm p-3 flex flex-col space-y-3">
+      <div class="flex items-center justify-between">
+        <span class="text-sm font-medium text-textMain">Assign Grade</span>
+        <div class="flex items-center space-x-2">
+          <div class="relative">
+            <input type="text" value="999" class="w-16 pl-2 pr-5 py-1 border border-border rounded text-sm text-right focus:outline-none focus:border-primary">
+            <span class="absolute right-1.5 top-1/2 -translate-y-1/2 text-textMuted text-xs">%</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <div class="flex-1 overflow-x-auto pb-1 -mb-1">
+          <div class="flex border border-border rounded-md bg-surface w-max">
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="A">A</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="A-">A-</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="B+">B+</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="B">B</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="B-">B-</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="C+">C+</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="C">C</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="C-">C-</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary border-r border-border" data-grade="D">D</button>
+            <button class="grade-btn px-3 py-1.5 text-sm font-medium hover:bg-white hover:text-primary" data-grade="F">F</button>
+          </div>
+        </div>
+        <div class="flex items-center space-x-1 pl-1 border-l border-border">
+          <button class="p-1.5 text-textMuted hover:text-textMain rounded bg-surface"><i class="fa-solid fa-ban text-xs"></i></button>
+          <button class="p-1.5 text-textMuted hover:text-textMain rounded bg-surface"><i class="fa-solid fa-rotate-right text-xs"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Editor -->
+    <div id="mobile-editor" class="editor-wrapper bg-white rounded-lg border border-border shadow-sm flex flex-col" style="height: 350px; min-height: 180px;">
+      <!-- Toolbar -->
+      <div class="overflow-x-auto pb-1 -mb-1 border-b border-border bg-surface rounded-t-lg shrink-0">
+        <div class="flex items-center justify-between p-2">
+          <div class="flex items-center w-max space-x-1">
+            <button class="p-2 text-textMain hover:bg-white rounded"><i class="fa-solid fa-bold"></i></button>
+            <button class="p-2 text-textMain hover:bg-white rounded"><i class="fa-solid fa-italic"></i></button>
+            <div class="h-4 w-px bg-border mx-1"></div>
+            <button class="p-2 text-textMain hover:bg-white rounded"><i class="fa-solid fa-link"></i></button>
+            <button class="p-2 text-textMain hover:bg-white rounded"><i class="fa-solid fa-list-ul"></i></button>
+            <div class="h-4 w-px bg-border mx-1"></div>
+            <button class="p-2 text-textMain hover:bg-white rounded"><i class="fa-regular fa-face-smile"></i></button>
+            <button class="saved-draft-btn p-2 text-textMain hover:bg-white rounded items-center space-x-1" data-editor="mobile-editor">
+              <i class="fa-regular fa-folder"></i>
+              <span class="text-xs font-medium">Saved Draft</span>
+            </button>
+          </div>
+          <button class="text-textMuted hover:text-textMain expand-btn ml-3 shrink-0" data-target="mobile-editor">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Draft Info Bar -->
+      <div class="draft-info-bar hidden shrink-0 px-3 py-2 items-center justify-between" data-role="draft-info">
+        <span class="text-xs font-medium text-textMain draft-info-text"></span>
+        <div class="flex items-center space-x-3">
+          <a href="#" class="text-xs font-medium text-textMain hover:text-textMain/70 underline-offset-2 hover:underline delete-draft-btn">Delete Draft</a>
+          <button class="px-2.5 py-1 bg-primary text-white text-xs font-medium rounded-md hover:bg-sky-600 transition-colors shadow-sm use-draft-btn">Use this draft</button>
+          <button class="p-1 text-textMuted hover:text-textMain transition-colors cancel-draft-btn" title="Cancel">
+            <i class="fa-solid fa-xmark"></i> <span class="text-xs font-medium">Cancel</span>
+          </button>
+        </div>
+      </div>
+      <!-- Editor Area -->
+      <div class="editor-body flex-1 p-3 min-h-0">
+        <textarea placeholder="Include a message about the assignment? Message Firstname..." class="editor-textarea w-full h-full resize-none outline-none text-sm text-textMain placeholder-textMuted" data-editor="mobile-editor"></textarea>
+      </div>
+      <!-- Footer -->
+      <div class="editor-footer p-2 flex justify-between items-center bg-white rounded-b-lg border-t border-border shrink-0" data-role="footer">
+        <div class="flex items-center">
+          <button class="p-2 text-textMuted hover:text-textMain rounded-full border border-border"><i class="fa-solid fa-paperclip"></i></button>
+        </div>
+        <div class="flex items-center space-x-3">
+          <a href="#" class="save-draft-link text-xs font-medium text-textMuted hover:text-primary underline-offset-2 hover:underline" data-editor="mobile-editor">
+            Save as Draft
+          </a>
+          <button class="p-2 bg-primary text-white rounded-full shadow-sm"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const DEFAULT_HEIGHTS = { 'desktop-editor': 400, 'mobile-editor': 350 };
+    const editorStates = {
+      'desktop-editor': { expanded: false, draft: null, viewingDraft: false, previewContent: '' },
+      'mobile-editor': { expanded: false, draft: null, viewingDraft: false, previewContent: '' }
+    };
+
+    // --- Grade buttons ---
+    document.querySelectorAll('.grade-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const container = btn.closest('.flex');
+        container.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    function formatDraftDate(date) {
+      return date.toLocaleString('en-US', {
+        month: 'short', day: 'numeric', year: 'numeric',
+        hour: 'numeric', minute: '2-digit', hour12: true
+      });
+    }
+
+    function getEditorEls(editorId) {
+      const editor = document.getElementById(editorId);
+      return {
+        editor,
+        textarea: editor.querySelector('.editor-textarea'),
+        draftInfo: editor.querySelector('[data-role="draft-info"]'),
+        draftInfoText: editor.querySelector('.draft-info-text'),
+        savedDraftBtn: editor.querySelector('.saved-draft-btn'),
+        useDraftBtn: editor.querySelector('.use-draft-btn'),
+        deleteDraftBtn: editor.querySelector('.delete-draft-btn'),
+        cancelDraftBtn: editor.querySelector('.cancel-draft-btn'),
+        footer: editor.querySelector('[data-role="footer"]'),
+      };
+    }
+
+    function recalcHeight(editorId) {
+      const state = editorStates[editorId];
+      if (state.expanded) return;
+      const { editor, textarea } = getEditorEls(editorId);
+      const defaultH = DEFAULT_HEIGHTS[editorId];
+
+      const clone = textarea.cloneNode(true);
+      clone.style.cssText = 'position:absolute;visibility:hidden;height:auto;max-height:none;width:' + textarea.offsetWidth + 'px';
+      document.body.appendChild(clone);
+      const contentH = clone.scrollHeight;
+      document.body.removeChild(clone);
+
+      const toolbar = editor.querySelector('.border-b');
+      const footer = editor.querySelector('[data-role="footer"]');
+      const draftBar = editor.querySelector('[data-role="draft-info"]');
+      const toolbarH = toolbar ? toolbar.offsetHeight : 0;
+      const footerH = (footer && !footer.classList.contains('hidden-footer')) ? footer.offsetHeight : 0;
+      const draftBarH = (draftBar && !draftBar.classList.contains('hidden')) ? draftBar.offsetHeight : 0;
+      const bodyPadding = 32;
+
+      const fitHeight = contentH + toolbarH + footerH + draftBarH + bodyPadding;
+      editor.style.height = Math.max(defaultH, fitHeight) + 'px';
+    }
+
+    // --- Enter draft viewing mode ---
+    function enterDraftView(editorId) {
+      const state = editorStates[editorId];
+      if (!state.draft) return;
+      const { textarea, draftInfo, draftInfoText, footer } = getEditorEls(editorId);
+
+      // Save whatever the user was typing
+      state.previewContent = textarea.value;
+      state.viewingDraft = true;
+
+      // Load draft content
+      textarea.value = state.draft.content;
+      textarea.setAttribute('readonly', true);
+      textarea.style.opacity = '0.8';
+
+      // Show info bar
+      draftInfoText.textContent = 'Viewing saved draft from ' + formatDraftDate(state.draft.savedAt);
+      draftInfo.classList.remove('hidden');
+      draftInfo.classList.add('flex');
+
+      // Hide footer
+      footer.classList.add('hidden-footer');
+
+      recalcHeight(editorId);
+    }
+
+    // --- Exit draft viewing mode (cancel / use) ---
+    function exitDraftView(editorId, restorePrevious) {
+      const state = editorStates[editorId];
+      const { textarea, draftInfo, footer } = getEditorEls(editorId);
+
+      state.viewingDraft = false;
+      textarea.removeAttribute('readonly');
+      textarea.style.opacity = '';
+
+      if (restorePrevious) {
+        textarea.value = state.previewContent;
+      }
+      // else keep the draft content (user chose "Use this draft")
+
+      // Hide info bar
+      draftInfo.classList.add('hidden');
+      draftInfo.classList.remove('flex');
+
+      // Show footer
+      footer.classList.remove('hidden-footer');
+
+      textarea.focus();
+      recalcHeight(editorId);
+    }
+
+    // --- Auto-grow ---
+    document.querySelectorAll('.editor-textarea').forEach(textarea => {
+      textarea.addEventListener('input', () => {
+        const editorId = textarea.dataset.editor;
+        if (editorStates[editorId].expanded) return;
+        recalcHeight(editorId);
+      });
+    });
+
+    // --- Save as Draft ---
+    document.querySelectorAll('.save-draft-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const editorId = link.dataset.editor;
+        const { textarea, savedDraftBtn } = getEditorEls(editorId);
+        const content = textarea.value.trim();
+        if (!content) return;
+
+        const state = editorStates[editorId];
+        state.draft = { content, savedAt: new Date() };
+        state.viewingDraft = false;
+
+        savedDraftBtn.classList.add('visible');
+
+        const statusEl = document.getElementById(editorId).querySelector('.draft-status');
+        if (statusEl) {
+          statusEl.textContent = 'Draft Saved';
+          setTimeout(() => { statusEl.textContent = ''; }, 2000);
+        }
+      });
+    });
+
+    // --- Click "Saved Draft" in toolbar ---
+    document.querySelectorAll('.saved-draft-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const editorId = btn.dataset.editor;
+        enterDraftView(editorId);
+      });
+    });
+
+    // --- "Use this draft" ---
+    document.querySelectorAll('.use-draft-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const editorId = btn.closest('.editor-wrapper').id;
+        exitDraftView(editorId, false);
+      });
+    });
+
+    // --- "Cancel" ---
+    document.querySelectorAll('.cancel-draft-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const editorId = btn.closest('.editor-wrapper').id;
+        exitDraftView(editorId, true);
+      });
+    });
+
+    // --- "Delete Draft" ---
+    document.querySelectorAll('.delete-draft-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const editorId = btn.closest('.editor-wrapper').id;
+        const state = editorStates[editorId];
+        const { textarea, draftInfo, savedDraftBtn, footer } = getEditorEls(editorId);
+
+        state.draft = null;
+        state.viewingDraft = false;
+
+        textarea.value = '';
+        textarea.removeAttribute('readonly');
+        textarea.style.opacity = '';
+
+        draftInfo.classList.add('hidden');
+        draftInfo.classList.remove('flex');
+        savedDraftBtn.classList.remove('visible');
+        footer.classList.remove('hidden-footer');
+
+        const editor = document.getElementById(editorId);
+        editor.style.height = DEFAULT_HEIGHTS[editorId] + 'px';
+      });
+    });
+
+    // --- Expand / Compress ---
+    document.querySelectorAll('.expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const editorId = btn.dataset.target;
+        const editor = document.getElementById(editorId);
+        const icon = btn.querySelector('i');
+        const state = editorStates[editorId];
+        const textarea = editor.querySelector('.editor-textarea');
+
+        if (!state.expanded) {
+          state.expanded = true;
+          editor.classList.add('fullscreen');
+          editor.style.height = '';
+          icon.className = 'fa-solid fa-compress';
+          document.body.style.overflow = 'hidden';
+        } else {
+          const defaultH = DEFAULT_HEIGHTS[editorId];
+          let targetHeight = defaultH;
+
+          if (textarea.value.trim()) {
+            const clone = textarea.cloneNode(true);
+            clone.style.cssText = 'position:absolute;visibility:hidden;height:auto;max-height:none;width:' + textarea.offsetWidth + 'px';
+            document.body.appendChild(clone);
+            const contentH = clone.scrollHeight;
+            document.body.removeChild(clone);
+
+            const toolbar = editor.querySelector('.border-b');
+            const footer = editor.querySelector('[data-role="footer"]');
+            const draftBar = editor.querySelector('[data-role="draft-info"]');
+            const toolbarH = toolbar ? toolbar.offsetHeight : 0;
+            const footerH = (footer && !footer.classList.contains('hidden-footer')) ? footer.offsetHeight : 0;
+            const draftBarH = (draftBar && !draftBar.classList.contains('hidden')) ? draftBar.offsetHeight : 0;
+            const bodyPadding = 32;
+
+            targetHeight = Math.max(defaultH, contentH + toolbarH + footerH + draftBarH + bodyPadding);
+          }
+
+          state.expanded = false;
+          editor.classList.remove('fullscreen');
+          icon.className = 'fa-solid fa-expand';
+          document.body.style.overflow = '';
+          editor.style.height = targetHeight + 'px';
+        }
+      });
+    });
+  </script>
+</body>
 </html>
