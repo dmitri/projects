@@ -17,7 +17,10 @@
             surface: '#f8fafc',
             border: '#e2e8f0',
             textMain: '#334155',
-            textMuted: '#94a3b8'
+            textMuted: '#94a3b8',
+            amber50: '#fffbeb',
+            amber200: '#fde68a',
+            amber700: '#b45309'
           }
         }
       }
@@ -28,6 +31,7 @@
     body { -ms-overflow-style: none; scrollbar-width: none; background-color: #f1f5f9; }
 
     .editor-wrapper { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+
     .editor-wrapper.fullscreen {
       position: fixed !important;
       top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
@@ -42,22 +46,31 @@
     textarea { transition: height 0.15s ease; overflow-y: auto; }
     .grade-btn.active { background-color: #0ea5e9; color: white; }
 
-    .draft-info-bar {
-      background-color: #edf0f4;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08), inset 0 1px 0 rgba(0,0,0,0.04);
+    .modal-overlay {
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(2px);
+      opacity: 0; transition: opacity 0.2s ease;
+      pointer-events: none;
     }
-    .draft-info-bar .draft-info-text { text-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-overlay .modal-content {
+      transform: scale(0.95) translateY(8px);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .modal-overlay.open .modal-content { transform: scale(1) translateY(0); }
 
-    .saved-draft-btn { display: none; }
-    .saved-draft-btn.visible { display: flex; }
+    .draft-card { transition: box-shadow 0.15s ease, border-color 0.15s ease; }
+    .draft-card:hover { border-color: #0ea5e9; box-shadow: 0 2px 8px rgba(14,165,233,0.12); }
 
-    .editor-footer { transition: opacity 0.2s ease; }
-    .editor-footer.hidden-footer { opacity: 0; pointer-events: none; height: 0; padding: 0; border: none; overflow: hidden; }
+    .draft-bar {
+      background: #f1f5f9;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+    }
   </style>
 </head>
 <body class="min-h-screen p-4 md:p-8 flex flex-col items-center justify-center space-y-8">
 
-  <!-- Desktop View -->
+  <!-- ==================== DESKTOP ==================== -->
   <div id="desktop-container" class="w-full max-w-4xl hidden md:flex flex-col space-y-6">
     <h2 class="text-xl font-semibold text-textMain mb-2">Desktop Layout</h2>
 
@@ -105,9 +118,10 @@
           <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-music"></i></button>
           <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-solid fa-code"></i></button>
           <button class="p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all"><i class="fa-regular fa-face-smile"></i></button>
-          <button class="saved-draft-btn p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all items-center space-x-1" data-editor="desktop-editor">
+          <!-- Saved Drafts button — hidden until a draft exists -->
+          <button class="saved-drafts-btn p-2 text-textMain hover:bg-white rounded hover:shadow-sm transition-all hidden" data-editor="desktop-editor" title="Saved Drafts">
             <i class="fa-regular fa-folder"></i>
-            <span class="text-xs font-medium">Saved Draft</span>
+            <span class="text-xs font-medium ml-1">Saved Drafts</span>
           </button>
         </div>
         <div class="flex items-center space-x-3 pr-2">
@@ -117,16 +131,19 @@
           </button>
         </div>
       </div>
-      <!-- Draft Info Bar -->
-      <div class="draft-info-bar hidden shrink-0 px-4 py-2.5 items-center justify-between" data-role="draft-info">
-        <span class="text-xs font-medium text-textMain draft-info-text"></span>
-        <div class="flex items-center space-x-4">
-          <a href="#" class="text-xs font-medium text-textMain hover:text-textMain/70 underline-offset-2 hover:underline delete-draft-btn">Delete Draft</a>
-          <button class="px-3 py-1 bg-primary text-white text-xs font-medium rounded-md hover:bg-sky-600 transition-colors shadow-sm use-draft-btn">Use this draft</button>
-          <button class="px-3 py-1.5 border border-border rounded-md bg-white text-textMain hover:bg-surface transition-colors cancel-draft-btn flex items-center space-x-1.5" title="Cancel">
+      <!-- Draft viewing bar (hidden by default) -->
+      <div class="draft-bar px-4 py-2.5 border-b border-border shrink-0 hidden flex items-center justify-between" data-role="draft-bar">
+        <div class="flex items-center space-x-2">
+          <i class="fa-regular fa-folder-open text-textMuted text-sm"></i>
+          <span class="text-xs font-medium text-textMain draft-bar-label"></span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <button class="text-xs font-medium text-textMain hover:text-red-600 transition-colors delete-viewing-draft-btn">Delete Draft</button>
+          <button class="px-3 py-1.5 border border-border rounded-md bg-white text-textMain hover:bg-surface transition-colors flex items-center space-x-1.5 cancel-draft-btn">
             <i class="fa-solid fa-xmark text-xs"></i>
             <span class="text-xs font-medium">Cancel</span>
           </button>
+          <button class="px-3 py-1.5 bg-primary text-white text-xs font-medium rounded-md hover:bg-sky-600 transition-colors use-draft-btn">Insert draft</button>
         </div>
       </div>
       <!-- Editor Area -->
@@ -134,13 +151,13 @@
         <textarea placeholder="Include a message about the assignment?" class="editor-textarea w-full h-full resize-none outline-none text-textMain placeholder-textMuted" data-editor="desktop-editor"></textarea>
       </div>
       <!-- Footer -->
-      <div class="editor-footer p-3 flex justify-between items-center bg-white rounded-b-lg border-t border-border shrink-0" data-role="footer">
+      <div class="p-3 flex justify-between items-center bg-white rounded-b-lg border-t border-border shrink-0">
         <div class="flex items-center">
           <button class="p-2 text-textMuted hover:text-textMain rounded-full hover:bg-surface transition-colors border border-border"><i class="fa-solid fa-paperclip"></i></button>
         </div>
         <div class="flex items-center space-x-4">
           <a href="#" class="save-draft-link text-sm font-medium text-textMuted hover:text-primary transition-colors underline-offset-2 hover:underline" data-editor="desktop-editor">
-            <i class="fa-regular fa-floppy-disk"></i> Save as Draft
+            <i class="fa-regular fa-floppy-disk"></i> Save Draft
           </a>
           <button class="p-2.5 bg-primary text-white rounded-full hover:bg-sky-600 transition-colors shadow-sm"><i class="fa-regular fa-paper-plane"></i></button>
         </div>
@@ -148,7 +165,7 @@
     </div>
   </div>
 
-  <!-- Mobile View -->
+  <!-- ==================== MOBILE ==================== -->
   <div id="mobile-container" class="w-full max-w-md md:hidden flex flex-col space-y-4">
     <h2 class="text-xl font-semibold text-textMain mb-2">Mobile Layout</h2>
 
@@ -198,9 +215,9 @@
             <button class="p-2 text-textMain hover:bg-white rounded"><i class="fa-solid fa-list-ul"></i></button>
             <div class="h-4 w-px bg-border mx-1"></div>
             <button class="p-2 text-textMain hover:bg-white rounded"><i class="fa-regular fa-face-smile"></i></button>
-            <button class="saved-draft-btn p-2 text-textMain hover:bg-white rounded items-center space-x-1" data-editor="mobile-editor">
+            <button class="saved-drafts-btn p-2 text-textMain hover:bg-white rounded hidden" data-editor="mobile-editor" title="Saved Drafts">
               <i class="fa-regular fa-folder"></i>
-              <span class="text-xs font-medium">Saved Draft</span>
+              <span class="text-xs font-medium ml-1">Drafts</span>
             </button>
           </div>
           <button class="text-textMuted hover:text-textMain expand-btn ml-3 shrink-0" data-target="mobile-editor">
@@ -208,15 +225,21 @@
           </button>
         </div>
       </div>
-      <!-- Draft Info Bar -->
-      <div class="draft-info-bar hidden shrink-0 px-3 py-2 items-center justify-between" data-role="draft-info">
-        <span class="text-xs font-medium text-textMain draft-info-text"></span>
-        <div class="flex items-center space-x-3">
-          <a href="#" class="text-xs font-medium text-textMain hover:text-textMain/70 underline-offset-2 hover:underline delete-draft-btn">Delete Draft</a>
-          <button class="px-2.5 py-1 bg-primary text-white text-xs font-medium rounded-md hover:bg-sky-600 transition-colors shadow-sm use-draft-btn">Use this draft</button>
-          <button class="p-1 text-textMuted hover:text-textMain transition-colors cancel-draft-btn" title="Cancel">
-            <i class="fa-solid fa-xmark"></i> <span class="text-xs font-medium">Cancel</span>
-          </button>
+      <!-- Draft viewing bar -->
+      <div class="draft-bar px-3 py-2 border-b border-border shrink-0 hidden" data-role="draft-bar">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2 min-w-0">
+            <i class="fa-regular fa-folder-open text-textMuted text-xs"></i>
+            <span class="text-xs font-medium text-textMain draft-bar-label truncate"></span>
+          </div>
+          <div class="flex items-center space-x-2 shrink-0">
+            <button class="text-xs font-medium text-textMain hover:text-red-600 transition-colors delete-viewing-draft-btn">Delete</button>
+            <button class="px-2 py-1 border border-border rounded bg-white text-textMain hover:bg-surface transition-colors flex items-center space-x-1 cancel-draft-btn">
+              <i class="fa-solid fa-xmark text-xs"></i>
+              <span class="text-xs font-medium">Cancel</span>
+            </button>
+            <button class="px-2 py-1 bg-primary text-white text-xs font-medium rounded hover:bg-sky-600 transition-colors use-draft-btn">Use</button>
+          </div>
         </div>
       </div>
       <!-- Editor Area -->
@@ -224,41 +247,97 @@
         <textarea placeholder="Include a message about the assignment? Message Firstname..." class="editor-textarea w-full h-full resize-none outline-none text-sm text-textMain placeholder-textMuted" data-editor="mobile-editor"></textarea>
       </div>
       <!-- Footer -->
-      <div class="editor-footer p-2 flex justify-between items-center bg-white rounded-b-lg border-t border-border shrink-0" data-role="footer">
+      <div class="p-2 flex justify-between items-center bg-white rounded-b-lg border-t border-border shrink-0">
         <div class="flex items-center">
           <button class="p-2 text-textMuted hover:text-textMain rounded-full border border-border"><i class="fa-solid fa-paperclip"></i></button>
         </div>
         <div class="flex items-center space-x-3">
-          <a href="#" class="save-draft-link text-xs font-medium text-textMuted hover:text-primary underline-offset-2 hover:underline" data-editor="mobile-editor">
-            Save as Draft
-          </a>
+          <a href="#" class="save-draft-link text-xs font-medium text-textMuted hover:text-primary underline-offset-2 hover:underline" data-editor="mobile-editor">Save as Draft</a>
           <button class="p-2 bg-primary text-white rounded-full shadow-sm"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- ==================== SAVE DRAFT MODAL ==================== -->
+  <div id="save-draft-modal" class="modal-overlay fixed inset-0 z-[60] flex items-center justify-center p-4">
+    <div class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-md flex flex-col overflow-hidden">
+      <!-- Header -->
+      <div class="p-5 pb-4">
+        <h3 class="text-base font-semibold text-textMain mb-1">Save Draft</h3>
+        <p class="text-sm text-textMuted">Give your draft a name so you can find it later.</p>
+      </div>
+      <!-- Input -->
+      <div class="px-5 pb-4">
+        <label class="block text-xs font-medium text-textMain mb-1.5">Draft name</label>
+        <input type="text" id="draft-name-input" placeholder="e.g. Late submission feedback" class="w-full px-3 py-2 border border-border rounded-lg text-sm text-textMain placeholder-textMuted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+      </div>
+      <!-- Warning -->
+      <div class="mx-5 mb-4 bg-amber50 border border-amber200 rounded-lg p-3">
+        <div class="flex items-start space-x-2.5">
+          <i class="fa-solid fa-triangle-exclamation text-amber700 text-sm mt-0.5"></i>
+          <div>
+            <p class="text-xs font-semibold text-amber700 mb-0.5">Heads up</p>
+            <p class="text-xs text-amber700 leading-relaxed">Drafts save text only — attachments (files, audio, video) won't be included. Drafts are stored on this device; clearing your browser cache will remove them.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Actions -->
+      <div class="px-5 pb-5 flex flex-col space-y-2">
+        <button id="save-draft-confirm" class="w-full py-2.5 bg-textMain text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">Save and Continue</button>
+        <button id="save-draft-cancel" class="w-full py-2.5 bg-white border border-border text-sm font-medium text-textMain rounded-lg hover:bg-surface transition-colors">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== VIEW DRAFTS MODAL ==================== -->
+  <div id="view-drafts-modal" class="modal-overlay fixed inset-0 z-[60] flex items-center justify-center p-4">
+    <div class="modal-content bg-white rounded-xl shadow-2xl w-full max-w-lg flex flex-col overflow-hidden max-h-[80vh]">
+      <!-- Header -->
+      <div class="p-5 pb-3 flex items-center justify-between shrink-0">
+        <h3 class="text-base font-semibold text-textMain">Saved Drafts</h3>
+        <button id="close-drafts-modal" class="p-1.5 text-textMuted hover:text-textMain rounded-md hover:bg-surface transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <!-- Info -->
+      <div class="px-5 pb-3 shrink-0">
+        <div class="flex items-start space-x-2.5 bg-surface border border-border rounded-lg p-3">
+          <i class="fa-solid fa-circle-info text-primary text-sm mt-0.5"></i>
+          <p class="text-xs text-textMuted leading-relaxed">These are your locally saved drafts, <strong class="text-textMain">only available on this device</strong>. Save drafts periodically to avoid losing your work.</p>
+        </div>
+      </div>
+      <!-- Draft list -->
+      <div class="px-5 pb-5 overflow-y-auto flex-1" id="drafts-list-container">
+        <!-- populated by JS -->
+      </div>
+      <!-- Empty state -->
+      <div class="px-5 pb-5 hidden" id="drafts-empty-state">
+        <div class="text-center py-8">
+          <i class="fa-regular fa-folder-open text-3xl text-textMuted mb-3 block"></i>
+          <p class="text-sm text-textMuted">No saved drafts yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // ============ STATE ============
     const DEFAULT_HEIGHTS = { 'desktop-editor': 400, 'mobile-editor': 350 };
     const editorStates = {
-      'desktop-editor': { expanded: false, draft: null, viewingDraft: false, previewContent: '' },
-      'mobile-editor': { expanded: false, draft: null, viewingDraft: false, previewContent: '' }
+      'desktop-editor': { expanded: false, viewingDraftId: null, originalContent: '' },
+      'mobile-editor': { expanded: false, viewingDraftId: null, originalContent: '' }
     };
+    let drafts = []; // { id, name, content, savedAt }
+    let pendingSaveEditorId = null;
 
-    // --- Grade buttons ---
-    document.querySelectorAll('.grade-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const container = btn.closest('.flex');
-        container.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
+    // ============ HELPERS ============
+    function genId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 
-    function formatDraftDate(date) {
-      return date.toLocaleString('en-US', {
-        month: 'short', day: 'numeric', year: 'numeric',
-        hour: 'numeric', minute: '2-digit', hour12: true
-      });
+    function formatDate(iso) {
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' at ' +
+        d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
     }
 
     function getEditorEls(editorId) {
@@ -266,173 +345,52 @@
       return {
         editor,
         textarea: editor.querySelector('.editor-textarea'),
-        draftInfo: editor.querySelector('[data-role="draft-info"]'),
-        draftInfoText: editor.querySelector('.draft-info-text'),
-        savedDraftBtn: editor.querySelector('.saved-draft-btn'),
-        useDraftBtn: editor.querySelector('.use-draft-btn'),
-        deleteDraftBtn: editor.querySelector('.delete-draft-btn'),
-        cancelDraftBtn: editor.querySelector('.cancel-draft-btn'),
-        footer: editor.querySelector('[data-role="footer"]'),
+        draftBar: editor.querySelector('[data-role="draft-bar"]'),
+        draftBarLabel: editor.querySelector('.draft-bar-label'),
+        savedDraftsBtn: editor.querySelector('.saved-drafts-btn'),
+        draftStatus: editor.querySelector('.draft-status') || editor.closest('[id$="-container"]')?.querySelector('.draft-status')
       };
     }
 
-    function recalcHeight(editorId) {
-      const state = editorStates[editorId];
-      if (state.expanded) return;
-      const { editor, textarea } = getEditorEls(editorId);
-      const defaultH = DEFAULT_HEIGHTS[editorId];
-
-      const clone = textarea.cloneNode(true);
-      clone.style.cssText = 'position:absolute;visibility:hidden;height:auto;max-height:none;width:' + textarea.offsetWidth + 'px';
-      document.body.appendChild(clone);
-      const contentH = clone.scrollHeight;
-      document.body.removeChild(clone);
-
-      const toolbar = editor.querySelector('.border-b');
-      const footer = editor.querySelector('[data-role="footer"]');
-      const draftBar = editor.querySelector('[data-role="draft-info"]');
-      const toolbarH = toolbar ? toolbar.offsetHeight : 0;
-      const footerH = (footer && !footer.classList.contains('hidden-footer')) ? footer.offsetHeight : 0;
-      const draftBarH = (draftBar && !draftBar.classList.contains('hidden')) ? draftBar.offsetHeight : 0;
-      const bodyPadding = 32;
-
-      const fitHeight = contentH + toolbarH + footerH + draftBarH + bodyPadding;
-      editor.style.height = Math.max(defaultH, fitHeight) + 'px';
+    function updateDraftsBtnVisibility() {
+      document.querySelectorAll('.saved-drafts-btn').forEach(btn => {
+        btn.classList.toggle('hidden', drafts.length === 0);
+      });
     }
 
-    // --- Enter draft viewing mode ---
-    function enterDraftView(editorId) {
-      const state = editorStates[editorId];
-      if (!state.draft) return;
-      const { textarea, draftInfo, draftInfoText, footer } = getEditorEls(editorId);
+    // ============ GRADE BUTTONS ============
+    document.querySelectorAll('.grade-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.flex').querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
 
-      // Save whatever the user was typing
-      state.previewContent = textarea.value;
-      state.viewingDraft = true;
-
-      // Load draft content
-      textarea.value = state.draft.content;
-      textarea.setAttribute('readonly', true);
-      textarea.style.opacity = '0.8';
-
-      // Show info bar
-      draftInfoText.textContent = 'Viewing saved draft from ' + formatDraftDate(state.draft.savedAt);
-      draftInfo.classList.remove('hidden');
-      draftInfo.classList.add('flex');
-
-      // Hide footer
-      footer.classList.add('hidden-footer');
-
-      recalcHeight(editorId);
-    }
-
-    // --- Exit draft viewing mode (cancel / use) ---
-    function exitDraftView(editorId, restorePrevious) {
-      const state = editorStates[editorId];
-      const { textarea, draftInfo, footer } = getEditorEls(editorId);
-
-      state.viewingDraft = false;
-      textarea.removeAttribute('readonly');
-      textarea.style.opacity = '';
-
-      if (restorePrevious) {
-        textarea.value = state.previewContent;
-      }
-      // else keep the draft content (user chose "Use this draft")
-
-      // Hide info bar
-      draftInfo.classList.add('hidden');
-      draftInfo.classList.remove('flex');
-
-      // Show footer
-      footer.classList.remove('hidden-footer');
-
-      textarea.focus();
-      recalcHeight(editorId);
-    }
-
-    // --- Auto-grow ---
+    // ============ AUTO-GROW ============
     document.querySelectorAll('.editor-textarea').forEach(textarea => {
       textarea.addEventListener('input', () => {
         const editorId = textarea.dataset.editor;
-        if (editorStates[editorId].expanded) return;
-        recalcHeight(editorId);
-      });
-    });
-
-    // --- Save as Draft ---
-    document.querySelectorAll('.save-draft-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const editorId = link.dataset.editor;
-        const { textarea, savedDraftBtn } = getEditorEls(editorId);
-        const content = textarea.value.trim();
-        if (!content) return;
-
-        const state = editorStates[editorId];
-        state.draft = { content, savedAt: new Date() };
-        state.viewingDraft = false;
-
-        savedDraftBtn.classList.add('visible');
-
-        const statusEl = document.getElementById(editorId).querySelector('.draft-status');
-        if (statusEl) {
-          statusEl.textContent = 'Draft Saved';
-          setTimeout(() => { statusEl.textContent = ''; }, 2000);
-        }
-      });
-    });
-
-    // --- Click "Saved Draft" in toolbar ---
-    document.querySelectorAll('.saved-draft-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const editorId = btn.dataset.editor;
-        enterDraftView(editorId);
-      });
-    });
-
-    // --- "Use this draft" ---
-    document.querySelectorAll('.use-draft-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const editorId = btn.closest('.editor-wrapper').id;
-        exitDraftView(editorId, false);
-      });
-    });
-
-    // --- "Cancel" ---
-    document.querySelectorAll('.cancel-draft-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const editorId = btn.closest('.editor-wrapper').id;
-        exitDraftView(editorId, true);
-      });
-    });
-
-    // --- "Delete Draft" ---
-    document.querySelectorAll('.delete-draft-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const editorId = btn.closest('.editor-wrapper').id;
-        const state = editorStates[editorId];
-        const { textarea, draftInfo, savedDraftBtn, footer } = getEditorEls(editorId);
-
-        state.draft = null;
-        state.viewingDraft = false;
-
-        textarea.value = '';
-        textarea.removeAttribute('readonly');
-        textarea.style.opacity = '';
-
-        draftInfo.classList.add('hidden');
-        draftInfo.classList.remove('flex');
-        savedDraftBtn.classList.remove('visible');
-        footer.classList.remove('hidden-footer');
-
         const editor = document.getElementById(editorId);
-        editor.style.height = DEFAULT_HEIGHTS[editorId] + 'px';
+        if (editorStates[editorId].expanded) return;
+
+        textarea.style.height = '0px';
+        const scrollH = textarea.scrollHeight;
+        textarea.style.height = '';
+
+        const toolbar = editor.querySelector('.border-b');
+        const footer = editor.querySelector('.border-t:last-child');
+        const draftBar = editor.querySelector('[data-role="draft-bar"]');
+        const toolbarH = toolbar ? toolbar.offsetHeight : 0;
+        const footerH = footer ? footer.offsetHeight : 0;
+        const draftBarH = (draftBar && !draftBar.classList.contains('hidden')) ? draftBar.offsetHeight : 0;
+        const padding = 32;
+
+        const needed = scrollH + toolbarH + footerH + draftBarH + padding;
+        editor.style.height = Math.max(DEFAULT_HEIGHTS[editorId], needed) + 'px';
       });
     });
 
-    // --- Expand / Compress ---
+    // ============ EXPAND / COMPRESS ============
     document.querySelectorAll('.expand-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const editorId = btn.dataset.target;
@@ -453,20 +411,18 @@
 
           if (textarea.value.trim()) {
             const clone = textarea.cloneNode(true);
-            clone.style.cssText = 'position:absolute;visibility:hidden;height:auto;max-height:none;width:' + textarea.offsetWidth + 'px';
+            clone.style.cssText = 'position:absolute;visibility:hidden;height:auto;width:' + textarea.offsetWidth + 'px;max-height:none';
             document.body.appendChild(clone);
             const contentH = clone.scrollHeight;
             document.body.removeChild(clone);
 
             const toolbar = editor.querySelector('.border-b');
-            const footer = editor.querySelector('[data-role="footer"]');
-            const draftBar = editor.querySelector('[data-role="draft-info"]');
+            const footer = editor.querySelector('.border-t:last-child');
+            const draftBar = editor.querySelector('[data-role="draft-bar"]');
             const toolbarH = toolbar ? toolbar.offsetHeight : 0;
-            const footerH = (footer && !footer.classList.contains('hidden-footer')) ? footer.offsetHeight : 0;
+            const footerH = footer ? footer.offsetHeight : 0;
             const draftBarH = (draftBar && !draftBar.classList.contains('hidden')) ? draftBar.offsetHeight : 0;
-            const bodyPadding = 32;
-
-            targetHeight = Math.max(defaultH, contentH + toolbarH + footerH + draftBarH + bodyPadding);
+            targetHeight = Math.max(defaultH, contentH + toolbarH + footerH + draftBarH + 32);
           }
 
           state.expanded = false;
@@ -475,6 +431,259 @@
           document.body.style.overflow = '';
           editor.style.height = targetHeight + 'px';
         }
+      });
+    });
+
+    // ============ SAVE DRAFT MODAL ============
+    function openModal(id) { document.getElementById(id).classList.add('open'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+    document.querySelectorAll('.save-draft-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const editorId = link.dataset.editor;
+        const textarea = document.getElementById(editorId).querySelector('.editor-textarea');
+        if (!textarea.value.trim()) return;
+        pendingSaveEditorId = editorId;
+        document.getElementById('draft-name-input').value = '';
+        openModal('save-draft-modal');
+        setTimeout(() => document.getElementById('draft-name-input').focus(), 200);
+      });
+    });
+
+    document.getElementById('save-draft-cancel').addEventListener('click', () => {
+      closeModal('save-draft-modal');
+      pendingSaveEditorId = null;
+    });
+
+    document.getElementById('save-draft-confirm').addEventListener('click', () => {
+      if (!pendingSaveEditorId) return;
+      const nameInput = document.getElementById('draft-name-input');
+      const name = nameInput.value.trim() || 'Untitled Draft';
+      const { textarea } = getEditorEls(pendingSaveEditorId);
+
+      drafts.push({
+        id: genId(),
+        name,
+        content: textarea.value,
+        savedAt: new Date().toISOString()
+      });
+
+      updateDraftsBtnVisibility();
+      closeModal('save-draft-modal');
+
+      // Show confirmation in status
+      const statusEl = document.getElementById(pendingSaveEditorId).closest('[id$="-container"]')?.querySelector('.draft-status') ||
+        document.getElementById(pendingSaveEditorId).querySelector('.draft-status');
+      if (statusEl) {
+        statusEl.textContent = 'Draft saved';
+        setTimeout(() => { statusEl.textContent = ''; }, 3000);
+      }
+      pendingSaveEditorId = null;
+    });
+
+    // Enter key in name input
+    document.getElementById('draft-name-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('save-draft-confirm').click();
+    });
+
+    // Close modals on overlay click
+    ['save-draft-modal', 'view-drafts-modal'].forEach(id => {
+      document.getElementById(id).addEventListener('click', e => {
+        if (e.target === e.currentTarget) closeModal(id);
+      });
+    });
+
+    // ============ VIEW DRAFTS MODAL ============
+    document.querySelectorAll('.saved-drafts-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        renderDraftsList(btn.dataset.editor);
+        openModal('view-drafts-modal');
+      });
+    });
+
+    document.getElementById('close-drafts-modal').addEventListener('click', () => closeModal('view-drafts-modal'));
+
+    function renderDraftsList(editorId) {
+      const container = document.getElementById('drafts-list-container');
+      const empty = document.getElementById('drafts-empty-state');
+
+      if (drafts.length === 0) {
+        container.classList.add('hidden');
+        empty.classList.remove('hidden');
+        return;
+      }
+
+      empty.classList.add('hidden');
+      container.classList.remove('hidden');
+
+      container.innerHTML = drafts.map(d => `
+        <div class="draft-card border border-border rounded-lg p-4 mb-3 last:mb-0" data-draft-id="${d.id}">
+          <div class="flex items-start justify-between mb-2">
+            <div class="min-w-0">
+              <h4 class="text-sm font-semibold text-textMain truncate">${escapeHtml(d.name)}</h4>
+              <p class="text-xs text-textMuted mt-0.5">Saved ${formatDate(d.savedAt)}</p>
+            </div>
+          </div>
+          <p class="text-xs text-textMuted leading-relaxed mb-3 line-clamp-2" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${escapeHtml(d.content)}</p>
+          <div class="flex items-center space-x-2">
+            <button class="draft-action-view px-3 py-1.5 border border-border rounded-md bg-white text-xs font-medium text-textMain hover:bg-surface transition-colors flex items-center space-x-1.5" data-draft-id="${d.id}" data-editor="${editorId}">
+              <i class="fa-regular fa-eye text-xs"></i>
+              <span>Preview</span>
+            </button>
+            <button class="draft-action-insert px-3 py-1.5 bg-primary text-white text-xs font-medium rounded-md hover:bg-sky-600 transition-colors flex items-center space-x-1.5" data-draft-id="${d.id}" data-editor="${editorId}">
+              <i class="fa-solid fa-check text-xs"></i>
+              <span>Insert Draft</span>
+            </button>
+            <button class="draft-action-delete px-3 py-1.5 text-xs font-medium text-textMain hover:text-red-600 transition-colors" data-draft-id="${d.id}" data-editor="${editorId}">
+              <i class="fa-regular fa-trash-can text-xs"></i>
+              <span>Delete</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      // Wire up actions
+      container.querySelectorAll('.draft-action-view').forEach(b => b.addEventListener('click', handlePreview));
+      container.querySelectorAll('.draft-action-insert').forEach(b => b.addEventListener('click', handleUseDraft));
+      container.querySelectorAll('.draft-action-delete').forEach(b => b.addEventListener('click', handleDeleteDraft));
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // ============ DRAFT ACTIONS ============
+    function handlePreview(e) {
+      const draftId = e.currentTarget.dataset.draftId;
+      const editorId = e.currentTarget.dataset.editor;
+      const draft = drafts.find(d => d.id === draftId);
+      if (!draft) return;
+
+      const { editor, textarea, draftBar, draftBarLabel } = getEditorEls(editorId);
+      const state = editorStates[editorId];
+
+      // Save current content
+      state.originalContent = textarea.value;
+      state.viewingDraftId = draftId;
+
+      // Show draft bar
+      draftBar.classList.remove('hidden');
+      draftBar.classList.add('flex');
+      draftBarLabel.textContent = `Viewing "${draft.name}" — saved ${formatDate(draft.savedAt)}`;
+
+      // Load draft content (read-only preview)
+      textarea.value = draft.content;
+      textarea.setAttribute('readonly', true);
+      textarea.classList.add('bg-surface');
+
+      closeModal('view-drafts-modal');
+
+      // Trigger resize
+      textarea.dispatchEvent(new Event('input'));
+    }
+
+    function handleUseDraft(e) {
+      const draftId = e.currentTarget.dataset.draftId;
+      const editorId = e.currentTarget.dataset.editor;
+      const draft = drafts.find(d => d.id === draftId);
+      if (!draft) return;
+
+      const { textarea, draftBar } = getEditorEls(editorId);
+      const state = editorStates[editorId];
+
+      // Append draft to existing content
+      const existing = state.originalContent || textarea.value;
+      const separator = existing.trim() ? '\n\n' : '';
+      textarea.value = existing + separator + draft.content;
+
+      textarea.removeAttribute('readonly');
+      textarea.classList.remove('bg-surface');
+      draftBar.classList.add('hidden');
+      draftBar.classList.remove('flex');
+      state.viewingDraftId = null;
+      state.originalContent = '';
+
+      closeModal('view-drafts-modal');
+      textarea.dispatchEvent(new Event('input'));
+      textarea.focus();
+    }
+
+    function handleDeleteDraft(e) {
+      const draftId = e.currentTarget.dataset.draftId;
+      const editorId = e.currentTarget.dataset.editor;
+      drafts = drafts.filter(d => d.id !== draftId);
+      updateDraftsBtnVisibility();
+
+      // If we were viewing this draft, close the bar
+      const state = editorStates[editorId];
+      if (state.viewingDraftId === draftId) {
+        exitDraftPreview(editorId);
+      }
+
+      renderDraftsList(editorId);
+      if (drafts.length === 0) closeModal('view-drafts-modal');
+    }
+
+    function exitDraftPreview(editorId) {
+      const { textarea, draftBar } = getEditorEls(editorId);
+      const state = editorStates[editorId];
+
+      textarea.value = state.originalContent;
+      textarea.removeAttribute('readonly');
+      textarea.classList.remove('bg-surface');
+      draftBar.classList.add('hidden');
+      draftBar.classList.remove('flex');
+      state.viewingDraftId = null;
+      state.originalContent = '';
+      textarea.dispatchEvent(new Event('input'));
+    }
+
+    // Draft bar: Cancel button
+    document.querySelectorAll('.cancel-draft-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const editor = btn.closest('.editor-wrapper');
+        exitDraftPreview(editor.id);
+      });
+    });
+
+    // Draft bar: Use this draft button
+    document.querySelectorAll('.use-draft-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const editor = btn.closest('.editor-wrapper');
+        const state = editorStates[editor.id];
+        const draft = drafts.find(d => d.id === state.viewingDraftId);
+        if (!draft) return;
+
+        const { textarea, draftBar } = getEditorEls(editor.id);
+
+        // Append draft to original content
+        const existing = state.originalContent;
+        const separator = existing.trim() ? '\n\n' : '';
+        textarea.value = existing + separator + draft.content;
+
+        textarea.removeAttribute('readonly');
+        textarea.classList.remove('bg-surface');
+        draftBar.classList.add('hidden');
+        draftBar.classList.remove('flex');
+        state.viewingDraftId = null;
+        state.originalContent = '';
+        textarea.dispatchEvent(new Event('input'));
+        textarea.focus();
+      });
+    });
+
+    // Draft bar: Delete viewing draft
+    document.querySelectorAll('.delete-viewing-draft-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const editor = btn.closest('.editor-wrapper');
+        const state = editorStates[editor.id];
+        if (!state.viewingDraftId) return;
+        drafts = drafts.filter(d => d.id !== state.viewingDraftId);
+        updateDraftsBtnVisibility();
+        exitDraftPreview(editor.id);
       });
     });
   </script>
