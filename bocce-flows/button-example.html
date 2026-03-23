@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#E53E3E', // Brand red
+                            dark: '#2D3748',
+                            darker: '#1A202C',
+                            gray: '#F7FAFC',
+                            border: '#E2E8F0',
+                            text: '#4A5568',
+                            light: '#EDF2F7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        body { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex flex-col font-sans overflow-hidden">
+
+    <!-- Top Navigation -->
+    <header id="header" class="bg-white border-b border-gray-200 h-16 flex items-center px-4 flex-shrink-0 z-20 sticky top-0">
+        <div class="flex items-center">
+            <div class="w-10 h-10 bg-brand-red text-white flex items-center justify-center font-bold text-xl rounded-sm mr-4">
+                h
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-gray-900 flex items-center">
+                    Gospel Music for Keyboard <i class="fa-solid fa-chevron-down text-sm ml-2 text-gray-500"></i>
+                </h1>
+                <p class="text-xs text-gray-500 uppercase tracking-wide">Section 2 | Summer 2025</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden relative">
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar" class="bg-brand-dark w-20 flex-shrink-0 flex flex-col items-center py-4 z-10 text-gray-400">
+            <div class="flex-1 w-full space-y-2">
+                <a href="#" class="flex flex-col items-center justify-center py-3 text-white bg-brand-darker border-l-4 border-brand-red w-full">
+                    <i class="fa-solid fa-book-open text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Syllabus</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-3 hover:text-white hover:bg-brand-darker w-full border-l-4 border-transparent">
+                    <i class="fa-regular fa-bell text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Activity</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-3 hover:text-white hover:bg-brand-darker w-full border-l-4 border-transparent">
+                    <i class="fa-solid fa-video text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Live</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-3 hover:text-white hover:bg-brand-darker w-full border-l-4 border-transparent">
+                    <i class="fa-solid fa-users text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Roster</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-3 hover:text-white hover:bg-brand-darker w-full border-l-4 border-transparent">
+                    <i class="fa-regular fa-envelope text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Inbox</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-3 hover:text-white hover:bg-brand-darker w-full border-l-4 border-transparent">
+                    <i class="fa-solid fa-check-circle text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Grades</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-3 hover:text-white hover:bg-brand-darker w-full border-l-4 border-transparent">
+                    <i class="fa-solid fa-clipboard-list text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Surveys</span>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-3 hover:text-white hover:bg-brand-darker w-full border-l-4 border-transparent">
+                    <i class="fa-solid fa-cog text-xl mb-1"></i>
+                    <span class="text-[10px] font-medium">Admin</span>
+                </a>
+            </div>
+            
+            <div class="mt-auto w-full space-y-2 border-t border-gray-600 pt-4">
+                <a href="#" class="flex flex-col items-center justify-center py-2 hover:text-white w-full">
+                    <i class="fa-solid fa-gear text-lg"></i>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-2 hover:text-white w-full relative">
+                    <i class="fa-regular fa-circle-question text-lg"></i>
+                    <i class="fa-solid fa-ellipsis-vertical text-xs absolute right-3"></i>
+                </a>
+                <a href="#" class="flex flex-col items-center justify-center py-2 hover:text-white w-full bg-gray-800 mt-2">
+                    <i class="fa-regular fa-sun text-lg"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="flex-1 bg-white border-r border-gray-200 overflow-y-auto relative flex">
+            <!-- Left Scrolling Nav Panel -->
+            <div id="left-nav-panel" class="w-full md:w-[400px] border-r border-gray-200 bg-white flex flex-col relative h-full">
+                <!-- Header of Nav Panel -->
+                <div class="p-4 border-b border-gray-200 sticky top-0 bg-white z-10">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold text-gray-900">Syllabus</h2>
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Filters -->
+                    <div class="flex items-center space-x-2 overflow-x-auto pb-2">
+                        <button class="text-gray-500 hover:text-gray-700 px-2">
+                            <i class="fa-solid fa-sliders"></i>
+                        </button>
+                        <button class="px-3 py-1 rounded-full border border-gray-300 text-sm whitespace-nowrap hover:bg-gray-50">Unread</button>
+                        <button class="px-3 py-1 rounded-full border border-gray-300 text-sm whitespace-nowrap hover:bg-gray-50">Assignments</button>
+                        <button class="px-3 py-1 rounded-full border border-gray-300 text-sm whitespace-nowrap hover:bg-gray-50">Discussions</button>
+                    </div>
+                </div>
+
+                <!-- Scrolling Content List -->
+                <div class="flex-1 overflow-y-auto p-4 space-y-4 relative pb-24"> <!-- Added pb-24 for floating button space -->
+                    
+                    <!-- Module 1 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden bg-white">
+                        <div class="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 border-b border-gray-100">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm">
+                                    i
+                                </div>
+                                <h3 class="font-bold text-gray-900">Getting Started</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-up text-gray-400"></i>
+                        </div>
+                        <div class="bg-white">
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer">
+                                <p class="font-semibold text-gray-800 text-sm">Course Introduction</p>
+                            </div>
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer">
+                                <p class="font-semibold text-gray-800 text-sm">Course-Specific Requirements</p>
+                            </div>
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer">
+                                <p class="font-semibold text-gray-800 text-sm">General Computer Requirements</p>
+                            </div>
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer">
+                                <p class="font-semibold text-gray-800 text-sm">Class Communication</p>
+                            </div>
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer">
+                                <p class="font-semibold text-gray-800 text-sm">Artificial Intelligence (AI) Policy</p>
+                            </div>
+                            <div class="p-4 border-b border-gray-100 hover:bg-gray-50 cursor-pointer">
+                                <p class="font-semibold text-gray-800 text-sm">Grading and Other Course Policies</p>
+                            </div>
+                            <div class="p-4 hover:bg-gray-50 cursor-pointer">
+                                <p class="font-semibold text-gray-800 text-sm">Help Resources</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden bg-white">
+                        <div class="p-4 flex items-start justify-between cursor-pointer hover:bg-gray-50 border-b border-gray-100">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 text-sm flex-shrink-0 mt-1">
+                                    1
+                                </div>
+                                <h3 class="font-bold text-gray-900 leading-tight pr-4">The Origin, History, and Spirituality of Gospel Music</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-up text-gray-400 mt-2"></i>
+                        </div>
+                        <div class="bg-gray-50">
+                            <div class="p-4 border-b border-gray-100">
+                                <p class="font-semibold text-gray-800 text-sm mb-2">Introduction</p>
+                                
+                                <div class="pl-2 space-y-4">
+                                    <div class="flex items-start space-x-3 group cursor-pointer">
+                                        <i class="fa-regular fa-lightbulb text-gray-400 mt-1"></i>
+                                        <div>
+                                            <p class="font-semibold text-gray-800 text-sm group-hover:text-brand-red">Self-Assessment: Keyboard Skills</p>
+                                            <p class="text-xs text-gray-500 mt-1">Due Jul 2</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start space-x-3 group cursor-pointer">
+                                        <i class="fa-regular fa-comment-dots text-gray-400 mt-1"></i>
+                                        <div>
+                                            <p class="font-semibold text-gray-800 text-sm group-hover:text-brand-red">Meet and Greet</p>
+                                            <p class="text-xs text-gray-500 mt-1">Due Jun 30</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 border-b border-gray-100">
+                                <p class="font-semibold text-gray-800 text-sm mb-2">Negro Spirituals</p>
+                                <div class="pl-2 space-y-3">
+                                     <div class="group cursor-pointer">
+                                        <p class="font-semibold text-gray-800 text-sm group-hover:text-brand-red">Workshop: Negro Spirituals Review</p>
+                                    </div>
+                                    <div class="group cursor-pointer">
+                                        <p class="font-semibold text-gray-800 text-sm group-hover:text-brand-red truncate">Practice Exercise: Negro Spiritual Playing...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Floating Action Button & Dropup Menu -->
+                <div class="absolute bottom-6 right-[20px] transform z-30">
+                    <!-- Dropup Menu (Hidden by default, toggle with JS) -->
+                    <div id="fab-menu" class="hidden absolute bottom-full mb-3 right-1 transform -translate-x-1 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden transition-all duration-200">
+                        <ul class="py-1">
+                            <li>
+                                <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-red transition-colors">
+                                    <i class="fa-solid fa-bullhorn w-6 text-center text-gray-400 mr-2"></i>
+                                    Announcement
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-red transition-colors">
+                                    <i class="fa-regular fa-comments w-6 text-center text-gray-400 mr-2"></i>
+                                    Conversation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Main FAB -->
+                    <button id="fab-button" onclick="toggleFabMenu()" class="bg-brand-red hover:bg-red-700 text-white font-semibold py-1.5 px-4 rounded-full shadow-lg flex items-center space-x-2 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-red">
+                        <i class="fa-solid fa-plus text-sm"></i>
+                        <span>New</span>
+                    </button>
+                </div>
+                
+                <!-- Collapse Arrow (Right side of panel) -->
+                <div class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white rounded-full shadow-md border border-gray-200 w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-gray-50 z-20 hidden md:flex">
+                    <i class="fa-solid fa-arrow-left text-gray-600 text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Right Empty Space (Content Area Placeholder) -->
+            <div id="content-area" class="hidden md:block flex-1 bg-gray-50 relative">
+                <!-- Content would go here -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleFabMenu() {
+            const menu = document.getElementById('fab-menu');
+            const button = document.getElementById('fab-button');
+            const icon = button.querySelector('i');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('block');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-times');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('block');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-plus');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('fab-menu');
+            const button = document.getElementById('fab-button');
+            
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.add('hidden');
+                menu.classList.remove('block');
+                const icon = button.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-plus');
+            }
+        });
+    </script>
+</body>
+</html>
